@@ -1,0 +1,100 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: >
+      Product dimension as SCD Type 2, built from the `snap_product_catalog` dbt snapshot.
+      One row per product version; `valid_to` is 9999-12-31 for the current version.
+    columns:
+      - name: product_sk
+        description: Surrogate key = product_id * 1000 + version_number.
+        data_tests: [unique, not_null]
+      - name: product_id
+        data_tests: [not_null]
+      - name: sku_code
+        data_tests: [not_null]
+      - name: category
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["Apparel", "Footwear", "Home", "Kitchen", "Electronics", "Beauty", "Toys", "Sports", "Grocery", "Books"]
+      - name: list_price
+        data_tests: [not_null]
+  - name: dim_store
+    description: 120 physical stores plus the web store (store_id 0).
+    columns:
+      - name: store_id
+        data_tests: [unique, not_null]
+      - name: channel
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["store", "web"]
+  - name: dim_customer
+    description: Customers (Type 1) plus anonymous member 0.
+    columns:
+      - name: customer_id
+        data_tests: [unique, not_null]
+  - name: dim_date
+    description: Calendar 2024-2026.
+    columns:
+      - name: date_key
+        data_tests: [unique, not_null]
+  - name: fct_order_lines
+    description: In-scope order lines (one row per order_line_id) with SCD2 product version at time of sale.
+    columns:
+      - name: order_line_id
+        data_tests: [unique, not_null]
+      - name: product_sk
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_product')
+                field: product_sk
+      - name: customer_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customer')
+                field: customer_id
+      - name: store_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_store')
+                field: store_id
+      - name: date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: channel
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["store", "web"]
+      - name: net_amount
+        data_tests: [not_null]
+  - name: fct_returns
+    description: Returns joined to their order line.
+    columns:
+      - name: return_id
+        data_tests: [unique, not_null]
+      - name: order_line_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_order_lines')
+                field: order_line_id
+      - name: date_key
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key

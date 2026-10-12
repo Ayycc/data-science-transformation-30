@@ -1,0 +1,8 @@
+version: 2
+
+snapshots:
+  - name: snap_product_catalog
+    description: SCD2 history of the product catalog (timestamp strategy on source updated_at).
+    columns:
+      - name: dbt_scd_id
+        data_tests: [unique, not_null]

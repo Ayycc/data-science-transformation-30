@@ -1,0 +1,10 @@
+# dbt build artefacts
+dbt/target/
+dbt/logs/
+logs/
+# generated data and the DuckDB warehouse (also covered by the root .gitignore)
+data/*
+!data/sample/
+!data/.gitkeep
+*.duckdb
+*.duckdb.wal

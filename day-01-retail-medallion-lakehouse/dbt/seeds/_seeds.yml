@@ -1,0 +1,10 @@
+version: 2
+
+seeds:
+  - name: pos_clock_changes
+    description: >
+      Vendor change log: stores whose POS export switched from local time to UTC after a
+      firmware upgrade, with the change date.
+    columns:
+      - name: store_id
+        data_tests: [unique, not_null]

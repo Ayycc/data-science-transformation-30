@@ -1,0 +1,49 @@
+name: retail_lakehouse
+version: "1.0.0"
+config-version: 2
+profile: retail_lakehouse
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+target-path: "target"
+clean-targets: ["target", "logs"]
+
+vars:
+  # Set per run by the pipeline to replay monthly catalog extracts into the SCD2 snapshot.
+  # When unset the snapshot reads the most recent extract.
+  catalog_extract_date: null
+  # Customers who signed up before this date are pre-existing (left-censored) and are
+  # excluded from cohort retention.
+  window_start: "2024-10-01"
+  # Revenue reconciliation tolerance, in percent (0.01% per the acceptance criteria).
+  revenue_recon_tolerance_pct: 0.01
+  late_arrival_hours: 48
+
+models:
+  retail_lakehouse:
+    staging:
+      +schema: silver
+      +materialized: view
+    intermediate:
+      +schema: silver
+      +materialized: table
+    gold:
+      +schema: gold
+      +materialized: table
+    marts:
+      +schema: gold
+      +materialized: table
+    audit:
+      +schema: audit
+      +materialized: table
+
+seeds:
+  retail_lakehouse:
+    +schema: reference
+    pos_clock_changes:
+      +column_types:
+        store_id: integer
+        change_date: date

@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: audit_revenue_reconciliation
+    description: >
+      Single-row bronze-to-gold revenue reconciliation with documented exclusion buckets
+      (duplicate re-sends, POS training lane, unmapped SKUs).
+  - name: dq_scorecard
+    description: Data-quality scorecard (stretch goal). One row per check.
+    columns:
+      - name: check_name
+        data_tests: [unique, not_null]

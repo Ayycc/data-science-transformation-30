@@ -1,0 +1,19 @@
+[project]
+name = "retail-lakehouse"
+version = "1.0.0"
+description = "Day 01: Retail Medallion Lakehouse with dbt + DuckDB (synthetic data)"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["B905"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q -p no:warnings"

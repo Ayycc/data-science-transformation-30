@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: int_pos_order_lines__utc
+    description: POS lines with timestamps normalised to UTC using store timezone and the POS clock change log.
+  - name: int_order_lines__unioned
+    description: POS and web lines in a single shape (pre-dedup).
+  - name: int_order_lines__deduped
+    description: >
+      Incremental (delete+insert on order_line_id) deduplicated lines. Watermark is the
+      bronze `_load_id`, so late-arriving records are merged regardless of order date.
+    columns:
+      - name: order_line_id
+        data_tests: [unique, not_null]
+      - name: order_ts_utc
+        data_tests: [not_null]
+      - name: channel
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["store", "web"]
+      - name: copies_received
+        description: Number of times this line was delivered by the source (re-sends > 1).
+  - name: int_sku_product_map
+    description: Every SKU code ever issued mapped to its stable product_id.
+    columns:
+      - name: sku_code
+        data_tests: [unique, not_null]
+      - name: n_products
+        description: Must be 1 (SKU codes are never reused across products).
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [1]
+                quote: false
+  - name: int_order_lines__classified
+    description: Deduplicated lines with product_id resolved and an exclusion_reason (null = in scope).
+    columns:
+      - name: exclusion_reason
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["training_lane", "unmapped_sku"]
+  - name: int_returns__unmatched
+    description: Returns whose order line has not landed yet. Expected to be empty after a full load.

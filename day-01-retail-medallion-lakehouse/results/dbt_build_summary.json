@@ -1,0 +1,46 @@
+{
+  "phase1_fresh_db_build": {
+    "tests_total": 67,
+    "tests_passed": 67,
+    "models_built": 23,
+    "snapshots": 1,
+    "seeds": 1,
+    "failures": 0
+  },
+  "phase2_incremental_build": {
+    "tests_total": 67,
+    "tests_passed": 67,
+    "models_built": 23,
+    "snapshots": 1,
+    "seeds": 1,
+    "failures": 0
+  },
+  "catalog_extracts_replayed_into_snapshot": 25,
+  "docs_generated": true,
+  "raw": {
+    "phase1_build": {
+      "command": "build",
+      "success": true,
+      "counts": {
+        "exposure:no-op": 2,
+        "model:success": 23,
+        "seed:success": 1,
+        "snapshot:success": 1,
+        "test:pass": 67
+      },
+      "failures": []
+    },
+    "phase2_build": {
+      "command": "build",
+      "success": true,
+      "counts": {
+        "exposure:no-op": 2,
+        "model:success": 23,
+        "seed:success": 1,
+        "snapshot:success": 1,
+        "test:pass": 67
+      },
+      "failures": []
+    }
+  }
+}

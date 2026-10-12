@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: mart_daily_sales
+    description: Daily sales and refunds by channel and store.
+    columns:
+      - name: date_day
+        data_tests: [not_null]
+  - name: mart_cohort_retention
+    description: Monthly first-purchase cohorts (new customers only) with retention by months since first order.
+    columns:
+      - name: retention_rate
+        data_tests: [not_null]
+  - name: mart_basket_metrics
+    description: Basket size and value by month and channel.
+
+exposures:
+  - name: business_review_analysis
+    label: Retail business review (5 questions)
+    type: analysis
+    maturity: medium
+    url: https://github.com/Ayycc/data-science-transformation-30/tree/main/day-01-retail-medallion-lakehouse/results
+    description: >
+      `retail_lakehouse.analysis` answers five business questions from the gold layer and
+      writes charts and `business_questions.md` to results/.
+    depends_on:
+      - ref('mart_daily_sales')
+      - ref('mart_cohort_retention')
+      - ref('mart_basket_metrics')
+      - ref('fct_order_lines')
+      - ref('fct_returns')
+      - ref('dim_product')
+      - ref('audit_revenue_reconciliation')
+    owner:
+      name: Analytics Engineering
+  - name: data_quality_scorecard
+    label: Data quality scorecard
+    type: dashboard
+    maturity: low
+    description: DQ checks surfaced to the data platform team (results/dq_scorecard.csv).
+    depends_on:
+      - ref('dq_scorecard')
+    owner:
+      name: Data Platform

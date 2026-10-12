@@ -1,0 +1,2 @@
+bronze_rows,bronze_revenue,excluded_duplicate_rows,excluded_duplicate_revenue,excluded_training_rows,excluded_training_revenue,excluded_unmapped_rows,excluded_unmapped_revenue,expected_gold_revenue,gold_rows,gold_revenue,difference,abs_difference_pct,tolerance_pct
+2030157,126753122.68,30070,1903200.36,1226,71016.8,2001,131254.62,124647650.9,1996860,124647650.9,0.0,0.0,0.01

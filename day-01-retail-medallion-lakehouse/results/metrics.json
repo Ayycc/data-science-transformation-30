@@ -1,0 +1,269 @@
+{
+  "dataset": {
+    "synthetic": true,
+    "generator": "retail_lakehouse.generate (SYNTHETIC)",
+    "scale": "full",
+    "seed": 42,
+    "window_utc": [
+      "2024-10-01 00:00:00",
+      "2026-10-01 00:00:00"
+    ],
+    "orders": 833333,
+    "unique_order_lines": 2000087,
+    "raw_order_line_rows": 2030157,
+    "duplicate_rows_injected": 30070,
+    "late_pos_orders_injected": 16358,
+    "late_web_orders_injected": 2896,
+    "training_lines_injected": 1226,
+    "unmapped_sku_lines_injected": 2001,
+    "pos_rows_with_clock_drift": 43589,
+    "pos_rows_with_messy_sku_format": 26094,
+    "returns_unique": 147468,
+    "return_duplicate_rows_injected": 1497,
+    "customers": 50000,
+    "customer_duplicate_rows_injected": 1028,
+    "products": 5000,
+    "catalog_versions": 11219,
+    "price_changes": 5994,
+    "renames": 150,
+    "sku_recodes": 75,
+    "catalog_extracts": 25,
+    "stores_physical": 120
+  },
+  "row_counts": {
+    "audit.audit_revenue_reconciliation": 1,
+    "audit.dq_scorecard": 10,
+    "bronze._load_log": 82,
+    "bronze.customers": 51028,
+    "bronze.order_returns": 148965,
+    "bronze.pos_order_lines": 1314644,
+    "bronze.product_catalog": 119280,
+    "bronze.stores": 122,
+    "bronze.web_order_lines": 715513,
+    "gold.dim_customer": 50001,
+    "gold.dim_date": 1096,
+    "gold.dim_product": 11219,
+    "gold.dim_store": 121,
+    "gold.fct_order_lines": 1996860,
+    "gold.fct_returns": 147468,
+    "gold.mart_basket_metrics": 48,
+    "gold.mart_cohort_retention": 300,
+    "gold.mart_daily_sales": 86934,
+    "reference.pos_clock_changes": 8,
+    "silver.int_order_lines__classified": 2000087,
+    "silver.int_order_lines__deduped": 2000087,
+    "silver.int_order_lines__unioned": 2030157,
+    "silver.int_pos_order_lines__utc": 1314644,
+    "silver.int_returns__unmatched": 0,
+    "silver.int_sku_product_map": 5075,
+    "silver.stg_crm__customers": 50000,
+    "silver.stg_erp__product_catalog": 119280,
+    "silver.stg_erp__stores": 122,
+    "silver.stg_ops__order_returns": 147468,
+    "silver.stg_pos__order_lines": 1314644,
+    "silver.stg_web__order_lines": 715513,
+    "snapshots.snap_product_catalog": 11219
+  },
+  "revenue_reconciliation": {
+    "bronze_rows": 2030157,
+    "bronze_revenue": 126753122.68,
+    "excluded_duplicate_rows": 30070,
+    "excluded_duplicate_revenue": 1903200.36,
+    "excluded_training_rows": 1226,
+    "excluded_training_revenue": 71016.8,
+    "excluded_unmapped_rows": 2001,
+    "excluded_unmapped_revenue": 131254.62,
+    "expected_gold_revenue": 124647650.9,
+    "gold_rows": 1996860,
+    "gold_revenue": 124647650.9,
+    "difference": 0.0,
+    "abs_difference_pct": 0.0,
+    "tolerance_pct": 0.01
+  },
+  "revenue_reconciliation_within_tolerance": true,
+  "dq_scorecard": {
+    "checks": 10,
+    "passed": 10,
+    "results": {
+      "lines_without_product_version": {
+        "observed": 0.0,
+        "threshold": 0.0,
+        "passed": true
+      },
+      "returns_awaiting_order_line": {
+        "observed": 0.0,
+        "threshold": 0.0,
+        "passed": true
+      },
+      "pos_rows_clock_corrected_share": {
+        "observed": 0.033139625106253866,
+        "threshold": 1.0,
+        "passed": true
+      },
+      "revenue_recon_abs_diff_pct": {
+        "observed": 0.0,
+        "threshold": 0.01,
+        "passed": true
+      },
+      "scd2_overlapping_versions": {
+        "observed": 0.0,
+        "threshold": 0.0,
+        "passed": true
+      },
+      "late_arrival_rate": {
+        "observed": 0.023188491300628424,
+        "threshold": 0.05,
+        "passed": true
+      },
+      "bronze_duplicate_row_rate": {
+        "observed": 0.014811662349266584,
+        "threshold": 0.05,
+        "passed": true
+      },
+      "gold_duplicate_order_lines": {
+        "observed": 0.0,
+        "threshold": 0.0,
+        "passed": true
+      },
+      "pos_line_total_mismatches": {
+        "observed": 0.0,
+        "threshold": 0.0,
+        "passed": true
+      },
+      "unmapped_sku_rate": {
+        "observed": 0.0010004564801431137,
+        "threshold": 0.005,
+        "passed": true
+      }
+    }
+  },
+  "scd2": {
+    "dim_product_versions": 11219,
+    "products": 5000,
+    "products_with_history": 3568,
+    "products_with_recoded_sku": 75,
+    "products_renamed": 225,
+    "example_product_id": 1449,
+    "example_versions": 2,
+    "example_order_lines": 24840,
+    "example_mismatches": 0,
+    "all_lines_version_mismatches": 0
+  },
+  "dbt": {
+    "phase1_fresh_db_build": {
+      "tests_total": 67,
+      "tests_passed": 67,
+      "models_built": 23,
+      "snapshots": 1,
+      "seeds": 1,
+      "failures": 0
+    },
+    "phase2_incremental_build": {
+      "tests_total": 67,
+      "tests_passed": 67,
+      "models_built": 23,
+      "snapshots": 1,
+      "seeds": 1,
+      "failures": 0
+    },
+    "catalog_extracts_replayed_into_snapshot": 25,
+    "docs_generated": true
+  },
+  "incremental_phases": {
+    "phase1": {
+      "fct_order_lines": 1910926,
+      "net_revenue": 119280282.48,
+      "net_revenue_before_cutoff": 119280282.48,
+      "lines_before_cutoff": 1910926,
+      "fct_returns": 140129,
+      "returns_awaiting_order_line": 13,
+      "max_load_id": 1
+    },
+    "phase2": {
+      "fct_order_lines": 1996860,
+      "net_revenue": 124647650.9,
+      "net_revenue_before_cutoff": 119480394.58,
+      "lines_before_cutoff": 1914248,
+      "fct_returns": 147468,
+      "returns_awaiting_order_line": 0,
+      "max_load_id": 2
+    },
+    "phase2_first_order_date": "2026-09-01"
+  },
+  "q1_growth": {
+    "fy1_net_sales": 59109273.39,
+    "fy2_net_sales": 65538377.51,
+    "yoy_growth_pct": 10.88,
+    "web_yoy_growth_pct": 48.02,
+    "store_yoy_growth_pct": -5.03,
+    "web_share_fy1_pct": 29.98,
+    "web_share_fy2_pct": 40.02,
+    "peak_month": "2025-12-01 00:00:00",
+    "peak_month_net_sales": 8252510.99
+  },
+  "q2_categories": {
+    "top_category": "Footwear",
+    "top_category_net_after_returns": 26688293.61,
+    "top_category_share_pct": 23.15,
+    "highest_refund_rate_category": "Apparel",
+    "highest_refund_rate_pct": 11.87,
+    "overall_refund_rate_pct": 7.53
+  },
+  "q3_retention": {
+    "cohorts": 24,
+    "new_customers_in_cohorts": 26902,
+    "m1_retention_pct": 60.62,
+    "m3_retention_pct": 52.57,
+    "m6_retention_pct": 43.47,
+    "m12_retention_pct": 30.18
+  },
+  "q4_baskets": {
+    "store_aov": 149.63,
+    "store_units_per_basket": 3.33,
+    "store_multi_category_share": 0.7059,
+    "web_aov": 149.85,
+    "web_units_per_basket": 3.33,
+    "web_multi_category_share": 0.7066,
+    "store_orders": 539301,
+    "web_orders": 293307,
+    "holiday_aov": 149.47,
+    "non_holiday_aov": 149.78
+  },
+  "q5_reconciliation_and_timing": {
+    "naive_bronze_total": 126753122.68,
+    "gold_net_revenue": 124647650.9,
+    "overstatement_vs_gold_pct": 1.6891,
+    "duplicate_revenue": 1903200.36,
+    "training_revenue": 71016.8,
+    "unmapped_revenue": 131254.62,
+    "tz_lines_checked": 1996860,
+    "tz_exact_match_pct": 100.0,
+    "tz_drifted_lines": 42892,
+    "tz_drifted_exact_match_pct": 100.0,
+    "pos_lines_wrong_day_if_raw_timestamp_used": 8327,
+    "pos_revenue_wrong_day_if_raw_timestamp_used": 522254.32,
+    "pos_lines_wrong_day_if_utc_date_used": 273327,
+    "late_lines_merged_in_phase2": 3322,
+    "late_revenue_merged_in_phase2": 200112.1,
+    "returns_awaiting_line_after_phase1": 13,
+    "returns_awaiting_line_after_phase2": 0
+  },
+  "timings_s": {
+    "phase1_bronze_load_s": 9.04,
+    "snapshot_replay_s": 43.18,
+    "phase1_dbt_build_s": 30.56,
+    "phase2_bronze_load_s": 0.87,
+    "phase2_dbt_build_s": 9.58,
+    "dbt_docs_generate_s": 1.48,
+    "pipeline_total_s": 94.95,
+    "generate_s": 45.44,
+    "end_to_end_s": 142.23
+  },
+  "figures": [
+    "q1_monthly_net_sales_by_channel.png",
+    "q2_category_revenue_and_returns.png",
+    "q3_cohort_retention.png",
+    "q4_basket_value_by_channel.png",
+    "q5_revenue_reconciliation_waterfall.png"
+  ]
+}

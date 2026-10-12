@@ -1,0 +1,33 @@
+layer,table_name,table_type,rows
+audit,audit_revenue_reconciliation,BASE TABLE,1
+audit,dq_scorecard,BASE TABLE,10
+bronze,_load_log,BASE TABLE,82
+bronze,customers,BASE TABLE,51028
+bronze,order_returns,BASE TABLE,148965
+bronze,pos_order_lines,BASE TABLE,1314644
+bronze,product_catalog,BASE TABLE,119280
+bronze,stores,BASE TABLE,122
+bronze,web_order_lines,BASE TABLE,715513
+gold,dim_customer,BASE TABLE,50001
+gold,dim_date,BASE TABLE,1096
+gold,dim_product,BASE TABLE,11219
+gold,dim_store,BASE TABLE,121
+gold,fct_order_lines,BASE TABLE,1996860
+gold,fct_returns,BASE TABLE,147468
+gold,mart_basket_metrics,BASE TABLE,48
+gold,mart_cohort_retention,BASE TABLE,300
+gold,mart_daily_sales,BASE TABLE,86934
+reference,pos_clock_changes,BASE TABLE,8
+silver,int_order_lines__classified,BASE TABLE,2000087
+silver,int_order_lines__deduped,BASE TABLE,2000087
+silver,int_order_lines__unioned,VIEW,2030157
+silver,int_pos_order_lines__utc,VIEW,1314644
+silver,int_returns__unmatched,VIEW,0
+silver,int_sku_product_map,BASE TABLE,5075
+silver,stg_crm__customers,VIEW,50000
+silver,stg_erp__product_catalog,VIEW,119280
+silver,stg_erp__stores,VIEW,122
+silver,stg_ops__order_returns,VIEW,147468
+silver,stg_pos__order_lines,VIEW,1314644
+silver,stg_web__order_lines,VIEW,715513
+snapshots,snap_product_catalog,BASE TABLE,11219

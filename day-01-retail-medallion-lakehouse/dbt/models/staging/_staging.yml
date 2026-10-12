@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: stg_pos__order_lines
+    description: Typed store POS lines (silver). Duplicates still present; see int_order_lines__deduped.
+    columns:
+      - name: order_line_id
+        data_tests: [not_null]
+      - name: quantity
+        data_tests: [not_null]
+      - name: txn_ts_raw
+        description: Parsed POS timestamp, local or UTC depending on the store's clock mode.
+        data_tests: [not_null]
+  - name: stg_web__order_lines
+    description: Typed web order lines (silver).
+    columns:
+      - name: order_line_id
+        data_tests: [not_null]
+      - name: order_ts_utc
+        data_tests: [not_null]
+  - name: stg_ops__order_returns
+    description: Returns deduplicated on return_id.
+    columns:
+      - name: return_id
+        data_tests: [unique, not_null]
+      - name: reason_code
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["DAMAGED", "WRONG_SIZE", "NOT_AS_DESCRIBED", "CHANGED_MIND", "OTHER"]
+      - name: return_channel
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["store", "web"]
+  - name: stg_crm__customers
+    description: Latest CRM record per customer.
+    columns:
+      - name: customer_id
+        data_tests: [unique, not_null]
+      - name: loyalty_tier
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["Bronze", "Silver", "Gold"]
+  - name: stg_erp__stores
+    columns:
+      - name: store_id
+        data_tests: [unique, not_null]
+  - name: stg_erp__product_catalog
+    description: All monthly catalog extracts, typed.

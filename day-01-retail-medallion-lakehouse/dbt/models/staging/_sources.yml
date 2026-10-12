@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: >
+      Raw landing tables loaded verbatim from Parquet by `retail_lakehouse.bronze`.
+      SYNTHETIC data produced by the seeded generator. Every row carries `_source_file`
+      and `_load_id` (monotonic per load) for lineage and incremental watermarks.
+    schema: bronze
+    tables:
+      - name: pos_order_lines
+        description: >
+          Store POS export, one row per receipt line. All amounts are strings, timestamps
+          are local wall-clock time without an offset (except stores listed in
+          `pos_clock_changes`, which export UTC after their firmware upgrade). Contains
+          re-sent duplicates, late uploads, training-lane receipts and unmapped SKUs.
+        columns:
+          - name: order_line_id
+            description: Source-system line identifier (not unique in bronze because of re-sends).
+          - name: txn_ts
+            description: Transaction time as text, local time or UTC depending on clock mode.
+          - name: line_total
+            description: Net line amount after discount, as text in dollars.
+      - name: web_order_lines
+        description: E-commerce order lines. Amounts in integer cents, event time in epoch milliseconds (UTC).
+      - name: order_returns
+        description: Returns and refunds from both channels, in integer cents; may arrive before the order line.
+      - name: customers
+        description: CRM customer export. Contains stale duplicate records (older `updated_at`).
+      - name: stores
+        description: Store master, including the web store (0) and the POS training lane (999).
+      - name: product_catalog
+        description: >
+          Monthly product catalog extracts (one row per product per `extract_date`).
+          Replayed in order into the `snap_product_catalog` SCD2 snapshot.

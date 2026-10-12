@@ -1,0 +1,11 @@
+dimension,check_name,observed_value,threshold,comparison,passed
+completeness,lines_without_product_version,0.0,0.0,<=,True
+completeness,returns_awaiting_order_line,0.0,0.0,<=,True
+consistency,pos_rows_clock_corrected_share,0.033139625106253866,1.0,<=,True
+consistency,revenue_recon_abs_diff_pct,0.0,0.01,<=,True
+consistency,scd2_overlapping_versions,0.0,0.0,<=,True
+timeliness,late_arrival_rate,0.023188491300628424,0.05,<=,True
+uniqueness,bronze_duplicate_row_rate,0.014811662349266584,0.05,<=,True
+uniqueness,gold_duplicate_order_lines,0.0,0.0,<=,True
+validity,pos_line_total_mismatches,0.0,0.0,<=,True
+validity,unmapped_sku_rate,0.0010004564801431137,0.005,<=,True

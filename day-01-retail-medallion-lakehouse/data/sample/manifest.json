@@ -1,0 +1,30 @@
+{
+  "generator": "retail_lakehouse.generate (SYNTHETIC)",
+  "scale": "sample",
+  "seed": 42,
+  "window_utc": [
+    "2024-10-01 00:00:00",
+    "2026-10-01 00:00:00"
+  ],
+  "orders": 3333,
+  "unique_order_lines": 8057,
+  "raw_order_line_rows": 8194,
+  "duplicate_rows_injected": 137,
+  "late_pos_orders_injected": 59,
+  "late_web_orders_injected": 11,
+  "training_lines_injected": 6,
+  "unmapped_sku_lines_injected": 5,
+  "pos_rows_with_clock_drift": 203,
+  "pos_rows_with_messy_sku_format": 94,
+  "returns_unique": 618,
+  "return_duplicate_rows_injected": 9,
+  "customers": 1000,
+  "customer_duplicate_rows_injected": 9,
+  "products": 200,
+  "catalog_versions": 436,
+  "price_changes": 227,
+  "renames": 6,
+  "sku_recodes": 3,
+  "catalog_extracts": 25,
+  "stores_physical": 120
+}

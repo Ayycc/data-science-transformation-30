@@ -18,7 +18,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 <!-- PROGRESS:START -->
 | Day | Tier | Project | Domain | Key tools | Status | Prompt | Headline result |
 |---|---|---|---|---|---|---|---|
-| 01 | I Advanced | [Retail Medallion Lakehouse with dbt + DuckDB](./day-01-retail-medallion-lakehouse/) | Retail | DuckDB, dbt-duckdb, SQL | ⏳ Planned | [prompt](./prompts/day-01.md) | |
+| 01 | I Advanced | [Retail Medallion Lakehouse with dbt + DuckDB](./day-01-retail-medallion-lakehouse/) | Retail | DuckDB, dbt-duckdb, SQL | ✅ | [prompt](./prompts/day-01.md) | Gold reconciles to bronze to $0.00 on $124.6M over 2.0M synthetic order lines; 67/67 dbt tests pass |
 | 02 | I Advanced | [Card Fraud Detection at Speed with Polars + LightGBM](./day-02-card-fraud-polars-lightgbm/) | Financial services | Polars, LightGBM, SHAP | ⏳ Planned | [prompt](./prompts/day-02.md) | |
 | 03 | I Advanced | [Hospital Readmission Risk on an OMOP-style Model](./day-03-healthcare-readmission-omop/) | Healthcare | pandas, Pydantic, scikit-learn | ⏳ Planned | [prompt](./prompts/day-03.md) | |
 | 04 | I Advanced | [Grid Load Forecasting with Probabilistic Backtesting](./day-04-energy-load-forecasting-conformal/) | Energy & utilities | statsforecast, LightGBM, MAPIE | ⏳ Planned | [prompt](./prompts/day-04.md) | |
@@ -49,7 +49,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ⏳ Planned | [prompt](./prompts/day-29.md) | |
 | 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
 
-Last build: not started
+Last build: 2026-10-12
 <!-- PROGRESS:END -->
 
 ## How each project is structured
