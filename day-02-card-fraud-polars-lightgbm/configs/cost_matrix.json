@@ -1,0 +1,8 @@
+{
+  "currency": "USD",
+  "_comment": "Cost of each outcome = fixed + pct_of_amount * transaction amount. Edit to match your portfolio; make run re-selects the threshold.",
+  "false_negative": {"fixed": 25.0, "pct_of_amount": 1.0, "note": "missed fraud: issuer absorbs the full amount plus ~$25 dispute/chargeback handling"},
+  "false_positive": {"fixed": 12.0, "pct_of_amount": 0.03, "note": "false decline of a good customer: ~$12 servicing and attrition risk plus 3% lost interchange/spend"},
+  "true_positive": {"fixed": 6.0, "pct_of_amount": 0.0, "note": "correct decline: ~$6 alert handling and customer contact"},
+  "true_negative": {"fixed": 0.0, "pct_of_amount": 0.0, "note": "approved good transaction"}
+}

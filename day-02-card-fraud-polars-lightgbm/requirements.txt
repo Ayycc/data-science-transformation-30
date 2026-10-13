@@ -1,0 +1,15 @@
+# Pinned for Python 3.11-3.13 (CI uses 3.11; results were produced on 3.13).
+polars==2.0.0
+pandas==3.0.5
+numpy==2.4.6
+pyarrow==26.0.0
+lightgbm==4.7.0
+optuna==5.0.0
+shap==0.53.0; python_version >= "3.12"
+shap==0.51.0; python_version < "3.12"  # 0.53 has no 3.11 wheels
+scikit-learn==1.9.1
+scipy==1.18.1; python_version >= "3.12"
+scipy==1.17.1; python_version < "3.12"  # 1.18 has no 3.11 wheels
+matplotlib==3.11.2
+pytest==9.1.1
+ruff==0.17.0

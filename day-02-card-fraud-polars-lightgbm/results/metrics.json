@@ -1,0 +1,451 @@
+{
+  "data": {
+    "synthetic": true,
+    "generator": "card_fraud.generate (SYNTHETIC)",
+    "scale": {
+      "name": "full",
+      "n_cards": 100000,
+      "txn_rate_per_day": 0.28,
+      "fraud_events_per_card": 0.0195,
+      "n_trials": 12,
+      "neg_sample_rate": 0.1
+    },
+    "seed": 42,
+    "window": [
+      "2025-01-01 00:00:30",
+      "2025-06-30 23:59:55"
+    ],
+    "transactions": 5218972,
+    "cardholders_with_txns": 99999,
+    "merchants": 20331,
+    "fraud_campaigns": 1950,
+    "fraud_transactions": 12701,
+    "fraud_rate": 0.0024336210272827676,
+    "by_attack_type": {
+      "geo_impossible": {
+        "transactions": 2258,
+        "amount_usd": 465367.64
+      },
+      "account_takeover": {
+        "transactions": 3562,
+        "amount_usd": 1126828.68
+      },
+      "card_testing": {
+        "transactions": 6881,
+        "amount_usd": 767468.56
+      },
+      "none": {
+        "transactions": 5206271,
+        "amount_usd": 422300788.49
+      }
+    }
+  },
+  "feature_benchmark": {
+    "rows": 5218972,
+    "features": 24,
+    "polars_seconds": 9.594,
+    "pandas_seconds": 84.868,
+    "speedup": 8.85,
+    "max_relative_difference": 1.2928461027486652e-11,
+    "polars_version": "2.0.0",
+    "pandas_version": "3.0.5"
+  },
+  "split": {
+    "train": {
+      "from": "2025-01-01 00:00:30",
+      "to": "2025-04-30 23:59:55",
+      "rows": 3460813,
+      "fraud": 8279,
+      "fraud_rate": 0.0023922124656836413
+    },
+    "val": {
+      "from": "2025-05-01 00:00:09",
+      "to": "2025-05-31 23:59:59",
+      "rows": 893737,
+      "fraud": 2273,
+      "fraud_rate": 0.0025432537759989796
+    },
+    "test": {
+      "from": "2025-06-01 00:00:07",
+      "to": "2025-06-30 23:59:55",
+      "rows": 864422,
+      "fraud": 2149,
+      "fraud_rate": 0.0024860542651621545
+    },
+    "train_after_negative_downsampling": {
+      "rows": 353290,
+      "fraud": 8279,
+      "neg_sample_rate": 0.1
+    }
+  },
+  "tuning": {
+    "sampler": "TPE (seed 42)",
+    "n_trials": 12,
+    "objective": "validation PR-AUC (average precision)",
+    "best_value": 0.9528675878600807,
+    "best_params": {
+      "learning_rate": 0.06258525538070107,
+      "num_leaves": 34,
+      "min_child_samples": 37,
+      "feature_fraction": 0.728034992108518,
+      "bagging_fraction": 0.8925879806965068,
+      "lambda_l2": 0.007833642249746978,
+      "scale_pos_weight": 4.666963767236923
+    },
+    "best_iteration": 374
+  },
+  "ranking": {
+    "lightgbm": {
+      "val": {
+        "pr_auc": 0.9528675878600807,
+        "roc_auc": 0.9991194176331265,
+        "recall_at_fpr_0.1pct": 0.9467663880334359,
+        "recall_at_fpr_0.5pct": 0.9762428508578971,
+        "recall_at_fpr_1pct": 0.9863616366036075
+      },
+      "test": {
+        "pr_auc": 0.9609466491696922,
+        "roc_auc": 0.9995811761118819,
+        "recall_at_fpr_0.1pct": 0.9553280595625873,
+        "recall_at_fpr_0.5pct": 0.9855746859004187,
+        "recall_at_fpr_1pct": 0.993485342019544
+      }
+    },
+    "logistic_regression": {
+      "val": {
+        "pr_auc": 0.7863170146691612,
+        "roc_auc": 0.9964089358140465,
+        "recall_at_fpr_0.1pct": 0.7575890893092829,
+        "recall_at_fpr_0.5pct": 0.9269687637483502,
+        "recall_at_fpr_1pct": 0.9551253849538055
+      },
+      "test": {
+        "pr_auc": 0.7721827585274402,
+        "roc_auc": 0.9976639318117402,
+        "recall_at_fpr_0.1pct": 0.7817589576547231,
+        "recall_at_fpr_0.5pct": 0.93438808748255,
+        "recall_at_fpr_1pct": 0.9692880409492788
+      }
+    }
+  },
+  "cost_matrix": {
+    "currency": "USD",
+    "_comment": "Cost of each outcome = fixed + pct_of_amount * transaction amount. Edit to match your portfolio; make run re-selects the threshold.",
+    "false_negative": {
+      "fixed": 25.0,
+      "pct_of_amount": 1.0,
+      "note": "missed fraud: issuer absorbs the full amount plus ~$25 dispute/chargeback handling"
+    },
+    "false_positive": {
+      "fixed": 12.0,
+      "pct_of_amount": 0.03,
+      "note": "false decline of a good customer: ~$12 servicing and attrition risk plus 3% lost interchange/spend"
+    },
+    "true_positive": {
+      "fixed": 6.0,
+      "pct_of_amount": 0.0,
+      "note": "correct decline: ~$6 alert handling and customer contact"
+    },
+    "true_negative": {
+      "fixed": 0.0,
+      "pct_of_amount": 0.0,
+      "note": "approved good transaction"
+    }
+  },
+  "threshold": {
+    "selected_on": "validation (May 2025)",
+    "threshold": 0.6112268684338026,
+    "val_total_cost_at_threshold": 39033.081200000655,
+    "val_alerts": 2519,
+    "val_total_cost_approve_all": 485433.27,
+    "max_f1_threshold_val": 0.8866985853721281,
+    "logreg_threshold": 0.9879950141969568,
+    "test_cost_minimum_in_hindsight": 37565.21240000095,
+    "test_cost_at_selected": 41073.10430000094
+  },
+  "policies_test": {
+    "approve_all": {
+      "threshold": Infinity,
+      "alerts": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 2149,
+      "tn": 862273,
+      "recall": 0.0,
+      "precision": 0.0,
+      "fpr": 0.0,
+      "fraud_usd_total": 385860.31999999995,
+      "fraud_usd_caught": 0.0,
+      "fraud_usd_recall": 0.0,
+      "declined_good_usd": 0.0,
+      "true_positive_cost": 0.0,
+      "false_positive_cost": 0.0,
+      "false_negative_cost": 439585.31999999995,
+      "true_negative_cost": 0.0,
+      "total_cost": 439585.31999999995,
+      "savings_vs_approve_all": 0.0
+    },
+    "lightgbm_cost_optimal": {
+      "threshold": 0.6112268684338026,
+      "alerts": 2243,
+      "tp": 1983,
+      "fp": 260,
+      "fn": 166,
+      "tn": 862013,
+      "recall": 0.9227547696603071,
+      "precision": 0.884083816317432,
+      "fpr": 0.00030152863420285686,
+      "fraud_usd_total": 385860.31999999995,
+      "fraud_usd_caught": 364670.56,
+      "fraud_usd_recall": 0.9450843766469692,
+      "declined_good_usd": 23844.81,
+      "true_positive_cost": 11898.0,
+      "false_positive_cost": 3835.3442999999997,
+      "false_negative_cost": 25339.760000000002,
+      "true_negative_cost": 0.0,
+      "total_cost": 41073.1043,
+      "savings_vs_approve_all": 398512.21569999994
+    },
+    "lightgbm_threshold_0.5": {
+      "threshold": 0.5,
+      "alerts": 2371,
+      "tp": 2014,
+      "fp": 357,
+      "fn": 135,
+      "tn": 861916,
+      "recall": 0.9371800837598884,
+      "precision": 0.8494306199915648,
+      "fpr": 0.00041402200927084576,
+      "fraud_usd_total": 385860.31999999995,
+      "fraud_usd_caught": 368367.97,
+      "fraud_usd_recall": 0.9546666265139676,
+      "declined_good_usd": 34210.02,
+      "true_positive_cost": 12084.0,
+      "false_positive_cost": 5310.3006000000005,
+      "false_negative_cost": 20867.35,
+      "true_negative_cost": 0.0,
+      "total_cost": 38261.6506,
+      "savings_vs_approve_all": 401323.66939999996
+    },
+    "lightgbm_max_f1": {
+      "threshold": 0.8866985853721281,
+      "alerts": 1945,
+      "tp": 1868,
+      "fp": 77,
+      "fn": 281,
+      "tn": 862196,
+      "recall": 0.8692415076779898,
+      "precision": 0.9604113110539846,
+      "fpr": 8.929886474469223e-05,
+      "fraud_usd_total": 385860.31999999995,
+      "fraud_usd_caught": 351648.64999999997,
+      "fraud_usd_recall": 0.9113366463802238,
+      "declined_good_usd": 5627.540000000001,
+      "true_positive_cost": 11208.0,
+      "false_positive_cost": 1092.8262,
+      "false_negative_cost": 41236.67,
+      "true_negative_cost": 0.0,
+      "total_cost": 53537.4962,
+      "savings_vs_approve_all": 386047.82379999995
+    },
+    "lightgbm_cost_optimal_x0.5_alerts": {
+      "threshold": 0.9934021282165988,
+      "alerts": 1125,
+      "tp": 1122,
+      "fp": 3,
+      "fn": 1027,
+      "tn": 862270,
+      "recall": 0.5221033038622616,
+      "precision": 0.9973333333333333,
+      "fpr": 3.479176548494502e-06,
+      "fraud_usd_total": 385860.31999999995,
+      "fraud_usd_caught": 248465.40000000002,
+      "fraud_usd_recall": 0.6439257604928127,
+      "declined_good_usd": 230.82,
+      "true_positive_cost": 6732.0,
+      "false_positive_cost": 42.9246,
+      "false_negative_cost": 163069.92,
+      "true_negative_cost": 0.0,
+      "total_cost": 169844.8446,
+      "savings_vs_approve_all": 269740.47539999994
+    },
+    "lightgbm_cost_optimal_x2_alerts": {
+      "threshold": 0.08906202618733045,
+      "alerts": 4043,
+      "tp": 2092,
+      "fp": 1951,
+      "fn": 57,
+      "tn": 860322,
+      "recall": 0.9734760353652862,
+      "precision": 0.5174375463764531,
+      "fpr": 0.0022626244820375912,
+      "fraud_usd_total": 385860.31999999995,
+      "fraud_usd_caught": 378484.26,
+      "fraud_usd_recall": 0.9808841188956668,
+      "declined_good_usd": 207064.99,
+      "true_positive_cost": 12552.0,
+      "false_positive_cost": 29623.949699999997,
+      "false_negative_cost": 8801.06,
+      "true_negative_cost": 0.0,
+      "total_cost": 50977.009699999995,
+      "savings_vs_approve_all": 388608.31029999995
+    },
+    "logreg_cost_optimal": {
+      "threshold": 0.9879950141969568,
+      "alerts": 4322,
+      "tp": 1910,
+      "fp": 2412,
+      "fn": 239,
+      "tn": 859861,
+      "recall": 0.8887854816193579,
+      "precision": 0.4419250347061546,
+      "fpr": 0.0027972579449895797,
+      "fraud_usd_total": 385860.31999999995,
+      "fraud_usd_caught": 360708.38,
+      "fraud_usd_recall": 0.9348159458324194,
+      "declined_good_usd": 201414.57,
+      "true_positive_cost": 11460.0,
+      "false_positive_cost": 34986.437099999996,
+      "false_negative_cost": 31126.94,
+      "true_negative_cost": 0.0,
+      "total_cost": 77573.3771,
+      "savings_vs_approve_all": 362011.94289999997
+    }
+  },
+  "recall_by_attack_type_test": [
+    {
+      "attack_type": "account_takeover",
+      "transactions": 583,
+      "caught": 460,
+      "fraud_usd": 197815.74,
+      "caught_usd": 178702.72999999998,
+      "recall": 0.7890222984562607,
+      "usd_recall": 0.9033797310567905
+    },
+    {
+      "attack_type": "card_testing",
+      "transactions": 1237,
+      "caught": 1204,
+      "fraud_usd": 120122.04999999999,
+      "caught_usd": 119140.09999999998,
+      "recall": 0.973322554567502,
+      "usd_recall": 0.9918253975852059
+    },
+    {
+      "attack_type": "geo_impossible",
+      "transactions": 329,
+      "caught": 319,
+      "fraud_usd": 67922.52999999998,
+      "caught_usd": 66827.72999999998,
+      "recall": 0.9696048632218845,
+      "usd_recall": 0.9838816369178238
+    }
+  ],
+  "calibration": {
+    "method": "isotonic regression fitted on validation scores, evaluated on test",
+    "brier_raw": 0.00047506583403666405,
+    "brier_isotonic": 0.00033770474176610295,
+    "ece_raw": 0.0007686525846054583,
+    "ece_isotonic": 0.00012705031545318104,
+    "mean_score_raw": 0.003254706849767614,
+    "mean_score_isotonic": 0.0023675556460190676,
+    "observed_fraud_rate": 0.0024860542651621545
+  },
+  "explainability": {
+    "shap_sample": {
+      "fraud": 2149,
+      "legit": 4298
+    },
+    "shap_vs_lightgbm_pred_contrib_max_abs_diff": 0.0,
+    "top_features": [
+      {
+        "feature": "mcc_code",
+        "mean_abs_shap": 1.4138746467956378,
+        "share": 0.14566189025285672
+      },
+      {
+        "feature": "device_prior_txn_count",
+        "mean_abs_shap": 1.314625494631472,
+        "share": 0.1354369250177913
+      },
+      {
+        "feature": "dist_from_centroid_km",
+        "mean_abs_shap": 1.1262685583202217,
+        "share": 0.11603179073130082
+      },
+      {
+        "feature": "card_txn_count_24h",
+        "mean_abs_shap": 0.9584371227244861,
+        "share": 0.09874125920636645
+      },
+      {
+        "feature": "secs_since_prev",
+        "mean_abs_shap": 0.7395560982284022,
+        "share": 0.07619143568358158
+      },
+      {
+        "feature": "card_txn_index",
+        "mean_abs_shap": 0.6628745216368548,
+        "share": 0.0682914542961167
+      },
+      {
+        "feature": "speed_kmh",
+        "mean_abs_shap": 0.5769180615174583,
+        "share": 0.05943594472968389
+      },
+      {
+        "feature": "merchant_risk_te",
+        "mean_abs_shap": 0.3761935893608142,
+        "share": 0.038756667326550885
+      }
+    ],
+    "alerts_explained": 2243,
+    "examples": {
+      "card_testing": {
+        "txn_id": 4492300,
+        "score": 0.9999401752685005,
+        "reasons": [
+          "card transactions in the last 24h = 10",
+          "card transactions in the last hour = 10",
+          "distance from the card's usual location = 2,196 km"
+        ]
+      },
+      "account_takeover": {
+        "txn_id": 5017132,
+        "score": 0.9999453703138792,
+        "reasons": [
+          "distance from the card's usual location = 2,667 km",
+          "card transactions in the last 24h = 5",
+          "card spend in the last 24h = $1,511.74"
+        ]
+      },
+      "geo_impossible": {
+        "txn_id": 4931016,
+        "score": 0.9998895711229618,
+        "reasons": [
+          "distance from the card's usual location = 10,277 km",
+          "card transactions in the last 24h = 5",
+          "time since the card's previous transaction = 10.4 min"
+        ]
+      }
+    }
+  },
+  "runtime_seconds": {
+    "generate_data": 21.9,
+    "features_and_benchmark": 99.2,
+    "optuna_tuning": 429.4,
+    "final_fit": 32.5,
+    "logreg_fit": 7.7,
+    "shap": 11.3,
+    "pipeline_total_excluding_generation": 602.9,
+    "make_run_total": 624.8
+  },
+  "environment": {
+    "python": "3.13.16",
+    "lightgbm": "4.7.0",
+    "optuna": "5.0.0",
+    "shap": "0.53.0",
+    "scikit_learn": "1.9.1",
+    "cpu_count": 4
+  }
+}

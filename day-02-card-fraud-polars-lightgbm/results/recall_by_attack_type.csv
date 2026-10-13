@@ -1,0 +1,4 @@
+attack_type,transactions,caught,fraud_usd,caught_usd,recall,usd_recall
+account_takeover,583,460,197815.7400,178702.7300,0.7890,0.9034
+card_testing,1237,1204,120122.0500,119140.1000,0.9733,0.9918
+geo_impossible,329,319,67922.5300,66827.7300,0.9696,0.9839

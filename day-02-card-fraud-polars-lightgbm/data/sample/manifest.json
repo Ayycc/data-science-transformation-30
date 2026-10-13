@@ -1,0 +1,40 @@
+{
+  "generator": "card_fraud.generate (SYNTHETIC)",
+  "scale": {
+    "name": "sample",
+    "n_cards": 600,
+    "txn_rate_per_day": 0.28,
+    "fraud_events_per_card": 0.12,
+    "n_trials": 3,
+    "neg_sample_rate": 1.0
+  },
+  "seed": 42,
+  "window": [
+    "2025-01-01 00:24:40",
+    "2025-06-30 23:57:27"
+  ],
+  "transactions": 31155,
+  "cardholders_with_txns": 600,
+  "merchants": 1180,
+  "fraud_campaigns": 72,
+  "fraud_transactions": 430,
+  "fraud_rate": 0.01380195795217461,
+  "by_attack_type": {
+    "geo_impossible": {
+      "transactions": 72,
+      "amount_usd": 16438.46
+    },
+    "account_takeover": {
+      "transactions": 138,
+      "amount_usd": 41406.27
+    },
+    "card_testing": {
+      "transactions": 220,
+      "amount_usd": 26974.67
+    },
+    "none": {
+      "transactions": 30725,
+      "amount_usd": 2564618.98
+    }
+  }
+}
