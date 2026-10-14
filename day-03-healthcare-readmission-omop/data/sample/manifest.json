@@ -1,0 +1,62 @@
+{
+  "synthetic": true,
+  "scale": "sample",
+  "seed": 43,
+  "n_patients": 800,
+  "window": [
+    "2021-01-01",
+    "2024-12-31"
+  ],
+  "bundles_per_ehr": {
+    "ehr_a": 370,
+    "ehr_b": 279,
+    "ehr_c": 151
+  },
+  "resources": {
+    "Condition": 3953,
+    "Encounter": 8191,
+    "MedicationRequest": 10518,
+    "Observation": 13000,
+    "Patient": 801,
+    "Procedur": 1
+  },
+  "corrupted_bundles": {
+    "bundle-b000045": "encounter_after_death",
+    "bundle-b000129": "missing_subject",
+    "bundle-b000200": "bad_gender",
+    "bundle-a000201": "future_birthdate",
+    "bundle-b000219": "unknown_unit",
+    "bundle-b000231": "implausible_value",
+    "bundle-a000282": "end_before_start",
+    "bundle-a000302": "future_birthdate",
+    "bundle-c000310": "dangling_encounter_ref",
+    "bundle-b000321": "bad_gender",
+    "bundle-a000389": "implausible_value",
+    "bundle-a000420": "dangling_encounter_ref",
+    "bundle-a000441": "two_patients",
+    "bundle-a000545": "missing_subject",
+    "bundle-a000549": "future_birthdate",
+    "bundle-a000580": "encounter_after_death",
+    "bundle-a000591": "future_birthdate",
+    "bundle-a000608": "encounter_after_death",
+    "bundle-b000639": "unknown_unit",
+    "bundle-b000704": "unknown_resource_type",
+    "bundle-b000754": "dangling_encounter_ref",
+    "bundle-b000783": "implausible_value"
+  },
+  "corruption_counts": {
+    "bad_gender": 2,
+    "dangling_encounter_ref": 3,
+    "encounter_after_death": 3,
+    "end_before_start": 1,
+    "future_birthdate": 4,
+    "implausible_value": 3,
+    "missing_subject": 2,
+    "two_patients": 1,
+    "unknown_resource_type": 1,
+    "unknown_unit": 2
+  },
+  "synthea_probe": "not probed",
+  "data_path_used": "synthetic_generator",
+  "generate_seconds": 1.3
+}

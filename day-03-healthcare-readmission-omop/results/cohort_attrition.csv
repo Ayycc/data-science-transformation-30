@@ -1,0 +1,10 @@
+step,n,n_unplanned_readmit_30d
+01 discharge inside 365-day lookback,6053,745.0
+02 under 30 days of follow-up left,370,26.0
+03 age under 18,22,2.0
+04 died in hospital,388,0.0
+05 transferred to another acute hospital,338,8.0
+06 left against medical advice,135,38.0
+07 planned admission for chemotherapy,1123,143.0
+08 died within 30 days before any readmission,252,0.0
+99 eligible index admission,9301,1563.0

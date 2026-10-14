@@ -1,0 +1,376 @@
+{
+  "synthetic_data": true,
+  "data_path_used": "synthetic_generator",
+  "scale": "full",
+  "n_patients_generated": 20000,
+  "validation": {
+    "bundles_read": 20000,
+    "bundles_valid": 19801,
+    "bundles_rejected": 199,
+    "rejections_by_rule": {
+      "Condition/# references Encounter/#, not in bundle": 22,
+      "Encounter.period": 18,
+      "Encounter.subject": 16,
+      "Encounter/# starts #, after the patient's death #": 24,
+      "Observation": 41,
+      "Patient.birthDate": 21,
+      "Patient.gender": 15,
+      "bundle must contain exactly one Patient, found #": 19,
+      "resource": 23
+    },
+    "injected_defects": 199,
+    "injected_defects_rejected": 199,
+    "rejected_without_injected_defect": 0,
+    "by_defect_type": {
+      "bad_gender": {
+        "injected": 15,
+        "rejected": 15
+      },
+      "dangling_encounter_ref": {
+        "injected": 22,
+        "rejected": 22
+      },
+      "encounter_after_death": {
+        "injected": 24,
+        "rejected": 24
+      },
+      "end_before_start": {
+        "injected": 18,
+        "rejected": 18
+      },
+      "future_birthdate": {
+        "injected": 21,
+        "rejected": 21
+      },
+      "implausible_value": {
+        "injected": 26,
+        "rejected": 26
+      },
+      "missing_subject": {
+        "injected": 16,
+        "rejected": 16
+      },
+      "two_patients": {
+        "injected": 19,
+        "rejected": 19
+      },
+      "unknown_resource_type": {
+        "injected": 23,
+        "rejected": 23
+      },
+      "unknown_unit": {
+        "injected": 15,
+        "rejected": 15
+      }
+    }
+  },
+  "omop_row_counts": {
+    "person": 19801,
+    "death": 1811,
+    "visit_occurrence": 201213,
+    "condition_occurrence": 95880,
+    "drug_exposure": 256719,
+    "measurement": 312378
+  },
+  "cohort": {
+    "attrition": [
+      {
+        "step": "01 discharge inside 365-day lookback",
+        "n": 6053,
+        "n_unplanned_readmit_30d": 745.0
+      },
+      {
+        "step": "02 under 30 days of follow-up left",
+        "n": 370,
+        "n_unplanned_readmit_30d": 26.0
+      },
+      {
+        "step": "03 age under 18",
+        "n": 22,
+        "n_unplanned_readmit_30d": 2.0
+      },
+      {
+        "step": "04 died in hospital",
+        "n": 388,
+        "n_unplanned_readmit_30d": 0.0
+      },
+      {
+        "step": "05 transferred to another acute hospital",
+        "n": 338,
+        "n_unplanned_readmit_30d": 8.0
+      },
+      {
+        "step": "06 left against medical advice",
+        "n": 135,
+        "n_unplanned_readmit_30d": 38.0
+      },
+      {
+        "step": "07 planned admission for chemotherapy",
+        "n": 1123,
+        "n_unplanned_readmit_30d": 143.0
+      },
+      {
+        "step": "08 died within 30 days before any readmission",
+        "n": 252,
+        "n_unplanned_readmit_30d": 0.0
+      },
+      {
+        "step": "99 eligible index admission",
+        "n": 9301,
+        "n_unplanned_readmit_30d": 1563.0
+      }
+    ],
+    "n_index_admissions": 9301,
+    "n_patients": 5932,
+    "readmission_rate": 0.16804644661864315,
+    "planned_readmissions_within_30d_not_counted": 305,
+    "fingerprint_sha256": "decfa457f68d85908ae862f796175c3f294c596fb08396fe4aa9c7c6ea91bad1",
+    "train": {
+      "n": 6392,
+      "events": 1048,
+      "discharges": "<= 2023-12-31"
+    },
+    "test": {
+      "n": 2909,
+      "events": 515,
+      "discharges": "> 2023-12-31"
+    }
+  },
+  "primary_model": "logistic_l2",
+  "train_oof": {
+    "logistic_l2": {
+      "n": 6392,
+      "events": 1048,
+      "observed_rate": 0.1639549436795995,
+      "mean_predicted": 0.16345450524511987,
+      "o_e_ratio": 1.0030616374490822,
+      "auroc": 0.7792885721876855,
+      "auprc": 0.46585931098424704,
+      "brier": 0.11205211166569481,
+      "scaled_brier": 0.18254125177708058,
+      "log_loss": 0.3685353263641905,
+      "calibration_slope": 1.0457897629949466,
+      "calibration_intercept": 0.004400298264212839
+    },
+    "gbm_calibrated": {
+      "n": 6392,
+      "events": 1048,
+      "observed_rate": 0.1639549436795995,
+      "mean_predicted": 0.16120277522505827,
+      "o_e_ratio": 1.0170727113767049,
+      "auroc": 0.7711741355076108,
+      "auprc": 0.4615072765616556,
+      "brier": 0.11381425501569069,
+      "scaled_brier": 0.16968580911148756,
+      "log_loss": 0.37344449738859464,
+      "calibration_slope": 1.1100611620881229,
+      "calibration_intercept": 0.023558615532210572
+    }
+  },
+  "test": {
+    "logistic_l2": {
+      "n": 2909,
+      "events": 515,
+      "observed_rate": 0.17703678239944998,
+      "mean_predicted": 0.17339326801221724,
+      "o_e_ratio": 1.021013009495709,
+      "auroc": 0.7823717870728603,
+      "auprc": 0.4653509475000504,
+      "brier": 0.12001910039808221,
+      "scaled_brier": 0.17622912221023146,
+      "log_loss": 0.3865454030095727,
+      "calibration_slope": 1.0177588907503936,
+      "calibration_intercept": 0.03062727216595912,
+      "ci95": {
+        "auroc": [
+          0.7559425835681002,
+          0.8062547535862709
+        ],
+        "brier": [
+          0.11068709626363357,
+          0.12813894397757467
+        ],
+        "calibration_slope": [
+          0.927584281105739,
+          1.112756725181239
+        ],
+        "calibration_intercept": [
+          -0.08389968146797354,
+          0.12543922018796627
+        ]
+      }
+    },
+    "gbm_calibrated": {
+      "n": 2909,
+      "events": 515,
+      "observed_rate": 0.17703678239944998,
+      "mean_predicted": 0.17214712090497936,
+      "o_e_ratio": 1.0284039690513882,
+      "auroc": 0.7830133586393168,
+      "auprc": 0.47510970841932015,
+      "brier": 0.11909986931578272,
+      "scaled_brier": 0.1825384162563114,
+      "log_loss": 0.38533061960066745,
+      "calibration_slope": 1.1042068410041876,
+      "calibration_intercept": 0.040285711405868084,
+      "ci95": {
+        "auroc": [
+          0.7566273717280012,
+          0.806994252650905
+        ],
+        "brier": [
+          0.10982154662609252,
+          0.12728174770201955
+        ],
+        "calibration_slope": [
+          1.0047080788845,
+          1.217242441344162
+        ],
+        "calibration_intercept": [
+          -0.07266641606413658,
+          0.13175265292929902
+        ]
+      }
+    },
+    "lace": {
+      "n": 2909,
+      "events": 515,
+      "observed_rate": 0.17703678239944998,
+      "mean_predicted": 0.1695877786655146,
+      "o_e_ratio": 1.0439241777476629,
+      "auroc": 0.7069015581023758,
+      "auprc": 0.3293772840072862,
+      "brier": 0.13285068802856456,
+      "scaled_brier": 0.08815740553564388,
+      "log_loss": 0.42600052631548363,
+      "calibration_slope": 1.0057672069432282,
+      "calibration_intercept": 0.05673517979786891,
+      "ci95": {
+        "auroc": [
+          0.6775720265417735,
+          0.7340776316632617
+        ],
+        "brier": [
+          0.1216494581651022,
+          0.1427690835741956
+        ],
+        "calibration_slope": [
+          0.859066273178337,
+          1.1647050677513697
+        ],
+        "calibration_intercept": [
+          -0.07634537458547712,
+          0.17393251361539577
+        ]
+      },
+      "raw_score_auroc": 0.7069015581023758
+    }
+  },
+  "calibration_slope_acceptance_0.8_1.2": {
+    "logistic_l2": true,
+    "gbm_calibrated": true,
+    "lace": true
+  },
+  "decision_curve": {
+    "at_thresholds": {
+      "0.10": {
+        "net_benefit": {
+          "logistic_l2": 0.10652763454413505,
+          "gbm_calibrated": 0.10580191742103054,
+          "lace": 0.09239524846262555,
+          "treat_all": 0.08559642488827775
+        },
+        "primary_flagged_share": 0.5641113784805775,
+        "primary_sensitivity": 0.8601941747572815,
+        "primary_ppv": 0.2699573430834857
+      },
+      "0.15": {
+        "net_benefit": {
+          "logistic_l2": 0.0840191697167007,
+          "gbm_calibrated": 0.08410005459729439,
+          "lace": 0.06478878935554971,
+          "treat_all": 0.03180797929347057
+        },
+        "primary_flagged_share": 0.3901684427638364,
+        "primary_sensitivity": 0.7339805825242719,
+        "primary_ppv": 0.33303964757709253
+      },
+      "0.20": {
+        "net_benefit": {
+          "logistic_l2": 0.06763492609144035,
+          "gbm_calibrated": 0.06806462701959437,
+          "lace": 0.05061876933654177,
+          "treat_all": -0.02870402200068753
+        },
+        "primary_flagged_share": 0.28979030594706084,
+        "primary_sensitivity": 0.6330097087378641,
+        "primary_ppv": 0.3867141162514828
+      },
+      "0.30": {
+        "net_benefit": {
+          "logistic_l2": 0.04640770024063251,
+          "gbm_calibrated": 0.04542552669056622,
+          "lace": 0.021165840003928696,
+          "treat_all": -0.1756617394293572
+        },
+        "primary_flagged_share": 0.16328635269852182,
+        "primary_sensitivity": 0.4601941747572815,
+        "primary_ppv": 0.49894736842105264
+      }
+    },
+    "primary_vs_default_strategies": {
+      "thresholds_evaluated": [
+        0.02,
+        0.5
+      ],
+      "n_thresholds": 49,
+      "n_where_primary_beats_treat_all_and_none": 49,
+      "thresholds_where_it_does_not": []
+    }
+  },
+  "survival": {
+    "km_by_risk_quartile": {
+      "Q1 (lowest)": {
+        "n": 728,
+        "mean_predicted": 0.04465704386016354,
+        "cum_incidence_day7": 0.012362637362637319,
+        "cum_incidence_day30": 0.03434065934065933
+      },
+      "Q2": {
+        "n": 727,
+        "mean_predicted": 0.08756387839048671,
+        "cum_incidence_day7": 0.03438789546079757,
+        "cum_incidence_day30": 0.09078404401650564
+      },
+      "Q3": {
+        "n": 727,
+        "mean_predicted": 0.16094720482333139,
+        "cum_incidence_day7": 0.06602475928473184,
+        "cum_incidence_day30": 0.16506189821182926
+      },
+      "Q4 (highest)": {
+        "n": 727,
+        "mean_predicted": 0.40058202368761375,
+        "cum_incidence_day7": 0.1980742778541954,
+        "cum_incidence_day30": 0.4181568088033013
+      }
+    },
+    "median_days_to_readmission": 9.0,
+    "share_within_7_days": 0.4388349514563107
+  },
+  "oracle": {
+    "auroc_generator_hazard": 0.8042367244973275,
+    "note": "AUROC of the generator's own readmission probability on the test cohort (ceiling)."
+  },
+  "hyperparameters": {
+    "logistic_l2_C": 0.004641588833612777
+  },
+  "runtime_seconds": {
+    "validate_s": 65.8,
+    "normalise_s": 11.1,
+    "sql_s": 0.7,
+    "pipeline_total": 263.0,
+    "generate_s": 39.0,
+    "make_run_total": 302.9
+  }
+}
