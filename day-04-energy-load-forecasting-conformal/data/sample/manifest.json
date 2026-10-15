@@ -1,0 +1,18 @@
+{
+  "scale": "sample",
+  "seed": 43,
+  "public_probe": {
+    "skipped": true
+  },
+  "path_used": "synthetic_generator",
+  "start": "2024-01-01",
+  "end_exclusive": "2024-08-01",
+  "regions": [
+    "NORTH",
+    "CENTRAL"
+  ],
+  "rows": 10224,
+  "synthetic": true,
+  "file": "data/sample/load.csv.gz",
+  "file_bytes": 107848
+}

@@ -1,0 +1,1201 @@
+model,region,horizon,coverage,n
+AutoARIMA,CENTRAL,1,0.67262,336
+AutoARIMA,CENTRAL,2,0.80060,336
+AutoARIMA,CENTRAL,3,0.88690,336
+AutoARIMA,CENTRAL,4,0.91667,336
+AutoARIMA,CENTRAL,5,0.92560,336
+AutoARIMA,CENTRAL,6,0.91071,336
+AutoARIMA,CENTRAL,7,0.81250,336
+AutoARIMA,CENTRAL,8,0.71429,336
+AutoARIMA,CENTRAL,9,0.63988,336
+AutoARIMA,CENTRAL,10,0.61905,336
+AutoARIMA,CENTRAL,11,0.67560,336
+AutoARIMA,CENTRAL,12,0.81250,336
+AutoARIMA,CENTRAL,13,0.91071,336
+AutoARIMA,CENTRAL,14,0.93155,336
+AutoARIMA,CENTRAL,15,0.90774,336
+AutoARIMA,CENTRAL,16,0.90179,336
+AutoARIMA,CENTRAL,17,0.85417,336
+AutoARIMA,CENTRAL,18,0.82738,336
+AutoARIMA,CENTRAL,19,0.83929,336
+AutoARIMA,CENTRAL,20,0.88095,336
+AutoARIMA,CENTRAL,21,0.92560,336
+AutoARIMA,CENTRAL,22,0.95536,336
+AutoARIMA,CENTRAL,23,0.96726,336
+AutoARIMA,CENTRAL,24,0.97024,336
+AutoARIMA,EAST,1,0.68155,336
+AutoARIMA,EAST,2,0.81548,336
+AutoARIMA,EAST,3,0.90476,336
+AutoARIMA,EAST,4,0.93452,336
+AutoARIMA,EAST,5,0.93452,336
+AutoARIMA,EAST,6,0.91667,336
+AutoARIMA,EAST,7,0.83929,336
+AutoARIMA,EAST,8,0.69643,336
+AutoARIMA,EAST,9,0.61905,336
+AutoARIMA,EAST,10,0.58929,336
+AutoARIMA,EAST,11,0.68155,336
+AutoARIMA,EAST,12,0.80357,336
+AutoARIMA,EAST,13,0.92560,336
+AutoARIMA,EAST,14,0.94345,336
+AutoARIMA,EAST,15,0.93155,336
+AutoARIMA,EAST,16,0.90179,336
+AutoARIMA,EAST,17,0.87798,336
+AutoARIMA,EAST,18,0.83036,336
+AutoARIMA,EAST,19,0.83631,336
+AutoARIMA,EAST,20,0.89881,336
+AutoARIMA,EAST,21,0.94345,336
+AutoARIMA,EAST,22,0.96726,336
+AutoARIMA,EAST,23,0.97321,336
+AutoARIMA,EAST,24,0.98214,336
+AutoARIMA,NORTH,1,0.72024,336
+AutoARIMA,NORTH,2,0.82738,336
+AutoARIMA,NORTH,3,0.88988,336
+AutoARIMA,NORTH,4,0.91667,336
+AutoARIMA,NORTH,5,0.91369,336
+AutoARIMA,NORTH,6,0.86905,336
+AutoARIMA,NORTH,7,0.77083,336
+AutoARIMA,NORTH,8,0.69643,336
+AutoARIMA,NORTH,9,0.63393,336
+AutoARIMA,NORTH,10,0.61905,336
+AutoARIMA,NORTH,11,0.65774,336
+AutoARIMA,NORTH,12,0.78869,336
+AutoARIMA,NORTH,13,0.91071,336
+AutoARIMA,NORTH,14,0.94345,336
+AutoARIMA,NORTH,15,0.94048,336
+AutoARIMA,NORTH,16,0.88988,336
+AutoARIMA,NORTH,17,0.86905,336
+AutoARIMA,NORTH,18,0.83333,336
+AutoARIMA,NORTH,19,0.83929,336
+AutoARIMA,NORTH,20,0.89881,336
+AutoARIMA,NORTH,21,0.94643,336
+AutoARIMA,NORTH,22,0.97321,336
+AutoARIMA,NORTH,23,0.98214,336
+AutoARIMA,NORTH,24,0.98214,336
+AutoARIMA,SOUTH,1,0.65476,336
+AutoARIMA,SOUTH,2,0.82738,336
+AutoARIMA,SOUTH,3,0.89583,336
+AutoARIMA,SOUTH,4,0.92262,336
+AutoARIMA,SOUTH,5,0.94345,336
+AutoARIMA,SOUTH,6,0.93452,336
+AutoARIMA,SOUTH,7,0.88690,336
+AutoARIMA,SOUTH,8,0.81548,336
+AutoARIMA,SOUTH,9,0.73214,336
+AutoARIMA,SOUTH,10,0.70833,336
+AutoARIMA,SOUTH,11,0.76786,336
+AutoARIMA,SOUTH,12,0.84524,336
+AutoARIMA,SOUTH,13,0.89881,336
+AutoARIMA,SOUTH,14,0.87500,336
+AutoARIMA,SOUTH,15,0.85119,336
+AutoARIMA,SOUTH,16,0.82440,336
+AutoARIMA,SOUTH,17,0.80060,336
+AutoARIMA,SOUTH,18,0.79762,336
+AutoARIMA,SOUTH,19,0.80060,336
+AutoARIMA,SOUTH,20,0.83333,336
+AutoARIMA,SOUTH,21,0.86905,336
+AutoARIMA,SOUTH,22,0.88690,336
+AutoARIMA,SOUTH,23,0.88988,336
+AutoARIMA,SOUTH,24,0.91071,336
+AutoARIMA,WEST,1,0.65476,336
+AutoARIMA,WEST,2,0.78869,336
+AutoARIMA,WEST,3,0.88095,336
+AutoARIMA,WEST,4,0.90476,336
+AutoARIMA,WEST,5,0.91667,336
+AutoARIMA,WEST,6,0.89881,336
+AutoARIMA,WEST,7,0.80655,336
+AutoARIMA,WEST,8,0.67560,336
+AutoARIMA,WEST,9,0.60119,336
+AutoARIMA,WEST,10,0.59226,336
+AutoARIMA,WEST,11,0.63988,336
+AutoARIMA,WEST,12,0.76488,336
+AutoARIMA,WEST,13,0.91071,336
+AutoARIMA,WEST,14,0.95238,336
+AutoARIMA,WEST,15,0.93750,336
+AutoARIMA,WEST,16,0.91369,336
+AutoARIMA,WEST,17,0.85417,336
+AutoARIMA,WEST,18,0.82143,336
+AutoARIMA,WEST,19,0.84226,336
+AutoARIMA,WEST,20,0.90476,336
+AutoARIMA,WEST,21,0.95536,336
+AutoARIMA,WEST,22,0.98512,336
+AutoARIMA,WEST,23,0.99107,336
+AutoARIMA,WEST,24,0.99702,336
+AutoETS,CENTRAL,1,0.92560,336
+AutoETS,CENTRAL,2,0.91964,336
+AutoETS,CENTRAL,3,0.90774,336
+AutoETS,CENTRAL,4,0.87798,336
+AutoETS,CENTRAL,5,0.85417,336
+AutoETS,CENTRAL,6,0.83631,336
+AutoETS,CENTRAL,7,0.76786,336
+AutoETS,CENTRAL,8,0.69643,336
+AutoETS,CENTRAL,9,0.61607,336
+AutoETS,CENTRAL,10,0.58333,336
+AutoETS,CENTRAL,11,0.64286,336
+AutoETS,CENTRAL,12,0.73810,336
+AutoETS,CENTRAL,13,0.80952,336
+AutoETS,CENTRAL,14,0.84821,336
+AutoETS,CENTRAL,15,0.80357,336
+AutoETS,CENTRAL,16,0.76488,336
+AutoETS,CENTRAL,17,0.74107,336
+AutoETS,CENTRAL,18,0.70536,336
+AutoETS,CENTRAL,19,0.70536,336
+AutoETS,CENTRAL,20,0.75595,336
+AutoETS,CENTRAL,21,0.80655,336
+AutoETS,CENTRAL,22,0.85714,336
+AutoETS,CENTRAL,23,0.89583,336
+AutoETS,CENTRAL,24,0.90179,336
+AutoETS,EAST,1,0.93155,336
+AutoETS,EAST,2,0.91369,336
+AutoETS,EAST,3,0.90774,336
+AutoETS,EAST,4,0.88988,336
+AutoETS,EAST,5,0.86607,336
+AutoETS,EAST,6,0.83929,336
+AutoETS,EAST,7,0.77679,336
+AutoETS,EAST,8,0.68750,336
+AutoETS,EAST,9,0.60119,336
+AutoETS,EAST,10,0.55952,336
+AutoETS,EAST,11,0.62500,336
+AutoETS,EAST,12,0.71131,336
+AutoETS,EAST,13,0.80952,336
+AutoETS,EAST,14,0.83929,336
+AutoETS,EAST,15,0.83036,336
+AutoETS,EAST,16,0.79762,336
+AutoETS,EAST,17,0.75000,336
+AutoETS,EAST,18,0.73214,336
+AutoETS,EAST,19,0.73810,336
+AutoETS,EAST,20,0.77381,336
+AutoETS,EAST,21,0.82738,336
+AutoETS,EAST,22,0.86012,336
+AutoETS,EAST,23,0.87798,336
+AutoETS,EAST,24,0.89286,336
+AutoETS,NORTH,1,0.92560,336
+AutoETS,NORTH,2,0.90774,336
+AutoETS,NORTH,3,0.90179,336
+AutoETS,NORTH,4,0.88393,336
+AutoETS,NORTH,5,0.86607,336
+AutoETS,NORTH,6,0.82440,336
+AutoETS,NORTH,7,0.75595,336
+AutoETS,NORTH,8,0.63690,336
+AutoETS,NORTH,9,0.56845,336
+AutoETS,NORTH,10,0.53571,336
+AutoETS,NORTH,11,0.58631,336
+AutoETS,NORTH,12,0.74702,336
+AutoETS,NORTH,13,0.82143,336
+AutoETS,NORTH,14,0.83631,336
+AutoETS,NORTH,15,0.83333,336
+AutoETS,NORTH,16,0.80952,336
+AutoETS,NORTH,17,0.77679,336
+AutoETS,NORTH,18,0.74702,336
+AutoETS,NORTH,19,0.76190,336
+AutoETS,NORTH,20,0.78274,336
+AutoETS,NORTH,21,0.84226,336
+AutoETS,NORTH,22,0.86905,336
+AutoETS,NORTH,23,0.88988,336
+AutoETS,NORTH,24,0.89583,336
+AutoETS,SOUTH,1,0.94345,336
+AutoETS,SOUTH,2,0.93155,336
+AutoETS,SOUTH,3,0.90774,336
+AutoETS,SOUTH,4,0.86905,336
+AutoETS,SOUTH,5,0.85119,336
+AutoETS,SOUTH,6,0.82440,336
+AutoETS,SOUTH,7,0.76190,336
+AutoETS,SOUTH,8,0.69940,336
+AutoETS,SOUTH,9,0.63095,336
+AutoETS,SOUTH,10,0.61310,336
+AutoETS,SOUTH,11,0.70238,336
+AutoETS,SOUTH,12,0.79762,336
+AutoETS,SOUTH,13,0.80952,336
+AutoETS,SOUTH,14,0.81548,336
+AutoETS,SOUTH,15,0.79464,336
+AutoETS,SOUTH,16,0.75000,336
+AutoETS,SOUTH,17,0.71726,336
+AutoETS,SOUTH,18,0.71131,336
+AutoETS,SOUTH,19,0.70536,336
+AutoETS,SOUTH,20,0.75595,336
+AutoETS,SOUTH,21,0.80060,336
+AutoETS,SOUTH,22,0.85417,336
+AutoETS,SOUTH,23,0.86607,336
+AutoETS,SOUTH,24,0.88095,336
+AutoETS,WEST,1,0.94048,336
+AutoETS,WEST,2,0.92262,336
+AutoETS,WEST,3,0.91369,336
+AutoETS,WEST,4,0.88988,336
+AutoETS,WEST,5,0.87500,336
+AutoETS,WEST,6,0.83036,336
+AutoETS,WEST,7,0.74702,336
+AutoETS,WEST,8,0.65476,336
+AutoETS,WEST,9,0.52976,336
+AutoETS,WEST,10,0.50893,336
+AutoETS,WEST,11,0.56845,336
+AutoETS,WEST,12,0.70536,336
+AutoETS,WEST,13,0.80952,336
+AutoETS,WEST,14,0.86905,336
+AutoETS,WEST,15,0.84524,336
+AutoETS,WEST,16,0.80655,336
+AutoETS,WEST,17,0.76190,336
+AutoETS,WEST,18,0.72619,336
+AutoETS,WEST,19,0.75000,336
+AutoETS,WEST,20,0.80357,336
+AutoETS,WEST,21,0.86905,336
+AutoETS,WEST,22,0.93155,336
+AutoETS,WEST,23,0.93452,336
+AutoETS,WEST,24,0.94345,336
+LightGBM quantiles (no conformal),CENTRAL,1,0.70833,336
+LightGBM quantiles (no conformal),CENTRAL,2,0.71726,336
+LightGBM quantiles (no conformal),CENTRAL,3,0.69345,336
+LightGBM quantiles (no conformal),CENTRAL,4,0.67560,336
+LightGBM quantiles (no conformal),CENTRAL,5,0.70238,336
+LightGBM quantiles (no conformal),CENTRAL,6,0.68155,336
+LightGBM quantiles (no conformal),CENTRAL,7,0.69048,336
+LightGBM quantiles (no conformal),CENTRAL,8,0.69048,336
+LightGBM quantiles (no conformal),CENTRAL,9,0.71429,336
+LightGBM quantiles (no conformal),CENTRAL,10,0.73214,336
+LightGBM quantiles (no conformal),CENTRAL,11,0.73512,336
+LightGBM quantiles (no conformal),CENTRAL,12,0.74405,336
+LightGBM quantiles (no conformal),CENTRAL,13,0.73214,336
+LightGBM quantiles (no conformal),CENTRAL,14,0.72619,336
+LightGBM quantiles (no conformal),CENTRAL,15,0.71429,336
+LightGBM quantiles (no conformal),CENTRAL,16,0.72619,336
+LightGBM quantiles (no conformal),CENTRAL,17,0.69345,336
+LightGBM quantiles (no conformal),CENTRAL,18,0.73214,336
+LightGBM quantiles (no conformal),CENTRAL,19,0.73214,336
+LightGBM quantiles (no conformal),CENTRAL,20,0.73810,336
+LightGBM quantiles (no conformal),CENTRAL,21,0.73512,336
+LightGBM quantiles (no conformal),CENTRAL,22,0.76786,336
+LightGBM quantiles (no conformal),CENTRAL,23,0.73810,336
+LightGBM quantiles (no conformal),CENTRAL,24,0.75595,336
+LightGBM quantiles (no conformal),EAST,1,0.76190,336
+LightGBM quantiles (no conformal),EAST,2,0.76190,336
+LightGBM quantiles (no conformal),EAST,3,0.77381,336
+LightGBM quantiles (no conformal),EAST,4,0.73810,336
+LightGBM quantiles (no conformal),EAST,5,0.74107,336
+LightGBM quantiles (no conformal),EAST,6,0.73512,336
+LightGBM quantiles (no conformal),EAST,7,0.75893,336
+LightGBM quantiles (no conformal),EAST,8,0.75298,336
+LightGBM quantiles (no conformal),EAST,9,0.74405,336
+LightGBM quantiles (no conformal),EAST,10,0.73512,336
+LightGBM quantiles (no conformal),EAST,11,0.74405,336
+LightGBM quantiles (no conformal),EAST,12,0.75298,336
+LightGBM quantiles (no conformal),EAST,13,0.75298,336
+LightGBM quantiles (no conformal),EAST,14,0.75298,336
+LightGBM quantiles (no conformal),EAST,15,0.75000,336
+LightGBM quantiles (no conformal),EAST,16,0.73512,336
+LightGBM quantiles (no conformal),EAST,17,0.72917,336
+LightGBM quantiles (no conformal),EAST,18,0.72619,336
+LightGBM quantiles (no conformal),EAST,19,0.72024,336
+LightGBM quantiles (no conformal),EAST,20,0.71726,336
+LightGBM quantiles (no conformal),EAST,21,0.74405,336
+LightGBM quantiles (no conformal),EAST,22,0.79464,336
+LightGBM quantiles (no conformal),EAST,23,0.77381,336
+LightGBM quantiles (no conformal),EAST,24,0.80357,336
+LightGBM quantiles (no conformal),NORTH,1,0.80952,336
+LightGBM quantiles (no conformal),NORTH,2,0.79762,336
+LightGBM quantiles (no conformal),NORTH,3,0.78869,336
+LightGBM quantiles (no conformal),NORTH,4,0.80952,336
+LightGBM quantiles (no conformal),NORTH,5,0.77679,336
+LightGBM quantiles (no conformal),NORTH,6,0.76190,336
+LightGBM quantiles (no conformal),NORTH,7,0.78571,336
+LightGBM quantiles (no conformal),NORTH,8,0.77083,336
+LightGBM quantiles (no conformal),NORTH,9,0.76786,336
+LightGBM quantiles (no conformal),NORTH,10,0.78274,336
+LightGBM quantiles (no conformal),NORTH,11,0.79464,336
+LightGBM quantiles (no conformal),NORTH,12,0.76786,336
+LightGBM quantiles (no conformal),NORTH,13,0.78869,336
+LightGBM quantiles (no conformal),NORTH,14,0.76488,336
+LightGBM quantiles (no conformal),NORTH,15,0.75893,336
+LightGBM quantiles (no conformal),NORTH,16,0.77083,336
+LightGBM quantiles (no conformal),NORTH,17,0.78571,336
+LightGBM quantiles (no conformal),NORTH,18,0.80655,336
+LightGBM quantiles (no conformal),NORTH,19,0.78869,336
+LightGBM quantiles (no conformal),NORTH,20,0.75595,336
+LightGBM quantiles (no conformal),NORTH,21,0.82143,336
+LightGBM quantiles (no conformal),NORTH,22,0.78571,336
+LightGBM quantiles (no conformal),NORTH,23,0.79167,336
+LightGBM quantiles (no conformal),NORTH,24,0.79464,336
+LightGBM quantiles (no conformal),SOUTH,1,0.77679,336
+LightGBM quantiles (no conformal),SOUTH,2,0.76786,336
+LightGBM quantiles (no conformal),SOUTH,3,0.77679,336
+LightGBM quantiles (no conformal),SOUTH,4,0.76190,336
+LightGBM quantiles (no conformal),SOUTH,5,0.77083,336
+LightGBM quantiles (no conformal),SOUTH,6,0.74405,336
+LightGBM quantiles (no conformal),SOUTH,7,0.75893,336
+LightGBM quantiles (no conformal),SOUTH,8,0.78869,336
+LightGBM quantiles (no conformal),SOUTH,9,0.77679,336
+LightGBM quantiles (no conformal),SOUTH,10,0.76786,336
+LightGBM quantiles (no conformal),SOUTH,11,0.77976,336
+LightGBM quantiles (no conformal),SOUTH,12,0.77381,336
+LightGBM quantiles (no conformal),SOUTH,13,0.76786,336
+LightGBM quantiles (no conformal),SOUTH,14,0.75298,336
+LightGBM quantiles (no conformal),SOUTH,15,0.75595,336
+LightGBM quantiles (no conformal),SOUTH,16,0.72321,336
+LightGBM quantiles (no conformal),SOUTH,17,0.72619,336
+LightGBM quantiles (no conformal),SOUTH,18,0.71429,336
+LightGBM quantiles (no conformal),SOUTH,19,0.69940,336
+LightGBM quantiles (no conformal),SOUTH,20,0.70536,336
+LightGBM quantiles (no conformal),SOUTH,21,0.73810,336
+LightGBM quantiles (no conformal),SOUTH,22,0.78869,336
+LightGBM quantiles (no conformal),SOUTH,23,0.81548,336
+LightGBM quantiles (no conformal),SOUTH,24,0.80357,336
+LightGBM quantiles (no conformal),WEST,1,0.83333,336
+LightGBM quantiles (no conformal),WEST,2,0.85417,336
+LightGBM quantiles (no conformal),WEST,3,0.82143,336
+LightGBM quantiles (no conformal),WEST,4,0.82143,336
+LightGBM quantiles (no conformal),WEST,5,0.81548,336
+LightGBM quantiles (no conformal),WEST,6,0.78869,336
+LightGBM quantiles (no conformal),WEST,7,0.82738,336
+LightGBM quantiles (no conformal),WEST,8,0.84524,336
+LightGBM quantiles (no conformal),WEST,9,0.81250,336
+LightGBM quantiles (no conformal),WEST,10,0.80357,336
+LightGBM quantiles (no conformal),WEST,11,0.81548,336
+LightGBM quantiles (no conformal),WEST,12,0.81845,336
+LightGBM quantiles (no conformal),WEST,13,0.82143,336
+LightGBM quantiles (no conformal),WEST,14,0.85119,336
+LightGBM quantiles (no conformal),WEST,15,0.85417,336
+LightGBM quantiles (no conformal),WEST,16,0.83333,336
+LightGBM quantiles (no conformal),WEST,17,0.84226,336
+LightGBM quantiles (no conformal),WEST,18,0.80655,336
+LightGBM quantiles (no conformal),WEST,19,0.78869,336
+LightGBM quantiles (no conformal),WEST,20,0.80357,336
+LightGBM quantiles (no conformal),WEST,21,0.82738,336
+LightGBM quantiles (no conformal),WEST,22,0.83929,336
+LightGBM quantiles (no conformal),WEST,23,0.83333,336
+LightGBM quantiles (no conformal),WEST,24,0.83036,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,1,0.90774,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,2,0.90179,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,3,0.91071,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,4,0.89583,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,5,0.89583,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,6,0.90179,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,7,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,8,0.90774,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,9,0.90179,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,10,0.91369,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,11,0.88095,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,12,0.89583,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,13,0.89286,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,14,0.90179,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,15,0.89583,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,16,0.86905,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,17,0.86905,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,18,0.86905,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,19,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,20,0.86607,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,21,0.90179,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,22,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,23,0.89286,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",CENTRAL,24,0.91964,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,1,0.93452,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,2,0.92560,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,3,0.92560,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,4,0.93452,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,5,0.92560,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,6,0.92560,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,7,0.91071,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,8,0.89881,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,9,0.89881,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,10,0.87500,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,11,0.88690,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,12,0.88988,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,13,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,14,0.89881,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,15,0.88095,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,16,0.88988,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,17,0.86310,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,18,0.86012,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,19,0.86012,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,20,0.87500,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,21,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,22,0.89286,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,23,0.90774,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",EAST,24,0.91369,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,1,0.93155,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,2,0.91369,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,3,0.91964,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,4,0.92262,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,5,0.90179,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,6,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,7,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,8,0.88988,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,9,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,10,0.86607,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,11,0.88095,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,12,0.88988,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,13,0.90774,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,14,0.90179,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,15,0.89286,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,16,0.88988,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,17,0.89286,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,18,0.90774,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,19,0.88095,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,20,0.87798,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,21,0.90774,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,22,0.91667,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,23,0.90774,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",NORTH,24,0.90179,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,1,0.93750,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,2,0.93750,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,3,0.93452,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,4,0.95536,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,5,0.94643,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,6,0.94345,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,7,0.93452,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,8,0.92560,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,9,0.92262,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,10,0.93155,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,11,0.93750,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,12,0.92857,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,13,0.90179,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,14,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,15,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,16,0.85714,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,17,0.85714,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,18,0.83631,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,19,0.84226,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,20,0.85417,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,21,0.85417,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,22,0.89286,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,23,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",SOUTH,24,0.91964,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,1,0.93452,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,2,0.93155,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,3,0.91071,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,4,0.89881,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,5,0.89286,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,6,0.88988,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,7,0.89881,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,8,0.90476,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,9,0.87202,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,10,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,11,0.88690,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,12,0.88095,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,13,0.89583,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,14,0.90179,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,15,0.90774,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,16,0.89286,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,17,0.91071,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,18,0.91071,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,19,0.88988,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,20,0.87500,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,21,0.88393,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,22,0.91964,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,23,0.90774,336
+"LightGBM+CQR, rolling 56d, ACI gamma=0.05, by region",WEST,24,0.91369,336
+LightGBM+SplitCP static 56d,CENTRAL,1,0.89286,336
+LightGBM+SplitCP static 56d,CENTRAL,2,0.88393,336
+LightGBM+SplitCP static 56d,CENTRAL,3,0.87798,336
+LightGBM+SplitCP static 56d,CENTRAL,4,0.88095,336
+LightGBM+SplitCP static 56d,CENTRAL,5,0.87500,336
+LightGBM+SplitCP static 56d,CENTRAL,6,0.87798,336
+LightGBM+SplitCP static 56d,CENTRAL,7,0.88095,336
+LightGBM+SplitCP static 56d,CENTRAL,8,0.87798,336
+LightGBM+SplitCP static 56d,CENTRAL,9,0.87202,336
+LightGBM+SplitCP static 56d,CENTRAL,10,0.85119,336
+LightGBM+SplitCP static 56d,CENTRAL,11,0.85119,336
+LightGBM+SplitCP static 56d,CENTRAL,12,0.84821,336
+LightGBM+SplitCP static 56d,CENTRAL,13,0.83631,336
+LightGBM+SplitCP static 56d,CENTRAL,14,0.83036,336
+LightGBM+SplitCP static 56d,CENTRAL,15,0.81548,336
+LightGBM+SplitCP static 56d,CENTRAL,16,0.79464,336
+LightGBM+SplitCP static 56d,CENTRAL,17,0.80952,336
+LightGBM+SplitCP static 56d,CENTRAL,18,0.78571,336
+LightGBM+SplitCP static 56d,CENTRAL,19,0.81250,336
+LightGBM+SplitCP static 56d,CENTRAL,20,0.82143,336
+LightGBM+SplitCP static 56d,CENTRAL,21,0.84524,336
+LightGBM+SplitCP static 56d,CENTRAL,22,0.82738,336
+LightGBM+SplitCP static 56d,CENTRAL,23,0.83036,336
+LightGBM+SplitCP static 56d,CENTRAL,24,0.86905,336
+LightGBM+SplitCP static 56d,EAST,1,0.92857,336
+LightGBM+SplitCP static 56d,EAST,2,0.94048,336
+LightGBM+SplitCP static 56d,EAST,3,0.94345,336
+LightGBM+SplitCP static 56d,EAST,4,0.94048,336
+LightGBM+SplitCP static 56d,EAST,5,0.92857,336
+LightGBM+SplitCP static 56d,EAST,6,0.92560,336
+LightGBM+SplitCP static 56d,EAST,7,0.90774,336
+LightGBM+SplitCP static 56d,EAST,8,0.91071,336
+LightGBM+SplitCP static 56d,EAST,9,0.89286,336
+LightGBM+SplitCP static 56d,EAST,10,0.88095,336
+LightGBM+SplitCP static 56d,EAST,11,0.88393,336
+LightGBM+SplitCP static 56d,EAST,12,0.89583,336
+LightGBM+SplitCP static 56d,EAST,13,0.88095,336
+LightGBM+SplitCP static 56d,EAST,14,0.86607,336
+LightGBM+SplitCP static 56d,EAST,15,0.84524,336
+LightGBM+SplitCP static 56d,EAST,16,0.81548,336
+LightGBM+SplitCP static 56d,EAST,17,0.83333,336
+LightGBM+SplitCP static 56d,EAST,18,0.80952,336
+LightGBM+SplitCP static 56d,EAST,19,0.78571,336
+LightGBM+SplitCP static 56d,EAST,20,0.81845,336
+LightGBM+SplitCP static 56d,EAST,21,0.82143,336
+LightGBM+SplitCP static 56d,EAST,22,0.83036,336
+LightGBM+SplitCP static 56d,EAST,23,0.87798,336
+LightGBM+SplitCP static 56d,EAST,24,0.89286,336
+LightGBM+SplitCP static 56d,NORTH,1,0.92857,336
+LightGBM+SplitCP static 56d,NORTH,2,0.93155,336
+LightGBM+SplitCP static 56d,NORTH,3,0.93750,336
+LightGBM+SplitCP static 56d,NORTH,4,0.93155,336
+LightGBM+SplitCP static 56d,NORTH,5,0.90774,336
+LightGBM+SplitCP static 56d,NORTH,6,0.89286,336
+LightGBM+SplitCP static 56d,NORTH,7,0.87500,336
+LightGBM+SplitCP static 56d,NORTH,8,0.86310,336
+LightGBM+SplitCP static 56d,NORTH,9,0.85119,336
+LightGBM+SplitCP static 56d,NORTH,10,0.86905,336
+LightGBM+SplitCP static 56d,NORTH,11,0.88393,336
+LightGBM+SplitCP static 56d,NORTH,12,0.90179,336
+LightGBM+SplitCP static 56d,NORTH,13,0.90476,336
+LightGBM+SplitCP static 56d,NORTH,14,0.90774,336
+LightGBM+SplitCP static 56d,NORTH,15,0.92262,336
+LightGBM+SplitCP static 56d,NORTH,16,0.91369,336
+LightGBM+SplitCP static 56d,NORTH,17,0.89286,336
+LightGBM+SplitCP static 56d,NORTH,18,0.88095,336
+LightGBM+SplitCP static 56d,NORTH,19,0.86905,336
+LightGBM+SplitCP static 56d,NORTH,20,0.85417,336
+LightGBM+SplitCP static 56d,NORTH,21,0.86607,336
+LightGBM+SplitCP static 56d,NORTH,22,0.91071,336
+LightGBM+SplitCP static 56d,NORTH,23,0.91667,336
+LightGBM+SplitCP static 56d,NORTH,24,0.93750,336
+LightGBM+SplitCP static 56d,SOUTH,1,0.92857,336
+LightGBM+SplitCP static 56d,SOUTH,2,0.94643,336
+LightGBM+SplitCP static 56d,SOUTH,3,0.94643,336
+LightGBM+SplitCP static 56d,SOUTH,4,0.95536,336
+LightGBM+SplitCP static 56d,SOUTH,5,0.96131,336
+LightGBM+SplitCP static 56d,SOUTH,6,0.96726,336
+LightGBM+SplitCP static 56d,SOUTH,7,0.96131,336
+LightGBM+SplitCP static 56d,SOUTH,8,0.94345,336
+LightGBM+SplitCP static 56d,SOUTH,9,0.94345,336
+LightGBM+SplitCP static 56d,SOUTH,10,0.93452,336
+LightGBM+SplitCP static 56d,SOUTH,11,0.93155,336
+LightGBM+SplitCP static 56d,SOUTH,12,0.87500,336
+LightGBM+SplitCP static 56d,SOUTH,13,0.86607,336
+LightGBM+SplitCP static 56d,SOUTH,14,0.85714,336
+LightGBM+SplitCP static 56d,SOUTH,15,0.81845,336
+LightGBM+SplitCP static 56d,SOUTH,16,0.78571,336
+LightGBM+SplitCP static 56d,SOUTH,17,0.76488,336
+LightGBM+SplitCP static 56d,SOUTH,18,0.73512,336
+LightGBM+SplitCP static 56d,SOUTH,19,0.75893,336
+LightGBM+SplitCP static 56d,SOUTH,20,0.77679,336
+LightGBM+SplitCP static 56d,SOUTH,21,0.82143,336
+LightGBM+SplitCP static 56d,SOUTH,22,0.84821,336
+LightGBM+SplitCP static 56d,SOUTH,23,0.86310,336
+LightGBM+SplitCP static 56d,SOUTH,24,0.89583,336
+LightGBM+SplitCP static 56d,WEST,1,0.92560,336
+LightGBM+SplitCP static 56d,WEST,2,0.93750,336
+LightGBM+SplitCP static 56d,WEST,3,0.95238,336
+LightGBM+SplitCP static 56d,WEST,4,0.93750,336
+LightGBM+SplitCP static 56d,WEST,5,0.94345,336
+LightGBM+SplitCP static 56d,WEST,6,0.94345,336
+LightGBM+SplitCP static 56d,WEST,7,0.90476,336
+LightGBM+SplitCP static 56d,WEST,8,0.90774,336
+LightGBM+SplitCP static 56d,WEST,9,0.87798,336
+LightGBM+SplitCP static 56d,WEST,10,0.87500,336
+LightGBM+SplitCP static 56d,WEST,11,0.87500,336
+LightGBM+SplitCP static 56d,WEST,12,0.88988,336
+LightGBM+SplitCP static 56d,WEST,13,0.90179,336
+LightGBM+SplitCP static 56d,WEST,14,0.89286,336
+LightGBM+SplitCP static 56d,WEST,15,0.87500,336
+LightGBM+SplitCP static 56d,WEST,16,0.85417,336
+LightGBM+SplitCP static 56d,WEST,17,0.86905,336
+LightGBM+SplitCP static 56d,WEST,18,0.83929,336
+LightGBM+SplitCP static 56d,WEST,19,0.81845,336
+LightGBM+SplitCP static 56d,WEST,20,0.83929,336
+LightGBM+SplitCP static 56d,WEST,21,0.84524,336
+LightGBM+SplitCP static 56d,WEST,22,0.88988,336
+LightGBM+SplitCP static 56d,WEST,23,0.89583,336
+LightGBM+SplitCP static 56d,WEST,24,0.93452,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,1,0.87798,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,2,0.88690,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,3,0.89881,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,4,0.89286,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,5,0.90179,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,6,0.89286,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,7,0.92262,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,8,0.92262,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,9,0.90179,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,10,0.89286,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,11,0.88988,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,12,0.86607,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,13,0.90179,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,14,0.89583,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,15,0.87500,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,16,0.87202,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,17,0.87798,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,18,0.87202,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,19,0.86310,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,20,0.86607,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,21,0.88393,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,22,0.88690,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,23,0.90774,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",CENTRAL,24,0.91369,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,1,0.88690,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,2,0.87798,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,3,0.90774,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,4,0.90774,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,5,0.90179,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,6,0.89881,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,7,0.92262,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,8,0.91964,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,9,0.90774,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,10,0.86905,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,11,0.87500,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,12,0.88393,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,13,0.91964,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,14,0.93155,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,15,0.92262,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,16,0.88690,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,17,0.89286,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,18,0.87500,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,19,0.86607,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,20,0.88393,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,21,0.89286,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,22,0.90476,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,23,0.93750,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",EAST,24,0.94048,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,1,0.90774,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,2,0.90774,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,3,0.90476,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,4,0.91964,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,5,0.88690,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,6,0.87798,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,7,0.91964,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,8,0.88690,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,9,0.89286,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,10,0.90476,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,11,0.91071,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,12,0.92857,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,13,0.89583,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,14,0.90774,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,15,0.91964,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,16,0.91369,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,17,0.88393,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,18,0.88393,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,19,0.86905,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,20,0.86905,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,21,0.88988,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,22,0.91667,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,23,0.92857,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",NORTH,24,0.93452,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,1,0.88095,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,2,0.89583,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,3,0.88988,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,4,0.90476,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,5,0.90179,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,6,0.92262,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,7,0.94643,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,8,0.92857,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,9,0.91369,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,10,0.89583,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,11,0.87202,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,12,0.83333,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,13,0.93155,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,14,0.93155,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,15,0.93155,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,16,0.89583,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,17,0.88988,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,18,0.85417,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,19,0.84821,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,20,0.86905,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,21,0.90179,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,22,0.93452,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,23,0.93452,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",SOUTH,24,0.95238,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,1,0.89881,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,2,0.91667,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,3,0.90774,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,4,0.90476,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,5,0.91369,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,6,0.87798,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,7,0.91667,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,8,0.91071,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,9,0.89583,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,10,0.88095,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,11,0.89583,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,12,0.90179,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,13,0.91071,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,14,0.91964,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,15,0.90774,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,16,0.89583,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,17,0.88393,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,18,0.88690,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,19,0.84524,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,20,0.87798,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,21,0.89881,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,22,0.91369,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,23,0.91964,336
+"LightGBM+SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",WEST,24,0.96131,336
+LightGBM+conformal (selected),CENTRAL,1,0.90179,336
+LightGBM+conformal (selected),CENTRAL,2,0.89286,336
+LightGBM+conformal (selected),CENTRAL,3,0.89881,336
+LightGBM+conformal (selected),CENTRAL,4,0.87500,336
+LightGBM+conformal (selected),CENTRAL,5,0.88988,336
+LightGBM+conformal (selected),CENTRAL,6,0.88095,336
+LightGBM+conformal (selected),CENTRAL,7,0.89881,336
+LightGBM+conformal (selected),CENTRAL,8,0.91964,336
+LightGBM+conformal (selected),CENTRAL,9,0.89286,336
+LightGBM+conformal (selected),CENTRAL,10,0.91369,336
+LightGBM+conformal (selected),CENTRAL,11,0.88095,336
+LightGBM+conformal (selected),CENTRAL,12,0.89583,336
+LightGBM+conformal (selected),CENTRAL,13,0.90179,336
+LightGBM+conformal (selected),CENTRAL,14,0.91667,336
+LightGBM+conformal (selected),CENTRAL,15,0.89583,336
+LightGBM+conformal (selected),CENTRAL,16,0.89286,336
+LightGBM+conformal (selected),CENTRAL,17,0.86905,336
+LightGBM+conformal (selected),CENTRAL,18,0.86607,336
+LightGBM+conformal (selected),CENTRAL,19,0.88690,336
+LightGBM+conformal (selected),CENTRAL,20,0.88393,336
+LightGBM+conformal (selected),CENTRAL,21,0.88393,336
+LightGBM+conformal (selected),CENTRAL,22,0.89286,336
+LightGBM+conformal (selected),CENTRAL,23,0.89583,336
+LightGBM+conformal (selected),CENTRAL,24,0.91071,336
+LightGBM+conformal (selected),EAST,1,0.90179,336
+LightGBM+conformal (selected),EAST,2,0.89583,336
+LightGBM+conformal (selected),EAST,3,0.88690,336
+LightGBM+conformal (selected),EAST,4,0.89881,336
+LightGBM+conformal (selected),EAST,5,0.88988,336
+LightGBM+conformal (selected),EAST,6,0.88988,336
+LightGBM+conformal (selected),EAST,7,0.90179,336
+LightGBM+conformal (selected),EAST,8,0.88988,336
+LightGBM+conformal (selected),EAST,9,0.89881,336
+LightGBM+conformal (selected),EAST,10,0.88393,336
+LightGBM+conformal (selected),EAST,11,0.90179,336
+LightGBM+conformal (selected),EAST,12,0.90774,336
+LightGBM+conformal (selected),EAST,13,0.91071,336
+LightGBM+conformal (selected),EAST,14,0.90476,336
+LightGBM+conformal (selected),EAST,15,0.91071,336
+LightGBM+conformal (selected),EAST,16,0.90179,336
+LightGBM+conformal (selected),EAST,17,0.88690,336
+LightGBM+conformal (selected),EAST,18,0.88393,336
+LightGBM+conformal (selected),EAST,19,0.87202,336
+LightGBM+conformal (selected),EAST,20,0.88393,336
+LightGBM+conformal (selected),EAST,21,0.88393,336
+LightGBM+conformal (selected),EAST,22,0.89583,336
+LightGBM+conformal (selected),EAST,23,0.91369,336
+LightGBM+conformal (selected),EAST,24,0.90774,336
+LightGBM+conformal (selected),NORTH,1,0.90476,336
+LightGBM+conformal (selected),NORTH,2,0.89881,336
+LightGBM+conformal (selected),NORTH,3,0.89881,336
+LightGBM+conformal (selected),NORTH,4,0.90476,336
+LightGBM+conformal (selected),NORTH,5,0.89286,336
+LightGBM+conformal (selected),NORTH,6,0.88095,336
+LightGBM+conformal (selected),NORTH,7,0.90476,336
+LightGBM+conformal (selected),NORTH,8,0.90179,336
+LightGBM+conformal (selected),NORTH,9,0.90179,336
+LightGBM+conformal (selected),NORTH,10,0.88690,336
+LightGBM+conformal (selected),NORTH,11,0.89583,336
+LightGBM+conformal (selected),NORTH,12,0.90774,336
+LightGBM+conformal (selected),NORTH,13,0.90179,336
+LightGBM+conformal (selected),NORTH,14,0.89286,336
+LightGBM+conformal (selected),NORTH,15,0.89881,336
+LightGBM+conformal (selected),NORTH,16,0.90179,336
+LightGBM+conformal (selected),NORTH,17,0.88988,336
+LightGBM+conformal (selected),NORTH,18,0.89881,336
+LightGBM+conformal (selected),NORTH,19,0.86310,336
+LightGBM+conformal (selected),NORTH,20,0.86607,336
+LightGBM+conformal (selected),NORTH,21,0.88690,336
+LightGBM+conformal (selected),NORTH,22,0.90774,336
+LightGBM+conformal (selected),NORTH,23,0.91071,336
+LightGBM+conformal (selected),NORTH,24,0.90476,336
+LightGBM+conformal (selected),SOUTH,1,0.88690,336
+LightGBM+conformal (selected),SOUTH,2,0.89881,336
+LightGBM+conformal (selected),SOUTH,3,0.89583,336
+LightGBM+conformal (selected),SOUTH,4,0.90179,336
+LightGBM+conformal (selected),SOUTH,5,0.90774,336
+LightGBM+conformal (selected),SOUTH,6,0.90179,336
+LightGBM+conformal (selected),SOUTH,7,0.91071,336
+LightGBM+conformal (selected),SOUTH,8,0.89286,336
+LightGBM+conformal (selected),SOUTH,9,0.89583,336
+LightGBM+conformal (selected),SOUTH,10,0.89583,336
+LightGBM+conformal (selected),SOUTH,11,0.90179,336
+LightGBM+conformal (selected),SOUTH,12,0.91369,336
+LightGBM+conformal (selected),SOUTH,13,0.93155,336
+LightGBM+conformal (selected),SOUTH,14,0.91667,336
+LightGBM+conformal (selected),SOUTH,15,0.91964,336
+LightGBM+conformal (selected),SOUTH,16,0.88393,336
+LightGBM+conformal (selected),SOUTH,17,0.88988,336
+LightGBM+conformal (selected),SOUTH,18,0.87500,336
+LightGBM+conformal (selected),SOUTH,19,0.88393,336
+LightGBM+conformal (selected),SOUTH,20,0.88690,336
+LightGBM+conformal (selected),SOUTH,21,0.87798,336
+LightGBM+conformal (selected),SOUTH,22,0.90774,336
+LightGBM+conformal (selected),SOUTH,23,0.92262,336
+LightGBM+conformal (selected),SOUTH,24,0.94345,336
+LightGBM+conformal (selected),WEST,1,0.93155,336
+LightGBM+conformal (selected),WEST,2,0.91369,336
+LightGBM+conformal (selected),WEST,3,0.90774,336
+LightGBM+conformal (selected),WEST,4,0.87500,336
+LightGBM+conformal (selected),WEST,5,0.90179,336
+LightGBM+conformal (selected),WEST,6,0.87500,336
+LightGBM+conformal (selected),WEST,7,0.89286,336
+LightGBM+conformal (selected),WEST,8,0.92262,336
+LightGBM+conformal (selected),WEST,9,0.89286,336
+LightGBM+conformal (selected),WEST,10,0.89286,336
+LightGBM+conformal (selected),WEST,11,0.90179,336
+LightGBM+conformal (selected),WEST,12,0.89583,336
+LightGBM+conformal (selected),WEST,13,0.90179,336
+LightGBM+conformal (selected),WEST,14,0.91071,336
+LightGBM+conformal (selected),WEST,15,0.91369,336
+LightGBM+conformal (selected),WEST,16,0.88690,336
+LightGBM+conformal (selected),WEST,17,0.91071,336
+LightGBM+conformal (selected),WEST,18,0.89583,336
+LightGBM+conformal (selected),WEST,19,0.89286,336
+LightGBM+conformal (selected),WEST,20,0.88095,336
+LightGBM+conformal (selected),WEST,21,0.88690,336
+LightGBM+conformal (selected),WEST,22,0.92262,336
+LightGBM+conformal (selected),WEST,23,0.90179,336
+LightGBM+conformal (selected),WEST,24,0.91071,336
+MSTL,CENTRAL,1,0.65476,336
+MSTL,CENTRAL,2,0.72321,336
+MSTL,CENTRAL,3,0.74702,336
+MSTL,CENTRAL,4,0.77381,336
+MSTL,CENTRAL,5,0.75893,336
+MSTL,CENTRAL,6,0.79464,336
+MSTL,CENTRAL,7,0.79167,336
+MSTL,CENTRAL,8,0.80655,336
+MSTL,CENTRAL,9,0.80060,336
+MSTL,CENTRAL,10,0.81250,336
+MSTL,CENTRAL,11,0.84524,336
+MSTL,CENTRAL,12,0.88988,336
+MSTL,CENTRAL,13,0.89881,336
+MSTL,CENTRAL,14,0.89583,336
+MSTL,CENTRAL,15,0.87500,336
+MSTL,CENTRAL,16,0.85417,336
+MSTL,CENTRAL,17,0.83333,336
+MSTL,CENTRAL,18,0.83929,336
+MSTL,CENTRAL,19,0.84821,336
+MSTL,CENTRAL,20,0.85417,336
+MSTL,CENTRAL,21,0.88988,336
+MSTL,CENTRAL,22,0.91964,336
+MSTL,CENTRAL,23,0.94048,336
+MSTL,CENTRAL,24,0.96429,336
+MSTL,EAST,1,0.58036,336
+MSTL,EAST,2,0.68155,336
+MSTL,EAST,3,0.73810,336
+MSTL,EAST,4,0.75893,336
+MSTL,EAST,5,0.78869,336
+MSTL,EAST,6,0.79762,336
+MSTL,EAST,7,0.78274,336
+MSTL,EAST,8,0.76786,336
+MSTL,EAST,9,0.78571,336
+MSTL,EAST,10,0.80060,336
+MSTL,EAST,11,0.82143,336
+MSTL,EAST,12,0.86012,336
+MSTL,EAST,13,0.85714,336
+MSTL,EAST,14,0.86905,336
+MSTL,EAST,15,0.86607,336
+MSTL,EAST,16,0.84821,336
+MSTL,EAST,17,0.84821,336
+MSTL,EAST,18,0.84226,336
+MSTL,EAST,19,0.84226,336
+MSTL,EAST,20,0.86607,336
+MSTL,EAST,21,0.88690,336
+MSTL,EAST,22,0.90774,336
+MSTL,EAST,23,0.94345,336
+MSTL,EAST,24,0.95536,336
+MSTL,NORTH,1,0.66071,336
+MSTL,NORTH,2,0.75893,336
+MSTL,NORTH,3,0.79167,336
+MSTL,NORTH,4,0.82738,336
+MSTL,NORTH,5,0.82738,336
+MSTL,NORTH,6,0.81548,336
+MSTL,NORTH,7,0.78274,336
+MSTL,NORTH,8,0.77976,336
+MSTL,NORTH,9,0.79167,336
+MSTL,NORTH,10,0.79167,336
+MSTL,NORTH,11,0.82440,336
+MSTL,NORTH,12,0.85119,336
+MSTL,NORTH,13,0.89583,336
+MSTL,NORTH,14,0.89286,336
+MSTL,NORTH,15,0.89286,336
+MSTL,NORTH,16,0.89286,336
+MSTL,NORTH,17,0.88988,336
+MSTL,NORTH,18,0.89583,336
+MSTL,NORTH,19,0.89583,336
+MSTL,NORTH,20,0.89881,336
+MSTL,NORTH,21,0.92560,336
+MSTL,NORTH,22,0.93750,336
+MSTL,NORTH,23,0.95833,336
+MSTL,NORTH,24,0.96726,336
+MSTL,SOUTH,1,0.50595,336
+MSTL,SOUTH,2,0.64286,336
+MSTL,SOUTH,3,0.70536,336
+MSTL,SOUTH,4,0.72321,336
+MSTL,SOUTH,5,0.72917,336
+MSTL,SOUTH,6,0.75595,336
+MSTL,SOUTH,7,0.75893,336
+MSTL,SOUTH,8,0.77381,336
+MSTL,SOUTH,9,0.79762,336
+MSTL,SOUTH,10,0.82738,336
+MSTL,SOUTH,11,0.85417,336
+MSTL,SOUTH,12,0.86905,336
+MSTL,SOUTH,13,0.82143,336
+MSTL,SOUTH,14,0.77381,336
+MSTL,SOUTH,15,0.72321,336
+MSTL,SOUTH,16,0.67857,336
+MSTL,SOUTH,17,0.66369,336
+MSTL,SOUTH,18,0.66071,336
+MSTL,SOUTH,19,0.68452,336
+MSTL,SOUTH,20,0.74405,336
+MSTL,SOUTH,21,0.78571,336
+MSTL,SOUTH,22,0.83333,336
+MSTL,SOUTH,23,0.87202,336
+MSTL,SOUTH,24,0.90774,336
+MSTL,WEST,1,0.68155,336
+MSTL,WEST,2,0.75595,336
+MSTL,WEST,3,0.78274,336
+MSTL,WEST,4,0.79762,336
+MSTL,WEST,5,0.81548,336
+MSTL,WEST,6,0.83036,336
+MSTL,WEST,7,0.83036,336
+MSTL,WEST,8,0.82738,336
+MSTL,WEST,9,0.81548,336
+MSTL,WEST,10,0.81250,336
+MSTL,WEST,11,0.84524,336
+MSTL,WEST,12,0.88988,336
+MSTL,WEST,13,0.91369,336
+MSTL,WEST,14,0.92857,336
+MSTL,WEST,15,0.92560,336
+MSTL,WEST,16,0.89583,336
+MSTL,WEST,17,0.88988,336
+MSTL,WEST,18,0.88988,336
+MSTL,WEST,19,0.89881,336
+MSTL,WEST,20,0.91667,336
+MSTL,WEST,21,0.93452,336
+MSTL,WEST,22,0.95536,336
+MSTL,WEST,23,0.97917,336
+MSTL,WEST,24,0.97917,336
+SeasonalNaive-168h,CENTRAL,1,0.96131,336
+SeasonalNaive-168h,CENTRAL,2,0.97024,336
+SeasonalNaive-168h,CENTRAL,3,0.97024,336
+SeasonalNaive-168h,CENTRAL,4,0.97321,336
+SeasonalNaive-168h,CENTRAL,5,0.97024,336
+SeasonalNaive-168h,CENTRAL,6,0.97024,336
+SeasonalNaive-168h,CENTRAL,7,0.96131,336
+SeasonalNaive-168h,CENTRAL,8,0.93750,336
+SeasonalNaive-168h,CENTRAL,9,0.91071,336
+SeasonalNaive-168h,CENTRAL,10,0.90476,336
+SeasonalNaive-168h,CENTRAL,11,0.90476,336
+SeasonalNaive-168h,CENTRAL,12,0.90179,336
+SeasonalNaive-168h,CENTRAL,13,0.91964,336
+SeasonalNaive-168h,CENTRAL,14,0.91369,336
+SeasonalNaive-168h,CENTRAL,15,0.88393,336
+SeasonalNaive-168h,CENTRAL,16,0.88095,336
+SeasonalNaive-168h,CENTRAL,17,0.86607,336
+SeasonalNaive-168h,CENTRAL,18,0.82738,336
+SeasonalNaive-168h,CENTRAL,19,0.84524,336
+SeasonalNaive-168h,CENTRAL,20,0.84524,336
+SeasonalNaive-168h,CENTRAL,21,0.87202,336
+SeasonalNaive-168h,CENTRAL,22,0.90774,336
+SeasonalNaive-168h,CENTRAL,23,0.92262,336
+SeasonalNaive-168h,CENTRAL,24,0.93155,336
+SeasonalNaive-168h,EAST,1,0.92560,336
+SeasonalNaive-168h,EAST,2,0.93452,336
+SeasonalNaive-168h,EAST,3,0.93750,336
+SeasonalNaive-168h,EAST,4,0.93750,336
+SeasonalNaive-168h,EAST,5,0.94345,336
+SeasonalNaive-168h,EAST,6,0.94345,336
+SeasonalNaive-168h,EAST,7,0.92857,336
+SeasonalNaive-168h,EAST,8,0.90179,336
+SeasonalNaive-168h,EAST,9,0.89583,336
+SeasonalNaive-168h,EAST,10,0.89286,336
+SeasonalNaive-168h,EAST,11,0.88393,336
+SeasonalNaive-168h,EAST,12,0.86607,336
+SeasonalNaive-168h,EAST,13,0.84821,336
+SeasonalNaive-168h,EAST,14,0.83631,336
+SeasonalNaive-168h,EAST,15,0.80060,336
+SeasonalNaive-168h,EAST,16,0.79464,336
+SeasonalNaive-168h,EAST,17,0.77976,336
+SeasonalNaive-168h,EAST,18,0.77083,336
+SeasonalNaive-168h,EAST,19,0.78274,336
+SeasonalNaive-168h,EAST,20,0.80060,336
+SeasonalNaive-168h,EAST,21,0.82143,336
+SeasonalNaive-168h,EAST,22,0.85714,336
+SeasonalNaive-168h,EAST,23,0.87202,336
+SeasonalNaive-168h,EAST,24,0.88690,336
+SeasonalNaive-168h,NORTH,1,0.95833,336
+SeasonalNaive-168h,NORTH,2,0.94940,336
+SeasonalNaive-168h,NORTH,3,0.95536,336
+SeasonalNaive-168h,NORTH,4,0.94048,336
+SeasonalNaive-168h,NORTH,5,0.93750,336
+SeasonalNaive-168h,NORTH,6,0.91667,336
+SeasonalNaive-168h,NORTH,7,0.87500,336
+SeasonalNaive-168h,NORTH,8,0.85417,336
+SeasonalNaive-168h,NORTH,9,0.83631,336
+SeasonalNaive-168h,NORTH,10,0.84821,336
+SeasonalNaive-168h,NORTH,11,0.86607,336
+SeasonalNaive-168h,NORTH,12,0.88393,336
+SeasonalNaive-168h,NORTH,13,0.91964,336
+SeasonalNaive-168h,NORTH,14,0.92262,336
+SeasonalNaive-168h,NORTH,15,0.93750,336
+SeasonalNaive-168h,NORTH,16,0.91964,336
+SeasonalNaive-168h,NORTH,17,0.90774,336
+SeasonalNaive-168h,NORTH,18,0.88393,336
+SeasonalNaive-168h,NORTH,19,0.88095,336
+SeasonalNaive-168h,NORTH,20,0.87500,336
+SeasonalNaive-168h,NORTH,21,0.88988,336
+SeasonalNaive-168h,NORTH,22,0.90476,336
+SeasonalNaive-168h,NORTH,23,0.92262,336
+SeasonalNaive-168h,NORTH,24,0.94345,336
+SeasonalNaive-168h,SOUTH,1,0.93452,336
+SeasonalNaive-168h,SOUTH,2,0.94940,336
+SeasonalNaive-168h,SOUTH,3,0.95536,336
+SeasonalNaive-168h,SOUTH,4,0.96429,336
+SeasonalNaive-168h,SOUTH,5,0.96726,336
+SeasonalNaive-168h,SOUTH,6,0.96429,336
+SeasonalNaive-168h,SOUTH,7,0.96726,336
+SeasonalNaive-168h,SOUTH,8,0.96726,336
+SeasonalNaive-168h,SOUTH,9,0.95238,336
+SeasonalNaive-168h,SOUTH,10,0.93155,336
+SeasonalNaive-168h,SOUTH,11,0.91964,336
+SeasonalNaive-168h,SOUTH,12,0.88690,336
+SeasonalNaive-168h,SOUTH,13,0.83929,336
+SeasonalNaive-168h,SOUTH,14,0.78869,336
+SeasonalNaive-168h,SOUTH,15,0.74405,336
+SeasonalNaive-168h,SOUTH,16,0.71131,336
+SeasonalNaive-168h,SOUTH,17,0.69643,336
+SeasonalNaive-168h,SOUTH,18,0.70238,336
+SeasonalNaive-168h,SOUTH,19,0.72024,336
+SeasonalNaive-168h,SOUTH,20,0.72619,336
+SeasonalNaive-168h,SOUTH,21,0.75595,336
+SeasonalNaive-168h,SOUTH,22,0.78274,336
+SeasonalNaive-168h,SOUTH,23,0.82738,336
+SeasonalNaive-168h,SOUTH,24,0.86607,336
+SeasonalNaive-168h,WEST,1,0.97619,336
+SeasonalNaive-168h,WEST,2,0.96429,336
+SeasonalNaive-168h,WEST,3,0.95238,336
+SeasonalNaive-168h,WEST,4,0.95238,336
+SeasonalNaive-168h,WEST,5,0.94048,336
+SeasonalNaive-168h,WEST,6,0.94048,336
+SeasonalNaive-168h,WEST,7,0.93750,336
+SeasonalNaive-168h,WEST,8,0.93452,336
+SeasonalNaive-168h,WEST,9,0.93155,336
+SeasonalNaive-168h,WEST,10,0.93155,336
+SeasonalNaive-168h,WEST,11,0.93155,336
+SeasonalNaive-168h,WEST,12,0.92857,336
+SeasonalNaive-168h,WEST,13,0.93750,336
+SeasonalNaive-168h,WEST,14,0.92857,336
+SeasonalNaive-168h,WEST,15,0.91964,336
+SeasonalNaive-168h,WEST,16,0.86905,336
+SeasonalNaive-168h,WEST,17,0.86012,336
+SeasonalNaive-168h,WEST,18,0.85417,336
+SeasonalNaive-168h,WEST,19,0.83333,336
+SeasonalNaive-168h,WEST,20,0.85714,336
+SeasonalNaive-168h,WEST,21,0.87202,336
+SeasonalNaive-168h,WEST,22,0.90774,336
+SeasonalNaive-168h,WEST,23,0.94048,336
+SeasonalNaive-168h,WEST,24,0.96131,336
+SeasonalNaive-24h,CENTRAL,1,0.97619,336
+SeasonalNaive-24h,CENTRAL,2,0.97619,336
+SeasonalNaive-24h,CENTRAL,3,0.97321,336
+SeasonalNaive-24h,CENTRAL,4,0.97321,336
+SeasonalNaive-24h,CENTRAL,5,0.97024,336
+SeasonalNaive-24h,CENTRAL,6,0.95833,336
+SeasonalNaive-24h,CENTRAL,7,0.88988,336
+SeasonalNaive-24h,CENTRAL,8,0.75595,336
+SeasonalNaive-24h,CENTRAL,9,0.69643,336
+SeasonalNaive-24h,CENTRAL,10,0.69643,336
+SeasonalNaive-24h,CENTRAL,11,0.69940,336
+SeasonalNaive-24h,CENTRAL,12,0.80357,336
+SeasonalNaive-24h,CENTRAL,13,0.89881,336
+SeasonalNaive-24h,CENTRAL,14,0.93155,336
+SeasonalNaive-24h,CENTRAL,15,0.91071,336
+SeasonalNaive-24h,CENTRAL,16,0.87500,336
+SeasonalNaive-24h,CENTRAL,17,0.83333,336
+SeasonalNaive-24h,CENTRAL,18,0.80952,336
+SeasonalNaive-24h,CENTRAL,19,0.82738,336
+SeasonalNaive-24h,CENTRAL,20,0.88393,336
+SeasonalNaive-24h,CENTRAL,21,0.93155,336
+SeasonalNaive-24h,CENTRAL,22,0.96131,336
+SeasonalNaive-24h,CENTRAL,23,0.97619,336
+SeasonalNaive-24h,CENTRAL,24,0.97917,336
+SeasonalNaive-24h,EAST,1,0.98214,336
+SeasonalNaive-24h,EAST,2,0.97917,336
+SeasonalNaive-24h,EAST,3,0.97917,336
+SeasonalNaive-24h,EAST,4,0.97917,336
+SeasonalNaive-24h,EAST,5,0.97321,336
+SeasonalNaive-24h,EAST,6,0.95833,336
+SeasonalNaive-24h,EAST,7,0.84821,336
+SeasonalNaive-24h,EAST,8,0.71429,336
+SeasonalNaive-24h,EAST,9,0.69345,336
+SeasonalNaive-24h,EAST,10,0.69345,336
+SeasonalNaive-24h,EAST,11,0.69345,336
+SeasonalNaive-24h,EAST,12,0.75595,336
+SeasonalNaive-24h,EAST,13,0.90179,336
+SeasonalNaive-24h,EAST,14,0.92560,336
+SeasonalNaive-24h,EAST,15,0.91369,336
+SeasonalNaive-24h,EAST,16,0.88095,336
+SeasonalNaive-24h,EAST,17,0.84524,336
+SeasonalNaive-24h,EAST,18,0.83036,336
+SeasonalNaive-24h,EAST,19,0.83333,336
+SeasonalNaive-24h,EAST,20,0.88393,336
+SeasonalNaive-24h,EAST,21,0.92560,336
+SeasonalNaive-24h,EAST,22,0.95238,336
+SeasonalNaive-24h,EAST,23,0.97321,336
+SeasonalNaive-24h,EAST,24,0.98214,336
+SeasonalNaive-24h,NORTH,1,0.98512,336
+SeasonalNaive-24h,NORTH,2,0.97321,336
+SeasonalNaive-24h,NORTH,3,0.97321,336
+SeasonalNaive-24h,NORTH,4,0.96726,336
+SeasonalNaive-24h,NORTH,5,0.96429,336
+SeasonalNaive-24h,NORTH,6,0.94345,336
+SeasonalNaive-24h,NORTH,7,0.86310,336
+SeasonalNaive-24h,NORTH,8,0.73810,336
+SeasonalNaive-24h,NORTH,9,0.69643,336
+SeasonalNaive-24h,NORTH,10,0.69048,336
+SeasonalNaive-24h,NORTH,11,0.71131,336
+SeasonalNaive-24h,NORTH,12,0.80655,336
+SeasonalNaive-24h,NORTH,13,0.91369,336
+SeasonalNaive-24h,NORTH,14,0.94345,336
+SeasonalNaive-24h,NORTH,15,0.93452,336
+SeasonalNaive-24h,NORTH,16,0.89881,336
+SeasonalNaive-24h,NORTH,17,0.86607,336
+SeasonalNaive-24h,NORTH,18,0.82738,336
+SeasonalNaive-24h,NORTH,19,0.85714,336
+SeasonalNaive-24h,NORTH,20,0.89583,336
+SeasonalNaive-24h,NORTH,21,0.95536,336
+SeasonalNaive-24h,NORTH,22,0.98214,336
+SeasonalNaive-24h,NORTH,23,0.99107,336
+SeasonalNaive-24h,NORTH,24,0.99107,336
+SeasonalNaive-24h,SOUTH,1,0.97619,336
+SeasonalNaive-24h,SOUTH,2,0.97917,336
+SeasonalNaive-24h,SOUTH,3,0.97917,336
+SeasonalNaive-24h,SOUTH,4,0.98214,336
+SeasonalNaive-24h,SOUTH,5,0.98512,336
+SeasonalNaive-24h,SOUTH,6,0.98214,336
+SeasonalNaive-24h,SOUTH,7,0.93452,336
+SeasonalNaive-24h,SOUTH,8,0.82143,336
+SeasonalNaive-24h,SOUTH,9,0.71726,336
+SeasonalNaive-24h,SOUTH,10,0.70536,336
+SeasonalNaive-24h,SOUTH,11,0.72917,336
+SeasonalNaive-24h,SOUTH,12,0.84821,336
+SeasonalNaive-24h,SOUTH,13,0.86310,336
+SeasonalNaive-24h,SOUTH,14,0.83333,336
+SeasonalNaive-24h,SOUTH,15,0.80357,336
+SeasonalNaive-24h,SOUTH,16,0.77381,336
+SeasonalNaive-24h,SOUTH,17,0.75893,336
+SeasonalNaive-24h,SOUTH,18,0.73810,336
+SeasonalNaive-24h,SOUTH,19,0.74405,336
+SeasonalNaive-24h,SOUTH,20,0.78869,336
+SeasonalNaive-24h,SOUTH,21,0.83929,336
+SeasonalNaive-24h,SOUTH,22,0.90476,336
+SeasonalNaive-24h,SOUTH,23,0.92262,336
+SeasonalNaive-24h,SOUTH,24,0.94643,336
+SeasonalNaive-24h,WEST,1,1.00000,336
+SeasonalNaive-24h,WEST,2,0.98512,336
+SeasonalNaive-24h,WEST,3,0.98512,336
+SeasonalNaive-24h,WEST,4,0.97917,336
+SeasonalNaive-24h,WEST,5,0.97024,336
+SeasonalNaive-24h,WEST,6,0.95833,336
+SeasonalNaive-24h,WEST,7,0.81845,336
+SeasonalNaive-24h,WEST,8,0.69643,336
+SeasonalNaive-24h,WEST,9,0.69048,336
+SeasonalNaive-24h,WEST,10,0.69048,336
+SeasonalNaive-24h,WEST,11,0.68750,336
+SeasonalNaive-24h,WEST,12,0.73214,336
+SeasonalNaive-24h,WEST,13,0.90774,336
+SeasonalNaive-24h,WEST,14,0.94345,336
+SeasonalNaive-24h,WEST,15,0.92857,336
+SeasonalNaive-24h,WEST,16,0.90476,336
+SeasonalNaive-24h,WEST,17,0.82440,336
+SeasonalNaive-24h,WEST,18,0.78274,336
+SeasonalNaive-24h,WEST,19,0.80357,336
+SeasonalNaive-24h,WEST,20,0.87798,336
+SeasonalNaive-24h,WEST,21,0.95238,336
+SeasonalNaive-24h,WEST,22,0.98214,336
+SeasonalNaive-24h,WEST,23,0.99107,336
+SeasonalNaive-24h,WEST,24,0.99405,336

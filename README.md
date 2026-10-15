@@ -21,7 +21,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 01 | I Advanced | [Retail Medallion Lakehouse with dbt + DuckDB](./day-01-retail-medallion-lakehouse/) | Retail | DuckDB, dbt-duckdb, SQL | ✅ | [prompt](./prompts/day-01.md) | Gold reconciles to bronze to $0.00 on $124.6M over 2.0M synthetic order lines; 67/67 dbt tests pass |
 | 02 | I Advanced | [Card Fraud Detection at Speed with Polars + LightGBM](./day-02-card-fraud-polars-lightgbm/) | Financial services | Polars, LightGBM, SHAP | ✅ | [prompt](./prompts/day-02.md) | Test PR-AUC 0.961 on 5.2M synthetic txns; cost-optimal threshold cuts fraud cost $439.6k to $41.1k; Polars 8.85x faster than pandas |
 | 03 | I Advanced | [Hospital Readmission Risk on an OMOP-style Model](./day-03-healthcare-readmission-omop/) | Healthcare | pandas, Pydantic, scikit-learn | ✅ | [prompt](./prompts/day-03.md) | Test AUROC 0.782 vs LACE 0.707, calibration slope 1.02 on 9,301 synthetic index admissions; 199/199 invalid FHIR bundles rejected |
-| 04 | I Advanced | [Grid Load Forecasting with Probabilistic Backtesting](./day-04-energy-load-forecasting-conformal/) | Energy & utilities | statsforecast, LightGBM, MAPIE | ⏳ Planned | [prompt](./prompts/day-04.md) | |
+| 04 | I Advanced | [Grid Load Forecasting with Probabilistic Backtesting](./day-04-energy-load-forecasting-conformal/) | Energy & utilities | statsforecast, LightGBM, MAPIE | ✅ | [prompt](./prompts/day-04.md) | Day-ahead MASE 0.445 vs seasonal-naive 0.874 (49.1% lower) on 5 synthetic regions x 4 yrs; conformal 90% intervals cover 89.8% over a 12-fold backtest |
 | 05 | I Advanced | [City 311 Data Quality and Service Hotspots](./day-05-civic-311-data-quality-hotspots/) | Public sector | pandera, Great Expectations, H3 | ⏳ Planned | [prompt](./prompts/day-05.md) | |
 | 06 | I Advanced | [Experimentation Engine: CUPED, Sequential and Bayesian Tests](./day-06-experimentation-platform-cuped/) | Digital product & marketing | SciPy, statsmodels, NumPy | ⏳ Planned | [prompt](./prompts/day-06.md) | |
 | 07 | I Advanced | [Demand-Driven Inventory Optimisation](./day-07-supply-chain-demand-inventory-opt/) | Supply chain & logistics | OR-Tools, PuLP, statsforecast | ⏳ Planned | [prompt](./prompts/day-07.md) | |
@@ -49,7 +49,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ⏳ Planned | [prompt](./prompts/day-29.md) | |
 | 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
 
-Last build: 2026-10-14
+Last build: 2026-10-15
 <!-- PROGRESS:END -->
 
 ## How each project is structured

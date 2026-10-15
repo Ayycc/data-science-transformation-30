@@ -1,0 +1,17 @@
+config,coverage,cell_cov_abs_err,region_cov_abs_err,min_region_cov,max_region_cov,width_pct
+"CQR, rolling 56d, ACI gamma=0.05, by region x 6h block",0.89454,0.01369,0.00546,0.89286,0.89732,9.25145
+"CQR, rolling 28d, ACI gamma=0.05, by region x 6h block",0.89350,0.01695,0.00701,0.88492,0.90129,9.53385
+"SplitCP, rolling 56d, ACI gamma=0.05, by region x 6h block",0.90069,0.01911,0.00204,0.89807,0.90327,9.01332
+"SplitCP, rolling 28d, ACI gamma=0.05, by region x 6h block",0.89276,0.02024,0.00724,0.88046,0.89856,9.02546
+"CQR, rolling 56d, by region x 6h block",0.88626,0.02025,0.01396,0.87822,0.90055,8.93397
+"CQR, rolling 56d, ACI gamma=0.05, by region",0.89469,0.02164,0.00531,0.89187,0.89931,9.14440
+"SplitCP, rolling 56d, by region x 6h block",0.88943,0.02263,0.01057,0.87748,0.89906,8.56533
+"SplitCP, rolling 28d, by region x 6h block",0.88924,0.02295,0.01076,0.88244,0.89583,8.53983
+"CQR, rolling 28d, ACI gamma=0.05, by region",0.89608,0.02332,0.00426,0.88790,0.90079,9.31446
+"CQR, rolling 28d, by region x 6h block",0.88264,0.02351,0.01736,0.87351,0.89360,8.76139
+"CQR, rolling 56d, by region",0.88343,0.02548,0.01657,0.86954,0.89583,8.75668
+"CQR, rolling 28d, by region",0.88120,0.02775,0.01880,0.87500,0.88839,8.63017
+"SplitCP, rolling 28d, ACI gamma=0.05, by region",0.89578,0.03862,0.00513,0.88889,0.90228,8.97077
+"SplitCP, rolling 56d, ACI gamma=0.05, by region",0.90139,0.03897,0.00157,0.89955,0.90402,9.06772
+"SplitCP, rolling 56d, by region",0.88943,0.03959,0.01057,0.87426,0.89683,8.72341
+"SplitCP, rolling 28d, by region",0.88586,0.04203,0.01414,0.87723,0.89286,8.56719
