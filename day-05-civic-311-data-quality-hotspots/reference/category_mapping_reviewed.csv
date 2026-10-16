@@ -1,0 +1,38 @@
+raw_value,canonical_category,decision,basis,reviewer,reviewed_on
+Hole in road,Pothole in Street,override,free-text synonym; fuzzy proposal (Sewer Cave-In Inspection) rejected,build-agent,2026-10-16
+PHF,Pothole in Street,override,legacy CRM type code list,build-agent,2026-10-16
+SLA,Street Light Out,override,legacy CRM type code list,build-agent,2026-10-16
+SFA,Alley Light Out,override,legacy CRM type code list,build-agent,2026-10-16
+Graffiti Complaint,Graffiti Removal,override,free-text synonym; fuzzy proposal (Noise Complaint) rejected,build-agent,2026-10-16
+Remove Graffiti,Graffiti Removal,accept,word-order variant,build-agent,2026-10-16
+RODENT BAIT,Rodent Baiting,accept,truncated form,build-agent,2026-10-16
+Rat Problem,Rodent Baiting,override,free-text synonym,build-agent,2026-10-16
+Rodent Bait,Rodent Baiting,accept,truncated form,build-agent,2026-10-16
+Rodent Complaint,Rodent Baiting,override,free-text synonym; fuzzy proposal (Noise Complaint) rejected,build-agent,2026-10-16
+SGA,Rodent Baiting,override,legacy CRM type code list,build-agent,2026-10-16
+SKA,Abandoned Vehicle,override,legacy CRM type code list,build-agent,2026-10-16
+Broken Garbage Cart,Garbage Cart Maintenance,accept,free-text synonym,build-agent,2026-10-16
+Garbage Cart Repair,Garbage Cart Maintenance,accept,free-text synonym,build-agent,2026-10-16
+SIE,Garbage Cart Maintenance,override,legacy CRM type code list,build-agent,2026-10-16
+SEC,Tree Trim,override,legacy CRM type code list,build-agent,2026-10-16
+Tere Trim,Tree Trim,accept,typo,build-agent,2026-10-16
+Tree Trimming,Tree Trim,accept,inflected form,build-agent,2026-10-16
+Street Flooding,Water On Street,override,free-text synonym,build-agent,2026-10-16
+WBJ,Water On Street,override,legacy CRM type code list,build-agent,2026-10-16
+AAE,Sewer Cave-In Inspection,override,legacy CRM type code list,build-agent,2026-10-16
+SFC,Traffic Signal Out,override,legacy CRM type code list,build-agent,2026-10-16
+Traffic Light Out,Traffic Signal Out,accept,free-text synonym,build-agent,2026-10-16
+Broken Sidewalk,Sidewalk Inspection,override,free-text synonym,build-agent,2026-10-16
+SDW,Sidewalk Inspection,override,legacy CRM type code list,build-agent,2026-10-16
+BBA,Building Violation,override,legacy CRM type code list,build-agent,2026-10-16
+Building Code Complaint,Building Violation,override,free-text synonym; fuzzy proposal (Noise Complaint) rejected,build-agent,2026-10-16
+Loud Noise,Noise Complaint,accept,free-text synonym,build-agent,2026-10-16
+Animal Carcass,Dead Animal Pick-Up,override,free-text synonym,build-agent,2026-10-16
+SGQ,Dead Animal Pick-Up,override,legacy CRM type code list,build-agent,2026-10-16
+TEST ENTRY,,reject,test record; no category,build-agent,2026-10-16
+Other,,reject,no recoverable category,build-agent,2026-10-16
+Misc. Request,,reject,no recoverable category,build-agent,2026-10-16
+N/A,,reject,no recoverable category,build-agent,2026-10-16
+General Inquiry,,reject,not a service request type,build-agent,2026-10-16
+see notes,,reject,no recoverable category,build-agent,2026-10-16
+???,,reject,no recoverable category,build-agent,2026-10-16

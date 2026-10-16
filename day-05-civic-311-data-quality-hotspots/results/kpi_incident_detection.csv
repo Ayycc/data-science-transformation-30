@@ -1,0 +1,4 @@
+incident,start,end,what,rule,days,days_flagged,max_z
+INC1,2025-04-08,2025-04-11,mobile-app release drops coordinates on 55% of Mobile App requests,COORDS_MISSING,4,4,53.5
+INC2,2025-09-16,2025-09-17,ETL bug writes closed timestamps before created on 30% of closed requests,CLOSED_BEFORE_CREATED,2,2,153.6
+INC3,2025-11-20,2025-11-22,CRM sync outage blanks the ward on 45% of requests,WARD_INVALID,3,3,331.2

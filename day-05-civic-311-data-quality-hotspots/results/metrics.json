@@ -1,0 +1,356 @@
+{
+  "data": {
+    "path_used": "synthetic",
+    "label": "SYNTHETIC",
+    "scale": "full",
+    "seed": 42,
+    "public_probe": {
+      "chicago_311": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "nyc_311": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "sf_311": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    "rows_raw": 1004073,
+    "base_requests": 999078,
+    "duplicates_appended": 4995,
+    "raw_file_bytes": 127439513,
+    "window": [
+      "2025-01-01 00:00:00",
+      "2026-01-01 00:00:00"
+    ]
+  },
+  "contract": {
+    "version": "311-sr-contract/1.0.0",
+    "rules": 20,
+    "ge_expectations": 25
+  },
+  "quarantine": {
+    "rows_quarantined": 87314,
+    "pct_quarantined": 8.696,
+    "rows_clean": 916759,
+    "reason_rows": 93372,
+    "rows_with_multiple_reasons": 6058
+  },
+  "traceability": {
+    "quarantine_reason_rows": 93372,
+    "reasons_with_valid_rule_id": 93372,
+    "reasons_rederived_by_independent_check": 93372,
+    "independent_violations_missing_from_quarantine": 0,
+    "source_lines_found_in_raw": 93372
+  },
+  "defect_detection": {
+    "defect_classes": 15,
+    "classes_fully_caught": 15,
+    "classes_present": 15,
+    "defect_rows": 87314,
+    "defect_rows_caught": 87314,
+    "clean_rows": 916759,
+    "clean_rows_quarantined": 0,
+    "rules_never_fired": [
+      "CREATED_BEFORE_WINDOW",
+      "CLOSED_UNPARSEABLE",
+      "CLOSED_IN_FUTURE"
+    ]
+  },
+  "great_expectations": {
+    "raw_success": false,
+    "raw_failed_expectations": 21,
+    "clean_success": true,
+    "clean_failed_expectations": 0,
+    "pandera_ge_agreement": {
+      "comparable_rules": 17,
+      "matching": 17
+    }
+  },
+  "harmonisation": {
+    "distinct_raw_values": 195,
+    "by_method": {
+      "normalised": 92,
+      "fuzzy_auto": 51,
+      "no_match": 21,
+      "needs_review": 16,
+      "exact": 15
+    },
+    "reviewed_entries": 37,
+    "accuracy": {
+      "all_real_rows": {
+        "final": {
+          "rows": 1000077,
+          "correct": 1000077,
+          "wrong": 0,
+          "unresolved": 0,
+          "accuracy": 1.0
+        },
+        "auto_only": {
+          "rows": 1000077,
+          "correct": 950443,
+          "wrong": 0,
+          "unresolved": 49634,
+          "accuracy": 0.95037
+        }
+      },
+      "variant_rows": {
+        "final": {
+          "rows": 279509,
+          "correct": 279509,
+          "wrong": 0,
+          "unresolved": 0,
+          "accuracy": 1.0
+        },
+        "auto_only": {
+          "rows": 279509,
+          "correct": 229875,
+          "wrong": 0,
+          "unresolved": 49634,
+          "accuracy": 0.822424
+        }
+      },
+      "by_variant_kind": {
+        "abbrev": {
+          "final": {
+            "rows": 54148,
+            "correct": 54148,
+            "wrong": 0,
+            "unresolved": 0,
+            "accuracy": 1.0
+          },
+          "auto_only": {
+            "rows": 54148,
+            "correct": 50968,
+            "wrong": 0,
+            "unresolved": 3180,
+            "accuracy": 0.941272
+          }
+        },
+        "canonical": {
+          "final": {
+            "rows": 720568,
+            "correct": 720568,
+            "wrong": 0,
+            "unresolved": 0,
+            "accuracy": 1.0
+          },
+          "auto_only": {
+            "rows": 720568,
+            "correct": 720568,
+            "wrong": 0,
+            "unresolved": 0,
+            "accuracy": 1.0
+          }
+        },
+        "format": {
+          "final": {
+            "rows": 96241,
+            "correct": 96241,
+            "wrong": 0,
+            "unresolved": 0,
+            "accuracy": 1.0
+          },
+          "auto_only": {
+            "rows": 96241,
+            "correct": 96241,
+            "wrong": 0,
+            "unresolved": 0,
+            "accuracy": 1.0
+          }
+        },
+        "legacy_code": {
+          "final": {
+            "rows": 24425,
+            "correct": 24425,
+            "wrong": 0,
+            "unresolved": 0,
+            "accuracy": 1.0
+          },
+          "auto_only": {
+            "rows": 24425,
+            "correct": 3762,
+            "wrong": 0,
+            "unresolved": 20663,
+            "accuracy": 0.154023
+          }
+        },
+        "synonym": {
+          "final": {
+            "rows": 38407,
+            "correct": 38407,
+            "wrong": 0,
+            "unresolved": 0,
+            "accuracy": 1.0
+          },
+          "auto_only": {
+            "rows": 38407,
+            "correct": 14137,
+            "wrong": 0,
+            "unresolved": 24270,
+            "accuracy": 0.368084
+          }
+        },
+        "typo": {
+          "final": {
+            "rows": 66288,
+            "correct": 66288,
+            "wrong": 0,
+            "unresolved": 0,
+            "accuracy": 1.0
+          },
+          "auto_only": {
+            "rows": 66288,
+            "correct": 64767,
+            "wrong": 0,
+            "unresolved": 1521,
+            "accuracy": 0.977055
+          }
+        }
+      },
+      "junk_rows": 3996,
+      "junk_rows_mapped_to_a_category": 0
+    }
+  },
+  "kpi_anomalies": {
+    "quality": {
+      "incident_days": 9,
+      "incident_days_flagged": 9,
+      "incidents_detected": 3,
+      "incidents": 3,
+      "false_alarm_days": 0,
+      "false_alarm_dates": []
+    },
+    "volume": {
+      "storm_days": [
+        "2025-07-15",
+        "2025-07-16"
+      ],
+      "storm_days_flagged_total_volume": 1,
+      "other_days_flagged_total_volume": 0,
+      "category_day_flags": 5,
+      "category_day_flags_on_storm_days": 5,
+      "storm_categories_flagged": [
+        "Sewer Cave-In Inspection",
+        "Tree Trim",
+        "Water On Street"
+      ],
+      "max_total_volume_ratio": 1.76
+    },
+    "undated_rows": 3996,
+    "z_threshold": 6.0,
+    "min_lift": 0.01
+  },
+  "slo": {
+    "target_pass_rate": 0.9,
+    "by_quarter": {
+      "2025Q1": {
+        "pass_rate": 0.9228,
+        "budget_left_pct": 22.8,
+        "breached": false
+      },
+      "2025Q2": {
+        "pass_rate": 0.9154,
+        "budget_left_pct": 15.4,
+        "breached": false
+      },
+      "2025Q3": {
+        "pass_rate": 0.9174,
+        "budget_left_pct": 17.4,
+        "breached": false
+      },
+      "2025Q4": {
+        "pass_rate": 0.911,
+        "budget_left_pct": 11.0,
+        "breached": false
+      }
+    }
+  },
+  "hotspots": {
+    "h3_resolution": 8,
+    "min_cell_n": 30,
+    "fdr_q": 0.05,
+    "material_excess": 0.25,
+    "completed_requests_scored": 870480,
+    "cells_total": 1000,
+    "cells_scored": 977,
+    "gi_classes": {
+      "not_significant": 908,
+      "hot": 38,
+      "significant_not_material": 16,
+      "cold": 15
+    },
+    "naive_classes": {
+      "none": 927,
+      "hot": 37,
+      "cold": 13
+    },
+    "evaluation": {
+      "gi_star_hot": {
+        "flagged": 38,
+        "true_cells": 36,
+        "true_positive": 36,
+        "recall": 1.0,
+        "precision": 0.9474,
+        "precision_within_1_ring": 1.0
+      },
+      "gi_star_cold": {
+        "flagged": 15,
+        "true_cells": 12,
+        "true_positive": 12,
+        "recall": 1.0,
+        "precision": 0.8,
+        "precision_within_1_ring": 1.0
+      },
+      "naive_z_hot": {
+        "flagged": 37,
+        "true_cells": 36,
+        "true_positive": 35,
+        "recall": 0.9722,
+        "precision": 0.9459,
+        "precision_within_1_ring": 0.973
+      },
+      "naive_z_cold": {
+        "flagged": 13,
+        "true_cells": 12,
+        "true_positive": 12,
+        "recall": 1.0,
+        "precision": 0.9231,
+        "precision_within_1_ring": 0.9231
+      }
+    },
+    "median_hours_hot": 146.4,
+    "median_hours_not_hot": 78.7,
+    "requests_in_hot_cells": 20754
+  },
+  "equity": {
+    "all_cells": {
+      "spearman_rho_income_vs_delay": -0.436,
+      "spearman_p": 0.00492,
+      "q1_vs_q4_gap_pct": 12.9,
+      "q1_vs_q4_gap_ci95": [
+        4.9,
+        20.6
+      ],
+      "requests": 870480
+    },
+    "excluding_hotspot_cells": {
+      "spearman_rho_income_vs_delay": -0.479,
+      "spearman_p": 0.00176,
+      "q1_vs_q4_gap_pct": 16.6,
+      "q1_vs_q4_gap_ci95": [
+        13.1,
+        21.3
+      ],
+      "requests": 849726
+    },
+    "sjoin_matches_generator_assignment": 1.0,
+    "injected_low_income_multiplier": 1.15
+  },
+  "timings_s": {
+    "acquire": 23.6,
+    "ingest_stage_duckdb": 7.8,
+    "harmonise": 2.8,
+    "pandera_validate_quarantine": 19.2,
+    "great_expectations": 57.6,
+    "persist_evaluate": 5.4,
+    "kpis_anomalies": 3.0,
+    "h3_hotspots": 1.7,
+    "equity": 3.6,
+    "total": 127.3
+  }
+}

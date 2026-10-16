@@ -1,0 +1,521 @@
+{
+ "batch": "raw_extract",
+ "rows": 1004073,
+ "suite": "311-sr-contract/1.0.0",
+ "success": false,
+ "evaluated_expectations": 25,
+ "successful_expectations": 4,
+ "results": [
+  {
+   "rule_id": "R01",
+   "code": "SR_NUMBER_MISSING",
+   "expectation": "expect_column_values_to_not_be_null",
+   "kwargs": {
+    "column": "sr_number"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 367,
+   "unexpected_percent": 0.03655112725867542,
+   "partial_unexpected_list": [
+    "None",
+    "None",
+    "None",
+    "None",
+    "None"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R02",
+   "code": "SR_NUMBER_MALFORMED",
+   "expectation": "expect_column_values_to_match_regex",
+   "kwargs": {
+    "column": "sr_number",
+    "regex": "^SR\\d{2}-\\d{8}$"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 1132,
+   "unexpected_percent": 0.11278202979757021,
+   "partial_unexpected_list": [
+    "25-00000183",
+    "SR25-146",
+    "SR25-403",
+    "SR25-586",
+    "sr25 0003389"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R03",
+   "code": "DUPLICATE_RECORD",
+   "expectation": "expect_column_values_to_be_unique",
+   "kwargs": {
+    "column": "sr_number"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 10115,
+   "unexpected_percent": 1.0077652220869457,
+   "partial_unexpected_list": [
+    "SR25-00000001",
+    "SR25-00000001",
+    "SR25-00000144",
+    "SR25-00000144",
+    "SR25-00000449"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R04",
+   "code": "CREATED_MISSING_OR_UNPARSEABLE",
+   "expectation": "expect_column_values_to_not_be_null",
+   "kwargs": {
+    "column": "created_ts"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 1998,
+   "unexpected_percent": 0.19898951570254353,
+   "partial_unexpected_list": [
+    "NaT",
+    "NaT",
+    "NaT",
+    "NaT",
+    "NaT"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R05",
+   "code": "CREATED_IN_FUTURE",
+   "expectation": "expect_column_values_to_be_between",
+   "kwargs": {
+    "column": "created_ts",
+    "max_value": "2026-01-01 00:00:00"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 1998,
+   "unexpected_percent": 0.19938627348252375,
+   "partial_unexpected_list": [
+    "2026-05-25 22:56:07",
+    "2026-11-21 16:16:24",
+    "2026-11-12 01:28:24",
+    "2026-05-07 11:28:42",
+    "2026-12-15 03:12:14"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R06",
+   "code": "CREATED_BEFORE_WINDOW",
+   "expectation": "expect_column_values_to_be_between",
+   "kwargs": {
+    "column": "created_ts",
+    "min_value": "2025-01-01 00:00:00"
+   },
+   "success": true,
+   "element_count": 1004073,
+   "unexpected_count": 0,
+   "unexpected_percent": 0.0,
+   "partial_unexpected_list": [],
+   "exception": false
+  },
+  {
+   "rule_id": "R07",
+   "code": "CLOSED_UNPARSEABLE",
+   "expectation": "expect_column_values_to_not_be_null",
+   "kwargs": {
+    "column": "closed_ts",
+    "row_condition": "{'pass_through_filter': 'closed_raw.notna()', 'type': 'pass_through'}",
+    "condition_parser": "pandas"
+   },
+   "success": true,
+   "element_count": 976284,
+   "unexpected_count": 0,
+   "unexpected_percent": 0.0,
+   "partial_unexpected_list": [],
+   "exception": false
+  },
+  {
+   "rule_id": "R08",
+   "code": "CLOSED_PLACEHOLDER_DATE",
+   "expectation": "expect_column_values_to_be_between",
+   "kwargs": {
+    "column": "closed_ts",
+    "min_value": "2000-01-01 00:00:00"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 2997,
+   "unexpected_percent": 0.3069803458829603,
+   "partial_unexpected_list": [
+    "1970-01-01 00:00:00",
+    "1900-01-01 00:00:00",
+    "1970-01-01 00:00:00",
+    "1900-01-01 00:00:00",
+    "1900-01-01 00:00:00"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R09",
+   "code": "CLOSED_IN_FUTURE",
+   "expectation": "expect_column_values_to_be_between",
+   "kwargs": {
+    "column": "closed_ts",
+    "max_value": "2026-01-01 00:00:00"
+   },
+   "success": true,
+   "element_count": 1004073,
+   "unexpected_count": 0,
+   "unexpected_percent": 0.0,
+   "partial_unexpected_list": [],
+   "exception": false
+  },
+  {
+   "rule_id": "R10",
+   "code": "CLOSED_BEFORE_CREATED",
+   "expectation": "expect_column_pair_values_a_to_be_greater_than_b",
+   "kwargs": {
+    "column_A": "closed_ts",
+    "column_B": "created_ts",
+    "or_equal": "True",
+    "ignore_row_if": "either_value_is_missing"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 12654,
+   "unexpected_percent": 1.2987599480249694,
+   "partial_unexpected_list": [
+    "(np.datetime64('2024-12-09T08:49:18.000000000'), np.datetime64('2025-01-01T00:11:05.000000000'))",
+    "(np.datetime64('2024-12-18T05:00:43.000000000'), np.datetime64('2025-01-01T02:21:35.000000000'))",
+    "(np.datetime64('2024-12-27T21:10:26.000000000'), np.datetime64('2025-01-01T03:10:28.000000000'))",
+    "(np.datetime64('2024-12-07T06:09:52.000000000'), np.datetime64('2025-01-01T03:16:59.000000000'))",
+    "(np.datetime64('2024-12-31T10:01:38.000000000'), np.datetime64('2025-01-01T06:09:17.000000000'))"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R11",
+   "code": "STATUS_INVALID",
+   "expectation": "expect_column_values_to_be_in_set",
+   "kwargs": {
+    "column": "status",
+    "value_set": "['Open', 'Completed', 'Canceled']"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 1599,
+   "unexpected_percent": 0.1593146778734928,
+   "partial_unexpected_list": [
+    "completed - dup",
+    "Cancelled",
+    "Cancelled",
+    "DONE",
+    "DONE"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R11",
+   "code": "STATUS_INVALID",
+   "expectation": "expect_column_values_to_not_be_null",
+   "kwargs": {
+    "column": "status"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 399,
+   "unexpected_percent": 0.03973814652918662,
+   "partial_unexpected_list": [
+    "None",
+    "None",
+    "None",
+    "None",
+    "None"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R12",
+   "code": "COMPLETED_WITHOUT_CLOSE_DATE",
+   "expectation": "expect_column_values_to_not_be_null",
+   "kwargs": {
+    "column": "closed_raw",
+    "row_condition": "{'pass_through_filter': 'status == \"Completed\"', 'type': 'pass_through'}",
+    "condition_parser": "pandas"
+   },
+   "success": false,
+   "element_count": 948675,
+   "unexpected_count": 5994,
+   "unexpected_percent": 0.6318286030516246,
+   "partial_unexpected_list": [
+    "None",
+    "None",
+    "None",
+    "None",
+    "None"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R13",
+   "code": "OPEN_WITH_CLOSE_DATE",
+   "expectation": "expect_column_values_to_be_null",
+   "kwargs": {
+    "column": "closed_raw",
+    "row_condition": "{'pass_through_filter': 'status == \"Open\"', 'type': 'pass_through'}",
+    "condition_parser": "pandas"
+   },
+   "success": false,
+   "element_count": 23752,
+   "unexpected_count": 1998,
+   "unexpected_percent": 8.411923206466824,
+   "partial_unexpected_list": [
+    "2025-01-20 20:46:37",
+    "2025-01-11 04:51:11",
+    "2025-01-02 01:14:02",
+    "2025-01-07 04:38:56",
+    "2025-01-19 10:46:29"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R14",
+   "code": "COORDS_MISSING",
+   "expectation": "expect_column_values_to_not_be_null",
+   "kwargs": {
+    "column": "latitude"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 32166,
+   "unexpected_percent": 3.203551932976985,
+   "partial_unexpected_list": [
+    "nan",
+    "nan",
+    "nan",
+    "nan",
+    "nan"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R14",
+   "code": "COORDS_MISSING",
+   "expectation": "expect_column_values_to_not_be_null",
+   "kwargs": {
+    "column": "longitude"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 26276,
+   "unexpected_percent": 2.6169411984985156,
+   "partial_unexpected_list": [
+    "nan",
+    "nan",
+    "nan",
+    "nan",
+    "nan"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R15",
+   "code": "COORDS_NULL_ISLAND",
+   "expectation": "expect_column_values_to_not_be_in_set",
+   "kwargs": {
+    "column": "latitude",
+    "row_condition": "{'pass_through_filter': 'longitude == 0', 'type': 'pass_through'}",
+    "condition_parser": "pandas",
+    "value_set": "[0.0]"
+   },
+   "success": false,
+   "element_count": 3996,
+   "unexpected_count": 3996,
+   "unexpected_percent": 100.0,
+   "partial_unexpected_list": [
+    "0.0",
+    "0.0",
+    "0.0",
+    "0.0",
+    "0.0"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R16",
+   "code": "COORDS_OUT_OF_BBOX",
+   "expectation": "expect_column_values_to_be_between",
+   "kwargs": {
+    "column": "latitude",
+    "row_condition": "{'pass_through_filter': 'not (latitude == 0 and longitude == 0)', 'type': 'pass_through'}",
+    "condition_parser": "pandas",
+    "min_value": "41.645",
+    "max_value": "42.023"
+   },
+   "success": false,
+   "element_count": 1000077,
+   "unexpected_count": 4577,
+   "unexpected_percent": 0.4728740555691588,
+   "partial_unexpected_list": [
+    "39.775399",
+    "-87.598325",
+    "-87.698263",
+    "-87.647959",
+    "-87.611433"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R16",
+   "code": "COORDS_OUT_OF_BBOX",
+   "expectation": "expect_column_values_to_be_between",
+   "kwargs": {
+    "column": "longitude",
+    "row_condition": "{'pass_through_filter': 'not (latitude == 0 and longitude == 0)', 'type': 'pass_through'}",
+    "condition_parser": "pandas",
+    "min_value": "-87.94",
+    "max_value": "-87.524"
+   },
+   "success": false,
+   "element_count": 1000077,
+   "unexpected_count": 4187,
+   "unexpected_percent": 0.4299646437003043,
+   "partial_unexpected_list": [
+    "-89.633079",
+    "41.735517",
+    "41.751831",
+    "41.829711",
+    "41.658092"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R17",
+   "code": "COORDS_SWAPPED_LATLON",
+   "expectation": "expect_column_values_to_be_in_set",
+   "kwargs": {
+    "column": "swapped_in_bbox",
+    "row_condition": "{'pass_through_filter': 'latitude.notna() and longitude.notna() and not in_bbox', 'type': 'pass_through'}",
+    "condition_parser": "pandas",
+    "value_set": "[False]"
+   },
+   "success": false,
+   "element_count": 8573,
+   "unexpected_count": 2997,
+   "unexpected_percent": 34.95859092499708,
+   "partial_unexpected_list": [
+    "True",
+    "True",
+    "True",
+    "True",
+    "True"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R18",
+   "code": "COORDS_OUTSIDE_CITY",
+   "expectation": "expect_column_values_to_be_in_set",
+   "kwargs": {
+    "column": "in_city_polygon",
+    "row_condition": "{'pass_through_filter': 'latitude.notna() and longitude.notna() and in_bbox', 'type': 'pass_through'}",
+    "condition_parser": "pandas",
+    "value_set": "[True]"
+   },
+   "success": false,
+   "element_count": 963334,
+   "unexpected_count": 2416,
+   "unexpected_percent": 0.25079567418984483,
+   "partial_unexpected_list": [
+    "False",
+    "False",
+    "False",
+    "False",
+    "False"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R19",
+   "code": "WARD_INVALID",
+   "expectation": "expect_column_values_to_be_between",
+   "kwargs": {
+    "column": "ward",
+    "min_value": "1.0",
+    "max_value": "50.0"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 2679,
+   "unexpected_percent": 0.2679742288613946,
+   "partial_unexpected_list": [
+    "51.0",
+    "99.0",
+    "99.0",
+    "51.0",
+    "-1.0"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R19",
+   "code": "WARD_INVALID",
+   "expectation": "expect_column_values_to_not_be_null",
+   "kwargs": {
+    "column": "ward"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 4350,
+   "unexpected_percent": 0.4332354320851173,
+   "partial_unexpected_list": [
+    "nan",
+    "nan",
+    "nan",
+    "nan",
+    "nan"
+   ],
+   "exception": false
+  },
+  {
+   "rule_id": "R20",
+   "code": "CATEGORY_UNMAPPED",
+   "expectation": "expect_column_values_to_be_in_set",
+   "kwargs": {
+    "column": "category",
+    "value_set": "['Pothole in Street', 'Street Light Out', 'Alley Light Out', 'Graffiti Removal', 'Rodent Baiting', 'Abandoned Vehicle', 'Garbage Cart Maintenance', 'Tree Trim', 'Water On Street', 'Sewer Cave-In Inspection', 'Traffic Signal Out', 'Sidewalk Inspection', 'Building Violation', 'Noise Complaint', 'Dead Animal Pick-Up']"
+   },
+   "success": true,
+   "element_count": 1004073,
+   "unexpected_count": 0,
+   "unexpected_percent": 0.0,
+   "partial_unexpected_list": [],
+   "exception": false
+  },
+  {
+   "rule_id": "R20",
+   "code": "CATEGORY_UNMAPPED",
+   "expectation": "expect_column_values_to_not_be_null",
+   "kwargs": {
+    "column": "category"
+   },
+   "success": false,
+   "element_count": 1004073,
+   "unexpected_count": 3996,
+   "unexpected_percent": 0.39797903140508706,
+   "partial_unexpected_list": [
+    "None",
+    "None",
+    "None",
+    "None",
+    "None"
+   ],
+   "exception": false
+  }
+ ]
+}

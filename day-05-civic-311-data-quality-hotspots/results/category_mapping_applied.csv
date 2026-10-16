@@ -1,0 +1,196 @@
+raw_value,proposed_category,score,method,category,source,rows
+Abandoned Vehicle,Abandoned Vehicle,100.0,exact,Abandoned Vehicle,auto,43332
+Alley Light Out,Alley Light Out,100.0,exact,Alley Light Out,auto,28478
+Building Violation,Building Violation,100.0,exact,Building Violation,auto,49929
+Dead Animal Pick-Up,Dead Animal Pick-Up,100.0,exact,Dead Animal Pick-Up,auto,64406
+Garbage Cart Maintenance,Garbage Cart Maintenance,100.0,exact,Garbage Cart Maintenance,auto,57533
+Graffiti Removal,Graffiti Removal,100.0,exact,Graffiti Removal,auto,57610
+Noise Complaint,Noise Complaint,100.0,exact,Noise Complaint,auto,50474
+Pothole in Street,Pothole in Street,100.0,exact,Pothole in Street,auto,86452
+Rodent Baiting,Rodent Baiting,100.0,exact,Rodent Baiting,auto,50142
+Sewer Cave-In Inspection,Sewer Cave-In Inspection,100.0,exact,Sewer Cave-In Inspection,auto,21828
+Sidewalk Inspection,Sidewalk Inspection,100.0,exact,Sidewalk Inspection,auto,35747
+Street Light Out,Street Light Out,100.0,exact,Street Light Out,auto,64498
+Traffic Signal Out,Traffic Signal Out,100.0,exact,Traffic Signal Out,auto,28810
+Tree Trim,Tree Trim,100.0,exact,Tree Trim,auto,44030
+Water On Street,Water On Street,100.0,exact,Water On Street,auto,37299
+Abandoned eVhicle,Abandoned Vehicle,94.1,fuzzy_auto,Abandoned Vehicle,auto,1384
+Abanoned Vehicle,Abandoned Vehicle,97.0,fuzzy_auto,Abandoned Vehicle,auto,1380
+Alley LLight Out,Alley Light Out,96.8,fuzzy_auto,Alley Light Out,auto,1023
+Alley ight Out,Alley Light Out,96.6,fuzzy_auto,Alley Light Out,auto,953
+Building Viiolation,Building Violation,97.3,fuzzy_auto,Building Violation,auto,1766
+Buildnig Violation,Building Violation,94.4,fuzzy_auto,Building Violation,auto,1765
+Dead Animal,Dead Animal Pick-Up,90.0,fuzzy_auto,Dead Animal Pick-Up,auto,2099
+Dead Annimal Pick-Up,Dead Animal Pick-Up,97.4,fuzzy_auto,Dead Animal Pick-Up,auto,2058
+Dead nAimal Pick-Up,Dead Animal Pick-Up,94.7,fuzzy_auto,Dead Animal Pick-Up,auto,2124
+GRAF,Graffiti Removal,90.0,fuzzy_auto,Graffiti Removal,auto,1850
+Gabage Cart Maintenance,Garbage Cart Maintenance,97.9,fuzzy_auto,Garbage Cart Maintenance,auto,1902
+Garbage Cart Mintenance,Garbage Cart Maintenance,97.9,fuzzy_auto,Garbage Cart Maintenance,auto,1869
+Garffiti Removal,Graffiti Removal,93.8,fuzzy_auto,Graffiti Removal,auto,1913
+Graffiti emoval,Graffiti Removal,96.8,fuzzy_auto,Graffiti Removal,auto,1901
+Light Out - Alley,Alley Light Out,95.0,fuzzy_auto,Alley Light Out,auto,987
+Light Out - Street,Street Light Out,95.0,fuzzy_auto,Street Light Out,auto,1880
+NOI,Noise Complaint,90.0,fuzzy_auto,Noise Complaint,auto,1912
+Noise oCmplaint,Noise Complaint,93.3,fuzzy_auto,Noise Complaint,auto,1989
+Pot Hole In Street,Pothole in Street,97.1,fuzzy_auto,Pothole in Street,auto,2805
+Rodent Bating,Rodent Baiting,96.3,fuzzy_auto,Rodent Baiting,auto,1575
+RodentBaiting,Rodent Baiting,96.3,fuzzy_auto,Rodent Baiting,auto,1704
+Sewer Cave In,Sewer Cave-In Inspection,90.0,fuzzy_auto,Sewer Cave-In Inspection,auto,755
+Sewer Cave-In Inspecction,Sewer Cave-In Inspection,98.0,fuzzy_auto,Sewer Cave-In Inspection,auto,742
+Sewer aCve-In Inspection,Sewer Cave-In Inspection,95.8,fuzzy_auto,Sewer Cave-In Inspection,auto,782
+Siddewalk Inspection,Sidewalk Inspection,97.4,fuzzy_auto,Sidewalk Inspection,auto,1339
+Sidewalk Inspectoin,Sidewalk Inspection,94.7,fuzzy_auto,Sidewalk Inspection,auto,1275
+Signal Out,Traffic Signal Out,90.0,fuzzy_auto,Traffic Signal Out,auto,895
+Street Ligght Out,Street Light Out,97.0,fuzzy_auto,Street Light Out,auto,1964
+Street Lighht Out,Street Light Out,97.0,fuzzy_auto,Street Light Out,auto,1891
+Street Pothole,Pothole in Street,95.0,fuzzy_auto,Pothole in Street,auto,2732
+Streetlight Out,Street Light Out,96.8,fuzzy_auto,Street Light Out,auto,1860
+Traffic Signal OOut,Traffic Signal Out,97.3,fuzzy_auto,Traffic Signal Out,auto,945
+Traffic Signall Out,Traffic Signal Out,97.3,fuzzy_auto,Traffic Signal Out,auto,921
+Trim Tree,Tree Trim,95.0,fuzzy_auto,Tree Trim,auto,1538
+Vehicle Abandoned,Abandoned Vehicle,95.0,fuzzy_auto,Abandoned Vehicle,auto,1391
+Wate rOn Street,Water On Street,93.3,fuzzy_auto,Water On Street,auto,1265
+Water n Street,Water On Street,96.6,fuzzy_auto,Water On Street,auto,1359
+abandoned vehcile,Abandoned Vehicle,94.1,fuzzy_auto,Abandoned Vehicle,auto,1380
+alley light oout,Alley Light Out,96.8,fuzzy_auto,Alley Light Out,auto,987
+building violatiion,Building Violation,97.3,fuzzy_auto,Building Violation,auto,1789
+dea danimal pick-up,Dead Animal Pick-Up,94.7,fuzzy_auto,Dead Animal Pick-Up,auto,2134
+garage cart maintenance,Garbage Cart Maintenance,97.9,fuzzy_auto,Garbage Cart Maintenance,auto,1841
+graffii removal,Graffiti Removal,96.8,fuzzy_auto,Graffiti Removal,auto,1850
+noisecomplaint,Noise Complaint,96.6,fuzzy_auto,Noise Complaint,auto,1966
+pothole in streeet,Pothole in Street,97.1,fuzzy_auto,Pothole in Street,auto,2795
+rodennt baiting,Rodent Baiting,96.6,fuzzy_auto,Rodent Baiting,auto,1656
+sewer cave-in innspection,Sewer Cave-In Inspection,98.0,fuzzy_auto,Sewer Cave-In Inspection,auto,769
+siddewalk inspection,Sidewalk Inspection,97.4,fuzzy_auto,Sidewalk Inspection,auto,1301
+streetlight out,Street Light Out,96.8,fuzzy_auto,Street Light Out,auto,1900
+trafficsignal out,Traffic Signal Out,97.1,fuzzy_auto,Traffic Signal Out,auto,926
+wate on street,Water On Street,96.6,fuzzy_auto,Water On Street,auto,1283
+Broken Garbage Cart,Garbage Cart Maintenance,73.5,needs_review,Garbage Cart Maintenance,reviewed,1834
+Building Code Complaint,Noise Complaint,85.5,needs_review,Building Violation,reviewed,1819
+Garbage Cart Repair,Garbage Cart Maintenance,73.5,needs_review,Garbage Cart Maintenance,reviewed,1794
+Graffiti Complaint,Noise Complaint,71.2,needs_review,Graffiti Removal,reviewed,1868
+Hole in road,Sewer Cave-In Inspection,85.5,needs_review,Pothole in Street,reviewed,2721
+Loud Noise,Noise Complaint,85.5,needs_review,Noise Complaint,reviewed,1979
+RODENT BAIT,Rodent Baiting,88.0,needs_review,Rodent Baiting,reviewed,1574
+Remove Graffiti,Graffiti Removal,85.8,needs_review,Graffiti Removal,reviewed,1899
+Rodent Bait,Rodent Baiting,88.0,needs_review,Rodent Baiting,reviewed,1606
+Rodent Complaint,Noise Complaint,77.4,needs_review,Rodent Baiting,reviewed,1594
+SEC,Sewer Cave-In Inspection,72.0,needs_review,Tree Trim,reviewed,1540
+SGA,Garbage Cart Maintenance,72.0,needs_review,Rodent Baiting,reviewed,1662
+SIE,Sewer Cave-In Inspection,72.0,needs_review,Garbage Cart Maintenance,reviewed,1866
+Tere Trim,Tree Trim,88.9,needs_review,Tree Trim,reviewed,1521
+Traffic Light Out,Traffic Signal Out,80.0,needs_review,Traffic Signal Out,reviewed,939
+Tree Trimming,Tree Trim,81.8,needs_review,Tree Trim,reviewed,1589
+???,,0.0,no_match,,reviewed,480
+AAE,Abandoned Vehicle,60.0,no_match,Sewer Cave-In Inspection,reviewed,823
+Animal Carcass,Dead Animal Pick-Up,57.0,no_match,Dead Animal Pick-Up,reviewed,2038
+BBA,Rodent Baiting,68.4,no_match,Building Violation,reviewed,1880
+Broken Sidewalk,Sidewalk Inspection,66.1,no_match,Sidewalk Inspection,reviewed,1257
+General Inquiry,Sewer Cave-In Inspection,48.0,no_match,,reviewed,477
+Misc. Request,Pothole in Street,41.4,no_match,,reviewed,511
+N/A,Dead Animal Pick-Up,68.4,no_match,,reviewed,461
+Other,Water On Street,64.1,no_match,,reviewed,480
+PHF,Pothole in Street,45.0,no_match,Pothole in Street,reviewed,2800
+Rat Problem,Graffiti Removal,51.9,no_match,Rodent Baiting,reviewed,1668
+SDW,Sewer Cave-In Inspection,60.0,no_match,Sidewalk Inspection,reviewed,1224
+SFA,Street Light Out,45.0,no_match,Alley Light Out,reviewed,1077
+SFC,Traffic Signal Out,60.0,no_match,Traffic Signal Out,reviewed,906
+SGQ,Traffic Signal Out,60.0,no_match,Dead Animal Pick-Up,reviewed,2137
+SKA,Street Light Out,45.0,no_match,Abandoned Vehicle,reviewed,1449
+SLA,Building Violation,60.0,no_match,Street Light Out,reviewed,1927
+Street Flooding,Street Light Out,64.5,no_match,Water On Street,reviewed,1271
+TEST ENTRY,Water On Street,54.0,no_match,,reviewed,540
+WBJ,Water On Street,45.0,no_match,Water On Street,reviewed,1372
+see notes,Pothole in Street,57.0,no_match,,reviewed,529
+  Abandoned  Vehicle,Abandoned Vehicle,100.0,normalised,Abandoned Vehicle,auto,1422
+  Alley  Light  Out,Alley Light Out,100.0,normalised,Alley Light Out,auto,1074
+  Building  Violation,Building Violation,100.0,normalised,Building Violation,auto,1750
+  Dead  Animal  Pick-Up,Dead Animal Pick-Up,100.0,normalised,Dead Animal Pick-Up,auto,2086
+  Garbage  Cart  Maintenance,Garbage Cart Maintenance,100.0,normalised,Garbage Cart Maintenance,auto,1803
+  Graffiti  Removal,Graffiti Removal,100.0,normalised,Graffiti Removal,auto,1894
+  Noise  Complaint,Noise Complaint,100.0,normalised,Noise Complaint,auto,1950
+  Pothole  in  Street,Pothole in Street,100.0,normalised,Pothole in Street,auto,2811
+  Rodent  Baiting,Rodent Baiting,100.0,normalised,Rodent Baiting,auto,1687
+  Sewer  Cave-In  Inspection,Sewer Cave-In Inspection,100.0,normalised,Sewer Cave-In Inspection,auto,761
+  Sidewalk  Inspection,Sidewalk Inspection,100.0,normalised,Sidewalk Inspection,auto,1247
+  Street  Light  Out,Street Light Out,100.0,normalised,Street Light Out,auto,1961
+  Traffic  Signal  Out,Traffic Signal Out,100.0,normalised,Traffic Signal Out,auto,967
+  Tree  Trim,Tree Trim,100.0,normalised,Tree Trim,auto,1505
+  Water  On  Street,Water On Street,100.0,normalised,Water On Street,auto,1273
+ABANDONED VEH,Abandoned Vehicle,100.0,normalised,Abandoned Vehicle,auto,1336
+ABANDONED VEHICLE,Abandoned Vehicle,100.0,normalised,Abandoned Vehicle,auto,1377
+ALLEY LIGHT OUT,Alley Light Out,100.0,normalised,Alley Light Out,auto,949
+ALLEY LT OUT,Alley Light Out,100.0,normalised,Alley Light Out,auto,941
+Abandoned Veh,Abandoned Vehicle,100.0,normalised,Abandoned Vehicle,auto,1436
+Abandoned Vehicle  ,Abandoned Vehicle,100.0,normalised,Abandoned Vehicle,auto,1378
+Abnd Vehicle,Abandoned Vehicle,100.0,normalised,Abandoned Vehicle,auto,1396
+Alley Light Out  ,Alley Light Out,100.0,normalised,Alley Light Out,auto,981
+Alley Lt Out,Alley Light Out,100.0,normalised,Alley Light Out,auto,1047
+BLDG VIOLATION,Building Violation,100.0,normalised,Building Violation,auto,1754
+BUILDING VIOLATION,Building Violation,100.0,normalised,Building Violation,auto,1775
+Bldg Violation,Building Violation,100.0,normalised,Building Violation,auto,1836
+Building Violation  ,Building Violation,100.0,normalised,Building Violation,auto,1825
+DEAD ANIMAL PICK-UP,Dead Animal Pick-Up,100.0,normalised,Dead Animal Pick-Up,auto,2073
+DEAD ANIMAL PICKUP,Dead Animal Pick-Up,100.0,normalised,Dead Animal Pick-Up,auto,2083
+Dead Animal Pick-Up  ,Dead Animal Pick-Up,100.0,normalised,Dead Animal Pick-Up,auto,2047
+Dead Animal Pickup,Dead Animal Pick-Up,100.0,normalised,Dead Animal Pick-Up,auto,2074
+GARBAGE CART MAINT,Garbage Cart Maintenance,100.0,normalised,Garbage Cart Maintenance,auto,1897
+GARBAGE CART MAINTENANCE,Garbage Cart Maintenance,100.0,normalised,Garbage Cart Maintenance,auto,1854
+GRAFFITI REMOVAL,Graffiti Removal,100.0,normalised,Graffiti Removal,auto,1816
+GRAFFITI RMVL,Graffiti Removal,100.0,normalised,Graffiti Removal,auto,1911
+Garbage Cart Maint,Garbage Cart Maintenance,100.0,normalised,Garbage Cart Maintenance,auto,1881
+Garbage Cart Maintenance  ,Garbage Cart Maintenance,100.0,normalised,Garbage Cart Maintenance,auto,1919
+Graffiti Removal  ,Graffiti Removal,100.0,normalised,Graffiti Removal,auto,1812
+Graffiti Rmvl,Graffiti Removal,100.0,normalised,Graffiti Removal,auto,1883
+NOISE COMPL,Noise Complaint,100.0,normalised,Noise Complaint,auto,1902
+NOISE COMPLAINT,Noise Complaint,100.0,normalised,Noise Complaint,auto,1969
+Noise Compl,Noise Complaint,100.0,normalised,Noise Complaint,auto,1847
+Noise Complaint  ,Noise Complaint,100.0,normalised,Noise Complaint,auto,2019
+POTHOLE IN ST,Pothole in Street,100.0,normalised,Pothole in Street,auto,2808
+POTHOLE IN STREET,Pothole in Street,100.0,normalised,Pothole in Street,auto,2749
+Pothole  in Street,Pothole in Street,100.0,normalised,Pothole in Street,auto,2858
+Pothole in St,Pothole in Street,100.0,normalised,Pothole in Street,auto,2745
+Pothole in Street  ,Pothole in Street,100.0,normalised,Pothole in Street,auto,2758
+RODENT BAITING,Rodent Baiting,100.0,normalised,Rodent Baiting,auto,1638
+Rodent Baiting  ,Rodent Baiting,100.0,normalised,Rodent Baiting,auto,1575
+SEWER CAVE IN INSP,Sewer Cave-In Inspection,100.0,normalised,Sewer Cave-In Inspection,auto,729
+SEWER CAVE-IN INSPECTION,Sewer Cave-In Inspection,100.0,normalised,Sewer Cave-In Inspection,auto,742
+SIDEWALK INSP,Sidewalk Inspection,100.0,normalised,Sidewalk Inspection,auto,1332
+SIDEWALK INSPECTION,Sidewalk Inspection,100.0,normalised,Sidewalk Inspection,auto,1221
+ST LIGHT OUT,Street Light Out,100.0,normalised,Street Light Out,auto,1921
+STREET LIGHT OUT,Street Light Out,100.0,normalised,Street Light Out,auto,1991
+Sewer Cave In Insp,Sewer Cave-In Inspection,100.0,normalised,Sewer Cave-In Inspection,auto,784
+Sewer Cave-In Inspection  ,Sewer Cave-In Inspection,100.0,normalised,Sewer Cave-In Inspection,auto,780
+Sidewalk Insp,Sidewalk Inspection,100.0,normalised,Sidewalk Inspection,auto,1257
+Sidewalk Inspection  ,Sidewalk Inspection,100.0,normalised,Sidewalk Inspection,auto,1352
+St Light Out,Street Light Out,100.0,normalised,Street Light Out,auto,1945
+Street Light Out  ,Street Light Out,100.0,normalised,Street Light Out,auto,1895
+Street Lt Out,Street Light Out,100.0,normalised,Street Light Out,auto,1911
+TRAFFIC SIG OUT,Traffic Signal Out,100.0,normalised,Traffic Signal Out,auto,912
+TRAFFIC SIGNAL OUT,Traffic Signal Out,100.0,normalised,Traffic Signal Out,auto,955
+TREE TRIM,Tree Trim,100.0,normalised,Tree Trim,auto,1515
+TREE TRIM REQ,Tree Trim,100.0,normalised,Tree Trim,auto,1499
+Traffic Sig Out,Traffic Signal Out,100.0,normalised,Traffic Signal Out,auto,872
+Traffic Signal Out  ,Traffic Signal Out,100.0,normalised,Traffic Signal Out,auto,897
+Tree Trim  ,Tree Trim,100.0,normalised,Tree Trim,auto,1579
+Tree Trim Req,Tree Trim,100.0,normalised,Tree Trim,auto,1580
+WATER ON ST,Water On Street,100.0,normalised,Water On Street,auto,1284
+WATER ON STREET,Water On Street,100.0,normalised,Water On Street,auto,1313
+Water On St,Water On Street,100.0,normalised,Water On Street,auto,1360
+Water On Street  ,Water On Street,100.0,normalised,Water On Street,auto,1249
+abandoned vehicle,Abandoned Vehicle,100.0,normalised,Abandoned Vehicle,auto,1384
+alley light out,Alley Light Out,100.0,normalised,Alley Light Out,auto,1057
+building violation,Building Violation,100.0,normalised,Building Violation,auto,1758
+dead animal pick-up,Dead Animal Pick-Up,100.0,normalised,Dead Animal Pick-Up,auto,2124
+garbage cart maintenance,Garbage Cart Maintenance,100.0,normalised,Garbage Cart Maintenance,auto,1856
+graffiti removal,Graffiti Removal,100.0,normalised,Graffiti Removal,auto,1878
+noise complaint,Noise Complaint,100.0,normalised,Noise Complaint,auto,1957
+pothole in street,Pothole in Street,100.0,normalised,Pothole in Street,auto,2739
+rodent baiting,Rodent Baiting,100.0,normalised,Rodent Baiting,auto,1557
+sewer cave-in inspection,Sewer Cave-In Inspection,100.0,normalised,Sewer Cave-In Inspection,auto,800
+sidewalk inspection,Sidewalk Inspection,100.0,normalised,Sidewalk Inspection,auto,1210
+street light out,Street Light Out,100.0,normalised,Street Light Out,auto,1933
+traffic signal out,Traffic Signal Out,100.0,normalised,Traffic Signal Out,auto,924
+tree  trim,Tree Trim,100.0,normalised,Tree Trim,auto,1543
+tree trim,Tree Trim,100.0,normalised,Tree Trim,auto,1577
+water on street,Water On Street,100.0,normalised,Water On Street,auto,1293

@@ -1,0 +1,114 @@
+{
+  "path_used": "synthetic",
+  "scale": "sample",
+  "seed": 43,
+  "rows": 8107,
+  "base_requests": 8067,
+  "duplicates_appended": 40,
+  "window": [
+    "2025-01-01 00:00:00",
+    "2026-01-01 00:00:00"
+  ],
+  "defect_rates": {
+    "COORDS_MISSING": 0.03,
+    "COORDS_NULL_ISLAND": 0.004,
+    "COORDS_SWAPPED": 0.003,
+    "COORDS_OUTSIDE_CITY": 0.004,
+    "CLOSED_BEFORE_CREATED": 0.008,
+    "CREATED_IN_FUTURE": 0.002,
+    "CLOSED_PLACEHOLDER": 0.003,
+    "TIMESTAMP_UNPARSEABLE": 0.002,
+    "COMPLETED_WITHOUT_CLOSE": 0.006,
+    "OPEN_WITH_CLOSE": 0.002,
+    "STATUS_INVALID": 0.002,
+    "WARD_INVALID": 0.004,
+    "SR_NUMBER_MALFORMED": 0.0015,
+    "CATEGORY_UNMAPPABLE": 0.004,
+    "DUPLICATE_RECORD": 0.005
+  },
+  "incidents": [
+    {
+      "id": "INC1",
+      "start": "2025-04-08",
+      "end": "2025-04-11",
+      "defect": "COORDS_MISSING",
+      "what": "mobile-app release drops coordinates on 55% of Mobile App requests",
+      "share": 0.55
+    },
+    {
+      "id": "INC2",
+      "start": "2025-09-16",
+      "end": "2025-09-17",
+      "defect": "CLOSED_BEFORE_CREATED",
+      "what": "ETL bug writes closed timestamps before created on 30% of closed requests",
+      "share": 0.3
+    },
+    {
+      "id": "INC3",
+      "start": "2025-11-20",
+      "end": "2025-11-22",
+      "defect": "WARD_INVALID",
+      "what": "CRM sync outage blanks the ward on 45% of requests",
+      "share": 0.45
+    }
+  ],
+  "storm_days": [
+    "2025-07-15",
+    "2025-07-16"
+  ],
+  "planted_zones": [
+    {
+      "name": "SLOW-South",
+      "lon": -87.66,
+      "lat": 41.79,
+      "radius_km": 1.8,
+      "multiplier": 2.2
+    },
+    {
+      "name": "SLOW-West",
+      "lon": -87.73,
+      "lat": 41.88,
+      "radius_km": 1.5,
+      "multiplier": 2.2
+    },
+    {
+      "name": "SLOW-Northwest",
+      "lon": -87.7,
+      "lat": 41.965,
+      "radius_km": 1.5,
+      "multiplier": 2.2
+    },
+    {
+      "name": "FAST-Loop",
+      "lon": -87.635,
+      "lat": 41.88,
+      "radius_km": 1.5,
+      "multiplier": 0.5
+    }
+  ],
+  "low_income_multiplier": 1.15,
+  "defect_counts": {
+    "none": 7396,
+    "COORDS_MISSING": 256,
+    "CLOSED_BEFORE_CREATED": 77,
+    "WARD_INVALID": 70,
+    "COMPLETED_WITHOUT_CLOSE": 48,
+    "DUPLICATE_RECORD": 40,
+    "COORDS_NULL_ISLAND": 32,
+    "CATEGORY_UNMAPPABLE": 32,
+    "COORDS_OUTSIDE_CITY": 32,
+    "COORDS_SWAPPED": 24,
+    "CLOSED_PLACEHOLDER": 24,
+    "CREATED_IN_FUTURE": 16,
+    "STATUS_INVALID": 16,
+    "OPEN_WITH_CLOSE": 16,
+    "TIMESTAMP_UNPARSEABLE": 16,
+    "SR_NUMBER_MALFORMED": 12
+  },
+  "files": {
+    "raw": "requests_raw.csv.gz",
+    "truth": "truth.csv.gz",
+    "manifest": "manifest.json"
+  },
+  "raw_bytes": 216077
+}

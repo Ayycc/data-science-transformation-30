@@ -1,0 +1,17 @@
+# Pinned for Python 3.11-3.13 (CI uses 3.11; results/ were produced on 3.13).
+pandera==0.34.1
+great_expectations==1.24.0
+h3==4.5.0
+geopandas==1.2.0
+shapely==2.2.0
+pyproj==3.8.0; python_version >= "3.12"
+pyproj==3.7.2; python_version < "3.12"  # 3.8 has no 3.11 wheels
+rapidfuzz==3.14.6
+duckdb==1.5.6
+pandas==2.3.3
+numpy==2.4.6
+scipy==1.18.1; python_version >= "3.12"
+scipy==1.17.1; python_version < "3.12"  # 1.18 has no 3.11 wheels
+matplotlib==3.11.2
+pytest==9.1.1
+ruff==0.17.0
