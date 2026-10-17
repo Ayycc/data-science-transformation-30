@@ -1,0 +1,74 @@
+# Day 07 configuration. Every cost, target and constraint used by the pipeline lives here.
+# All data are SYNTHETIC (seeded generator); see README "Data provenance".
+
+seed: 20261017
+
+data:
+  n_skus: 800
+  history_weeks: 104        # used for segmentation, forecasting and policy design
+  test_weeks: 52            # unseen year, only used by the SimPy simulation
+  validation_weeks: 26      # last part of history held out to pick forecast models / estimate error
+  pattern_mix:              # share of SKUs by demand pattern (generator only; the pipeline re-derives classes)
+    smooth: 0.35
+    erratic: 0.15
+    intermittent: 0.30
+    lumpy: 0.12
+    seasonal: 0.08
+  season_start_week: 40     # week-of-year the seasonal window opens
+  season_length_weeks: 10
+  m5_probe_url: "https://github.com/Nixtla/m5-forecasts/raw/main/datasets/m5.zip"
+  m5_probe_timeout_s: 8
+
+warehouses:
+  - {name: WH-North, demand_share: 0.45}
+  - {name: WH-Central, demand_share: 0.33}
+  - {name: WH-South, demand_share: 0.22}
+
+costs:
+  holding_rate_annual: 0.25         # fraction of unit cost per year (capital, space, obsolescence)
+  ordering_cost_per_line: 30.0      # $ per purchase-order line (SKU x warehouse x week)
+  shortage_goodwill_frac_price: 0.25  # lost-sale penalty on top of the lost margin, as a fraction of price
+  seasonal_salvage_frac_cost: 0.35  # end-of-season leftovers recovered at this fraction of unit cost
+
+segmentation:
+  abc_cutoffs: [0.80, 0.95]   # cumulative revenue share: A <= 0.80 < B <= 0.95 < C
+  xyz_cutoffs: [0.5, 1.0]     # coefficient of variation of weekly demand: X < 0.5 <= Y < 1.0 <= Z
+  sbc_adi: 1.32               # Syntetos-Boylan-Croston cut-offs
+  sbc_cv2: 0.49
+
+# Cycle-service-level targets by ABC x XYZ class (probability of no stock-out per replenishment cycle).
+service_targets:
+  AX: 0.99
+  AY: 0.985
+  AZ: 0.98
+  BX: 0.98
+  BY: 0.97
+  BZ: 0.96
+  CX: 0.96
+  CY: 0.95
+  CZ: 0.93
+
+policy:
+  review_period_weeks: 1
+  # "Current heuristic": planner gut-feel rule observed at the distributor.
+  heuristic:
+    avg_window_weeks: 13      # recent average weekly demand
+    reorder_cover_factor: 1.5  # s = factor x avg x mean lead time
+    order_up_to_extra_weeks: 4 # S = s + weeks x avg
+    seasonal_last_season_multiplier: 1.0  # seasonal buy = last season's sales x multiplier
+
+milp:
+  solver: SCIP                    # OR-Tools backend; PuLP/CBC used as an independent cross-check
+  time_limit_s: 10
+  relative_gap: 0.0001             # stop when proven within 0.01% of optimal
+  crosscheck_time_limit_s: 60
+  weekly_budget_multiplier: 1.30  # weekly purchase budget = multiplier x forecast weekly purchase spend
+  capacity_weeks_of_cover: 10     # warehouse m3 = weeks x forecast weekly demand volume (caps on-hand + pipeline + new orders)
+  below_s_weight: 1.0             # objective weight on units left below the reorder point (x shortage cost)
+  below_S_weight: 0.05            # objective weight on units left below the order-up-to level (x shortage cost)
+
+simulation:
+  warmup_weeks: 26   # replay the last 26 history weeks (unscored) so both policies start from steady state
+
+sensitivity:
+  lead_time_cv_multipliers: [0.5, 1.0, 1.5, 2.0]

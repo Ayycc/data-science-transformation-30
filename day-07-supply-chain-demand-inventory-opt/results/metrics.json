@@ -1,0 +1,210 @@
+{
+  "label": "SYNTHETIC",
+  "data_source": "synthetic (M5 probe: unreachable)",
+  "m5_probe": "HTTPError: HTTP Error 403: Forbidden",
+  "scale": {
+    "skus": 800,
+    "warehouses": 3,
+    "items": 2400,
+    "history_weeks": 104,
+    "test_weeks": 52,
+    "seasonal_items": 200,
+    "seasonal_items_generated_as_seasonal": 200,
+    "generated_seasonal_items": 201
+  },
+  "segmentation": {
+    "abc_items": {
+      "A": 534,
+      "B": 684,
+      "C": 1182
+    },
+    "xyz_items": {
+      "X": 448,
+      "Y": 394,
+      "Z": 1558
+    },
+    "sbc_items": {
+      "erratic": 195,
+      "intermittent": 1295,
+      "lumpy": 233,
+      "smooth": 677
+    }
+  },
+  "forecast_model_by_sbc": {
+    "erratic": "CrostonSBA",
+    "intermittent": "CrostonSBA",
+    "lumpy": "TSB",
+    "smooth": "TSB"
+  },
+  "forecast_holdout_smae": {
+    "erratic|AutoETS": 0.776,
+    "erratic|CrostonSBA": 0.7573,
+    "erratic|Naive": 1.0649,
+    "erratic|Planner13wk": 0.778,
+    "erratic|TSB": 0.7708,
+    "intermittent|AutoETS": 1.4144,
+    "intermittent|CrostonSBA": 1.4125,
+    "intermittent|Naive": 1.4889,
+    "intermittent|Planner13wk": 1.3884,
+    "intermittent|TSB": 1.3904,
+    "lumpy|AutoETS": 1.658,
+    "lumpy|CrostonSBA": 1.6402,
+    "lumpy|Naive": 1.7535,
+    "lumpy|Planner13wk": 1.5635,
+    "lumpy|TSB": 1.5561,
+    "smooth|AutoETS": 0.3573,
+    "smooth|CrostonSBA": 0.3546,
+    "smooth|Naive": 0.4863,
+    "smooth|Planner13wk": 0.3586,
+    "smooth|TSB": 0.3556
+  },
+  "forecast_holdout_srmse": {
+    "erratic|AutoETS": 1.0229,
+    "erratic|CrostonSBA": 1.009,
+    "erratic|Naive": 1.3564,
+    "erratic|Planner13wk": 1.0237,
+    "erratic|TSB": 1.0124,
+    "intermittent|AutoETS": 1.8908,
+    "intermittent|CrostonSBA": 1.8757,
+    "intermittent|Naive": 2.3534,
+    "intermittent|Planner13wk": 1.9169,
+    "intermittent|TSB": 1.891,
+    "lumpy|AutoETS": 2.9072,
+    "lumpy|CrostonSBA": 2.8263,
+    "lumpy|Naive": 3.2922,
+    "lumpy|Planner13wk": 2.8346,
+    "lumpy|TSB": 2.8053,
+    "smooth|AutoETS": 0.4432,
+    "smooth|CrostonSBA": 0.4432,
+    "smooth|Naive": 0.5878,
+    "smooth|Planner13wk": 0.4461,
+    "smooth|TSB": 0.4413
+  },
+  "quantile_backtest_test_year": {
+    "p50": {
+      "coverage": 0.6104,
+      "pinball": 1.5374,
+      "pinball_empirical_13wk": 1.5352
+    },
+    "p90": {
+      "coverage": 0.8646,
+      "pinball": 1.1148,
+      "pinball_empirical_13wk": 1.1889
+    },
+    "p95": {
+      "coverage": 0.9301,
+      "pinball": 0.7614,
+      "pinball_empirical_13wk": 0.8516
+    }
+  },
+  "simulation": {
+    "heuristic": {
+      "fill_rate": 0.9114,
+      "total_cost": 2315489.0,
+      "holding_cost": 414492.0,
+      "shortage_cost": 1431814.0,
+      "ordering_cost": 412920.0,
+      "seasonal_overage_cost": 56262.0,
+      "avg_inventory_value": 1657969.0,
+      "purchase_spend": 14820480.0,
+      "order_lines": 13764,
+      "weeks_over_budget": 0,
+      "weeks_budget_binding": 1,
+      "weeks_capacity_above_98pct": 0,
+      "mean_peak_capacity_util": 0.7524,
+      "avg_inventory_value_A": 927861.0,
+      "avg_inventory_value_B": 411954.0,
+      "avg_inventory_value_C": 236634.0,
+      "avg_inventory_value_seasonal": 81518.0,
+      "fill_rate_A": 0.9264,
+      "fill_rate_B": 0.8871,
+      "fill_rate_C": 0.8616,
+      "fill_rate_seasonal": 0.898
+    },
+    "optimised_greedy": {
+      "fill_rate": 0.8476,
+      "total_cost": 3491998.0,
+      "holding_cost": 674786.0,
+      "shortage_cost": 2590060.0,
+      "ordering_cost": 166530.0,
+      "seasonal_overage_cost": 60621.0,
+      "avg_inventory_value": 2699145.0,
+      "purchase_spend": 13979678.0,
+      "order_lines": 5551,
+      "weeks_over_budget": 0,
+      "weeks_budget_binding": 0,
+      "weeks_capacity_above_98pct": 52,
+      "mean_peak_capacity_util": 1.0007,
+      "avg_inventory_value_A": 1436936.0,
+      "avg_inventory_value_B": 770279.0,
+      "avg_inventory_value_C": 407230.0,
+      "avg_inventory_value_seasonal": 84700.0,
+      "fill_rate_A": 0.8261,
+      "fill_rate_B": 0.8805,
+      "fill_rate_C": 0.8907,
+      "fill_rate_seasonal": 0.9275
+    },
+    "optimised_milp": {
+      "fill_rate": 0.9739,
+      "total_cost": 1353909.0,
+      "holding_cost": 711440.0,
+      "shortage_cost": 222688.0,
+      "ordering_cost": 359160.0,
+      "seasonal_overage_cost": 60621.0,
+      "avg_inventory_value": 2845760.0,
+      "purchase_spend": 15989377.0,
+      "order_lines": 11972,
+      "weeks_over_budget": 0,
+      "weeks_budget_binding": 0,
+      "weeks_capacity_above_98pct": 52,
+      "mean_peak_capacity_util": 1.0005,
+      "avg_inventory_value_A": 1645027.0,
+      "avg_inventory_value_B": 722645.0,
+      "avg_inventory_value_C": 393389.0,
+      "avg_inventory_value_seasonal": 84700.0,
+      "fill_rate_A": 0.9889,
+      "fill_rate_B": 0.9624,
+      "fill_rate_C": 0.9058,
+      "fill_rate_seasonal": 0.9275
+    }
+  },
+  "headline": {
+    "total_cost_reduction_pct": 41.53,
+    "inventory_value_reduction_pct": -71.64,
+    "fill_rate_heuristic": 0.9114,
+    "fill_rate_optimised": 0.9739,
+    "fill_rate_not_worse": true,
+    "milp_value_vs_greedy_cost_reduction_pct": 61.23
+  },
+  "milp": {
+    "weekly_solves": 52,
+    "optimal": 52,
+    "max_gap": 9.997536391290325e-05,
+    "max_triggered_items": 652,
+    "max_variables": 2608,
+    "median_seconds": 0.427,
+    "max_seconds": 3.243,
+    "weeks_budget_binding": 0,
+    "week1_crosscheck": {
+      "items": 371,
+      "ortools_scip_status": "OPTIMAL",
+      "ortools_objective": 18726.26,
+      "ortools_best_bound": 18724.4,
+      "ortools_gap": 9.910948816677278e-05,
+      "pulp_cbc_status": "FEASIBLE_TIME_LIMIT",
+      "pulp_objective": 18900.2,
+      "budget": 389250.38,
+      "spend_ortools": 307243.41
+    }
+  },
+  "budget_per_week": 389250.38,
+  "capacity_m3": {
+    "WH-North": 461.14,
+    "WH-Central": 340.28,
+    "WH-South": 223.81
+  },
+  "runtime_seconds": {
+    "prepare": 22.8,
+    "total": 632.5
+  }
+}

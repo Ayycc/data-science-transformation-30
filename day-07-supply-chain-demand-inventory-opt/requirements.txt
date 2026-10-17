@@ -1,0 +1,13 @@
+# Pinned for Python 3.11-3.13 (CI uses 3.11; results/ were produced on 3.11).
+numpy==2.4.6
+scipy==1.18.1; python_version >= "3.12"
+scipy==1.17.1; python_version < "3.12"  # 1.18 has no 3.11 wheels
+pandas==2.3.3
+statsforecast==2.1.1
+ortools==9.15.6755
+pulp==3.3.2
+simpy==4.1.2
+matplotlib==3.11.2
+pyyaml==6.0.3
+pytest==9.1.1
+ruff==0.17.0

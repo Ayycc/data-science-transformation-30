@@ -1,0 +1,4 @@
+,fill_rate,total_cost,holding_cost,shortage_cost,ordering_cost,seasonal_overage_cost,avg_inventory_value,purchase_spend,order_lines,weeks_over_budget,weeks_budget_binding,weeks_capacity_above_98pct,mean_peak_capacity_util,avg_inventory_value_A,avg_inventory_value_B,avg_inventory_value_C,avg_inventory_value_seasonal,fill_rate_A,fill_rate_B,fill_rate_C,fill_rate_seasonal
+heuristic,0.9114,2315489.0,414492.0,1431814.0,412920.0,56262.0,1657969.0,14820480.0,13764.0,0.0,1.0,0.0,0.7524,927861.0,411954.0,236634.0,81518.0,0.9264,0.8871,0.8616,0.898
+optimised_greedy,0.8476,3491998.0,674786.0,2590060.0,166530.0,60621.0,2699145.0,13979678.0,5551.0,0.0,0.0,52.0,1.0007,1436936.0,770279.0,407230.0,84700.0,0.8261,0.8805,0.8907,0.9275
+optimised_milp,0.9739,1353909.0,711440.0,222688.0,359160.0,60621.0,2845760.0,15989377.0,11972.0,0.0,0.0,52.0,1.0005,1645027.0,722645.0,393389.0,84700.0,0.9889,0.9624,0.9058,0.9275
