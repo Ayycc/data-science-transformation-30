@@ -1,0 +1,3206 @@
+{
+  "run": {
+    "config": {
+      "name": "full",
+      "portfolio_scale": 1.0,
+      "mc_reps": 2000,
+      "mc_looks": 21,
+      "mc_users_per_look": 1000,
+      "baseline_n": 200000,
+      "truth_n": 400000,
+      "mc_effect": {
+        "lift_sessions": 0.02,
+        "novelty_sessions": 0.0,
+        "novelty_decay_days": 2.5,
+        "lift_purchase": 0.06,
+        "lift_basket": 0.0,
+        "new_user_multiplier": 1.0,
+        "existing_user_multiplier": 1.0
+      },
+      "seed": 2026
+    },
+    "seconds": 150.2
+  },
+  "data": {
+    "source": "SYNTHETIC (expengine.simulate, seeded); no public user-level experiment data with known ground truth",
+    "n_experiments": 6,
+    "n_users_total": 438416
+  },
+  "historical_baselines": {
+    "sessions": 10.438955,
+    "converted": 0.12799,
+    "revenue": 5.101528434270344,
+    "retained_w2": 0.9073
+  },
+  "tau_rel": 0.05,
+  "tau2": {
+    "sessions": 0.27242945373006255,
+    "converted": 4.095360025e-05,
+    "revenue": 0.06506398091417209,
+    "retained_w2": 0.002057983225
+  },
+  "covariate_correlation": {
+    "sessions": 0.8174893344396001,
+    "converted": 0.353776269394855,
+    "revenue": 0.48378479287651827,
+    "retained_w2": 0.21977419507264662
+  },
+  "experiments": {
+    "E01": {
+      "exp_id": "E01",
+      "name": "Onboarding checklist",
+      "hypothesis": "A guided checklist raises engagement, mostly for new users.",
+      "primary_metric": "sessions",
+      "enrollment_days": 21,
+      "n_control": 29922,
+      "n_treatment": 30078,
+      "srm": {
+        "chi2": 0.4056,
+        "p_value": 0.5242112626098552,
+        "flagged": false,
+        "share_treatment": 0.5013
+      },
+      "metrics": {
+        "sessions": {
+          "naive": {
+            "metric": "sessions",
+            "method": "naive",
+            "n_control": 29922,
+            "n_treatment": 30078,
+            "control_mean": 10.436234208943253,
+            "treatment_mean": 10.674512933040761,
+            "diff": 0.2382787240975084,
+            "se": 0.09229289704572469,
+            "ci_low": 0.057387969859024834,
+            "ci_high": 0.41916947833599194,
+            "p_value": 0.00982960216861274,
+            "rel_lift": 0.022831868212895845,
+            "rel_ci_low": 0.005298423477369956,
+            "rel_ci_high": 0.04036531294842173,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "sessions",
+            "method": "cuped",
+            "n_control": 29922,
+            "n_treatment": 30078,
+            "control_mean": 10.436234208943253,
+            "treatment_mean": 10.674512933040761,
+            "diff": 0.3437936634991523,
+            "se": 0.05270099396070537,
+            "ci_low": 0.2405016133867069,
+            "ci_high": 0.4470857136115977,
+            "p_value": 6.869645908800528e-11,
+            "rel_lift": 0.033110124270458785,
+            "rel_ci_low": 0.022997276972244116,
+            "rel_ci_high": 0.043222971568673454,
+            "theta": 0.5062548483350737,
+            "variance_reduction": 0.6739373488763265
+          },
+          "ols_check": {
+            "diff": 0.34380477956075584,
+            "se": 0.05270786728917776,
+            "p_value": 6.89902393464488e-11
+          },
+          "always_valid_p_final": 9.834139177399462e-10,
+          "always_valid_ci_final": [
+            0.19722583150161302,
+            0.5161461594980006
+          ],
+          "first_reject_day": 7,
+          "first_naive_reject_day": 4,
+          "true_ate": 0.37755429472113794,
+          "true_rel": 0.036331720394698674,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "converted": {
+          "naive": {
+            "metric": "converted",
+            "method": "naive",
+            "n_control": 29922,
+            "n_treatment": 30078,
+            "control_mean": 0.12796604505046455,
+            "treatment_mean": 0.12843274153866613,
+            "diff": 0.00046669648820157894,
+            "se": 0.00272969210019984,
+            "ci_low": -0.004883401717073608,
+            "ci_high": 0.005816794693476766,
+            "p_value": 0.8642470581240032,
+            "rel_lift": 0.0036470337738228054,
+            "rel_ci_low": -0.038238087364443146,
+            "rel_ci_high": 0.04553215491208876,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "converted",
+            "method": "cuped",
+            "n_control": 29922,
+            "n_treatment": 30078,
+            "control_mean": 0.12796604505046455,
+            "treatment_mean": 0.12843274153866613,
+            "diff": 0.0013545988888868377,
+            "se": 0.0025645944107330703,
+            "ci_low": -0.003671913791102703,
+            "ci_high": 0.006381111568876378,
+            "p_value": 0.59736590876093,
+            "rel_lift": 0.010622560446779783,
+            "rel_ci_low": -0.029005307936965617,
+            "rel_ci_high": 0.05025042883052518,
+            "theta": 0.12397440148354462,
+            "variance_reduction": 0.11730623872419388
+          },
+          "ols_check": {
+            "diff": 0.0013546192510953594,
+            "se": 0.0025644768962553573,
+            "p_value": 0.597343601076328
+          },
+          "always_valid_p_final": 1.0,
+          "always_valid_ci_final": [
+            -0.00644493101740756,
+            0.008898849810218367
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "revenue": {
+          "naive": {
+            "metric": "revenue",
+            "method": "naive",
+            "n_control": 29922,
+            "n_treatment": 30078,
+            "control_mean": 5.046981819397099,
+            "treatment_mean": 5.040656626105459,
+            "diff": -0.006325193291639941,
+            "se": 0.15690925448293946,
+            "ci_low": -0.31386168091923133,
+            "ci_high": 0.30121129433595145,
+            "p_value": 0.9678450605374683,
+            "rel_lift": -0.0012532625473962167,
+            "rel_ci_low": -0.06214870644354605,
+            "rel_ci_high": 0.05964218134875362,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "revenue",
+            "method": "cuped",
+            "n_control": 29922,
+            "n_treatment": 30078,
+            "control_mean": 5.046981819397099,
+            "treatment_mean": 5.040656626105459,
+            "diff": 0.01081026789622097,
+            "se": 0.13668634990191775,
+            "ci_low": -0.2570900550897778,
+            "ci_high": 0.2787105908822197,
+            "p_value": 0.9369625243263128,
+            "rel_lift": 0.0021455790454731893,
+            "rel_ci_low": -0.05108167834839574,
+            "rel_ci_high": 0.05537283643934212,
+            "theta": 0.2900330709823679,
+            "variance_reduction": 0.24115482960850798
+          },
+          "ols_check": {
+            "diff": 0.01081027681626848,
+            "se": 0.13669437502455892,
+            "p_value": 0.9369661655496094
+          },
+          "always_valid_p_final": 0.7660567498912818,
+          "always_valid_ci_final": [
+            -0.4136415404498291,
+            0.3870578496610121
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "retained_w2": {
+          "naive": {
+            "metric": "retained_w2",
+            "method": "naive",
+            "n_control": 29922,
+            "n_treatment": 30078,
+            "control_mean": 0.9052202392888176,
+            "treatment_mean": 0.9118292439656892,
+            "diff": 0.006609004676871644,
+            "se": 0.0023538191360678758,
+            "ci_low": 0.001995603944057422,
+            "ci_high": 0.011222405409685866,
+            "p_value": 0.004988439915862867,
+            "rel_lift": 0.007300990841813126,
+            "rel_ci_low": 0.0021852596064442543,
+            "rel_ci_high": 0.012416722077181998,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "retained_w2",
+            "method": "cuped",
+            "n_control": 29922,
+            "n_treatment": 30078,
+            "control_mean": 0.9052202392888176,
+            "treatment_mean": 0.9118292439656892,
+            "diff": 0.007311986981940688,
+            "se": 0.0022990161474642145,
+            "ci_low": 0.0028059981330348016,
+            "ci_high": 0.011817975830846573,
+            "p_value": 0.001470286160725225,
+            "rel_lift": 0.008080723731246575,
+            "rel_ci_low": 0.003080161753834747,
+            "rel_ci_high": 0.013081285708658404,
+            "theta": 0.0033728702518632738,
+            "variance_reduction": 0.04602308666590105
+          },
+          "ols_check": {
+            "diff": 0.007312223404266975,
+            "se": 0.0022992554212700215,
+            "p_value": 0.0014714443402247773
+          },
+          "always_valid_p_final": 0.127295422204362,
+          "always_valid_ci_final": [
+            -0.0006484744164897329,
+            0.011978589581122032
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": 18,
+          "true_ate": 0.005946113061001677,
+          "true_rel": 0.006556871714556767,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        }
+      },
+      "bayes": {
+        "post_mean": 0.3437936634991523,
+        "post_sd": 0.05270099396070537,
+        "prob_positive": 0.9999999999656518,
+        "expected_loss_t": 2.6575990364466866e-13,
+        "expected_loss_c": 0.3437936634994181,
+        "ci_low": 0.2405016133867069,
+        "ci_high": 0.4470857136115977,
+        "decision": "ship",
+        "loss_tolerance": 0.052181171044716264
+      },
+      "ratio_revenue_per_session": {
+        "control_ratio": 0.48360181635940347,
+        "treatment_ratio": 0.4722142038446684,
+        "diff": -0.01138761251473508,
+        "se": 0.014703026828844244,
+        "ci_low": -0.04020501556299596,
+        "ci_high": 0.0174297905335258,
+        "p_value": 0.4386304145657919,
+        "rel_lift": -0.023547497402846895,
+        "rel_ci_low": -0.08240090245221376,
+        "rel_ci_high": 0.035305907646519974
+      },
+      "novelty": {
+        "early_rel_lift": 0.03159208935174518,
+        "late_rel_lift": 0.02080753651046141,
+        "late_rel_ci": [
+          0.002588628273015991,
+          0.03902644474790683
+        ],
+        "decay_p_value": 0.1052910380252112,
+        "flagged": false
+      },
+      "hte": [
+        {
+          "segment": "platform",
+          "level": "android",
+          "metric": "sessions",
+          "n": 24004,
+          "rel_lift": 0.029877451516868936,
+          "diff": 0.3001758812500004,
+          "se": 0.08052829166898172,
+          "p_value": 0.00019332499640396003,
+          "p_bh": 0.0003222083273399334,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        },
+        {
+          "segment": "platform",
+          "level": "ios",
+          "metric": "sessions",
+          "n": 26908,
+          "rel_lift": 0.03719348161907332,
+          "diff": 0.42930027870199616,
+          "se": 0.08603849535661767,
+          "p_value": 6.049497464345705e-07,
+          "p_bh": 1.5123743660864263e-06,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        },
+        {
+          "segment": "platform",
+          "level": "web",
+          "metric": "sessions",
+          "n": 9088,
+          "rel_lift": 0.02741402414244898,
+          "diff": 0.2148275871805776,
+          "se": 0.10418593658148327,
+          "p_value": 0.03921122141428322,
+          "p_bh": 0.049014026767854026,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        },
+        {
+          "segment": "tenure",
+          "level": "existing",
+          "metric": "sessions",
+          "n": 42090,
+          "rel_lift": 0.011570449345693623,
+          "diff": 0.12974019706241968,
+          "se": 0.06635394779055394,
+          "p_value": 0.05055065269946451,
+          "p_bh": 0.05055065269946451,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "tenure",
+          "level": "new",
+          "metric": "sessions",
+          "n": 17910,
+          "rel_lift": 0.1000861084303386,
+          "diff": 0.8440719409130395,
+          "se": 0.08253355882315343,
+          "p_value": 1.5007396354243848e-24,
+          "p_bh": 7.503698177121924e-24,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        }
+      ],
+      "power": {
+        "mde_rel": 0.02,
+        "n_per_arm_naive": 46268,
+        "n_per_arm_cuped": 15087,
+        "days_naive": 32.3876,
+        "days_cuped": 10.560899999999998
+      },
+      "guardrail_harm": [],
+      "decision": "SHIP: significant lift on the primary metric (always-valid p < 0.05), no guardrail harm.",
+      "truth": {
+        "effects": {
+          "sessions": {
+            "ate": 0.37755429472113794,
+            "rel": 0.036331720394698674
+          },
+          "converted": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "revenue": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "retained_w2": {
+            "ate": 0.005946113061001677,
+            "rel": 0.006556871714556767
+          }
+        },
+        "users_dropped_by_bug": 0,
+        "users_assigned": {
+          "control": 29922,
+          "treatment": 30078
+        }
+      }
+    },
+    "E02": {
+      "exp_id": "E02",
+      "name": "Annual-plan upsell banner",
+      "hypothesis": "Showing the annual plan raises basket size.",
+      "primary_metric": "revenue",
+      "enrollment_days": 21,
+      "n_control": 39889,
+      "n_treatment": 40111,
+      "srm": {
+        "chi2": 0.61605,
+        "p_value": 0.4325189293015055,
+        "flagged": false,
+        "share_treatment": 0.5013875
+      },
+      "metrics": {
+        "sessions": {
+          "naive": {
+            "metric": "sessions",
+            "method": "naive",
+            "n_control": 39889,
+            "n_treatment": 40111,
+            "control_mean": 10.317506079370252,
+            "treatment_mean": 10.473087183066989,
+            "diff": 0.15558110369673628,
+            "se": 0.07812091520852486,
+            "ci_low": 0.002466923448720182,
+            "ci_high": 0.3086952839447524,
+            "p_value": 0.046421304497871345,
+            "rel_lift": 0.015079332398729495,
+            "rel_ci_low": 0.00013045803672511944,
+            "rel_ci_high": 0.03002820676073387,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "sessions",
+            "method": "cuped",
+            "n_control": 39889,
+            "n_treatment": 40111,
+            "control_mean": 10.317506079370252,
+            "treatment_mean": 10.473087183066989,
+            "diff": 0.011658254716452987,
+            "se": 0.04508773599824553,
+            "ci_low": -0.07671208398455835,
+            "ci_high": 0.10002859341746433,
+            "p_value": 0.7959684221032196,
+            "rel_lift": 0.0011221008811550526,
+            "rel_ci_low": -0.007388247606116928,
+            "rel_ci_high": 0.009632449368427033,
+            "theta": 0.49781505540668214,
+            "variance_reduction": 0.6668941867039002
+          },
+          "ols_check": {
+            "diff": 0.011658996195176395,
+            "se": 0.04505519062703306,
+            "p_value": 0.7958116012635732
+          },
+          "always_valid_p_final": 1.0,
+          "always_valid_ci_final": [
+            -0.11707218767012159,
+            0.16104860661990306
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "converted": {
+          "naive": {
+            "metric": "converted",
+            "method": "naive",
+            "n_control": 39889,
+            "n_treatment": 40111,
+            "control_mean": 0.1286068841033869,
+            "treatment_mean": 0.13001421056568024,
+            "diff": 0.0014073264622933568,
+            "se": 0.002372667998893294,
+            "ci_low": -0.003243017362808221,
+            "ci_high": 0.0060576702873949345,
+            "p_value": 0.5530868521221473,
+            "rel_lift": 0.010942854825422899,
+            "rel_ci_low": -0.02541452851676762,
+            "rel_ci_high": 0.04730023816761342,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "converted",
+            "method": "cuped",
+            "n_control": 39889,
+            "n_treatment": 40111,
+            "control_mean": 0.1286068841033869,
+            "treatment_mean": 0.13001421056568024,
+            "diff": 0.0012073600635498505,
+            "se": 0.0022175223075218,
+            "ci_low": -0.003138903794107032,
+            "ci_high": 0.005553623921206733,
+            "p_value": 0.5861225259290364,
+            "rel_lift": 0.009380676308510028,
+            "rel_ci_low": -0.02454655139222943,
+            "rel_ci_high": 0.043307904009249484,
+            "theta": 0.12699321070393013,
+            "variance_reduction": 0.12650173003855802
+          },
+          "ols_check": {
+            "diff": 0.0012073609109179203,
+            "se": 0.002217541045088634,
+            "p_value": 0.5861254280849013
+          },
+          "always_valid_p_final": 1.0,
+          "always_valid_ci_final": [
+            -0.004755049915488627,
+            0.007937843802487781
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "revenue": {
+          "naive": {
+            "metric": "revenue",
+            "method": "naive",
+            "n_control": 39889,
+            "n_treatment": 40111,
+            "control_mean": 5.109663566396751,
+            "treatment_mean": 5.561571140086261,
+            "diff": 0.4519075736895095,
+            "se": 0.14560549108784165,
+            "ci_low": 0.16652605520607205,
+            "ci_high": 0.7372890921729469,
+            "p_value": 0.0019115334290433683,
+            "rel_lift": 0.08844174725346687,
+            "rel_ci_low": 0.030313024241165727,
+            "rel_ci_high": 0.14657047026576803,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "revenue",
+            "method": "cuped",
+            "n_control": 39889,
+            "n_treatment": 40111,
+            "control_mean": 5.109663566396751,
+            "treatment_mean": 5.561571140086261,
+            "diff": 0.3961340558718387,
+            "se": 0.1279051608931074,
+            "ci_low": 0.14544454708454718,
+            "ci_high": 0.6468235646591303,
+            "p_value": 0.0019542918430614426,
+            "rel_lift": 0.07710446886195021,
+            "rel_ci_low": 0.026575282726240115,
+            "rel_ci_high": 0.12763365499766033,
+            "theta": 0.30442441944018966,
+            "variance_reduction": 0.22834952154113586
+          },
+          "ols_check": {
+            "diff": 0.39613723529730693,
+            "se": 0.12779532599464621,
+            "p_value": 0.0019366525188828764
+          },
+          "always_valid_p_final": 0.042813115608073445,
+          "always_valid_ci_final": [
+            0.008162485113567819,
+            0.790495535989527
+          ],
+          "first_reject_day": 17,
+          "first_naive_reject_day": 10,
+          "true_ate": 0.30958169092246046,
+          "true_rel": 0.06000000000000005,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "retained_w2": {
+          "naive": {
+            "metric": "retained_w2",
+            "method": "naive",
+            "n_control": 39889,
+            "n_treatment": 40111,
+            "control_mean": 0.9021534758956103,
+            "treatment_mean": 0.9073321532746628,
+            "diff": 0.005178677379052421,
+            "se": 0.002075875530087556,
+            "ci_low": 0.0011100361036928182,
+            "ci_high": 0.009247318654412024,
+            "p_value": 0.012606525386379791,
+            "rel_lift": 0.0057403507467632675,
+            "rel_ci_low": 0.0012171158292854471,
+            "rel_ci_high": 0.010263585664241088,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "retained_w2",
+            "method": "cuped",
+            "n_control": 39889,
+            "n_treatment": 40111,
+            "control_mean": 0.9021534758956103,
+            "treatment_mean": 0.9073321532746628,
+            "diff": 0.0041210034016672115,
+            "se": 0.002022238467225274,
+            "ci_low": 0.00015748883775419144,
+            "ci_high": 0.008084517965580231,
+            "p_value": 0.041565691080086946,
+            "rel_lift": 0.004565279105612552,
+            "rel_ci_low": 0.0001641720779861919,
+            "rel_ci_high": 0.008966386133238913,
+            "theta": 0.00365839082108741,
+            "variance_reduction": 0.05100895236315539
+          },
+          "ols_check": {
+            "diff": 0.004121265502333888,
+            "se": 0.00202206508922815,
+            "p_value": 0.041535253454308585
+          },
+          "always_valid_p_final": 1.0,
+          "always_valid_ci_final": [
+            -0.0027527622800599914,
+            0.010867309113287513
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": 20,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": false,
+          "always_valid_ci_covers_truth": true
+        }
+      },
+      "bayes": {
+        "post_mean": 0.3961340558718387,
+        "post_sd": 0.1279051608931074,
+        "prob_positive": 0.9990228540784692,
+        "expected_loss_t": 3.454420367130439e-05,
+        "expected_loss_c": 0.39616860007550997,
+        "ci_low": 0.14544454708454718,
+        "ci_high": 0.6468235646591303,
+        "decision": "ship",
+        "loss_tolerance": 0.025548317831983757
+      },
+      "ratio_revenue_per_session": {
+        "control_ratio": 0.4952421183073951,
+        "treatment_ratio": 0.5310345500683193,
+        "diff": 0.035792431760924226,
+        "se": 0.013840980911511884,
+        "ci_low": 0.008664607663654563,
+        "ci_high": 0.06292025585819389,
+        "p_value": 0.009710394996213853,
+        "rel_lift": 0.07227259241046213,
+        "rel_ci_low": 0.015644262842920822,
+        "rel_ci_high": 0.12890092197800346
+      },
+      "novelty": {
+        "early_rel_lift": 0.01431419948675594,
+        "late_rel_lift": 0.01709573511090623,
+        "late_rel_ci": [
+          0.0014888309993822436,
+          0.03270263922243022
+        ],
+        "decay_p_value": 0.6218734649344675,
+        "flagged": false
+      },
+      "hte": [
+        {
+          "segment": "platform",
+          "level": "android",
+          "metric": "revenue",
+          "n": 32007,
+          "rel_lift": 0.10007028203517976,
+          "diff": 0.475422844516447,
+          "se": 0.1867991372580683,
+          "p_value": 0.010924584401485514,
+          "p_bh": 0.027311461003713785,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        },
+        {
+          "segment": "platform",
+          "level": "ios",
+          "metric": "revenue",
+          "n": 36070,
+          "rel_lift": 0.05859954069083928,
+          "diff": 0.3502073552545788,
+          "se": 0.2128006336836548,
+          "p_value": 0.099824229960392,
+          "p_bh": 0.12478028745049,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "platform",
+          "level": "web",
+          "metric": "revenue",
+          "n": 11923,
+          "rel_lift": 0.09499924792040981,
+          "diff": 0.34458255937875615,
+          "se": 0.265118593909684,
+          "p_value": 0.19369356413288896,
+          "p_bh": 0.19369356413288896,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "tenure",
+          "level": "existing",
+          "metric": "revenue",
+          "n": 55924,
+          "rel_lift": 0.05193044323143914,
+          "diff": 0.29730309583573167,
+          "se": 0.16313600947259552,
+          "p_value": 0.06839056708181457,
+          "p_bh": 0.11398427846969095,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "tenure",
+          "level": "new",
+          "metric": "revenue",
+          "n": 24076,
+          "rel_lift": 0.15050617333375893,
+          "diff": 0.5719712361034808,
+          "se": 0.19167993380850254,
+          "p_value": 0.0028451495245732364,
+          "p_bh": 0.014225747622866181,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        }
+      ],
+      "power": {
+        "mde_rel": 0.05,
+        "n_per_arm_naive": 91631,
+        "n_per_arm_cuped": 70707,
+        "days_naive": 48.106275,
+        "days_cuped": 37.121175
+      },
+      "guardrail_harm": [],
+      "decision": "SHIP: significant lift on the primary metric (always-valid p < 0.05), no guardrail harm.",
+      "truth": {
+        "effects": {
+          "sessions": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "converted": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "revenue": {
+            "ate": 0.30958169092246046,
+            "rel": 0.06000000000000005
+          },
+          "retained_w2": {
+            "ate": 0.0,
+            "rel": 0.0
+          }
+        },
+        "users_dropped_by_bug": 0,
+        "users_assigned": {
+          "control": 39889,
+          "treatment": 40111
+        }
+      }
+    },
+    "E03": {
+      "exp_id": "E03",
+      "name": "Button colour (A/A)",
+      "hypothesis": "No change: an A/A test that should find nothing.",
+      "primary_metric": "converted",
+      "enrollment_days": 21,
+      "n_control": 29851,
+      "n_treatment": 30149,
+      "srm": {
+        "chi2": 1.4800666666666666,
+        "p_value": 0.22376409197584213,
+        "flagged": false,
+        "share_treatment": 0.5024833333333333
+      },
+      "metrics": {
+        "sessions": {
+          "naive": {
+            "metric": "sessions",
+            "method": "naive",
+            "n_control": 29851,
+            "n_treatment": 30149,
+            "control_mean": 10.388831194934843,
+            "treatment_mean": 10.330292878702444,
+            "diff": -0.05853831623239891,
+            "se": 0.09000760149823016,
+            "ci_low": -0.23494997350376343,
+            "ci_high": 0.1178733410389656,
+            "p_value": 0.5154527310207726,
+            "rel_lift": -0.0056347355283759,
+            "rel_ci_low": -0.022566397624769724,
+            "rel_ci_high": 0.011296926568017923,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "sessions",
+            "method": "cuped",
+            "n_control": 29851,
+            "n_treatment": 30149,
+            "control_mean": 10.388831194934843,
+            "treatment_mean": 10.330292878702444,
+            "diff": -0.035350166146189466,
+            "se": 0.05124322112196163,
+            "ci_low": -0.13578503399705644,
+            "ci_high": 0.0650847017046775,
+            "p_value": 0.49028815284771365,
+            "rel_lift": -0.003406529300529426,
+            "rel_ci_low": -0.013068392033436738,
+            "rel_ci_high": 0.006255333432377885,
+            "theta": 0.5003636239746362,
+            "variance_reduction": 0.6758735555754971
+          },
+          "ols_check": {
+            "diff": -0.03535022402523769,
+            "se": 0.051242483860171786,
+            "p_value": 0.4902812001488719
+          },
+          "always_valid_p_final": 1.0,
+          "always_valid_ci_final": [
+            -0.2033279961823774,
+            0.12358679601904335
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "converted": {
+          "naive": {
+            "metric": "converted",
+            "method": "naive",
+            "n_control": 29851,
+            "n_treatment": 30149,
+            "control_mean": 0.12873940571505144,
+            "treatment_mean": 0.12872732097250322,
+            "diff": -1.2084742548212901e-05,
+            "se": 0.002734564105329682,
+            "ci_low": -0.0053717319024103845,
+            "ci_high": 0.005347562417313959,
+            "p_value": 0.9964739542596193,
+            "rel_lift": -9.386980218750729e-05,
+            "rel_ci_low": -0.04172365923610166,
+            "rel_ci_high": 0.04153591963172665,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "converted",
+            "method": "cuped",
+            "n_control": 29851,
+            "n_treatment": 30149,
+            "control_mean": 0.12873940571505144,
+            "treatment_mean": 0.12872732097250322,
+            "diff": -0.001509462017946217,
+            "se": 0.002560386185506216,
+            "ci_low": -0.00652772672805229,
+            "ci_high": 0.0035088026921598556,
+            "p_value": 0.5554959586008099,
+            "rel_lift": -0.011656814317792974,
+            "rel_ci_low": -0.05018264405950582,
+            "rel_ci_high": 0.026869015423919874,
+            "theta": 0.12769969302233933,
+            "variance_reduction": 0.12333285051130216
+          },
+          "ols_check": {
+            "diff": -0.0015095231605715173,
+            "se": 0.002560587939568156,
+            "p_value": 0.555511096367758
+          },
+          "always_valid_p_final": 0.3725958999166064,
+          "always_valid_ci_final": [
+            -0.008249881503047053,
+            0.006276885343478398
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": 2,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "revenue": {
+          "naive": {
+            "metric": "revenue",
+            "method": "naive",
+            "n_control": 29851,
+            "n_treatment": 30149,
+            "control_mean": 5.024050115574019,
+            "treatment_mean": 5.118679226508342,
+            "diff": 0.09462911093432336,
+            "se": 0.15362164149169824,
+            "ci_low": -0.2064637736353292,
+            "ci_high": 0.3957219955039759,
+            "p_value": 0.5379023399680982,
+            "rel_lift": 0.018835224322500954,
+            "rel_ci_low": -0.0416546256364634,
+            "rel_ci_high": 0.0793250742814653,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "revenue",
+            "method": "cuped",
+            "n_control": 29851,
+            "n_treatment": 30149,
+            "control_mean": 5.024050115574019,
+            "treatment_mean": 5.118679226508342,
+            "diff": -0.017178201033847706,
+            "se": 0.13566421129965847,
+            "ci_low": -0.28307516917221015,
+            "ci_high": 0.24871876710451474,
+            "p_value": 0.8992388410700668,
+            "rel_lift": -0.003381381593097754,
+            "rel_ci_low": -0.05563411889727905,
+            "rel_ci_high": 0.048871355711083544,
+            "theta": 0.2827404151394379,
+            "variance_reduction": 0.22012358617744177
+          },
+          "ols_check": {
+            "diff": -0.017178890023033022,
+            "se": 0.13562086006508645,
+            "p_value": 0.899202783522748
+          },
+          "always_valid_p_final": 0.8993615531075126,
+          "always_valid_ci_final": [
+            -0.43808300614454887,
+            0.40372660407685523
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "retained_w2": {
+          "naive": {
+            "metric": "retained_w2",
+            "method": "naive",
+            "n_control": 29851,
+            "n_treatment": 30149,
+            "control_mean": 0.9081437807778634,
+            "treatment_mean": 0.9068957511028558,
+            "diff": -0.0012480296750075892,
+            "se": 0.0023654399581934443,
+            "ci_low": -0.005884206800658671,
+            "ci_high": 0.0033881474506434923,
+            "p_value": 0.5977700806082026,
+            "rel_lift": -0.0013742644077114896,
+            "rel_ci_low": -0.0064758751160916474,
+            "rel_ci_high": 0.0037273463006686682,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "retained_w2",
+            "method": "cuped",
+            "n_control": 29851,
+            "n_treatment": 30149,
+            "control_mean": 0.9081437807778634,
+            "treatment_mean": 0.9068957511028558,
+            "diff": -0.00108410822238858,
+            "se": 0.002306911322239161,
+            "ci_low": -0.005605571329505011,
+            "ci_high": 0.003437354884727851,
+            "p_value": 0.6383984068773766,
+            "rel_lift": -0.0011938710387779938,
+            "rel_ci_low": -0.006170148714018742,
+            "rel_ci_high": 0.0037824066364627543,
+            "theta": 0.0035371658271433435,
+            "variance_reduction": 0.04887424165407628
+          },
+          "ols_check": {
+            "diff": -0.001084109997406049,
+            "se": 0.002306869063071252,
+            "p_value": 0.6383917064458435
+          },
+          "always_valid_p_final": 1.0,
+          "always_valid_ci_final": [
+            -0.009069693061353403,
+            0.006736159813663711
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        }
+      },
+      "bayes": {
+        "post_mean_c": 0.12876427829698858,
+        "post_mean_t": 0.1287519485257537,
+        "prob_t_better": 0.498695,
+        "expected_loss_t": 0.0010964406290185503,
+        "expected_loss_c": 0.001084293782495734,
+        "rel_lift_median": -6.836411612543003e-05,
+        "rel_lift_ci_low": -0.04091061165660695,
+        "rel_lift_ci_high": 0.04243499601993648,
+        "decision": "keep running / inconclusive",
+        "loss_tolerance": 0.0006436970285752572
+      },
+      "ratio_revenue_per_session": {
+        "control_ratio": 0.4836010924908987,
+        "treatment_ratio": 0.4955018494259074,
+        "diff": 0.011900756935008694,
+        "se": 0.014699349211065232,
+        "ci_low": -0.01690943811485642,
+        "ci_high": 0.0407109519848738,
+        "p_value": 0.4181637010140279,
+        "rel_lift": 0.024608622932820845,
+        "rel_ci_low": -0.03569150264305077,
+        "rel_ci_high": 0.08490874850869246
+      },
+      "novelty": {
+        "early_rel_lift": -0.010775715744382852,
+        "late_rel_lift": -0.007197585969086151,
+        "late_rel_ci": [
+          -0.024866145952066095,
+          0.010470974013893793
+        ],
+        "decay_p_value": 0.5793275163369758,
+        "flagged": false
+      },
+      "hte": [
+        {
+          "segment": "platform",
+          "level": "android",
+          "metric": "converted",
+          "n": 24102,
+          "rel_lift": -0.017599165783501736,
+          "diff": -0.002229311536871781,
+          "se": 0.0039927569317102524,
+          "p_value": 0.5766129825923114,
+          "p_bh": 0.9610216376538524,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "platform",
+          "level": "ios",
+          "metric": "converted",
+          "n": 26995,
+          "rel_lift": 0.0009715801552057091,
+          "diff": 0.00013756279442866948,
+          "se": 0.003970860865037541,
+          "p_value": 0.9723643605119388,
+          "p_bh": 0.9723643605119388,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "platform",
+          "level": "web",
+          "metric": "converted",
+          "n": 8903,
+          "rel_lift": -0.049185017141787024,
+          "diff": -0.004949950910788592,
+          "se": 0.005974418275279209,
+          "p_value": 0.4073736208904355,
+          "p_bh": 0.9610216376538524,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "tenure",
+          "level": "existing",
+          "metric": "converted",
+          "n": 42104,
+          "rel_lift": -0.01949812550471619,
+          "diff": -0.00267889371544186,
+          "se": 0.0031205167725952983,
+          "p_value": 0.3906288002857905,
+          "p_bh": 0.9610216376538524,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "tenure",
+          "level": "new",
+          "metric": "converted",
+          "n": 17896,
+          "rel_lift": 0.010158929656030935,
+          "diff": 0.0011273263707960307,
+          "se": 0.004445297580176007,
+          "p_value": 0.7998047870463272,
+          "p_bh": 0.9723643605119388,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        }
+      ],
+      "power": {
+        "mde_rel": 0.03,
+        "n_per_arm_naive": 118045,
+        "n_per_arm_cuped": 103486,
+        "days_naive": 82.63149999999999,
+        "days_cuped": 72.44019999999999
+      },
+      "guardrail_harm": [],
+      "decision": "NO DETECTABLE EFFECT at alpha = 0.05 (always-valid). Do not ship on this evidence.",
+      "truth": {
+        "effects": {
+          "sessions": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "converted": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "revenue": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "retained_w2": {
+            "ate": 0.0,
+            "rel": 0.0
+          }
+        },
+        "users_dropped_by_bug": 0,
+        "users_assigned": {
+          "control": 29851,
+          "treatment": 30149
+        }
+      }
+    },
+    "E04": {
+      "exp_id": "E04",
+      "name": "Feed redesign",
+      "hypothesis": "A new feed lifts sessions; much of it is novelty that fades.",
+      "primary_metric": "sessions",
+      "enrollment_days": 21,
+      "n_control": 29978,
+      "n_treatment": 30022,
+      "srm": {
+        "chi2": 0.032266666666666666,
+        "p_value": 0.8574436417225294,
+        "flagged": false,
+        "share_treatment": 0.5003666666666666
+      },
+      "metrics": {
+        "sessions": {
+          "naive": {
+            "metric": "sessions",
+            "method": "naive",
+            "n_control": 29978,
+            "n_treatment": 30022,
+            "control_mean": 10.469977983854827,
+            "treatment_mean": 11.029045366731063,
+            "diff": 0.5590673828762363,
+            "se": 0.093695112112249,
+            "ci_low": 0.37542833760878563,
+            "ci_high": 0.7427064281436868,
+            "p_value": 2.418348293248585e-09,
+            "rel_lift": 0.05339718801112503,
+            "rel_ci_low": 0.035413585222041064,
+            "rel_ci_high": 0.071380790800209,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "sessions",
+            "method": "cuped",
+            "n_control": 29978,
+            "n_treatment": 30022,
+            "control_mean": 10.469977983854827,
+            "treatment_mean": 11.029045366731063,
+            "diff": 0.6158283407978615,
+            "se": 0.05410847424480374,
+            "ci_low": 0.5097776800196331,
+            "ci_high": 0.72187900157609,
+            "p_value": 5.1782307385260756e-30,
+            "rel_lift": 0.05897848178787757,
+            "rel_ci_low": 0.048533830997340904,
+            "rel_ci_high": 0.06942313257841423,
+            "theta": 0.5083449206745514,
+            "variance_reduction": 0.6664993342062748
+          },
+          "ols_check": {
+            "diff": 0.6158339931548017,
+            "se": 0.05415588249910455,
+            "p_value": 5.7977881178205536e-30
+          },
+          "always_valid_p_final": 1.4370835046777453e-27,
+          "always_valid_ci_final": [
+            0.43926112656527116,
+            0.7915541740763069
+          ],
+          "first_reject_day": 2,
+          "first_naive_reject_day": 1,
+          "true_ate": 0.6662467759274225,
+          "true_rel": 0.06396479028389668,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "converted": {
+          "naive": {
+            "metric": "converted",
+            "method": "naive",
+            "n_control": 29978,
+            "n_treatment": 30022,
+            "control_mean": 0.12665955033691373,
+            "treatment_mean": 0.1267736992871894,
+            "diff": 0.00011414895027567207,
+            "se": 0.00271616439845142,
+            "ci_low": -0.005209435446779012,
+            "ci_high": 0.0054377333473303565,
+            "p_value": 0.9664781401015983,
+            "rel_lift": 0.0009012265555343735,
+            "rel_ci_low": -0.041148383098690795,
+            "rel_ci_high": 0.04295083620975954,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "converted",
+            "method": "cuped",
+            "n_control": 29978,
+            "n_treatment": 30022,
+            "control_mean": 0.12665955033691373,
+            "treatment_mean": 0.1267736992871894,
+            "diff": 0.0007966009906682503,
+            "se": 0.002544063167089519,
+            "ci_low": -0.004189671191222113,
+            "ci_high": 0.005782873172558613,
+            "p_value": 0.7541883206549619,
+            "rel_lift": 0.006306310450368446,
+            "rel_ci_low": -0.03329188187383403,
+            "rel_ci_high": 0.04590450277457092,
+            "theta": 0.12644722192642852,
+            "variance_reduction": 0.1227089967734325
+          },
+          "ols_check": {
+            "diff": 0.0007966078216782341,
+            "se": 0.0025443351480788877,
+            "p_value": 0.7542117099628625
+          },
+          "always_valid_p_final": 1.0,
+          "always_valid_ci_final": [
+            -0.006938668060621997,
+            0.00796554287290355
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "revenue": {
+          "naive": {
+            "metric": "revenue",
+            "method": "naive",
+            "n_control": 29978,
+            "n_treatment": 30022,
+            "control_mean": 5.027941490426313,
+            "treatment_mean": 4.985800746119512,
+            "diff": -0.042140744306800926,
+            "se": 0.1575273142285655,
+            "ci_low": -0.35088860677611333,
+            "ci_high": 0.2666071181625115,
+            "p_value": 0.7890735225637417,
+            "rel_lift": -0.008381311593828378,
+            "rel_ci_low": -0.06953405321576606,
+            "rel_ci_high": 0.0527714300281093,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "revenue",
+            "method": "cuped",
+            "n_control": 29978,
+            "n_treatment": 30022,
+            "control_mean": 5.027941490426313,
+            "treatment_mean": 4.985800746119512,
+            "diff": -0.00928697155895275,
+            "se": 0.13762232372578323,
+            "ci_low": -0.2790217695302001,
+            "ci_high": 0.2604478264122946,
+            "p_value": 0.9461983272998699,
+            "rel_lift": -0.0018531311621783342,
+            "rel_ci_low": -0.05562713164700231,
+            "rel_ci_high": 0.05192086932264564,
+            "theta": 0.3037841067569483,
+            "variance_reduction": 0.23675136545274478
+          },
+          "ols_check": {
+            "diff": -0.009286999996949995,
+            "se": 0.137658023421699,
+            "p_value": 0.9462120944023801
+          },
+          "always_valid_p_final": 0.7539659373559141,
+          "always_valid_ci_final": [
+            -0.4369972881156152,
+            0.34699810200185127
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "retained_w2": {
+          "naive": {
+            "metric": "retained_w2",
+            "method": "naive",
+            "n_control": 29978,
+            "n_treatment": 30022,
+            "control_mean": 0.9046634198412169,
+            "treatment_mean": 0.9097328625674506,
+            "diff": 0.005069442726233664,
+            "se": 0.002369073157216246,
+            "ci_low": 0.00042614466134922434,
+            "ci_high": 0.009712740791118103,
+            "p_value": 0.03236752119639269,
+            "rel_lift": 0.005603678246572041,
+            "rel_ci_low": 0.0004562892310437591,
+            "rel_ci_high": 0.010751067262100324,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "retained_w2",
+            "method": "cuped",
+            "n_control": 29978,
+            "n_treatment": 30022,
+            "control_mean": 0.9046634198412169,
+            "treatment_mean": 0.9097328625674506,
+            "diff": 0.005455807623678033,
+            "se": 0.002311130710620667,
+            "ci_low": 0.0009260746672970638,
+            "ci_high": 0.009985540580059002,
+            "p_value": 0.018242153397135166,
+            "rel_lift": 0.006032048654192934,
+            "rel_ci_low": 0.0010084314522960216,
+            "rel_ci_high": 0.011055665856089848,
+            "theta": 0.003460241693136529,
+            "variance_reduction": 0.04831752236686859
+          },
+          "ols_check": {
+            "diff": 0.005455857699599801,
+            "se": 0.0023113542051281417,
+            "p_value": 0.018252317406173196
+          },
+          "always_valid_p_final": 0.3728300846787565,
+          "always_valid_ci_final": [
+            -0.002440965704509978,
+            0.01306058856644639
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": 1,
+          "true_ate": 0.002194123855258054,
+          "true_rel": 0.0024202348007631436,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        }
+      },
+      "bayes": {
+        "post_mean": 0.6158283407978615,
+        "post_sd": 0.05410847424480374,
+        "prob_positive": 1.0,
+        "expected_loss_t": 1.2125883776085386e-32,
+        "expected_loss_c": 0.6158283407978615,
+        "ci_low": 0.5097776800196331,
+        "ci_high": 0.72187900157609,
+        "decision": "ship",
+        "loss_tolerance": 0.05234988991927414
+      },
+      "ratio_revenue_per_session": {
+        "control_ratio": 0.48022464786264335,
+        "treatment_ratio": 0.4520609518171989,
+        "diff": -0.028163696045444442,
+        "se": 0.014471848871098765,
+        "ci_low": -0.05652799862250466,
+        "ci_high": 0.00020060653161577818,
+        "p_value": 0.05164247169649501,
+        "rel_lift": -0.05864691904256436,
+        "rel_ci_low": -0.11593898101487701,
+        "rel_ci_high": -0.0013548570702517082
+      },
+      "novelty": {
+        "early_rel_lift": 0.18514990714617463,
+        "late_rel_lift": 0.006537057551168957,
+        "late_rel_ci": [
+          -0.011376904258567626,
+          0.02445101936090554
+        ],
+        "decay_p_value": 2.63782619453791e-149,
+        "flagged": true
+      },
+      "hte": [
+        {
+          "segment": "platform",
+          "level": "android",
+          "metric": "sessions",
+          "n": 24060,
+          "rel_lift": 0.05926137242473173,
+          "diff": 0.5896779837423107,
+          "se": 0.0808778149396764,
+          "p_value": 3.0772391083479784e-13,
+          "p_bh": 7.693097770869946e-13,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        },
+        {
+          "segment": "platform",
+          "level": "ios",
+          "metric": "sessions",
+          "n": 26849,
+          "rel_lift": 0.05487398257035547,
+          "diff": 0.6452348173272853,
+          "se": 0.08988944101602618,
+          "p_value": 7.069018328144913e-13,
+          "p_bh": 1.1781697213574854e-12,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        },
+        {
+          "segment": "platform",
+          "level": "web",
+          "metric": "sessions",
+          "n": 9091,
+          "rel_lift": 0.0753865530794926,
+          "diff": 0.5921337745266237,
+          "se": 0.10577434455957538,
+          "p_value": 2.1673245595394884e-08,
+          "p_bh": 2.1673245595394884e-08,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        },
+        {
+          "segment": "tenure",
+          "level": "existing",
+          "metric": "sessions",
+          "n": 41885,
+          "rel_lift": 0.05898861229689256,
+          "diff": 0.6690980919772471,
+          "se": 0.06885435834159849,
+          "p_value": 2.5372726371244983e-22,
+          "p_bh": 1.2686363185622491e-21,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        },
+        {
+          "segment": "tenure",
+          "level": "new",
+          "metric": "sessions",
+          "n": 18115,
+          "rel_lift": 0.057963920864290364,
+          "diff": 0.48458253811144303,
+          "se": 0.08224268306959082,
+          "p_value": 3.8130635585181955e-09,
+          "p_bh": 4.766329448147744e-09,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        }
+      ],
+      "power": {
+        "mde_rel": 0.02,
+        "n_per_arm_naive": 44057,
+        "n_per_arm_cuped": 14693,
+        "days_naive": 30.839899999999997,
+        "days_cuped": 10.2851
+      },
+      "guardrail_harm": [],
+      "decision": "SHIP WITH CAUTION: significant lift, but it decays (novelty). Plan on the late-window lift.",
+      "truth": {
+        "effects": {
+          "sessions": {
+            "ate": 0.6662467759274225,
+            "rel": 0.06396479028389668
+          },
+          "converted": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "revenue": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "retained_w2": {
+            "ate": 0.002194123855258054,
+            "rel": 0.0024202348007631436
+          }
+        },
+        "users_dropped_by_bug": 0,
+        "users_assigned": {
+          "control": 29978,
+          "treatment": 30022
+        }
+      }
+    },
+    "E05": {
+      "exp_id": "E05",
+      "name": "Checkout v2 (logging bug)",
+      "hypothesis": "Checkout v2 has no real effect; a tracking bug drops low-engagement treatment users.",
+      "primary_metric": "converted",
+      "enrollment_days": 21,
+      "n_control": 30156,
+      "n_treatment": 28260,
+      "srm": {
+        "chi2": 61.53820870994248,
+        "p_value": 4.342343142477656e-15,
+        "flagged": true,
+        "share_treatment": 0.48377156943303207
+      },
+      "metrics": {
+        "sessions": {
+          "naive": {
+            "metric": "sessions",
+            "method": "naive",
+            "n_control": 30156,
+            "n_treatment": 28260,
+            "control_mean": 10.452447274174293,
+            "treatment_mean": 10.90905874026893,
+            "diff": 0.4566114660946372,
+            "se": 0.09297964903319567,
+            "ci_low": 0.27437470269439923,
+            "ci_high": 0.6388482294948752,
+            "p_value": 9.067071699534569e-07,
+            "rel_lift": 0.043684646678182615,
+            "rel_ci_low": 0.025898286260691253,
+            "rel_ci_high": 0.06147100709567398,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "sessions",
+            "method": "cuped",
+            "n_control": 30156,
+            "n_treatment": 28260,
+            "control_mean": 10.452447274174293,
+            "treatment_mean": 10.90905874026893,
+            "diff": 0.010617003890889265,
+            "se": 0.05382439353901187,
+            "ci_low": -0.09487686893528438,
+            "ci_high": 0.11611087671706291,
+            "p_value": 0.8436298364984649,
+            "rel_lift": 0.0009952004281890137,
+            "rel_ci_low": -0.008897903832454269,
+            "rel_ci_high": 0.010888304688832296,
+            "theta": 0.4950710825318727,
+            "variance_reduction": 0.6648937828815695
+          },
+          "ols_check": {
+            "diff": 0.010623315408929895,
+            "se": 0.05364667648045138,
+            "p_value": 0.8430264912262851
+          },
+          "always_valid_p_final": 0.9896426770859804,
+          "always_valid_ci_final": [
+            -0.15153099252219102,
+            0.1860421751271948
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "converted": {
+          "naive": {
+            "metric": "converted",
+            "method": "naive",
+            "n_control": 30156,
+            "n_treatment": 28260,
+            "control_mean": 0.12979174956890835,
+            "treatment_mean": 0.13358103326256193,
+            "diff": 0.0037892836936535834,
+            "se": 0.0028001955398496117,
+            "ci_low": -0.001698998714121349,
+            "ci_high": 0.009277566101428516,
+            "p_value": 0.1759850058349628,
+            "rel_lift": 0.029195104513494385,
+            "rel_ci_low": -0.013684328000582356,
+            "rel_ci_high": 0.07207453702757113,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "converted",
+            "method": "cuped",
+            "n_control": 30156,
+            "n_treatment": 28260,
+            "control_mean": 0.12979174956890835,
+            "treatment_mean": 0.13358103326256193,
+            "diff": 0.00036255888414543636,
+            "se": 0.0026245904720980603,
+            "ci_low": -0.0047815439153337394,
+            "ci_high": 0.005506661683624612,
+            "p_value": 0.8901303887572591,
+            "rel_lift": 0.0027581609645548344,
+            "rel_ci_low": -0.03642750588494654,
+            "rel_ci_high": 0.04194382781405621,
+            "theta": 0.12207660077124835,
+            "variance_reduction": 0.12149067288522619
+          },
+          "ols_check": {
+            "diff": 0.00036263570945590346,
+            "se": 0.0026248867684896806,
+            "p_value": 0.8901195813568441
+          },
+          "always_valid_p_final": 0.923719829077319,
+          "always_valid_ci_final": [
+            -0.005723183353691822,
+            0.00835066761116996
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "revenue": {
+          "naive": {
+            "metric": "revenue",
+            "method": "naive",
+            "n_control": 30156,
+            "n_treatment": 28260,
+            "control_mean": 5.278743202016184,
+            "treatment_mean": 5.485565109695683,
+            "diff": 0.20682190767949926,
+            "se": 0.1680709310160519,
+            "ci_low": -0.12259106396007835,
+            "ci_high": 0.5362348793190769,
+            "p_value": 0.21848626482918188,
+            "rel_lift": 0.03918014189447683,
+            "rel_ci_low": -0.024407335537573335,
+            "rel_ci_high": 0.10276761932652699,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "revenue",
+            "method": "cuped",
+            "n_control": 30156,
+            "n_treatment": 28260,
+            "control_mean": 5.278743202016184,
+            "treatment_mean": 5.485565109695683,
+            "diff": -0.02983837708085435,
+            "se": 0.14594987629562925,
+            "ci_low": -0.3158948781683638,
+            "ci_high": 0.2562181240066551,
+            "p_value": 0.8380076168793412,
+            "rel_lift": -0.0055325587886349,
+            "rel_ci_low": -0.05843178443882084,
+            "rel_ci_high": 0.04736666686155104,
+            "theta": 0.3106003121525347,
+            "variance_reduction": 0.24591161624970226
+          },
+          "ols_check": {
+            "diff": -0.02984249926152402,
+            "se": 0.1460008535989367,
+            "p_value": 0.8380413327266841
+          },
+          "always_valid_p_final": 0.9332172070464471,
+          "always_valid_ci_final": [
+            -0.44300667814891914,
+            0.42731612398993246
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "retained_w2": {
+          "naive": {
+            "metric": "retained_w2",
+            "method": "naive",
+            "n_control": 30156,
+            "n_treatment": 28260,
+            "control_mean": 0.9077795463589335,
+            "treatment_mean": 0.916277423920736,
+            "diff": 0.008497877561802425,
+            "se": 0.0023432515399526115,
+            "ci_low": 0.0039051889367772872,
+            "ci_high": 0.013090566186827562,
+            "p_value": 0.0002872528236657407,
+            "rel_lift": 0.009361168794656205,
+            "rel_ci_low": 0.004277912505528299,
+            "rel_ci_high": 0.014444425083784112,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "retained_w2",
+            "method": "cuped",
+            "n_control": 30156,
+            "n_treatment": 28260,
+            "control_mean": 0.9077795463589335,
+            "treatment_mean": 0.916277423920736,
+            "diff": 0.0055291595312221276,
+            "se": 0.002288978747869454,
+            "ci_low": 0.001042843624020409,
+            "ci_high": 0.010015475438423845,
+            "p_value": 0.015711146355157968,
+            "rel_lift": 0.006081240526895737,
+            "rel_ci_low": 0.0011318256846643204,
+            "rel_ci_high": 0.011030655369127153,
+            "theta": 0.003295391700311776,
+            "variance_reduction": 0.045786187691286284
+          },
+          "ols_check": {
+            "diff": 0.005532446465132762,
+            "se": 0.0022883072848500657,
+            "p_value": 0.015618836551613138
+          },
+          "always_valid_p_final": 1.0,
+          "always_valid_ci_final": [
+            -0.002399350385874995,
+            0.011782766284622909
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": 20,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": false,
+          "always_valid_ci_covers_truth": true
+        }
+      },
+      "bayes": {
+        "post_mean_c": 0.12981630081570397,
+        "post_mean_t": 0.13360696341377115,
+        "prob_t_better": 0.91151,
+        "expected_loss_t": 0.00011428725325646944,
+        "expected_loss_c": 0.003904978210796311,
+        "rel_lift_median": 0.029216968644781516,
+        "rel_lift_ci_low": -0.012859736863060831,
+        "rel_lift_ci_high": 0.07299064014834235,
+        "decision": "keep running / inconclusive",
+        "loss_tolerance": 0.0006489587478445418
+      },
+      "ratio_revenue_per_session": {
+        "control_ratio": 0.5050246189769166,
+        "treatment_ratio": 0.5028449511823284,
+        "diff": -0.002179667794588225,
+        "se": 0.015590956707573933,
+        "ci_low": -0.03273738142595631,
+        "ci_high": 0.02837804583677986,
+        "p_value": 0.8888153756414947,
+        "rel_lift": -0.0043159634455124385,
+        "rel_ci_low": -0.06469390149906559,
+        "rel_ci_high": 0.05606197460804071
+      },
+      "novelty": {
+        "early_rel_lift": 0.04432267801063139,
+        "late_rel_lift": 0.03966434733532198,
+        "late_rel_ci": [
+          0.02117655595013517,
+          0.05815213872050879
+        ],
+        "decay_p_value": 0.49277330791620333,
+        "flagged": false
+      },
+      "hte": [
+        {
+          "segment": "platform",
+          "level": "android",
+          "metric": "converted",
+          "n": 23540,
+          "rel_lift": 0.030694562863653907,
+          "diff": 0.003950933550733227,
+          "se": 0.004105383002067335,
+          "p_value": 0.3358593609199244,
+          "p_bh": 0.839648402299811,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "platform",
+          "level": "ios",
+          "metric": "converted",
+          "n": 26234,
+          "rel_lift": -0.0025588818482097375,
+          "diff": -0.0003589080234077946,
+          "se": 0.004018512015627782,
+          "p_value": 0.928832636854693,
+          "p_bh": 0.928832636854693,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "platform",
+          "level": "web",
+          "metric": "converted",
+          "n": 8642,
+          "rel_lift": -0.07183033536242711,
+          "diff": -0.008082335799453277,
+          "se": 0.006365070455274669,
+          "p_value": 0.20415759725678917,
+          "p_bh": 0.839648402299811,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "tenure",
+          "level": "existing",
+          "metric": "converted",
+          "n": 41048,
+          "rel_lift": -0.0033962390668355047,
+          "diff": -0.00047421705683836635,
+          "se": 0.0032098299622391243,
+          "p_value": 0.8825487547406833,
+          "p_bh": 0.928832636854693,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "tenure",
+          "level": "new",
+          "metric": "converted",
+          "n": 17368,
+          "rel_lift": 0.010598697644775612,
+          "diff": 0.0011944044053324443,
+          "se": 0.00450856074084157,
+          "p_value": 0.7910716899544771,
+          "p_bh": 0.928832636854693,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        }
+      ],
+      "power": {
+        "mde_rel": 0.03,
+        "n_per_arm_naive": 116947,
+        "n_per_arm_cuped": 102739,
+        "days_naive": 84.08268282662284,
+        "days_cuped": 73.86739934264585
+      },
+      "guardrail_harm": [],
+      "decision": "INVALID: sample-ratio mismatch. Do not read the metrics; fix assignment/logging and rerun.",
+      "truth": {
+        "effects": {
+          "sessions": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "converted": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "revenue": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "retained_w2": {
+            "ate": 0.0,
+            "rel": 0.0
+          }
+        },
+        "users_dropped_by_bug": 1584,
+        "users_assigned": {
+          "control": 30156,
+          "treatment": 29844
+        }
+      }
+    },
+    "E06": {
+      "exp_id": "E06",
+      "name": "Trial-reminder email",
+      "hypothesis": "A reminder email gives a small lift to purchase probability.",
+      "primary_metric": "converted",
+      "enrollment_days": 28,
+      "n_control": 59907,
+      "n_treatment": 60093,
+      "srm": {
+        "chi2": 0.2883,
+        "p_value": 0.5913119953324484,
+        "flagged": false,
+        "share_treatment": 0.500775
+      },
+      "metrics": {
+        "sessions": {
+          "naive": {
+            "metric": "sessions",
+            "method": "naive",
+            "n_control": 59907,
+            "n_treatment": 60093,
+            "control_mean": 10.41509339476188,
+            "treatment_mean": 10.391875925648579,
+            "diff": -0.023217469113301803,
+            "se": 0.06369469352987697,
+            "ci_low": -0.14805677443817708,
+            "ci_high": 0.10162183621157347,
+            "p_value": 0.7154758436867845,
+            "rel_lift": -0.0022292137221715524,
+            "rel_ci_low": -0.014202213330751376,
+            "rel_ci_high": 0.009743785886408271,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "sessions",
+            "method": "cuped",
+            "n_control": 59907,
+            "n_treatment": 60093,
+            "control_mean": 10.41509339476188,
+            "treatment_mean": 10.391875925648579,
+            "diff": -0.02333273316367901,
+            "se": 0.03682088871419529,
+            "ci_low": -0.09550034892225912,
+            "ci_high": 0.0488348825949011,
+            "p_value": 0.5262883962578428,
+            "rel_lift": -0.0022402683267430668,
+            "rel_ci_low": -0.009161621199343526,
+            "rel_ci_high": 0.0046810845458573926,
+            "theta": 0.49799826512003026,
+            "variance_reduction": 0.6658187891155456
+          },
+          "ols_check": {
+            "diff": -0.023332733164636674,
+            "se": 0.03682103965835983,
+            "p_value": 0.526290091889865
+          },
+          "always_valid_p_final": 1.0,
+          "always_valid_ci_final": [
+            -0.10971723837276032,
+            0.10074692109466643
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        },
+        "converted": {
+          "naive": {
+            "metric": "converted",
+            "method": "naive",
+            "n_control": 59907,
+            "n_treatment": 60093,
+            "control_mean": 0.12601198524379456,
+            "treatment_mean": 0.13412543890303363,
+            "diff": 0.008113453659239073,
+            "se": 0.0019419225030598666,
+            "ci_low": 0.004307355492473861,
+            "ci_high": 0.011919551826004285,
+            "p_value": 2.9401613682254148e-05,
+            "rel_lift": 0.06438636486475491,
+            "rel_ci_low": 0.03321886666383534,
+            "rel_ci_high": 0.09555386306567448,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "converted",
+            "method": "cuped",
+            "n_control": 59907,
+            "n_treatment": 60093,
+            "control_mean": 0.12601198524379456,
+            "treatment_mean": 0.13412543890303363,
+            "diff": 0.007903036164583682,
+            "se": 0.0018087194890538368,
+            "ci_low": 0.004358011107902474,
+            "ci_high": 0.01144806122126489,
+            "p_value": 1.2458294151798017e-05,
+            "rel_lift": 0.06266414352887617,
+            "rel_ci_low": 0.033681484853390994,
+            "rel_ci_high": 0.09164680220436135,
+            "theta": 0.13158216600736525,
+            "variance_reduction": 0.13248169462080195
+          },
+          "ols_check": {
+            "diff": 0.00790304200021505,
+            "se": 0.001808731447074778,
+            "p_value": 1.245975807879799e-05
+          },
+          "always_valid_p_final": 0.00028308171420628273,
+          "always_valid_ci_final": [
+            0.002855991587320657,
+            0.01332153266186242
+          ],
+          "first_reject_day": 14,
+          "first_naive_reject_day": 6,
+          "true_ate": 0.0038751267421251122,
+          "true_rel": 0.030080780175067545,
+          "cuped_ci_covers_truth": false,
+          "always_valid_ci_covers_truth": true
+        },
+        "revenue": {
+          "naive": {
+            "metric": "revenue",
+            "method": "naive",
+            "n_control": 59907,
+            "n_treatment": 60093,
+            "control_mean": 5.02834226384229,
+            "treatment_mean": 5.458563559815619,
+            "diff": 0.4302212959733289,
+            "se": 0.11411814712466903,
+            "ci_low": 0.2065538376265345,
+            "ci_high": 0.6538887543201233,
+            "p_value": 0.00016327115662486265,
+            "rel_lift": 0.0855592705108712,
+            "rel_ci_low": 0.039272364970937924,
+            "rel_ci_high": 0.13184617605080448,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "revenue",
+            "method": "cuped",
+            "n_control": 59907,
+            "n_treatment": 60093,
+            "control_mean": 5.02834226384229,
+            "treatment_mean": 5.458563559815619,
+            "diff": 0.42292068098195745,
+            "se": 0.09983905418032439,
+            "ci_low": 0.22723973053797852,
+            "ci_high": 0.6186016314259364,
+            "p_value": 2.275119496781015e-05,
+            "rel_lift": 0.08404626983335861,
+            "rel_ci_low": 0.04357593955631471,
+            "rel_ci_high": 0.12451660011040251,
+            "theta": 0.30472304190901744,
+            "variance_reduction": 0.2345946510514727
+          },
+          "ols_check": {
+            "diff": 0.4229207424404572,
+            "se": 0.09983305776810066,
+            "p_value": 2.2725380606189777e-05
+          },
+          "always_valid_p_final": 6.984898722166624e-05,
+          "always_valid_ci_final": [
+            0.23589631228522295,
+            0.7263583491996473
+          ],
+          "first_reject_day": 11,
+          "first_naive_reject_day": 1,
+          "true_ate": 0.20661989858330954,
+          "true_rel": 0.040000000000000036,
+          "cuped_ci_covers_truth": false,
+          "always_valid_ci_covers_truth": false
+        },
+        "retained_w2": {
+          "naive": {
+            "metric": "retained_w2",
+            "method": "naive",
+            "n_control": 59907,
+            "n_treatment": 60093,
+            "control_mean": 0.9074064800440683,
+            "treatment_mean": 0.9072104904065366,
+            "diff": -0.00019598963753175713,
+            "se": 0.0016743284053525882,
+            "ci_low": -0.0034776130103152105,
+            "ci_high": 0.0030856337352516963,
+            "p_value": 0.906815936366368,
+            "rel_lift": -0.00021598880087592143,
+            "rel_ci_low": -0.003832084623649733,
+            "rel_ci_high": 0.00340010702189789,
+            "theta": null,
+            "variance_reduction": null
+          },
+          "cuped": {
+            "metric": "retained_w2",
+            "method": "cuped",
+            "n_control": 59907,
+            "n_treatment": 60093,
+            "control_mean": 0.9074064800440683,
+            "treatment_mean": 0.9072104904065366,
+            "diff": -0.0001968068376831944,
+            "se": 0.0016332782447784312,
+            "ci_low": -0.003397973374181714,
+            "ci_high": 0.0030043596988153253,
+            "p_value": 0.9040886271369608,
+            "rel_lift": -0.00021688929190288864,
+            "rel_ci_low": -0.0037443247350951495,
+            "rel_ci_high": 0.0033105461512893722,
+            "theta": 0.003530712796599104,
+            "variance_reduction": 0.04843367534109644
+          },
+          "ols_check": {
+            "diff": -0.00019680683769130944,
+            "se": 0.0016332850596809437,
+            "p_value": 0.9040890253913004
+          },
+          "always_valid_p_final": 1.0,
+          "always_valid_ci_final": [
+            -0.005546944358884202,
+            0.0056139575849029205
+          ],
+          "first_reject_day": null,
+          "first_naive_reject_day": null,
+          "true_ate": 0.0,
+          "true_rel": 0.0,
+          "cuped_ci_covers_truth": true,
+          "always_valid_ci_covers_truth": true
+        }
+      },
+      "bayes": {
+        "post_mean_c": 0.1260244704468444,
+        "post_mean_t": 0.1341376154422165,
+        "prob_t_better": 0.999995,
+        "expected_loss_t": 8.903630348931769e-10,
+        "expected_loss_c": 0.008117273047969973,
+        "rel_lift_median": 0.06441006702576857,
+        "rel_lift_ci_low": 0.033738122708565896,
+        "rel_lift_ci_high": 0.09609282569889661,
+        "decision": "ship",
+        "loss_tolerance": 0.0006300599262189728
+      },
+      "ratio_revenue_per_session": {
+        "control_ratio": 0.4827937756536318,
+        "treatment_ratio": 0.5252722029083443,
+        "diff": 0.042478427254712514,
+        "se": 0.010833495959183075,
+        "ci_low": 0.02124516534805348,
+        "ci_high": 0.06371168916137154,
+        "p_value": 8.817247991790592e-05,
+        "rel_lift": 0.08798462075697433,
+        "rel_ci_low": 0.04216700780379321,
+        "rel_ci_high": 0.13380223371015545
+      },
+      "novelty": {
+        "early_rel_lift": -0.010304593659873684,
+        "late_rel_lift": -0.001266476884118073,
+        "late_rel_ci": [
+          -0.01373973274688109,
+          0.011206778978644943
+        ],
+        "decay_p_value": 0.04886893913782134,
+        "flagged": false
+      },
+      "hte": [
+        {
+          "segment": "platform",
+          "level": "android",
+          "metric": "converted",
+          "n": 47533,
+          "rel_lift": 0.08017502716598135,
+          "diff": 0.009828238429614652,
+          "se": 0.0028599649111711333,
+          "p_value": 0.0005893059239759539,
+          "p_bh": 0.0014732648099398849,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        },
+        {
+          "segment": "platform",
+          "level": "ios",
+          "metric": "converted",
+          "n": 54342,
+          "rel_lift": 0.0509368488636206,
+          "diff": 0.007019077254275835,
+          "se": 0.0027679037841666343,
+          "p_value": 0.011216453667264627,
+          "p_bh": 0.018694089445441046,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        },
+        {
+          "segment": "platform",
+          "level": "web",
+          "metric": "converted",
+          "n": 18125,
+          "rel_lift": 0.056478712144782284,
+          "diff": 0.005663372515600923,
+          "se": 0.004266781513102683,
+          "p_value": 0.18440377460504664,
+          "p_bh": 0.18440377460504664,
+          "significant_bh": false,
+          "significant_unadjusted": false
+        },
+        {
+          "segment": "tenure",
+          "level": "existing",
+          "metric": "converted",
+          "n": 84015,
+          "rel_lift": 0.06492985300637066,
+          "diff": 0.008651992372619849,
+          "se": 0.002208380777490308,
+          "p_value": 8.936110689592257e-05,
+          "p_bh": 0.00044680553447961285,
+          "significant_bh": true,
+          "significant_unadjusted": true
+        },
+        {
+          "segment": "tenure",
+          "level": "new",
+          "metric": "converted",
+          "n": 35985,
+          "rel_lift": 0.056615487051534075,
+          "diff": 0.0061960857395864655,
+          "se": 0.0031272382816786215,
+          "p_value": 0.047554467574413284,
+          "p_bh": 0.059443084468016605,
+          "significant_bh": false,
+          "significant_unadjusted": true
+        }
+      ],
+      "power": {
+        "mde_rel": 0.03,
+        "n_per_arm_naive": 120976,
+        "n_per_arm_cuped": 104949,
+        "days_naive": 56.45546666666667,
+        "days_cuped": 48.976200000000006
+      },
+      "guardrail_harm": [],
+      "decision": "SHIP: significant lift on the primary metric (always-valid p < 0.05), no guardrail harm.",
+      "truth": {
+        "effects": {
+          "sessions": {
+            "ate": 0.0,
+            "rel": 0.0
+          },
+          "converted": {
+            "ate": 0.0038751267421251122,
+            "rel": 0.030080780175067545
+          },
+          "revenue": {
+            "ate": 0.20661989858330954,
+            "rel": 0.040000000000000036
+          },
+          "retained_w2": {
+            "ate": 0.0,
+            "rel": 0.0
+          }
+        },
+        "users_dropped_by_bug": 0,
+        "users_assigned": {
+          "control": 59907,
+          "treatment": 60093
+        }
+      }
+    }
+  },
+  "monte_carlo": {
+    "aa": {
+      "sessions": {
+        "rejection_rate": {
+          "naive_peeking": 0.259,
+          "fixed_horizon": 0.049,
+          "fixed_horizon_cuped": 0.051,
+          "msprt": 0.0135,
+          "msprt_cuped": 0.013,
+          "bayes_peeking_p95": 0.215
+        },
+        "rejection_curve": {
+          "naive_peeking": [
+            0.0555,
+            0.088,
+            0.1095,
+            0.1255,
+            0.144,
+            0.166,
+            0.1725,
+            0.1815,
+            0.189,
+            0.2025,
+            0.209,
+            0.218,
+            0.2245,
+            0.23,
+            0.2355,
+            0.2395,
+            0.245,
+            0.25,
+            0.2525,
+            0.2555,
+            0.259
+          ],
+          "msprt": [
+            0.0,
+            0.002,
+            0.0035,
+            0.0045,
+            0.006,
+            0.007,
+            0.0075,
+            0.009,
+            0.0095,
+            0.0095,
+            0.0095,
+            0.0095,
+            0.01,
+            0.0105,
+            0.0105,
+            0.0105,
+            0.011,
+            0.0115,
+            0.012,
+            0.013,
+            0.0135
+          ],
+          "msprt_cuped": [
+            0.0005,
+            0.0035,
+            0.0055,
+            0.0065,
+            0.0095,
+            0.0095,
+            0.01,
+            0.0105,
+            0.0115,
+            0.0115,
+            0.012,
+            0.012,
+            0.012,
+            0.012,
+            0.012,
+            0.012,
+            0.012,
+            0.012,
+            0.0125,
+            0.013,
+            0.013
+          ],
+          "bayes_peeking_p95": [
+            0.051,
+            0.076,
+            0.1,
+            0.1175,
+            0.1325,
+            0.1435,
+            0.154,
+            0.162,
+            0.167,
+            0.1725,
+            0.1795,
+            0.184,
+            0.1905,
+            0.1945,
+            0.197,
+            0.2,
+            0.2045,
+            0.207,
+            0.2095,
+            0.2125,
+            0.215
+          ]
+        },
+        "median_stopping_look": {
+          "msprt": 6.0,
+          "msprt_cuped": 4.5
+        },
+        "cuped_variance_reduction_empirical": 0.6569287832578661,
+        "cuped_variance_reduction_insample_mean": 0.6678793249990842,
+        "n_reps": 2000,
+        "n_looks": 21
+      },
+      "converted": {
+        "rejection_rate": {
+          "naive_peeking": 0.269,
+          "fixed_horizon": 0.0505,
+          "fixed_horizon_cuped": 0.053,
+          "msprt": 0.0075,
+          "msprt_cuped": 0.0095,
+          "bayes_peeking_p95": 0.217
+        },
+        "rejection_curve": {
+          "naive_peeking": [
+            0.047,
+            0.082,
+            0.1055,
+            0.128,
+            0.1465,
+            0.1635,
+            0.175,
+            0.184,
+            0.1935,
+            0.2065,
+            0.2155,
+            0.2265,
+            0.233,
+            0.238,
+            0.2445,
+            0.248,
+            0.2545,
+            0.2595,
+            0.2645,
+            0.2665,
+            0.269
+          ],
+          "msprt": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0005,
+            0.0005,
+            0.0005,
+            0.0005,
+            0.0015,
+            0.002,
+            0.0035,
+            0.0045,
+            0.0055,
+            0.0055,
+            0.006,
+            0.006,
+            0.0065,
+            0.007,
+            0.0075
+          ],
+          "msprt_cuped": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.001,
+            0.001,
+            0.0015,
+            0.0025,
+            0.003,
+            0.0045,
+            0.005,
+            0.0055,
+            0.0065,
+            0.0075,
+            0.0075,
+            0.008,
+            0.0085,
+            0.0085,
+            0.009,
+            0.0095
+          ],
+          "bayes_peeking_p95": [
+            0.0465,
+            0.079,
+            0.103,
+            0.1205,
+            0.1355,
+            0.1425,
+            0.152,
+            0.1605,
+            0.168,
+            0.1715,
+            0.176,
+            0.1815,
+            0.185,
+            0.1895,
+            0.195,
+            0.198,
+            0.2035,
+            0.2075,
+            0.212,
+            0.2155,
+            0.217
+          ]
+        },
+        "median_stopping_look": {
+          "msprt": 14.0,
+          "msprt_cuped": 12.0
+        },
+        "cuped_variance_reduction_empirical": 0.1314048108991791,
+        "cuped_variance_reduction_insample_mean": 0.12635438227676876,
+        "n_reps": 2000,
+        "n_looks": 21
+      },
+      "revenue": {
+        "rejection_rate": {
+          "naive_peeking": 0.258,
+          "fixed_horizon": 0.049,
+          "fixed_horizon_cuped": 0.05,
+          "msprt": 0.002,
+          "msprt_cuped": 0.003,
+          "bayes_peeking_p95": 0.2195
+        },
+        "rejection_curve": {
+          "naive_peeking": [
+            0.047,
+            0.0795,
+            0.104,
+            0.1245,
+            0.1435,
+            0.162,
+            0.172,
+            0.186,
+            0.197,
+            0.2075,
+            0.2155,
+            0.2205,
+            0.2245,
+            0.228,
+            0.2335,
+            0.243,
+            0.246,
+            0.2485,
+            0.2535,
+            0.257,
+            0.258
+          ],
+          "msprt": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0005,
+            0.0005,
+            0.0005,
+            0.0005,
+            0.0005,
+            0.0005,
+            0.0005,
+            0.002,
+            0.002,
+            0.002
+          ],
+          "msprt_cuped": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0005,
+            0.0005,
+            0.0005,
+            0.002,
+            0.0025,
+            0.0025,
+            0.0025,
+            0.0025,
+            0.0025,
+            0.0025,
+            0.003
+          ],
+          "bayes_peeking_p95": [
+            0.044,
+            0.076,
+            0.097,
+            0.1135,
+            0.1255,
+            0.137,
+            0.146,
+            0.1585,
+            0.162,
+            0.169,
+            0.1745,
+            0.1775,
+            0.1845,
+            0.188,
+            0.1945,
+            0.1995,
+            0.204,
+            0.2075,
+            0.21,
+            0.2155,
+            0.2195
+          ]
+        },
+        "median_stopping_look": {
+          "msprt": 19.0,
+          "msprt_cuped": 14.0
+        },
+        "cuped_variance_reduction_empirical": 0.24062348626457197,
+        "cuped_variance_reduction_insample_mean": 0.2343163932136607,
+        "n_reps": 2000,
+        "n_looks": 21
+      },
+      "retained_w2": {
+        "rejection_rate": {
+          "naive_peeking": 0.251,
+          "fixed_horizon": 0.0495,
+          "fixed_horizon_cuped": 0.0485,
+          "msprt": 0.013,
+          "msprt_cuped": 0.0105,
+          "bayes_peeking_p95": 0.218
+        },
+        "rejection_curve": {
+          "naive_peeking": [
+            0.048,
+            0.0845,
+            0.106,
+            0.1275,
+            0.145,
+            0.157,
+            0.169,
+            0.181,
+            0.1885,
+            0.196,
+            0.2025,
+            0.209,
+            0.214,
+            0.2205,
+            0.2255,
+            0.23,
+            0.234,
+            0.238,
+            0.243,
+            0.2475,
+            0.251
+          ],
+          "msprt": [
+            0.0025,
+            0.003,
+            0.0045,
+            0.0055,
+            0.006,
+            0.007,
+            0.0075,
+            0.009,
+            0.009,
+            0.0095,
+            0.0105,
+            0.011,
+            0.0115,
+            0.0115,
+            0.012,
+            0.0125,
+            0.013,
+            0.013,
+            0.013,
+            0.013,
+            0.013
+          ],
+          "msprt_cuped": [
+            0.0025,
+            0.003,
+            0.0035,
+            0.005,
+            0.005,
+            0.0055,
+            0.0065,
+            0.0065,
+            0.0075,
+            0.008,
+            0.0085,
+            0.0085,
+            0.009,
+            0.009,
+            0.0095,
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.0105,
+            0.0105
+          ],
+          "bayes_peeking_p95": [
+            0.05,
+            0.082,
+            0.1025,
+            0.118,
+            0.1305,
+            0.142,
+            0.1495,
+            0.158,
+            0.1625,
+            0.166,
+            0.171,
+            0.178,
+            0.1825,
+            0.189,
+            0.1935,
+            0.198,
+            0.2015,
+            0.2055,
+            0.2115,
+            0.215,
+            0.218
+          ]
+        },
+        "median_stopping_look": {
+          "msprt": 6.0,
+          "msprt_cuped": 6.0
+        },
+        "cuped_variance_reduction_empirical": 0.04662281793018874,
+        "cuped_variance_reduction_insample_mean": 0.04856002034170726,
+        "n_reps": 2000,
+        "n_looks": 21
+      }
+    },
+    "effect": {
+      "sessions": {
+        "rejection_rate": {
+          "naive_peeking": 0.656,
+          "fixed_horizon": 0.468,
+          "fixed_horizon_cuped": 0.9085,
+          "msprt": 0.203,
+          "msprt_cuped": 0.621,
+          "bayes_peeking_p95": 0.7675
+        },
+        "rejection_curve": {
+          "naive_peeking": [
+            0.067,
+            0.123,
+            0.18,
+            0.22,
+            0.262,
+            0.298,
+            0.329,
+            0.3585,
+            0.392,
+            0.4195,
+            0.4455,
+            0.4725,
+            0.499,
+            0.526,
+            0.543,
+            0.565,
+            0.5845,
+            0.6055,
+            0.623,
+            0.6415,
+            0.656
+          ],
+          "msprt": [
+            0.0005,
+            0.003,
+            0.0115,
+            0.019,
+            0.028,
+            0.037,
+            0.044,
+            0.0525,
+            0.0605,
+            0.0705,
+            0.081,
+            0.093,
+            0.107,
+            0.12,
+            0.1305,
+            0.141,
+            0.151,
+            0.1625,
+            0.1815,
+            0.1935,
+            0.203
+          ],
+          "msprt_cuped": [
+            0.009,
+            0.0315,
+            0.054,
+            0.072,
+            0.0985,
+            0.1305,
+            0.163,
+            0.2055,
+            0.239,
+            0.2745,
+            0.301,
+            0.334,
+            0.375,
+            0.407,
+            0.443,
+            0.474,
+            0.5085,
+            0.535,
+            0.564,
+            0.592,
+            0.621
+          ],
+          "bayes_peeking_p95": [
+            0.106,
+            0.1935,
+            0.2705,
+            0.3165,
+            0.3695,
+            0.409,
+            0.4585,
+            0.492,
+            0.5205,
+            0.552,
+            0.5765,
+            0.6055,
+            0.6305,
+            0.655,
+            0.6735,
+            0.6905,
+            0.708,
+            0.728,
+            0.7425,
+            0.757,
+            0.7675
+          ]
+        },
+        "median_stopping_look": {
+          "msprt": 13.0,
+          "msprt_cuped": 12.0
+        },
+        "cuped_variance_reduction_empirical": 0.6671544015258288,
+        "cuped_variance_reduction_insample_mean": 0.6684601891124955,
+        "n_reps": 2000,
+        "n_looks": 21,
+        "true_effect": 0.20849079857777963,
+        "always_valid_ci_coverage_all_looks": 0.9855,
+        "fixed_ci_coverage_final": 0.942,
+        "bias_cuped_final": -0.0002931872765269683
+      },
+      "converted": {
+        "rejection_rate": {
+          "naive_peeking": 0.604,
+          "fixed_horizon": 0.4215,
+          "fixed_horizon_cuped": 0.4715,
+          "msprt": 0.1305,
+          "msprt_cuped": 0.1675,
+          "bayes_peeking_p95": 0.7105
+        },
+        "rejection_curve": {
+          "naive_peeking": [
+            0.06,
+            0.1095,
+            0.156,
+            0.1945,
+            0.2295,
+            0.2595,
+            0.29,
+            0.3235,
+            0.3475,
+            0.3775,
+            0.405,
+            0.425,
+            0.447,
+            0.4745,
+            0.4925,
+            0.5115,
+            0.534,
+            0.558,
+            0.575,
+            0.5905,
+            0.604
+          ],
+          "msprt": [
+            0.0,
+            0.0,
+            0.0,
+            0.001,
+            0.002,
+            0.004,
+            0.009,
+            0.013,
+            0.0175,
+            0.0225,
+            0.032,
+            0.0375,
+            0.0455,
+            0.0535,
+            0.0585,
+            0.07,
+            0.081,
+            0.092,
+            0.109,
+            0.118,
+            0.1305
+          ],
+          "msprt_cuped": [
+            0.0,
+            0.0,
+            0.0,
+            0.001,
+            0.0025,
+            0.0065,
+            0.0125,
+            0.0185,
+            0.0285,
+            0.0365,
+            0.0455,
+            0.055,
+            0.0645,
+            0.077,
+            0.0865,
+            0.097,
+            0.1095,
+            0.123,
+            0.137,
+            0.1525,
+            0.1675
+          ],
+          "bayes_peeking_p95": [
+            0.099,
+            0.172,
+            0.237,
+            0.2905,
+            0.328,
+            0.374,
+            0.409,
+            0.4375,
+            0.4695,
+            0.5,
+            0.531,
+            0.546,
+            0.573,
+            0.593,
+            0.613,
+            0.6275,
+            0.649,
+            0.6635,
+            0.6815,
+            0.6945,
+            0.7105
+          ]
+        },
+        "median_stopping_look": {
+          "msprt": 16.0,
+          "msprt_cuped": 15.0
+        },
+        "cuped_variance_reduction_empirical": 0.1198840921071509,
+        "cuped_variance_reduction_insample_mean": 0.12687919930750877,
+        "n_reps": 2000,
+        "n_looks": 21,
+        "true_effect": 0.0058009569253602115,
+        "always_valid_ci_coverage_all_looks": 0.992,
+        "fixed_ci_coverage_final": 0.9425,
+        "bias_cuped_final": -2.971816557119627e-05
+      },
+      "revenue": {
+        "rejection_rate": {
+          "naive_peeking": 0.545,
+          "fixed_horizon": 0.352,
+          "fixed_horizon_cuped": 0.4395,
+          "msprt": 0.061,
+          "msprt_cuped": 0.114,
+          "bayes_peeking_p95": 0.6575
+        },
+        "rejection_curve": {
+          "naive_peeking": [
+            0.063,
+            0.108,
+            0.1515,
+            0.1875,
+            0.219,
+            0.2475,
+            0.275,
+            0.302,
+            0.3235,
+            0.3425,
+            0.3635,
+            0.386,
+            0.4055,
+            0.427,
+            0.443,
+            0.4585,
+            0.475,
+            0.491,
+            0.505,
+            0.522,
+            0.545
+          ],
+          "msprt": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.001,
+            0.001,
+            0.0025,
+            0.0025,
+            0.004,
+            0.0065,
+            0.009,
+            0.0105,
+            0.013,
+            0.0195,
+            0.0265,
+            0.035,
+            0.04,
+            0.048,
+            0.0535,
+            0.061
+          ],
+          "msprt_cuped": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0005,
+            0.002,
+            0.004,
+            0.006,
+            0.0115,
+            0.015,
+            0.0205,
+            0.0265,
+            0.0375,
+            0.047,
+            0.0565,
+            0.067,
+            0.0775,
+            0.0905,
+            0.1005,
+            0.114
+          ],
+          "bayes_peeking_p95": [
+            0.0985,
+            0.17,
+            0.225,
+            0.268,
+            0.3015,
+            0.3375,
+            0.3655,
+            0.396,
+            0.4245,
+            0.452,
+            0.472,
+            0.495,
+            0.5155,
+            0.542,
+            0.559,
+            0.5775,
+            0.592,
+            0.6065,
+            0.6235,
+            0.6385,
+            0.6575
+          ]
+        },
+        "median_stopping_look": {
+          "msprt": 17.0,
+          "msprt_cuped": 17.0
+        },
+        "cuped_variance_reduction_empirical": 0.22726329874569573,
+        "cuped_variance_reduction_insample_mean": 0.23806035763169425,
+        "n_reps": 2000,
+        "n_looks": 21,
+        "true_effect": 0.3098928807689883,
+        "always_valid_ci_coverage_all_looks": 0.9975,
+        "fixed_ci_coverage_final": 0.9375,
+        "bias_cuped_final": -0.0014143758519703509
+      },
+      "retained_w2": {
+        "rejection_rate": {
+          "naive_peeking": 0.373,
+          "fixed_horizon": 0.1605,
+          "fixed_horizon_cuped": 0.171,
+          "msprt": 0.032,
+          "msprt_cuped": 0.0305,
+          "bayes_peeking_p95": 0.4725
+        },
+        "rejection_curve": {
+          "naive_peeking": [
+            0.0545,
+            0.096,
+            0.1295,
+            0.1565,
+            0.177,
+            0.1975,
+            0.214,
+            0.2285,
+            0.239,
+            0.253,
+            0.2675,
+            0.282,
+            0.2915,
+            0.3075,
+            0.3195,
+            0.332,
+            0.3475,
+            0.3535,
+            0.36,
+            0.365,
+            0.373
+          ],
+          "msprt": [
+            0.002,
+            0.0055,
+            0.009,
+            0.009,
+            0.01,
+            0.011,
+            0.013,
+            0.013,
+            0.0145,
+            0.0165,
+            0.0165,
+            0.018,
+            0.021,
+            0.021,
+            0.022,
+            0.0245,
+            0.026,
+            0.0275,
+            0.028,
+            0.031,
+            0.032
+          ],
+          "msprt_cuped": [
+            0.001,
+            0.0045,
+            0.0085,
+            0.009,
+            0.01,
+            0.0125,
+            0.0135,
+            0.014,
+            0.0155,
+            0.017,
+            0.0175,
+            0.019,
+            0.0205,
+            0.0205,
+            0.0215,
+            0.023,
+            0.025,
+            0.0255,
+            0.0265,
+            0.0295,
+            0.0305
+          ],
+          "bayes_peeking_p95": [
+            0.0735,
+            0.123,
+            0.165,
+            0.1975,
+            0.2315,
+            0.2575,
+            0.282,
+            0.3025,
+            0.322,
+            0.3385,
+            0.3615,
+            0.377,
+            0.3845,
+            0.398,
+            0.411,
+            0.4235,
+            0.434,
+            0.443,
+            0.455,
+            0.4625,
+            0.4725
+          ]
+        },
+        "median_stopping_look": {
+          "msprt": 10.0,
+          "msprt_cuped": 9.0
+        },
+        "cuped_variance_reduction_empirical": 0.06538010113591974,
+        "cuped_variance_reduction_insample_mean": 0.04802312840017966,
+        "n_reps": 2000,
+        "n_looks": 21,
+        "true_effect": 0.002701280076028258,
+        "always_valid_ci_coverage_all_looks": 0.9905,
+        "fixed_ci_coverage_final": 0.9505,
+        "bias_cuped_final": 2.0714693483173032e-05
+      }
+    },
+    "effect_spec": {
+      "lift_sessions": 0.02,
+      "novelty_sessions": 0.0,
+      "novelty_decay_days": 2.5,
+      "lift_purchase": 0.06,
+      "lift_basket": 0.0,
+      "new_user_multiplier": 1.0,
+      "existing_user_multiplier": 1.0
+    },
+    "true_effect": {
+      "sessions": 0.20849079857777963,
+      "converted": 0.0058009569253602115,
+      "revenue": 0.3098928807689883,
+      "retained_w2": 0.002701280076028258
+    }
+  },
+  "acceptance": {
+    "sequential_fpr_under_peeking_le_5pct": {
+      "max_fpr_any_metric": 0.0135,
+      "passed": true
+    },
+    "cuped_variance_reduction_ge_30pct_on_correlated_metrics": {
+      "correlated_metrics_rho_ge_0.55": [
+        "sessions"
+      ],
+      "vr": {
+        "sessions": 0.6569287832578661,
+        "converted": 0.1314048108991791,
+        "revenue": 0.24062348626457197,
+        "retained_w2": 0.04662281793018874
+      },
+      "passed": true
+    }
+  }
+}

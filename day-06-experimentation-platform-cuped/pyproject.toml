@@ -1,0 +1,28 @@
+[project]
+name = "expengine"
+version = "1.0.0"
+description = "Day 06: Experimentation Engine: CUPED, Sequential and Bayesian Tests (synthetic data)"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+src = ["src", "tests", "scripts", "app"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["B905"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q -p no:warnings"
+
+[tool.coverage.run]
+source = ["expengine"]
+
+[tool.coverage.report]
+skip_empty = true
+
+[tool.ruff.lint.per-file-ignores]
+"src/expengine/readout.py" = ["E501"]  # Markdown table templates

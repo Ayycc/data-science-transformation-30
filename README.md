@@ -23,7 +23,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 03 | I Advanced | [Hospital Readmission Risk on an OMOP-style Model](./day-03-healthcare-readmission-omop/) | Healthcare | pandas, Pydantic, scikit-learn | ✅ | [prompt](./prompts/day-03.md) | Test AUROC 0.782 vs LACE 0.707, calibration slope 1.02 on 9,301 synthetic index admissions; 199/199 invalid FHIR bundles rejected |
 | 04 | I Advanced | [Grid Load Forecasting with Probabilistic Backtesting](./day-04-energy-load-forecasting-conformal/) | Energy & utilities | statsforecast, LightGBM, MAPIE | ✅ | [prompt](./prompts/day-04.md) | Day-ahead MASE 0.445 vs seasonal-naive 0.874 (49.1% lower) on 5 synthetic regions x 4 yrs; conformal 90% intervals cover 89.8% over a 12-fold backtest |
 | 05 | I Advanced | [City 311 Data Quality and Service Hotspots](./day-05-civic-311-data-quality-hotspots/) | Public sector | pandera, Great Expectations, H3 | ✅ | [prompt](./prompts/day-05.md) | 8.7% of 1.0M synthetic 311 rows quarantined: 15/15 defect classes caught at 100%, 0 clean rows rejected; Gi* finds 36/36 planted slow H3 cells |
-| 06 | I Advanced | [Experimentation Engine: CUPED, Sequential and Bayesian Tests](./day-06-experimentation-platform-cuped/) | Digital product & marketing | SciPy, statsmodels, NumPy | ⏳ Planned | [prompt](./prompts/day-06.md) | |
+| 06 | I Advanced | [Experimentation Engine: CUPED, Sequential and Bayesian Tests](./day-06-experimentation-platform-cuped/) | Digital product & marketing | SciPy, statsmodels, NumPy | ✅ | [prompt](./prompts/day-06.md) | Daily peeking: naive FPR 25.9% vs mSPRT 1.35% over 2,000 synthetic A/A tests; CUPED cuts engagement variance 65.7% (46,268 to 15,087 users/arm) |
 | 07 | I Advanced | [Demand-Driven Inventory Optimisation](./day-07-supply-chain-demand-inventory-opt/) | Supply chain & logistics | OR-Tools, PuLP, statsforecast | ⏳ Planned | [prompt](./prompts/day-07.md) | |
 | 08 | II Expert | [Telecom Retention: Survival Analysis + Uplift Modelling](./day-08-telecom-churn-survival-uplift/) | Telecommunications | lifelines, scikit-survival, CausalML | ⏳ Planned | [prompt](./prompts/day-08.md) | |
 | 09 | II Expert | [Clickstream Sessionisation at Scale with PySpark + Delta Lake](./day-09-clickstream-spark-delta/) | Media & e-commerce | PySpark, Delta Lake, Spark SQL | ⏳ Planned | [prompt](./prompts/day-09.md) | |
@@ -49,7 +49,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ⏳ Planned | [prompt](./prompts/day-29.md) | |
 | 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
 
-Last build: 2026-10-16
+Last build: 2026-10-17
 <!-- PROGRESS:END -->
 
 ## How each project is structured
