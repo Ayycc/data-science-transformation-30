@@ -1,0 +1,25 @@
+budget,policy,net_incremental_revenue_true,n_targeted
+100000.0,uplift value (x_learner),209400.6,2257
+100000.0,churn score (Cox 6-month risk),102900.41,2627
+100000.0,value at risk (churn risk x CLV),160786.29,1998
+100000.0,oracle (true net value),245654.11,1998
+200000.0,uplift value (x_learner),360498.79,4576
+200000.0,churn score (Cox 6-month risk),213069.87,5270
+200000.0,value at risk (churn risk x CLV),287317.42,4190
+200000.0,oracle (true net value),409059.36,4131
+400000.0,uplift value (x_learner),500313.97,9389
+400000.0,churn score (Cox 6-month risk),359254.16,10879
+400000.0,value at risk (churn risk x CLV),445650.98,8871
+400000.0,oracle (true net value),594349.36,8863
+600000.0,uplift value (x_learner),495985.06,12132
+600000.0,churn score (Cox 6-month risk),408140.01,17102
+600000.0,value at risk (churn risk x CLV),477867.29,14023
+600000.0,oracle (true net value),624169.2,12435
+800000.0,uplift value (x_learner),495985.06,12132
+800000.0,churn score (Cox 6-month risk),368577.77,24064
+800000.0,value at risk (churn risk x CLV),406574.18,19962
+800000.0,oracle (true net value),624169.2,12435
+1200000.0,uplift value (x_learner),495985.06,12132
+1200000.0,churn score (Cox 6-month risk),92464.96,37868
+1200000.0,value at risk (churn risk x CLV),144577.42,32387
+1200000.0,oracle (true net value),624169.2,12435

@@ -1,0 +1,374 @@
+{
+  "data_source": "SYNTHETIC (seeded generator; no public download attempted - the prompt specifies a synthetic panel)",
+  "scale": {
+    "customers": 200000,
+    "calendar_months": 36,
+    "churn_events": 71707,
+    "censored_share": 0.6415,
+    "campaign_customers": 130877,
+    "campaign_treated": 65740
+  },
+  "survival": {
+    "train_customers": 140000,
+    "test_customers": 60000,
+    "eval_test_customers": 15000,
+    "rsf_train_customers": 40000,
+    "logrank_p": {
+      "contract": 0.0,
+      "autopay": 0.0,
+      "fiber": 0.0
+    },
+    "km_median_tenure_months": {
+      "month_to_month": 15.0,
+      "one_year": null,
+      "two_year": null,
+      "manual pay": 25.0,
+      "autopay": null,
+      "DSL/copper": null,
+      "fiber": 24.0
+    },
+    "ph_test_subsample": 40000,
+    "ph_p_unstratified": {
+      "autopay": 0.19487543124990064,
+      "contract_one_year": 2.3390150127079157e-87,
+      "contract_two_year": 5.474132288505025e-60,
+      "dropped_call_rate": 0.3597519166063321,
+      "fiber": 0.26490201689232135,
+      "log_data_gb": 0.16109160632141475,
+      "monthly_charges": 0.10793402636440642,
+      "region_rural": 0.966845350892418,
+      "region_small_town": 0.691713343547412,
+      "region_suburban": 0.46011955078503985,
+      "senior": 0.028741307017653206,
+      "support_tickets": 0.29167809960467483
+    },
+    "ph_p_stratified": {
+      "autopay": 0.313791303775771,
+      "dropped_call_rate": 0.8434963312830298,
+      "fiber": 0.4021903676040136,
+      "log_data_gb": 0.584211725436343,
+      "monthly_charges": 0.18457892149517569,
+      "region_rural": 0.5857323372903014,
+      "region_small_town": 0.20331382071499568,
+      "region_suburban": 0.3129403349760008,
+      "senior": 0.06386489979961964,
+      "support_tickets": 0.07573978048108074
+    },
+    "ph_min_p_after_stratification": 0.06386489979961964,
+    "ph_violations_before": [
+      "contract_one_year",
+      "contract_two_year"
+    ],
+    "ph_violations_after": [],
+    "ph_min_p_non_contract_unstratified": 0.028741307017653206,
+    "metrics": {
+      "cox_ph": {
+        "harrell_c": 0.7796820606349109,
+        "uno_c": 0.7569554468059865,
+        "td_auc": {
+          "3": 0.8148165889550785,
+          "6": 0.8235358964398852,
+          "12": 0.8115466456766887,
+          "18": 0.8155385871610918,
+          "24": 0.8087258881418388,
+          "30": 0.8231274985594076
+        },
+        "td_auc_mean": 0.815549039907988,
+        "integrated_brier": 0.15790167590886903
+      },
+      "cox_stratified": {
+        "harrell_c": 0.7798372664033961,
+        "uno_c": 0.7553637175223263,
+        "td_auc": {
+          "3": 0.8171477130106689,
+          "6": 0.8256092166268546,
+          "12": 0.8120915228389047,
+          "18": 0.8160197537015245,
+          "24": 0.8089242266898209,
+          "30": 0.8253086303119597
+        },
+        "td_auc_mean": 0.8168939766509149,
+        "integrated_brier": 0.15747895535795134
+      },
+      "random_survival_forest": {
+        "harrell_c": 0.7773759739390115,
+        "uno_c": 0.7535708405620359,
+        "td_auc": {
+          "3": 0.8135119651676018,
+          "6": 0.8219255645028007,
+          "12": 0.8090895111254583,
+          "18": 0.812686472200282,
+          "24": 0.8051845738725166,
+          "30": 0.8207277943119204
+        },
+        "td_auc_mean": 0.8133208178684415,
+        "integrated_brier": 0.1590406022189301
+      }
+    },
+    "competing_risks_cif": {
+      "voluntary@12m": 0.1398,
+      "voluntary@24m": 0.2059,
+      "voluntary@36m": 0.2482,
+      "port_out@12m": 0.1111,
+      "port_out@24m": 0.1604,
+      "port_out@36m": 0.1885,
+      "non_payment@12m": 0.0349,
+      "non_payment@24m": 0.05,
+      "non_payment@36m": 0.0603
+    }
+  },
+  "clv": {
+    "decision_model": "Cox PH stratified by contract, fit on history censored at calendar month 30 (no campaign outcomes)",
+    "horizon_months": 36,
+    "pearson_r_vs_true": 0.9999,
+    "mean_abs_pct_error": 0.008,
+    "total_clv_hat": 93763695.0,
+    "total_clv_true": 93085745.0,
+    "mean_clv_hat": 716.43,
+    "mean_clv_true": 711.25,
+    "by_contract": {
+      "month_to_month": {
+        "clv_hat": 483.52,
+        "clv0_true": 478.86
+      },
+      "one_year": {
+        "clv_hat": 830.73,
+        "clv0_true": 824.61
+      },
+      "two_year": {
+        "clv_hat": 952.34,
+        "clv0_true": 947.43
+      }
+    },
+    "churn6_auc_control_arm": 0.7838,
+    "churn6_mean_pred_control": 0.1012,
+    "churn6_observed_control": 0.1046
+  },
+  "uplift": {
+    "train_customers": 65439,
+    "cv_folds": 3,
+    "holdout_customers": 65438,
+    "uplift_rf_train_customers": 40000,
+    "true_ate_holdout": 0.0282,
+    "observed_ate_holdout": 0.0329,
+    "true_sleeping_dog_share": 0.1119,
+    "selected_model_by_cv_dr_policy_value": "x_learner",
+    "models": {
+      "t_learner": {
+        "cv_qini": 0.00449,
+        "cv_dr_policy_net": 380887.78495,
+        "holdout_qini": 0.00463,
+        "holdout_true_gain_auc": 0.00977,
+        "spearman_vs_true_uplift": 0.64004,
+        "true_uplift_top20pct": 0.09724,
+        "true_gain_vs_oracle": 0.77472
+      },
+      "x_learner": {
+        "cv_qini": 0.00493,
+        "cv_dr_policy_net": 420535.02818,
+        "holdout_qini": 0.00562,
+        "holdout_true_gain_auc": 0.01081,
+        "spearman_vs_true_uplift": 0.76638,
+        "true_uplift_top20pct": 0.10158,
+        "true_gain_vs_oracle": 0.85706
+      },
+      "uplift_rf": {
+        "cv_qini": 0.00419,
+        "cv_dr_policy_net": 345598.58822,
+        "holdout_qini": 0.00446,
+        "holdout_true_gain_auc": 0.00878,
+        "spearman_vs_true_uplift": 0.57314,
+        "true_uplift_top20pct": 0.0862,
+        "true_gain_vs_oracle": 0.69632
+      },
+      "churn_score": {
+        "cv_qini": 0.00492,
+        "cv_dr_policy_net": 378040.3745,
+        "holdout_qini": 0.00471,
+        "holdout_true_gain_auc": 0.00889,
+        "spearman_vs_true_uplift": 0.67754,
+        "true_uplift_top20pct": 0.09221,
+        "true_gain_vs_oracle": 0.70477
+      }
+    }
+  },
+  "policy": {
+    "budget": 400000.0,
+    "offer": "20% off for 3 months + $2 contact",
+    "selected_policy": "uplift value (x_learner)",
+    "policy_tree_rules": "|--- contract_two_year <= 0.50\n|   |--- monthly_charges <= 57.43\n|   |   |--- contract_one_year <= 0.50\n|   |   |   |--- class: 0\n|   |   |--- contract_one_year >  0.50\n|   |   |   |--- class: 0\n|   |--- monthly_charges >  57.43\n|   |   |--- tenure_at_campaign <= 15.50\n|   |   |   |--- class: 1\n|   |   |--- tenure_at_campaign >  15.50\n|   |   |   |--- class: 0\n|--- contract_two_year >  0.50\n|   |--- tenure_at_campaign <= 17.50\n|   |   |--- support_tickets <= 2.50\n|   |   |   |--- class: 0\n|   |   |--- support_tickets >  2.50\n|   |   |   |--- class: 0\n|   |--- tenure_at_campaign >  17.50\n|   |   |--- tenure_at_campaign <= 24.50\n|   |   |   |--- class: 0\n|   |   |--- tenure_at_campaign >  24.50\n|   |   |   |--- class: 0\n",
+    "policies": {
+      "uplift value (t_learner)": {
+        "n_targeted": 9947,
+        "share_targeted": 0.152,
+        "spend_true": 419046.1934,
+        "incremental_revenue_true": 878796.3386,
+        "net_incremental_revenue_true": 459750.1452,
+        "roi_true": 1.0971,
+        "true_incremental_retained": 1111.2036,
+        "rct_incremental_retained": 1153.826,
+        "rct_incremental_retained_se": 76.2012,
+        "sleeping_dogs_targeted": 16,
+        "dr_net_estimate": 490793.8678,
+        "spend_estimated": 399970.1034,
+        "expected_net": 617878.9127,
+        "expected_roi": 1.5448
+      },
+      "uplift value (x_learner)": {
+        "n_targeted": 9389,
+        "share_targeted": 0.1435,
+        "spend_true": 420498.5311,
+        "incremental_revenue_true": 920812.5039,
+        "net_incremental_revenue_true": 500313.9728,
+        "roi_true": 1.1898,
+        "true_incremental_retained": 1170.3502,
+        "rct_incremental_retained": 1239.0673,
+        "rct_incremental_retained_se": 73.603,
+        "sleeping_dogs_targeted": 8,
+        "dr_net_estimate": 537929.2765,
+        "spend_estimated": 399978.5196,
+        "expected_net": 399373.4552,
+        "expected_roi": 0.9985
+      },
+      "uplift value (uplift_rf)": {
+        "n_targeted": 8526,
+        "share_targeted": 0.1303,
+        "spend_true": 414745.9728,
+        "incremental_revenue_true": 694662.4873,
+        "net_incremental_revenue_true": 279916.5144,
+        "roi_true": 0.6749,
+        "true_incremental_retained": 793.1571,
+        "rct_incremental_retained": 836.3612,
+        "rct_incremental_retained_se": 59.6028,
+        "sleeping_dogs_targeted": 88,
+        "dr_net_estimate": 300342.4596,
+        "spend_estimated": 399979.691,
+        "expected_net": 306280.3437,
+        "expected_roi": 0.7657
+      },
+      "churn score (Cox 6-month risk)": {
+        "n_targeted": 10879,
+        "share_targeted": 0.1662,
+        "spend_true": 418056.381,
+        "incremental_revenue_true": 777310.5439,
+        "net_incremental_revenue_true": 359254.163,
+        "roi_true": 0.8593,
+        "true_incremental_retained": 1069.9629,
+        "rct_incremental_retained": 1198.2509,
+        "rct_incremental_retained_se": 88.4435,
+        "sleeping_dogs_targeted": 85,
+        "dr_net_estimate": 398808.0984,
+        "spend_estimated": 399966.996,
+        "expected_net": null,
+        "expected_roi": null
+      },
+      "value at risk (churn risk x CLV)": {
+        "n_targeted": 8871,
+        "share_targeted": 0.1356,
+        "spend_true": 418739.7832,
+        "incremental_revenue_true": 864390.7603,
+        "net_incremental_revenue_true": 445650.9771,
+        "roi_true": 1.0643,
+        "true_incremental_retained": 1044.0183,
+        "rct_incremental_retained": 1096.7349,
+        "rct_incremental_retained_se": 75.9556,
+        "sleeping_dogs_targeted": 90,
+        "dr_net_estimate": 467987.2766,
+        "spend_estimated": 399963.7344,
+        "expected_net": null,
+        "expected_roi": null
+      },
+      "DR policy tree (depth 3)": {
+        "n_targeted": 9658,
+        "share_targeted": 0.1476,
+        "spend_true": 415529.599,
+        "incremental_revenue_true": 680042.5581,
+        "net_incremental_revenue_true": 264512.9591,
+        "roi_true": 0.6366,
+        "true_incremental_retained": 889.6032,
+        "rct_incremental_retained": 1015.9063,
+        "rct_incremental_retained_se": 73.199,
+        "sleeping_dogs_targeted": 0,
+        "dr_net_estimate": 324350.9141,
+        "spend_estimated": 399970.3206,
+        "expected_net": null,
+        "expected_roi": null
+      },
+      "random": {
+        "n_targeted": 12003,
+        "share_targeted": 0.1834,
+        "spend_true": 405025.7101,
+        "incremental_revenue_true": 257662.0009,
+        "net_incremental_revenue_true": -147363.7092,
+        "roi_true": -0.3638,
+        "true_incremental_retained": 328.4866,
+        "rct_incremental_retained": 445.8205,
+        "rct_incremental_retained_se": 62.8383,
+        "sleeping_dogs_targeted": 1297,
+        "dr_net_estimate": -92831.4304,
+        "spend_estimated": 399995.9987,
+        "expected_net": null,
+        "expected_roi": null
+      },
+      "oracle (true net value)": {
+        "n_targeted": 8863,
+        "share_targeted": 0.1354,
+        "spend_true": 399982.9852,
+        "incremental_revenue_true": 994332.3418,
+        "net_incremental_revenue_true": 594349.3565,
+        "roi_true": 1.4859,
+        "true_incremental_retained": 1249.7302,
+        "rct_incremental_retained": 1339.6906,
+        "rct_incremental_retained_se": 68.5425,
+        "sleeping_dogs_targeted": 0,
+        "dr_net_estimate": 674469.9549,
+        "spend_estimated": 378400.8427,
+        "expected_net": null,
+        "expected_roi": null
+      },
+      "treat everyone (no budget)": {
+        "n_targeted": 65438,
+        "share_targeted": 1.0,
+        "spend_true": 2216586.5143,
+        "incremental_revenue_true": 1452160.3429,
+        "net_incremental_revenue_true": -764426.1713,
+        "roi_true": -0.3449,
+        "true_incremental_retained": 1844.1262,
+        "rct_incremental_retained": 2151.6709,
+        "rct_incremental_retained_se": 146.3973,
+        "sleeping_dogs_targeted": 7321,
+        "dr_net_estimate": -645447.26,
+        "spend_estimated": 2188289.3564,
+        "expected_net": null,
+        "expected_roi": null
+      }
+    }
+  },
+  "headline": {
+    "uplift_policy_net_true": 500313.9728,
+    "churn_policy_net_true": 359254.163,
+    "uplift_minus_churn_net": 141059.81,
+    "uplift_policy_roi_true": 1.1898,
+    "uplift_policy_expected_roi": 0.9985,
+    "churn_policy_roi_true": 0.8593,
+    "uplift_beats_churn_score": true,
+    "best_survival_model_uno_c": "cox_ph",
+    "cox_stratified_uno_c": 0.7554,
+    "cox_stratified_td_auc_mean": 0.8169,
+    "rsf_uno_c": 0.7536,
+    "ph_violations_before": [
+      "contract_one_year",
+      "contract_two_year"
+    ],
+    "ph_violations_after": [],
+    "clv_pearson_r": 0.9999
+  },
+  "runtime_seconds": {
+    "data": 10.2,
+    "survival": 49.8,
+    "clv": 2.9,
+    "uplift": 23.8,
+    "policy": 1.4,
+    "total": 88.3
+  }
+}

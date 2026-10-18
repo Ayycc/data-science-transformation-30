@@ -25,7 +25,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 05 | I Advanced | [City 311 Data Quality and Service Hotspots](./day-05-civic-311-data-quality-hotspots/) | Public sector | pandera, Great Expectations, H3 | ✅ | [prompt](./prompts/day-05.md) | 8.7% of 1.0M synthetic 311 rows quarantined: 15/15 defect classes caught at 100%, 0 clean rows rejected; Gi* finds 36/36 planted slow H3 cells |
 | 06 | I Advanced | [Experimentation Engine: CUPED, Sequential and Bayesian Tests](./day-06-experimentation-platform-cuped/) | Digital product & marketing | SciPy, statsmodels, NumPy | ✅ | [prompt](./prompts/day-06.md) | Daily peeking: naive FPR 25.9% vs mSPRT 1.35% over 2,000 synthetic A/A tests; CUPED cuts engagement variance 65.7% (46,268 to 15,087 users/arm) |
 | 07 | I Advanced | [Demand-Driven Inventory Optimisation](./day-07-supply-chain-demand-inventory-opt/) | Supply chain & logistics | OR-Tools, PuLP, statsforecast | ✅ | [prompt](./prompts/day-07.md) | SimPy test year on 800 synthetic SKUs x 3 WH: cost -41.5% ($2.32M to $1.35M), fill rate 91.1% to 97.4%; 52/52 weekly MILPs within 0.01% gap |
-| 08 | II Expert | [Telecom Retention: Survival Analysis + Uplift Modelling](./day-08-telecom-churn-survival-uplift/) | Telecommunications | lifelines, scikit-survival, CausalML | ⏳ Planned | [prompt](./prompts/day-08.md) | |
+| 08 | II Expert | [Telecom Retention: Survival Analysis + Uplift Modelling](./day-08-telecom-churn-survival-uplift/) | Telecommunications | lifelines, scikit-survival, CausalML | ✅ | [prompt](./prompts/day-08.md) | Uplift targeting nets $500k vs $359k for churn-score targeting (+39%, ROI 1.19 vs 0.86) on a $400k budget, 65k-customer synthetic holdout; PH violation fixed by contract strata |
 | 09 | II Expert | [Clickstream Sessionisation at Scale with PySpark + Delta Lake](./day-09-clickstream-spark-delta/) | Media & e-commerce | PySpark, Delta Lake, Spark SQL | ⏳ Planned | [prompt](./prompts/day-09.md) | |
 | 10 | II Expert | [Air Quality Intelligence with Dagster Software-Defined Assets](./day-10-air-quality-dagster-assets/) | Environment & climate | Dagster, DuckDB, pandas | ⏳ Planned | [prompt](./prompts/day-10.md) | |
 | 11 | II Expert | [Support Ticket Intelligence: NLP Classification with Active Learning](./day-11-support-ticket-nlp-active-learning/) | Customer operations | spaCy, sentence-transformers, scikit-learn | ⏳ Planned | [prompt](./prompts/day-11.md) | |
@@ -49,7 +49,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ⏳ Planned | [prompt](./prompts/day-29.md) | |
 | 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
 
-Last build: 2026-10-17
+Last build: 2026-10-18
 <!-- PROGRESS:END -->
 
 ## How each project is structured

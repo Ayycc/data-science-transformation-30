@@ -1,0 +1,12 @@
+# Pinned for Python 3.11+ (CI uses 3.11; results/ were produced on 3.11). All have 3.11 manylinux wheels.
+numpy==2.4.6
+pandas==2.3.3
+scipy==1.17.1
+scikit-learn==1.9.1
+lifelines==0.30.3
+scikit-survival==0.28.0
+causalml==0.18.0
+matplotlib==3.11.2
+pyyaml==6.0.3
+pytest==9.1.1
+ruff==0.17.0

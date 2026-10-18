@@ -1,0 +1,37 @@
+# Day 08 configuration. All data is SYNTHETIC (seeded generator in src/retention/data.py).
+seed: 20261018
+
+data:
+  n_customers: 200000
+  n_months: 36            # calendar months observed (0..35); administrative censoring at month 36
+  max_start_month: 29     # customers join uniformly in months 0..29
+  dropout_monthly: 0.004  # random loss to follow-up before the campaign (independent censoring)
+  campaign_month: 30      # randomised retention campaign at the start of calendar month 30
+  campaign_window: 6      # outcome = churn in calendar months 30..35
+  treat_share: 0.5
+
+economics:
+  margin_rate: 0.55       # contribution margin on monthly charges
+  monthly_discount_rate: 0.01
+  clv_horizon_months: 36
+  contact_cost: 2.0       # $ per customer contacted
+  discount_share: 0.20    # offer = 20% off the monthly bill ...
+  discount_months: 3      # ... for 3 months (paid only while the customer stays)
+  budget: 400000.0        # $ campaign budget for the holdout half
+
+survival:
+  test_share: 0.3
+  rsf_train_n: 40000
+  rsf_test_n: 15000
+  rsf_trees: 100
+  rsf_min_leaf: 40
+  ph_test_n: 40000        # subsample for the Schoenfeld test (full train set is over-powered)
+  eval_times: [3, 6, 12, 18, 24, 30]
+
+uplift:
+  holdout_share: 0.5
+  uplift_rf_train_n: 40000
+  uplift_rf_trees: 100
+  uplift_rf_max_depth: 8
+  uplift_rf_min_leaf: 200
+  cv_folds: 3

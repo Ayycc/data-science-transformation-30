@@ -1,0 +1,5 @@
+model,cv_qini,cv_dr_policy_net,holdout_qini,holdout_true_gain_auc,spearman_vs_true_uplift,true_uplift_top20pct,true_gain_vs_oracle
+t_learner,0.00449,380887.78495,0.00463,0.00977,0.64004,0.09724,0.77472
+x_learner,0.00493,420535.02818,0.00562,0.01081,0.76638,0.10158,0.85706
+uplift_rf,0.00419,345598.58822,0.00446,0.00878,0.57314,0.0862,0.69632
+churn_score,0.00492,378040.3745,0.00471,0.00889,0.67754,0.09221,0.70477

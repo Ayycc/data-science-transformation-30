@@ -1,0 +1,5 @@
+{
+  "data_source": "SYNTHETIC (seeded generator src/retention/data.py)",
+  "rows_panel": 5000,
+  "note": "First rows of the full 200k-customer panel; make data regenerates everything."
+}
