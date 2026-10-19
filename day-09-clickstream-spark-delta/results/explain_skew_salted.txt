@@ -1,0 +1,62 @@
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   ResultQueryStage 6
+   +- *(7) Sort [campaign_id#40271 ASC NULLS FIRST], true, 0
+      +- ShuffleQueryStage 5
+         +- Exchange rangepartitioning(campaign_id#40271 ASC NULLS FIRST, 64), ENSURE_REQUIREMENTS, [plan_id=25095]
+            +- *(6) HashAggregate(keys=[campaign_id#40271], functions=[count(1), sum(cpm_cents#40272L)], output=[campaign_id#40271, attributed_views#41106L, revenue_milli_cents#41107L])
+               +- ShuffleQueryStage 4
+                  +- Exchange hashpartitioning(campaign_id#40271, 64), ENSURE_REQUIREMENTS, [plan_id=25058]
+                     +- *(5) HashAggregate(keys=[campaign_id#40271], functions=[partial_count(1), partial_sum(cpm_cents#40272L)], output=[campaign_id#40271, count#41192L, sum#41193L])
+                        +- *(5) Project [campaign_id#40271, cpm_cents#40272L]
+                           +- *(5) SortMergeJoin [article_id#38498L, salt#41102], [article_id#40270L, salt#41105], Inner
+                              :- *(3) Sort [article_id#38498L ASC NULLS FIRST, salt#41102 ASC NULLS FIRST], false, 0
+                              :  +- ShuffleQueryStage 2
+                              :     +- Exchange hashpartitioning(article_id#38498L, salt#41102, 64), ENSURE_REQUIREMENTS, [plan_id=24938]
+                              :        +- *(1) Project [article_id#38498L, CASE WHEN article_id#38498L IN (0,5,1,2,3) THEN cast(pmod(xxhash64(event_id#38496, 42), 24) as int) ELSE 0 END AS salt#41102]
+                              :           +- *(1) Filter CASE WHEN article_id#38498L IN (0,5,1,2,3) THEN isnotnull(cast(pmod(xxhash64(event_id#38496, 42), 24) as int)) ELSE true END
+                              :              +- TableCacheQueryStage 0
+                              :                 +- InMemoryTableScan [article_id#38498L, event_id#38496], [CASE WHEN article_id#38498L IN (0,5,1,2,3) THEN isnotnull(cast(pmod(xxhash64(event_id#38496, 42), 24) as int)) ELSE true END]
+                              :                       +- InMemoryRelation [event_id#38496, article_id#38498L], StorageLevel(disk, memory, deserialized, 1 replicas)
+                              :                             +- *(1) Project [event_id#38496, article_id#38498L]
+                              :                                +- *(1) Filter (event_type#38499 = page_view)
+                              :                                   +- *(1) ColumnarToRow
+                              :                                      +- FileScan parquet [event_id#38496,article_id#38498L,event_type#38499,event_date#38505] Batched: true, DataFilters: [(event_type#38499 = page_view)], Format: Parquet, Location: PreparedDeltaFileIndex(1 paths)[file:/home/claude/data-science-transformation-30/day-09-clickstre..., PartitionFilters: [], PushedFilters: [EqualTo(event_type,page_view)], ReadSchema: struct<event_id:string,article_id:bigint,event_type:string>
+                              +- *(4) Sort [article_id#40270L ASC NULLS FIRST, salt#41105 ASC NULLS FIRST], false, 0
+                                 +- ShuffleQueryStage 3
+                                    +- Exchange hashpartitioning(article_id#40270L, salt#41105, 64), ENSURE_REQUIREMENTS, [plan_id=24953]
+                                       +- *(2) Generate explode(salt#41103), [article_id#40270L, campaign_id#40271, cpm_cents#40272L], false, [salt#41105]
+                                          +- *(2) Project [article_id#40270L, campaign_id#40271, cpm_cents#40272L, CASE WHEN article_id#40270L IN (0,5,1,2,3) THEN org.apache.spark.sql.catalyst.expressions.UnsafeArrayData@f0355ab3 ELSE [0] END AS salt#41103]
+                                             +- *(2) Filter ((size(CASE WHEN article_id#40270L IN (0,5,1,2,3) THEN org.apache.spark.sql.catalyst.expressions.UnsafeArrayData@f0355ab3 ELSE [0] END, false) > 0) AND isnotnull(article_id#40270L))
+                                                +- TableCacheQueryStage 1
+                                                   +- InMemoryTableScan [article_id#40270L, campaign_id#40271, cpm_cents#40272L], [(size(CASE WHEN article_id#40270L IN (0,5,1,2,3) THEN org.apache.spark.sql.catalyst.expressions.UnsafeArrayData@f0355ab3 ELSE [0] END, false) > 0), isnotnull(article_id#40270L)]
+                                                         +- InMemoryRelation [article_id#40270L, campaign_id#40271, cpm_cents#40272L], StorageLevel(disk, memory, deserialized, 1 replicas)
+                                                               +- *(1) ColumnarToRow
+                                                                  +- FileScan parquet [article_id#40270L,campaign_id#40271,cpm_cents#40272L] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[file:/home/claude/data-science-transformation-30/day-09-clickstream-sp..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<article_id:bigint,campaign_id:int,cpm_cents:bigint>
++- == Initial Plan ==
+   Sort [campaign_id#40271 ASC NULLS FIRST], true, 0
+   +- Exchange rangepartitioning(campaign_id#40271 ASC NULLS FIRST, 64), ENSURE_REQUIREMENTS, [plan_id=24818]
+      +- HashAggregate(keys=[campaign_id#40271], functions=[count(1), sum(cpm_cents#40272L)], output=[campaign_id#40271, attributed_views#41106L, revenue_milli_cents#41107L])
+         +- Exchange hashpartitioning(campaign_id#40271, 64), ENSURE_REQUIREMENTS, [plan_id=24815]
+            +- HashAggregate(keys=[campaign_id#40271], functions=[partial_count(1), partial_sum(cpm_cents#40272L)], output=[campaign_id#40271, count#41192L, sum#41193L])
+               +- Project [campaign_id#40271, cpm_cents#40272L]
+                  +- SortMergeJoin [article_id#38498L, salt#41102], [article_id#40270L, salt#41105], Inner
+                     :- Sort [article_id#38498L ASC NULLS FIRST, salt#41102 ASC NULLS FIRST], false, 0
+                     :  +- Exchange hashpartitioning(article_id#38498L, salt#41102, 64), ENSURE_REQUIREMENTS, [plan_id=24807]
+                     :     +- Project [article_id#38498L, CASE WHEN article_id#38498L IN (0,5,1,2,3) THEN cast(pmod(xxhash64(event_id#38496, 42), 24) as int) ELSE 0 END AS salt#41102]
+                     :        +- Filter CASE WHEN article_id#38498L IN (0,5,1,2,3) THEN isnotnull(cast(pmod(xxhash64(event_id#38496, 42), 24) as int)) ELSE true END
+                     :           +- InMemoryTableScan [article_id#38498L, event_id#38496], [CASE WHEN article_id#38498L IN (0,5,1,2,3) THEN isnotnull(cast(pmod(xxhash64(event_id#38496, 42), 24) as int)) ELSE true END]
+                     :                 +- InMemoryRelation [event_id#38496, article_id#38498L], StorageLevel(disk, memory, deserialized, 1 replicas)
+                     :                       +- *(1) Project [event_id#38496, article_id#38498L]
+                     :                          +- *(1) Filter (event_type#38499 = page_view)
+                     :                             +- *(1) ColumnarToRow
+                     :                                +- FileScan parquet [event_id#38496,article_id#38498L,event_type#38499,event_date#38505] Batched: true, DataFilters: [(event_type#38499 = page_view)], Format: Parquet, Location: PreparedDeltaFileIndex(1 paths)[file:/home/claude/data-science-transformation-30/day-09-clickstre..., PartitionFilters: [], PushedFilters: [EqualTo(event_type,page_view)], ReadSchema: struct<event_id:string,article_id:bigint,event_type:string>
+                     +- Sort [article_id#40270L ASC NULLS FIRST, salt#41105 ASC NULLS FIRST], false, 0
+                        +- Exchange hashpartitioning(article_id#40270L, salt#41105, 64), ENSURE_REQUIREMENTS, [plan_id=24808]
+                           +- Generate explode(salt#41103), [article_id#40270L, campaign_id#40271, cpm_cents#40272L], false, [salt#41105]
+                              +- Project [article_id#40270L, campaign_id#40271, cpm_cents#40272L, CASE WHEN article_id#40270L IN (0,5,1,2,3) THEN org.apache.spark.sql.catalyst.expressions.UnsafeArrayData@f0355ab3 ELSE [0] END AS salt#41103]
+                                 +- Filter ((size(CASE WHEN article_id#40270L IN (0,5,1,2,3) THEN org.apache.spark.sql.catalyst.expressions.UnsafeArrayData@f0355ab3 ELSE [0] END, false) > 0) AND isnotnull(article_id#40270L))
+                                    +- InMemoryTableScan [article_id#40270L, campaign_id#40271, cpm_cents#40272L], [(size(CASE WHEN article_id#40270L IN (0,5,1,2,3) THEN org.apache.spark.sql.catalyst.expressions.UnsafeArrayData@f0355ab3 ELSE [0] END, false) > 0), isnotnull(article_id#40270L)]
+                                          +- InMemoryRelation [article_id#40270L, campaign_id#40271, cpm_cents#40272L], StorageLevel(disk, memory, deserialized, 1 replicas)
+                                                +- *(1) ColumnarToRow
+                                                   +- FileScan parquet [article_id#40270L,campaign_id#40271,cpm_cents#40272L] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[file:/home/claude/data-science-transformation-30/day-09-clickstream-sp..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<article_id:bigint,campaign_id:int,cpm_cents:bigint>

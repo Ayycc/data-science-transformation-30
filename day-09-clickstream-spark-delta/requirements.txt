@@ -1,0 +1,12 @@
+# Pinned for Python 3.11+ (CI uses 3.11; results/ were produced on 3.11). All are pure-Python or have 3.11 wheels.
+# Spark 4.0 needs Java 17+; delta-spark 4.0.1 is the Delta release built for Spark 4.0.x and pulls its jars
+# (io.delta:delta-spark_2.13:4.0.1) from Maven Central on first SparkSession start.
+pyspark==4.0.1
+delta-spark==4.0.1
+chispa==0.12.0
+numpy==2.4.6
+pandas==2.3.3
+pyarrow==26.0.0
+matplotlib==3.11.2
+pytest==9.1.1
+ruff==0.17.0

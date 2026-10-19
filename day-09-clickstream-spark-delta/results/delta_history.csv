@@ -1,0 +1,15 @@
+table,version,operation,numOutputRows,numFiles,numTargetRowsInserted,numTargetRowsUpdated,numTargetRowsDeleted,numTargetRowsCopied,numTargetFilesAdded,numTargetFilesRemoved,executionTimeMs,numAddedFiles,numRemovedFiles
+bronze_events,0,CREATE TABLE,,,,,,,,,,,
+bronze_events,1,ADD CONSTRAINT,,,,,,,,,,,
+bronze_events,2,WRITE,4550710,7,,,,,,,,,
+bronze_events,3,WRITE,4649481,7,,,,,,,,,
+bronze_events,4,WRITE,4711350,7,,,,,,,,,
+silver_events,0,CREATE TABLE,,,,,,,,,,,
+silver_events,1,MERGE,4467742,,4467742,0,0,0,3,0,27195,,
+silver_events,2,MERGE,4559046,,4559046,0,0,0,4,0,30487,,
+silver_events,3,MERGE,4612729,,4612729,0,0,0,4,0,32149,,
+silver_events,4,OPTIMIZE,,,,,,,,,,38,11
+gold_sessions,0,CREATE TABLE,,,,,,,,,,,
+gold_sessions,1,MERGE,528132,,528132,0,0,0,1,0,21508,,
+gold_sessions,2,MERGE,1057683,,536369,46742,6818,474572,3,1,37437,,
+gold_sessions,3,MERGE,1589949,,539071,46671,6804,1004207,3,2,40936,,

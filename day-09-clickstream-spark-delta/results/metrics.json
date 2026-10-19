@@ -1,0 +1,711 @@
+{
+  "data_source": "SYNTHETIC (seeded Spark generator, src/clickstream/generate.py); no public download attempted",
+  "scale": "full",
+  "seed": 20261019,
+  "session_gap_minutes": 30,
+  "generator": {
+    "scale": "full",
+    "seed": 20261019,
+    "config": "Scale(name='full', n_users=650000, bot_frac=0.0005, n_articles=200000, days=3, mean_sessions_per_day=1.25, mean_events_per_session=7.0, bot_events_per_day=(900, 2600), viral_share=0.3, viral_weights=(0.6, 0.13, 0.1, 0.09, 0.08), skew_user_frac=0.03, late_frac=0.015, dup_frac=0.02, campaigns_per_viral_article=120, shuffle_partitions=64, seed=20261019, extra={})",
+    "deliveries": 13911541,
+    "unique_events": 13639517,
+    "duplicate_deliveries": 272024,
+    "bot_deliveries": 1718952,
+    "late_events_next_day": 136099,
+    "active_users": 541493,
+    "deliveries_per_batch": {
+      "1": 4550710,
+      "2": 4649481,
+      "3": 4711350
+    },
+    "generate_seconds": 56.7
+  },
+  "batches": {
+    "1": {
+      "affected_users": 291597,
+      "bronze_s": 14.8,
+      "silver_s": 35.16,
+      "gold_s": 67.53,
+      "silver_merge": {
+        "version": 1,
+        "operation": "MERGE",
+        "numOutputRows": 4467742,
+        "numTargetBytesAdded": 210780878,
+        "numTargetRowsInserted": 4467742,
+        "numTargetRowsMatchedDeleted": 0,
+        "numTargetFilesAdded": 3,
+        "materializeSourceTimeMs": 1,
+        "numTargetFilesRemoved": 0,
+        "numTargetRowsMatchedUpdated": 0,
+        "executionTimeMs": 27195,
+        "numTargetDeletionVectorsUpdated": 0,
+        "numTargetRowsCopied": 0,
+        "rewriteTimeMs": 27181,
+        "numTargetRowsUpdated": 0,
+        "numTargetDeletionVectorsRemoved": 0,
+        "numTargetRowsDeleted": 0,
+        "scanTimeMs": 0,
+        "numSourceRows": 4467742,
+        "numTargetDeletionVectorsAdded": 0,
+        "numTargetChangeFilesAdded": 0,
+        "numTargetRowsNotMatchedBySourceUpdated": 0,
+        "numTargetRowsNotMatchedBySourceDeleted": 0,
+        "numTargetBytesRemoved": 0
+      },
+      "gold_sessions_merge": {
+        "version": 1,
+        "operation": "MERGE",
+        "numOutputRows": 528132,
+        "numTargetBytesAdded": 33947524,
+        "numTargetRowsInserted": 528132,
+        "numTargetRowsMatchedDeleted": 0,
+        "numTargetFilesAdded": 1,
+        "materializeSourceTimeMs": 17246,
+        "numTargetFilesRemoved": 0,
+        "numTargetRowsMatchedUpdated": 0,
+        "executionTimeMs": 21508,
+        "numTargetDeletionVectorsUpdated": 0,
+        "numTargetRowsCopied": 0,
+        "rewriteTimeMs": 3560,
+        "numTargetRowsUpdated": 0,
+        "numTargetDeletionVectorsRemoved": 0,
+        "numTargetRowsDeleted": 0,
+        "scanTimeMs": 695,
+        "numSourceRows": 528132,
+        "numTargetDeletionVectorsAdded": 0,
+        "numTargetChangeFilesAdded": 0,
+        "numTargetRowsNotMatchedBySourceUpdated": 0,
+        "numTargetRowsNotMatchedBySourceDeleted": 0,
+        "numTargetBytesRemoved": 0
+      }
+    },
+    "2": {
+      "affected_users": 321479,
+      "bronze_s": 9.38,
+      "silver_s": 36.83,
+      "gold_s": 94.18,
+      "silver_merge": {
+        "version": 2,
+        "operation": "MERGE",
+        "numOutputRows": 4559046,
+        "numTargetBytesAdded": 216115860,
+        "numTargetRowsInserted": 4559046,
+        "numTargetRowsMatchedDeleted": 0,
+        "numTargetFilesAdded": 4,
+        "materializeSourceTimeMs": 1,
+        "numTargetFilesRemoved": 0,
+        "numTargetRowsMatchedUpdated": 0,
+        "executionTimeMs": 30487,
+        "numTargetDeletionVectorsUpdated": 0,
+        "numTargetRowsCopied": 0,
+        "rewriteTimeMs": 30474,
+        "numTargetRowsUpdated": 0,
+        "numTargetDeletionVectorsRemoved": 0,
+        "numTargetRowsDeleted": 0,
+        "scanTimeMs": 0,
+        "numSourceRows": 4565340,
+        "numTargetDeletionVectorsAdded": 0,
+        "numTargetChangeFilesAdded": 0,
+        "numTargetRowsNotMatchedBySourceUpdated": 0,
+        "numTargetRowsNotMatchedBySourceDeleted": 0,
+        "numTargetBytesRemoved": 0
+      },
+      "gold_sessions_merge": {
+        "version": 2,
+        "operation": "MERGE",
+        "numOutputRows": 1057683,
+        "numTargetBytesAdded": 67455453,
+        "numTargetRowsInserted": 536369,
+        "numTargetRowsMatchedDeleted": 6818,
+        "numTargetFilesAdded": 3,
+        "materializeSourceTimeMs": 28056,
+        "numTargetFilesRemoved": 1,
+        "numTargetRowsMatchedUpdated": 46742,
+        "executionTimeMs": 37437,
+        "numTargetDeletionVectorsUpdated": 0,
+        "numTargetRowsCopied": 474572,
+        "rewriteTimeMs": 6853,
+        "numTargetRowsUpdated": 46742,
+        "numTargetDeletionVectorsRemoved": 0,
+        "numTargetRowsDeleted": 6818,
+        "scanTimeMs": 2523,
+        "numSourceRows": 589929,
+        "numTargetDeletionVectorsAdded": 0,
+        "numTargetChangeFilesAdded": 0,
+        "numTargetRowsNotMatchedBySourceUpdated": 0,
+        "numTargetRowsNotMatchedBySourceDeleted": 0,
+        "numTargetBytesRemoved": 33947524
+      }
+    },
+    "3": {
+      "affected_users": 322739,
+      "bronze_s": 10.27,
+      "silver_s": 38.1,
+      "gold_s": 105.43,
+      "silver_merge": {
+        "version": 3,
+        "operation": "MERGE",
+        "numOutputRows": 4612729,
+        "numTargetBytesAdded": 220750269,
+        "numTargetRowsInserted": 4612729,
+        "numTargetRowsMatchedDeleted": 0,
+        "numTargetFilesAdded": 4,
+        "materializeSourceTimeMs": 1,
+        "numTargetFilesRemoved": 0,
+        "numTargetRowsMatchedUpdated": 0,
+        "executionTimeMs": 32149,
+        "numTargetDeletionVectorsUpdated": 0,
+        "numTargetRowsCopied": 0,
+        "rewriteTimeMs": 32140,
+        "numTargetRowsUpdated": 0,
+        "numTargetDeletionVectorsRemoved": 0,
+        "numTargetRowsDeleted": 0,
+        "scanTimeMs": 0,
+        "numSourceRows": 4619264,
+        "numTargetDeletionVectorsAdded": 0,
+        "numTargetChangeFilesAdded": 0,
+        "numTargetRowsNotMatchedBySourceUpdated": 0,
+        "numTargetRowsNotMatchedBySourceDeleted": 0,
+        "numTargetBytesRemoved": 0
+      },
+      "gold_sessions_merge": {
+        "version": 3,
+        "operation": "MERGE",
+        "numOutputRows": 1589949,
+        "numTargetBytesAdded": 101371039,
+        "numTargetRowsInserted": 539071,
+        "numTargetRowsMatchedDeleted": 6804,
+        "numTargetFilesAdded": 3,
+        "materializeSourceTimeMs": 33047,
+        "numTargetFilesRemoved": 2,
+        "numTargetRowsMatchedUpdated": 46671,
+        "executionTimeMs": 40936,
+        "numTargetDeletionVectorsUpdated": 0,
+        "numTargetRowsCopied": 1004207,
+        "rewriteTimeMs": 5705,
+        "numTargetRowsUpdated": 46671,
+        "numTargetDeletionVectorsRemoved": 0,
+        "numTargetRowsDeleted": 6804,
+        "scanTimeMs": 2178,
+        "numSourceRows": 592546,
+        "numTargetDeletionVectorsAdded": 0,
+        "numTargetChangeFilesAdded": 0,
+        "numTargetRowsNotMatchedBySourceUpdated": 0,
+        "numTargetRowsNotMatchedBySourceDeleted": 0,
+        "numTargetBytesRemoved": 67450341
+      }
+    }
+  },
+  "gold_versions_after_batch": {
+    "1": 1,
+    "2": 2,
+    "3": 3
+  },
+  "idempotency": {
+    "replayed_batches": [
+      2
+    ],
+    "gold_identical": true,
+    "checksums": {
+      "gold_sessions": {
+        "rows": 1589950,
+        "hash": "-7470336147702538143737:794958871425699"
+      },
+      "gold_user_profiles": {
+        "rows": 541493,
+        "hash": "4852232705603125656303:270416811221793"
+      },
+      "gold_article_daily": {
+        "rows": 527668,
+        "hash": "850099535711662438888:264309575213172"
+      }
+    },
+    "replay": {
+      "2": {
+        "seconds": 121.6,
+        "bronze": {
+          "version_before": 4,
+          "version_after": 4,
+          "rows_changed": 0
+        },
+        "silver": {
+          "version_before": 3,
+          "version_after": 3,
+          "rows_changed": 0
+        },
+        "gold_sessions": {
+          "version_before": 3,
+          "version_after": 3,
+          "rows_changed": 0
+        }
+      }
+    }
+  },
+  "incremental_equals_full_recompute": {
+    "sessions_equal": true,
+    "profiles_equal": true,
+    "full_rows": 1589950
+  },
+  "schema": {
+    "string_timestamp": "REJECTED: DELTA_FAILED_TO_MERGE_FIELDS",
+    "null_event_id": "REJECTED: DELTA_NOT_NULL_CONSTRAINT_VIOLATED",
+    "unknown_event_type": "REJECTED: DELTA_VIOLATE_CONSTRAINT_WITH_VALUES",
+    "bronze_version_unchanged": true,
+    "silver_columns": [
+      "event_id",
+      "user_id",
+      "article_id",
+      "event_type",
+      "client_ts",
+      "ingest_ts",
+      "device",
+      "user_agent",
+      "scroll_depth",
+      "event_date",
+      "first_batch_id",
+      "app_version"
+    ]
+  },
+  "time_travel_audit": {
+    "day": "2026-10-01",
+    "version_after_batch1": 1,
+    "version_now": 3,
+    "sql": "SELECT count(*) FROM delta.`gold_sessions` VERSION AS OF 1 WHERE session_date = DATE'2026-10-01'",
+    "sessions_v1": 528132,
+    "unchanged": 474572,
+    "updated": 46743,
+    "removed": 6817,
+    "added": 7859,
+    "events_v1": 4467742,
+    "events_now": 4535702
+  },
+  "bot_detection": {
+    "users_scored": 541493,
+    "true_bots": 317,
+    "tp": 317,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "recall_by_bot_kind": {
+      "0": {
+        "bots": 185,
+        "caught": 185
+      },
+      "2": {
+        "bots": 49,
+        "caught": 49
+      },
+      "1": {
+        "bots": 83,
+        "caught": 83
+      },
+      "None": {
+        "bots": 541176,
+        "caught": 0
+      }
+    },
+    "flag_reasons": {
+      "user_agent": 185,
+      "rate": 49,
+      "regular_interval": 83
+    }
+  },
+  "bot_share_of_silver_events": 0.1236,
+  "session_recovery": {
+    "true_sessions": 1588999,
+    "found_sessions": 1588999,
+    "start_matched": 1588923,
+    "exact_matched": 1588923,
+    "exact_recovery_rate": 0.999952,
+    "found_over_true": 1.0
+  },
+  "naive_session_recovery": {
+    "true_sessions": 1588999,
+    "found_sessions": 1588999,
+    "start_matched": 1540187,
+    "exact_matched": 1336028,
+    "exact_recovery_rate": 0.840799,
+    "found_over_true": 1.0
+  },
+  "counts": {
+    "bronze_rows": 13911541,
+    "silver_rows": 13639517,
+    "gold_sessions": 1589950,
+    "gold_human_sessions": 1588999,
+    "gold_bot_sessions": 951,
+    "gold_article_daily_rows": 527668,
+    "users_with_clock_offset": 16593,
+    "true_skewed_users_active": 16527,
+    "clock_offset_correct": 541417,
+    "skewed_users_offset_correct": 16521,
+    "profiles": 541493,
+    "duplicates_removed": 272024
+  },
+  "human_sessions": {
+    "mean_duration_s": 322.4277,
+    "median_duration_s": 193.808,
+    "mean_events": 7.5231,
+    "bounce_rate": 0.1333
+  },
+  "skew_benchmark": {
+    "variants": {
+      "baseline": {
+        "runtime_s_runs": [
+          9.14,
+          8.41
+        ],
+        "runtime_s_median": 8.78,
+        "slowest_stage": {
+          "stage_id": 921,
+          "name": "collect at /home/claude/data-science-transformation-30/day-0",
+          "num_tasks": 64,
+          "median_task_ms": 76.0,
+          "max_task_ms": 6552.0,
+          "total_task_ms": 15217,
+          "shuffle_read_mb": 36.45,
+          "input_records": 0
+        },
+        "stages": [
+          {
+            "stage_id": 917,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 6,
+            "median_task_ms": 398.0,
+            "max_task_ms": 424.0,
+            "total_task_ms": 2086,
+            "shuffle_read_mb": 0.0,
+            "input_records": 832
+          },
+          {
+            "stage_id": 918,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 4,
+            "median_task_ms": 147.0,
+            "max_task_ms": 163.0,
+            "total_task_ms": 524,
+            "shuffle_read_mb": 0.0,
+            "input_records": 41
+          },
+          {
+            "stage_id": 921,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 64,
+            "median_task_ms": 76.0,
+            "max_task_ms": 6552.0,
+            "total_task_ms": 15217,
+            "shuffle_read_mb": 36.45,
+            "input_records": 0
+          },
+          {
+            "stage_id": 925,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 64,
+            "median_task_ms": 4.0,
+            "max_task_ms": 18.0,
+            "total_task_ms": 352,
+            "shuffle_read_mb": 0.78,
+            "input_records": 0
+          },
+          {
+            "stage_id": 929,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 64,
+            "median_task_ms": 7.0,
+            "max_task_ms": 17.0,
+            "total_task_ms": 478,
+            "shuffle_read_mb": 0.78,
+            "input_records": 0
+          },
+          {
+            "stage_id": 934,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 64,
+            "median_task_ms": 1.0,
+            "max_task_ms": 12.0,
+            "total_task_ms": 147,
+            "shuffle_read_mb": 0.03,
+            "input_records": 0
+          }
+        ],
+        "plan_has_skew_split": false,
+        "speedup_vs_baseline": 1.0
+      },
+      "aqe_skew": {
+        "runtime_s_runs": [
+          5.05,
+          4.94
+        ],
+        "runtime_s_median": 5.0,
+        "slowest_stage": {
+          "stage_id": 939,
+          "name": "collect at /home/claude/data-science-transformation-30/day-0",
+          "num_tasks": 69,
+          "median_task_ms": 55.0,
+          "max_task_ms": 1574.0,
+          "total_task_ms": 13962,
+          "shuffle_read_mb": 36.84,
+          "input_records": 0
+        },
+        "stages": [
+          {
+            "stage_id": 935,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 6,
+            "median_task_ms": 435.0,
+            "max_task_ms": 521.0,
+            "total_task_ms": 2309,
+            "shuffle_read_mb": 0.0,
+            "input_records": 832
+          },
+          {
+            "stage_id": 936,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 4,
+            "median_task_ms": 46.0,
+            "max_task_ms": 56.0,
+            "total_task_ms": 190,
+            "shuffle_read_mb": 0.0,
+            "input_records": 41
+          },
+          {
+            "stage_id": 939,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 69,
+            "median_task_ms": 55.0,
+            "max_task_ms": 1574.0,
+            "total_task_ms": 13962,
+            "shuffle_read_mb": 36.84,
+            "input_records": 0
+          },
+          {
+            "stage_id": 943,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 64,
+            "median_task_ms": 3.0,
+            "max_task_ms": 8.0,
+            "total_task_ms": 258,
+            "shuffle_read_mb": 0.84,
+            "input_records": 0
+          },
+          {
+            "stage_id": 947,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 64,
+            "median_task_ms": 9.0,
+            "max_task_ms": 21.0,
+            "total_task_ms": 674,
+            "shuffle_read_mb": 0.84,
+            "input_records": 0
+          },
+          {
+            "stage_id": 952,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 64,
+            "median_task_ms": 2.0,
+            "max_task_ms": 5.0,
+            "total_task_ms": 113,
+            "shuffle_read_mb": 0.03,
+            "input_records": 0
+          }
+        ],
+        "plan_has_skew_split": true,
+        "speedup_vs_baseline": 1.76
+      },
+      "salted": {
+        "runtime_s_runs": [
+          8.47,
+          6.71
+        ],
+        "runtime_s_median": 7.59,
+        "slowest_stage": {
+          "stage_id": 960,
+          "name": "collect at /home/claude/data-science-transformation-30/day-0",
+          "num_tasks": 64,
+          "median_task_ms": 224.0,
+          "max_task_ms": 911.0,
+          "total_task_ms": 18140,
+          "shuffle_read_mb": 48.07,
+          "input_records": 0
+        },
+        "stages": [
+          {
+            "stage_id": 953,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 6,
+            "median_task_ms": 713.0,
+            "max_task_ms": 751.0,
+            "total_task_ms": 3232,
+            "shuffle_read_mb": 0.0,
+            "input_records": 832
+          },
+          {
+            "stage_id": 955,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 64,
+            "median_task_ms": 14.0,
+            "max_task_ms": 47.0,
+            "total_task_ms": 1074,
+            "shuffle_read_mb": 9.27,
+            "input_records": 0
+          },
+          {
+            "stage_id": 956,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 6,
+            "median_task_ms": 885.0,
+            "max_task_ms": 1089.0,
+            "total_task_ms": 4469,
+            "shuffle_read_mb": 0.0,
+            "input_records": 832
+          },
+          {
+            "stage_id": 957,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 4,
+            "median_task_ms": 93.0,
+            "max_task_ms": 135.0,
+            "total_task_ms": 376,
+            "shuffle_read_mb": 0.0,
+            "input_records": 41
+          },
+          {
+            "stage_id": 960,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 64,
+            "median_task_ms": 224.0,
+            "max_task_ms": 911.0,
+            "total_task_ms": 18140,
+            "shuffle_read_mb": 48.07,
+            "input_records": 0
+          },
+          {
+            "stage_id": 964,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 64,
+            "median_task_ms": 4.0,
+            "max_task_ms": 16.0,
+            "total_task_ms": 335,
+            "shuffle_read_mb": 0.79,
+            "input_records": 0
+          },
+          {
+            "stage_id": 968,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 64,
+            "median_task_ms": 9.0,
+            "max_task_ms": 16.0,
+            "total_task_ms": 577,
+            "shuffle_read_mb": 0.79,
+            "input_records": 0
+          },
+          {
+            "stage_id": 973,
+            "name": "collect at /home/claude/data-science-transformation-30/day-0",
+            "num_tasks": 64,
+            "median_task_ms": 2.0,
+            "max_task_ms": 13.0,
+            "total_task_ms": 148,
+            "shuffle_read_mb": 0.03,
+            "input_records": 0
+          }
+        ],
+        "plan_has_skew_split": false,
+        "speedup_vs_baseline": 1.16
+      }
+    },
+    "results_identical": true,
+    "rows_joined_input": 8287875,
+    "n_salts": 24,
+    "top_k_hot_keys": 5,
+    "conf": {
+      "spark.sql.autoBroadcastJoinThreshold": "-1",
+      "spark.sql.adaptive.autoBroadcastJoinThreshold": "-1",
+      "spark.sql.adaptive.enabled": "true",
+      "spark.sql.adaptive.coalescePartitions.enabled": "false",
+      "spark.sql.adaptive.advisoryPartitionSizeInBytes": "512KB",
+      "spark.sql.adaptive.skewJoin.skewedPartitionFactor": "3",
+      "spark.sql.adaptive.skewJoin.skewedPartitionThresholdInBytes": "1MB"
+    },
+    "viral_share_of_views": 0.2453,
+    "top_article_share_of_views": 0.1472,
+    "dim_rows": 400304
+  },
+  "layout_benchmark": {
+    "before": {
+      "files": {
+        "num_files": 11,
+        "size_mb": 617.6
+      },
+      "user_lookup": {
+        "predicate": "user_id = 249734",
+        "rows": 227,
+        "runtime_s_median": 0.531,
+        "files_read": 11,
+        "mb_read": 617.6
+      },
+      "article_lookup": {
+        "predicate": "article_id = 1000",
+        "rows": 700,
+        "runtime_s_median": 0.402,
+        "files_read": 11,
+        "mb_read": 617.6
+      },
+      "one_day": {
+        "predicate": "event_date = DATE'2026-10-01'",
+        "rows": 4527560,
+        "runtime_s_median": 0.298,
+        "files_read": 3,
+        "mb_read": 204.1
+      }
+    },
+    "after": {
+      "files": {
+        "num_files": 38,
+        "size_mb": 601.9
+      },
+      "user_lookup": {
+        "predicate": "user_id = 249734",
+        "rows": 227,
+        "runtime_s_median": 0.227,
+        "files_read": 5,
+        "mb_read": 50.5
+      },
+      "article_lookup": {
+        "predicate": "article_id = 1000",
+        "rows": 700,
+        "runtime_s_median": 0.582,
+        "files_read": 38,
+        "mb_read": 601.9
+      },
+      "one_day": {
+        "predicate": "event_date = DATE'2026-10-01'",
+        "rows": 4527560,
+        "runtime_s_median": 0.184,
+        "files_read": 12,
+        "mb_read": 198.7
+      }
+    },
+    "optimize_s": 33.8,
+    "optimize_max_file_mb": 16,
+    "zorder_by": [
+      "user_id"
+    ],
+    "optimize_files_added": 38,
+    "optimize_files_removed": 11
+  },
+  "timings": {
+    "generate_s": 0.0,
+    "batches_s": 411.7,
+    "idempotency_s": 128.5,
+    "full_recompute_check_s": 103.1,
+    "evaluate_s": 49.0,
+    "skew_benchmark_s": 54.1,
+    "layout_benchmark_s": 44.0,
+    "total_s": 821.3
+  },
+  "spark": {
+    "version": "4.0.1",
+    "cores": 4
+  }
+}

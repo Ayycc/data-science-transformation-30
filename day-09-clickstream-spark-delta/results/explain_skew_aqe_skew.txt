@@ -1,0 +1,56 @@
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   ResultQueryStage 6
+   +- *(6) Sort [campaign_id#40271 ASC NULLS FIRST], true, 0
+      +- ShuffleQueryStage 5
+         +- Exchange rangepartitioning(campaign_id#40271 ASC NULLS FIRST, 64), ENSURE_REQUIREMENTS, [plan_id=24688]
+            +- *(5) HashAggregate(keys=[campaign_id#40271], functions=[count(1), sum(cpm_cents#40272L)], output=[campaign_id#40271, attributed_views#40899L, revenue_milli_cents#40900L])
+               +- ShuffleQueryStage 4
+                  +- Exchange hashpartitioning(campaign_id#40271, 64), ENSURE_REQUIREMENTS, [plan_id=24651]
+                     +- *(4) HashAggregate(keys=[campaign_id#40271], functions=[partial_count(1), partial_sum(cpm_cents#40272L)], output=[campaign_id#40271, count#40984L, sum#40985L])
+                        +- *(4) Project [campaign_id#40271, cpm_cents#40272L]
+                           +- *(4) SortMergeJoin(skew=true) [article_id#38498L], [article_id#40270L], Inner
+                              :- *(2) Sort [article_id#38498L ASC NULLS FIRST], false, 0
+                              :  +- AQEShuffleRead skewed
+                              :     +- ShuffleQueryStage 2
+                              :        +- Exchange hashpartitioning(article_id#38498L, 64), ENSURE_REQUIREMENTS, [plan_id=24390]
+                              :           +- TableCacheQueryStage 0
+                              :              +- InMemoryTableScan [article_id#38498L]
+                              :                    +- InMemoryRelation [event_id#38496, article_id#38498L], StorageLevel(disk, memory, deserialized, 1 replicas)
+                              :                          +- *(1) Project [event_id#38496, article_id#38498L]
+                              :                             +- *(1) Filter (event_type#38499 = page_view)
+                              :                                +- *(1) ColumnarToRow
+                              :                                   +- FileScan parquet [event_id#38496,article_id#38498L,event_type#38499,event_date#38505] Batched: true, DataFilters: [(event_type#38499 = page_view)], Format: Parquet, Location: PreparedDeltaFileIndex(1 paths)[file:/home/claude/data-science-transformation-30/day-09-clickstre..., PartitionFilters: [], PushedFilters: [EqualTo(event_type,page_view)], ReadSchema: struct<event_id:string,article_id:bigint,event_type:string>
+                              +- *(3) Sort [article_id#40270L ASC NULLS FIRST], false, 0
+                                 +- AQEShuffleRead
+                                    +- ShuffleQueryStage 3
+                                       +- Exchange hashpartitioning(article_id#40270L, 64), ENSURE_REQUIREMENTS, [plan_id=24512]
+                                          +- *(1) Filter isnotnull(article_id#40270L)
+                                             +- TableCacheQueryStage 1
+                                                +- InMemoryTableScan [article_id#40270L, campaign_id#40271, cpm_cents#40272L], [isnotnull(article_id#40270L)]
+                                                      +- InMemoryRelation [article_id#40270L, campaign_id#40271, cpm_cents#40272L], StorageLevel(disk, memory, deserialized, 1 replicas)
+                                                            +- *(1) ColumnarToRow
+                                                               +- FileScan parquet [article_id#40270L,campaign_id#40271,cpm_cents#40272L] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[file:/home/claude/data-science-transformation-30/day-09-clickstream-sp..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<article_id:bigint,campaign_id:int,cpm_cents:bigint>
++- == Initial Plan ==
+   Sort [campaign_id#40271 ASC NULLS FIRST], true, 0
+   +- Exchange rangepartitioning(campaign_id#40271 ASC NULLS FIRST, 64), ENSURE_REQUIREMENTS, [plan_id=24363]
+      +- HashAggregate(keys=[campaign_id#40271], functions=[count(1), sum(cpm_cents#40272L)], output=[campaign_id#40271, attributed_views#40899L, revenue_milli_cents#40900L])
+         +- Exchange hashpartitioning(campaign_id#40271, 64), ENSURE_REQUIREMENTS, [plan_id=24360]
+            +- HashAggregate(keys=[campaign_id#40271], functions=[partial_count(1), partial_sum(cpm_cents#40272L)], output=[campaign_id#40271, count#40984L, sum#40985L])
+               +- Project [campaign_id#40271, cpm_cents#40272L]
+                  +- SortMergeJoin [article_id#38498L], [article_id#40270L], Inner
+                     :- Sort [article_id#38498L ASC NULLS FIRST], false, 0
+                     :  +- Exchange hashpartitioning(article_id#38498L, 64), ENSURE_REQUIREMENTS, [plan_id=24352]
+                     :     +- InMemoryTableScan [article_id#38498L]
+                     :           +- InMemoryRelation [event_id#38496, article_id#38498L], StorageLevel(disk, memory, deserialized, 1 replicas)
+                     :                 +- *(1) Project [event_id#38496, article_id#38498L]
+                     :                    +- *(1) Filter (event_type#38499 = page_view)
+                     :                       +- *(1) ColumnarToRow
+                     :                          +- FileScan parquet [event_id#38496,article_id#38498L,event_type#38499,event_date#38505] Batched: true, DataFilters: [(event_type#38499 = page_view)], Format: Parquet, Location: PreparedDeltaFileIndex(1 paths)[file:/home/claude/data-science-transformation-30/day-09-clickstre..., PartitionFilters: [], PushedFilters: [EqualTo(event_type,page_view)], ReadSchema: struct<event_id:string,article_id:bigint,event_type:string>
+                     +- Sort [article_id#40270L ASC NULLS FIRST], false, 0
+                        +- Exchange hashpartitioning(article_id#40270L, 64), ENSURE_REQUIREMENTS, [plan_id=24353]
+                           +- Filter isnotnull(article_id#40270L)
+                              +- InMemoryTableScan [article_id#40270L, campaign_id#40271, cpm_cents#40272L], [isnotnull(article_id#40270L)]
+                                    +- InMemoryRelation [article_id#40270L, campaign_id#40271, cpm_cents#40272L], StorageLevel(disk, memory, deserialized, 1 replicas)
+                                          +- *(1) ColumnarToRow
+                                             +- FileScan parquet [article_id#40270L,campaign_id#40271,cpm_cents#40272L] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[file:/home/claude/data-science-transformation-30/day-09-clickstream-sp..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<article_id:bigint,campaign_id:int,cpm_cents:bigint>
