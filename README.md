@@ -27,7 +27,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 07 | I Advanced | [Demand-Driven Inventory Optimisation](./day-07-supply-chain-demand-inventory-opt/) | Supply chain & logistics | OR-Tools, PuLP, statsforecast | ✅ | [prompt](./prompts/day-07.md) | SimPy test year on 800 synthetic SKUs x 3 WH: cost -41.5% ($2.32M to $1.35M), fill rate 91.1% to 97.4%; 52/52 weekly MILPs within 0.01% gap |
 | 08 | II Expert | [Telecom Retention: Survival Analysis + Uplift Modelling](./day-08-telecom-churn-survival-uplift/) | Telecommunications | lifelines, scikit-survival, CausalML | ✅ | [prompt](./prompts/day-08.md) | Uplift targeting nets $500k vs $359k for churn-score targeting (+39%, ROI 1.19 vs 0.86) on a $400k budget, 65k-customer synthetic holdout; PH violation fixed by contract strata |
 | 09 | II Expert | [Clickstream Sessionisation at Scale with PySpark + Delta Lake](./day-09-clickstream-spark-delta/) | Media & e-commerce | PySpark, Delta Lake, Spark SQL | ✅ | [prompt](./prompts/day-09.md) | 13.9M synthetic event deliveries: 99.995% exact session recovery, idempotent replay (0 rows changed), AQE skew join 1.76x faster |
-| 10 | II Expert | [Air Quality Intelligence with Dagster Software-Defined Assets](./day-10-air-quality-dagster-assets/) | Environment & climate | Dagster, DuckDB, pandas | ⏳ Planned | [prompt](./prompts/day-10.md) | |
+| 10 | II Expert | [Air Quality Intelligence with Dagster Software-Defined Assets](./day-10-air-quality-dagster-assets/) | Environment & climate | Dagster, DuckDB, pandas | ✅ | [prompt](./prompts/day-10.md) | 300 synthetic stations x 30 daily partitions: blocking checks withheld 130 false alerts on a unit-bug day; alert precision 0.966 vs 0.430 naive; late-data sensor re-ran exactly 4 partitions |
 | 11 | II Expert | [Support Ticket Intelligence: NLP Classification with Active Learning](./day-11-support-ticket-nlp-active-learning/) | Customer operations | spaCy, sentence-transformers, scikit-learn | ⏳ Planned | [prompt](./prompts/day-11.md) | |
 | 12 | II Expert | [Did the Programme Work? Causal Inference with Double ML](./day-12-policy-causal-inference-dml/) | Public policy & workforce | DoWhy, EconML, statsmodels | ⏳ Planned | [prompt](./prompts/day-12.md) | |
 | 13 | II Expert | [Anti-Money-Laundering with Transaction Graph Analytics](./day-13-aml-transaction-graph-analytics/) | Banking & compliance | NetworkX, igraph, PyTorch Geometric (optional) | ⏳ Planned | [prompt](./prompts/day-13.md) | |
@@ -49,7 +49,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ⏳ Planned | [prompt](./prompts/day-29.md) | |
 | 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
 
-Last build: 2026-10-19
+Last build: 2026-10-20
 <!-- PROGRESS:END -->
 
 ## How each project is structured

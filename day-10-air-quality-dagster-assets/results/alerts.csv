@@ -1,0 +1,354 @@
+date,station_id,region,station_type,aqi,category,dominant_pollutant,status
+2026-09-03,ST052,R00,background,151.0,Unhealthy,o3,ok
+2026-09-03,ST153,R00,background,150.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST056,R01,background,147.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST107,R06,background,147.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST125,R01,background,147.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST166,R00,background,147.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST171,R00,background,143.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST182,R00,background,143.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST247,R00,background,143.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST014,R01,background,140.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST223,R01,background,140.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST249,R00,background,140.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST009,R01,background,136.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST058,R06,background,136.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST033,R06,background,133.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST146,R00,background,133.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST209,R06,background,133.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST257,R00,background,133.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST205,R01,background,129.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST213,R00,background,129.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST296,R01,background,129.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST008,R00,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST092,R01,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST101,R01,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST150,R00,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST162,R01,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST189,R06,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST195,R01,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST286,R00,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST295,R00,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST013,R01,background,122.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST094,R00,background,122.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST113,R00,background,122.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST087,R06,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST123,R00,background,119.0,Unhealthy for Sensitive Groups,o3,degraded
+2026-09-03,ST178,R00,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST235,R06,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST244,R06,background,119.0,Unhealthy for Sensitive Groups,o3,degraded
+2026-09-03,ST012,R06,traffic,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST015,R06,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST070,R01,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST077,R01,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST097,R01,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST116,R01,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST140,R01,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST227,R06,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST263,R01,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST043,R01,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST054,R00,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST134,R06,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST163,R06,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST216,R06,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST272,R06,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST010,R06,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST133,R00,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST138,R06,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST151,R06,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST278,R00,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST036,R06,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST079,R00,traffic,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST217,R00,traffic,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST225,R01,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST254,R06,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST021,R06,background,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST053,R01,traffic,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST067,R01,background,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST072,R06,background,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST167,R06,background,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST231,R06,background,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST262,R00,traffic,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-03,ST280,R01,background,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST033,R06,background,151.0,Unhealthy,o3,ok
+2026-09-04,ST056,R01,background,150.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST058,R06,background,147.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST113,R00,background,147.0,Unhealthy for Sensitive Groups,o3,degraded
+2026-09-04,ST295,R00,background,147.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST015,R06,background,143.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST247,R00,background,143.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST014,R01,background,140.0,Unhealthy for Sensitive Groups,o3,degraded
+2026-09-04,ST101,R01,background,140.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST153,R00,background,140.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST223,R01,background,140.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST107,R06,background,136.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST146,R00,background,136.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST171,R00,background,136.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST257,R00,background,136.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST296,R01,background,136.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST092,R01,background,133.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST052,R00,background,129.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST125,R01,background,129.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST134,R06,background,129.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST182,R00,background,129.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST186,R06,background,129.0,Unhealthy for Sensitive Groups,o3,degraded
+2026-09-04,ST195,R01,background,129.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST010,R06,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST094,R00,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST162,R01,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST227,R06,background,126.0,Unhealthy for Sensitive Groups,o3,degraded
+2026-09-04,ST235,R06,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST008,R00,background,122.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST013,R01,background,122.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST140,R01,background,122.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST249,R00,background,122.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST009,R01,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST150,R00,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST151,R06,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST213,R00,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST225,R01,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST246,R01,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST087,R06,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST116,R01,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST123,R00,background,115.0,Unhealthy for Sensitive Groups,o3,degraded
+2026-09-04,ST133,R00,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST178,R00,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST189,R06,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST205,R01,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST244,R06,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST286,R00,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST163,R06,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST209,R06,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST280,R01,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST070,R01,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST077,R01,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST138,R06,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST263,R01,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST272,R06,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST043,R01,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST067,R01,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST221,R00,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST231,R06,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-04,ST167,R06,background,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST235,R06,background,151.0,Unhealthy,o3,ok
+2026-09-05,ST249,R00,background,151.0,Unhealthy,o3,ok
+2026-09-05,ST010,R06,background,150.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST295,R00,background,150.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST087,R06,background,147.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST107,R06,background,147.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST056,R01,background,143.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST125,R01,background,143.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST153,R00,background,140.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST247,R00,background,140.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST257,R00,background,140.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST033,R06,background,136.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST146,R00,background,136.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST244,R06,background,136.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST134,R06,background,133.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST171,R00,background,133.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST189,R06,background,133.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST092,R01,background,129.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST101,R01,background,129.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST227,R06,background,129.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST008,R00,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST070,R01,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST138,R06,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST209,R06,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST225,R01,background,126.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST014,R01,background,122.0,Unhealthy for Sensitive Groups,o3,degraded
+2026-09-05,ST162,R01,background,122.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST163,R06,background,122.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST178,R00,background,122.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST223,R01,background,122.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST015,R06,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST058,R06,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST113,R00,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST150,R00,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST186,R06,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST216,R06,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST286,R00,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST296,R01,background,119.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST036,R06,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST052,R00,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST094,R00,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST166,R00,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST182,R00,background,115.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST021,R06,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST133,R00,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST205,R01,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST213,R00,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST231,R06,background,112.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST067,R01,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST246,R01,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST263,R01,background,108.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST013,R01,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST043,R01,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST077,R01,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST123,R00,background,105.0,Unhealthy for Sensitive Groups,o3,degraded
+2026-09-05,ST151,R06,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST167,R06,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST195,R01,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST278,R00,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST280,R01,background,105.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST009,R01,background,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST097,R01,background,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST116,R01,background,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST221,R00,background,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-05,ST254,R06,background,101.0,Unhealthy for Sensitive Groups,o3,ok
+2026-09-19,ST285,R02,background,126.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST086,R02,background,123.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST169,R02,background,122.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST059,R02,traffic,121.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST251,R02,background,121.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST031,R02,background,120.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST037,R02,background,118.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST241,R02,background,118.0,Unhealthy for Sensitive Groups,pm25,degraded
+2026-09-19,ST229,R02,background,117.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST243,R02,background,117.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST236,R02,background,116.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST258,R02,background,116.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST136,R02,traffic,114.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST040,R02,background,113.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST152,R02,background,113.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST185,R02,background,113.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST269,R02,background,113.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST297,R02,background,113.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST233,R03,background,112.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST003,R02,background,111.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST168,R02,traffic,111.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST202,R02,background,111.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST108,R02,background,109.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST273,R02,traffic,109.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST057,R02,background,108.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST196,R03,traffic,108.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST026,R03,background,107.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST127,R03,traffic,107.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST044,R03,traffic,106.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST260,R02,background,106.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST155,R03,background,105.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST042,R03,background,104.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST049,R02,traffic,104.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST106,R03,background,104.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST158,R03,background,104.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST175,R03,traffic,104.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST034,R03,background,103.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST104,R02,background,103.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST184,R02,background,103.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST287,R03,background,103.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST112,R02,background,102.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-19,ST253,R03,background,101.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-20,ST031,R02,background,169.0,Unhealthy,pm25,ok
+2026-09-20,ST241,R02,background,169.0,Unhealthy,pm25,ok
+2026-09-20,ST086,R02,background,168.0,Unhealthy,pm25,ok
+2026-09-20,ST037,R02,background,167.0,Unhealthy,pm25,ok
+2026-09-20,ST059,R02,traffic,167.0,Unhealthy,pm25,ok
+2026-09-20,ST202,R02,background,167.0,Unhealthy,pm25,ok
+2026-09-20,ST229,R02,background,167.0,Unhealthy,pm25,ok
+2026-09-20,ST251,R02,background,167.0,Unhealthy,pm25,ok
+2026-09-20,ST169,R02,background,166.0,Unhealthy,pm25,ok
+2026-09-20,ST236,R02,background,166.0,Unhealthy,pm25,ok
+2026-09-20,ST269,R02,background,166.0,Unhealthy,pm25,ok
+2026-09-20,ST285,R02,background,166.0,Unhealthy,pm25,ok
+2026-09-20,ST026,R03,background,165.0,Unhealthy,pm25,ok
+2026-09-20,ST044,R03,traffic,165.0,Unhealthy,pm25,ok
+2026-09-20,ST127,R03,traffic,165.0,Unhealthy,pm25,ok
+2026-09-20,ST196,R03,traffic,165.0,Unhealthy,pm25,ok
+2026-09-20,ST233,R03,background,165.0,Unhealthy,pm25,ok
+2026-09-20,ST243,R02,background,165.0,Unhealthy,pm25,ok
+2026-09-20,ST042,R03,background,164.0,Unhealthy,pm25,ok
+2026-09-20,ST057,R02,background,164.0,Unhealthy,pm25,ok
+2026-09-20,ST136,R02,traffic,164.0,Unhealthy,pm25,ok
+2026-09-20,ST152,R02,background,164.0,Unhealthy,pm25,ok
+2026-09-20,ST258,R02,background,164.0,Unhealthy,pm25,ok
+2026-09-20,ST297,R02,background,164.0,Unhealthy,pm25,ok
+2026-09-20,ST003,R02,background,163.0,Unhealthy,pm25,ok
+2026-09-20,ST040,R02,background,163.0,Unhealthy,pm25,ok
+2026-09-20,ST104,R02,background,163.0,Unhealthy,pm25,ok
+2026-09-20,ST106,R03,background,163.0,Unhealthy,pm25,ok
+2026-09-20,ST110,R03,traffic,163.0,Unhealthy,pm25,ok
+2026-09-20,ST185,R02,background,163.0,Unhealthy,pm25,ok
+2026-09-20,ST293,R03,traffic,163.0,Unhealthy,pm25,ok
+2026-09-20,ST108,R02,background,162.0,Unhealthy,pm25,ok
+2026-09-20,ST155,R03,background,162.0,Unhealthy,pm25,ok
+2026-09-20,ST228,R03,traffic,162.0,Unhealthy,pm25,ok
+2026-09-20,ST253,R03,background,162.0,Unhealthy,pm25,ok
+2026-09-20,ST281,R03,background,162.0,Unhealthy,pm25,ok
+2026-09-20,ST287,R03,background,162.0,Unhealthy,pm25,ok
+2026-09-20,ST034,R03,background,161.0,Unhealthy,pm25,ok
+2026-09-20,ST069,R03,background,161.0,Unhealthy,pm25,ok
+2026-09-20,ST112,R02,background,161.0,Unhealthy,pm25,ok
+2026-09-20,ST168,R02,traffic,161.0,Unhealthy,pm25,ok
+2026-09-20,ST170,R03,traffic,161.0,Unhealthy,pm25,ok
+2026-09-20,ST184,R02,background,161.0,Unhealthy,pm25,ok
+2026-09-20,ST260,R02,background,161.0,Unhealthy,pm25,ok
+2026-09-20,ST273,R02,traffic,161.0,Unhealthy,pm25,ok
+2026-09-20,ST027,R03,background,160.0,Unhealthy,pm25,ok
+2026-09-20,ST049,R02,traffic,160.0,Unhealthy,pm25,ok
+2026-09-20,ST158,R03,background,160.0,Unhealthy,pm25,ok
+2026-09-20,ST255,R03,background,160.0,Unhealthy,pm25,ok
+2026-09-20,ST173,R03,background,159.0,Unhealthy,pm25,ok
+2026-09-20,ST284,R02,background,159.0,Unhealthy,pm25,ok
+2026-09-20,ST074,R03,background,158.0,Unhealthy,pm25,ok
+2026-09-20,ST084,R03,background,158.0,Unhealthy,pm25,ok
+2026-09-20,ST088,R03,traffic,158.0,Unhealthy,pm25,ok
+2026-09-20,ST142,R03,background,158.0,Unhealthy,pm25,ok
+2026-09-20,ST252,R03,background,157.0,Unhealthy,pm25,ok
+2026-09-20,ST248,R03,background,156.0,Unhealthy,pm25,ok
+2026-09-20,ST053,R01,traffic,101.0,Unhealthy for Sensitive Groups,no2,ok
+2026-09-21,ST241,R02,background,126.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST086,R02,background,124.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST285,R02,background,124.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST037,R02,background,122.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST196,R03,traffic,122.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST243,R02,background,122.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST059,R02,traffic,121.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST169,R02,background,121.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST229,R02,background,121.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST031,R02,background,120.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST044,R03,traffic,120.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST202,R02,background,120.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST233,R03,background,120.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST127,R03,traffic,119.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST269,R02,background,119.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST136,R02,traffic,118.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST152,R02,background,118.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST155,R03,background,118.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST236,R02,background,118.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST251,R02,background,118.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST026,R03,background,117.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST040,R02,background,117.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST108,R02,background,115.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST260,R02,background,115.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST297,R02,background,115.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST042,R03,background,114.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST057,R02,background,114.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST258,R02,background,114.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST034,R03,background,113.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST106,R03,background,113.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST168,R02,traffic,113.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST293,R03,traffic,113.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST027,R03,background,112.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST110,R03,traffic,112.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST158,R03,background,112.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST175,R03,traffic,112.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST185,R02,background,112.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST003,R02,background,110.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST049,R02,traffic,110.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST069,R03,background,110.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST074,R03,background,110.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST287,R03,background,110.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST104,R02,background,109.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST112,R02,background,109.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST255,R03,background,109.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST088,R03,traffic,108.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST170,R03,traffic,108.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST253,R03,background,108.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST184,R02,background,107.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST228,R03,traffic,107.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST284,R02,background,106.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST173,R03,background,105.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST281,R03,background,105.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST142,R03,background,104.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST248,R03,background,104.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST084,R03,background,101.0,Unhealthy for Sensitive Groups,pm25,ok
+2026-09-21,ST252,R03,background,101.0,Unhealthy for Sensitive Groups,pm25,ok

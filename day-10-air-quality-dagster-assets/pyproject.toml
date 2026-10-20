@@ -1,0 +1,23 @@
+[project]
+name = "air-quality-dagster"
+version = "1.0.0"
+description = "Day 10: Air Quality Intelligence with Dagster Software-Defined Assets (synthetic data)"
+requires-python = ">=3.11"
+
+[tool.dagster]
+module_name = "air_quality.definitions"
+code_location_name = "air_quality"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501", "B008"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q -p no:warnings"

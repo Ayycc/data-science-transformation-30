@@ -1,0 +1,263 @@
+{
+  "data_source": "SYNTHETIC (seeded generator; OpenAQ API not used: blocked by the build network, see README)",
+  "generator": {
+    "data_source": "SYNTHETIC (seeded generator src/air_quality/generate.py)",
+    "preset": "full",
+    "seed": 20261020,
+    "n_stations": 300,
+    "n_regions": 10,
+    "n_days": 30,
+    "station_hours": 216000,
+    "rows_on_time_incl_duplicates": 208123,
+    "rows_late": 3535,
+    "duplicate_rows": 1030,
+    "missing_station_hours": 4896,
+    "lost_station_hours": 476,
+    "flatline_station_hours": 1346,
+    "spike_values": 659,
+    "calibrated_stations": 30,
+    "drifting_stations": 15,
+    "outage_stations": 9,
+    "unit_bug_stations": 123,
+    "late_partitions": [
+      "2026-09-06",
+      "2026-09-12",
+      "2026-09-20",
+      "2026-09-27"
+    ]
+  },
+  "orchestration": {
+    "dagster_version": "1.13.26",
+    "partitions": 30,
+    "backfill_runs": 30,
+    "backfill_runs_succeeded": 28,
+    "backfill_runs_blocked": 2,
+    "backfill_partitions_with_alerts_published": 28,
+    "backfill_blocked_partitions": [
+      "2026-09-12",
+      "2026-09-24"
+    ],
+    "backfill_failed_checks": {
+      "2026-09-12": "raw_completeness",
+      "2026-09-24": "systemic_fault_rate"
+    },
+    "backfill_seconds": 65.6,
+    "backfill_seconds_per_partition_median": 2.225,
+    "transient_failure_partition": "2026-09-03",
+    "step_retries_total": 1,
+    "transient_partition_run_success": true,
+    "late_files_delivered": 4,
+    "sensor_tick1_requests": [
+      "2026-09-06",
+      "2026-09-12",
+      "2026-09-20",
+      "2026-09-27"
+    ],
+    "sensor_tick1_reasons": [
+      "late_data"
+    ],
+    "sensor_runs_succeeded": 4,
+    "sensor_seconds": 9.4,
+    "sensor_tick2_requests": 0,
+    "late_data_alert_impact": {
+      "2026-09-06": {
+        "alerts_before": 0,
+        "alerts_after": 0
+      },
+      "2026-09-12": {
+        "alerts_before": null,
+        "alerts_after": 0
+      },
+      "2026-09-20": {
+        "alerts_before": 53,
+        "alerts_after": 58
+      },
+      "2026-09-27": {
+        "alerts_before": 0,
+        "alerts_after": 0
+      }
+    },
+    "final_published_partitions": 29,
+    "final_blocked_partitions": [
+      {
+        "date": "2026-09-24",
+        "failed_blocking_checks": "systemic_fault_rate"
+      }
+    ],
+    "single_run_range_backfill": {
+      "partitions": 30,
+      "success": false,
+      "seconds": 8.1,
+      "failed_checks": "raw_freshness,systemic_fault_rate",
+      "partitions_materialized": {
+        "raw_readings": 30,
+        "cleaned_readings": 30,
+        "daily_aqi": 0,
+        "alerts": 0
+      },
+      "partitions_with_alerts_published": 0
+    },
+    "asset_checks": [
+      {
+        "asset": "cleaned_readings",
+        "check": "systemic_fault_rate",
+        "evaluations": 33,
+        "passed": 32,
+        "failed": 1
+      },
+      {
+        "asset": "cleaned_readings",
+        "check": "value_ranges",
+        "evaluations": 33,
+        "passed": 33,
+        "failed": 0
+      },
+      {
+        "asset": "daily_aqi",
+        "check": "aqi_coverage",
+        "evaluations": 32,
+        "passed": 32,
+        "failed": 0
+      },
+      {
+        "asset": "raw_readings",
+        "check": "raw_completeness",
+        "evaluations": 34,
+        "passed": 33,
+        "failed": 1
+      },
+      {
+        "asset": "raw_readings",
+        "check": "raw_freshness",
+        "evaluations": 34,
+        "passed": 33,
+        "failed": 1
+      },
+      {
+        "asset": "raw_readings",
+        "check": "raw_schema",
+        "evaluations": 34,
+        "passed": 34,
+        "failed": 0
+      }
+    ],
+    "check_evaluations_total": 200,
+    "check_evaluations_failed": 3,
+    "failed_check_evaluations": [
+      {
+        "phase": "backfill",
+        "partition": "2026-09-12",
+        "asset": "raw_readings",
+        "check": "raw_completeness",
+        "passed": false,
+        "severity": "ERROR",
+        "value": 0.5632
+      },
+      {
+        "phase": "backfill",
+        "partition": "2026-09-24",
+        "asset": "cleaned_readings",
+        "check": "systemic_fault_rate",
+        "passed": false,
+        "severity": "ERROR",
+        "value": 0.1411
+      },
+      {
+        "phase": "sensor",
+        "partition": "2026-09-12",
+        "asset": "raw_readings",
+        "check": "raw_freshness",
+        "passed": false,
+        "severity": "WARN",
+        "value": 93.6
+      }
+    ]
+  },
+  "warehouse_rows": {
+    "raw_readings": 211658,
+    "cleaned_readings": 210628,
+    "daily_aqi": 8681,
+    "station_health": 8700,
+    "sensor_drift": 8700,
+    "alerts": 353
+  },
+  "cleaning": {
+    "duplicates_removed": 1030,
+    "flatline": 5133,
+    "spike": 585,
+    "out_of_range": 5112
+  },
+  "station_health_station_days": {
+    "ok": 8372,
+    "offline": 19,
+    "degraded": 309
+  },
+  "alerts": {
+    "station_alerts_published": 353,
+    "regional_advisories": 15,
+    "truth_station_day_alerts": 357,
+    "pipeline_all_days": {
+      "predicted": 353,
+      "true": 357,
+      "true_positives": 341,
+      "precision": 0.966,
+      "recall": 0.9552,
+      "f1": 0.9606
+    },
+    "naive_all_days": {
+      "predicted": 797,
+      "true": 357,
+      "true_positives": 343,
+      "precision": 0.4304,
+      "recall": 0.9608,
+      "f1": 0.5945
+    },
+    "pipeline_published_days": {
+      "predicted": 353,
+      "true": 357,
+      "true_positives": 341,
+      "precision": 0.966,
+      "recall": 0.9552,
+      "f1": 0.9606
+    },
+    "naive_published_days": {
+      "predicted": 667,
+      "true": 357,
+      "true_positives": 343,
+      "precision": 0.5142,
+      "recall": 0.9608,
+      "f1": 0.6699
+    },
+    "naive_false_alerts_from_drifting_stations": 36,
+    "pipeline_false_alerts_from_drifting_stations": 1,
+    "naive_false_alerts_on_unit_bug_day": 130,
+    "truth_alerts_by_category": {
+      "Unhealthy for Sensitive Groups": 297,
+      "Unhealthy": 60
+    }
+  },
+  "drift_detection": {
+    "drifting_stations_true": 15,
+    "on_last_day": {
+      "predicted": 10,
+      "true": 15,
+      "true_positives": 10,
+      "precision": 1.0,
+      "recall": 0.6667,
+      "f1": 0.8
+    },
+    "ever_flagged": {
+      "predicted": 15,
+      "true": 15,
+      "true_positives": 15,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "false_suspect_station_days": 0,
+    "detection_delay_days_median": 4.0,
+    "detection_delay_days_max": 7.0,
+    "rate_abs_error_median_ug_m3_per_day": 0.031
+  },
+  "runtime_seconds_total": 89.1
+}
