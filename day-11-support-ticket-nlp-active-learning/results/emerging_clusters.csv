@@ -1,0 +1,6 @@
+cluster,size,majority_intent,purity,keywords
+3,79,check_cancellation_fee,0.9873417721518988,"termination, early termination, check, early, termination fee, termination fees"
+0,71,newsletter_subscription,0.9859154929577465,"subscription, company, newsletter, company newsletter, cancel, newsletter subscription"
+1,68,newsletter_subscription,0.9558823529411765,"newsletter, corporate, corporate newsletter, unsubscribe, subscribe, subscribe newsletter"
+4,38,check_cancellation_fee,1.0,"withdrawal, check withdrawal, withdrawal penalties, withdrawal fees, withdrawal penalty, penalties"
+2,34,check_cancellation_fee,1.0,"exit, early exit, early, exit fee, check early, fee"

@@ -28,7 +28,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 08 | II Expert | [Telecom Retention: Survival Analysis + Uplift Modelling](./day-08-telecom-churn-survival-uplift/) | Telecommunications | lifelines, scikit-survival, CausalML | ✅ | [prompt](./prompts/day-08.md) | Uplift targeting nets $500k vs $359k for churn-score targeting (+39%, ROI 1.19 vs 0.86) on a $400k budget, 65k-customer synthetic holdout; PH violation fixed by contract strata |
 | 09 | II Expert | [Clickstream Sessionisation at Scale with PySpark + Delta Lake](./day-09-clickstream-spark-delta/) | Media & e-commerce | PySpark, Delta Lake, Spark SQL | ✅ | [prompt](./prompts/day-09.md) | 13.9M synthetic event deliveries: 99.995% exact session recovery, idempotent replay (0 rows changed), AQE skew join 1.76x faster |
 | 10 | II Expert | [Air Quality Intelligence with Dagster Software-Defined Assets](./day-10-air-quality-dagster-assets/) | Environment & climate | Dagster, DuckDB, pandas | ✅ | [prompt](./prompts/day-10.md) | 300 synthetic stations x 30 daily partitions: blocking checks withheld 130 false alerts on a unit-bug day; alert precision 0.966 vs 0.430 naive; late-data sensor re-ran exactly 4 partitions |
-| 11 | II Expert | [Support Ticket Intelligence: NLP Classification with Active Learning](./day-11-support-ticket-nlp-active-learning/) | Customer operations | spaCy, sentence-transformers, scikit-learn | ⏳ Planned | [prompt](./prompts/day-11.md) | |
+| 11 | II Expert | [Support Ticket Intelligence: NLP Classification with Active Learning](./day-11-support-ticket-nlp-active-learning/) | Customer operations | spaCy, sentence-transformers, scikit-learn | ✅ | [prompt](./prompts/day-11.md) | Margin active learning with 2% of labels: macro-F1 0.974 vs 0.913 random on 27 Bitext intents (random needs 3x labels); PII redaction recall 99.93% on 23,664 synthetic spans |
 | 12 | II Expert | [Did the Programme Work? Causal Inference with Double ML](./day-12-policy-causal-inference-dml/) | Public policy & workforce | DoWhy, EconML, statsmodels | ⏳ Planned | [prompt](./prompts/day-12.md) | |
 | 13 | II Expert | [Anti-Money-Laundering with Transaction Graph Analytics](./day-13-aml-transaction-graph-analytics/) | Banking & compliance | NetworkX, igraph, PyTorch Geometric (optional) | ⏳ Planned | [prompt](./prompts/day-13.md) | |
 | 14 | II Expert | [Streaming Predictive Maintenance for Manufacturing IoT](./day-14-iot-streaming-anomaly-detection/) | Manufacturing | River, Bytewax or asyncio, Kafka (optional) | ⏳ Planned | [prompt](./prompts/day-14.md) | |
@@ -49,7 +49,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ⏳ Planned | [prompt](./prompts/day-29.md) | |
 | 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
 
-Last build: 2026-10-20
+Last build: 2026-10-21
 <!-- PROGRESS:END -->
 
 ## How each project is structured

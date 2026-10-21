@@ -1,0 +1,43 @@
+# Hand-written, hand-labelled PII test set (all identities are fictitious).
+# Phrasings are deliberately different from the templates in src/ticket_intel/augment.py.
+# Markup: [[TYPE:value]] marks a gold PII span; TYPE is NAME, EMAIL or PHONE. One ticket per line.
+Please ask [[NAME:Margaret Thompson]] in accounts to resend the invoice.
+I spoke with [[NAME:Kevin O'Brien]] yesterday but nothing changed.
+Can you transfer the account to [[NAME:Amelia Watson]]? Her address is [[EMAIL:amelia.w@example.co.uk]].
+ping me on whatsapp [[PHONE:+44 7700 900123]] when the refund is done
+The order was placed by my colleague [[NAME:Rajesh Kumar]] last Tuesday.
+reach out to [[EMAIL:billing-team@acme.example.com]] for the PO
+My manager [[NAME:Sarah Connor]] says the charge is wrong.
+call [[PHONE:(212) 555-0198]] after 5pm please
+Signed up under [[EMAIL:j.doe+support@example.org]] but never got the code
+[[NAME:Mohammed Al-Farsi]] requested the cancellation, not me.
+Our admin [[NAME:Lena Fischer]] cannot log in.
+please forward to [[NAME:Thomas Becker]], phone [[PHONE:+49 151 23456789]]
+I am writing on behalf of [[NAME:Isabelle Laurent]] regarding order #448812.
+my phone changed to [[PHONE:07700 900456]], update it
+Invoice should be addressed to Dr. [[NAME:Alan Grant]] not to me.
+Contact [[NAME:Ji-woo Park]] at [[EMAIL:jiwoo.park@example.kr]] for delivery questions.
+Refund of 49.99 to card ending 4242 was never received.
+The parcel for order ORD-558123 is late again.
+we were billed on 2026-03-14 for 3 seats
+Shipping address is 221B Baker Street, London.
+[[NAME:Robert Chen]] from procurement needs a copy of invoice INV-20231.
+Phone: [[PHONE:+1-415-555-0110]]
+Email me: [[EMAIL:ops@startup.example.io]]
+Hi team, [[NAME:Fiona Gallagher]] again - any update?
+tell [[NAME:Pedro Alvarez]] his account is unlocked
+Please don't call [[PHONE:+33 6 12 34 56 78]] anymore.
+I bought it as a gift for [[NAME:Hannah Schmidt]].
+my wife [[NAME:Yasmin Haddad]] placed the order using [[EMAIL:yasmin.h@example.net]]
+Cancel order 7731 placed under [[NAME:George Miller]].
+best way to reach me is [[PHONE:555-867-5309]]
+The courier gave the parcel to [[NAME:Olivia Martinez]] next door.
+[[NAME:Brian Walsh]] here, still waiting on that refund.
+Kind regards, [[NAME:Eleanor Rigby]]
+Please update the account email to [[EMAIL:new.address@example.com]] and phone to [[PHONE:+61 412 345 678]].
+The newsletter keeps arriving at [[EMAIL:old_mail@example.org]] even after I unsubscribed.
+I need the invoice for the order shipped to Toronto on Friday.
+Ask for [[NAME:Nikolai Petrov]] at the front desk.
+My son [[NAME:Leo Rossi]] made a purchase without my permission.
+Change the delivery name from [[NAME:Chris Evans]] to [[NAME:Christina Evans]].
+reply to [[EMAIL:Priya.Sharma@Example.com]] not to the noreply address

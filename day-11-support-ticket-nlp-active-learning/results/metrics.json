@@ -1,0 +1,368 @@
+{
+  "run": "full",
+  "seed": 20261021,
+  "python": "3.11.17",
+  "data": {
+    "requested": "auto",
+    "download": "cache",
+    "path": "bitext",
+    "data_source": "PUBLIC: Bitext customer-support corpus (CDLA-Sharing-1.0) + SYNTHETIC PII/snippet layer",
+    "n_tickets": 26872,
+    "n_intents": 27,
+    "pii_ticket_share": 0.3702,
+    "snippet_ticket_share": 0.0784
+  },
+  "pii": {
+    "generator_labelled": {
+      "n_gold_spans": 23664,
+      "recall_any_label": 0.9993,
+      "recall_typed": 0.9993,
+      "char_precision": 0.9816,
+      "false_positive_spans": 204,
+      "clean_tickets": 16923,
+      "clean_ticket_false_redaction_rate": 0.0064,
+      "per_type": {
+        "EMAIL": {
+          "n": 5236,
+          "recall_any_label": 1.0,
+          "recall_typed": 1.0
+        },
+        "NAME": {
+          "n": 13301,
+          "recall_any_label": 0.9988,
+          "recall_typed": 0.9988
+        },
+        "PHONE": {
+          "n": 5127,
+          "recall_any_label": 1.0,
+          "recall_typed": 1.0
+        }
+      }
+    },
+    "ablations": {
+      "ner_plus_regex_no_cues": {
+        "n_gold_spans": 23664,
+        "recall_any_label": 0.9566,
+        "recall_typed": 0.9566,
+        "char_precision": 0.982,
+        "false_positive_spans": 171,
+        "clean_tickets": 16923,
+        "clean_ticket_false_redaction_rate": 0.0058,
+        "per_type": {
+          "EMAIL": {
+            "n": 5236,
+            "recall_any_label": 1.0,
+            "recall_typed": 1.0
+          },
+          "NAME": {
+            "n": 13301,
+            "recall_any_label": 0.9228,
+            "recall_typed": 0.9228
+          },
+          "PHONE": {
+            "n": 5127,
+            "recall_any_label": 1.0,
+            "recall_typed": 1.0
+          }
+        }
+      },
+      "regex_and_cues_no_ner": {
+        "n_gold_spans": 23664,
+        "recall_any_label": 0.9992,
+        "recall_typed": 0.9992,
+        "char_precision": 0.9948,
+        "false_positive_spans": 221,
+        "clean_tickets": 16923,
+        "clean_ticket_false_redaction_rate": 0.0087,
+        "per_type": {
+          "EMAIL": {
+            "n": 5236,
+            "recall_any_label": 1.0,
+            "recall_typed": 1.0
+          },
+          "NAME": {
+            "n": 13301,
+            "recall_any_label": 0.9985,
+            "recall_typed": 0.9985
+          },
+          "PHONE": {
+            "n": 5127,
+            "recall_any_label": 1.0,
+            "recall_typed": 1.0
+          }
+        }
+      }
+    },
+    "hand_labelled": {
+      "n_gold_spans": 41,
+      "recall_any_label": 1.0,
+      "recall_typed": 1.0,
+      "char_precision": 0.9876,
+      "false_positive_spans": 0,
+      "clean_tickets": 5,
+      "clean_ticket_false_redaction_rate": 0.0,
+      "per_type": {
+        "EMAIL": {
+          "n": 9,
+          "recall_any_label": 1.0,
+          "recall_typed": 1.0
+        },
+        "NAME": {
+          "n": 24,
+          "recall_any_label": 1.0,
+          "recall_typed": 1.0
+        },
+        "PHONE": {
+          "n": 8,
+          "recall_any_label": 1.0,
+          "recall_typed": 1.0
+        }
+      }
+    },
+    "spacy_ner_available": true,
+    "synthetic_email_domains_left_after_redaction": 0,
+    "criterion_recall_ge_0_95_met": true
+  },
+  "embedder": {
+    "backend": "spacy:en_core_web_md mean word vectors",
+    "note": "sentence-transformers unavailable (ModuleNotFoundError: No module named 'sentence_transformers')"
+  },
+  "classification": {
+    "tfidf_full_labels": {
+      "macro_f1": 0.9993,
+      "accuracy": 0.9993
+    },
+    "emb_full_labels": {
+      "macro_f1": 0.9413,
+      "accuracy": 0.9412
+    },
+    "tfidf_al_margin_2pct": {
+      "macro_f1": 0.9757,
+      "accuracy": 0.9756
+    },
+    "tfidf_random_2pct": {
+      "macro_f1": 0.9327,
+      "accuracy": 0.9321
+    },
+    "emb_random_2pct": {
+      "macro_f1": 0.6641,
+      "accuracy": 0.6636
+    }
+  },
+  "active_learning": {
+    "pool_size": 21497,
+    "test_size": 5375,
+    "init_labels": 21,
+    "batch_labels": 11,
+    "budget_labels": 430,
+    "repeats": 5,
+    "by_features": {
+      "tfidf": {
+        "random_f1_at_budget": 0.9132,
+        "strategies": {
+          "entropy": {
+            "f1_at_budget_mean": 0.9264,
+            "f1_at_budget_std": 0.0081,
+            "f1_at_half_budget_mean": 0.7713,
+            "labels_to_match_random_at_budget": 395,
+            "label_share_to_match_random": 0.9186,
+            "label_share_per_repeat": [
+              null,
+              0.7651,
+              0.9186,
+              0.8163,
+              0.9953
+            ]
+          },
+          "margin": {
+            "f1_at_budget_mean": 0.9737,
+            "f1_at_budget_std": 0.0035,
+            "f1_at_half_budget_mean": 0.8655,
+            "labels_to_match_random_at_budget": 274,
+            "label_share_to_match_random": 0.6372,
+            "label_share_per_repeat": [
+              0.7395,
+              0.6372,
+              0.5349,
+              0.6116,
+              0.6884
+            ]
+          },
+          "margin_diverse": {
+            "f1_at_budget_mean": 0.9785,
+            "f1_at_budget_std": 0.0037,
+            "f1_at_half_budget_mean": 0.876,
+            "labels_to_match_random_at_budget": 274,
+            "label_share_to_match_random": 0.6372,
+            "label_share_per_repeat": [
+              0.6628,
+              0.6372,
+              0.5605,
+              0.6372,
+              0.586
+            ]
+          },
+          "random": {
+            "f1_at_budget_mean": 0.9132,
+            "f1_at_budget_std": 0.0154,
+            "f1_at_half_budget_mean": 0.7926,
+            "labels_to_match_random_at_budget": 430,
+            "label_share_to_match_random": 1.0,
+            "label_share_per_repeat": [
+              1.0,
+              1.0,
+              0.9953,
+              1.0,
+              0.9953
+            ]
+          }
+        }
+      },
+      "emb": {
+        "random_f1_at_budget": 0.6554,
+        "strategies": {
+          "margin": {
+            "f1_at_budget_mean": 0.6933,
+            "f1_at_budget_std": 0.0131,
+            "f1_at_half_budget_mean": 0.5122,
+            "labels_to_match_random_at_budget": 362,
+            "label_share_to_match_random": 0.8419,
+            "label_share_per_repeat": [
+              0.8163,
+              0.8674,
+              0.8419,
+              0.8674,
+              0.8419
+            ]
+          },
+          "random": {
+            "f1_at_budget_mean": 0.6554,
+            "f1_at_budget_std": 0.0116,
+            "f1_at_half_budget_mean": 0.5067,
+            "labels_to_match_random_at_budget": 430,
+            "label_share_to_match_random": 1.0,
+            "label_share_per_repeat": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        }
+      }
+    },
+    "primary": "tfidf / margin",
+    "criterion_label_share_le_0_5_met": false,
+    "random_labels_to_reach_al_f1": 1290,
+    "random_extended_curve": {
+      "n_labels": [
+        430,
+        645,
+        860,
+        1290,
+        1720,
+        2580,
+        4300
+      ],
+      "macro_f1": [
+        0.9162,
+        0.9525,
+        0.9657,
+        0.9808,
+        0.9874,
+        0.9931,
+        0.996
+      ]
+    }
+  },
+  "abstention": {
+    "model": "tfidf + LR trained on the 2% margin-AL labels (repeat 0)",
+    "target_accuracy": 0.95,
+    "threshold_from_5fold_cv_on_labelled_set": 0.5076,
+    "test_coverage": 0.814,
+    "test_accuracy_auto_routed": 0.9959,
+    "test_accuracy_all": 0.9756,
+    "test_accuracy_sent_to_humans": 0.887
+  },
+  "topics": {
+    "representation": "LSA: TF-IDF(boilerplate-stripped text) -> TruncatedSVD(100) -> L2",
+    "quality": {
+      "n_clusters": 52,
+      "noise_share": 0.0904,
+      "nmi_all": 0.7114,
+      "ari_all": 0.4186,
+      "nmi_clustered": 0.7609,
+      "ari_clustered": 0.5116
+    },
+    "clusters_purity_ge_0_8": 26,
+    "intents_with_a_pure_cluster": 17,
+    "quality_embedder": {
+      "representation": "spacy:en_core_web_md mean word vectors",
+      "n_clusters": 29,
+      "noise_share": 0.1645,
+      "nmi_all": 0.5835,
+      "ari_all": 0.2518,
+      "nmi_clustered": 0.678,
+      "ari_clustered": 0.3459
+    },
+    "emerging": {
+      "holdout_intents": [
+        "check_cancellation_fee",
+        "newsletter_subscription"
+      ],
+      "confidence_threshold": 0.5,
+      "flagged_share_of_new_intent_tickets": 0.7308,
+      "flagged_share_of_known_intent_tickets": 0.001,
+      "n_flagged": 290,
+      "new_intent_share_of_flagged": 0.9828,
+      "per_intent": {
+        "check_cancellation_fee": {
+          "clusters_with_this_majority": 3,
+          "recall_in_those_clusters": 0.7895,
+          "purity_of_those_clusters": 0.9934,
+          "test_tickets": 190,
+          "best_cluster_size": 79,
+          "best_cluster_recall": 0.4105,
+          "best_cluster_purity": 0.9873,
+          "best_cluster_keywords": [
+            "termination",
+            "early termination",
+            "check",
+            "early",
+            "termination fee",
+            "termination fees"
+          ]
+        },
+        "newsletter_subscription": {
+          "clusters_with_this_majority": 2,
+          "recall_in_those_clusters": 0.675,
+          "purity_of_those_clusters": 0.9712,
+          "test_tickets": 200,
+          "best_cluster_size": 71,
+          "best_cluster_recall": 0.35,
+          "best_cluster_purity": 0.9859,
+          "best_cluster_keywords": [
+            "subscription",
+            "company",
+            "newsletter",
+            "company newsletter",
+            "cancel",
+            "newsletter subscription"
+          ]
+        }
+      },
+      "n_clusters_on_flagged": 5
+    }
+  },
+  "timings_s": {
+    "data_s": 3.6233,
+    "pii_s": 128.0615,
+    "features_s": 11.5933,
+    "baselines_s": 18.4735,
+    "active_learning_s": 83.6819,
+    "abstention_s": 2.8535,
+    "topics_s": 87.0657,
+    "total_s": 374.9829
+  }
+}
