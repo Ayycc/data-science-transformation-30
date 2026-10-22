@@ -1,0 +1,19 @@
+[project]
+name = "policy-causal-inference-dml"
+version = "1.0.0"
+description = "Day 12: Did the Programme Work? Causal Inference with Double ML"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501", "B008", "B023"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q -p no:warnings"

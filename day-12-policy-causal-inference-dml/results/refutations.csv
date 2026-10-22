@@ -1,0 +1,8 @@
+outcome,test,original,new_effect,change_pct,dowhy_p_value,simulations,pass_rule,passed
+earnings_post,placebo_treatment,2255.0725,17.1176,-99.2409,0.3766,20.0000,|placebo effect| < 10% of the estimate,True
+earnings_post,random_common_cause,2255.0725,2252.5824,-0.1104,0.3552,20.0000,estimate moves < 5%,True
+earnings_post,data_subset_80pct,2255.0725,2237.0832,-0.7977,0.2680,20.0000,estimate moves < 10%,True
+employed_post,placebo_treatment,0.1288,0.0009,-99.2829,0.4463,20.0000,|placebo effect| < 10% of the estimate,True
+employed_post,random_common_cause,0.1288,0.1283,-0.4004,0.2569,20.0000,estimate moves < 5%,True
+employed_post,data_subset_80pct,0.1288,0.1270,-1.4166,0.3131,20.0000,estimate moves < 10%,True
+prior_earn_2,negative_control_outcome,,27.1212,,,,95% CI contains 0,True

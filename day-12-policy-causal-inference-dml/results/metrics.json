@@ -1,0 +1,896 @@
+{
+  "data": {
+    "individual_path": "synthetic (seeded generator; by design, truth must be known)",
+    "panel_path": "synthetic (seeded generator)",
+    "lalonde_path": "download",
+    "seed": 20261022,
+    "n_people": 20000,
+    "n_counties": 60,
+    "n_quarters": 24,
+    "cohorts": {
+      "8": 15,
+      "12": 15,
+      "16": 15
+    },
+    "never_treated_counties": 15,
+    "share_enrolled": 0.58255,
+    "quick_mode": false
+  },
+  "truth": {
+    "ate_earnings": 2283.0547671554036,
+    "att_earnings": 2629.109084397776,
+    "ate_employment": 0.1121219309424577,
+    "att_employment": 0.1317293993704964,
+    "panel_att_overall": 1.47
+  },
+  "identification": {
+    "dowhy_backdoor_set": [
+      "age",
+      "educ",
+      "female",
+      "prior_earn_1",
+      "unemployed_base",
+      "urban"
+    ],
+    "dowhy_instruments": [
+      "distance_km"
+    ],
+    "adjustment_set_used": [
+      "age",
+      "female",
+      "educ",
+      "married",
+      "urban",
+      "unemployed_base",
+      "prior_earn_1",
+      "prior_earn_2"
+    ],
+    "checks": {
+      "earnings_post": {
+        "minimal_set": [
+          "age",
+          "educ",
+          "female",
+          "prior_earn_1",
+          "unemployed_base",
+          "urban"
+        ],
+        "chosen_set_valid": true,
+        "chosen_plus_certificate_valid": false,
+        "empty_set_valid": false
+      },
+      "employed_post": {
+        "minimal_set": [
+          "age",
+          "educ",
+          "prior_earn_1",
+          "unemployed_base",
+          "urban"
+        ],
+        "chosen_set_valid": true,
+        "chosen_plus_certificate_valid": false,
+        "empty_set_valid": false
+      },
+      "descendants_of_treatment": [
+        "certificate",
+        "earnings_post",
+        "employed_post"
+      ],
+      "n_nodes": 14,
+      "n_edges": 43
+    }
+  },
+  "acceptance": {
+    "headline_estimator": "DML LinearDML, CATE linear in X",
+    "earnings_ate": 2242.8570673229456,
+    "earnings_ci": [
+      2110.785863073438,
+      2374.928271572453
+    ],
+    "earnings_truth_in_ci": true,
+    "employment_ate": 0.12862556886440737,
+    "employment_ci": [
+      0.11354801781954764,
+      0.1437031199092671
+    ],
+    "employment_truth_in_ci": false,
+    "naive_bias_earnings": -5101.135396490628,
+    "naive_bias_employment": -0.06599174384114836,
+    "naive_bias_earnings_pct_of_truth": -223.43464860663164,
+    "naive_bias_employment_pct_of_truth": -58.857123924324945,
+    "refutation_tests_reported": 7,
+    "refutation_tests_passed": 7
+  },
+  "estimates": [
+    {
+      "outcome": "earnings_post",
+      "method": "Naive difference in means",
+      "family": "naive",
+      "estimate": -2818.0806293352252,
+      "ci_low": -3044.7534858626077,
+      "ci_high": -2591.407772807843,
+      "true_ate": 2283.0547671554036,
+      "bias": -5101.135396490628,
+      "truth_in_ci": false
+    },
+    {
+      "outcome": "earnings_post",
+      "method": "OLS + confounders",
+      "family": "regression",
+      "estimate": 1937.3196765470748,
+      "ci_low": 1810.6007892172254,
+      "ci_high": 2064.0385638769244,
+      "true_ate": 2283.0547671554036,
+      "bias": -345.73509060832885,
+      "truth_in_ci": false
+    },
+    {
+      "outcome": "earnings_post",
+      "method": "OLS + confounders + certificate (bad control)",
+      "family": "regression",
+      "estimate": 587.3477720283234,
+      "ci_low": 440.6567314989099,
+      "ci_high": 734.038812557737,
+      "true_ate": 2283.0547671554036,
+      "bias": -1695.70699512708,
+      "truth_in_ci": false
+    },
+    {
+      "outcome": "employed_post",
+      "method": "Naive difference in means",
+      "family": "naive",
+      "estimate": 0.04613018710130934,
+      "ci_low": 0.03241183450334084,
+      "ci_high": 0.059848539699277836,
+      "true_ate": 0.1121219309424577,
+      "bias": -0.06599174384114836,
+      "truth_in_ci": false
+    },
+    {
+      "outcome": "employed_post",
+      "method": "OLS + confounders",
+      "family": "regression",
+      "estimate": 0.10900196680918008,
+      "ci_low": 0.09468190759328012,
+      "ci_high": 0.12332202602508004,
+      "true_ate": 0.1121219309424577,
+      "bias": -0.003119964133277628,
+      "truth_in_ci": true
+    },
+    {
+      "outcome": "employed_post",
+      "method": "OLS + confounders + certificate (bad control)",
+      "family": "regression",
+      "estimate": 0.039454288521368355,
+      "ci_low": 0.022334929107676593,
+      "ci_high": 0.05657364793506012,
+      "true_ate": 0.1121219309424577,
+      "bias": -0.07266764242108935,
+      "truth_in_ci": false
+    },
+    {
+      "outcome": "earnings_post",
+      "method": "IPW (Hajek, logistic PS)",
+      "family": "propensity",
+      "estimate": 2222.9332582755414,
+      "ci_low": 2006.0304075553468,
+      "ci_high": 2439.836108995736,
+      "true_ate": 2283.0547671554036,
+      "bias": -60.121508879862176,
+      "truth_in_ci": true
+    },
+    {
+      "outcome": "earnings_post",
+      "method": "PS matching 1:1, caliper 0.2 SD",
+      "family": "propensity",
+      "estimate": 2219.79740818573,
+      "ci_low": 2020.6517189972749,
+      "ci_high": 2418.943097374185,
+      "true_ate": 2283.0547671554036,
+      "bias": -63.25735896967353,
+      "truth_in_ci": true
+    },
+    {
+      "outcome": "employed_post",
+      "method": "IPW (Hajek, logistic PS)",
+      "family": "propensity",
+      "estimate": 0.12802889842423626,
+      "ci_low": 0.11198718553718402,
+      "ci_high": 0.1440706113112885,
+      "true_ate": 0.1121219309424577,
+      "bias": 0.015906967481778556,
+      "truth_in_ci": true
+    },
+    {
+      "outcome": "employed_post",
+      "method": "PS matching 1:1, caliper 0.2 SD",
+      "family": "propensity",
+      "estimate": 0.13024116881817271,
+      "ci_low": 0.11213381438767978,
+      "ci_high": 0.14834852324866565,
+      "true_ate": 0.1121219309424577,
+      "bias": 0.01811923787571501,
+      "truth_in_ci": false
+    },
+    {
+      "outcome": "earnings_post",
+      "method": "DML partialling-out, constant effect",
+      "family": "dml",
+      "estimate": 2029.6224724519786,
+      "ci_low": 1900.7959577534652,
+      "ci_high": 2158.448987150492,
+      "true_ate": 2283.0547671554036,
+      "bias": -253.432294703425,
+      "truth_in_ci": false
+    },
+    {
+      "outcome": "earnings_post",
+      "method": "DML LinearDML, CATE linear in X (headline)",
+      "family": "dml",
+      "estimate": 2242.8570673229456,
+      "ci_low": 2110.785863073438,
+      "ci_high": 2374.928271572453,
+      "true_ate": 2283.0547671554036,
+      "bias": -40.197699832458056,
+      "truth_in_ci": true
+    },
+    {
+      "outcome": "earnings_post",
+      "method": "DML DR-learner (cross-fitted AIPW)",
+      "family": "dml",
+      "estimate": 2200.0919093573157,
+      "ci_low": 2063.1086688396535,
+      "ci_high": 2337.075149874978,
+      "true_ate": 2283.0547671554036,
+      "bias": -82.96285779808795,
+      "truth_in_ci": true
+    },
+    {
+      "outcome": "earnings_post",
+      "method": "Causal forest (DR average of CATE)",
+      "family": "dml",
+      "estimate": 2206.1532778043443,
+      "ci_low": 2069.925970842769,
+      "ci_high": 2342.3805847659196,
+      "true_ate": 2283.0547671554036,
+      "bias": -76.90148935105935,
+      "truth_in_ci": true
+    },
+    {
+      "outcome": "employed_post",
+      "method": "DML partialling-out, constant effect",
+      "family": "dml",
+      "estimate": 0.11284767345813485,
+      "ci_low": 0.09842942794835709,
+      "ci_high": 0.12726591896791262,
+      "true_ate": 0.1121219309424577,
+      "bias": 0.0007257425156771413,
+      "truth_in_ci": true
+    },
+    {
+      "outcome": "employed_post",
+      "method": "DML LinearDML, CATE linear in X (headline)",
+      "family": "dml",
+      "estimate": 0.12862556886440737,
+      "ci_low": 0.11354801781954764,
+      "ci_high": 0.1437031199092671,
+      "true_ate": 0.1121219309424577,
+      "bias": 0.01650363792194967,
+      "truth_in_ci": false
+    },
+    {
+      "outcome": "employed_post",
+      "method": "DML DR-learner (cross-fitted AIPW)",
+      "family": "dml",
+      "estimate": 0.12798028248824714,
+      "ci_low": 0.11257906925049364,
+      "ci_high": 0.14338149572600062,
+      "true_ate": 0.1121219309424577,
+      "bias": 0.015858351545789434,
+      "truth_in_ci": false
+    },
+    {
+      "outcome": "employed_post",
+      "method": "Causal forest (DR average of CATE)",
+      "family": "dml",
+      "estimate": 0.12771760385897432,
+      "ci_low": 0.11228682127309118,
+      "ci_high": 0.14314838644485747,
+      "true_ate": 0.1121219309424577,
+      "bias": 0.015595672916516617,
+      "truth_in_ci": false
+    },
+    {
+      "outcome": "earnings_post",
+      "method": "DoWhy + econml LinearDML (minimal backdoor set)",
+      "family": "dml",
+      "estimate": 2255.072472285848,
+      "ci_low": null,
+      "ci_high": null,
+      "true_ate": 2283.0547671554036,
+      "bias": -27.982294869555517,
+      "truth_in_ci": false
+    },
+    {
+      "outcome": "employed_post",
+      "method": "DoWhy + econml LinearDML (minimal backdoor set)",
+      "family": "dml",
+      "estimate": 0.12879181550719943,
+      "ci_low": null,
+      "ci_high": null,
+      "true_ate": 0.1121219309424577,
+      "bias": 0.01666988456474172,
+      "truth_in_ci": false
+    }
+  ],
+  "propensity_diagnostics": {
+    "ps_min": 0.1235644398613649,
+    "ps_max": 0.99,
+    "share_ps_outside_0.05_0.95": 0.0368,
+    "max_abs_smd_raw": 0.6953312177141576,
+    "max_abs_smd_ipw": 0.006283415521549359,
+    "max_abs_smd_matched": 0.012849473279452881,
+    "ess_treated_ipw": 10028.863646565698,
+    "ess_control_ipw": 4201.464730759658,
+    "n_treated": 11651,
+    "n_control": 8349,
+    "share_matched_within_caliper": 0.9993,
+    "caliper_logit_ps": 0.2249072501917988,
+    "n_boot": 200
+  },
+  "dml": {
+    "earnings_post": {
+      "overlap_weighted": {
+        "estimate": 2029.6224724519786,
+        "ci_low": 1900.7959577534652,
+        "ci_high": 2158.448987150492,
+        "se": 65.72902088942112
+      },
+      "linear_dml": {
+        "estimate": 2242.8570673229456,
+        "ci_low": 2110.785863073438,
+        "ci_high": 2374.928271572453,
+        "se": 67.38450514882285,
+        "coef": {
+          "unemployed_base": 2082.812495434138,
+          "educ": -228.1305063281232,
+          "age": -34.171461530978384,
+          "female": 223.966523875778,
+          "prior_earn_1": 0.047285121060111526,
+          "urban": -370.532597414963
+        },
+        "intercept": 5053.725023853466
+      },
+      "dr_learner": {
+        "estimate": 2200.0919093573157,
+        "ci_low": 2063.1086688396535,
+        "ci_high": 2337.075149874978,
+        "se": 69.89069213396886
+      },
+      "causal_forest": {
+        "estimate": 2206.1532778043443,
+        "ci_low": 2069.925970842769,
+        "ci_high": 2342.3805847659196,
+        "se": 69.50500466415471
+      }
+    },
+    "employed_post": {
+      "overlap_weighted": {
+        "estimate": 0.11284767345813485,
+        "ci_low": 0.09842942794835709,
+        "ci_high": 0.12726591896791262,
+        "se": 0.007356382826305873
+      },
+      "linear_dml": {
+        "estimate": 0.12862556886440737,
+        "ci_low": 0.11354801781954764,
+        "ci_high": 0.1437031199092671,
+        "se": 0.007692769379876226,
+        "coef": {
+          "unemployed_base": 0.11208860050140276,
+          "educ": -0.014309250071220558,
+          "age": -0.002781744315050593,
+          "female": -0.023055974474178387,
+          "prior_earn_1": 3.1307648101254386e-07,
+          "urban": -0.0024631462581919564
+        },
+        "intercept": 0.3947777606215095
+      },
+      "dr_learner": {
+        "estimate": 0.12798028248824714,
+        "ci_low": 0.11257906925049364,
+        "ci_high": 0.14338149572600062,
+        "se": 0.007857906184885787
+      },
+      "causal_forest": {
+        "estimate": 0.12771760385897432,
+        "ci_low": 0.11228682127309118,
+        "ci_high": 0.14314838644485747,
+        "se": 0.007872992864095027
+      }
+    }
+  },
+  "coverage_study": {
+    "earnings_post": {
+      "replications": 10,
+      "coverage": 1.0,
+      "mean_bias": -5.587598304949552,
+      "mean_abs_bias": 48.104381862670195,
+      "mean_ci_width": 259.8112438829786
+    },
+    "employed_post": {
+      "replications": 10,
+      "coverage": 1.0,
+      "mean_bias": 0.00032359511554611584,
+      "mean_abs_bias": 0.005262576276101672,
+      "mean_ci_width": 0.029620902129508565
+    }
+  },
+  "cate": {
+    "earnings_post": {
+      "feature_importance": {
+        "unemployed_base": 0.675756902929842,
+        "educ": 0.044184906873423344,
+        "age": 0.15365508162415845,
+        "female": 0.0071585095893556775,
+        "prior_earn_1": 0.10935393627090856,
+        "urban": 0.009890662712311992
+      },
+      "targeting_top30": {
+        "share_targeted": 0.3,
+        "true_effect_top_by_cate": 3502.4007821715736,
+        "true_effect_random": 2283.0547671554036,
+        "true_effect_oracle_top": 3779.0029164324415,
+        "cate_true_corr": 0.7632426766175782
+      },
+      "subgroups_truth_in_ci": 11,
+      "subgroups_total": 11,
+      "subgroups": [
+        {
+          "group": "all",
+          "n": 20000,
+          "cate_mean": 2198.200721222508,
+          "ci_low": 1352.8467561391221,
+          "ci_high": 3043.554686305894,
+          "true_effect": 2283.0547671554036,
+          "truth_in_ci": true
+        },
+        {
+          "group": "unemployed at baseline",
+          "n": 4394,
+          "cate_mean": 3488.426396399863,
+          "ci_low": 2392.5335017546536,
+          "ci_high": 4584.319291045072,
+          "true_effect": 3888.613719251729,
+          "truth_in_ci": true
+        },
+        {
+          "group": "employed at baseline",
+          "n": 15606,
+          "cate_mean": 1834.9268767569627,
+          "ci_low": 1074.8708371051864,
+          "ci_high": 2594.9829164087387,
+          "true_effect": 1830.9961976621792,
+          "truth_in_ci": true
+        },
+        {
+          "group": "age < 30",
+          "n": 5632,
+          "cate_mean": 2615.5645866230843,
+          "ci_low": 1714.2096116668708,
+          "ci_high": 3516.919561579298,
+          "true_effect": 2984.5679028322907,
+          "truth_in_ci": true
+        },
+        {
+          "group": "age 30-44",
+          "n": 6988,
+          "cate_mean": 2368.8085228965824,
+          "ci_low": 1594.8120393907566,
+          "ci_high": 3142.805006402408,
+          "true_effect": 2372.055518243086,
+          "truth_in_ci": true
+        },
+        {
+          "group": "age 45+",
+          "n": 7380,
+          "cate_mean": 1718.1464382910067,
+          "ci_low": 852.4735447354902,
+          "ci_high": 2583.819331846523,
+          "true_effect": 1663.4261453758695,
+          "truth_in_ci": true
+        },
+        {
+          "group": "educ <= 11 (no diploma)",
+          "n": 7196,
+          "cate_mean": 2465.4891220459745,
+          "ci_low": 1587.8995712276874,
+          "ci_high": 3343.078672864261,
+          "true_effect": 2820.2149403616636,
+          "truth_in_ci": true
+        },
+        {
+          "group": "educ 12-13",
+          "n": 7051,
+          "cate_mean": 2138.813118293742,
+          "ci_low": 1339.582442407941,
+          "ci_high": 2938.0437941795426,
+          "true_effect": 2235.66669840755,
+          "truth_in_ci": true
+        },
+        {
+          "group": "educ >= 14",
+          "n": 5753,
+          "cate_mean": 1936.6562498032583,
+          "ci_low": 1077.5170212700727,
+          "ci_high": 2795.795478336444,
+          "true_effect": 1669.2408729000342,
+          "truth_in_ci": true
+        },
+        {
+          "group": "women",
+          "n": 10024,
+          "cate_mean": 2217.843465678946,
+          "ci_low": 1376.861227890582,
+          "ci_high": 3058.8257034673097,
+          "true_effect": 2441.37532127225,
+          "truth_in_ci": true
+        },
+        {
+          "group": "men",
+          "n": 9976,
+          "cate_mean": 2178.4634647638736,
+          "ci_low": 1328.739391908104,
+          "ci_high": 3028.187537619643,
+          "true_effect": 2123.972446138235,
+          "truth_in_ci": true
+        }
+      ],
+      "cate_rmse_vs_true": 790.7312875526583
+    },
+    "employed_post": {
+      "feature_importance": {
+        "unemployed_base": 0.18377081359572378,
+        "educ": 0.1356405292538365,
+        "age": 0.27633268113982734,
+        "female": 0.022290032815186416,
+        "prior_earn_1": 0.3558156668701003,
+        "urban": 0.02615027632532578
+      },
+      "targeting_top30": {
+        "share_targeted": 0.3,
+        "true_effect_top_by_cate": 0.1728946452088959,
+        "true_effect_random": 0.1121219309424577,
+        "true_effect_oracle_top": 0.2002352428232929,
+        "cate_true_corr": 0.6794533789926254
+      },
+      "subgroups_truth_in_ci": 11,
+      "subgroups_total": 11,
+      "subgroups": [
+        {
+          "group": "all",
+          "n": 20000,
+          "cate_mean": 0.12432741583974892,
+          "ci_low": 0.03172719067368404,
+          "ci_high": 0.2169276410058138,
+          "true_effect": 0.1121219309424577,
+          "truth_in_ci": true
+        },
+        {
+          "group": "unemployed at baseline",
+          "n": 4394,
+          "cate_mean": 0.18550815493040032,
+          "ci_low": 0.0691891230407804,
+          "ci_high": 0.30182718682002024,
+          "true_effect": 0.20859420635230777,
+          "truth_in_ci": true
+        },
+        {
+          "group": "employed at baseline",
+          "n": 15606,
+          "cate_mean": 0.10710146636106621,
+          "ci_low": 0.022368998398515333,
+          "ci_high": 0.1918339343236171,
+          "true_effect": 0.08495935384705329,
+          "truth_in_ci": true
+        },
+        {
+          "group": "age < 30",
+          "n": 5632,
+          "cate_mean": 0.16600320657357479,
+          "ci_low": 0.06242306242992583,
+          "ci_high": 0.2695833507172237,
+          "true_effect": 0.15594821661941427,
+          "truth_in_ci": true
+        },
+        {
+          "group": "age 30-44",
+          "n": 6988,
+          "cate_mean": 0.1261034985859114,
+          "ci_low": 0.039591646133305555,
+          "ci_high": 0.21261535103851725,
+          "true_effect": 0.1185497125566958,
+          "truth_in_ci": true
+        },
+        {
+          "group": "age 45+",
+          "n": 7380,
+          "cate_mean": 0.09084105816453336,
+          "ci_low": 0.0016024243554893236,
+          "ci_high": 0.18007969197357737,
+          "true_effect": 0.07258981998677813,
+          "truth_in_ci": true
+        },
+        {
+          "group": "educ <= 11 (no diploma)",
+          "n": 7196,
+          "cate_mean": 0.14806656051203745,
+          "ci_low": 0.04707207463928646,
+          "ci_high": 0.24906104638478843,
+          "true_effect": 0.13709928134023308,
+          "truth_in_ci": true
+        },
+        {
+          "group": "educ 12-13",
+          "n": 7051,
+          "cate_mean": 0.1272394227254118,
+          "ci_low": 0.038217940612233936,
+          "ci_high": 0.21626090483858965,
+          "true_effect": 0.11006010165343272,
+          "truth_in_ci": true
+        },
+        {
+          "group": "educ >= 14",
+          "n": 5753,
+          "cate_mean": 0.09106486662845091,
+          "ci_low": 0.0053984753541828495,
+          "ci_high": 0.17673125790271893,
+          "true_effect": 0.08340664237206372,
+          "truth_in_ci": true
+        },
+        {
+          "group": "women",
+          "n": 10024,
+          "cate_mean": 0.12123516810248774,
+          "ci_low": 0.027711805211637422,
+          "ci_high": 0.21475853099333808,
+          "true_effect": 0.11321546979398961,
+          "truth_in_ci": true
+        },
+        {
+          "group": "men",
+          "n": 9976,
+          "cate_mean": 0.127434542074543,
+          "ci_low": 0.03577125997036887,
+          "ci_high": 0.2190978241787171,
+          "true_effect": 0.11102313047656398,
+          "truth_in_ci": true
+        }
+      ],
+      "cate_rmse_vs_true": 0.05456994189748225
+    }
+  },
+  "refutations": {
+    "earnings_post": {
+      "dowhy_estimate": 2255.072472285848,
+      "backdoor_variables": [
+        "age",
+        "educ",
+        "female",
+        "prior_earn_1",
+        "unemployed_base",
+        "urban"
+      ],
+      "placebo_treatment": {
+        "original": 2255.072472285848,
+        "new_effect": 17.117642716131076,
+        "change_pct": -99.24092715748598,
+        "dowhy_p_value": 0.3766292686114907,
+        "simulations": 20,
+        "pass_rule": "|placebo effect| < 10% of the estimate",
+        "passed": true
+      },
+      "random_common_cause": {
+        "original": 2255.072472285848,
+        "new_effect": 2252.582393949841,
+        "change_pct": -0.11042121114108194,
+        "dowhy_p_value": 0.3551573023866157,
+        "simulations": 20,
+        "pass_rule": "estimate moves < 5%",
+        "passed": true
+      },
+      "data_subset_80pct": {
+        "original": 2255.072472285848,
+        "new_effect": 2237.0831516625153,
+        "change_pct": -0.79772693979533,
+        "dowhy_p_value": 0.26803927326992216,
+        "simulations": 20,
+        "pass_rule": "estimate moves < 10%",
+        "passed": true
+      }
+    },
+    "employed_post": {
+      "dowhy_estimate": 0.12879181550719943,
+      "backdoor_variables": [
+        "age",
+        "educ",
+        "prior_earn_1",
+        "unemployed_base",
+        "urban"
+      ],
+      "placebo_treatment": {
+        "original": 0.12879181550719943,
+        "new_effect": 0.0009235883918323714,
+        "change_pct": -99.28288269856654,
+        "dowhy_p_value": 0.44633003375706687,
+        "simulations": 20,
+        "pass_rule": "|placebo effect| < 10% of the estimate",
+        "passed": true
+      },
+      "random_common_cause": {
+        "original": 0.12879181550719943,
+        "new_effect": 0.12827618726643714,
+        "change_pct": -0.40035792548748234,
+        "dowhy_p_value": 0.256915626091779,
+        "simulations": 20,
+        "pass_rule": "estimate moves < 5%",
+        "passed": true
+      },
+      "data_subset_80pct": {
+        "original": 0.12879181550719943,
+        "new_effect": 0.1269673540249701,
+        "change_pct": -1.4165973785246662,
+        "dowhy_p_value": 0.313098148239767,
+        "simulations": 20,
+        "pass_rule": "estimate moves < 10%",
+        "passed": true
+      }
+    },
+    "negative_control_outcome": {
+      "outcome": "prior_earn_2 (pre-programme earnings)",
+      "naive_difference": -4406.80449775793,
+      "estimate": 27.121170190035475,
+      "ci_low": -70.34753466649002,
+      "ci_high": 124.58987504656093,
+      "pass_rule": "95% CI contains 0",
+      "passed": true
+    }
+  },
+  "evalues": {
+    "employment": {
+      "risk_ratio": 1.2447533361820449,
+      "evalue_point": 1.7967112437749029,
+      "evalue_ci": 1.7286513251180036,
+      "baseline_p0_ipw": 0.5255314222509191
+    },
+    "earnings": {
+      "std_mean_diff": 0.2759659730127685,
+      "approx_risk_ratio": 1.2854759455863047,
+      "evalue_point": 1.8912584652207851,
+      "evalue_ci": 1.847713543287326
+    }
+  },
+  "did": {
+    "true_att_overall": 1.47,
+    "cs_never_treated": {
+      "att_overall": 1.345249872633874,
+      "att_overall_se": 0.11762459339954522,
+      "att_overall_ci": [
+        1.1147056695707653,
+        1.5757940756969826
+      ],
+      "att_by_cohort": {
+        "8": 1.7540489139848325,
+        "12": 1.3435105259727986,
+        "16": 0.5302608099235725
+      },
+      "pretrend_wald": 22.268504266000814,
+      "pretrend_df": 15,
+      "pretrend_p": 0.10095436847186945,
+      "pretrend_max_abs": 0.338486593955525,
+      "n_boot_effective": 499
+    },
+    "cs_not_yet_treated": {
+      "att_overall": 1.3491946926416658,
+      "att_overall_se": 0.11176098540733977,
+      "att_overall_ci": [
+        1.13014316124328,
+        1.5682462240400517
+      ],
+      "pretrend_p": 0.09909780033092197
+    },
+    "twfe_static": {
+      "estimate": 1.0364295151690603,
+      "se": 0.07953898351579905,
+      "ci_low": 0.8805331074780942,
+      "ci_high": 1.1923259228600265
+    },
+    "twfe_bias": -0.43357048483093963,
+    "cs_bias": -0.124750127366126,
+    "cs_truth_in_ci": true,
+    "twfe_truth_in_ci": false,
+    "event_time_ci_coverage_post": 1.0,
+    "true_att_by_cohort": {
+      "8": 1.9012499999999999,
+      "12": 1.3499999999999996,
+      "16": 0.7875
+    }
+  },
+  "synthetic_control": {
+    "treated_unit": 0,
+    "adoption_quarter": 8,
+    "n_donors": 15,
+    "pre_rmspe": 0.26564084788597264,
+    "post_rmspe": 1.595141374054473,
+    "avg_post_gap": 1.4225388728425732,
+    "true_avg_post_effect": 1.9012499999999997,
+    "placebo_p_value": 0.0625,
+    "rmspe_ratio": 6.00487984716565,
+    "top_donor_weights": {
+      "30": 0.5548636333617911,
+      "32": 0.21815382167028216,
+      "39": 0.1143130394615114,
+      "36": 0.11266950550641414,
+      "31": 4.3266370576993854e-16
+    }
+  },
+  "lalonde": {
+    "n_experimental": 445,
+    "n_observational": 614,
+    "n_treated": 185,
+    "n_psid_controls": 429,
+    "experimental_benchmark": {
+      "estimate": 1794.3423818501024,
+      "ci_low": 479.18915469413264,
+      "ci_high": 3109.4956090060723
+    },
+    "naive_psid": {
+      "estimate": -635.0262120374209,
+      "ci_low": null,
+      "ci_high": null,
+      "bias_vs_benchmark": -2429.3685938875233,
+      "benchmark_in_ci": false
+    },
+    "ols_adjusted_psid": {
+      "estimate": 865.5856807501419,
+      "ci_low": -581.9062693991772,
+      "ci_high": 2313.077630899461,
+      "bias_vs_benchmark": -928.7567010999604,
+      "benchmark_in_ci": true
+    },
+    "ipw_att_psid": {
+      "estimate": 2269.3843587355796,
+      "ci_low": -464.0125458257294,
+      "ci_high": 5002.781263296889,
+      "bias_vs_benchmark": 475.0419768854772,
+      "benchmark_in_ci": true
+    },
+    "dr_att_crossfit_psid": {
+      "estimate": 89.57192847087131,
+      "ci_low": -1770.7990674352038,
+      "ci_high": 1949.9429243769466,
+      "bias_vs_benchmark": -1704.770453379231,
+      "benchmark_in_ci": true
+    },
+    "max_abs_smd_raw": 1.6677188107185172,
+    "share_psid_ps_below_0.05": 0.6083916083916084,
+    "welch_p_benchmark": 0.007892978305501857
+  },
+  "runtime": {
+    "seconds_total": 605.4,
+    "stages": {
+      "simulate": 0.1,
+      "identify": 0.4,
+      "naive_ols": 0.1,
+      "propensity": 122.0,
+      "dml": 122.3,
+      "refute": 348.0,
+      "evalues": 0.0,
+      "did": 2.1,
+      "synth": 0.3,
+      "lalonde": 10.3
+    },
+    "python": "3.11.17",
+    "cpus": 4
+  }
+}

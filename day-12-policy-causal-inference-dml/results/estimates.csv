@@ -1,0 +1,21 @@
+outcome,method,family,estimate,ci_low,ci_high,true_ate,bias,truth_in_ci
+earnings_post,Naive difference in means,naive,-2818.0806,-3044.7535,-2591.4078,2283.0548,-5101.1354,False
+earnings_post,OLS + confounders,regression,1937.3197,1810.6008,2064.0386,2283.0548,-345.7351,False
+earnings_post,OLS + confounders + certificate (bad control),regression,587.3478,440.6567,734.0388,2283.0548,-1695.7070,False
+employed_post,Naive difference in means,naive,0.0461,0.0324,0.0598,0.1121,-0.0660,False
+employed_post,OLS + confounders,regression,0.1090,0.0947,0.1233,0.1121,-0.0031,True
+employed_post,OLS + confounders + certificate (bad control),regression,0.0395,0.0223,0.0566,0.1121,-0.0727,False
+earnings_post,"IPW (Hajek, logistic PS)",propensity,2222.9333,2006.0304,2439.8361,2283.0548,-60.1215,True
+earnings_post,"PS matching 1:1, caliper 0.2 SD",propensity,2219.7974,2020.6517,2418.9431,2283.0548,-63.2574,True
+employed_post,"IPW (Hajek, logistic PS)",propensity,0.1280,0.1120,0.1441,0.1121,0.0159,True
+employed_post,"PS matching 1:1, caliper 0.2 SD",propensity,0.1302,0.1121,0.1483,0.1121,0.0181,False
+earnings_post,"DML partialling-out, constant effect",dml,2029.6225,1900.7960,2158.4490,2283.0548,-253.4323,False
+earnings_post,"DML LinearDML, CATE linear in X (headline)",dml,2242.8571,2110.7859,2374.9283,2283.0548,-40.1977,True
+earnings_post,DML DR-learner (cross-fitted AIPW),dml,2200.0919,2063.1087,2337.0751,2283.0548,-82.9629,True
+earnings_post,Causal forest (DR average of CATE),dml,2206.1533,2069.9260,2342.3806,2283.0548,-76.9015,True
+employed_post,"DML partialling-out, constant effect",dml,0.1128,0.0984,0.1273,0.1121,0.0007,True
+employed_post,"DML LinearDML, CATE linear in X (headline)",dml,0.1286,0.1135,0.1437,0.1121,0.0165,False
+employed_post,DML DR-learner (cross-fitted AIPW),dml,0.1280,0.1126,0.1434,0.1121,0.0159,False
+employed_post,Causal forest (DR average of CATE),dml,0.1277,0.1123,0.1431,0.1121,0.0156,False
+earnings_post,DoWhy + econml LinearDML (minimal backdoor set),dml,2255.0725,,,2283.0548,-27.9823,False
+employed_post,DoWhy + econml LinearDML (minimal backdoor set),dml,0.1288,,,0.1121,0.0167,False
