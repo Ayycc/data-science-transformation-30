@@ -1,0 +1,304 @@
+{
+  "data": {
+    "source": "synthetic",
+    "note": "IBM AML probe: URLError: <urlopen error Tunnel connection failed: 403 Forbidden>; fell back to seeded SYNTHETIC generator (seed 20261023)",
+    "synthetic": true,
+    "seed": 20261023,
+    "n_days": 180,
+    "laundering_accounts": 3778,
+    "laundering_account_rate": 0.03778,
+    "laundering_transactions": 3964,
+    "typology_instances": 400,
+    "slow_instance_share": 0.23
+  },
+  "graph": {
+    "n_accounts": 100000,
+    "n_transactions": 1980990,
+    "n_unique_pairs": 1623588,
+    "span_days": 180.0,
+    "total_amount": 3069396377.97,
+    "density": 0.00016236042360423604,
+    "reciprocity": 0.020752801819180728,
+    "mean_in_degree": 16.23588,
+    "max_in_degree": 2129,
+    "max_out_degree": 774,
+    "gini_in_degree": 0.5438007106852231,
+    "largest_wcc_share": 0.99998,
+    "largest_scc_share": 0.97952,
+    "n_scc_nontrivial": 1,
+    "isolated_accounts": 2
+  },
+  "communities": {
+    "louvain": {
+      "n_communities": 322,
+      "n_communities_ge_10": 320,
+      "largest_community_share": 0.03978,
+      "modularity": 0.7121624740742517,
+      "nmi_vs_planted_regions": 0.984050790690902
+    },
+    "leiden": {
+      "n_communities": 348,
+      "n_communities_ge_10": 346,
+      "largest_community_share": 0.03978,
+      "modularity": 0.7123087249694788,
+      "nmi_vs_planted_regions": 0.9904872366190988
+    },
+    "leiden_risk_ranking": {
+      "communities_ranked": 346,
+      "top_decile_communities": 35,
+      "top_decile_account_share": 0.07338,
+      "top_decile_laundering_share": 0.06696664902064585,
+      "laundering_rate_top_decile": 0.034478059416734805,
+      "laundering_rate_overall": 0.03778
+    },
+    "leiden_instances_mostly_in_one_community": 0.0025,
+    "out_of_community_share_mean": {
+      "laundering": 0.3288708926581763,
+      "normal": 0.23935477918347678
+    }
+  },
+  "detectors": {
+    "thresholds": {
+      "min_amount": 1000.0,
+      "flow_window_s": 259200.0,
+      "flow_ratio_lo": 0.8,
+      "flow_ratio_hi": 1.0,
+      "star_window_s": 259200.0,
+      "star_min_counterparties": 5,
+      "star_min_total": 20000.0,
+      "star_pass_through": 0.6,
+      "star_follow_s": 604800.0,
+      "sg_min_intermediates": 3,
+      "chain_min_hops": 4,
+      "cycle_max_hops": 7,
+      "max_paths_per_edge": 50
+    },
+    "flow_links": 36629,
+    "material_transfers": 563435,
+    "fan_in": {
+      "instances": 80,
+      "recall": 0.9875,
+      "recall_fast": 1.0,
+      "recall_slow": 0.9444444444444444,
+      "n_detections": 726,
+      "flagged_accounts": 8142,
+      "account_precision": 0.13350528125767624,
+      "hub_precision": 0.1418732782369146
+    },
+    "fan_out": {
+      "instances": 80,
+      "recall": 1.0,
+      "recall_fast": 1.0,
+      "recall_slow": 1.0,
+      "n_detections": 1335,
+      "flagged_accounts": 37810,
+      "account_precision": 0.05160010579211849,
+      "hub_precision": 0.0951310861423221
+    },
+    "cycle": {
+      "instances": 80,
+      "recall": 0.75,
+      "recall_fast": 1.0,
+      "recall_slow": 0.23076923076923078,
+      "n_detections": 61,
+      "flagged_accounts": 323,
+      "account_precision": 0.9907120743034056,
+      "hub_precision": 0.9836065573770492
+    },
+    "scatter_gather": {
+      "instances": 80,
+      "recall": 0.95,
+      "recall_fast": 1.0,
+      "recall_slow": 0.7333333333333333,
+      "n_detections": 81,
+      "flagged_accounts": 710,
+      "account_precision": 0.9647887323943662,
+      "hub_precision": 0.9382716049382716
+    },
+    "mule_chain": {
+      "instances": 80,
+      "recall": 0.8625,
+      "recall_fast": 1.0,
+      "recall_slow": 0.35294117647058826,
+      "n_detections": 261,
+      "flagged_accounts": 970,
+      "account_precision": 0.5463917525773195,
+      "hub_precision": 0.29118773946360155
+    },
+    "all_detectors": {
+      "flagged_accounts": 42028,
+      "account_precision": 0.08344437041972019,
+      "account_recall": 0.928268925357332,
+      "instance_recall_own_detector": 0.91,
+      "instance_touch_any_detector": 0.9275
+    }
+  },
+  "models": {
+    "split": {
+      "train_accounts": 69829,
+      "test_accounts": 30171,
+      "test_positives": 1318,
+      "grouped_by": "laundering scheme instance"
+    },
+    "feature_sets": {
+      "tabular": {
+        "pr_auc": 0.5357664781686279,
+        "roc_auc": 0.8856261715302525,
+        "precision_at_top1pct": 0.9701986754966887,
+        "recall_at_top1pct": 0.22230652503793627,
+        "at_recall_80": {
+          "threshold": 0.0179169425268127,
+          "alerts": 7704,
+          "true_positives": 1055,
+          "false_positives": 6649,
+          "precision": 0.1369418483904465,
+          "recall": 0.8004552352048558
+        },
+        "n_features": 23
+      },
+      "tabular+structural": {
+        "pr_auc": 0.595470000271149,
+        "roc_auc": 0.9131031101243827,
+        "precision_at_top1pct": 0.9867549668874173,
+        "recall_at_top1pct": 0.22610015174506828,
+        "at_recall_80": {
+          "threshold": 0.02036495950656522,
+          "alerts": 5734,
+          "true_positives": 1055,
+          "false_positives": 4679,
+          "precision": 0.18399023369375653,
+          "recall": 0.8004552352048558
+        },
+        "n_features": 34
+      },
+      "tabular+structural+temporal": {
+        "pr_auc": 0.6617360500894643,
+        "roc_auc": 0.9206943868629888,
+        "precision_at_top1pct": 1.0,
+        "recall_at_top1pct": 0.2291350531107739,
+        "at_recall_80": {
+          "threshold": 0.018509793525287685,
+          "alerts": 5036,
+          "true_positives": 1055,
+          "false_positives": 3981,
+          "precision": 0.20949166004765687,
+          "recall": 0.8004552352048558
+        },
+        "n_features": 42
+      },
+      "graph (all)": {
+        "pr_auc": 0.910765204171611,
+        "roc_auc": 0.9855905033136677,
+        "precision_at_top1pct": 1.0,
+        "recall_at_top1pct": 0.2291350531107739,
+        "at_recall_80": {
+          "threshold": 0.19791911830252268,
+          "alerts": 1137,
+          "true_positives": 1055,
+          "false_positives": 82,
+          "precision": 0.9278803869832893,
+          "recall": 0.8004552352048558
+        },
+        "n_features": 62
+      }
+    },
+    "graph_minus_tabular_pr_auc_bootstrap": {
+      "mean": 0.37468684973781974,
+      "ci95_lo": 0.3519881855870019,
+      "ci95_hi": 0.39879552942236235,
+      "share_positive": 1.0,
+      "n": 300
+    },
+    "per_typology_account_recall_at_80": {
+      "tabular": {
+        "cycle": 0.9939024390243902,
+        "fan_in": 0.7567567567567568,
+        "fan_out": 0.6716417910447762,
+        "mule_chain": 0.9014084507042254,
+        "scatter_gather": 0.916256157635468
+      },
+      "graph (all)": {
+        "cycle": 0.9878048780487805,
+        "fan_in": 0.8845208845208845,
+        "fan_out": 0.5323383084577115,
+        "mule_chain": 0.8661971830985915,
+        "scatter_gather": 0.9655172413793104
+      }
+    },
+    "false_alert_reduction_at_80_recall": 0.9876673183937434,
+    "top_features": {
+      "motif_any": 1.4927,
+      "out_of_community_share": 0.6794,
+      "max_in": 0.5753,
+      "std_in": 0.4804,
+      "nbr1_mean_flow_links_through": 0.4698,
+      "motif_fan_in": 0.381,
+      "nbr2_mean_pagerank": 0.2304,
+      "std_out": 0.2143,
+      "region_risk": 0.1977,
+      "motif_fan_out": 0.1856
+    }
+  },
+  "alerts": {
+    "n_alerts": 10,
+    "precision_top_alerts": 1.0,
+    "alerts_with_motif_subgraph": 10,
+    "typology_examples": [
+      {
+        "typology": "fan_in",
+        "hub_account": 4417,
+        "accounts": 8,
+        "transfers": 7,
+        "html": "alerts/typology_fan_in_acct_4417.html"
+      },
+      {
+        "typology": "fan_out",
+        "hub_account": 111,
+        "accounts": 15,
+        "transfers": 14,
+        "html": "alerts/typology_fan_out_acct_111.html"
+      },
+      {
+        "typology": "cycle",
+        "hub_account": 60508,
+        "accounts": 5,
+        "transfers": 5,
+        "html": "alerts/typology_cycle_acct_60508.html"
+      },
+      {
+        "typology": "scatter_gather",
+        "hub_account": 223,
+        "accounts": 11,
+        "transfers": 18,
+        "html": "alerts/typology_scatter_gather_acct_223.html"
+      },
+      {
+        "typology": "mule_chain",
+        "hub_account": 33720,
+        "accounts": 8,
+        "transfers": 7,
+        "html": "alerts/typology_mule_chain_acct_33720.html"
+      }
+    ]
+  },
+  "acceptance": {
+    "each_typology_recall_reported": true,
+    "graph_beats_tabular_pr_auc": true,
+    "alerts_have_explainable_subgraph": true
+  },
+  "runtime_seconds": {
+    "data": 4.6,
+    "graph": 10.17,
+    "communities": 15.34,
+    "motifs": 10.29,
+    "features": 19.23,
+    "models": 16.12,
+    "alerts": 35.99,
+    "figures": 2.08,
+    "total": 113.82
+  },
+  "environment": {
+    "python": "3.11.17",
+    "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39"
+  }
+}

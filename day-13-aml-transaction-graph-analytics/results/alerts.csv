@@ -1,0 +1,11 @@
+rank,account_id,score,ground_truth_synthetic,detectors_fired,subgraph_nodes,subgraph_edges,motif_edges,top_reason,html
+1,24239,1.0,scatter_gather,scatter_gather,12,20,20,motif_scatter_gather,alerts/alert_01_acct_24239.html
+2,30139,1.0,scatter_gather,scatter_gather,6,8,8,motif_scatter_gather,alerts/alert_02_acct_30139.html
+3,29969,1.0,fan_in,fan_in,17,16,13,motif_fan_in,alerts/alert_03_acct_29969.html
+4,72409,1.0,mule_chain,mule_chain,10,9,8,motif_mule_chain,alerts/alert_04_acct_72409.html
+5,57647,1.0,cycle,cycle,8,8,7,motif_cycle,alerts/alert_05_acct_57647.html
+6,18824,1.0,fan_in,fan_in,17,16,14,motif_fan_in,alerts/alert_06_acct_18824.html
+7,82380,1.0,scatter_gather,scatter_gather,7,10,10,motif_scatter_gather,alerts/alert_07_acct_82380.html
+8,22580,1.0,cycle,cycle,7,7,7,motif_cycle,alerts/alert_08_acct_22580.html
+9,70098,1.0,cycle,cycle,6,6,4,motif_cycle,alerts/alert_09_acct_70098.html
+10,18278,1.0,fan_in,fan_in;fan_out,58,63,62,burstiness,alerts/alert_10_acct_18278.html

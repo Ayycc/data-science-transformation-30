@@ -30,7 +30,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 10 | II Expert | [Air Quality Intelligence with Dagster Software-Defined Assets](./day-10-air-quality-dagster-assets/) | Environment & climate | Dagster, DuckDB, pandas | ✅ | [prompt](./prompts/day-10.md) | 300 synthetic stations x 30 daily partitions: blocking checks withheld 130 false alerts on a unit-bug day; alert precision 0.966 vs 0.430 naive; late-data sensor re-ran exactly 4 partitions |
 | 11 | II Expert | [Support Ticket Intelligence: NLP Classification with Active Learning](./day-11-support-ticket-nlp-active-learning/) | Customer operations | spaCy, sentence-transformers, scikit-learn | ✅ | [prompt](./prompts/day-11.md) | Margin active learning with 2% of labels: macro-F1 0.974 vs 0.913 random on 27 Bitext intents (random needs 3x labels); PII redaction recall 99.93% on 23,664 synthetic spans |
 | 12 | II Expert | [Did the Programme Work? Causal Inference with Double ML](./day-12-policy-causal-inference-dml/) | Public policy & workforce | DoWhy, EconML, statsmodels | ✅ | [prompt](./prompts/day-12.md) | DML earnings ATE $2,243 (95% CI $2,111-$2,375) vs true $2,283 on 20k synthetic people; naive bias -$5,101; CS DiD 1.35 pp vs TWFE 1.04 pp (truth 1.47); 7/7 refutations pass |
-| 13 | II Expert | [Anti-Money-Laundering with Transaction Graph Analytics](./day-13-aml-transaction-graph-analytics/) | Banking & compliance | NetworkX, igraph, PyTorch Geometric (optional) | ⏳ Planned | [prompt](./prompts/day-13.md) | |
+| 13 | II Expert | [Anti-Money-Laundering with Transaction Graph Analytics](./day-13-aml-transaction-graph-analytics/) | Banking & compliance | NetworkX, igraph, PyTorch Geometric (optional) | ✅ | [prompt](./prompts/day-13.md) | PR-AUC 0.911 graph vs 0.536 tabular on 100k-account / 2.0M-txn synthetic graph; false alerts at 80% recall 6,649 to 82; typology detector recall 0.75-1.00 |
 | 14 | II Expert | [Streaming Predictive Maintenance for Manufacturing IoT](./day-14-iot-streaming-anomaly-detection/) | Manufacturing | River, Bytewax or asyncio, Kafka (optional) | ⏳ Planned | [prompt](./prompts/day-14.md) | |
 | 15 | II Expert | [Bike-Share Demand and Fleet Rebalancing](./day-15-bikeshare-geospatial-rebalancing/) | Urban mobility & transport | GeoPandas, H3, OSMnx | ⏳ Planned | [prompt](./prompts/day-15.md) | |
 | 16 | III Principal | [Insurance Claims Severity: Full MLOps Lifecycle](./day-16-insurance-claims-mlops/) | Insurance | MLflow, FastAPI, Evidently | ⏳ Planned | [prompt](./prompts/day-16.md) | |
@@ -49,7 +49,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ⏳ Planned | [prompt](./prompts/day-29.md) | |
 | 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
 
-Last build: 2026-10-22
+Last build: 2026-10-23
 <!-- PROGRESS:END -->
 
 ## How each project is structured
