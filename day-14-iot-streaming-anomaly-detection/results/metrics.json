@@ -1,0 +1,463 @@
+{
+  "data": {
+    "source": {
+      "primary_stream": "synthetic",
+      "generator": "SYNTHETIC (iot_stream.simulate)",
+      "cmapss_probe": {
+        "reachable": true,
+        "url": "https://phm-datasets.s3.amazonaws.com/NASA/6.+Turbofan+Engine+Degradation+Simulation+Data+Set.zip",
+        "note": "reachable (206)"
+      },
+      "cmapss_replay_used": false,
+      "note": "The IoT stream is SYNTHETIC by design (500 machines, out-of-order/late events, dropouts, drift). C-MAPSS was reachable but is only an optional replay (load_cmapss_as_stream); not used for reported numbers."
+    },
+    "stream": {
+      "generator": "SYNTHETIC (iot_stream.simulate)",
+      "seed": 20261024,
+      "n_machines": 500,
+      "days": 14.0,
+      "tick_s": 300.0,
+      "n_events": 5804889,
+      "n_failures": 562,
+      "n_sudden_failures": 63,
+      "share_delayed_lognormal": 0.06988454042790482,
+      "share_gateway_buffered": 0.007234763662147545,
+      "regime_change_time_s": 691200.0
+    },
+    "simulation_config": {
+      "n_machines": 500,
+      "days": 14.0,
+      "tick_s": 300.0,
+      "seed": 20261024,
+      "weibull_shape": 2.0,
+      "weibull_scale_days": 16.0,
+      "degradation_hours": [
+        24.0,
+        96.0
+      ],
+      "sudden_failure_share": 0.12,
+      "downtime_hours": [
+        2.0,
+        8.0
+      ],
+      "seasonal_warming_c": 5.0,
+      "regime_change_day": 8.0,
+      "regime_vib_mult": 1.3,
+      "regime_cur_mult": 1.18,
+      "regime_temp_add": 3.0,
+      "calib_drift_share": 0.05,
+      "calib_drift_c_per_day": 0.4,
+      "dropouts_per_sensor_per_day": 0.25,
+      "dropout_minutes": [
+        10.0,
+        240.0
+      ],
+      "point_loss": 0.003,
+      "late_share": 0.07,
+      "gateway_outages_per_machine_per_day": 0.15,
+      "gateway_outage_minutes": [
+        15.0,
+        120.0
+      ]
+    },
+    "scale": "500 machines x 14 days"
+  },
+  "stream_config": {
+    "slide_s": 1800.0,
+    "sliding_size_s": 7200.0,
+    "allowed_lateness_s": 600.0,
+    "batch_size": 4096
+  },
+  "model_config": {
+    "seed": 7,
+    "baseline_windows": 6,
+    "hst_trees": 15,
+    "hst_height": 8,
+    "hst_window": 1000,
+    "hst_threshold": 0.95,
+    "hst_persist": 2,
+    "rul_leaf": "adaptive",
+    "rul_cap_h": 72.0,
+    "rul_warn_h": 24.0,
+    "rul_persist": 2,
+    "rul_min_labels": 3000,
+    "rul_min_cap_labels": 10000,
+    "adwin_delta": 0.002,
+    "ph_delta": 10.0,
+    "ph_threshold": 50000.0,
+    "ph_min_instances": 2000,
+    "debounce_h": 24.0,
+    "eval_horizon_h": 72.0,
+    "warmup_h": 24.0,
+    "static_freeze_day": 5.0,
+    "hst_limits": {
+      "vib_rel": [
+        -0.4,
+        1.6
+      ],
+      "vib_2h_rel": [
+        -0.4,
+        1.6
+      ],
+      "vib_std_rel": [
+        -1.0,
+        4.0
+      ],
+      "vib_slope": [
+        -0.3,
+        0.3
+      ],
+      "cur_rel": [
+        -0.25,
+        0.45
+      ],
+      "temp_d": [
+        -0.6,
+        1.6
+      ],
+      "temp_slope": [
+        -0.3,
+        0.3
+      ]
+    }
+  },
+  "windowing": {
+    "events_in": 5804889,
+    "events_out_of_order": 3456708,
+    "late_events_assigned": 3427300,
+    "events_dropped_too_late": 29408,
+    "window_records_fired": 329690,
+    "events": 5804889,
+    "late_events_within_allowed_lateness": 3405864,
+    "late_within_lateness_assigned": 3405864,
+    "late_within_lateness_assigned_share": 1.0,
+    "events_beyond_allowed_lateness": 50844,
+    "beyond_lateness_dropped": 29408,
+    "beyond_lateness_still_assigned_window_open": 21436,
+    "dropped_share": 0.005066074476187228,
+    "lateness_p50_s_of_late_events": 0.84723769093398,
+    "lateness_p99_s_of_late_events": 1046.7517512300788,
+    "lateness_over_60s_share": 0.06041579778700334,
+    "oracle_mismatches": 0,
+    "stream_vs_batch_sql": {
+      "batch_windows": 329690,
+      "stream_windows": 329690,
+      "matched": 329690,
+      "count_mismatches": 0,
+      "max_abs_diff": 0.0
+    }
+  },
+  "throughput": {
+    "windowing_events_per_sec": 428435.36903539684,
+    "end_to_end_events_per_sec": 63942.12071309355,
+    "end_to_end_seconds": 90.78349193400027,
+    "window_records": 329690,
+    "model_stage_records_per_sec": {
+      "no_reset": 4758.273759224855,
+      "static": 9280.858760328765
+    },
+    "cpu": "x86_64",
+    "cpu_count": 4,
+    "python": "3.11.17",
+    "note": "single asyncio event loop on one core"
+  },
+  "headline": {
+    "variant": "adaptive",
+    "rule": "combined",
+    "precision": 0.9119318181818182,
+    "recall": 0.8769230769230769,
+    "recall_gradual_failures": 0.9912854030501089,
+    "recall_sudden_failures": 0.01639344262295082,
+    "median_lead_time_h": 17.26077195364271,
+    "p25_lead_time_h": 10.831890039063328,
+    "p75_lead_time_h": 30.564873989146516,
+    "false_warnings_per_machine_day": 0.008857142857142857,
+    "n_failures_evaluated": 520,
+    "online_rule_matches_rederived": true
+  },
+  "warning_eval": [
+    {
+      "variant": "adaptive",
+      "rule": "combined",
+      "n_warnings": 704,
+      "tp_warnings": 642.0,
+      "precision": 0.9119,
+      "recall": 0.8769,
+      "recall_gradual": 0.9913,
+      "recall_sudden": 0.0164,
+      "n_failures": 520,
+      "detected": 456.0,
+      "median_lead_h": 17.2608,
+      "p25_lead_h": 10.8319,
+      "p75_lead_h": 30.5649,
+      "min_lead_h": 0.5264,
+      "false_warnings_per_machine_day": 0.0089,
+      "f1": 0.8941
+    },
+    {
+      "variant": "adaptive",
+      "rule": "hst_only",
+      "n_warnings": 517,
+      "tp_warnings": 489.0,
+      "precision": 0.9458,
+      "recall": 0.8096,
+      "recall_gradual": 0.9172,
+      "recall_sudden": 0.0,
+      "n_failures": 520,
+      "detected": 421.0,
+      "median_lead_h": 10.8806,
+      "p25_lead_h": 6.7673,
+      "p75_lead_h": 17.1903,
+      "min_lead_h": 0.1858,
+      "false_warnings_per_machine_day": 0.004,
+      "f1": 0.8724
+    },
+    {
+      "variant": "adaptive",
+      "rule": "rul_only",
+      "n_warnings": 547,
+      "tp_warnings": 498.0,
+      "precision": 0.9104,
+      "recall": 0.6615,
+      "recall_gradual": 0.7473,
+      "recall_sudden": 0.0164,
+      "n_failures": 520,
+      "detected": 344.0,
+      "median_lead_h": 21.0539,
+      "p25_lead_h": 13.2657,
+      "p75_lead_h": 33.5299,
+      "min_lead_h": 0.5841,
+      "false_warnings_per_machine_day": 0.007,
+      "f1": 0.7663
+    },
+    {
+      "variant": "no_reset",
+      "rule": "combined",
+      "n_warnings": 1511,
+      "tp_warnings": 820.0,
+      "precision": 0.5427,
+      "recall": 0.9096,
+      "recall_gradual": 1.0,
+      "recall_sudden": 0.2295,
+      "n_failures": 520,
+      "detected": 473.0,
+      "median_lead_h": 24.3272,
+      "p25_lead_h": 14.9926,
+      "p75_lead_h": 42.7856,
+      "min_lead_h": 0.7172,
+      "false_warnings_per_machine_day": 0.0987,
+      "f1": 0.6798
+    },
+    {
+      "variant": "no_reset",
+      "rule": "hst_only",
+      "n_warnings": 731,
+      "tp_warnings": 642.0,
+      "precision": 0.8782,
+      "recall": 0.8788,
+      "recall_gradual": 0.9956,
+      "recall_sudden": 0.0,
+      "n_failures": 520,
+      "detected": 457.0,
+      "median_lead_h": 17.9159,
+      "p25_lead_h": 10.7263,
+      "p75_lead_h": 26.3312,
+      "min_lead_h": 0.3643,
+      "false_warnings_per_machine_day": 0.0127,
+      "f1": 0.8785
+    },
+    {
+      "variant": "no_reset",
+      "rule": "rul_only",
+      "n_warnings": 1285,
+      "tp_warnings": 639.0,
+      "precision": 0.4973,
+      "recall": 0.6865,
+      "recall_gradual": 0.7473,
+      "recall_sudden": 0.2295,
+      "n_failures": 520,
+      "detected": 357.0,
+      "median_lead_h": 29.8302,
+      "p25_lead_h": 18.4719,
+      "p75_lead_h": 47.7712,
+      "min_lead_h": 0.2172,
+      "false_warnings_per_machine_day": 0.0923,
+      "f1": 0.5768
+    },
+    {
+      "variant": "static",
+      "rule": "combined",
+      "n_warnings": 2120,
+      "tp_warnings": 854.0,
+      "precision": 0.4028,
+      "recall": 0.9231,
+      "recall_gradual": 1.0,
+      "recall_sudden": 0.3443,
+      "n_failures": 520,
+      "detected": 480.0,
+      "median_lead_h": 25.0939,
+      "p25_lead_h": 14.6008,
+      "p75_lead_h": 43.8225,
+      "min_lead_h": 1.7773,
+      "false_warnings_per_machine_day": 0.1809,
+      "f1": 0.5609
+    },
+    {
+      "variant": "static",
+      "rule": "hst_only",
+      "n_warnings": 1781,
+      "tp_warnings": 800.0,
+      "precision": 0.4492,
+      "recall": 0.9096,
+      "recall_gradual": 1.0,
+      "recall_sudden": 0.2295,
+      "n_failures": 520,
+      "detected": 473.0,
+      "median_lead_h": 22.106,
+      "p25_lead_h": 12.549,
+      "p75_lead_h": 37.7619,
+      "min_lead_h": 1.1071,
+      "false_warnings_per_machine_day": 0.1401,
+      "f1": 0.6014
+    },
+    {
+      "variant": "static",
+      "rule": "rul_only",
+      "n_warnings": 1198,
+      "tp_warnings": 595.0,
+      "precision": 0.4967,
+      "recall": 0.6827,
+      "recall_gradual": 0.7429,
+      "recall_sudden": 0.2295,
+      "n_failures": 520,
+      "detected": 355.0,
+      "median_lead_h": 27.3345,
+      "p25_lead_h": 15.4158,
+      "p75_lead_h": 44.539,
+      "min_lead_h": 0.7172,
+      "false_warnings_per_machine_day": 0.0861,
+      "f1": 0.575
+    }
+  ],
+  "rul_accuracy": [
+    {
+      "variant": "adaptive",
+      "n_scored": 174755,
+      "mae_capped_h": 7.308,
+      "n_within_cap": 44555,
+      "mae_within_cap_h": 14.943,
+      "mae_last_24h_h": 14.362
+    },
+    {
+      "variant": "no_reset",
+      "n_scored": 174755,
+      "mae_capped_h": 18.561,
+      "n_within_cap": 44555,
+      "mae_within_cap_h": 14.621,
+      "mae_last_24h_h": 11.315
+    },
+    {
+      "variant": "static",
+      "n_scored": 174755,
+      "mae_capped_h": 14.596,
+      "n_within_cap": 44555,
+      "mae_within_cap_h": 14.309,
+      "mae_last_24h_h": 12.824
+    }
+  ],
+  "monitors": {
+    "adaptive": {
+      "variant": "adaptive",
+      "window_records_seen": 329690,
+      "window_records_skipped_straddling_failure": 559,
+      "scored_rows": 322712,
+      "warnings": 704,
+      "rul_labels_learned": 258662,
+      "hst_resets": 20,
+      "rul_resets": 0,
+      "drift_detections": 22
+    },
+    "no_reset": {
+      "variant": "no_reset",
+      "window_records_seen": 329690,
+      "window_records_skipped_straddling_failure": 559,
+      "scored_rows": 322712,
+      "warnings": 1511,
+      "rul_labels_learned": 258662,
+      "hst_resets": 0,
+      "rul_resets": 0,
+      "drift_detections": 34
+    },
+    "static": {
+      "variant": "static",
+      "window_records_seen": 329690,
+      "window_records_skipped_straddling_failure": 559,
+      "scored_rows": 322712,
+      "warnings": 2120,
+      "rul_labels_learned": 112276,
+      "hst_resets": 0,
+      "rul_resets": 0,
+      "drift_detections": 33
+    }
+  },
+  "drift_detections_by_variant": [
+    {
+      "variant": "adaptive",
+      "detector": "ADWIN",
+      "n": 22
+    },
+    {
+      "variant": "no_reset",
+      "detector": "ADWIN",
+      "n": 33
+    },
+    {
+      "variant": "no_reset",
+      "detector": "PageHinkley",
+      "n": 1
+    },
+    {
+      "variant": "static",
+      "detector": "ADWIN",
+      "n": 33
+    }
+  ],
+  "exactly_once_demo": {
+    "checkpoint_every_batches": 5,
+    "crash_after_batch": 23,
+    "batch_size": 1024,
+    "clean_rows": 2180,
+    "transactional": {
+      "rows_after_restart": 2180,
+      "duplicate_rows": 0,
+      "missing_rows": 0,
+      "identical_to_clean_run": true
+    },
+    "at_least_once": {
+      "rows_after_restart": 2355,
+      "duplicate_rows": 175,
+      "missing_rows": 0,
+      "identical_to_clean_run": false
+    }
+  },
+  "duckdb": {
+    "path": "data/stream_metrics.duckdb",
+    "tables": [
+      "dead_letter",
+      "drift_events",
+      "fails_df",
+      "failures",
+      "fleet_medians",
+      "scores",
+      "stream_windows",
+      "throughput",
+      "warnings"
+    ]
+  },
+  "acceptance": {
+    "late_events_within_lateness_correctly_assigned": true,
+    "median_lead_time_positive": true,
+    "throughput_at_least_10k_eps": true
+  },
+  "runtime_seconds": 236.4059939409999
+}

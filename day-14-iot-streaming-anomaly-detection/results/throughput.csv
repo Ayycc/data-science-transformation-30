@@ -1,0 +1,3 @@
+stage,events,seconds,events_per_sec
+windowing only (source + event-time windows),5804889,13.549,428435.369
+end to end (windows + HST + RUL + drift),5804889,90.783,63942.121

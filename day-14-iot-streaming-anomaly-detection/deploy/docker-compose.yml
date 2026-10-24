@@ -1,0 +1,27 @@
+# OPTIONAL artefact: a single-node Redpanda (Kafka API) broker for scripts/kafka_replay.py.
+# Nothing in `make run` or `make test` needs Docker or a running broker.
+#   docker compose -f deploy/docker-compose.yml up -d
+#   pip install confluent-kafka==2.15.1
+#   python scripts/kafka_replay.py produce   # committed SYNTHETIC sample -> topic sensor-events
+#   python scripts/kafka_replay.py consume   # topic -> EventTimeWindower -> DuckDB (transactional sink)
+services:
+  redpanda:
+    image: docker.redpanda.com/redpandadata/redpanda:v24.2.7
+    command:
+      - redpanda
+      - start
+      - --overprovisioned
+      - --smp=1
+      - --memory=1G
+      - --reserve-memory=0M
+      - --node-id=0
+      - --check=false
+      - --kafka-addr=PLAINTEXT://0.0.0.0:9092
+      - --advertise-kafka-addr=PLAINTEXT://localhost:9092
+    ports:
+      - "9092:9092"
+  topic-init:
+    image: docker.redpanda.com/redpandadata/redpanda:v24.2.7
+    depends_on: [redpanda]
+    entrypoint: ["rpk", "topic", "create", "sensor-events", "-p", "8", "--brokers", "redpanda:9092"]
+    restart: "no"

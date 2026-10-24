@@ -1,0 +1,4 @@
+variant,n_scored,mae_capped_h,n_within_cap,mae_within_cap_h,mae_last_24h_h
+adaptive,174755,7.308,44555,14.943,14.362
+no_reset,174755,18.561,44555,14.621,11.315
+static,174755,14.596,44555,14.309,12.824
