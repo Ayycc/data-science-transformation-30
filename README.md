@@ -32,7 +32,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 12 | II Expert | [Did the Programme Work? Causal Inference with Double ML](./day-12-policy-causal-inference-dml/) | Public policy & workforce | DoWhy, EconML, statsmodels | ✅ | [prompt](./prompts/day-12.md) | DML earnings ATE $2,243 (95% CI $2,111-$2,375) vs true $2,283 on 20k synthetic people; naive bias -$5,101; CS DiD 1.35 pp vs TWFE 1.04 pp (truth 1.47); 7/7 refutations pass |
 | 13 | II Expert | [Anti-Money-Laundering with Transaction Graph Analytics](./day-13-aml-transaction-graph-analytics/) | Banking & compliance | NetworkX, igraph, PyTorch Geometric (optional) | ✅ | [prompt](./prompts/day-13.md) | PR-AUC 0.911 graph vs 0.536 tabular on 100k-account / 2.0M-txn synthetic graph; false alerts at 80% recall 6,649 to 82; typology detector recall 0.75-1.00 |
 | 14 | II Expert | [Streaming Predictive Maintenance for Manufacturing IoT](./day-14-iot-streaming-anomaly-detection/) | Manufacturing | River, Bytewax or asyncio, Kafka (optional) | ✅ | [prompt](./prompts/day-14.md) | Warnings precision 0.912 / recall 0.877, median lead 17.3 h on 500-machine synthetic stream; 63,942 events/s end to end; drift resets cut false warnings 0.099 to 0.009 per machine-day |
-| 15 | II Expert | [Bike-Share Demand and Fleet Rebalancing](./day-15-bikeshare-geospatial-rebalancing/) | Urban mobility & transport | GeoPandas, H3, OSMnx | ⏳ Planned | [prompt](./prompts/day-15.md) | |
+| 15 | II Expert | [Bike-Share Demand and Fleet Rebalancing](./day-15-bikeshare-geospatial-rebalancing/) | Urban mobility & transport | GeoPandas, H3, OSMnx | ✅ | [prompt](./prompts/day-15.md) | Forecast-driven OR-Tools routes cut simulated stockout hours 45.9% vs fixed routes (21,760 to 11,770) replaying 885k real Capital Bikeshare trips; station-hour MAE 0.663 vs 0.747 historical average |
 | 16 | III Principal | [Insurance Claims Severity: Full MLOps Lifecycle](./day-16-insurance-claims-mlops/) | Insurance | MLflow, FastAPI, Evidently | ⏳ Planned | [prompt](./prompts/day-16.md) | |
 | 17 | III Principal | [Point-in-Time Correct Feature Store for Ride-Hailing ETA](./day-17-ridehail-feature-store-pit/) | Mobility marketplace | Feast, DuckDB, Redis or SQLite online store | ⏳ Planned | [prompt](./prompts/day-17.md) | |
 | 18 | III Principal | [Bayesian Marketing Mix Model and Budget Optimiser](./day-18-bayesian-marketing-mix-model/) | Consumer goods & marketing | PyMC, PyMC-Marketing, ArviZ | ⏳ Planned | [prompt](./prompts/day-18.md) | |
@@ -49,7 +49,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ⏳ Planned | [prompt](./prompts/day-29.md) | |
 | 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
 
-Last build: 2026-10-24
+Last build: 2026-10-25
 <!-- PROGRESS:END -->
 
 ## How each project is structured

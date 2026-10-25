@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5e9edfd4c39741b438f55aaa7a6338ab {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    <div style='position:fixed;top:10px;left:50px;z-index:9999;background:#fff;padding:6px 10px;font:14px sans-serif'>LightGBM-driven midday routes, 2024-09-17 (90 stops, 436 bikes planned)</div>
+    
+            <div class="folium-map" id="map_5e9edfd4c39741b438f55aaa7a6338ab" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5e9edfd4c39741b438f55aaa7a6338ab = L.map(
+                "map_5e9edfd4c39741b438f55aaa7a6338ab",
+                {
+                    center: [38.89968, -77.04456299543381],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_5e9edfd4c39741b438f55aaa7a6338ab);
+
+            
+
+        
+    
+            var tile_layer_0036c6a4bdf37e6c847881f9dc059e99 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0036c6a4bdf37e6c847881f9dc059e99.addTo(map_5e9edfd4c39741b438f55aaa7a6338ab);
+        
+    
+            var marker_af9d0117da73952ce8224e47f0bed0a8 = L.marker(
+                [38.902559391417135, -77.03358380696503],
+                {
+}
+            ).addTo(map_5e9edfd4c39741b438f55aaa7a6338ab);
+        
+    
+            var icon_89fd619a07fdc62136cba21a7ca2ec2d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_af9d0117da73952ce8224e47f0bed0a8.bindTooltip(
+                `<div>
+                     Depot
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_af9d0117da73952ce8224e47f0bed0a8.setIcon(icon_89fd619a07fdc62136cba21a7ca2ec2d);
+            
+    
+            var feature_group_aa5c3ea8f7f510536bc92c113528ef97 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_52c29914e7c270714fec5c5be9a16484 = L.polyline(
+                [[38.902559391417135, -77.03358380696503], [38.899632, -77.031686], [38.89832574246664, -77.02795878052711], [38.897857, -77.026975], [38.900283, -77.029822], [38.923203, -77.047637], [38.923389, -77.051833], [38.936298, -77.087128], [38.90571079190728, -77.0473176240921], [38.908905, -77.04478], [38.902, -77.03353], [38.903658, -77.031737], [38.9055785, -77.027313], [38.90843146089006, -77.02708840370178], [38.907908, -76.99707], [38.917622, -77.01597], [38.929464, -77.027822], [38.9228491613136, -77.04252451658249], [38.917761, -77.04062], [38.915544, -77.038252], [38.9101, -77.0444], [38.902559391417135, -77.03358380696503]],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2a78d6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            var circle_marker_8006b16aa8ff7e9328a3e18c800b06d9 = L.circleMarker(
+                [38.899632, -77.031686],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_8006b16aa8ff7e9328a3e18c800b06d9.bindTooltip(
+                `<div>
+                     Truck 1 stop 1 (+1 min): pick up 4<br>14th St & New York Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db7c11b5000767fa1298a2727c29826c = L.circleMarker(
+                [38.89832574246664, -77.02795878052711],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_db7c11b5000767fa1298a2727c29826c.bindTooltip(
+                `<div>
+                     Truck 1 stop 2 (+6 min): pick up 7<br>Metro Center / 12th & G St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b179bcf0b49a1917548f27fffffada73 = L.circleMarker(
+                [38.897857, -77.026975],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_b179bcf0b49a1917548f27fffffada73.bindTooltip(
+                `<div>
+                     Truck 1 stop 3 (+11 min): pick up 5<br>11th & F St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f439980e8b58bf4b35d97edd29d2e925 = L.circleMarker(
+                [38.900283, -77.029822],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_f439980e8b58bf4b35d97edd29d2e925.bindTooltip(
+                `<div>
+                     Truck 1 stop 4 (+16 min): pick up 4<br>13th St & New York Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_96eb722ca811b097d7d5dc7164492c8c = L.circleMarker(
+                [38.923203, -77.047637],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_96eb722ca811b097d7d5dc7164492c8c.bindTooltip(
+                `<div>
+                     Truck 1 stop 5 (+33 min): deliver 6<br>Calvert & Biltmore St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_779d88b60252a11142f08ef4da587ad6 = L.circleMarker(
+                [38.923389, -77.051833],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_779d88b60252a11142f08ef4da587ad6.bindTooltip(
+                `<div>
+                     Truck 1 stop 6 (+39 min): deliver 7<br>Woodley Park Metro / Calvert St & Connecticut Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ae404fa4f4adbf1c8daf501d7e1c0987 = L.circleMarker(
+                [38.936298, -77.087128],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_ae404fa4f4adbf1c8daf501d7e1c0987.bindTooltip(
+                `<div>
+                     Truck 1 stop 7 (+58 min): deliver 7<br>American University East Campus
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cfa8ed454d5e19a71d58d1166d2d02eb = L.circleMarker(
+                [38.90571079190728, -77.0473176240921],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_cfa8ed454d5e19a71d58d1166d2d02eb.bindTooltip(
+                `<div>
+                     Truck 1 stop 8 (+84 min): pick up 5<br>New Hampshire Ave & Ward Pl NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_82a708c6ba7688d69c329553f11de88f = L.circleMarker(
+                [38.908905, -77.04478],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_82a708c6ba7688d69c329553f11de88f.bindTooltip(
+                `<div>
+                     Truck 1 stop 9 (+90 min): deliver 5<br>20th & O St NW / Dupont South
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_551e8357ef7bc43207bd6dd3bcc61844 = L.circleMarker(
+                [38.902, -77.03353],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_551e8357ef7bc43207bd6dd3bcc61844.bindTooltip(
+                `<div>
+                     Truck 1 stop 10 (+99 min): pick up 4<br>15th & K St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bab89ccc09ecbc9a681c767db1fc33f9 = L.circleMarker(
+                [38.903658, -77.031737],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_bab89ccc09ecbc9a681c767db1fc33f9.bindTooltip(
+                `<div>
+                     Truck 1 stop 11 (+103 min): pick up 4<br>14th & L St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70f39b68c4cb074cbc73272b2b327012 = L.circleMarker(
+                [38.9055785, -77.027313],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_70f39b68c4cb074cbc73272b2b327012.bindTooltip(
+                `<div>
+                     Truck 1 stop 12 (+109 min): pick up 9<br>11th & M St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9daede716212bda37d79e7e98cc5f9e4 = L.circleMarker(
+                [38.90843146089006, -77.02708840370178],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_9daede716212bda37d79e7e98cc5f9e4.bindTooltip(
+                `<div>
+                     Truck 1 stop 13 (+115 min): deliver 4<br>11th & O St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f1b6431f819df9bea0153dfadd7e724b = L.circleMarker(
+                [38.907908, -76.99707],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_f1b6431f819df9bea0153dfadd7e724b.bindTooltip(
+                `<div>
+                     Truck 1 stop 14 (+130 min): pick up 7<br>Union Market
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0316474894baad558495c30e0e53740d = L.circleMarker(
+                [38.917622, -77.01597],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_0316474894baad558495c30e0e53740d.bindTooltip(
+                `<div>
+                     Truck 1 stop 15 (+143 min): deliver 3<br>3rd & Elm St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4051c64d5983a1c039f68840c245fb55 = L.circleMarker(
+                [38.929464, -77.027822],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_4051c64d5983a1c039f68840c245fb55.bindTooltip(
+                `<div>
+                     Truck 1 stop 16 (+154 min): deliver 10<br>11th & Kenyon St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5456d6594160de0bafc7720c4872c331 = L.circleMarker(
+                [38.9228491613136, -77.04252451658249],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_5456d6594160de0bafc7720c4872c331.bindTooltip(
+                `<div>
+                     Truck 1 stop 17 (+166 min): deliver 4<br>Adams Mill & Columbia Rd NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ac14551c78b6f5e34171ae52f96ba4c4 = L.circleMarker(
+                [38.917761, -77.04062],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_ac14551c78b6f5e34171ae52f96ba4c4.bindTooltip(
+                `<div>
+                     Truck 1 stop 18 (+172 min): pick up 4<br>California St & Florida Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6add66a193715f2b92a6b92fdd767528 = L.circleMarker(
+                [38.915544, -77.038252],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_6add66a193715f2b92a6b92fdd767528.bindTooltip(
+                `<div>
+                     Truck 1 stop 19 (+177 min): deliver 3<br>New Hampshire Ave & T St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e2c32208995428c2136edc1d3bd638a = L.circleMarker(
+                [38.9101, -77.0444],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_aa5c3ea8f7f510536bc92c113528ef97);
+        
+    
+            circle_marker_7e2c32208995428c2136edc1d3bd638a.bindTooltip(
+                `<div>
+                     Truck 1 stop 20 (+183 min): deliver 4<br>Massachusetts Ave & Dupont Circle NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_aa5c3ea8f7f510536bc92c113528ef97.addTo(map_5e9edfd4c39741b438f55aaa7a6338ab);
+        
+    
+            var feature_group_eb9870ac0651c1309e5dd300075b1b80 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_48b5a5172a28acf359509589f1274310 = L.polyline(
+                [[38.902559391417135, -77.03358380696503], [38.88637194054526, -77.01770067214966], [38.888774, -77.028694], [38.888097, -77.038325], [38.903819, -77.0284], [38.951596, -77.012808], [38.956555547721955, -77.0198142528534], [38.95674, -77.02791], [38.95366314394005, -77.02561318874359], [38.93132185874559, -77.02824711799622], [38.928743, -77.012457], [38.916787, -77.028139], [38.902559391417135, -77.03358380696503]],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#eb6834", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_eb9870ac0651c1309e5dd300075b1b80);
+        
+    
+            var circle_marker_3c793fbab61489dd04f4026b37e1891c = L.circleMarker(
+                [38.88637194054526, -77.01770067214966],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_eb9870ac0651c1309e5dd300075b1b80);
+        
+    
+            circle_marker_3c793fbab61489dd04f4026b37e1891c.bindTooltip(
+                `<div>
+                     Truck 2 stop 1 (+10 min): pick up 7<br>4th & C St SW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_853ac1aed95695867c309a104f3cfdd8 = L.circleMarker(
+                [38.888774, -77.028694],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_eb9870ac0651c1309e5dd300075b1b80);
+        
+    
+            circle_marker_853ac1aed95695867c309a104f3cfdd8.bindTooltip(
+                `<div>
+                     Truck 2 stop 2 (+18 min): pick up 13<br>Smithsonian-National Mall / Jefferson Dr & 12th St SW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ccf254569e5c2c8530ae8a3dfcbdd5bd = L.circleMarker(
+                [38.888097, -77.038325],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_eb9870ac0651c1309e5dd300075b1b80);
+        
+    
+            circle_marker_ccf254569e5c2c8530ae8a3dfcbdd5bd.bindTooltip(
+                `<div>
+                     Truck 2 stop 3 (+29 min): deliver 7<br>17th St & Independence Ave SW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_46b02ba1f97b3ccb0f45a30bedab849c = L.circleMarker(
+                [38.903819, -77.0284],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_eb9870ac0651c1309e5dd300075b1b80);
+        
+    
+            circle_marker_46b02ba1f97b3ccb0f45a30bedab849c.bindTooltip(
+                `<div>
+                     Truck 2 stop 4 (+42 min): pick up 6<br>12th & L St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_082a6275218b7353255e66f32522c4b9 = L.circleMarker(
+                [38.951596, -77.012808],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_eb9870ac0651c1309e5dd300075b1b80);
+        
+    
+            circle_marker_082a6275218b7353255e66f32522c4b9.bindTooltip(
+                `<div>
+                     Truck 2 stop 5 (+70 min): deliver 4<br>New Hampshire & Gallatin St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e122cf8c1adcdad887a3aed17f89b843 = L.circleMarker(
+                [38.956555547721955, -77.0198142528534],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_eb9870ac0651c1309e5dd300075b1b80);
+        
+    
+            circle_marker_e122cf8c1adcdad887a3aed17f89b843.bindTooltip(
+                `<div>
+                     Truck 2 stop 6 (+77 min): deliver 4<br>5th & Kennedy St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_55d557992978184964ace624007cc514 = L.circleMarker(
+                [38.95674, -77.02791],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_eb9870ac0651c1309e5dd300075b1b80);
+        
+    
+            circle_marker_55d557992978184964ace624007cc514.bindTooltip(
+                `<div>
+                     Truck 2 stop 7 (+84 min): deliver 4<br>Georgia Ave & Kennedy St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7f257e3e46542d18f2a7a73aa643ecbe = L.circleMarker(
+                [38.95366314394005, -77.02561318874359],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_eb9870ac0651c1309e5dd300075b1b80);
+        
+    
+            circle_marker_7f257e3e46542d18f2a7a73aa643ecbe.bindTooltip(
+                `<div>
+                     Truck 2 stop 8 (+89 min): deliver 4<br>9th & Ingraham St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f84a82d2926abca2c371629366be68d7 = L.circleMarker(
+                [38.93132185874559, -77.02824711799622],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_eb9870ac0651c1309e5dd300075b1b80);
+        
+    
+            circle_marker_f84a82d2926abca2c371629366be68d7.bindTooltip(
+                `<div>
+                     Truck 2 stop 9 (+104 min): pick up 7<br>11th & Park Rd NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_364ef79b4eb7641afa09c57048359d01 = L.circleMarker(
+                [38.928743, -77.012457],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_eb9870ac0651c1309e5dd300075b1b80);
+        
+    
+            circle_marker_364ef79b4eb7641afa09c57048359d01.bindTooltip(
+                `<div>
+                     Truck 2 stop 10 (+114 min): deliver 6<br>1st & Washington Hospital Center NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3fd8b9c4c3eed829279da1b7eb0af1ca = L.circleMarker(
+                [38.916787, -77.028139],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_eb9870ac0651c1309e5dd300075b1b80);
+        
+    
+            circle_marker_3fd8b9c4c3eed829279da1b7eb0af1ca.bindTooltip(
+                `<div>
+                     Truck 2 stop 11 (+127 min): deliver 4<br>12th & U St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_eb9870ac0651c1309e5dd300075b1b80.addTo(map_5e9edfd4c39741b438f55aaa7a6338ab);
+        
+    
+            var feature_group_a71117bb65d8b5f292e130ab983e8708 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_ff1a8a121d73611c3fda03fc8fb0d74c = L.polyline(
+                [[38.902559391417135, -77.03358380696503], [38.898097, -77.023924], [38.894573, -77.01994], [38.896604, -77.039778], [38.894722, -77.045128], [38.89830173667249, -77.04691261053085], [38.89892546716842, -77.04885238395946], [38.90071062547463, -77.04644858837128], [38.905303, -77.050264], [38.934881, -77.072755], [38.88701007722296, -77.09525674581528], [38.892164, -77.079375], [38.895068, -77.07386], [38.897218, -77.072143], [38.9037315, -77.0675285], [38.896923, -77.086502], [38.894941, -77.09169], [38.881044, -77.111768], [38.882788, -77.103148], [38.897293, -77.05557], [38.888255, -77.0494365], [38.902559391417135, -77.03358380696503]],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1baf7a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            var circle_marker_3e23aaa4ef6ebf102db5b6ea34e8ae50 = L.circleMarker(
+                [38.898097, -77.023924],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_3e23aaa4ef6ebf102db5b6ea34e8ae50.bindTooltip(
+                `<div>
+                     Truck 3 stop 1 (+4 min): pick up 6<br>9th & G St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_168468525146372e8934e49e65ed1715 = L.circleMarker(
+                [38.894573, -77.01994],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_168468525146372e8934e49e65ed1715.bindTooltip(
+                `<div>
+                     Truck 3 stop 2 (+10 min): deliver 3<br>6th St & Indiana Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_572e432930792f9165f747fef8c019e4 = L.circleMarker(
+                [38.896604, -77.039778],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_572e432930792f9165f747fef8c019e4.bindTooltip(
+                `<div>
+                     Truck 3 stop 3 (+21 min): pick up 3<br>17th St & New York Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89895159f81caf6f09d6a2133299641e = L.circleMarker(
+                [38.894722, -77.045128],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_89895159f81caf6f09d6a2133299641e.bindTooltip(
+                `<div>
+                     Truck 3 stop 4 (+26 min): deliver 4<br>20th St & Virginia Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d80753ab0fac016c5485ee324491495c = L.circleMarker(
+                [38.89830173667249, -77.04691261053085],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_d80753ab0fac016c5485ee324491495c.bindTooltip(
+                `<div>
+                     Truck 3 stop 5 (+32 min): pick up 4<br>21st St & G st NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_044994bd804349bfa42e5140cf7ec087 = L.circleMarker(
+                [38.89892546716842, -77.04885238395946],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_044994bd804349bfa42e5140cf7ec087.bindTooltip(
+                `<div>
+                     Truck 3 stop 6 (+36 min): pick up 4<br>22nd & H St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_88903dfa9b4f9f44c23cfd8f5b237929 = L.circleMarker(
+                [38.90071062547463, -77.04644858837128],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_88903dfa9b4f9f44c23cfd8f5b237929.bindTooltip(
+                `<div>
+                     Truck 3 stop 7 (+40 min): pick up 4<br>21st & I St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_97a136fc920a2c2f0af2725f8386f931 = L.circleMarker(
+                [38.905303, -77.050264],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_97a136fc920a2c2f0af2725f8386f931.bindTooltip(
+                `<div>
+                     Truck 3 stop 8 (+46 min): pick up 4<br>23rd & M St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9f782b0044782eb26e94593edf52a431 = L.circleMarker(
+                [38.934881, -77.072755],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_9f782b0044782eb26e94593edf52a431.bindTooltip(
+                `<div>
+                     Truck 3 stop 9 (+67 min): deliver 5<br>Wisconsin Ave & Newark St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b0de7c4dccb1c3ea681d449d1b66710f = L.circleMarker(
+                [38.88701007722296, -77.09525674581528],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_b0de7c4dccb1c3ea681d449d1b66710f.bindTooltip(
+                `<div>
+                     Truck 3 stop 10 (+96 min): deliver 7<br>Clarendon Metro / Wilson Blvd & N Highland St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0c0e7f7bdcf5fd94fcec9fa5875c96c8 = L.circleMarker(
+                [38.892164, -77.079375],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_0c0e7f7bdcf5fd94fcec9fa5875c96c8.bindTooltip(
+                `<div>
+                     Truck 3 stop 11 (+107 min): deliver 4<br>Rhodes St & 16th St N
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1335fbd3f5422d7532b79f5c41c8ee0e = L.circleMarker(
+                [38.895068, -77.07386],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_1335fbd3f5422d7532b79f5c41c8ee0e.bindTooltip(
+                `<div>
+                     Truck 3 stop 12 (+113 min): pick up 5<br>Wilson Blvd & N Oak St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bcdfcd71bda1b16ab7cb86eb0153e803 = L.circleMarker(
+                [38.897218, -77.072143],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_bcdfcd71bda1b16ab7cb86eb0153e803.bindTooltip(
+                `<div>
+                     Truck 3 stop 13 (+118 min): pick up 3<br>19th St N & Ft Myer Dr
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a9eb12e0c0ed43a2d2ad4c13f4a88fbf = L.circleMarker(
+                [38.9037315, -77.0675285],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_a9eb12e0c0ed43a2d2ad4c13f4a88fbf.bindTooltip(
+                `<div>
+                     Truck 3 stop 14 (+125 min): pick up 10<br>34th & Water St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c566c16e7194b90c699fcfa60b273585 = L.circleMarker(
+                [38.896923, -77.086502],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_c566c16e7194b90c699fcfa60b273585.bindTooltip(
+                `<div>
+                     Truck 3 stop 15 (+138 min): deliver 4<br>N Veitch St & 20th St N
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d3d38343f9099064134b0b9a61e2ce66 = L.circleMarker(
+                [38.894941, -77.09169],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_d3d38343f9099064134b0b9a61e2ce66.bindTooltip(
+                `<div>
+                     Truck 3 stop 16 (+144 min): deliver 4<br>Langston Blvd & N Cleveland St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_06680b3ad50bd195b39fc35d7f6cf4cc = L.circleMarker(
+                [38.881044, -77.111768],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_06680b3ad50bd195b39fc35d7f6cf4cc.bindTooltip(
+                `<div>
+                     Truck 3 stop 17 (+158 min): deliver 3<br>Ballston Metro / Stuart St & 9th St N
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9943b215f4b2b609d37c6d81c65741f2 = L.circleMarker(
+                [38.882788, -77.103148],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_9943b215f4b2b609d37c6d81c65741f2.bindTooltip(
+                `<div>
+                     Truck 3 stop 18 (+164 min): deliver 7<br>Virginia Square Metro / Monroe St & 9th St N
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5bd4dc63f4b738d72b25b5fcbb7f9afb = L.circleMarker(
+                [38.897293, -77.05557],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_5bd4dc63f4b738d72b25b5fcbb7f9afb.bindTooltip(
+                `<div>
+                     Truck 3 stop 19 (+188 min): pick up 4<br>Kennedy Center
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7a0ec8fd66e66a4dab76ee2d6f5b3edd = L.circleMarker(
+                [38.888255, -77.0494365],
+                {"bubblingMouseEvents": true, "color": "#1baf7a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a71117bb65d8b5f292e130ab983e8708);
+        
+    
+            circle_marker_7a0ec8fd66e66a4dab76ee2d6f5b3edd.bindTooltip(
+                `<div>
+                     Truck 3 stop 20 (+197 min): deliver 6<br>Lincoln Memorial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_a71117bb65d8b5f292e130ab983e8708.addTo(map_5e9edfd4c39741b438f55aaa7a6338ab);
+        
+    
+            var feature_group_6b265f02addaf146611ac0e4fc4ca416 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_b7b214eb8459669e043bc2ebd3b15507 = L.polyline(
+                [[38.902559391417135, -77.03358380696503], [38.901136451737045, -77.03445106744766], [38.90276, -77.03863], [38.902061, -77.038322], [38.898301, -77.039643], [38.894112, -77.044334], [38.89221235271478, -77.04307436943054], [38.892441, -77.048947], [38.902826, -77.060173], [38.916442, -77.0682], [38.90506687455313, -77.04177886247635], [38.905995699991145, -77.03980207443237], [38.920387, -77.025672], [38.9366839345886, -77.02418088912964], [38.934405, -77.032687], [38.905424, -77.034674], [38.902677, -77.035866], [38.901104, -77.028061], [38.905737, -77.02227], [38.90864, -77.02277], [38.897446, -77.009888], [38.89696, -77.00493], [38.90042673988099, -76.98825001716614], [38.899984, -76.992725], [38.902594, -76.995141], [38.90731645057457, -77.00069814920425], [38.91256, -77.008775], [38.9126, -77.0135], [38.912659, -77.017669], [38.902559391417135, -77.03358380696503]],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#eda100", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            var circle_marker_55d19b41767c72f17a44ad62909dde26 = L.circleMarker(
+                [38.901136451737045, -77.03445106744766],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_55d19b41767c72f17a44ad62909dde26.bindTooltip(
+                `<div>
+                     Truck 4 stop 1 (+0 min): pick up 4<br>Vermont Ave & I St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_82b2df47c569f78de184b12bf3d22b66 = L.circleMarker(
+                [38.90276, -77.03863],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_82b2df47c569f78de184b12bf3d22b66.bindTooltip(
+                `<div>
+                     Truck 4 stop 2 (+5 min): pick up 4<br>17th & K St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_112a2a9c3f28bbb35adc0d431fbf3280 = L.circleMarker(
+                [38.902061, -77.038322],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_112a2a9c3f28bbb35adc0d431fbf3280.bindTooltip(
+                `<div>
+                     Truck 4 stop 3 (+9 min): pick up 4<br>17th & K St NW / Farragut Square
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e246db83493760f7f0ce41b9d078afe0 = L.circleMarker(
+                [38.898301, -77.039643],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_e246db83493760f7f0ce41b9d078afe0.bindTooltip(
+                `<div>
+                     Truck 4 stop 4 (+14 min): pick up 3<br>17th & G St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d3ed83ae885f322cfbecb0435a8319ef = L.circleMarker(
+                [38.894112, -77.044334],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_d3ed83ae885f322cfbecb0435a8319ef.bindTooltip(
+                `<div>
+                     Truck 4 stop 5 (+20 min): deliver 5<br>Virginia Ave & C St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4f4a9c77f40fc96f087b4db164568d9f = L.circleMarker(
+                [38.89221235271478, -77.04307436943054],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_4f4a9c77f40fc96f087b4db164568d9f.bindTooltip(
+                `<div>
+                     Truck 4 stop 6 (+25 min): pick up 5<br>19th St & Constitution Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c8170175432de2c531eb592a30743a78 = L.circleMarker(
+                [38.892441, -77.048947],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_c8170175432de2c531eb592a30743a78.bindTooltip(
+                `<div>
+                     Truck 4 stop 7 (+31 min): deliver 5<br>22nd St & Constitution Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4fe9703d69fd8dac9a865034215f816e = L.circleMarker(
+                [38.902826, -77.060173],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_4fe9703d69fd8dac9a865034215f816e.bindTooltip(
+                `<div>
+                     Truck 4 stop 8 (+41 min): pick up 6<br>Thomas Jefferson St NW & Water/K St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9bde2064ce89db1c46dca3acacb5b866 = L.circleMarker(
+                [38.916442, -77.0682],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_9bde2064ce89db1c46dca3acacb5b866.bindTooltip(
+                `<div>
+                     Truck 4 stop 9 (+53 min): deliver 6<br>34th St & Wisconsin Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2596bdb735abc18f02505a781d14e4ae = L.circleMarker(
+                [38.90506687455313, -77.04177886247635],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_2596bdb735abc18f02505a781d14e4ae.bindTooltip(
+                `<div>
+                     Truck 4 stop 10 (+69 min): pick up 3<br>18th & M St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_472ed8d98d0a5555bf23d7a309113abb = L.circleMarker(
+                [38.905995699991145, -77.03980207443237],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_472ed8d98d0a5555bf23d7a309113abb.bindTooltip(
+                `<div>
+                     Truck 4 stop 11 (+72 min): pick up 3<br>Rhode Island & Connecticut Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6d77152c95879d0a843383586ecea895 = L.circleMarker(
+                [38.920387, -77.025672],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_6d77152c95879d0a843383586ecea895.bindTooltip(
+                `<div>
+                     Truck 4 stop 12 (+85 min): deliver 5<br>10th St & Florida Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_149fdba70703f7f7ac70d155d6b5b8b5 = L.circleMarker(
+                [38.9366839345886, -77.02418088912964],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_149fdba70703f7f7ac70d155d6b5b8b5.bindTooltip(
+                `<div>
+                     Truck 4 stop 13 (+96 min): deliver 6<br>Georgia & New Hampshire Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_231f2a21fa604c6b039fbaa9cf3441a0 = L.circleMarker(
+                [38.934405, -77.032687],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_231f2a21fa604c6b039fbaa9cf3441a0.bindTooltip(
+                `<div>
+                     Truck 4 stop 14 (+104 min): deliver 5<br>14th & Otis Pl NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2ca0ff1f73398f57b26e7179f50069d3 = L.circleMarker(
+                [38.905424, -77.034674],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_2ca0ff1f73398f57b26e7179f50069d3.bindTooltip(
+                `<div>
+                     Truck 4 stop 15 (+122 min): pick up 4<br>15th & M St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_57629a125b5b91ca654d7848b2e7f6e0 = L.circleMarker(
+                [38.902677, -77.035866],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_57629a125b5b91ca654d7848b2e7f6e0.bindTooltip(
+                `<div>
+                     Truck 4 stop 16 (+127 min): pick up 5<br>16th & K St NW/BLM Plaza
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_823490afcbf08d73748f2a6c2f62822e = L.circleMarker(
+                [38.901104, -77.028061],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_823490afcbf08d73748f2a6c2f62822e.bindTooltip(
+                `<div>
+                     Truck 4 stop 17 (+134 min): pick up 5<br>12th St & New York Ave NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ff3a8e6bd334937dd0fc5231a3b5cc97 = L.circleMarker(
+                [38.905737, -77.02227],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_ff3a8e6bd334937dd0fc5231a3b5cc97.bindTooltip(
+                `<div>
+                     Truck 4 stop 18 (+141 min): deliver 9<br>Convention Center / 7th & M St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e455bb6974f3c59928d9d123828abf42 = L.circleMarker(
+                [38.90864, -77.02277],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_e455bb6974f3c59928d9d123828abf42.bindTooltip(
+                `<div>
+                     Truck 4 stop 19 (+147 min): deliver 3<br>8th & O St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d968e006e0c6ecd2e772eb3128d07290 = L.circleMarker(
+                [38.897446, -77.009888],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_d968e006e0c6ecd2e772eb3128d07290.bindTooltip(
+                `<div>
+                     Truck 4 stop 20 (+158 min): pick up 6<br>North Capitol St & F St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd55430929493ad170fcc89545308377 = L.circleMarker(
+                [38.89696, -77.00493],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_dd55430929493ad170fcc89545308377.bindTooltip(
+                `<div>
+                     Truck 4 stop 21 (+164 min): pick up 11<br>Columbus Circle / Union Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_861d450068a64618bb4f125afbcb3758 = L.circleMarker(
+                [38.90042673988099, -76.98825001716614],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_861d450068a64618bb4f125afbcb3758.bindTooltip(
+                `<div>
+                     Truck 4 stop 22 (+176 min): deliver 4<br>13th & H St NE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e63f53b3f7b7b1d7e636b715901a94db = L.circleMarker(
+                [38.899984, -76.992725],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_e63f53b3f7b7b1d7e636b715901a94db.bindTooltip(
+                `<div>
+                     Truck 4 stop 23 (+181 min): pick up 4<br>10th & H St NE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d4f07b98502804bddc863bf9c841007 = L.circleMarker(
+                [38.902594, -76.995141],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_3d4f07b98502804bddc863bf9c841007.bindTooltip(
+                `<div>
+                     Truck 4 stop 24 (+186 min): deliver 4<br>7th & K St NE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eb85789c515722827a5a7e9aa397f589 = L.circleMarker(
+                [38.90731645057457, -77.00069814920425],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_eb85789c515722827a5a7e9aa397f589.bindTooltip(
+                `<div>
+                     Truck 4 stop 25 (+192 min): deliver 5<br>4th & Florida Ave NE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2508e38a992ece7f755b1aed46ff35f5 = L.circleMarker(
+                [38.91256, -77.008775],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_2508e38a992ece7f755b1aed46ff35f5.bindTooltip(
+                `<div>
+                     Truck 4 stop 26 (+200 min): deliver 4<br>North Capitol & R St NE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d19de9ac42177ae1dde5231767ed117f = L.circleMarker(
+                [38.9126, -77.0135],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_d19de9ac42177ae1dde5231767ed117f.bindTooltip(
+                `<div>
+                     Truck 4 stop 27 (+205 min): deliver 3<br>Florida Ave & R St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_91aa4dc56b63dd2e8ba3f5a30633c0f1 = L.circleMarker(
+                [38.912659, -77.017669],
+                {"bubblingMouseEvents": true, "color": "#eda100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_6b265f02addaf146611ac0e4fc4ca416);
+        
+    
+            circle_marker_91aa4dc56b63dd2e8ba3f5a30633c0f1.bindTooltip(
+                `<div>
+                     Truck 4 stop 28 (+210 min): deliver 3<br>New Jersey Ave & R St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_6b265f02addaf146611ac0e4fc4ca416.addTo(map_5e9edfd4c39741b438f55aaa7a6338ab);
+        
+    
+            var feature_group_a18ef37eb96834c9ad40489315bf435b = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_ed8b5660b1ec17049fddf55a5d090eeb = L.polyline(
+                [[38.902559391417135, -77.03358380696503], [38.876751, -77.000736], [38.866277, -77.010551], [38.8840581, -76.9863852], [38.892875, -76.998413], [38.899972, -76.998347], [38.899941626884754, -76.99489653110504], [38.93293, -76.979517], [38.938024, -77.032688], [38.931991, -77.032956], [38.912652, -77.036278], [38.9059, -77.0325], [38.902559391417135, -77.03358380696503]],
+                {"bubblingMouseEvents": true, "color": "#e87ba4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#e87ba4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_a18ef37eb96834c9ad40489315bf435b);
+        
+    
+            var circle_marker_a37cf44fc2c1ac600cafd62bccbde6b5 = L.circleMarker(
+                [38.876751, -77.000736],
+                {"bubblingMouseEvents": true, "color": "#e87ba4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a18ef37eb96834c9ad40489315bf435b);
+        
+    
+            circle_marker_a37cf44fc2c1ac600cafd62bccbde6b5.bindTooltip(
+                `<div>
+                     Truck 5 stop 1 (+18 min): pick up 6<br>4th & M St SE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_67b84425eefd84a382b65dac44feed95 = L.circleMarker(
+                [38.866277, -77.010551],
+                {"bubblingMouseEvents": true, "color": "#e87ba4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a18ef37eb96834c9ad40489315bf435b);
+        
+    
+            circle_marker_67b84425eefd84a382b65dac44feed95.bindTooltip(
+                `<div>
+                     Truck 5 stop 2 (+28 min): deliver 3<br>Half & Water St SW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aca6dad746dcf5c09fbb9c2d4de23ec4 = L.circleMarker(
+                [38.8840581, -76.9863852],
+                {"bubblingMouseEvents": true, "color": "#e87ba4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a18ef37eb96834c9ad40489315bf435b);
+        
+    
+            circle_marker_aca6dad746dcf5c09fbb9c2d4de23ec4.bindTooltip(
+                `<div>
+                     Truck 5 stop 3 (+44 min): deliver 3<br>14th & D St SE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d67aadee260e45cde3366bea59f6de5d = L.circleMarker(
+                [38.892875, -76.998413],
+                {"bubblingMouseEvents": true, "color": "#e87ba4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a18ef37eb96834c9ad40489315bf435b);
+        
+    
+            circle_marker_d67aadee260e45cde3366bea59f6de5d.bindTooltip(
+                `<div>
+                     Truck 5 stop 4 (+54 min): pick up 3<br>Massachusetts Ave & 6th St NE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_97afd91a683b438d43b26d9e0a62d599 = L.circleMarker(
+                [38.899972, -76.998347],
+                {"bubblingMouseEvents": true, "color": "#e87ba4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a18ef37eb96834c9ad40489315bf435b);
+        
+    
+            circle_marker_97afd91a683b438d43b26d9e0a62d599.bindTooltip(
+                `<div>
+                     Truck 5 stop 5 (+60 min): deliver 3<br>6th & H St NE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_59514cae22ab5a7d4c7afb626eb6074f = L.circleMarker(
+                [38.899941626884754, -76.99489653110504],
+                {"bubblingMouseEvents": true, "color": "#e87ba4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a18ef37eb96834c9ad40489315bf435b);
+        
+    
+            circle_marker_59514cae22ab5a7d4c7afb626eb6074f.bindTooltip(
+                `<div>
+                     Truck 5 stop 6 (+64 min): pick up 3<br>8th & H St NE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1894567c047cae4d9dfa76c363afae74 = L.circleMarker(
+                [38.93293, -76.979517],
+                {"bubblingMouseEvents": true, "color": "#e87ba4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a18ef37eb96834c9ad40489315bf435b);
+        
+    
+            circle_marker_1894567c047cae4d9dfa76c363afae74.bindTooltip(
+                `<div>
+                     Truck 5 stop 7 (+85 min): deliver 3<br>18th & Monroe St NE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c8cdbf88948f36a0c0efc04dbb91be84 = L.circleMarker(
+                [38.938024, -77.032688],
+                {"bubblingMouseEvents": true, "color": "#e87ba4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a18ef37eb96834c9ad40489315bf435b);
+        
+    
+            circle_marker_c8cdbf88948f36a0c0efc04dbb91be84.bindTooltip(
+                `<div>
+                     Truck 5 stop 8 (+109 min): pick up 3<br>14th & Quincy St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e7c650105dbc9c7aa27e0512010b5a12 = L.circleMarker(
+                [38.931991, -77.032956],
+                {"bubblingMouseEvents": true, "color": "#e87ba4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a18ef37eb96834c9ad40489315bf435b);
+        
+    
+            circle_marker_e7c650105dbc9c7aa27e0512010b5a12.bindTooltip(
+                `<div>
+                     Truck 5 stop 9 (+115 min): deliver 3<br>14th & Newton St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7a8cd90b8a9bf8d2e498c89189bb0264 = L.circleMarker(
+                [38.912652, -77.036278],
+                {"bubblingMouseEvents": true, "color": "#e87ba4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e34948", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a18ef37eb96834c9ad40489315bf435b);
+        
+    
+            circle_marker_7a8cd90b8a9bf8d2e498c89189bb0264.bindTooltip(
+                `<div>
+                     Truck 5 stop 10 (+128 min): pick up 3<br>16th & R St NW
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e593b359d6512355804f16a04fe1fc15 = L.circleMarker(
+                [38.9059, -77.0325],
+                {"bubblingMouseEvents": true, "color": "#e87ba4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2a78d6", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(feature_group_a18ef37eb96834c9ad40489315bf435b);
+        
+    
+            circle_marker_e593b359d6512355804f16a04fe1fc15.bindTooltip(
+                `<div>
+                     Truck 5 stop 11 (+134 min): deliver 3<br>Thomas Circle
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_a18ef37eb96834c9ad40489315bf435b.addTo(map_5e9edfd4c39741b438f55aaa7a6338ab);
+        
+    
+            var layer_control_16b0c1fcbf095b2b6d3e711aff24acb3_layers = {
+                base_layers : {
+                    "OpenStreetMap basemap (needs network)" : tile_layer_0036c6a4bdf37e6c847881f9dc059e99,
+                },
+                overlays :  {
+                    "Truck 1: 20 stops, 106 bikes" : feature_group_aa5c3ea8f7f510536bc92c113528ef97,
+                    "Truck 2: 11 stops, 66 bikes" : feature_group_eb9870ac0651c1309e5dd300075b1b80,
+                    "Truck 3: 20 stops, 94 bikes" : feature_group_a71117bb65d8b5f292e130ab983e8708,
+                    "Truck 4: 28 stops, 134 bikes" : feature_group_6b265f02addaf146611ac0e4fc4ca416,
+                    "Truck 5: 11 stops, 36 bikes" : feature_group_a18ef37eb96834c9ad40489315bf435b,
+                },
+            };
+            let layer_control_16b0c1fcbf095b2b6d3e711aff24acb3 = L.control.layers(
+                layer_control_16b0c1fcbf095b2b6d3e711aff24acb3_layers.base_layers,
+                layer_control_16b0c1fcbf095b2b6d3e711aff24acb3_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_5e9edfd4c39741b438f55aaa7a6338ab);
+
+        
+</script>
+</html>

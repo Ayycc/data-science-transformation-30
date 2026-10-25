@@ -1,0 +1,341 @@
+{
+  "data": {
+    "trips": {
+      "source": "SYNTHETIC trips (seeded generator) over the committed real Capital Bikeshare station layout",
+      "synthetic": true
+    },
+    "weather": {
+      "url": "https://noaa-global-hourly-pds.s3.amazonaws.com/2024/72405013743.csv",
+      "status": "cached",
+      "source": "NOAA ISD hourly, Reagan National Airport (public)"
+    },
+    "capacity": {
+      "status": "unreachable (URLError: <urlopen error Tunnel connection failed: 403 Forbidden>)",
+      "source": "activity-based estimate (GBFS unreachable)"
+    },
+    "n_trips": 945299,
+    "n_stations": 709,
+    "spatial": {
+      "transit": "53 Metrorail-adjacent docks identified from station names",
+      "elevation": "AWS Terrain Tiles (public DEM): cached; 24 tiles at zoom 12",
+      "osm": "Overpass API unreachable (URLError: <urlopen error Tunnel connection failed: 403 Forbidden>)",
+      "poi": "OSM unreachable: POI density proxied by dock density (stations in the H3 k=2 ring)"
+    },
+    "h3_resolution": 8,
+    "h3_cells": 335
+  },
+  "split": {
+    "train": "2024-08-01..2024-09-15",
+    "validation_week": "2024-09-09",
+    "test": "2024-09-16..2024-09-29"
+  },
+  "forecast": {
+    "n_station_hours": 238224,
+    "models": {
+      "lgbm": {
+        "mae": 0.7397,
+        "rmse": 1.3699,
+        "mae_weekday_peaks": 1.1195
+      },
+      "historical_average": {
+        "mae": 0.8182,
+        "rmse": 1.4617,
+        "mae_weekday_peaks": 1.2155
+      },
+      "seasonal_naive_168h": {
+        "mae": 1.05,
+        "rmse": 1.9343,
+        "mae_weekday_peaks": 1.574
+      },
+      "zero": {
+        "mae": 0.7543,
+        "rmse": 1.5393,
+        "mae_weekday_peaks": 1.2947
+      }
+    },
+    "lgbm_beats_ha_station_share": 0.9845,
+    "mae_improvement_vs_ha_pct": 9.59,
+    "horizon_cum_mae": {
+      "overnight": {
+        "lgbm": 3.2501,
+        "historical_average": 3.4544,
+        "seasonal_naive_168h": 4.5483,
+        "zero": 5.4578
+      },
+      "midday": {
+        "lgbm": 3.4778,
+        "historical_average": 3.6552,
+        "seasonal_naive_168h": 4.7319,
+        "zero": 4.2472
+      }
+    },
+    "lgbm": {
+      "objective": "huber",
+      "best_iteration": 885,
+      "selection": {
+        "regression": {
+          "valid_mae": 0.76058,
+          "best_iteration": 35
+        },
+        "huber": {
+          "valid_mae": 0.75854,
+          "best_iteration": 885
+        }
+      }
+    },
+    "top_features": {
+      "nb_ha_past_how": 0.3642,
+      "roll7_same_hour": 0.0644,
+      "nb_roll7": 0.057,
+      "nb_lag168": 0.0541,
+      "dist_core_m": 0.0378,
+      "ha_past_how": 0.03,
+      "offday": 0.027,
+      "arr_yday": 0.0243,
+      "hour": 0.0235,
+      "stations_ring2": 0.0231
+    }
+  },
+  "band_forecast": {
+    "drain": {
+      "mae_lgbm": 2.0769,
+      "mae_historical_average": 2.077,
+      "mae_hourly_lgbm_path": 2.1992,
+      "mean_actual": 3.243,
+      "mean_hourly_lgbm_path": 1.721
+    },
+    "fill": {
+      "mae_lgbm": 1.9085,
+      "mae_historical_average": 1.893,
+      "mae_hourly_lgbm_path": 1.9498,
+      "mean_actual": 3.208,
+      "mean_hourly_lgbm_path": 1.865
+    },
+    "iterations": {
+      "drain": 75,
+      "fill": 116
+    }
+  },
+  "policy_selection_validation_week": {
+    "window": "2024-09-09..2024-09-15",
+    "stockout_hours": {
+      "ha_hourly": 37530.2,
+      "lgbm_hourly": 41220.8,
+      "ha_band": 38765.6,
+      "lgbm_band": 38314.6
+    },
+    "selected": "ha_hourly"
+  },
+  "fleet": {
+    "n_trucks": 8,
+    "truck_capacity": 20,
+    "speed_kmh": 18.0,
+    "circuity": 1.35,
+    "service_s": 120,
+    "per_bike_s": 20,
+    "buffer": 2,
+    "min_move": 3,
+    "max_candidates": 150,
+    "penalty_per_bike_s": 900,
+    "solver_seconds": 3.0,
+    "shifts": [
+      [
+        "overnight",
+        0,
+        300,
+        14
+      ],
+      [
+        "midday",
+        10,
+        240,
+        24
+      ]
+    ]
+  },
+  "depot": [
+    38.902559395590686,
+    -77.03358380404897
+  ],
+  "simulation": {
+    "none": {
+      "empty_dock_hours": 101205.9,
+      "full_dock_hours": 16951.8,
+      "stockout_hours": 118157.8,
+      "lost_departures": 55575,
+      "diverted_arrivals": 37434,
+      "bikes_moved": 0,
+      "stops_made": 0,
+      "truck_km": 0.0,
+      "bikes_left_on_trucks": 0,
+      "bikes_dropped_at_route_end": 0,
+      "stockout_reduction_vs_none_pct": 0.0,
+      "stockout_reduction_vs_fixed_pct": -12.68,
+      "lost_departures_reduction_vs_fixed_pct": -50.85
+    },
+    "fixed_routes": {
+      "empty_dock_hours": 88706.8,
+      "full_dock_hours": 16154.9,
+      "stockout_hours": 104861.7,
+      "lost_departures": 36841,
+      "diverted_arrivals": 39058,
+      "bikes_moved": 18446,
+      "stops_made": 2324,
+      "truck_km": 8186.1,
+      "bikes_left_on_trucks": 0,
+      "bikes_dropped_at_route_end": 927,
+      "stockout_reduction_vs_none_pct": 11.25,
+      "stockout_reduction_vs_fixed_pct": 0.0,
+      "lost_departures_reduction_vs_fixed_pct": 0.0
+    },
+    "dynamic_ha_band": {
+      "empty_dock_hours": 86532.4,
+      "full_dock_hours": 14523.5,
+      "stockout_hours": 101055.9,
+      "lost_departures": 34502,
+      "diverted_arrivals": 36768,
+      "bikes_moved": 20072,
+      "stops_made": 1989,
+      "truck_km": 6609.4,
+      "bikes_left_on_trucks": 0,
+      "bikes_dropped_at_route_end": 0,
+      "stockout_reduction_vs_none_pct": 14.47,
+      "stockout_reduction_vs_fixed_pct": 3.63,
+      "lost_departures_reduction_vs_fixed_pct": 6.35
+    },
+    "dynamic_lgbm_hourly": {
+      "empty_dock_hours": 88430.6,
+      "full_dock_hours": 15685.7,
+      "stockout_hours": 104116.3,
+      "lost_departures": 39200,
+      "diverted_arrivals": 38326,
+      "bikes_moved": 14446,
+      "stops_made": 1819,
+      "truck_km": 5721.5,
+      "bikes_left_on_trucks": 0,
+      "bikes_dropped_at_route_end": 0,
+      "stockout_reduction_vs_none_pct": 11.88,
+      "stockout_reduction_vs_fixed_pct": 0.71,
+      "lost_departures_reduction_vs_fixed_pct": -6.4
+    },
+    "dynamic_lgbm_band": {
+      "empty_dock_hours": 86989.3,
+      "full_dock_hours": 14974.2,
+      "stockout_hours": 101963.5,
+      "lost_departures": 35327,
+      "diverted_arrivals": 37992,
+      "bikes_moved": 19452,
+      "stops_made": 1929,
+      "truck_km": 6211.7,
+      "bikes_left_on_trucks": 0,
+      "bikes_dropped_at_route_end": 0,
+      "stockout_reduction_vs_none_pct": 13.71,
+      "stockout_reduction_vs_fixed_pct": 2.76,
+      "lost_departures_reduction_vs_fixed_pct": 4.11
+    },
+    "dynamic_oracle": {
+      "empty_dock_hours": 78123.9,
+      "full_dock_hours": 13345.4,
+      "stockout_hours": 91469.3,
+      "lost_departures": 26810,
+      "diverted_arrivals": 34455,
+      "bikes_moved": 27460,
+      "stops_made": 2445,
+      "truck_km": 9113.7,
+      "bikes_left_on_trucks": 0,
+      "bikes_dropped_at_route_end": 2,
+      "stockout_reduction_vs_none_pct": 22.59,
+      "stockout_reduction_vs_fixed_pct": 12.77,
+      "lost_departures_reduction_vs_fixed_pct": 27.23
+    }
+  },
+  "routing_audit": {
+    "fixed_routes": {
+      "plans": 2,
+      "all_feasible": true,
+      "max_truck_load": 20,
+      "truck_capacity": 20,
+      "max_route_minutes": {
+        "midday": 236.2,
+        "overnight": 298.3
+      },
+      "shift_minutes": {
+        "overnight": 300,
+        "midday": 240
+      },
+      "mean_km_per_shift": 292.4
+    },
+    "dynamic_ha_band": {
+      "plans": 28,
+      "all_feasible": true,
+      "max_truck_load": 20,
+      "truck_capacity": 20,
+      "max_route_minutes": {
+        "midday": 236.6,
+        "overnight": 298.2
+      },
+      "shift_minutes": {
+        "overnight": 300,
+        "midday": 240
+      },
+      "mean_km_per_shift": 236.1
+    },
+    "dynamic_lgbm_hourly": {
+      "plans": 28,
+      "all_feasible": true,
+      "max_truck_load": 20,
+      "truck_capacity": 20,
+      "max_route_minutes": {
+        "midday": 237.4,
+        "overnight": 299.8
+      },
+      "shift_minutes": {
+        "overnight": 300,
+        "midday": 240
+      },
+      "mean_km_per_shift": 204.3
+    },
+    "dynamic_lgbm_band": {
+      "plans": 28,
+      "all_feasible": true,
+      "max_truck_load": 20,
+      "truck_capacity": 20,
+      "max_route_minutes": {
+        "midday": 238.7,
+        "overnight": 298.9
+      },
+      "shift_minutes": {
+        "overnight": 300,
+        "midday": 240
+      },
+      "mean_km_per_shift": 221.8
+    },
+    "dynamic_oracle": {
+      "plans": 28,
+      "all_feasible": true,
+      "max_truck_load": 20,
+      "truck_capacity": 20,
+      "max_route_minutes": {
+        "midday": 239.9,
+        "overnight": 299.9
+      },
+      "shift_minutes": {
+        "overnight": 300,
+        "midday": 240
+      },
+      "mean_km_per_shift": 325.5
+    }
+  },
+  "runtime_s": 1323.1,
+  "env": {
+    "python": "3.11.17",
+    "lightgbm": "4.7.0",
+    "ortools": "9.15.6755",
+    "geopandas": "1.2.0",
+    "h3": "4.5.0",
+    "osmnx": "2.1.1",
+    "folium": "0.20.0",
+    "pandas": "3.1.0",
+    "numpy": "2.4.6"
+  }
+}
