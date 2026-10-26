@@ -1,0 +1,237 @@
+[
+  {
+    "family": "glm",
+    "action": "promoted",
+    "seconds": 6.9,
+    "passed": true,
+    "candidate_version": "1",
+    "champion_version": null,
+    "checks": {
+      "deviance_gain": {
+        "value": 0.07771558517032817,
+        "threshold": 0.0,
+        "vs": "null model",
+        "pass": true
+      },
+      "gini_floor": {
+        "value": 0.35562412126191656,
+        "threshold": 0.2,
+        "pass": true
+      },
+      "ae_band": {
+        "value": 1.0411195435400729,
+        "threshold": [
+          0.9,
+          1.1
+        ],
+        "pass": true
+      }
+    },
+    "candidate_metrics": {
+      "tweedie_deviance": 83.49526551896119,
+      "gini": 0.35562412126191656,
+      "ae_ratio": 1.0411195435400729,
+      "mae": 417.61206680563504,
+      "n_rows": 50000,
+      "exposure": 36942.64,
+      "null_deviance": 90.53092969632492,
+      "balance_factor": 1.0106992449703374
+    },
+    "champion_metrics": null,
+    "note": "bootstrap champion"
+  },
+  {
+    "family": "gbm",
+    "action": "promoted",
+    "seconds": 9.03,
+    "passed": true,
+    "candidate_version": "2",
+    "champion_version": "1",
+    "checks": {
+      "deviance_gain": {
+        "value": 0.015806096871889164,
+        "threshold": 0.0,
+        "vs": "champion v1",
+        "pass": true
+      },
+      "gini_floor": {
+        "value": 0.3692862082130804,
+        "threshold": 0.2,
+        "pass": true
+      },
+      "ae_band": {
+        "value": 1.0377042508632686,
+        "threshold": [
+          0.9,
+          1.1
+        ],
+        "pass": true
+      }
+    },
+    "candidate_metrics": {
+      "tweedie_deviance": 82.17553126382438,
+      "gini": 0.3692862082130804,
+      "ae_ratio": 1.0377042508632686,
+      "mae": 406.9556226273559,
+      "n_rows": 50000,
+      "exposure": 36942.64,
+      "null_deviance": 90.53092969632492,
+      "balance_factor": 1.0325458600075443
+    },
+    "champion_metrics": {
+      "tweedie_deviance": 83.49526551896119,
+      "gini": 0.35562412126191656,
+      "ae_ratio": 1.0411195435400729,
+      "mae": 417.61206680563504,
+      "n_rows": 50000,
+      "exposure": 36942.64
+    },
+    "note": "challenger"
+  },
+  {
+    "family": "glm-weak",
+    "action": "rejected",
+    "seconds": 4.02,
+    "passed": false,
+    "candidate_version": "3",
+    "champion_version": "2",
+    "checks": {
+      "deviance_gain": {
+        "value": -0.05534060926980078,
+        "threshold": 0.0,
+        "vs": "champion v2",
+        "pass": false
+      },
+      "gini_floor": {
+        "value": 0.27115201883062434,
+        "threshold": 0.2,
+        "pass": true
+      },
+      "ae_band": {
+        "value": 1.0379474200430328,
+        "threshold": [
+          0.9,
+          1.1
+        ],
+        "pass": true
+      }
+    },
+    "candidate_metrics": {
+      "tweedie_deviance": 86.72317523103399,
+      "gini": 0.27115201883062434,
+      "ae_ratio": 1.0379474200430328,
+      "mae": 426.31701135587866,
+      "n_rows": 50000,
+      "exposure": 36942.64,
+      "null_deviance": 90.53092969632492,
+      "balance_factor": 1.0001234990709487
+    },
+    "champion_metrics": {
+      "tweedie_deviance": 82.17553126382438,
+      "gini": 0.3692862082130804,
+      "ae_ratio": 1.0377042508632686,
+      "mae": 406.9556226273559,
+      "n_rows": 50000,
+      "exposure": 36942.64
+    },
+    "note": "negative control: under-specified challenger"
+  },
+  {
+    "family": "gbm",
+    "action": "promoted",
+    "seconds": 11.04,
+    "passed": true,
+    "candidate_version": "4",
+    "champion_version": "2",
+    "checks": {
+      "deviance_gain": {
+        "value": 0.0014740779152915273,
+        "threshold": 0.0,
+        "vs": "champion v2",
+        "pass": true
+      },
+      "gini_floor": {
+        "value": 0.3717496572495135,
+        "threshold": 0.2,
+        "pass": true
+      },
+      "ae_band": {
+        "value": 1.073791956477877,
+        "threshold": [
+          0.9,
+          1.1
+        ],
+        "pass": true
+      }
+    },
+    "candidate_metrics": {
+      "tweedie_deviance": 84.95389129431803,
+      "gini": 0.3717496572495135,
+      "ae_ratio": 1.073791956477877,
+      "mae": 427.5674300459499,
+      "n_rows": 7500,
+      "exposure": 5548.678,
+      "null_deviance": 93.26135865126089,
+      "balance_factor": 1.0294108753548012
+    },
+    "champion_metrics": {
+      "tweedie_deviance": 85.07930481859948,
+      "gini": 0.3687253010268343,
+      "ae_ratio": 1.1103845180093819,
+      "mae": 420.9049973151263,
+      "n_rows": 7500,
+      "exposure": 5548.678
+    },
+    "month": 17,
+    "note": "retrain triggered at month 17"
+  },
+  {
+    "family": "gbm",
+    "action": "promoted",
+    "seconds": 11.91,
+    "passed": true,
+    "candidate_version": "5",
+    "champion_version": "4",
+    "checks": {
+      "deviance_gain": {
+        "value": 0.0013041365116962522,
+        "threshold": 0.0,
+        "vs": "champion v4",
+        "pass": true
+      },
+      "gini_floor": {
+        "value": 0.5800035017740615,
+        "threshold": 0.2,
+        "pass": true
+      },
+      "ae_band": {
+        "value": 1.0488821765721796,
+        "threshold": [
+          0.9,
+          1.1
+        ],
+        "pass": true
+      }
+    },
+    "candidate_metrics": {
+      "tweedie_deviance": 95.62129146177666,
+      "gini": 0.5800035017740615,
+      "ae_ratio": 1.0488821765721796,
+      "mae": 736.7910809287758,
+      "n_rows": 7500,
+      "exposure": 5519.351,
+      "null_deviance": 131.40821383618936,
+      "balance_factor": 1.0272776628181086
+    },
+    "champion_metrics": {
+      "tweedie_deviance": 95.74615752165528,
+      "gini": 0.5794398535527917,
+      "ae_ratio": 1.0897121188403942,
+      "mae": 730.6331250063462,
+      "n_rows": 7500,
+      "exposure": 5519.351
+    },
+    "month": 19,
+    "note": "retrain triggered at month 19"
+  }
+]

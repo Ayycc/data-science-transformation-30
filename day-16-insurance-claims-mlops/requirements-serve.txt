@@ -1,0 +1,11 @@
+# Slim runtime for the scoring container (no Evidently / full MLflow server stack).
+mlflow-skinny==3.17.2
+fastapi==0.162.0
+pydantic==2.14.1
+uvicorn==0.54.0
+numpy==2.4.6
+pandas==2.3.3
+scipy==1.17.1
+scikit-learn==1.9.1
+lightgbm==4.7.0
+cloudpickle==3.1.2

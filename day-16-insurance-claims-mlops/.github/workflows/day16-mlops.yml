@@ -1,0 +1,69 @@
+# Folder-scoped CI/CD for Day 16. GitHub only runs workflows from the repository root's
+# .github/workflows/, so copy this file there to activate it. The repository's root CI already
+# runs `make test` for this folder on every push that touches it.
+name: day16-claims-mlops
+
+on:
+  push:
+    branches: [main]
+    paths: ["day-16-insurance-claims-mlops/**"]
+  pull_request:
+    paths: ["day-16-insurance-claims-mlops/**"]
+
+defaults:
+  run:
+    working-directory: day-16-insurance-claims-mlops
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install ruff==0.17.2
+      - run: ruff check src tests scripts && ruff format --check src tests scripts
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11", cache: pip }
+      - run: pip install -r requirements.txt
+      - run: make test
+
+  model-gate:
+    # Challenger trained from the code under review must beat the champion; otherwise the job fails
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11", cache: pip }
+      - run: pip install -r requirements.txt
+      - run: python scripts/validate_gate.py --out gate_decision.json
+        env: { PYTHONPATH: src }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: gate-decision, path: day-16-insurance-claims-mlops/gate_decision.json }
+
+  image:
+    needs: model-gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11", cache: pip }
+      - run: pip install -r requirements.txt
+      - name: Train, gate and export the champion
+        run: make run
+      - name: Build scoring image
+        run: docker build -t claims-pure-premium:${{ github.sha }} .
+      - name: Smoke-test the container
+        run: |
+          docker run -d --name svc -p 8000:8000 claims-pure-premium:${{ github.sha }}
+          for i in $(seq 1 30); do curl -fs localhost:8000/ready && break; sleep 2; done
+          curl -fs -X POST localhost:8000/score -H 'content-type: application/json' \
+            -d '{"VehPower":7,"VehAge":3,"DrivAge":42,"BonusMalus":50,"Density":1200,"Area":"D","VehBrand":"B12","VehGas":"Diesel","Region":"R11"}'
+          docker rm -f svc

@@ -1,0 +1,6 @@
+version,stage,aliases,family,gate,train_months,trigger,val_tweedie_deviance,val_gini,val_ae_ratio
+1,Archived,[],glm,passed,1-10,,83.4953,0.355624,1.04112
+2,Archived,[],gbm,passed,1-10,,82.1755,0.369286,1.0377
+3,Archived,[],glm,failed,1-10,,86.7232,0.271152,1.03795
+4,Archived,[],gbm,passed,6-17,month 17: |A/E-1| 0.103 > 0.10,84.9539,0.37175,1.07379
+5,Production,['champion'],gbm,passed,8-19,"month 19: drift_share 0.44 >= 0.20 (DrivAge, BonusMalus, Density, Area) | deviance ratio 1.116 > 1.10",95.6213,0.580004,1.04888

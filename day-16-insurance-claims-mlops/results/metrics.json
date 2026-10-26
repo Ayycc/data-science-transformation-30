@@ -1,0 +1,408 @@
+{
+  "data": {
+    "public_source": "OpenML freMTPL2freq (41214) + freMTPL2sev (41215)",
+    "attempted": true,
+    "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+    "path": "synthetic",
+    "synthetic": true,
+    "rows": 600000,
+    "generator": "claims_mlops.data.generate_synthetic",
+    "seed": 20261026
+  },
+  "scale": {
+    "months": 24,
+    "policies_per_month": 25000,
+    "rows": 600000,
+    "claim_rate": 0.08815,
+    "shift_start_month": 19,
+    "inflation_per_month": 0.005
+  },
+  "initial_training": {
+    "train_months": "1-10",
+    "valid_months": "11-12",
+    "steps": [
+      {
+        "family": "glm",
+        "note": "bootstrap champion",
+        "version": "1",
+        "action": "promoted",
+        "val_tweedie_deviance": 83.49526551896119,
+        "val_gini": 0.35562412126191656,
+        "val_ae_ratio": 1.0411195435400729,
+        "null_deviance": 90.53092969632492,
+        "deviance_gain_vs_reference": 0.07771558517032817,
+        "gate_reference": "null model",
+        "checks_passed": {
+          "deviance_gain": true,
+          "gini_floor": true,
+          "ae_band": true
+        }
+      },
+      {
+        "family": "gbm",
+        "note": "challenger",
+        "version": "2",
+        "action": "promoted",
+        "val_tweedie_deviance": 82.17553126382438,
+        "val_gini": 0.3692862082130804,
+        "val_ae_ratio": 1.0377042508632686,
+        "null_deviance": 90.53092969632492,
+        "deviance_gain_vs_reference": 0.015806096871889164,
+        "gate_reference": "champion v1",
+        "checks_passed": {
+          "deviance_gain": true,
+          "gini_floor": true,
+          "ae_band": true
+        }
+      },
+      {
+        "family": "glm-weak",
+        "note": "negative control: under-specified challenger",
+        "version": "3",
+        "action": "rejected",
+        "val_tweedie_deviance": 86.72317523103399,
+        "val_gini": 0.27115201883062434,
+        "val_ae_ratio": 1.0379474200430328,
+        "null_deviance": 90.53092969632492,
+        "deviance_gain_vs_reference": -0.05534060926980078,
+        "gate_reference": "champion v2",
+        "checks_passed": {
+          "deviance_gain": false,
+          "gini_floor": true,
+          "ae_band": true
+        }
+      }
+    ],
+    "initial_champion_version": "2"
+  },
+  "monitoring": {
+    "months": "13-24",
+    "pre_shift_months": 6,
+    "post_shift_months": 6,
+    "injected_columns": [
+      "DrivAge",
+      "Density"
+    ],
+    "fixed_reference": {
+      "note": "every month vs the initial champion's validation window (detector evaluation)",
+      "pre_shift_months_with_any_flag": 0,
+      "post_shift_months_flagging_all_injected": 6,
+      "flag_counts_post_shift": {
+        "VehPower": 0,
+        "VehAge": 0,
+        "DrivAge": 6,
+        "BonusMalus": 6,
+        "Density": 6,
+        "Area": 6,
+        "VehBrand": 0,
+        "VehGas": 0,
+        "Region": 0
+      },
+      "flag_counts_pre_shift": {
+        "VehPower": 0,
+        "VehAge": 0,
+        "DrivAge": 0,
+        "BonusMalus": 0,
+        "Density": 0,
+        "Area": 0,
+        "VehBrand": 0,
+        "VehGas": 0,
+        "Region": 0
+      },
+      "max_pre_shift_score": 0.01936293374687221,
+      "min_post_shift_score_injected": 0.43984224401546734
+    },
+    "live_reference": {
+      "note": "each month vs the deployed champion's own reference (reset on promotion); drives the trigger",
+      "months_with_any_flag": [
+        19
+      ],
+      "first_month_flagging_injected": 19,
+      "drift_score_month_shift": {
+        "VehPower": 0.01575793383567534,
+        "VehAge": 0.011724725705423223,
+        "DrivAge": 0.4496501286093905,
+        "BonusMalus": 0.533841716660878,
+        "Density": 0.5081393857242749,
+        "Area": 0.14667495304255096,
+        "VehBrand": 0.010201622958349492,
+        "VehGas": 0.0029982351189150364,
+        "Region": 0.008089083966905122
+      }
+    },
+    "api_rows_per_s_median": 27741.050000000003,
+    "api_max_abs_diff_vs_direct": 0.0
+  },
+  "retraining": {
+    "triggers": [
+      {
+        "month": 17,
+        "reasons": [
+          "|A/E-1| 0.103 > 0.10"
+        ],
+        "candidate_version": "4",
+        "action": "promoted"
+      },
+      {
+        "month": 19,
+        "reasons": [
+          "drift_share 0.44 >= 0.20 (DrivAge, BonusMalus, Density, Area)",
+          "deviance ratio 1.116 > 1.10"
+        ],
+        "candidate_version": "5",
+        "action": "promoted"
+      }
+    ],
+    "n_triggers": 2,
+    "n_promotions": 2,
+    "retrain_steps": [
+      {
+        "month": 17,
+        "version": "4",
+        "action": "promoted",
+        "candidate_deviance": 84.95389129431803,
+        "champion_deviance": 85.07930481859948,
+        "deviance_gain": 0.0014740779152915273,
+        "candidate_ae": 1.073791956477877,
+        "champion_ae": 1.1103845180093819
+      },
+      {
+        "month": 19,
+        "version": "5",
+        "action": "promoted",
+        "candidate_deviance": 95.62129146177666,
+        "champion_deviance": 95.74615752165528,
+        "deviance_gain": 0.0013041365116962522,
+        "candidate_ae": 1.0488821765721796,
+        "champion_ae": 1.0897121188403942
+      }
+    ],
+    "after_first_trigger": {
+      "months": "18-24",
+      "deviance_retrained_mean": 94.10548846775767,
+      "deviance_static_mean": 94.28767743405135,
+      "deviance_reduction_vs_static": 0.0019322669860132313,
+      "ae_retrained_mean": 1.0428666652009397,
+      "ae_static_mean": 1.1107007843348613,
+      "abs_ae_error_retrained": 0.042866665200939735,
+      "abs_ae_error_static": 0.1107007843348613
+    }
+  },
+  "canary": [
+    {
+      "month": 18,
+      "champion_version": "4",
+      "shadow_version": "2",
+      "champion_deviance": 84.6405363597854,
+      "shadow_deviance": 84.52604899028613,
+      "champion_ae": 1.059784153809362,
+      "shadow_ae": 1.0941224058875136,
+      "api_shadow_rows": 25000,
+      "api_shadow_mean_champion": 240.6194316496647,
+      "api_shadow_mean_shadow": 233.1209271554657,
+      "api_mean_ratio_shadow_to_champion": 0.9688366627633107,
+      "api_rank_corr": 0.9586001642778643
+    },
+    {
+      "month": 19,
+      "champion_version": "4",
+      "shadow_version": "2",
+      "champion_deviance": 94.77289313747721,
+      "shadow_deviance": 94.79824926965499,
+      "champion_ae": 1.0930243199490919,
+      "shadow_ae": 1.132184099023486,
+      "api_shadow_rows": 25000,
+      "api_shadow_mean_champion": 471.84247482885,
+      "api_shadow_mean_shadow": 455.5195568405028,
+      "api_mean_ratio_shadow_to_champion": 0.9654060012416897,
+      "api_rank_corr": 0.977570927632585
+    },
+    {
+      "month": 20,
+      "champion_version": "5",
+      "shadow_version": "4",
+      "champion_deviance": 95.9005478748053,
+      "shadow_deviance": 96.05882047090617,
+      "champion_ae": 1.0207325318882818,
+      "shadow_ae": 1.0589770533033402,
+      "api_shadow_rows": 25000,
+      "api_shadow_mean_champion": 487.49271373454116,
+      "api_shadow_mean_shadow": 469.8247041462642,
+      "api_mean_ratio_shadow_to_champion": 0.9637573873608747,
+      "api_rank_corr": 0.9891453613159383
+    },
+    {
+      "month": 21,
+      "champion_version": "5",
+      "shadow_version": "4",
+      "champion_deviance": 94.34399394850553,
+      "shadow_deviance": 94.25334003364952,
+      "champion_ae": 1.0172951956203067,
+      "shadow_ae": 1.057955694335579,
+      "api_shadow_rows": 25000,
+      "api_shadow_mean_champion": 494.1464389026539,
+      "api_shadow_mean_shadow": 474.829192506822,
+      "api_mean_ratio_shadow_to_champion": 0.9609078506389127,
+      "api_rank_corr": 0.9889499587277216
+    },
+    {
+      "month": 22,
+      "champion_version": "5",
+      "shadow_version": "4",
+      "champion_deviance": 95.8292830292763,
+      "shadow_deviance": 96.05200127017427,
+      "champion_ae": 1.0123406656159102,
+      "shadow_ae": 1.0487959883494002,
+      "api_shadow_rows": 25000,
+      "api_shadow_mean_champion": 487.8058455602897,
+      "api_shadow_mean_shadow": 470.76637230102347,
+      "api_mean_ratio_shadow_to_champion": 0.9650691491003047,
+      "api_rank_corr": 0.9888825133466259
+    },
+    {
+      "month": 23,
+      "champion_version": "5",
+      "shadow_version": "4",
+      "champion_deviance": 96.50411456978198,
+      "shadow_deviance": 96.60450629761391,
+      "champion_ae": 1.028989047440608,
+      "shadow_ae": 1.0648253352475892,
+      "api_shadow_rows": 25000,
+      "api_shadow_mean_champion": 484.06889515096583,
+      "api_shadow_mean_shadow": 467.89136067713474,
+      "api_mean_ratio_shadow_to_champion": 0.9665800991638064,
+      "api_rank_corr": 0.9889632979191052
+    },
+    {
+      "month": 24,
+      "champion_version": "5",
+      "shadow_version": "4",
+      "champion_deviance": 96.74705035467187,
+      "shadow_deviance": 97.0024596094687,
+      "champion_ae": 1.0679007420830176,
+      "shadow_ae": 1.1112790574230051,
+      "api_shadow_rows": 25000,
+      "api_shadow_mean_champion": 490.0382016470738,
+      "api_shadow_mean_shadow": 471.4374993846489,
+      "api_mean_ratio_shadow_to_champion": 0.9620423424134978,
+      "api_rank_corr": 0.989058169016667
+    }
+  ],
+  "final_champion_version": "5",
+  "registry": [
+    {
+      "version": 1,
+      "stage": "Archived",
+      "aliases": [],
+      "family": "glm",
+      "gate": "passed",
+      "train_months": "1-10",
+      "trigger": "",
+      "val_tweedie_deviance": 83.49526551896119,
+      "val_gini": 0.35562412126191656,
+      "val_ae_ratio": 1.0411195435400729
+    },
+    {
+      "version": 2,
+      "stage": "Archived",
+      "aliases": [],
+      "family": "gbm",
+      "gate": "passed",
+      "train_months": "1-10",
+      "trigger": "",
+      "val_tweedie_deviance": 82.17553126382438,
+      "val_gini": 0.3692862082130804,
+      "val_ae_ratio": 1.0377042508632686
+    },
+    {
+      "version": 3,
+      "stage": "Archived",
+      "aliases": [],
+      "family": "glm",
+      "gate": "failed",
+      "train_months": "1-10",
+      "trigger": "",
+      "val_tweedie_deviance": 86.72317523103399,
+      "val_gini": 0.27115201883062434,
+      "val_ae_ratio": 1.0379474200430328
+    },
+    {
+      "version": 4,
+      "stage": "Archived",
+      "aliases": [],
+      "family": "gbm",
+      "gate": "passed",
+      "train_months": "6-17",
+      "trigger": "month 17: |A/E-1| 0.103 > 0.10",
+      "val_tweedie_deviance": 84.95389129431803,
+      "val_gini": 0.3717496572495135,
+      "val_ae_ratio": 1.073791956477877
+    },
+    {
+      "version": 5,
+      "stage": "Production",
+      "aliases": [
+        "champion"
+      ],
+      "family": "gbm",
+      "gate": "passed",
+      "train_months": "8-19",
+      "trigger": "month 19: drift_share 0.44 >= 0.20 (DrivAge, BonusMalus, Density, Area) | deviance ratio 1.116 > 1.10",
+      "val_tweedie_deviance": 95.62129146177666,
+      "val_gini": 0.5800035017740615,
+      "val_ae_ratio": 1.0488821765721796
+    }
+  ],
+  "api_smoke_exported_model": {
+    "ready_status": 200,
+    "ready_version": "v5",
+    "score_status": 200,
+    "example_pure_premium": 152.85467616058176,
+    "example_expected_cost": 76.42733808029088,
+    "invalid_request_status": 422,
+    "invalid_request_errors": 2
+  },
+  "model_card": {
+    "model_name": "claims-pure-premium",
+    "version": "5",
+    "stage": "Production",
+    "aliases": [
+      "champion"
+    ],
+    "run_id": "6d564a0f113743a391b736c68097f1e6",
+    "family": "gbm",
+    "train_months": "8-19",
+    "trigger": "month 19: drift_share 0.44 >= 0.20 (DrivAge, BonusMalus, Density, Area) | deviance ratio 1.116 > 1.10",
+    "params": {
+      "n_estimators": "350",
+      "learning_rate": "0.03",
+      "num_leaves": "15",
+      "min_child_samples": "400",
+      "subsample": "0.8",
+      "colsample_bytree": "0.9",
+      "reg_lambda": "1.0",
+      "family": "gbm",
+      "n_train": "292500",
+      "tweedie_power": "1.5"
+    },
+    "validation_metrics": {
+      "tweedie_deviance": 95.62129146177666,
+      "gini": 0.5800035017740615,
+      "ae_ratio": 1.0488821765721796,
+      "mae": 736.7910809287758,
+      "n_rows": 7500.0,
+      "exposure": 5519.351,
+      "null_deviance": 131.40821383618936,
+      "balance_factor": 1.0272776628181086
+    },
+    "gate_tags": {
+      "gate": "passed",
+      "checks": {
+        "deviance_gain": true,
+        "gini_floor": true,
+        "ae_band": true
+      }
+    }
+  },
+  "runtime_seconds": 98.9
+}

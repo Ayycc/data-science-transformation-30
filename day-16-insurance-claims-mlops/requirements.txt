@@ -1,0 +1,17 @@
+# Pinned for Python 3.11+ (CI uses 3.11; results/ were produced on 3.11). All have Python 3.11 wheels. CPU only.
+# pandas stays on 2.3.x: evidently 0.7.23 imports a pandas internal removed in pandas 3.
+mlflow==3.17.2
+evidently==0.7.23
+fastapi==0.162.0
+pydantic==2.14.1
+uvicorn==0.54.0
+httpx==0.28.1
+numpy==2.4.6
+pandas==2.3.3
+scipy==1.17.1
+scikit-learn==1.9.1
+lightgbm==4.7.0
+pyarrow==25.0.1
+matplotlib==3.11.2
+pytest==9.1.1
+ruff==0.17.2
