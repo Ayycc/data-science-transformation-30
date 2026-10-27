@@ -34,7 +34,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 14 | II Expert | [Streaming Predictive Maintenance for Manufacturing IoT](./day-14-iot-streaming-anomaly-detection/) | Manufacturing | River, Bytewax or asyncio, Kafka (optional) | ✅ | [prompt](./prompts/day-14.md) | Warnings precision 0.912 / recall 0.877, median lead 17.3 h on 500-machine synthetic stream; 63,942 events/s end to end; drift resets cut false warnings 0.099 to 0.009 per machine-day |
 | 15 | II Expert | [Bike-Share Demand and Fleet Rebalancing](./day-15-bikeshare-geospatial-rebalancing/) | Urban mobility & transport | GeoPandas, H3, OSMnx | ✅ | [prompt](./prompts/day-15.md) | Forecast-driven OR-Tools routes cut simulated stockout hours 45.9% vs fixed routes (21,760 to 11,770) replaying 885k real Capital Bikeshare trips; station-hour MAE 0.663 vs 0.747 historical average |
 | 16 | III Principal | [Insurance Claims Severity: Full MLOps Lifecycle](./day-16-insurance-claims-mlops/) | Insurance | MLflow, FastAPI, Evidently | ✅ | [prompt](./prompts/day-16.md) | Gated MLflow registry auto-promoted 4/4 passing models, rejected 1; Evidently flagged injected shift in 6/6 months, 0/6 false alarms; retraining cut \|A/E-1\| 11.1% to 4.3% on 600k synthetic policies |
-| 17 | III Principal | [Point-in-Time Correct Feature Store for Ride-Hailing ETA](./day-17-ridehail-feature-store-pit/) | Mobility marketplace | Feast, DuckDB, Redis or SQLite online store | ⏳ Planned | [prompt](./prompts/day-17.md) | |
+| 17 | III Principal | [Point-in-Time Correct Feature Store for Ride-Hailing ETA](./day-17-ridehail-feature-store-pit/) | Mobility marketplace | Feast, DuckDB, Redis or SQLite online store | ✅ | [prompt](./prompts/day-17.md) | Naive hour-bucket join: offline MAE 2.075 min became 2.633 in production (+26.9%); Feast PIT model 2.159 both, 0 online/offline skew cells, online p99 1.87 ms (SYNTHETIC) |
 | 18 | III Principal | [Bayesian Marketing Mix Model and Budget Optimiser](./day-18-bayesian-marketing-mix-model/) | Consumer goods & marketing | PyMC, PyMC-Marketing, ArviZ | ⏳ Planned | [prompt](./prompts/day-18.md) | |
 | 19 | III Principal | [Data Mesh in Practice: Contracts, Versioning and Lineage](./day-19-data-mesh-contracts-lineage/) | Enterprise data platform | dbt (model contracts), OpenLineage, JSON Schema | ⏳ Planned | [prompt](./prompts/day-19.md) | |
 | 20 | III Principal | [LLM Structured Extraction with a Rigorous Evaluation Harness](./day-20-llm-document-extraction-eval/) | Legal & procurement | Anthropic SDK (optional), Pydantic, pdfplumber | ⏳ Planned | [prompt](./prompts/day-20.md) | |
@@ -49,7 +49,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ⏳ Planned | [prompt](./prompts/day-29.md) | |
 | 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
 
-Last build: 2026-10-26
+Last build: 2026-10-27
 <!-- PROGRESS:END -->
 
 ## How each project is structured

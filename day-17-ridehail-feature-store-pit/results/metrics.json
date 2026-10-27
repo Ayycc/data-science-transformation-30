@@ -1,0 +1,256 @@
+{
+  "data": {
+    "source": "synthetic",
+    "tlc_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet",
+    "tlc_status": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+    "config": {
+      "seed": 20261027,
+      "start": "2026-09-01",
+      "n_days": 28,
+      "grid": 6,
+      "zone_km": 2.0,
+      "n_drivers": 400,
+      "requests_per_day": 6000.0,
+      "tick_min": 5,
+      "candidates_per_request": 3,
+      "train_days": 21,
+      "warmup_days": 2
+    },
+    "rows": {
+      "trips": 164854,
+      "offers": 221416,
+      "probes": 1261639
+    },
+    "time_range": [
+      "2026-09-01 00:03:36+00:00",
+      "2026-09-28 23:59:53+00:00"
+    ],
+    "trips_used": 152778,
+    "train_trips": 111827,
+    "test_trips": 40951,
+    "train_window": [
+      "2026-09-03 00:00:00+00:00",
+      "2026-09-22 00:00:00+00:00"
+    ],
+    "test_window": [
+      "2026-09-22 00:00:00+00:00",
+      "2026-09-29 00:00:00+00:00"
+    ]
+  },
+  "feature_tables": {
+    "zone_traffic": 290664,
+    "zone_demand": 290664,
+    "driver_stats": 269200
+  },
+  "timings_s": {
+    "feature_build_duckdb": 1.4749025959999926,
+    "naive_join": 1.4533287570000084,
+    "feast_pit_join": 9.472299996999936,
+    "full_materialize": 0.6056927590000214
+  },
+  "pit_correctness": {
+    "feast_vs_duckdb_asof": {
+      "rows": 152778,
+      "cells": 2444448,
+      "mismatched_cells": 0,
+      "per_column": {
+        "avg_speed_15m": 0,
+        "avg_speed_60m": 0,
+        "probe_count_15m": 0,
+        "speed_trend": 0,
+        "requests_15m": 0,
+        "requests_60m": 0,
+        "demand_index": 0,
+        "acceptance_rate_7d": 0,
+        "trips_24h": 0,
+        "slowness_ratio_7d": 0,
+        "dropoff_avg_speed_15m": 0,
+        "eta_heuristic_min": 0,
+        "driver_adjusted_eta_min": 0,
+        "hour_sin": 0,
+        "hour_cos": 0,
+        "is_weekend": 0
+      }
+    }
+  },
+  "leakage": {
+    "naive_zone_feature_lookahead_min_mean": 29.8964247688367,
+    "naive_driver_profile_lookahead_h_mean": 311.45408743223646,
+    "share_trips_finishing_inside_naive_window_pct": 67.41742921101206,
+    "naive_vs_pit_mismatched_cells_pct": 78.02939559360641,
+    "naive_vs_pit_per_column": {
+      "avg_speed_15m": 152550,
+      "avg_speed_60m": 152646,
+      "probe_count_15m": 141712,
+      "speed_trend": 152655,
+      "requests_15m": 121776,
+      "requests_60m": 133562,
+      "demand_index": 147504,
+      "acceptance_rate_7d": 152694,
+      "trips_24h": 141592,
+      "slowness_ratio_7d": 152775,
+      "dropoff_avg_speed_15m": 152595,
+      "eta_heuristic_min": 152550,
+      "driver_adjusted_eta_min": 152777,
+      "hour_sin": 0,
+      "hour_cos": 0,
+      "is_weekend": 0
+    }
+  },
+  "models": {
+    "naive": {
+      "offline": {
+        "mae_min": 2.0750363937294836,
+        "rmse_min": 3.7327849046713535,
+        "mape_pct": 10.032198439982757,
+        "p90_abs_err_min": 4.53980061197986,
+        "within_2min_pct": 67.34634074869966,
+        "n": 40951
+      },
+      "production": {
+        "mae_min": 2.6328025426303907,
+        "rmse_min": 5.012691145848506,
+        "mape_pct": 12.310398409678518,
+        "p90_abs_err_min": 5.836989271563974,
+        "within_2min_pct": 62.13523479280115,
+        "n": 40951
+      },
+      "gap_mae_min": 0.5577661489009071,
+      "gap_pct": 26.879824883380888
+    },
+    "pit": {
+      "offline": {
+        "mae_min": 2.158944915979016,
+        "rmse_min": 4.166315067890846,
+        "mape_pct": 9.947662345246961,
+        "p90_abs_err_min": 4.644650555568532,
+        "within_2min_pct": 67.86159068154623,
+        "n": 40951
+      },
+      "production": {
+        "mae_min": 2.158944915979016,
+        "rmse_min": 4.166315067890846,
+        "mape_pct": 9.947662345246961,
+        "p90_abs_err_min": 4.644650555568532,
+        "within_2min_pct": 67.86159068154623,
+        "n": 40951
+      },
+      "gap_mae_min": 0.0,
+      "gap_pct": 0.0
+    },
+    "heuristic_driver_adjusted_eta": {
+      "mae_min": 4.596585662160628,
+      "rmse_min": 8.820026985236733,
+      "mape_pct": 21.847653725365458,
+      "p90_abs_err_min": 9.889511597438215,
+      "within_2min_pct": 40.39461795804743,
+      "n": 40951
+    },
+    "naive_vs_pit_production_mae_pct": 21.948574192153238
+  },
+  "feature_importance_gain_share": {
+    "naive": {
+      "driver_adjusted_eta_min": 0.5306,
+      "distance_km": 0.0866,
+      "dropoff_avg_speed_15m": 0.0788,
+      "eta_heuristic_min": 0.0695,
+      "speed_trend": 0.0363,
+      "dropoff_zone_id": 0.032,
+      "slowness_ratio_7d": 0.0316,
+      "avg_speed_15m": 0.0305
+    },
+    "pit": {
+      "driver_adjusted_eta_min": 0.5552,
+      "dropoff_avg_speed_15m": 0.0807,
+      "distance_km": 0.0789,
+      "eta_heuristic_min": 0.0777,
+      "avg_speed_15m": 0.032,
+      "dropoff_zone_id": 0.0311,
+      "zone_id": 0.027,
+      "slowness_ratio_7d": 0.024
+    }
+  },
+  "online_replay": {
+    "checkpoints": 78,
+    "materialize_s_mean": 0.5936255622948903,
+    "materialize_s_total": 46.30279385900144,
+    "requests": 1142,
+    "pit_model_online": {
+      "mae_min": 1.8265045716078574,
+      "rmse_min": 3.1771868205220213,
+      "mape_pct": 9.340299250167181,
+      "p90_abs_err_min": 3.822255656030665,
+      "within_2min_pct": 71.54115586690017,
+      "n": 1142
+    },
+    "naive_model_online": {
+      "mae_min": 2.275539776933142,
+      "rmse_min": 4.297481438089321,
+      "mape_pct": 11.53491351490933,
+      "p90_abs_err_min": 4.82053445585947,
+      "within_2min_pct": 65.9369527145359,
+      "n": 1142
+    },
+    "max_abs_prediction_diff_online_vs_offline_min": 0.0,
+    "handrolled_contrast": {
+      "feature": "avg_speed_15m",
+      "rows_differing_gt_1pct_pct": 59.01926444833625,
+      "median_rel_diff_pct": 1.3766489777858937,
+      "pit_model_mae_min": 1.813467927350424
+    }
+  },
+  "skew_test": {
+    "rows": 1142,
+    "cells": 18272,
+    "mismatched_cells": 0,
+    "per_column": {
+      "avg_speed_15m": 0,
+      "avg_speed_60m": 0,
+      "probe_count_15m": 0,
+      "speed_trend": 0,
+      "requests_15m": 0,
+      "requests_60m": 0,
+      "demand_index": 0,
+      "acceptance_rate_7d": 0,
+      "trips_24h": 0,
+      "slowness_ratio_7d": 0,
+      "dropoff_avg_speed_15m": 0,
+      "eta_heuristic_min": 0,
+      "driver_adjusted_eta_min": 0,
+      "hour_sin": 0,
+      "hour_cos": 0,
+      "is_weekend": 0
+    }
+  },
+  "online_latency": {
+    "single_row": {
+      "n": 2000,
+      "p50_ms": 1.1619129999189681,
+      "p95_ms": 1.638842599925283,
+      "p99_ms": 1.8660472098736136,
+      "max_ms": 6.603168000083315
+    },
+    "batch_50": {
+      "n": 200,
+      "p50_ms": 14.06070449991148,
+      "p99_ms": 17.292678010028336
+    }
+  },
+  "push": {
+    "zone_id": 13,
+    "before": 33.93288746391999,
+    "pushed": 7.5,
+    "after": 7.5,
+    "push_ms": 14.385710999931689,
+    "visible_online": true
+  },
+  "freshness": {
+    "zone_feature_age_min_p50": 2.4833333333333334,
+    "zone_feature_age_min_p99": 4.95,
+    "driver_feature_age_min_p50": 30.183333333333334,
+    "driver_feature_age_min_p99": 59.4,
+    "sla_zone_le_10min_pct": 100.0,
+    "sla_driver_le_65min_pct": 100.0
+  },
+  "elapsed_s": 89.17675446199996
+}

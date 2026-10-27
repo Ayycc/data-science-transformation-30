@@ -1,0 +1,12 @@
+# Equivalent of the config that src/ridehail_fs/feature_repo.py:make_store() builds in code
+# (the pipeline builds it programmatically with absolute paths under data/store/).
+# Local only: DuckDB offline store over parquet, SQLite online store, file registry.
+project: ridehail_eta
+provider: local
+registry: ../data/store/registry.db
+offline_store:
+  type: duckdb
+online_store:
+  type: sqlite
+  path: ../data/store/online.db
+entity_key_serialization_version: 3

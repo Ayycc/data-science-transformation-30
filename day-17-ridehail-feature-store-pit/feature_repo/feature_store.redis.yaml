@@ -1,0 +1,13 @@
+# OPTIONAL server-backed variant (artefact only; not used by `make run` or tests).
+# Swap the online store for Redis to serve many API replicas from one low-latency store.
+# Needs: pip install "feast[redis]" and a reachable Redis (e.g. docker run -p 6379:6379 redis:7).
+project: ridehail_eta
+provider: local
+registry: ../data/store/registry.db
+offline_store:
+  type: duckdb
+online_store:
+  type: redis
+  connection_string: "localhost:6379"
+  key_ttl_seconds: 10800   # driver TTL (3 h); zone rows refresh every 5 min
+entity_key_serialization_version: 3
