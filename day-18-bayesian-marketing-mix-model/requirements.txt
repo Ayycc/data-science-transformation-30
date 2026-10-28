@@ -1,0 +1,13 @@
+# Pinned for Python 3.11+ (CI uses 3.11; results/ were produced on 3.11.x). All have Python 3.11 wheels. CPU only.
+# PyTensor compiles its C backend with the system C/C++ compiler (gcc/g++), present on ubuntu-latest.
+pymc==5.28.5
+pymc-marketing==0.19.2
+pytensor==2.38.3
+arviz==0.23.4
+xarray==2026.9.0
+numpy==2.4.6
+pandas==2.3.3
+scipy==1.17.1
+matplotlib==3.11.2
+pytest==9.1.1
+ruff==0.17.2

@@ -1,0 +1,242 @@
+{
+  "data": {
+    "path_used": "synthetic_generator",
+    "label": "SYNTHETIC",
+    "seed": 20261028,
+    "n_weeks": 156,
+    "n_regions": 10,
+    "channels": [
+      "tv",
+      "search",
+      "social",
+      "retail_media"
+    ],
+    "n_observations": 1560,
+    "total_sales_k": 271581.1,
+    "total_spend_k": 25414.5,
+    "spend_by_channel_k": {
+      "tv": 7532.2,
+      "search": 6509.4,
+      "social": 5131.9,
+      "retail_media": 6240.9
+    }
+  },
+  "sampler": {
+    "draws": 1000,
+    "tune": 1000,
+    "chains": 4,
+    "target_accept": 0.9,
+    "init": "jitter+adapt_diag",
+    "adstock_l_max": 8,
+    "hdi_prob": 0.94,
+    "fit_seconds": 246.4,
+    "prior_predictive_seconds": 1.6
+  },
+  "convergence": {
+    "max_rhat": 1.004,
+    "n_quantities": 785,
+    "n_rhat_ge_1_01": 0,
+    "min_ess_bulk": 1370.2405,
+    "min_ess_tail": 1321.5275,
+    "divergences": 0,
+    "n_draws": 4000,
+    "mean_tree_depth": 6.8438
+  },
+  "prior_predictive": {
+    "coverage_94_region_week": 1.0,
+    "coverage_94_national_week": 1.0,
+    "r2_region_week": 0.7499,
+    "mape_region_week": 0.227,
+    "mape_national_week": 0.2109,
+    "interval_width_ratio": 2.0012,
+    "draw_min_sales_k": -668.7508,
+    "draw_max_sales_k": 1734.1801,
+    "share_negative_sales": 0.0127
+  },
+  "posterior_predictive": {
+    "coverage_94_region_week": 0.9455,
+    "coverage_94_national_week": 0.9359,
+    "r2_region_week": 0.9983,
+    "mape_region_week": 0.0154,
+    "mape_national_week": 0.0047,
+    "interval_width_ratio": 0.0742,
+    "draw_min_sales_k": 53.3938,
+    "draw_max_sales_k": 396.467,
+    "share_negative_sales": 0.0
+  },
+  "recovery": {
+    "roas_true_in_94_hdi": "4/4",
+    "by_group_in_94_hdi": {
+      "alpha": "4/4",
+      "beta": "40/40",
+      "effect_at_mean": "38/40",
+      "gamma_comp": "1/1",
+      "gamma_fourier": "4/4",
+      "gamma_holiday": "1/1",
+      "gamma_price": "1/1",
+      "lam": "4/4",
+      "roas": "4/4",
+      "sigma": "1/1",
+      "trend": "1/1"
+    },
+    "all_parameters_in_94_hdi": "99/101"
+  },
+  "roas": {
+    "tv": {
+      "true": 1.6,
+      "mean": 1.5602,
+      "hdi_low": 1.4934,
+      "hdi_high": 1.6295,
+      "true_in_hdi": true,
+      "last_click": 0.16,
+      "contribution_share_of_sales": 0.0433
+    },
+    "search": {
+      "true": 1.1,
+      "mean": 1.2203,
+      "hdi_low": 0.7969,
+      "hdi_high": 1.6669,
+      "true_in_hdi": true,
+      "last_click": 4.8461,
+      "contribution_share_of_sales": 0.0292
+    },
+    "social": {
+      "true": 2.2,
+      "mean": 2.3331,
+      "hdi_low": 2.1329,
+      "hdi_high": 2.5607,
+      "true_in_hdi": true,
+      "last_click": 1.1,
+      "contribution_share_of_sales": 0.0441
+    },
+    "retail_media": {
+      "true": 1.4,
+      "mean": 1.6233,
+      "hdi_low": 1.1974,
+      "hdi_high": 2.1155,
+      "true_in_hdi": true,
+      "last_click": 1.12,
+      "contribution_share_of_sales": 0.0373
+    }
+  },
+  "budget": {
+    "planning_horizon_weeks": 52,
+    "annual_budget_k": 8197.1,
+    "channel_bounds_vs_current": [
+      0.5,
+      1.5
+    ],
+    "risk_aversion_sd": 1.0,
+    "current_media_contribution_mean_k": 13724.0,
+    "current_media_contribution_hdi_k": [
+      12389.3,
+      15197.6
+    ],
+    "current_true_media_contribution_k": 12838.8,
+    "allocations_annual_k": {
+      "current": {
+        "tv": 2274.8,
+        "search": 2162.6,
+        "social": 1677.4,
+        "retail_media": 2082.3
+      },
+      "expected_optimal": {
+        "tv": 2964.9,
+        "search": 1081.3,
+        "social": 2516.2,
+        "retail_media": 1634.7
+      },
+      "risk_adjusted": {
+        "tv": 3412.1,
+        "search": 1081.3,
+        "social": 2516.2,
+        "retail_media": 1187.5
+      },
+      "last_click_guided": {
+        "tv": 1137.4,
+        "search": 3243.9,
+        "social": 838.7,
+        "retail_media": 2977.1
+      },
+      "oracle_true_optimal": {
+        "tv": 3412.1,
+        "search": 1081.3,
+        "social": 2516.2,
+        "retail_media": 1187.5
+      }
+    },
+    "expected_optimal": {
+      "lift_mean_k": 1028.3976,
+      "lift_hdi_low_k": 516.0266,
+      "lift_hdi_high_k": 1482.3165,
+      "lift_pct_of_media_contribution_mean": 0.0758,
+      "lift_pct_hdi_low": 0.0342,
+      "lift_pct_hdi_high": 0.1151,
+      "prob_lift_positive": 0.9998,
+      "lift_p05_k": 562.7547,
+      "contribution_mean_k": 14752.3798,
+      "contribution_sd_k": 620.0811,
+      "true_lift_k": 1125.0285,
+      "true_lift_pct_of_media_contribution": 0.0876,
+      "true_lift_pct_of_total_sales": 0.0123
+    },
+    "risk_adjusted": {
+      "lift_mean_k": 993.4917,
+      "lift_hdi_low_k": 426.3232,
+      "lift_hdi_high_k": 1504.3493,
+      "lift_pct_of_media_contribution_mean": 0.0735,
+      "lift_pct_hdi_low": 0.0294,
+      "lift_pct_hdi_high": 0.1202,
+      "prob_lift_positive": 0.9988,
+      "lift_p05_k": 491.636,
+      "contribution_mean_k": 14717.4739,
+      "contribution_sd_k": 556.4564,
+      "true_lift_k": 1184.2074,
+      "true_lift_pct_of_media_contribution": 0.0922,
+      "true_lift_pct_of_total_sales": 0.0129
+    },
+    "last_click_guided": {
+      "lift_mean_k": -1619.7156,
+      "lift_hdi_low_k": -2000.7762,
+      "lift_hdi_high_k": -1268.0217,
+      "lift_pct_of_media_contribution_mean": -0.1185,
+      "lift_pct_hdi_low": -0.1485,
+      "lift_pct_hdi_high": -0.0854,
+      "prob_lift_positive": 0.0,
+      "lift_p05_k": -1941.8547,
+      "contribution_mean_k": 12104.2666,
+      "contribution_sd_k": 818.8344,
+      "true_lift_k": -1613.5478,
+      "true_lift_pct_of_media_contribution": -0.1257,
+      "true_lift_pct_of_total_sales": -0.0176
+    },
+    "oracle_true_optimal": {
+      "lift_mean_k": 993.4917,
+      "lift_hdi_low_k": 426.3232,
+      "lift_hdi_high_k": 1504.3493,
+      "lift_pct_of_media_contribution_mean": 0.0735,
+      "lift_pct_hdi_low": 0.0294,
+      "lift_pct_hdi_high": 0.1202,
+      "prob_lift_positive": 0.9988,
+      "lift_p05_k": 491.636,
+      "contribution_mean_k": 14717.4739,
+      "contribution_sd_k": 556.4564,
+      "true_lift_k": 1184.2074,
+      "true_lift_pct_of_media_contribution": 0.0922,
+      "true_lift_pct_of_total_sales": 0.0129
+    }
+  },
+  "acceptance": {
+    "all_rhat_below_1_01": true,
+    "true_roas_in_94_hdi_for_most_channels": true,
+    "optimised_budget_lift_with_uncertainty": true
+  },
+  "versions": {
+    "python": "3.11.17",
+    "pymc": "5.28.5",
+    "pymc_marketing": "0.19.2",
+    "arviz": "0.23.4",
+    "numpy": "2.4.6"
+  },
+  "runtime_seconds": 260.5
+}
