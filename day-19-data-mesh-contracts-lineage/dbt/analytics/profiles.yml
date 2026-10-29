@@ -1,0 +1,17 @@
+analytics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('MESH_WAREHOUSE') }}/analytics.duckdb"
+      threads: 1
+      attach:
+        - path: "{{ env_var('MESH_WAREHOUSE') }}/orders.duckdb"
+          alias: orders
+          read_only: true
+        - path: "{{ env_var('MESH_WAREHOUSE') }}/payments.duckdb"
+          alias: payments
+          read_only: true
+        - path: "{{ env_var('MESH_WAREHOUSE') }}/logistics.duckdb"
+          alias: logistics
+          read_only: true

@@ -36,7 +36,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 16 | III Principal | [Insurance Claims Severity: Full MLOps Lifecycle](./day-16-insurance-claims-mlops/) | Insurance | MLflow, FastAPI, Evidently | ✅ | [prompt](./prompts/day-16.md) | Gated MLflow registry auto-promoted 4/4 passing models, rejected 1; Evidently flagged injected shift in 6/6 months, 0/6 false alarms; retraining cut \|A/E-1\| 11.1% to 4.3% on 600k synthetic policies |
 | 17 | III Principal | [Point-in-Time Correct Feature Store for Ride-Hailing ETA](./day-17-ridehail-feature-store-pit/) | Mobility marketplace | Feast, DuckDB, Redis or SQLite online store | ✅ | [prompt](./prompts/day-17.md) | Naive hour-bucket join: offline MAE 2.075 min became 2.633 in production (+26.9%); Feast PIT model 2.159 both, 0 online/offline skew cells, online p99 1.87 ms (SYNTHETIC) |
 | 18 | III Principal | [Bayesian Marketing Mix Model and Budget Optimiser](./day-18-bayesian-marketing-mix-model/) | Consumer goods & marketing | PyMC, PyMC-Marketing, ArviZ | ✅ | [prompt](./prompts/day-18.md) | True ROAS in 94% HDI for 4/4 channels, max R-hat 1.004; reallocating the same budget adds $1.03M/yr (94% HDI $0.52M-$1.48M; true +$1.13M) while last-click guidance loses $1.61M (SYNTHETIC) |
-| 19 | III Principal | [Data Mesh in Practice: Contracts, Versioning and Lineage](./day-19-data-mesh-contracts-lineage/) | Enterprise data platform | dbt (model contracts), OpenLineage, JSON Schema | ⏳ Planned | [prompt](./prompts/day-19.md) | |
+| 19 | III Principal | [Data Mesh in Practice: Contracts, Versioning and Lineage](./day-19-data-mesh-contracts-lineage/) | Enterprise data platform | dbt (model contracts), OpenLineage, JSON Schema | ✅ | [prompt](./prompts/day-19.md) | CI gate blocked 15/15 breaking contract changes; versioned data products cut dashboard breakage from 130/370 to 0 dashboard-days (SYNTHETIC); net_revenue traced to raw columns via OpenLineage |
 | 20 | III Principal | [LLM Structured Extraction with a Rigorous Evaluation Harness](./day-20-llm-document-extraction-eval/) | Legal & procurement | Anthropic SDK (optional), Pydantic, pdfplumber | ⏳ Planned | [prompt](./prompts/day-20.md) | |
 | 21 | III Principal | [Regulatory Q&A: Hybrid-Search RAG with Measured Faithfulness](./day-21-regulatory-rag-hybrid-search/) | Government & regulation | rank-bm25, sentence-transformers, FAISS or LanceDB | ⏳ Planned | [prompt](./prompts/day-21.md) | |
 | 22 | III Principal | [Crop Yield and Climate Risk with xarray + Dask](./day-22-agri-climate-xarray-dask/) | Agriculture & climate | xarray, Dask, rioxarray | ⏳ Planned | [prompt](./prompts/day-22.md) | |
@@ -49,7 +49,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ⏳ Planned | [prompt](./prompts/day-29.md) | |
 | 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
 
-Last build: 2026-10-28
+Last build: 2026-10-29
 <!-- PROGRESS:END -->
 
 ## How each project is structured

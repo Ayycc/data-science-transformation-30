@@ -1,0 +1,16 @@
+name: analytics
+version: "1.0.0"
+config-version: 2
+profile: analytics
+model-paths: ["models"]
+target-path: target
+clean-targets: [target]
+flags:
+  send_anonymous_usage_stats: false
+  partial_parse: false
+models:
+  analytics:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

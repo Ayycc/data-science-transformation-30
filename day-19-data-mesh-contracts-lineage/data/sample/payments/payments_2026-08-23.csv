@@ -1,0 +1,5 @@
+payment_id,order_id,paid_at,amount_cents,currency,status,payment_method,_loaded_at
+P00000416,O0000374,2026-08-23 02:56:42,3462,USD,captured,card,2026-08-24 01:00:00
+P00000417,O0000375,2026-08-23 07:45:55,2806,USD,captured,card,2026-08-24 01:00:00
+P00000418,O0000376,2026-08-23 13:29:48,4849,USD,captured,wallet,2026-08-24 01:00:00
+P00000419,O0000377,2026-08-23 16:36:43,9002,USD,captured,card,2026-08-24 01:00:00

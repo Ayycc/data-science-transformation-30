@@ -1,0 +1,27 @@
+version: 2
+# The consumer reads only *published, versioned* interfaces of other domains' data products.
+# Each source pins a major version via the physical name (fct_orders_v2, ...).
+sources:
+  - name: orders
+    database: orders
+    schema: main
+    meta: {contract: "urn:datacontract:orders:fct_orders"}
+    tables:
+      - name: fct_orders_v2
+        meta: {contract_major: 2}
+      - name: fct_orders_v1
+        meta: {contract_major: 1, deprecated: true}
+  - name: payments
+    database: payments
+    schema: main
+    meta: {contract: "urn:datacontract:payments:fct_payments"}
+    tables:
+      - name: fct_payments_v1
+        meta: {contract_major: 1}
+  - name: logistics
+    database: logistics
+    schema: main
+    meta: {contract: "urn:datacontract:logistics:fct_shipments"}
+    tables:
+      - name: fct_shipments_v1
+        meta: {contract_major: 1}

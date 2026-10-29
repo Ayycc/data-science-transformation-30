@@ -1,0 +1,77 @@
+# GENERATED from contracts/logistics/fct_shipments.odcs.yaml - do not edit by hand.
+version: 2
+models:
+- name: fct_shipments
+  description: One row per shipment with carrier, timestamps and on-time flag. Lands in 3-day batches.
+  latest_version: 1
+  access: public
+  config:
+    materialized: table
+    contract:
+      enforced: true
+    meta:
+      contract_id: urn:datacontract:logistics:fct_shipments
+      contract_version: 1.1.0
+      owner: logistics-oncall
+  versions:
+  - v: 1
+    columns:
+    - name: shipment_id
+      data_type: varchar
+      description: Shipment identifier (primary key).
+      constraints:
+      - type: not_null
+      data_tests:
+      - unique
+    - name: order_id
+      data_type: varchar
+      description: Order shipped.
+      constraints:
+      - type: not_null
+    - name: carrier
+      data_type: varchar
+      description: Carrier code.
+      constraints:
+      - type: not_null
+      data_tests:
+      - accepted_values:
+          arguments:
+            values:
+            - UPS
+            - FDX
+            - DHL
+            - USPS
+    - name: carrier_service
+      data_type: varchar
+      description: Service level; null before 2026-08-26.
+      data_tests:
+      - accepted_values:
+          arguments:
+            values:
+            - ground
+            - express
+    - name: shipped_at
+      data_type: timestamp
+      description: Hand-over to carrier (UTC).
+      constraints:
+      - type: not_null
+    - name: delivered_at
+      data_type: timestamp
+      description: Proof of delivery (UTC).
+      constraints:
+      - type: not_null
+    - name: promised_date
+      data_type: date
+      description: Delivery date promised to the customer.
+      constraints:
+      - type: not_null
+    - name: is_on_time
+      data_type: boolean
+      description: delivered_at date <= promised_date.
+      constraints:
+      - type: not_null
+    - name: loaded_at
+      data_type: timestamp
+      description: When the source batch landed in the warehouse (freshness).
+      constraints:
+      - type: not_null

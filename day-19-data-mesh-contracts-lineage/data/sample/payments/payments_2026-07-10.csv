@@ -1,0 +1,3 @@
+payment_id,order_id,paid_at,amount,currency,status,_loaded_at
+P00000061,O0000053,2026-07-10 18:31:25,85.34,USD,captured,2026-07-11 01:00:00
+P00000060,O0000052,2026-07-10 18:33:14,83.29,USD,captured,2026-07-11 01:00:00

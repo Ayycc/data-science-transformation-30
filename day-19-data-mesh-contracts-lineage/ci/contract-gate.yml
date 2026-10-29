@@ -1,0 +1,32 @@
+# Artefact: GitHub Actions workflow for a repository that hosts these contracts at its root.
+# (In this portfolio repo the root CI runs `make test`, which includes the gate tests; this file shows
+#  how the gate runs as its own required status check on every pull request.)
+name: contract-gate
+
+on:
+  pull_request:
+    paths:
+      - "contracts/**"
+      - "dbt/**"
+
+jobs:
+  contract-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # the gate diffs against the PR base, so it needs history
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Diff contracts against the PR base (fails on breaking change without major bump)
+        run: python scripts/check_contracts.py --base "origin/${{ github.base_ref }}" --report contract-gate.json
+      - name: dbt build with enforced model contracts
+        run: make run
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: contract-gate-report
+          path: contract-gate.json

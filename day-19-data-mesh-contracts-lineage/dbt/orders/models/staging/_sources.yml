@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: orders_raw
+    description: Raw order feed loaded verbatim (union of all file schemas) by scripts/run_pipeline.py. SYNTHETIC.
+    schema: raw
+    tables:
+      - name: orders

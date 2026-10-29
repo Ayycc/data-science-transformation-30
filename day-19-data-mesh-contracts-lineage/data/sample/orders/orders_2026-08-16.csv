@@ -1,0 +1,5 @@
+order_id,customer_id,order_ts,order_total,currency,status,sales_channel,_loaded_at
+O0000314,C01495,2026-08-16 09:28:42,62.87,USD,completed,app,2026-08-17 01:00:00
+O0000315,C02829,2026-08-16 12:52:50,86.81,USD,completed,web,2026-08-17 01:00:00
+O0000316,C02837,2026-08-16 16:12:30,30.85,USD,completed,app,2026-08-17 01:00:00
+O0000317,C04130,2026-08-16 23:33:18,39.64,USD,completed,app,2026-08-17 01:00:00

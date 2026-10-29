@@ -1,0 +1,76 @@
+# GENERATED from contracts/payments/fct_payments.odcs.yaml - do not edit by hand.
+version: 2
+models:
+- name: fct_payments
+  description: One row per payment gateway event (capture, failure, refund). Source of truth for cash and net revenue. The
+    raw feed moved to integer cents on 2026-08-05; the published amount stays in dollars.
+  latest_version: 1
+  access: public
+  config:
+    materialized: table
+    contract:
+      enforced: true
+    meta:
+      contract_id: urn:datacontract:payments:fct_payments
+      contract_version: 1.2.0
+      owner: payments-oncall
+  versions:
+  - v: 1
+    columns:
+    - name: payment_id
+      data_type: varchar
+      description: Payment event identifier (primary key).
+      constraints:
+      - type: not_null
+      data_tests:
+      - unique
+    - name: order_id
+      data_type: varchar
+      description: Order the payment belongs to. Null for orphaned gateway events.
+    - name: paid_at
+      data_type: timestamp
+      description: Gateway event time (UTC).
+      constraints:
+      - type: not_null
+    - name: amount
+      data_type: decimal(12,2)
+      description: Event amount in USD (always positive; sign is given by status).
+      constraints:
+      - type: not_null
+    - name: currency
+      data_type: varchar
+      description: ISO 4217 currency code.
+      constraints:
+      - type: not_null
+      data_tests:
+      - accepted_values:
+          arguments:
+            values:
+            - USD
+    - name: status
+      data_type: varchar
+      description: Gateway outcome.
+      constraints:
+      - type: not_null
+      data_tests:
+      - accepted_values:
+          arguments:
+            values:
+            - captured
+            - failed
+            - refunded
+    - name: payment_method
+      data_type: varchar
+      description: Instrument used; null before 2026-08-05.
+      data_tests:
+      - accepted_values:
+          arguments:
+            values:
+            - card
+            - wallet
+            - bnpl
+    - name: loaded_at
+      data_type: timestamp
+      description: When the source file landed in the warehouse (freshness).
+      constraints:
+      - type: not_null

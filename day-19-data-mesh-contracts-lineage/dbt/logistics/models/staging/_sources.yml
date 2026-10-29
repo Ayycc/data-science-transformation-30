@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: logistics_raw
+    description: Raw carrier feed, landed in 3-day batches (union of all file schemas). SYNTHETIC.
+    schema: raw
+    tables:
+      - name: shipments

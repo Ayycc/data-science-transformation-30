@@ -1,0 +1,8 @@
+domain,version,date,required_bump,actual_bump,passed,changes,errors
+orders,1.0.0 -> 1.1.0,2026-07-22,minor,minor,True,"[""minor:column_added:schema/fct_orders/sales_channel""]",[]
+orders,1.1.0 -> 2.0.0,2026-08-19,major,major,True,"[""major:physical_name_changed:schema/fct_orders"", ""major:column_removed:schema/fct_orders/order_total"", ""minor:column_added:schema/fct_orders/order_amount"", ""minor:enum_value_added:schema/fct_orders/status"", ""patch:description_changed:schema/fct_orders/status"", ""minor:dual_publish_started:customProperties/dualPublish/1.1.0""]",[]
+orders,2.0.0 -> 2.1.0,2026-09-09,minor,minor,True,"[""minor:column_added:schema/fct_orders/discount_amount""]",[]
+payments,1.0.0 -> 1.1.0,2026-08-05,minor,minor,True,"[""minor:column_added:schema/fct_payments/payment_method""]",[]
+payments,1.1.0 -> 1.2.0,2026-09-02,minor,minor,True,"[""minor:sla_tightened:sla/freshness"", ""patch:description_changed:description""]",[]
+logistics,1.0.0 -> 1.0.1,2026-08-01,patch,patch,True,"[""patch:team_changed:team""]",[]
+logistics,1.0.1 -> 1.1.0,2026-08-26,minor,minor,True,"[""minor:column_added:schema/fct_shipments/carrier_service""]",[]

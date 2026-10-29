@@ -1,0 +1,6 @@
+dashboard,domain,built_day,live_days,naive_broken_days,naive_first_break,naive_missing_columns,mesh_interface,mesh_broken_days
+exec_revenue,orders,0,90,41,2026-08-19,"[""order_total""]",fct_orders_v1,0
+channel_mix,orders,25,65,0,,[],fct_orders_v1,0
+basket_value,orders,55,35,0,,[],fct_orders_v2,0
+payments_recon,payments,0,90,55,2026-08-05,"[""amount""]",fct_payments_v1,0
+carrier_scorecard,logistics,0,90,34,2026-08-26,"[""carrier""]",fct_shipments_v1,0

@@ -1,0 +1,7 @@
+logistics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('MESH_WAREHOUSE') }}/logistics.duckdb"
+      threads: 1

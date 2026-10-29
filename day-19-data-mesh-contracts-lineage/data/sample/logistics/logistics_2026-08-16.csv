@@ -1,0 +1,2 @@
+shipment_id,order_id,carrier,shipped_at,delivered_at,promised_date,_loaded_at
+S0000302,O0000312,UPS,2026-08-16 03:43:17,2026-08-18 15:58:36,2026-08-19,2026-08-18 02:00:00

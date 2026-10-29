@@ -1,0 +1,151 @@
+# GENERATED from contracts/orders/fct_orders.odcs.yaml - do not edit by hand.
+version: 2
+models:
+- name: fct_orders
+  description: One row per customer order with its final status and value. Source of truth for order counts and GMV.
+  latest_version: 2
+  access: public
+  config:
+    materialized: table
+    contract:
+      enforced: true
+    meta:
+      contract_id: urn:datacontract:orders:fct_orders
+      contract_version: 2.1.0
+      owner: orders-oncall
+  versions:
+  - v: 2
+    columns:
+    - name: order_id
+      data_type: varchar
+      description: Order identifier (primary key).
+      constraints:
+      - type: not_null
+      data_tests:
+      - unique
+    - name: customer_id
+      data_type: varchar
+      description: Pseudonymous customer key.
+      constraints:
+      - type: not_null
+    - name: order_ts
+      data_type: timestamp
+      description: When the order was placed (UTC).
+      constraints:
+      - type: not_null
+    - name: order_date
+      data_type: date
+      description: UTC calendar date of order_ts.
+      constraints:
+      - type: not_null
+    - name: order_amount
+      data_type: decimal(12,2)
+      description: Order value before discounts, USD (renamed from order_total in 2.0.0).
+      constraints:
+      - type: not_null
+    - name: discount_amount
+      data_type: decimal(12,2)
+      description: Discount applied, USD; null before 2026-09-09.
+    - name: currency
+      data_type: varchar
+      description: ISO 4217 currency code.
+      constraints:
+      - type: not_null
+      data_tests:
+      - accepted_values:
+          arguments:
+            values:
+            - USD
+    - name: status
+      data_type: varchar
+      description: Final order status. 'returned' reported from 2026-08-19; v1 maps it to 'completed'.
+      constraints:
+      - type: not_null
+      data_tests:
+      - accepted_values:
+          arguments:
+            values:
+            - completed
+            - cancelled
+            - returned
+    - name: sales_channel
+      data_type: varchar
+      description: Channel the order came from; null before 2026-07-22.
+      data_tests:
+      - accepted_values:
+          arguments:
+            values:
+            - web
+            - app
+            - marketplace
+    - name: loaded_at
+      data_type: timestamp
+      description: When the source file landed in the warehouse (freshness).
+      constraints:
+      - type: not_null
+  - v: 1
+    deprecation_date: '2026-10-31'
+    columns:
+    - name: order_id
+      data_type: varchar
+      description: Order identifier (primary key).
+      constraints:
+      - type: not_null
+      data_tests:
+      - unique
+    - name: customer_id
+      data_type: varchar
+      description: Pseudonymous customer key.
+      constraints:
+      - type: not_null
+    - name: order_ts
+      data_type: timestamp
+      description: When the order was placed (UTC).
+      constraints:
+      - type: not_null
+    - name: order_date
+      data_type: date
+      description: UTC calendar date of order_ts.
+      constraints:
+      - type: not_null
+    - name: order_total
+      data_type: decimal(12,2)
+      description: Order value before discounts, USD.
+      constraints:
+      - type: not_null
+    - name: currency
+      data_type: varchar
+      description: ISO 4217 currency code.
+      constraints:
+      - type: not_null
+      data_tests:
+      - accepted_values:
+          arguments:
+            values:
+            - USD
+    - name: status
+      data_type: varchar
+      description: Final order status.
+      constraints:
+      - type: not_null
+      data_tests:
+      - accepted_values:
+          arguments:
+            values:
+            - completed
+            - cancelled
+    - name: sales_channel
+      data_type: varchar
+      description: Channel the order came from; null before 2026-07-22.
+      data_tests:
+      - accepted_values:
+          arguments:
+            values:
+            - web
+            - app
+            - marketplace
+    - name: loaded_at
+      data_type: timestamp
+      description: When the source file landed in the warehouse (freshness).
+      constraints:
+      - type: not_null

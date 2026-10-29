@@ -1,0 +1,15 @@
+# Pinned for Python 3.11+ (CI uses 3.11; results/ were produced on 3.11.x). All have Python 3.11 wheels. CPU only.
+# No Docker, no lineage server: dbt runs in-process on DuckDB files; OpenLineage events go to a JSONL file.
+dbt-core==1.12.6
+dbt-duckdb==1.11.1
+duckdb==2.0.0
+openlineage-python==1.54.0
+sqlglot==30.25.0
+jsonschema==4.26.0
+PyYAML==6.0.3
+networkx==3.6.1
+pandas==2.3.3
+numpy==2.4.6
+matplotlib==3.11.2
+pytest==9.1.1
+ruff==0.17.2

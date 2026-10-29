@@ -1,0 +1,133 @@
+{
+  "net_revenue_direct": {
+    "metric": "analytics.main.mart_daily_kpis::net_revenue",
+    "upstream_columns": 12,
+    "source_columns": [
+      "payments/payments_*.csv::amount",
+      "payments/payments_*.csv::amount_cents",
+      "payments/payments_*.csv::status"
+    ],
+    "datasets": [
+      "analytics.main.int_order_payments",
+      "analytics.main.mart_daily_kpis",
+      "payments.main.fct_payments_v1",
+      "payments.main.stg_payments",
+      "payments.raw.payments",
+      "payments/payments_*.csv"
+    ],
+    "jobs": [
+      "analytics.int_order_payments",
+      "analytics.mart_daily_kpis",
+      "payments.fct_payments.v1",
+      "payments.ingest_raw",
+      "payments.stg_payments"
+    ],
+    "max_hops": 5,
+    "producer_domains": [
+      "payments"
+    ]
+  },
+  "net_revenue_with_indirect": {
+    "metric": "analytics.main.mart_daily_kpis::net_revenue",
+    "upstream_columns": 32,
+    "source_columns": [
+      "logistics/logistics_*.csv::order_id",
+      "orders/orders_*.csv::_loaded_at",
+      "orders/orders_*.csv::order_id",
+      "orders/orders_*.csv::order_ts",
+      "payments/payments_*.csv::amount",
+      "payments/payments_*.csv::amount_cents",
+      "payments/payments_*.csv::order_id",
+      "payments/payments_*.csv::status"
+    ],
+    "datasets": [
+      "analytics.main.int_order_fulfilment",
+      "analytics.main.int_order_payments",
+      "analytics.main.mart_daily_kpis",
+      "logistics.main.fct_shipments_v1",
+      "logistics.main.stg_shipments",
+      "logistics.raw.shipments",
+      "logistics/logistics_*.csv",
+      "orders.main.fct_orders_v2",
+      "orders.main.stg_orders",
+      "orders.raw.orders",
+      "orders/orders_*.csv",
+      "payments.main.fct_payments_v1",
+      "payments.main.stg_payments",
+      "payments.raw.payments",
+      "payments/payments_*.csv"
+    ],
+    "jobs": [
+      "analytics.int_order_fulfilment",
+      "analytics.int_order_payments",
+      "analytics.mart_daily_kpis",
+      "logistics.fct_shipments.v1",
+      "logistics.ingest_raw",
+      "logistics.stg_shipments",
+      "orders.fct_orders.v2",
+      "orders.ingest_raw",
+      "orders.stg_orders",
+      "payments.fct_payments.v1",
+      "payments.ingest_raw",
+      "payments.stg_payments"
+    ],
+    "max_hops": 5,
+    "producer_domains": [
+      "logistics",
+      "orders",
+      "payments"
+    ]
+  },
+  "gmv_direct": {
+    "metric": "analytics.main.mart_daily_kpis::gmv",
+    "upstream_columns": 6,
+    "source_columns": [
+      "orders/orders_*.csv::order_amount",
+      "orders/orders_*.csv::order_total"
+    ],
+    "datasets": [
+      "analytics.main.mart_daily_kpis",
+      "orders.main.fct_orders_v2",
+      "orders.main.stg_orders",
+      "orders.raw.orders",
+      "orders/orders_*.csv"
+    ],
+    "jobs": [
+      "analytics.mart_daily_kpis",
+      "orders.fct_orders.v2",
+      "orders.ingest_raw",
+      "orders.stg_orders"
+    ],
+    "max_hops": 4,
+    "producer_domains": [
+      "orders"
+    ]
+  },
+  "on_time_delivery_rate_direct": {
+    "metric": "analytics.main.mart_daily_kpis::on_time_delivery_rate",
+    "upstream_columns": 8,
+    "source_columns": [
+      "logistics/logistics_*.csv::delivered_at",
+      "logistics/logistics_*.csv::promised_date"
+    ],
+    "datasets": [
+      "analytics.main.int_order_fulfilment",
+      "analytics.main.mart_daily_kpis",
+      "logistics.main.fct_shipments_v1",
+      "logistics.main.stg_shipments",
+      "logistics.raw.shipments",
+      "logistics/logistics_*.csv"
+    ],
+    "jobs": [
+      "analytics.int_order_fulfilment",
+      "analytics.mart_daily_kpis",
+      "logistics.fct_shipments.v1",
+      "logistics.ingest_raw",
+      "logistics.stg_shipments"
+    ],
+    "max_hops": 5,
+    "producer_domains": [
+      "logistics"
+    ]
+  }
+}

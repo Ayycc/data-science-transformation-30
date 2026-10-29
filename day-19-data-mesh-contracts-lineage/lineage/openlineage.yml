@@ -1,0 +1,6 @@
+# OPTIONAL OpenLineage client config (used only if OPENLINEAGE_CONFIG points here).
+# By default the pipeline writes events to results/lineage/openlineage_events.jsonl and needs no server.
+transport:
+  type: http
+  url: http://localhost:5000
+  endpoint: api/v1/lineage

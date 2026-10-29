@@ -1,0 +1,134 @@
+[
+  {
+    "domain": "orders",
+    "data_product": "fct_orders_v2",
+    "contract_version": "2.1.0",
+    "owner": "orders-oncall",
+    "rows": 46665,
+    "checks": [
+      {
+        "sla": "freshness",
+        "target": 12,
+        "unit": "h",
+        "observed": 5.0,
+        "status": "PASS",
+        "detail": "latest loaded_at = 2026-09-29 01:00:00, evaluated at 2026-09-29 06:00:00"
+      },
+      {
+        "sla": "completeness",
+        "target": 99.5,
+        "unit": "percent",
+        "observed": 100.0,
+        "status": "PASS",
+        "detail": "min non-null rate over 8 required columns (worst: order_id)"
+      },
+      {
+        "sla": "uniqueness",
+        "target": 100,
+        "unit": "percent",
+        "observed": 100.0,
+        "status": "PASS",
+        "detail": "46665 distinct order_id / 46665 rows"
+      },
+      {
+        "sla": "volume",
+        "target": 30000,
+        "unit": "rows",
+        "observed": 46665,
+        "status": "PASS",
+        "detail": "row count of published table"
+      }
+    ],
+    "passed": 4,
+    "total": 4,
+    "status": "PASS"
+  },
+  {
+    "domain": "payments",
+    "data_product": "fct_payments_v1",
+    "contract_version": "1.2.0",
+    "owner": "payments-oncall",
+    "rows": 51379,
+    "checks": [
+      {
+        "sla": "freshness",
+        "target": 12,
+        "unit": "h",
+        "observed": 5.0,
+        "status": "PASS",
+        "detail": "latest loaded_at = 2026-09-29 01:00:00, evaluated at 2026-09-29 06:00:00"
+      },
+      {
+        "sla": "completeness",
+        "target": 99.5,
+        "unit": "percent",
+        "observed": 100.0,
+        "status": "PASS",
+        "detail": "min non-null rate over 6 required columns (worst: payment_id)"
+      },
+      {
+        "sla": "uniqueness",
+        "target": 100,
+        "unit": "percent",
+        "observed": 100.0,
+        "status": "PASS",
+        "detail": "51379 distinct payment_id / 51379 rows"
+      },
+      {
+        "sla": "volume",
+        "target": 30000,
+        "unit": "rows",
+        "observed": 51379,
+        "status": "PASS",
+        "detail": "row count of published table"
+      }
+    ],
+    "passed": 4,
+    "total": 4,
+    "status": "PASS"
+  },
+  {
+    "domain": "logistics",
+    "data_product": "fct_shipments_v1",
+    "contract_version": "1.1.0",
+    "owner": "logistics-oncall",
+    "rows": 42167,
+    "checks": [
+      {
+        "sla": "freshness",
+        "target": 48,
+        "unit": "h",
+        "observed": 76.0,
+        "status": "FAIL",
+        "detail": "latest loaded_at = 2026-09-26 02:00:00, evaluated at 2026-09-29 06:00:00"
+      },
+      {
+        "sla": "completeness",
+        "target": 99.5,
+        "unit": "percent",
+        "observed": 100.0,
+        "status": "PASS",
+        "detail": "min non-null rate over 8 required columns (worst: shipment_id)"
+      },
+      {
+        "sla": "uniqueness",
+        "target": 100,
+        "unit": "percent",
+        "observed": 100.0,
+        "status": "PASS",
+        "detail": "42167 distinct shipment_id / 42167 rows"
+      },
+      {
+        "sla": "volume",
+        "target": 30000,
+        "unit": "rows",
+        "observed": 42167,
+        "status": "PASS",
+        "detail": "row count of published table"
+      }
+    ],
+    "passed": 3,
+    "total": 4,
+    "status": "FAIL"
+  }
+]

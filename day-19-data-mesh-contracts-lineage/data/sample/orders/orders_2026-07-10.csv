@@ -1,0 +1,3 @@
+order_id,customer_id,order_ts,order_total,currency,status,_loaded_at
+O0000052,C00922,2026-07-10 18:19:14,83.29,USD,completed,2026-07-11 01:00:00
+O0000053,C03204,2026-07-10 18:26:39,85.34,USD,completed,2026-07-11 01:00:00

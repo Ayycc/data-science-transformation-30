@@ -1,0 +1,16 @@
+name: orders
+version: "1.0.0"
+config-version: 2
+profile: orders
+model-paths: ["models"]
+target-path: target
+clean-targets: [target]
+flags:
+  send_anonymous_usage_stats: false
+  partial_parse: false
+models:
+  orders:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

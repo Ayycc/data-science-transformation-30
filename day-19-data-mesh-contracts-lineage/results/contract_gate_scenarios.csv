@@ -1,0 +1,25 @@
+scenario,domain,version,expected,gate,correct,required_bump,actual_bump,why,first_error
+rename_amount_minor,payments,1.2.0 -> 1.3.0,fail,fail,True,major,minor,column rename is breaking,major change(s) need at least a major bump; got minor (1.2.0 -> 1.3.0)
+rename_amount_patch,payments,1.2.0 -> 1.2.1,fail,fail,True,major,patch,column rename is breaking,major change(s) need at least a major bump; got patch (1.2.0 -> 1.2.1)
+rename_amount_major_dual,payments,1.2.0 -> 2.0.0,pass,pass,True,major,major,major bump + v1 kept published,
+rename_amount_major_no_dual,payments,1.2.0 -> 2.0.0,fail,fail,True,major,major,major release must dual-publish the previous major,major release must dual-publish fct_payments_v1 (customProperties/dualPublish) for a deprecation window
+drop_sales_channel_patch,orders,2.1.0 -> 2.1.1,fail,fail,True,major,patch,column removal is breaking,major change(s) need at least a major bump; got patch (2.1.0 -> 2.1.1)
+narrow_type_minor,orders,2.1.0 -> 2.2.0,fail,fail,True,major,minor,decimal -> integer loses precision,major change(s) need at least a major bump; got minor (2.1.0 -> 2.2.0)
+widen_decimal_minor,orders,2.1.0 -> 2.2.0,pass,pass,True,minor,minor,widening is additive,
+widen_decimal_patch,orders,2.1.0 -> 2.1.1,fail,fail,True,minor,patch,widening needs a minor,minor change(s) need at least a minor bump; got patch (2.1.0 -> 2.1.1)
+relax_required_minor,logistics,1.1.0 -> 1.2.0,fail,fail,True,major,minor,nulls may now appear,major change(s) need at least a major bump; got minor (1.1.0 -> 1.2.0)
+tighten_required_minor,logistics,1.1.0 -> 1.2.0,pass,pass,True,minor,minor,stronger guarantee,
+loosen_freshness_patch,logistics,1.1.0 -> 1.1.1,fail,fail,True,major,patch,weaker SLA is breaking,major change(s) need at least a major bump; got patch (1.1.0 -> 1.1.1)
+tighten_freshness_minor,logistics,1.1.0 -> 1.2.0,pass,pass,True,minor,minor,stronger SLA,
+add_enum_value_minor,orders,2.1.0 -> 2.2.0,pass,pass,True,minor,minor,new value is additive,
+remove_enum_value_minor,orders,2.1.0 -> 2.2.0,fail,fail,True,major,minor,consumers filtering on it silently get 0 rows,major change(s) need at least a major bump; got minor (2.1.0 -> 2.2.0)
+add_optional_column_minor,payments,1.2.0 -> 1.3.0,pass,pass,True,minor,minor,additive,
+add_optional_column_patch,payments,1.2.0 -> 1.2.1,fail,fail,True,minor,patch,additive needs a minor,minor change(s) need at least a minor bump; got patch (1.2.0 -> 1.2.1)
+change_primary_key_major_dual,orders,2.1.0 -> 3.0.0,pass,pass,True,major,major,PK change with major bump + dual publish,
+change_primary_key_minor,orders,2.1.0 -> 2.2.0,fail,fail,True,major,minor,PK change is breaking,major change(s) need at least a major bump; got minor (2.1.0 -> 2.2.0)
+description_patch,logistics,1.1.0 -> 1.1.1,pass,pass,True,patch,patch,metadata only,
+owner_handover_patch,payments,1.2.0 -> 1.2.1,pass,pass,True,patch,patch,metadata only,
+no_version_bump,payments,1.2.0 -> 1.2.0,fail,fail,True,minor,none,version must increase,version must increase: 1.2.0 -> 1.2.0
+retire_v1_early,orders,2.1.0 -> 2.2.0,fail,fail,True,major,minor,orders v1 is still promised until 2026-10-31,major change(s) need at least a major bump; got minor (2.1.0 -> 2.2.0)
+major_without_physical_rename,logistics,1.1.0 -> 2.0.0,fail,fail,True,major,major,physicalName must carry the major,schema/fct_shipments: physicalName fct_shipments_v1 must end with _v2 (major version)
+invalid_contract_no_owner,logistics,1.1.0 -> 1.1.1,fail,fail,True,patch,patch,schema: owner required,"team/members: [{'username': 'x', 'role': 'engineer'}] does not contain items matching the given schema"

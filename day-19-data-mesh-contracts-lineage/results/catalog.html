@@ -1,0 +1,81 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Data Product Catalogue</title><style>
+:root{--bg:#fff;--fg:#1d2329;--muted:#5b6670;--line:#d9dee3;--ok:#1f7a4d;--bad:#b3261e}
+@media (prefers-color-scheme:dark){:root{--bg:#14171a;--fg:#e6e9ec;--muted:#9aa3ad;--line:#2c3238;--ok:#5cc28f;--bad:#f2867e}}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif;margin:0 auto;max-width:980px;padding:24px 16px}
+table{border-collapse:collapse;width:100%;margin:8px 0 20px;font-size:13px;display:block;overflow-x:auto}
+th,td{border-bottom:1px solid var(--line);padding:4px 8px;text-align:left;white-space:nowrap}
+.PASS{color:var(--ok);font-weight:600}.FAIL{color:var(--bad);font-weight:600}.muted{color:var(--muted)}
+</style></head><body><h1>Data product catalogue</h1>
+<p class='muted'>Generated from contracts, SLO checks and OpenLineage events. All data is SYNTHETIC.</p>
+<h2>Orders <span class='muted'>(orders)</span></h2>
+<p><b>urn:datacontract:orders:fct_orders</b> v2.1.0 · owner orders-oncall<br>One row per customer order with its final status and value. Source of truth for order counts and GMV.</p>
+<table><tr><th>interface</th><th>contract</th><th>lifecycle</th><th>downstream jobs</th></tr>
+<tr><td>orders.main.fct_orders_v2</td><td>2.1.0</td><td>latest</td><td>analytics.mart_daily_kpis</td></tr>
+<tr><td>orders.main.fct_orders_v1</td><td>1.1.0</td><td>deprecated, retire after 2026-10-31</td><td>analytics.rpt_legacy_revenue</td></tr>
+</table>
+<p>SLO status: <span class='PASS'>PASS</span> (4/4)</p>
+<table><tr><th>SLA</th><th>target</th><th>observed</th><th>status</th></tr>
+<tr><td>freshness</td><td>12 h</td><td>5.0</td><td class='PASS'>PASS</td></tr>
+<tr><td>completeness</td><td>99.5 percent</td><td>100.0</td><td class='PASS'>PASS</td></tr>
+<tr><td>uniqueness</td><td>100 percent</td><td>100.0</td><td class='PASS'>PASS</td></tr>
+<tr><td>volume</td><td>30000 rows</td><td>46665</td><td class='PASS'>PASS</td></tr>
+</table>
+<table><tr><th>column</th><th>type</th><th>required</th><th>description</th></tr>
+<tr><td>order_id</td><td>varchar</td><td>yes</td><td>Order identifier (primary key).</td></tr>
+<tr><td>customer_id</td><td>varchar</td><td>yes</td><td>Pseudonymous customer key.</td></tr>
+<tr><td>order_ts</td><td>timestamp</td><td>yes</td><td>When the order was placed (UTC).</td></tr>
+<tr><td>order_date</td><td>date</td><td>yes</td><td>UTC calendar date of order_ts.</td></tr>
+<tr><td>order_amount</td><td>decimal(12,2)</td><td>yes</td><td>Order value before discounts, USD (renamed from order_total in 2.0.0).</td></tr>
+<tr><td>discount_amount</td><td>decimal(12,2)</td><td>no</td><td>Discount applied, USD; null before 2026-09-09.</td></tr>
+<tr><td>currency</td><td>varchar</td><td>yes</td><td>ISO 4217 currency code.</td></tr>
+<tr><td>status</td><td>varchar</td><td>yes</td><td>Final order status. &#x27;returned&#x27; reported from 2026-08-19; v1 maps it to &#x27;completed&#x27;.</td></tr>
+<tr><td>sales_channel</td><td>varchar</td><td>no</td><td>Channel the order came from; null before 2026-07-22.</td></tr>
+<tr><td>loaded_at</td><td>timestamp</td><td>yes</td><td>When the source file landed in the warehouse (freshness).</td></tr>
+</table>
+<h2>Payments <span class='muted'>(payments)</span></h2>
+<p><b>urn:datacontract:payments:fct_payments</b> v1.2.0 · owner payments-oncall<br>One row per payment gateway event (capture, failure, refund). Source of truth for cash and net revenue. The raw feed moved to integer cents on 2026-08-05; the published amount stays in dollars.</p>
+<table><tr><th>interface</th><th>contract</th><th>lifecycle</th><th>downstream jobs</th></tr>
+<tr><td>payments.main.fct_payments_v1</td><td>1.2.0</td><td>latest</td><td>analytics.int_order_payments</td></tr>
+</table>
+<p>SLO status: <span class='PASS'>PASS</span> (4/4)</p>
+<table><tr><th>SLA</th><th>target</th><th>observed</th><th>status</th></tr>
+<tr><td>freshness</td><td>12 h</td><td>5.0</td><td class='PASS'>PASS</td></tr>
+<tr><td>completeness</td><td>99.5 percent</td><td>100.0</td><td class='PASS'>PASS</td></tr>
+<tr><td>uniqueness</td><td>100 percent</td><td>100.0</td><td class='PASS'>PASS</td></tr>
+<tr><td>volume</td><td>30000 rows</td><td>51379</td><td class='PASS'>PASS</td></tr>
+</table>
+<table><tr><th>column</th><th>type</th><th>required</th><th>description</th></tr>
+<tr><td>payment_id</td><td>varchar</td><td>yes</td><td>Payment event identifier (primary key).</td></tr>
+<tr><td>order_id</td><td>varchar</td><td>no</td><td>Order the payment belongs to. Null for orphaned gateway events.</td></tr>
+<tr><td>paid_at</td><td>timestamp</td><td>yes</td><td>Gateway event time (UTC).</td></tr>
+<tr><td>amount</td><td>decimal(12,2)</td><td>yes</td><td>Event amount in USD (always positive; sign is given by status).</td></tr>
+<tr><td>currency</td><td>varchar</td><td>yes</td><td>ISO 4217 currency code.</td></tr>
+<tr><td>status</td><td>varchar</td><td>yes</td><td>Gateway outcome.</td></tr>
+<tr><td>payment_method</td><td>varchar</td><td>no</td><td>Instrument used; null before 2026-08-05.</td></tr>
+<tr><td>loaded_at</td><td>timestamp</td><td>yes</td><td>When the source file landed in the warehouse (freshness).</td></tr>
+</table>
+<h2>Shipments <span class='muted'>(logistics)</span></h2>
+<p><b>urn:datacontract:logistics:fct_shipments</b> v1.1.0 · owner logistics-oncall<br>One row per shipment with carrier, timestamps and on-time flag. Lands in 3-day batches.</p>
+<table><tr><th>interface</th><th>contract</th><th>lifecycle</th><th>downstream jobs</th></tr>
+<tr><td>logistics.main.fct_shipments_v1</td><td>1.1.0</td><td>latest</td><td>analytics.int_order_fulfilment</td></tr>
+</table>
+<p>SLO status: <span class='FAIL'>FAIL</span> (3/4)</p>
+<table><tr><th>SLA</th><th>target</th><th>observed</th><th>status</th></tr>
+<tr><td>freshness</td><td>48 h</td><td>76.0</td><td class='FAIL'>FAIL</td></tr>
+<tr><td>completeness</td><td>99.5 percent</td><td>100.0</td><td class='PASS'>PASS</td></tr>
+<tr><td>uniqueness</td><td>100 percent</td><td>100.0</td><td class='PASS'>PASS</td></tr>
+<tr><td>volume</td><td>30000 rows</td><td>42167</td><td class='PASS'>PASS</td></tr>
+</table>
+<table><tr><th>column</th><th>type</th><th>required</th><th>description</th></tr>
+<tr><td>shipment_id</td><td>varchar</td><td>yes</td><td>Shipment identifier (primary key).</td></tr>
+<tr><td>order_id</td><td>varchar</td><td>yes</td><td>Order shipped.</td></tr>
+<tr><td>carrier</td><td>varchar</td><td>yes</td><td>Carrier code.</td></tr>
+<tr><td>carrier_service</td><td>varchar</td><td>no</td><td>Service level; null before 2026-08-26.</td></tr>
+<tr><td>shipped_at</td><td>timestamp</td><td>yes</td><td>Hand-over to carrier (UTC).</td></tr>
+<tr><td>delivered_at</td><td>timestamp</td><td>yes</td><td>Proof of delivery (UTC).</td></tr>
+<tr><td>promised_date</td><td>date</td><td>yes</td><td>Delivery date promised to the customer.</td></tr>
+<tr><td>is_on_time</td><td>boolean</td><td>yes</td><td>delivered_at date &lt;= promised_date.</td></tr>
+<tr><td>loaded_at</td><td>timestamp</td><td>yes</td><td>When the source batch landed in the warehouse (freshness).</td></tr>
+</table>
+</body></html>

@@ -1,0 +1,12 @@
+[
+  {
+    "interface": "orders.main.fct_orders_v1",
+    "contract_version": "1.1.0",
+    "superseded_by": "fct_orders_v2 (2.1.0)",
+    "deprecation_date": "2026-10-31",
+    "downstream_jobs_still_reading": [
+      "analytics.rpt_legacy_revenue"
+    ],
+    "safe_to_retire": false
+  }
+]

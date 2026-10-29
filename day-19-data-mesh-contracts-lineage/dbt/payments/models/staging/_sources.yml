@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: payments_raw
+    description: Raw payment gateway feed loaded verbatim (union of all file schemas). SYNTHETIC.
+    schema: raw
+    tables:
+      - name: payments

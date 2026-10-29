@@ -1,0 +1,5 @@
+{
+  "change": "fct_orders_v2.sql: order_amount -> amount (contract unchanged)",
+  "dbt_build_success": false,
+  "message": "Compilation Error in model fct_orders (models/marts/fct_orders_v2.sql)\n  This model has an enforced contract that failed.\n  Please ensure the name, data_type, and number of columns in your contract match the columns in your model's definition.\n  \n  | column_name  | definition_type | contract_type | mismatch_reason       |\n  | ------------ | --------------- | ------------- | --------------------- |\n  | amount       | DECIMAL(12,2)   |               | missing in contract   |\n  | order_amount |    "
+}

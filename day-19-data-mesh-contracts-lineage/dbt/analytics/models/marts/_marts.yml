@@ -1,0 +1,26 @@
+version: 2
+models:
+  - name: mart_daily_kpis
+    description: Gold cross-domain KPIs per order date (SYNTHETIC data). net_revenue = captured - refunded payments.
+    config:
+      contract: {enforced: true}
+      meta: {owner: analytics-team, gold_metrics: [net_revenue, gmv, on_time_delivery_rate]}
+    columns:
+      - name: order_date
+        data_type: date
+        constraints: [{type: not_null}]
+        data_tests: [unique]
+      - name: orders
+        data_type: bigint
+        constraints: [{type: not_null}]
+      - name: gmv
+        data_type: decimal(14,2)
+      - name: net_revenue
+        data_type: decimal(14,2)
+      - name: on_time_delivery_rate
+        data_type: double
+  - name: rpt_legacy_revenue
+    description: Legacy revenue dashboard on the deprecated orders v1 interface.
+    columns:
+      - name: order_date
+      - name: completed_revenue

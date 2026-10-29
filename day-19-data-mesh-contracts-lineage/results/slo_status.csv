@@ -1,0 +1,13 @@
+domain,data_product,sla,target,unit,observed,status,detail
+orders,fct_orders_v2,freshness,12,h,5.0,PASS,"latest loaded_at = 2026-09-29 01:00:00, evaluated at 2026-09-29 06:00:00"
+orders,fct_orders_v2,completeness,99.5,percent,100.0,PASS,min non-null rate over 8 required columns (worst: order_id)
+orders,fct_orders_v2,uniqueness,100,percent,100.0,PASS,46665 distinct order_id / 46665 rows
+orders,fct_orders_v2,volume,30000,rows,46665,PASS,row count of published table
+payments,fct_payments_v1,freshness,12,h,5.0,PASS,"latest loaded_at = 2026-09-29 01:00:00, evaluated at 2026-09-29 06:00:00"
+payments,fct_payments_v1,completeness,99.5,percent,100.0,PASS,min non-null rate over 6 required columns (worst: payment_id)
+payments,fct_payments_v1,uniqueness,100,percent,100.0,PASS,51379 distinct payment_id / 51379 rows
+payments,fct_payments_v1,volume,30000,rows,51379,PASS,row count of published table
+logistics,fct_shipments_v1,freshness,48,h,76.0,FAIL,"latest loaded_at = 2026-09-26 02:00:00, evaluated at 2026-09-29 06:00:00"
+logistics,fct_shipments_v1,completeness,99.5,percent,100.0,PASS,min non-null rate over 8 required columns (worst: shipment_id)
+logistics,fct_shipments_v1,uniqueness,100,percent,100.0,PASS,42167 distinct shipment_id / 42167 rows
+logistics,fct_shipments_v1,volume,30000,rows,42167,PASS,row count of published table

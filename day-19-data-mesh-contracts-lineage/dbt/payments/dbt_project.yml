@@ -1,0 +1,16 @@
+name: payments
+version: "1.0.0"
+config-version: 2
+profile: payments
+model-paths: ["models"]
+target-path: target
+clean-targets: [target]
+flags:
+  send_anonymous_usage_stats: false
+  partial_parse: false
+models:
+  payments:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

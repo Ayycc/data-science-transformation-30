@@ -1,0 +1,214 @@
+{
+  "data": {
+    "path_used": "synthetic_generator",
+    "label": "SYNTHETIC",
+    "seed": 20261029,
+    "start": "2026-07-01",
+    "days": 90,
+    "as_of": "2026-09-29 06:00:00",
+    "raw_rows": {
+      "orders": 46841,
+      "payments": 51379,
+      "logistics": 42167
+    },
+    "raw_files": {
+      "orders": 90,
+      "payments": 90,
+      "logistics": 87
+    },
+    "raw_schema_changes": 5,
+    "raw_schema_changes_removing_columns": 3,
+    "sample_bytes": 193728
+  },
+  "contracts": {
+    "orders": {
+      "version": "2.1.0",
+      "releases": 4,
+      "interfaces": [
+        "fct_orders_v2",
+        "fct_orders_v1"
+      ]
+    },
+    "payments": {
+      "version": "1.2.0",
+      "releases": 3,
+      "interfaces": [
+        "fct_payments_v1"
+      ]
+    },
+    "logistics": {
+      "version": "1.1.0",
+      "releases": 3,
+      "interfaces": [
+        "fct_shipments_v1"
+      ]
+    }
+  },
+  "dbt": {
+    "projects": {
+      "orders": {
+        "models": 3,
+        "tests": 8,
+        "tests_passed": 8
+      },
+      "payments": {
+        "models": 2,
+        "tests": 4,
+        "tests_passed": 4
+      },
+      "logistics": {
+        "models": 2,
+        "tests": 3,
+        "tests_passed": 3
+      },
+      "analytics": {
+        "models": 4,
+        "tests": 1,
+        "tests_passed": 1
+      }
+    },
+    "models": 11,
+    "tests": 16,
+    "tests_passed": 16,
+    "contract_break_demo_blocked": true
+  },
+  "ci_gate": {
+    "history_transitions": 7,
+    "history_passed": 7,
+    "scenarios": 24,
+    "scenarios_correct": 24,
+    "breaking_scenarios": 15,
+    "breaking_scenarios_blocked": 15,
+    "safe_scenarios": 9,
+    "safe_scenarios_passed": 9
+  },
+  "slo": {
+    "orders": {
+      "status": "PASS",
+      "passed": 4,
+      "total": 4,
+      "freshness": {
+        "observed": 5.0,
+        "target": 12,
+        "status": "PASS"
+      },
+      "completeness": {
+        "observed": 100.0,
+        "target": 99.5,
+        "status": "PASS"
+      },
+      "uniqueness": {
+        "observed": 100.0,
+        "target": 100,
+        "status": "PASS"
+      },
+      "volume": {
+        "observed": 46665,
+        "target": 30000,
+        "status": "PASS"
+      }
+    },
+    "payments": {
+      "status": "PASS",
+      "passed": 4,
+      "total": 4,
+      "freshness": {
+        "observed": 5.0,
+        "target": 12,
+        "status": "PASS"
+      },
+      "completeness": {
+        "observed": 100.0,
+        "target": 99.5,
+        "status": "PASS"
+      },
+      "uniqueness": {
+        "observed": 100.0,
+        "target": 100,
+        "status": "PASS"
+      },
+      "volume": {
+        "observed": 51379,
+        "target": 30000,
+        "status": "PASS"
+      }
+    },
+    "logistics": {
+      "status": "FAIL",
+      "passed": 3,
+      "total": 4,
+      "freshness": {
+        "observed": 76.0,
+        "target": 48,
+        "status": "FAIL"
+      },
+      "completeness": {
+        "observed": 100.0,
+        "target": 99.5,
+        "status": "PASS"
+      },
+      "uniqueness": {
+        "observed": 100.0,
+        "target": 100,
+        "status": "PASS"
+      },
+      "volume": {
+        "observed": 42167,
+        "target": 30000,
+        "status": "PASS"
+      }
+    }
+  },
+  "lineage": {
+    "openlineage_events": 34,
+    "jobs": 17,
+    "column_nodes": 128,
+    "column_edges_direct": 107,
+    "column_edges_with_indirect": 148,
+    "gold_metric": "analytics.main.mart_daily_kpis.net_revenue",
+    "net_revenue_source_columns_direct": [
+      "payments/payments_*.csv::amount",
+      "payments/payments_*.csv::amount_cents",
+      "payments/payments_*.csv::status"
+    ],
+    "net_revenue_upstream_columns_direct": 12,
+    "net_revenue_hops": 5,
+    "net_revenue_jobs": 5,
+    "net_revenue_source_columns_with_indirect": 8,
+    "net_revenue_domains_with_indirect": [
+      "logistics",
+      "orders",
+      "payments"
+    ]
+  },
+  "consumers": {
+    "dashboard_days": 370,
+    "naive_broken_dashboard_days": 130,
+    "mesh_broken_dashboard_days": 0,
+    "naive_dashboards_broken": 3,
+    "mesh_dashboards_broken": 0
+  },
+  "deprecations": [
+    {
+      "interface": "orders.main.fct_orders_v1",
+      "contract_version": "1.1.0",
+      "superseded_by": "fct_orders_v2 (2.1.0)",
+      "deprecation_date": "2026-10-31",
+      "downstream_jobs_still_reading": [
+        "analytics.rpt_legacy_revenue"
+      ],
+      "safe_to_retire": false
+    }
+  ],
+  "gold_kpis": {
+    "days": 90,
+    "orders": 46665,
+    "gmv": 2685405.53,
+    "net_revenue": 2357328.44,
+    "net_to_gmv": 0.8778,
+    "on_time_delivery_rate": 0.8199,
+    "shipped_orders": 42167,
+    "legacy_v1_completed_revenue": 2553028.61
+  },
+  "runtime_seconds": 32.2
+}

@@ -1,0 +1,7 @@
+order_id,customer_id,order_ts,order_amount,discount_amount,currency,status,sales_channel,_loaded_at
+O0000515,C01858,2026-09-10 09:39:05,35.99,0.0,USD,completed,web,2026-09-11 01:00:00
+O0000516,C02921,2026-09-10 11:24:30,46.82,0.0,USD,completed,web,2026-09-11 01:00:00
+O0000517,C02154,2026-09-10 14:11:35,50.5,0.0,USD,completed,app,2026-09-11 01:00:00
+O0000518,C03512,2026-09-10 14:31:43,42.67,0.0,USD,completed,app,2026-09-11 01:00:00
+O0000519,C05843,2026-09-10 16:44:25,36.3,0.0,USD,cancelled,web,2026-09-11 01:00:00
+O0000520,C06363,2026-09-10 20:57:58,63.41,0.0,USD,completed,web,2026-09-11 01:00:00

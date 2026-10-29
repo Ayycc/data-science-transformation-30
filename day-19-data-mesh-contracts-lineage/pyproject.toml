@@ -1,0 +1,20 @@
+[project]
+name = "data-mesh-contracts-lineage"
+version = "1.0.0"
+description = "Day 19: Data Mesh in Practice: Contracts, Versioning and Lineage"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+src = ["src", "tests", "scripts"]
+extend-exclude = ["dbt"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q -p no:warnings"

@@ -1,0 +1,6 @@
+domain,date,raw_release,removed,added,breaking_for_raw_readers,note
+orders,2026-07-22,r2,[],"[""sales_channel""]",False,adds sales_channel
+orders,2026-08-19,r3,"[""order_total""]","[""order_amount""]",True,renames order_total -> order_amount; status gains 'returned'
+orders,2026-09-09,r4,[],"[""discount_amount""]",False,adds discount_amount
+payments,2026-08-05,r2,"[""amount""]","[""amount_cents"", ""payment_method""]",True,amount -> integer amount_cents; adds payment_method
+logistics,2026-08-26,r2,"[""carrier""]","[""carrier_code"", ""carrier_service""]",True,renames carrier -> carrier_code; adds carrier_service
