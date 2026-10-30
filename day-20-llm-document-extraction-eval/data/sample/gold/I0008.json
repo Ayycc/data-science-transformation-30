@@ -1,0 +1,87 @@
+{
+ "doc_id": "I0008",
+ "label": {
+  "doc_type": "invoice",
+  "invoice_number": "IN-2025-74906",
+  "po_number": "PO-39203",
+  "supplier": "Maple Print Services GmbH",
+  "customer": "Ironbridge Laboratories Co.",
+  "invoice_date": "2025-04-16",
+  "due_date": "2025-05-01",
+  "currency": "USD",
+  "subtotal": 284235.78,
+  "tax": 56847.16,
+  "total": 341082.94,
+  "payment_terms_days": 15,
+  "line_items": [
+   {
+    "description": "Data cleansing service",
+    "quantity": 6.0,
+    "unit_price": 2276.59,
+    "amount": 13659.54
+   },
+   {
+    "description": "Thermal labels roll",
+    "quantity": 24.0,
+    "unit_price": 1611.92,
+    "amount": 38686.08
+   },
+   {
+    "description": "Hydraulic hose assembly",
+    "quantity": 10.0,
+    "unit_price": 950.74,
+    "amount": 9507.4
+   },
+   {
+    "description": "Forklift rental (day)",
+    "quantity": 2.0,
+    "unit_price": 2239.59,
+    "amount": 4479.18
+   },
+   {
+    "description": "Freight surcharge",
+    "quantity": 4.0,
+    "unit_price": 1159.27,
+    "amount": 4637.08
+   },
+   {
+    "description": "LED panel light 60W",
+    "quantity": 100.0,
+    "unit_price": 2029.92,
+    "amount": 202992.0
+   },
+   {
+    "description": "Calibration service",
+    "quantity": 10.0,
+    "unit_price": 1027.45,
+    "amount": 10274.5
+   }
+  ]
+ },
+ "meta": {
+  "template": "text_table",
+  "date_style": "abbr",
+  "number_style": "us",
+  "distractors": {
+   "invoice_date": [
+    "2025-03-18"
+   ],
+   "total": [
+    7915.11
+   ],
+   "subtotal": [
+    7915.11
+   ]
+  },
+  "derived": {
+   "due_date": true
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": true,
+  "noise_rate": 0.054
+ },
+ "synthetic": true
+}

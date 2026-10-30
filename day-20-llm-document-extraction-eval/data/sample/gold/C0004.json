@@ -1,0 +1,42 @@
+{
+ "doc_id": "C0004",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": "MSA-2025-6649",
+  "supplier": "Highland Laboratories plc",
+  "customer": "Tidewater Security plc",
+  "effective_date": "2025-08-25",
+  "expiration_date": "2029-08-25",
+  "total_value": 1411900.0,
+  "currency": "GBP",
+  "payment_terms_days": 15,
+  "auto_renewal": true,
+  "renewal_term_months": 36,
+  "renewal_notice_days": 60,
+  "governing_law": "California"
+ },
+ "meta": {
+  "template": "procurement_letter",
+  "date_style": "abbr",
+  "number_style": "us",
+  "distractors": {
+   "effective_date": [
+    "2023-08-28",
+    "2025-08-11"
+   ],
+   "total_value": [
+    2142800.0
+   ]
+  },
+  "derived": {
+   "expiration_date": false
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}

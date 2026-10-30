@@ -1,0 +1,42 @@
+{
+ "doc_id": "C0012",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": "MSA-2025-8719",
+  "supplier": "Summit Medical Supply GmbH",
+  "customer": "Ironbridge Energy LLC",
+  "effective_date": "2025-04-28",
+  "expiration_date": "2029-04-28",
+  "total_value": 381600.0,
+  "currency": "GBP",
+  "payment_terms_days": 60,
+  "auto_renewal": true,
+  "renewal_term_months": 12,
+  "renewal_notice_days": 60,
+  "governing_law": "Ontario"
+ },
+ "meta": {
+  "template": "msa_prose",
+  "date_style": "dmy",
+  "number_style": "us",
+  "distractors": {
+   "effective_date": [
+    "2024-03-12",
+    "2025-04-18"
+   ],
+   "total_value": [
+    763200.0
+   ]
+  },
+  "derived": {
+   "expiration_date": true
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}

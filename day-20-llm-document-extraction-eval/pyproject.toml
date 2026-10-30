@@ -1,0 +1,19 @@
+[project]
+name = "llm-document-extraction-eval"
+version = "1.0.0"
+description = "Day 20: LLM Structured Extraction with a Rigorous Evaluation Harness"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 130
+target-version = "py311"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q -p no:warnings"

@@ -1,0 +1,42 @@
+{
+ "doc_id": "C0009",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": null,
+  "supplier": "Westgate Consulting GmbH",
+  "customer": "Foxglove Energy plc",
+  "effective_date": "2025-05-22",
+  "expiration_date": "2026-05-22",
+  "total_value": 217900.0,
+  "currency": "GBP",
+  "payment_terms_days": 60,
+  "auto_renewal": true,
+  "renewal_term_months": 24,
+  "renewal_notice_days": 30,
+  "governing_law": "Germany"
+ },
+ "meta": {
+  "template": "cover_sheet",
+  "date_style": "long",
+  "number_style": "us",
+  "distractors": {
+   "effective_date": [
+    "2021-06-18",
+    "2025-05-14"
+   ],
+   "total_value": [
+    460800.0
+   ]
+  },
+  "derived": {
+   "expiration_date": false
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}

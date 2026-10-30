@@ -1,0 +1,17 @@
+REDWOOD LABORATORIES LTD
+638 Silverline Road, Suite 39
+TAX INVOICE
+Invoice # IN-2025-61128    Date: 28 November 2025
+Order Date: 24 Octobcr 2025
+Customer: Tidewater Office Supply Co.
+Payment Due: 28 December 2025
+Item                                   Qty      Rate        Amount
+Forklift rental (day)                      4      583.73      2,334.92
+Nitrile gloves (box of 100)                3      963.24      2,889.72
+Disinfectant concentrate 10L               3    2,125.78      6,377.34
+On-site technician visit                   6        8.13         48.78
+Net amount 11,650.76
+MwSt 19% 2,213.64
+lnvoice total USD 13,864.40
+Previous balance 15,561.72 (already paid, not included above)
+Payment due within 30 days.

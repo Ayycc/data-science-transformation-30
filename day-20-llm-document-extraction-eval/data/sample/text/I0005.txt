@@ -1,0 +1,18 @@
+RECHNUNG / BILL
+Seller Evergreen Fleet Services Co.
+Buyer VANGUARD MEDICAL SUPPLY GMBH
+Document number IN-2025-11917
+Issue date 08/21/2025
+Order reference PO-77520 of 07/15/2025
+Pos | Article | Quantity | Price | Line total
+1 | On-site technician visit | 8 | 2.378,49 | 19.027,92
+2 | Corrugated carton 12x12 | 20 | 621,48 | 12.429,60
+3 | Thermal labels roll | 8 | 976,45 | 7.811,60
+4 | Laboratory reagent kit | 50 | 1.511,15 | 75.557,50
+5 | Steel bracket 40mm | 4 | 1.151,19 | 4.604,76
+6 | Calibration service | 6 | 2.232,46 | 13.394,76
+7 | Freight surcharge | 100 | 265,88 | 26.588,00
+Net total EUR 159.414,14
+VAT 20% EUR 31.882,83
+Gross total EUR 191.296,97
+Payable 15 days net.

@@ -1,0 +1,45 @@
+{
+ "doc_id": "C0008",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": "PA-2024-0418",
+  "supplier": "Highland Metals Corp.",
+  "customer": "Pinecrest Industrial LLC",
+  "effective_date": "2024-11-11",
+  "expiration_date": "2027-11-11",
+  "total_value": 2777200.0,
+  "currency": "USD",
+  "payment_terms_days": 30,
+  "auto_renewal": false,
+  "renewal_term_months": null,
+  "renewal_notice_days": null,
+  "governing_law": "England and Wales"
+ },
+ "meta": {
+  "template": "msa_prose",
+  "date_style": "legal",
+  "number_style": "us",
+  "distractors": {
+   "effective_date": [
+    "2023-11-21",
+    "2024-11-07"
+   ],
+   "total_value": [
+    5554400.0
+   ],
+   "renewal_notice_days": [
+    60
+   ]
+  },
+  "derived": {
+   "expiration_date": true
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": true,
+  "noise_rate": 0.055
+ },
+ "synthetic": true
+}

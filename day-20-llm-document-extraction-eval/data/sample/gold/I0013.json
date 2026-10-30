@@ -1,0 +1,63 @@
+{
+ "doc_id": "I0013",
+ "label": {
+  "doc_type": "invoice",
+  "invoice_number": "SI-2025-35146",
+  "po_number": "PO-95298",
+  "supplier": "Keystone Electronics Ltd",
+  "customer": "Larkspur Industrial Inc.",
+  "invoice_date": "2025-03-15",
+  "due_date": "2025-04-29",
+  "currency": "USD",
+  "subtotal": 25255.5,
+  "tax": 1262.78,
+  "total": 26518.28,
+  "payment_terms_days": null,
+  "line_items": [
+   {
+    "description": "Cloud storage (TB-month)",
+    "quantity": 8.0,
+    "unit_price": 1299.83,
+    "amount": 10398.64
+   },
+   {
+    "description": "Freight surcharge",
+    "quantity": 4.0,
+    "unit_price": 1362.24,
+    "amount": 5448.96
+   },
+   {
+    "description": "Ergonomic office chair",
+    "quantity": 10.0,
+    "unit_price": 940.79,
+    "amount": 9407.9
+   }
+  ]
+ },
+ "meta": {
+  "template": "ruled_table",
+  "date_style": "long",
+  "number_style": "us",
+  "distractors": {
+   "invoice_date": [
+    "2025-03-04"
+   ],
+   "total": [
+    18071.21
+   ],
+   "subtotal": [
+    18071.21
+   ]
+  },
+  "derived": {
+   "due_date": false
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}

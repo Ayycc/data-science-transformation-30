@@ -1,0 +1,45 @@
+{
+ "doc_id": "C0006",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": "SA-2026-8517",
+  "supplier": "Sterling Packaging Ltd",
+  "customer": "Evergreen Print Services GmbH",
+  "effective_date": "2026-04-17",
+  "expiration_date": "2028-04-17",
+  "total_value": null,
+  "currency": "USD",
+  "payment_terms_days": 90,
+  "auto_renewal": false,
+  "renewal_term_months": null,
+  "renewal_notice_days": null,
+  "governing_law": "Ontario"
+ },
+ "meta": {
+  "template": "msa_prose",
+  "date_style": "us",
+  "number_style": "us",
+  "distractors": {
+   "effective_date": [
+    "2023-02-19",
+    "2026-04-15"
+   ],
+   "total_value": [
+    968100.0
+   ],
+   "renewal_notice_days": [
+    90
+   ]
+  },
+  "derived": {
+   "expiration_date": true
+  },
+  "name_variant": {
+   "supplier": true,
+   "customer": false
+  },
+  "scanned": true,
+  "noise_rate": 0.039
+ },
+ "synthetic": true
+}

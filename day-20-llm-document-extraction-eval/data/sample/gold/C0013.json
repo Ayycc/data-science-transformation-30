@@ -1,0 +1,45 @@
+{
+ "doc_id": "C0013",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": "CTR-2024-1254",
+  "supplier": "Bluepeak Foods Ltd",
+  "customer": "Orion Security Ltd",
+  "effective_date": "2024-09-08",
+  "expiration_date": "2025-09-08",
+  "total_value": null,
+  "currency": "USD",
+  "payment_terms_days": null,
+  "auto_renewal": false,
+  "renewal_term_months": null,
+  "renewal_notice_days": null,
+  "governing_law": null
+ },
+ "meta": {
+  "template": "cover_sheet",
+  "date_style": "iso",
+  "number_style": "us",
+  "distractors": {
+   "effective_date": [
+    "2023-12-05",
+    "2024-08-29"
+   ],
+   "total_value": [
+    226800.0
+   ],
+   "renewal_notice_days": [
+    30
+   ]
+  },
+  "derived": {
+   "expiration_date": true
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": true
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}

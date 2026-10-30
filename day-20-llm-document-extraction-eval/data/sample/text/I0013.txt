@@ -1,0 +1,15 @@
+INVOICE
+From: Keystone Electronics Ltd
+Bill To: Larkspur Industrial Inc.
+Invoice No: SI-2025-35146
+Invoice Date: March 15, 2025
+Due Date: April 29, 2025
+PO Number: PO-95298
+Currency: USD
+Description | Qty | Unit Price | Amount
+Cloud storage (TB-month) | 8 | 1,299.83 | 10,398.64
+Freight surcharge | 4 | 1,362.24 | 5,448.96
+Ergonomic office chair | 10 | 940.79 | 9,407.90
+Subtotal: $25,255.50
+GST 5%: $1,262.78
+Total Due: USD 26,518.28

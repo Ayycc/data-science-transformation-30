@@ -1,0 +1,63 @@
+{
+ "doc_id": "I0015",
+ "label": {
+  "doc_type": "invoice",
+  "invoice_number": "IN-2025-47136",
+  "po_number": null,
+  "supplier": "Crescent Energy Group",
+  "customer": "Harbor Components Co.",
+  "invoice_date": "2025-08-29",
+  "due_date": "2025-10-28",
+  "currency": "USD",
+  "subtotal": 42662.96,
+  "tax": 8105.96,
+  "total": 50768.92,
+  "payment_terms_days": null,
+  "line_items": [
+   {
+    "description": "LED panel light 60W",
+    "quantity": 24.0,
+    "unit_price": 1078.13,
+    "amount": 25875.12
+   },
+   {
+    "description": "Safety helmet class E",
+    "quantity": 6.0,
+    "unit_price": 2472.79,
+    "amount": 14836.74
+   },
+   {
+    "description": "Industrial adhesive 5L",
+    "quantity": 5.0,
+    "unit_price": 390.22,
+    "amount": 1951.1
+   }
+  ]
+ },
+ "meta": {
+  "template": "ruled_table",
+  "date_style": "long",
+  "number_style": "us",
+  "distractors": {
+   "invoice_date": [
+    "2025-08-02"
+   ],
+   "total": [
+    1641.59
+   ],
+   "subtotal": [
+    1641.59
+   ]
+  },
+  "derived": {
+   "due_date": false
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}

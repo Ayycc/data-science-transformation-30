@@ -1,0 +1,42 @@
+{
+ "doc_id": "C0011",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": null,
+  "supplier": "Cobalt Print Services Co.",
+  "customer": "Ironbridge Security Inc.",
+  "effective_date": "2025-05-17",
+  "expiration_date": "2027-05-17",
+  "total_value": 167600.0,
+  "currency": "USD",
+  "payment_terms_days": 90,
+  "auto_renewal": true,
+  "renewal_term_months": 36,
+  "renewal_notice_days": 90,
+  "governing_law": "Delaware"
+ },
+ "meta": {
+  "template": "order_form_unseen",
+  "date_style": "iso",
+  "number_style": "us",
+  "distractors": {
+   "effective_date": [
+    "2021-09-01",
+    "2025-05-04"
+   ],
+   "total_value": [
+    256400.0
+   ]
+  },
+  "derived": {
+   "expiration_date": true
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}

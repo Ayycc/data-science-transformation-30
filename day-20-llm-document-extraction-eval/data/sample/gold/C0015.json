@@ -1,0 +1,45 @@
+{
+ "doc_id": "C0015",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": "CTR-2025-2317",
+  "supplier": "Granite Analytics plc",
+  "customer": "Summit Energy Inc.",
+  "effective_date": "2025-03-08",
+  "expiration_date": "2029-03-08",
+  "total_value": null,
+  "currency": "EUR",
+  "payment_terms_days": 15,
+  "auto_renewal": false,
+  "renewal_term_months": null,
+  "renewal_notice_days": null,
+  "governing_law": "Germany"
+ },
+ "meta": {
+  "template": "msa_prose",
+  "date_style": "dmy",
+  "number_style": "us",
+  "distractors": {
+   "effective_date": [
+    "2021-03-04",
+    "2025-02-16"
+   ],
+   "total_value": [
+    353700.0
+   ],
+   "renewal_notice_days": [
+    90
+   ]
+  },
+  "derived": {
+   "expiration_date": true
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": true,
+  "noise_rate": 0.073
+ },
+ "synthetic": true
+}

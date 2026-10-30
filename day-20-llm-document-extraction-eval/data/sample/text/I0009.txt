@@ -1,0 +1,16 @@
+HIGHLAND ENERGY PLC
+51 Sterling Road, Suite 34
+TAX INVOICE
+Invoice # INV-2026-88113    Date: 21-Apr-2026
+Order Date: 17-Apr-2026
+Customer: LAKESIDE LOGISTICS GROUP
+Item                                   Qty      Rate        Amount
+Server maintenance hours                 100    1,037.38    103,738.00
+Forklift rental (day)                     50    1,653.04     82,652.00
+Ergonomic office chair                    10       30.90        309.00
+Cloud storage (TB-month)                   8      878.94      7,031.52
+Net amount 193,730.52
+VAT 20% 38,746.10
+Invoice total USD 232,476.62
+Previous balance 17,228.61 (already paid, not included above)
+Payment due within 30 days.

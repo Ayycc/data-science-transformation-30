@@ -1,0 +1,254 @@
+{
+  "data": {
+    "path_used": "synthetic_generator",
+    "n_docs": 500,
+    "seed": 20261030,
+    "note": "Prompt specifies synthetic contracts/invoices; no download attempted, no network calls."
+  },
+  "split": {
+    "dev": 200,
+    "test": 300
+  },
+  "llm": {
+    "status": "skipped: ANTHROPIC_API_KEY not set (offline rules extractors only)"
+  },
+  "prompt_registry": {
+    "extract_v1": {
+      "file": "extract_v1.txt",
+      "sha256": "a39d0946eb5e0809f2ce4bed101ba52ac0dcc16da88c102fa00d82adb511b25e",
+      "created": "2026-10-30",
+      "schema_version": "1.0",
+      "notes": "Initial prompt: field definitions, null policy, date/number normalisation, distractor guidance, OCR note."
+    }
+  },
+  "downstream": {
+    "regex_strict": {
+      "accepted": 255,
+      "quarantined": 245,
+      "accepted_with_no_review_fields": 0,
+      "invalid_written_downstream": 0
+    },
+    "rules_repair": {
+      "accepted": 373,
+      "quarantined": 127,
+      "accepted_with_no_review_fields": 52,
+      "invalid_written_downstream": 0
+    }
+  },
+  "extractors": {
+    "regex_strict": {
+      "test_docs": 300,
+      "field_accuracy_fuzzy": 0.7336231884057971,
+      "field_accuracy_exact": 0.716231884057971,
+      "doc_all_fields_correct": 0.08333333333333333,
+      "schema_valid_rate": 0.49333333333333335,
+      "doc_type_routing_accuracy_all_docs": 1.0,
+      "line_items": {
+        "tp": 384,
+        "tp_strict": 383,
+        "n_pred": 498,
+        "n_gold": 595,
+        "loose": {
+          "precision": 0.7710843373493976,
+          "recall": 0.6453781512605042,
+          "f1": 0.7026532479414456
+        },
+        "strict": {
+          "precision": 0.7690763052208835,
+          "recall": 0.6436974789915967,
+          "f1": 0.7008234217749313
+        }
+      },
+      "by_slice": {
+        "seen_clean": {
+          "field_accuracy": 0.8137964302942595,
+          "n_docs": 180
+        },
+        "seen_scanned": {
+          "field_accuracy": 0.7773333333333333,
+          "n_docs": 66
+        },
+        "unseen_clean": {
+          "field_accuracy": 0.42463235294117646,
+          "n_docs": 47
+        },
+        "unseen_scanned": {
+          "field_accuracy": 0.3614457831325301,
+          "n_docs": 7
+        }
+      },
+      "calibration_test": {
+        "ece_raw": 0.08218898550724646,
+        "ece_calibrated": 0.023266659588092316,
+        "brier_raw": 0.11350637449275362,
+        "brier_calibrated": 0.072987049914411
+      },
+      "routing_test": {
+        "threshold": 0.8947,
+        "fields_total": 3450,
+        "auto_accept_rate": 0.26869565217391306,
+        "auto_accepted_accuracy": 0.9946062567421791,
+        "review_rate": 0.731304347826087,
+        "errors_total": 919,
+        "errors_caught_by_review": 914,
+        "errors_leaked": 5,
+        "error_capture_rate": 0.9945593035908596,
+        "straight_through_doc_rate": 0.0,
+        "straight_through_doc_accuracy": null
+      },
+      "cost_latency": {
+        "extract_p50_ms": 0.2409024999678877,
+        "extract_p95_ms": 0.6507157499640928,
+        "end_to_end_p50_ms": 27.232980000007956,
+        "end_to_end_p95_ms": 82.04081520001415,
+        "mean_input_tokens": 0.0,
+        "mean_output_tokens": 0.0,
+        "cost_per_doc_usd": 0.0,
+        "total_cost_usd": 0.0,
+        "mean_attempts": 1.0
+      },
+      "error_taxonomy_test": {
+        "unseen_layout": 364,
+        "other": 182,
+        "ocr_noise": 133,
+        "distractor_confusion": 95,
+        "derived_value_error": 76,
+        "number_format": 69
+      },
+      "active_sampling": {
+        "10pct_docs": {
+          "docs_reviewed": 30,
+          "errors_found_active": 215,
+          "errors_found_random_mean": 91.926,
+          "share_found_active": 0.23394994559303592,
+          "share_found_random": 0.10002829162132754
+        },
+        "20pct_docs": {
+          "docs_reviewed": 60,
+          "errors_found_active": 395,
+          "errors_found_random_mean": 183.802,
+          "share_found_active": 0.42981501632208924,
+          "share_found_random": 0.20000217627856365
+        },
+        "30pct_docs": {
+          "docs_reviewed": 90,
+          "errors_found_active": 491,
+          "errors_found_random_mean": 276.8,
+          "share_found_active": 0.5342763873775843,
+          "share_found_random": 0.3011969532100109
+        },
+        "total_field_errors": 919
+      }
+    },
+    "rules_repair": {
+      "test_docs": 300,
+      "field_accuracy_fuzzy": 0.884927536231884,
+      "field_accuracy_exact": 0.8820289855072464,
+      "doc_all_fields_correct": 0.7033333333333334,
+      "schema_valid_rate": 0.7666666666666667,
+      "doc_type_routing_accuracy_all_docs": 1.0,
+      "line_items": {
+        "tp": 494,
+        "tp_strict": 494,
+        "n_pred": 502,
+        "n_gold": 595,
+        "loose": {
+          "precision": 0.9840637450199203,
+          "recall": 0.8302521008403362,
+          "f1": 0.9006381039197812
+        },
+        "strict": {
+          "precision": 0.9840637450199203,
+          "recall": 0.8302521008403362,
+          "f1": 0.9006381039197812
+        }
+      },
+      "by_slice": {
+        "seen_clean": {
+          "field_accuracy": 1.0,
+          "n_docs": 180
+        },
+        "seen_scanned": {
+          "field_accuracy": 0.9186666666666666,
+          "n_docs": 66
+        },
+        "unseen_clean": {
+          "field_accuracy": 0.4742647058823529,
+          "n_docs": 47
+        },
+        "unseen_scanned": {
+          "field_accuracy": 0.39759036144578314,
+          "n_docs": 7
+        }
+      },
+      "calibration_test": {
+        "ece_raw": 0.06204452173913042,
+        "ece_calibrated": 0.019617681565217086,
+        "brier_raw": 0.05900320822028985,
+        "brier_calibrated": 0.03706725175065855
+      },
+      "routing_test": {
+        "threshold": 0.9,
+        "fields_total": 3450,
+        "auto_accept_rate": 0.6472463768115942,
+        "auto_accepted_accuracy": 0.9968652037617555,
+        "review_rate": 0.35275362318840575,
+        "errors_total": 397,
+        "errors_caught_by_review": 390,
+        "errors_leaked": 7,
+        "error_capture_rate": 0.982367758186398,
+        "straight_through_doc_rate": 0.10333333333333333,
+        "straight_through_doc_accuracy": 1.0
+      },
+      "cost_latency": {
+        "extract_p50_ms": 0.660863000007339,
+        "extract_p95_ms": 1.2772184500590813,
+        "end_to_end_p50_ms": 27.713423999898623,
+        "end_to_end_p95_ms": 82.60936629995973,
+        "mean_input_tokens": 0.0,
+        "mean_output_tokens": 0.0,
+        "cost_per_doc_usd": 0.0,
+        "total_cost_usd": 0.0,
+        "mean_attempts": 1.0
+      },
+      "error_taxonomy_test": {
+        "unseen_layout": 336,
+        "ocr_noise": 59,
+        "distractor_confusion": 2
+      },
+      "active_sampling": {
+        "10pct_docs": {
+          "docs_reviewed": 30,
+          "errors_found_active": 212,
+          "errors_found_random_mean": 40.106,
+          "share_found_active": 0.5340050377833753,
+          "share_found_random": 0.10102267002518892
+        },
+        "20pct_docs": {
+          "docs_reviewed": 60,
+          "errors_found_active": 353,
+          "errors_found_random_mean": 78.404,
+          "share_found_active": 0.889168765743073,
+          "share_found_random": 0.1974911838790932
+        },
+        "30pct_docs": {
+          "docs_reviewed": 90,
+          "errors_found_active": 389,
+          "errors_found_random_mean": 119.526,
+          "share_found_active": 0.9798488664987406,
+          "share_found_random": 0.30107304785894207
+        },
+        "total_field_errors": 397
+      }
+    }
+  },
+  "pdf_parse": {
+    "p50_ms": 26.970244500034823,
+    "p95_ms": 57.459275300197326
+  },
+  "runtime": {
+    "seconds": 26.69750123100016,
+    "python": "3.11.17",
+    "platform": "Linux-6.18.44-fc-v185-x86_64-with-glibc2.39"
+  }
+}

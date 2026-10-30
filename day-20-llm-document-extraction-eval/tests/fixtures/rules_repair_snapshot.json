@@ -1,0 +1,715 @@
+{
+ "C0001": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": false,
+   "contract_number": "MSA-2024-8032",
+   "currency": "EUR",
+   "customer": "Ironbridge F leet Services Corp.",
+   "effective_date": "2024-10-22",
+   "expiration_date": "2028-10-22",
+   "governing_law": null,
+   "payment_terms_days": 60,
+   "renewal_notice_days": null,
+   "renewal_term_months": null,
+   "supplier": "Beacon Energy Group",
+   "total_value": 56900.0
+  },
+  "line_items": null
+ },
+ "C0002": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": false,
+   "contract_number": "CTR-2025-0597",
+   "currency": "EUR",
+   "customer": null,
+   "effective_date": "2025-04-04",
+   "expiration_date": null,
+   "governing_law": null,
+   "payment_terms_days": null,
+   "renewal_notice_days": null,
+   "renewal_term_months": null,
+   "supplier": null,
+   "total_value": null
+  },
+  "line_items": null
+ },
+ "C0003": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": false,
+   "contract_number": "MSA-2025-2067",
+   "currency": "EUR",
+   "customer": null,
+   "effective_date": "2025-11-25",
+   "expiration_date": null,
+   "governing_law": null,
+   "payment_terms_days": null,
+   "renewal_notice_days": null,
+   "renewal_term_months": null,
+   "supplier": null,
+   "total_value": null
+  },
+  "line_items": null
+ },
+ "C0004": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": true,
+   "contract_number": "MSA-2025-6649",
+   "currency": "GBP",
+   "customer": "Tidewater Security plc",
+   "effective_date": "2025-08-25",
+   "expiration_date": "2029-08-25",
+   "governing_law": "California",
+   "payment_terms_days": 15,
+   "renewal_notice_days": 60,
+   "renewal_term_months": 36,
+   "supplier": "Highland Laboratories plc",
+   "total_value": 1411900.0
+  },
+  "line_items": null
+ },
+ "C0005": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": true,
+   "contract_number": null,
+   "currency": "EUR",
+   "customer": "Zephyr Software Ltd",
+   "effective_date": "2024-09-29",
+   "expiration_date": "2026-09-29",
+   "governing_law": "Delaware",
+   "payment_terms_days": 30,
+   "renewal_notice_days": 60,
+   "renewal_term_months": 12,
+   "supplier": "Orion Electronics LLC",
+   "total_value": 83500.0
+  },
+  "line_items": null
+ },
+ "C0006": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": false,
+   "contract_number": "SA-2026-8517",
+   "currency": "USD",
+   "customer": "Evergreen Print Services GmbH",
+   "effective_date": "2026-04-17",
+   "expiration_date": "2028-04-17",
+   "governing_law": "Ontario",
+   "payment_terms_days": 90,
+   "renewal_notice_days": null,
+   "renewal_term_months": null,
+   "supplier": "Sterling Packaging Ltd",
+   "total_value": null
+  },
+  "line_items": null
+ },
+ "C0007": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": false,
+   "contract_number": "MSA-2025-6273",
+   "currency": "USD",
+   "customer": "Larkspur Logistics GmbH",
+   "effective_date": "2025-07-01",
+   "expiration_date": "2028-07-01",
+   "governing_law": "New York",
+   "payment_terms_days": 90,
+   "renewal_notice_days": null,
+   "renewal_term_months": null,
+   "supplier": "Summit Consulting Inc.",
+   "total_value": 2726500.0
+  },
+  "line_items": null
+ },
+ "C0008": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": false,
+   "contract_number": "PA-2024-0418",
+   "currency": "USD",
+   "customer": "Pinecrest lndustrial LLC",
+   "effective_date": "2024-11-11",
+   "expiration_date": "2027-11-11",
+   "governing_law": "England and Wales",
+   "payment_terms_days": 30,
+   "renewal_notice_days": null,
+   "renewal_term_months": null,
+   "supplier": "Highland Metals Corp.",
+   "total_value": 2777200.0
+  },
+  "line_items": null
+ },
+ "C0009": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": true,
+   "contract_number": null,
+   "currency": "GBP",
+   "customer": "Foxglove Energy plc",
+   "effective_date": "2025-05-22",
+   "expiration_date": "2026-05-22",
+   "governing_law": "Germany",
+   "payment_terms_days": 60,
+   "renewal_notice_days": 30,
+   "renewal_term_months": 24,
+   "supplier": "Westgate Consulting GmbH",
+   "total_value": 217900.0
+  },
+  "line_items": null
+ },
+ "C0010": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": false,
+   "contract_number": "CTR-2026-5647",
+   "currency": "EUR",
+   "customer": null,
+   "effective_date": "2026-02-01",
+   "expiration_date": "2028-02-01",
+   "governing_law": "Ireland",
+   "payment_terms_days": 90,
+   "renewal_notice_days": null,
+   "renewal_term_months": null,
+   "supplier": null,
+   "total_value": null
+  },
+  "line_items": null
+ },
+ "C0011": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": false,
+   "contract_number": null,
+   "currency": "USD",
+   "customer": null,
+   "effective_date": "2025-05-17",
+   "expiration_date": null,
+   "governing_law": null,
+   "payment_terms_days": null,
+   "renewal_notice_days": null,
+   "renewal_term_months": null,
+   "supplier": null,
+   "total_value": null
+  },
+  "line_items": null
+ },
+ "C0012": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": true,
+   "contract_number": "MSA-2025-8719",
+   "currency": "GBP",
+   "customer": "Ironbridge Energy LLC",
+   "effective_date": "2025-04-28",
+   "expiration_date": "2029-04-28",
+   "governing_law": "Ontario",
+   "payment_terms_days": 60,
+   "renewal_notice_days": 60,
+   "renewal_term_months": 12,
+   "supplier": "Summit Medical Supply GmbH",
+   "total_value": 381600.0
+  },
+  "line_items": null
+ },
+ "C0013": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": false,
+   "contract_number": "CTR-2024-1254",
+   "currency": "USD",
+   "customer": "Orion Security Ltd",
+   "effective_date": "2024-09-08",
+   "expiration_date": "2025-09-08",
+   "governing_law": null,
+   "payment_terms_days": null,
+   "renewal_notice_days": null,
+   "renewal_term_months": null,
+   "supplier": "Bluepeak Foods Ltd",
+   "total_value": null
+  },
+  "line_items": null
+ },
+ "C0014": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": false,
+   "contract_number": "MSA-2025-4752",
+   "currency": "USD",
+   "customer": "Driftwood Components GmbH",
+   "effective_date": "2025-07-19",
+   "expiration_date": "2027-07-19",
+   "governing_law": "Germany",
+   "payment_terms_days": 30,
+   "renewal_notice_days": null,
+   "renewal_term_months": null,
+   "supplier": "Keystone Facilities plc",
+   "total_value": 78400.0
+  },
+  "line_items": null
+ },
+ "C0015": {
+  "doc_type": "contract",
+  "fields": {
+   "auto_renewal": false,
+   "contract_number": "CTR-2025-2317",
+   "currency": "EUR",
+   "customer": "Summit Energy Inc.",
+   "effective_date": "2021-03-04",
+   "expiration_date": "2025-03-04",
+   "governing_law": "Germany",
+   "payment_terms_days": 15,
+   "renewal_notice_days": null,
+   "renewal_term_months": null,
+   "supplier": "Granite Analytics plc",
+   "total_value": null
+  },
+  "line_items": null
+ },
+ "I0001": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "USD",
+   "customer": null,
+   "due_date": null,
+   "invoice_date": "2025-11-10",
+   "invoice_number": "INV-2025-51247",
+   "payment_terms_days": null,
+   "po_number": "PO-47686",
+   "subtotal": null,
+   "supplier": "Rechnung / Bill",
+   "tax": 19533.08,
+   "total": 410194.72
+  },
+  "line_items": []
+ },
+ "I0002": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "USD",
+   "customer": "Tidewater Office Supply Co.",
+   "due_date": "2025-12-28",
+   "invoice_date": "2025-11-28",
+   "invoice_number": "IN-2025-61128",
+   "payment_terms_days": 30,
+   "po_number": null,
+   "subtotal": 11650.76,
+   "supplier": "Redwood Laboratories Ltd",
+   "tax": 2213.64,
+   "total": 13864.4
+  },
+  "line_items": [
+   {
+    "amount": 2334.92,
+    "description": "Forklift rental (day)",
+    "quantity": 4.0,
+    "unit_price": 583.73
+   },
+   {
+    "amount": 2889.72,
+    "description": "Nitrile gloves (box of 100)",
+    "quantity": 3.0,
+    "unit_price": 963.24
+   },
+   {
+    "amount": 6377.34,
+    "description": "Disinfectant concentrate 10L",
+    "quantity": 3.0,
+    "unit_price": 2125.78
+   },
+   {
+    "amount": 48.78,
+    "description": "On-site technician visit",
+    "quantity": 6.0,
+    "unit_price": 8.13
+   }
+  ]
+ },
+ "I0003": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "USD",
+   "customer": "Bluepeak Engineering Ltd",
+   "due_date": "2025-09-19",
+   "invoice_date": "2025-09-04",
+   "invoice_number": "SI-2025-80743",
+   "payment_terms_days": 15,
+   "po_number": "PO-65679",
+   "subtotal": 14814.81,
+   "supplier": "WILLOW FACILITIES Corp.",
+   "tax": 2962.96,
+   "total": null
+  },
+  "line_items": []
+ },
+ "I0004": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "EUR",
+   "customer": null,
+   "due_date": null,
+   "invoice_date": "2026-05-20",
+   "invoice_number": "SI-2026-91163",
+   "payment_terms_days": null,
+   "po_number": "PO-56931",
+   "subtotal": null,
+   "supplier": "Rechnung / Bill",
+   "tax": 0.0,
+   "total": 39491.0
+  },
+  "line_items": []
+ },
+ "I0005": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "EUR",
+   "customer": null,
+   "due_date": null,
+   "invoice_date": "2025-08-21",
+   "invoice_number": "IN-2025-11917",
+   "payment_terms_days": null,
+   "po_number": "PO-77520",
+   "subtotal": null,
+   "supplier": "Rechnung / Bill",
+   "tax": 31882.83,
+   "total": 191296.97
+  },
+  "line_items": []
+ },
+ "I0006": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "USD",
+   "customer": null,
+   "due_date": null,
+   "invoice_date": "2026-07-01",
+   "invoice_number": "IN-2026-76713",
+   "payment_terms_days": null,
+   "po_number": null,
+   "subtotal": null,
+   "supplier": "Rechnung / Bill",
+   "tax": 0.0,
+   "total": 244617.0
+  },
+  "line_items": []
+ },
+ "I0007": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "USD",
+   "customer": null,
+   "due_date": null,
+   "invoice_date": "2026-08-04",
+   "invoice_number": "IN-2026-95002",
+   "payment_terms_days": null,
+   "po_number": "PO-53152",
+   "subtotal": null,
+   "supplier": "Rechnung / Bill",
+   "tax": 0.0,
+   "total": 128794.96
+  },
+  "line_items": []
+ },
+ "I0008": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "USD",
+   "customer": "Ironbridge Laboratories Co",
+   "due_date": "2025-05-01",
+   "invoice_date": "2025-04-16",
+   "invoice_number": "IN-2025-74906",
+   "payment_terms_days": 15,
+   "po_number": "PO-39203",
+   "subtotal": 284235.78,
+   "supplier": "Maple Print Services GmbH",
+   "tax": 56847.16,
+   "total": 341082.94
+  },
+  "line_items": [
+   {
+    "amount": 13659.54,
+    "description": "Da ta cleansing service",
+    "quantity": 6.0,
+    "unit_price": 2276.59
+   },
+   {
+    "amount": 38686.08,
+    "description": "Thermal labels roll",
+    "quantity": 24.0,
+    "unit_price": 1611.92
+   },
+   {
+    "amount": 9507.4,
+    "description": "Hydraulic hose assembly",
+    "quantity": 10.0,
+    "unit_price": 950.74
+   },
+   {
+    "amount": 4479.18,
+    "description": "Forklift rental (day)",
+    "quantity": 2.0,
+    "unit_price": 2239.59
+   },
+   {
+    "amount": 4637.08,
+    "description": "Freight surcharge",
+    "quantity": 4.0,
+    "unit_price": 1159.27
+   },
+   {
+    "amount": 202992.0,
+    "description": "LED panel light 60W",
+    "quantity": 100.0,
+    "unit_price": 2029.92
+   },
+   {
+    "amount": 10274.5,
+    "description": "Calibration service",
+    "quantity": 10.0,
+    "unit_price": 1027.45
+   }
+  ]
+ },
+ "I0009": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "USD",
+   "customer": "Lakeside Logistics Group",
+   "due_date": "2026-05-21",
+   "invoice_date": "2026-04-21",
+   "invoice_number": "INV-2026-88113",
+   "payment_terms_days": 30,
+   "po_number": null,
+   "subtotal": 193730.52,
+   "supplier": "Highland Energy plc",
+   "tax": 38746.1,
+   "total": 232476.62
+  },
+  "line_items": [
+   {
+    "amount": 103738.0,
+    "description": "Server maintenance hours",
+    "quantity": 100.0,
+    "unit_price": 1037.38
+   },
+   {
+    "amount": 82652.0,
+    "description": "Forklift rental (day)",
+    "quantity": 50.0,
+    "unit_price": 1653.04
+   },
+   {
+    "amount": 309.0,
+    "description": "Ergonomic office chair",
+    "quantity": 10.0,
+    "unit_price": 30.9
+   },
+   {
+    "amount": 7031.52,
+    "description": "Cloud storage (TB-month)",
+    "quantity": 8.0,
+    "unit_price": 878.94
+   }
+  ]
+ },
+ "I0010": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "USD",
+   "customer": "Tidewater Foods Corp.",
+   "due_date": "2026-06-05",
+   "invoice_date": "2026-05-21",
+   "invoice_number": "SI-2026-64129",
+   "payment_terms_days": null,
+   "po_number": "PO-47449",
+   "subtotal": 23578.85,
+   "supplier": "Harbor Components, Li mited",
+   "tax": 1945.26,
+   "total": 25524.11
+  },
+  "line_items": [
+   {
+    "amount": 3875.58,
+    "description": "Cloud storage (TB-month)",
+    "quantity": 2.0,
+    "unit_price": 1937.79
+   },
+   {
+    "amount": 14938.32,
+    "description": "Corrugated carton 12x12",
+    "quantity": 24.0,
+    "unit_price": 622.43
+   },
+   {
+    "amount": 4764.95,
+    "description": "Hydraulic hosc assembly",
+    "quantity": 5.0,
+    "unit_price": 952.99
+   }
+  ]
+ },
+ "I0011": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "USD",
+   "customer": "Maple Metals Group",
+   "due_date": "2025-07-19",
+   "invoice_date": "2025-07-04",
+   "invoice_number": "INV/2025/78241",
+   "payment_terms_days": 15,
+   "po_number": null,
+   "subtotal": 99128.84,
+   "supplier": "Quarry Analytics Inc.",
+   "tax": 0.0,
+   "total": 99128.84
+  },
+  "line_items": [
+   {
+    "amount": 12783.84,
+    "description": "Ergonomic office chair",
+    "quantity": 8.0,
+    "unit_price": 1597.98
+   },
+   {
+    "amount": 86345.0,
+    "description": "Data cleansing service",
+    "quantity": 100.0,
+    "unit_price": 863.45
+   }
+  ]
+ },
+ "I0012": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "EUR",
+   "customer": "Cobalt Metals LLC",
+   "due_date": "2026-08-01",
+   "invoice_date": "2026-08-01",
+   "invoice_number": "SI-2026-50667",
+   "payment_terms_days": 0,
+   "po_number": "PO-21126",
+   "subtotal": 49976.44,
+   "supplier": "Ashford Components LLC",
+   "tax": 4123.06,
+   "total": 54099.5
+  },
+  "line_items": [
+   {
+    "amount": 20180.16,
+    "description": "Copper cable 2.5mm (100m)",
+    "quantity": 12.0,
+    "unit_price": 1681.68
+   },
+   {
+    "amount": 1059.96,
+    "description": "Bearing kit 6204",
+    "quantity": 3.0,
+    "unit_price": 353.32
+   },
+   {
+    "amount": 2887.0,
+    "description": "Freight surcharge",
+    "quantity": 100.0,
+    "unit_price": 28.87
+   },
+   {
+    "amount": 25849.32,
+    "description": "Hydraulic hose assembly",
+    "quantity": 12.0,
+    "unit_price": 2154.11
+   }
+  ]
+ },
+ "I0013": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "USD",
+   "customer": "Larkspur Industrial Inc.",
+   "due_date": "2025-04-29",
+   "invoice_date": "2025-03-15",
+   "invoice_number": "SI-2025-35146",
+   "payment_terms_days": null,
+   "po_number": "PO-95298",
+   "subtotal": 25255.5,
+   "supplier": "Keystone Electronics Ltd",
+   "tax": 1262.78,
+   "total": 26518.28
+  },
+  "line_items": [
+   {
+    "amount": 10398.64,
+    "description": "Cloud storage (TB-month)",
+    "quantity": 8.0,
+    "unit_price": 1299.83
+   },
+   {
+    "amount": 5448.96,
+    "description": "Freight surcharge",
+    "quantity": 4.0,
+    "unit_price": 1362.24
+   },
+   {
+    "amount": 9407.9,
+    "description": "Ergonomic office chair",
+    "quantity": 10.0,
+    "unit_price": 940.79
+   }
+  ]
+ },
+ "I0014": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "EUR",
+   "customer": null,
+   "due_date": null,
+   "invoice_date": "2025-06-16",
+   "invoice_number": "INV-2025-48130",
+   "payment_terms_days": null,
+   "po_number": null,
+   "subtotal": null,
+   "supplier": "Rechnung / Bill",
+   "tax": 5115.61,
+   "total": 107427.75
+  },
+  "line_items": []
+ },
+ "I0015": {
+  "doc_type": "invoice",
+  "fields": {
+   "currency": "USD",
+   "customer": "Harbor Components Co.",
+   "due_date": "2025-10-28",
+   "invoice_date": "2025-08-29",
+   "invoice_number": "IN-2025-47136",
+   "payment_terms_days": null,
+   "po_number": null,
+   "subtotal": 42662.96,
+   "supplier": "Crescent Energy Group",
+   "tax": 8105.96,
+   "total": 50768.92
+  },
+  "line_items": [
+   {
+    "amount": 25875.12,
+    "description": "LED panel light 60W",
+    "quantity": 24.0,
+    "unit_price": 1078.13
+   },
+   {
+    "amount": 14836.74,
+    "description": "Safety helmet class E",
+    "quantity": 6.0,
+    "unit_price": 2472.79
+   },
+   {
+    "amount": 1951.1,
+    "description": "Industrial adhesive 5L",
+    "quantity": 5.0,
+    "unit_price": 390.22
+   }
+  ]
+ }
+}

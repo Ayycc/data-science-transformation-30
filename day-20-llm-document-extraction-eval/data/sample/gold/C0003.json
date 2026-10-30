@@ -1,0 +1,42 @@
+{
+ "doc_id": "C0003",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": "MSA-2025-2067",
+  "supplier": "Vanguard Packaging Ltd",
+  "customer": "Upland Logistics LLC",
+  "effective_date": "2025-11-25",
+  "expiration_date": "2029-11-25",
+  "total_value": 872400.0,
+  "currency": "EUR",
+  "payment_terms_days": 90,
+  "auto_renewal": true,
+  "renewal_term_months": 24,
+  "renewal_notice_days": 30,
+  "governing_law": "California"
+ },
+ "meta": {
+  "template": "order_form_unseen",
+  "date_style": "us",
+  "number_style": "us",
+  "distractors": {
+   "effective_date": [
+    "2023-11-13",
+    "2025-11-07"
+   ],
+   "total_value": [
+    1749800.0
+   ]
+  },
+  "derived": {
+   "expiration_date": false
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}

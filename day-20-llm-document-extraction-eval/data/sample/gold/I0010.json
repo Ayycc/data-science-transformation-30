@@ -1,0 +1,63 @@
+{
+ "doc_id": "I0010",
+ "label": {
+  "doc_type": "invoice",
+  "invoice_number": "SI-2026-64129",
+  "po_number": "PO-47449",
+  "supplier": "Harbor Components Ltd",
+  "customer": "Tidewater Foods Corp.",
+  "invoice_date": "2026-05-21",
+  "due_date": "2026-06-05",
+  "currency": "USD",
+  "subtotal": 23578.85,
+  "tax": 1945.26,
+  "total": 25524.11,
+  "payment_terms_days": 15,
+  "line_items": [
+   {
+    "description": "Cloud storage (TB-month)",
+    "quantity": 2.0,
+    "unit_price": 1937.79,
+    "amount": 3875.58
+   },
+   {
+    "description": "Corrugated carton 12x12",
+    "quantity": 24.0,
+    "unit_price": 622.43,
+    "amount": 14938.32
+   },
+   {
+    "description": "Hydraulic hose assembly",
+    "quantity": 5.0,
+    "unit_price": 952.99,
+    "amount": 4764.95
+   }
+  ]
+ },
+ "meta": {
+  "template": "ruled_table",
+  "date_style": "us",
+  "number_style": "us",
+  "distractors": {
+   "invoice_date": [
+    "2026-05-14"
+   ],
+   "total": [
+    12815.29
+   ],
+   "subtotal": [
+    12815.29
+   ]
+  },
+  "derived": {
+   "due_date": false
+  },
+  "name_variant": {
+   "supplier": true,
+   "customer": false
+  },
+  "scanned": true,
+  "noise_rate": 0.059
+ },
+ "synthetic": true
+}

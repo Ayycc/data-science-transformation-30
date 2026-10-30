@@ -1,0 +1,87 @@
+{
+ "doc_id": "I0005",
+ "label": {
+  "doc_type": "invoice",
+  "invoice_number": "IN-2025-11917",
+  "po_number": "PO-77520",
+  "supplier": "Evergreen Fleet Services Co.",
+  "customer": "Vanguard Medical Supply GmbH",
+  "invoice_date": "2025-08-21",
+  "due_date": "2025-09-05",
+  "currency": "EUR",
+  "subtotal": 159414.14,
+  "tax": 31882.83,
+  "total": 191296.97,
+  "payment_terms_days": 15,
+  "line_items": [
+   {
+    "description": "On-site technician visit",
+    "quantity": 8.0,
+    "unit_price": 2378.49,
+    "amount": 19027.92
+   },
+   {
+    "description": "Corrugated carton 12x12",
+    "quantity": 20.0,
+    "unit_price": 621.48,
+    "amount": 12429.6
+   },
+   {
+    "description": "Thermal labels roll",
+    "quantity": 8.0,
+    "unit_price": 976.45,
+    "amount": 7811.6
+   },
+   {
+    "description": "Laboratory reagent kit",
+    "quantity": 50.0,
+    "unit_price": 1511.15,
+    "amount": 75557.5
+   },
+   {
+    "description": "Steel bracket 40mm",
+    "quantity": 4.0,
+    "unit_price": 1151.19,
+    "amount": 4604.76
+   },
+   {
+    "description": "Calibration service",
+    "quantity": 6.0,
+    "unit_price": 2232.46,
+    "amount": 13394.76
+   },
+   {
+    "description": "Freight surcharge",
+    "quantity": 100.0,
+    "unit_price": 265.88,
+    "amount": 26588.0
+   }
+  ]
+ },
+ "meta": {
+  "template": "eu_layout_unseen",
+  "date_style": "us",
+  "number_style": "eu",
+  "distractors": {
+   "invoice_date": [
+    "2025-07-15"
+   ],
+   "total": [
+    10690.2
+   ],
+   "subtotal": [
+    10690.2
+   ]
+  },
+  "derived": {
+   "due_date": true
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}

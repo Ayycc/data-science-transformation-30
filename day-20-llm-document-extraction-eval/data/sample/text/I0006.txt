@@ -1,0 +1,12 @@
+RECHNUNG / BILL
+Seller Alder Engineering GmbH
+Buyer Granite Components LLC
+Document number IN-2026-76713
+Issue date 01-Jul-2026
+Payment deadline 31-Jul-2026
+Pos | Article | Quantity | Price | Line total
+1 | Data cleansing service | 100 | 2,446.17 | 244,617.00
+Net total USD 244,617.00
+Tax exempt USD 0.00
+Gross total USD 244,617.00
+Payable 3O days net.

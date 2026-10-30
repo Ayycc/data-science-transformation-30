@@ -1,0 +1,51 @@
+{
+ "doc_id": "I0006",
+ "label": {
+  "doc_type": "invoice",
+  "invoice_number": "IN-2026-76713",
+  "po_number": null,
+  "supplier": "Alder Engineering GmbH",
+  "customer": "Granite Components LLC",
+  "invoice_date": "2026-07-01",
+  "due_date": "2026-07-31",
+  "currency": "USD",
+  "subtotal": 244617.0,
+  "tax": 0.0,
+  "total": 244617.0,
+  "payment_terms_days": 30,
+  "line_items": [
+   {
+    "description": "Data cleansing service",
+    "quantity": 100.0,
+    "unit_price": 2446.17,
+    "amount": 244617.0
+   }
+  ]
+ },
+ "meta": {
+  "template": "eu_layout_unseen",
+  "date_style": "abbr",
+  "number_style": "us",
+  "distractors": {
+   "invoice_date": [
+    "2026-06-18"
+   ],
+   "total": [
+    18134.25
+   ],
+   "subtotal": [
+    18134.25
+   ]
+  },
+  "derived": {
+   "due_date": false
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": true,
+  "noise_rate": 0.045
+ },
+ "synthetic": true
+}

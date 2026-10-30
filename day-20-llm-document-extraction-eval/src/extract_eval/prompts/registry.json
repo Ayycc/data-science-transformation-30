@@ -1,0 +1,9 @@
+{
+  "extract_v1": {
+    "file": "extract_v1.txt",
+    "sha256": "a39d0946eb5e0809f2ce4bed101ba52ac0dcc16da88c102fa00d82adb511b25e",
+    "created": "2026-10-30",
+    "schema_version": "1.0",
+    "notes": "Initial prompt: field definitions, null policy, date/number normalisation, distractor guidance, OCR note."
+  }
+}

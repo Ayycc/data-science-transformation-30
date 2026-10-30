@@ -1,0 +1,45 @@
+{
+ "doc_id": "C0007",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": "MSA-2025-6273",
+  "supplier": "Summit Consulting Inc.",
+  "customer": "Larkspur Logistics GmbH",
+  "effective_date": "2025-07-01",
+  "expiration_date": "2028-07-01",
+  "total_value": 2726500.0,
+  "currency": "USD",
+  "payment_terms_days": 90,
+  "auto_renewal": false,
+  "renewal_term_months": null,
+  "renewal_notice_days": null,
+  "governing_law": "New York"
+ },
+ "meta": {
+  "template": "msa_prose",
+  "date_style": "legal",
+  "number_style": "us",
+  "distractors": {
+   "effective_date": [
+    "2021-12-09",
+    "2025-06-13"
+   ],
+   "total_value": [
+    4114800.0
+   ],
+   "renewal_notice_days": [
+    30
+   ]
+  },
+  "derived": {
+   "expiration_date": false
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}

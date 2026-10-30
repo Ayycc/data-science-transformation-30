@@ -1,0 +1,45 @@
+{
+ "doc_id": "C0001",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": "MSA-2024-8032",
+  "supplier": "Beacon Energy Group",
+  "customer": "Ironbridge Fleet Services Corp.",
+  "effective_date": "2024-10-22",
+  "expiration_date": "2028-10-22",
+  "total_value": 56900.0,
+  "currency": "EUR",
+  "payment_terms_days": 60,
+  "auto_renewal": false,
+  "renewal_term_months": null,
+  "renewal_notice_days": null,
+  "governing_law": null
+ },
+ "meta": {
+  "template": "procurement_letter",
+  "date_style": "long",
+  "number_style": "eu",
+  "distractors": {
+   "effective_date": [
+    "2022-11-30",
+    "2024-10-12"
+   ],
+   "total_value": [
+    81900.0
+   ],
+   "renewal_notice_days": [
+    90
+   ]
+  },
+  "derived": {
+   "expiration_date": false
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": true,
+  "noise_rate": 0.094
+ },
+ "synthetic": true
+}

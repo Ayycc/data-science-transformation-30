@@ -1,0 +1,42 @@
+{
+ "doc_id": "C0005",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": null,
+  "supplier": "Orion Electronics LLC",
+  "customer": "Zephyr Software Ltd",
+  "effective_date": "2024-09-29",
+  "expiration_date": "2026-09-29",
+  "total_value": 83500.0,
+  "currency": "EUR",
+  "payment_terms_days": 30,
+  "auto_renewal": true,
+  "renewal_term_months": 12,
+  "renewal_notice_days": 60,
+  "governing_law": "Delaware"
+ },
+ "meta": {
+  "template": "msa_prose",
+  "date_style": "dmy",
+  "number_style": "eu",
+  "distractors": {
+   "effective_date": [
+    "2024-01-10",
+    "2024-09-23"
+   ],
+   "total_value": [
+    167000.0
+   ]
+  },
+  "derived": {
+   "expiration_date": true
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}

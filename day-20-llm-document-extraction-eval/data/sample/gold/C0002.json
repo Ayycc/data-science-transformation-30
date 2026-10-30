@@ -1,0 +1,42 @@
+{
+ "doc_id": "C0002",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": "CTR-2025-0597",
+  "supplier": "Ironbridge Facilities Corp.",
+  "customer": "Northwind Industrial Co.",
+  "effective_date": "2025-04-04",
+  "expiration_date": "2029-04-04",
+  "total_value": 163000.0,
+  "currency": "EUR",
+  "payment_terms_days": 45,
+  "auto_renewal": true,
+  "renewal_term_months": 36,
+  "renewal_notice_days": 30,
+  "governing_law": "England and Wales"
+ },
+ "meta": {
+  "template": "order_form_unseen",
+  "date_style": "iso",
+  "number_style": "eu",
+  "distractors": {
+   "effective_date": [
+    "2024-03-02",
+    "2025-03-25"
+   ],
+   "total_value": [
+    168000.0
+   ]
+  },
+  "derived": {
+   "expiration_date": true
+  },
+  "name_variant": {
+   "supplier": true,
+   "customer": false
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}

@@ -1,0 +1,17 @@
+WILLOW FACILITIES, CORPORATION
+41 Ashford Road, Suite 7
+TAX INVOICE
+Invoice # SI-2025-80743    Date: 09/04/2025
+Order Date: 08/07/2025
+Customer: Bluepeak Engineering Ltd
+Your Ref: PO-65679
+Payment Due: 09/19/2025
+I tem                                   Qty      Rate        Amount
+Server maintenance hours                   3      177.37        532.11
+Thermal labels roll                       50       70.86      3,543.00
+Filter cartridge                           6    1,789.95     10,739.70
+Net amount 14,814.81
+VAT 20% 2,962.96
+Invoice to tal USD 17,777.77
+Previous balance 3,476.41 (already paid, not included above)
+Net 15.

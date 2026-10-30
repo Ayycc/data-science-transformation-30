@@ -1,0 +1,14 @@
+INVOICE
+From: Crescent Energy Group
+Bill To: Harbor Components Co.
+Invoice No: IN-2025-47136
+Invoice Date: August 29, 2025
+Due Date: October 28, 2025
+Currency: USD
+Description | Qty | Unit Price | Amount
+LED panel light 60W | 24 | 1,078.13 | 25,875.12
+Safety helmet class E | 6 | 2,472.79 | 14,836.74
+Industrial adhesive 5L | 5 | 390.22 | 1,951.10
+Subtotal: $42,662.96
+MwSt 19%: USD 8,105.96
+Total Due: $50,768.92

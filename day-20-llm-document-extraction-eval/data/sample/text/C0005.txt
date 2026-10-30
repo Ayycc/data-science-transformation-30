@@ -1,0 +1,10 @@
+MASTER SERVICES AGREEMENT
+This Master Services Agreement (the "Agreement") is entered into as of 29 September 2024 (the "Effective Date") by and between Orion Electronics LLC, a Nevada corporation ("Supplier"), and Zephyr Software Ltd ("Customer").
+This Agreement supersedes the prior agreement between the parties dated 10 January 2024.
+1. Term. This Agreement commences on the Effective Date and continues for an initial term of twenty-four (24) months.
+2. Fees. Customer shall pay Supplier fees up to a total contract value of € 83.500,00, exclusive of applicable taxes.
+3. Payment. Undisputed invoices are payable 2/10 net 30.
+4. Renewal. Upon expiry the Agreement renews automatically for additional twelve (12) months terms. Notice of non-renewal must be served no later than 60 days before the end of the then-current term.
+5. Limitation of Liability. Each party's aggregate liability shall not exceed 167.000,00 EUR.
+6. Governing Law. This Agreement shall be governed by the laws of Delaware.
+Signed on behalf of each party on 23 September 2024.

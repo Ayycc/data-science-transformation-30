@@ -1,0 +1,63 @@
+{
+ "doc_id": "I0003",
+ "label": {
+  "doc_type": "invoice",
+  "invoice_number": "SI-2025-80743",
+  "po_number": "PO-65679",
+  "supplier": "Willow Facilities Corp.",
+  "customer": "Bluepeak Engineering Ltd",
+  "invoice_date": "2025-09-04",
+  "due_date": "2025-09-19",
+  "currency": "USD",
+  "subtotal": 14814.81,
+  "tax": 2962.96,
+  "total": 17777.77,
+  "payment_terms_days": 15,
+  "line_items": [
+   {
+    "description": "Server maintenance hours",
+    "quantity": 3.0,
+    "unit_price": 177.37,
+    "amount": 532.11
+   },
+   {
+    "description": "Thermal labels roll",
+    "quantity": 50.0,
+    "unit_price": 70.86,
+    "amount": 3543.0
+   },
+   {
+    "description": "Filter cartridge",
+    "quantity": 6.0,
+    "unit_price": 1789.95,
+    "amount": 10739.7
+   }
+  ]
+ },
+ "meta": {
+  "template": "text_table",
+  "date_style": "us",
+  "number_style": "us",
+  "distractors": {
+   "invoice_date": [
+    "2025-08-07"
+   ],
+   "total": [
+    3476.41
+   ],
+   "subtotal": [
+    3476.41
+   ]
+  },
+  "derived": {
+   "due_date": false
+  },
+  "name_variant": {
+   "supplier": true,
+   "customer": false
+  },
+  "scanned": true,
+  "noise_rate": 0.059
+ },
+ "synthetic": true
+}

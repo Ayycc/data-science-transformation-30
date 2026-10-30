@@ -1,0 +1,12 @@
+RECHNUNG / BILL
+Seller BEACON METALS GMBH
+Buyer Tidewater Logistics GmbH
+Document number SI-2026-91163
+Issue date May 20, 2026
+Order reference PO-56931 of April 12, 2026
+Pos | Article | Quantity | Price | Line total
+1 | Forklift rental (day) | 20 | 1,974.55 | 39,491.00
+Net total EUR 39,491.00
+Tax exempt EUR 0.00
+Gross total EUR 39,491.00
+Payable 30 days net.

@@ -1,0 +1,45 @@
+{
+ "doc_id": "C0010",
+ "label": {
+  "doc_type": "contract",
+  "contract_number": "CTR-2026-5647",
+  "supplier": "Oakridge Electronics Corp.",
+  "customer": "Harbor Consulting Inc.",
+  "effective_date": "2026-02-01",
+  "expiration_date": "2028-02-01",
+  "total_value": null,
+  "currency": "EUR",
+  "payment_terms_days": 90,
+  "auto_renewal": false,
+  "renewal_term_months": null,
+  "renewal_notice_days": null,
+  "governing_law": "Ireland"
+ },
+ "meta": {
+  "template": "procurement_letter",
+  "date_style": "long",
+  "number_style": "us",
+  "distractors": {
+   "effective_date": [
+    "2022-11-30",
+    "2026-01-20"
+   ],
+   "total_value": [
+    1456300.0
+   ],
+   "renewal_notice_days": [
+    60
+   ]
+  },
+  "derived": {
+   "expiration_date": true
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": true,
+  "noise_rate": 0.061
+ },
+ "synthetic": true
+}

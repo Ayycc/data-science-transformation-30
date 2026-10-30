@@ -1,0 +1,17 @@
+RECHNUNG / BILL
+Seller QUARRY SOFTWARE GROUP
+Buyer Northwind Analytics, Corporation
+Document number INV-2025-48130
+Issue date 2025-06-16
+Pos | Article | Quantity | Price | Line total
+1 | Nitrile gloves (box of 100) | 12 | 130.65 | 1,567.80
+2 | Calibration service | 50 | 867.35 | 43,367.50
+3 | Safety helmet class E | 24 | 1,009.37 | 24,224.88
+4 | Corrugated carton 12x12 | 1 | 1,334.08 | 1,334.08
+5 | Laboratory reagent kit | 4 | 1,042.73 | 4,170.92
+6 | Filter cartridge | 6 | 1,223.66 | 7,341.96
+7 | Data cleansing service | 10 | 2,030.50 | 20,305.00
+Net total EUR 102,312.14
+GST 5% EUR 5,115.61
+Gross total EUR 107,427.75
+Payable 45 days net.

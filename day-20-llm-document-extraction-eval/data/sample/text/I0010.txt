@@ -1,0 +1,16 @@
+INV OICE
+From: Harbor Components, Li mited
+Bill To: Tidewater Foods Corp.
+Invoice No: SI-2026-64129
+Invoice Date: 05/21/2026
+Due Date: 06/05/2026
+PO Number: PO-47449
+Currency: USD
+Description | Qty | Unit Price | Amount
+Cloud storage (TB-month) | 2 | 1,937.79 | 3,875.58
+Corrugated carton 12x12 | 24 | 62 2.43 | 14,938.32
+Hydraulic hosc assembly | 5 | 952.99 | 4,764.95
+Subto tal: $23,578.85
+Sales Tax (8.25%): $1,945.26
+Total Due: $25,524.11
+Terms: Payment due within 15days

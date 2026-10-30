@@ -1,0 +1,18 @@
+ASHFORD COMPONENTS LLC
+607 Summit Road, Suite 33
+TAX INVOICE
+Invoice # SI-2026-50667    Date: 1 August 2026
+Order Date: 2 July 2026
+Customer: Cobalt Metals LLC
+Your Ref: PO-21126
+Payment Due: 1 August 2026
+Item                                   Qty      Rate        Amount
+Copper cable 2.5mm (100m)                 12    1.681,68     20.180,16
+Bearing kit 6204                           3      353,32      1.059,96
+Freight surcharge                        100       28,87      2.887,00
+Hydraulic hose assembly                   12    2.154,11     25.849,32
+Net amount 49.976,44
+Sales Tax (8.25%) 4.123,06
+Invoice total EUR 54.099,50
+Previous balance 17.892,32 (already paid, not included above)
+Due upon receipt.

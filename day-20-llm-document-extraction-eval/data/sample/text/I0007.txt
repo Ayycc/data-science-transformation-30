@@ -1,0 +1,16 @@
+RECHNUNG / BILL
+Seller Silverline Print Services Inc.
+Buyer Westgate Components Ltd
+Document number IN-2026-95002
+Issue date 2026-08-04
+Order reference PO-53152 of 2026-07-28
+Pos | Article | Quantity | Price | Line total
+1 | Printer toner cartridge | 100 | 796.05 | 79,605.00
+2 | Server maintenance hours | 20 | 569.95 | 11,399.00
+3 | Nitrile gloves (box of 100) | 24 | 780.19 | 18,724.S6
+4 | Data cleansing service | 8 | 2,270.89 | 18,167.12
+5 | Consulting day rate | 2 | 449.64 | 899.28
+Net total USD 128,794.96
+Tax exempt USD 0.00
+Gross total USD 128,794.96
+Payable 60 days net.

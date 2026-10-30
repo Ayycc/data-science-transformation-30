@@ -1,0 +1,75 @@
+{
+ "doc_id": "I0007",
+ "label": {
+  "doc_type": "invoice",
+  "invoice_number": "IN-2026-95002",
+  "po_number": "PO-53152",
+  "supplier": "Silverline Print Services Inc.",
+  "customer": "Westgate Components Ltd",
+  "invoice_date": "2026-08-04",
+  "due_date": "2026-10-03",
+  "currency": "USD",
+  "subtotal": 128794.96,
+  "tax": 0.0,
+  "total": 128794.96,
+  "payment_terms_days": 60,
+  "line_items": [
+   {
+    "description": "Printer toner cartridge",
+    "quantity": 100.0,
+    "unit_price": 796.05,
+    "amount": 79605.0
+   },
+   {
+    "description": "Server maintenance hours",
+    "quantity": 20.0,
+    "unit_price": 569.95,
+    "amount": 11399.0
+   },
+   {
+    "description": "Nitrile gloves (box of 100)",
+    "quantity": 24.0,
+    "unit_price": 780.19,
+    "amount": 18724.56
+   },
+   {
+    "description": "Data cleansing service",
+    "quantity": 8.0,
+    "unit_price": 2270.89,
+    "amount": 18167.12
+   },
+   {
+    "description": "Consulting day rate",
+    "quantity": 2.0,
+    "unit_price": 449.64,
+    "amount": 899.28
+   }
+  ]
+ },
+ "meta": {
+  "template": "eu_layout_unseen",
+  "date_style": "iso",
+  "number_style": "us",
+  "distractors": {
+   "invoice_date": [
+    "2026-07-28"
+   ],
+   "total": [
+    14630.11
+   ],
+   "subtotal": [
+    14630.11
+   ]
+  },
+  "derived": {
+   "due_date": true
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": true,
+  "noise_rate": 0.038
+ },
+ "synthetic": true
+}

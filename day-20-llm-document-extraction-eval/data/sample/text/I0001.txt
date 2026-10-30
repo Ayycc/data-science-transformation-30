@@ -1,0 +1,16 @@
+RECHNUNG / BILL
+Seller KEYSTONE LOGISTICS GMBH
+Buyer Silverline Engineering Inc.
+Document number INV-2025-51247
+Issue date 10-Nov-2025
+Order reference PO-47686 of 01-Nov-2025
+Pos | Article | Quantity | Price | Line total
+1 | Ergonomic office chair | 100 | 2,293.37 | 229,337.00
+2 | Disinfectant concentrate 10L | 50 | 1,910.41 | 95,520.50
+3 | LED panel light 60W | 3 | 726.68 | 2,180.04
+4 | Forklift rental (day) | 20 | 2,094.07 | 41,881.40
+5 | Bearing kit 6204 | 10 | 2,174.27 | 21,742.70
+Net total USD 390,661.64
+GST 5% USD 19,533.08
+Gross total USD 410,194.72
+Payable immediately.

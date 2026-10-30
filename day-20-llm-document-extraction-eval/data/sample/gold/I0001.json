@@ -1,0 +1,75 @@
+{
+ "doc_id": "I0001",
+ "label": {
+  "doc_type": "invoice",
+  "invoice_number": "INV-2025-51247",
+  "po_number": "PO-47686",
+  "supplier": "Keystone Logistics GmbH",
+  "customer": "Silverline Engineering Inc.",
+  "invoice_date": "2025-11-10",
+  "due_date": "2025-11-10",
+  "currency": "USD",
+  "subtotal": 390661.64,
+  "tax": 19533.08,
+  "total": 410194.72,
+  "payment_terms_days": 0,
+  "line_items": [
+   {
+    "description": "Ergonomic office chair",
+    "quantity": 100.0,
+    "unit_price": 2293.37,
+    "amount": 229337.0
+   },
+   {
+    "description": "Disinfectant concentrate 10L",
+    "quantity": 50.0,
+    "unit_price": 1910.41,
+    "amount": 95520.5
+   },
+   {
+    "description": "LED panel light 60W",
+    "quantity": 3.0,
+    "unit_price": 726.68,
+    "amount": 2180.04
+   },
+   {
+    "description": "Forklift rental (day)",
+    "quantity": 20.0,
+    "unit_price": 2094.07,
+    "amount": 41881.4
+   },
+   {
+    "description": "Bearing kit 6204",
+    "quantity": 10.0,
+    "unit_price": 2174.27,
+    "amount": 21742.7
+   }
+  ]
+ },
+ "meta": {
+  "template": "eu_layout_unseen",
+  "date_style": "abbr",
+  "number_style": "us",
+  "distractors": {
+   "invoice_date": [
+    "2025-11-01"
+   ],
+   "total": [
+    13348.26
+   ],
+   "subtotal": [
+    13348.26
+   ]
+  },
+  "derived": {
+   "due_date": true
+  },
+  "name_variant": {
+   "supplier": false,
+   "customer": false
+  },
+  "scanned": false,
+  "noise_rate": 0.0
+ },
+ "synthetic": true
+}
