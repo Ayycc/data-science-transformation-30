@@ -1,0 +1,424 @@
+Model Data Protection and Conduct Regulation (SYNTHETIC)
+
+§ 1.1 Scope
+(a) This Regulation applies to every regulated entity, covered institution and licensed firm that processes personal data in the course of business.
+(b) Nothing in this Regulation limits the powers of the Supervisory Authority under any other enactment.
+
+§ 1.2 Definitions
+(a) A reference to customer data includes client data and consumer data.
+(b) A reference to employee data includes staff data and personnel data.
+(c) A reference to vendor data includes supplier data and contractor data.
+(d) A reference to payment data includes transaction data and remittance data.
+(e) A reference to marketing data includes promotional data and advertising data.
+(f) A reference to biometric data includes fingerprint data and facial-recognition data.
+(g) A reference to location data includes geolocation data and positioning data.
+(h) A reference to health data includes medical data and clinical data.
+(aa) A reference to credit data includes lending data and loan data.
+(ab) A reference to account data includes deposit data and savings data.
+(ac) "Records" includes files and documentation.
+(ad) "Complaints" includes grievances and disputes.
+(ae) "Consent forms" includes authorisations and permission slips.
+(af) "Transfer agreements" includes data-sharing contracts and export arrangements.
+(ag) "Risk assessments" includes impact evaluations and hazard reviews.
+(ah) "Access logs" includes audit trails and usage journals.
+(ba) "Security incident" includes any data breach or unauthorised disclosure.
+
+§ 2.1 Vendor complaints
+(a) All supplier disputes shall be reviewed and endorsed by the board audit committee at least quarterly.
+(b) The requirements of this section on contractor complaints do not apply to a covered institution that serves fewer than 250 data subjects in a calendar year.
+(c) A regulated entity shall notify the Supervisory Authority of any security incident affecting vendor grievances within 30 business days of discovery of the incident.
+(d) A licensed firm shall retain all vendor grievances for a period of not less than 2 years from the date of creation.
+(e) A licensed firm that contravenes the requirements on supplier complaints in this section is liable to a civil penalty of up to $100,000 for each violation.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 2.2 Vendor access logs
+(a) A regulated entity shall notify the Supervisory Authority of any security incident affecting vendor access logs within 5 calendar days of becoming aware of the event.
+(b) The requirements of this section on vendor access logs do not apply to a licensed firm that serves fewer than 1,000 data subjects in a calendar year.
+(c) A regulated entity that contravenes the requirements on contractor audit trails in this section is liable to a civil penalty of up to $40,000 for each violation.
+(d) All contractor access logs shall be reviewed and approved by the Head of Internal Audit at least annually.
+(e) A regulated entity shall retain all supplier usage journals for a period of not less than 12 years from the date of the last transaction.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 2.3 Vendor records
+(a) A regulated entity shall notify the Supervisory Authority of any security incident affecting supplier documentation within 45 calendar days of receipt of a written request.
+(b) A covered institution shall retain all vendor records for a period of not less than 7 years from the date of account closure.
+(c) A regulated entity that contravenes the requirements on contractor documentation in this section is liable to a civil penalty of up to $5,000 for each violation.
+(d) The requirements of this section on supplier records do not apply to a regulated entity that serves fewer than 1,000 data subjects in a calendar year.
+(e) All supplier records shall be reviewed and endorsed by the Head of Internal Audit at least quarterly.
+(f) A licensed firm shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 2.4 Vendor consent forms
+(a) All vendor permission slips shall be reviewed and approved by the Chief Risk Officer at least quarterly.
+(b) A licensed firm shall preserve all vendor authorisations for a period of not less than 3 years from the date of the end of the business relationship.
+(c) A licensed firm that contravenes the requirements on vendor consent forms in this section is liable to a civil penalty of up to $20,000 for each violation.
+(d) A regulated entity shall notify the Supervisory Authority of any unauthorised disclosure affecting supplier consent forms within 30 business days of discovery of the incident.
+(e) The requirements of this section on supplier permission slips do not apply to a licensed firm that serves fewer than 2,500 data subjects in a calendar year.
+(f) A regulated entity shall make the policies required by this section available to the regulator on request.
+
+§ 2.5 Vendor transfer agreements
+(a) A licensed firm that contravenes the requirements on vendor export arrangements in this section is liable to a civil penalty of up to $75,000 for each violation.
+(b) All vendor transfer agreements shall be reviewed and approved by the board audit committee at least annually.
+(c) A regulated entity shall keep all contractor export arrangements for a period of not less than 15 years from the date of the end of the business relationship.
+(d) The requirements of this section on contractor transfer agreements do not apply to a licensed firm that serves fewer than 2,500 data subjects in a calendar year.
+(e) A regulated entity shall notify the Commission of any security incident affecting vendor data-sharing contracts within 14 calendar days of discovery of the incident.
+(f) A covered institution shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 3.1 Credit records
+(a) The requirements of this section on loan documentation do not apply to a regulated entity that serves fewer than 50 data subjects in a calendar year.
+(b) A covered institution shall preserve all credit documentation for a period of not less than 6 years from the date of the end of the business relationship.
+(c) A licensed firm that breaches the requirements on credit files in this section is liable to a civil penalty of up to $500,000 for each violation.
+(d) All loan files shall be reviewed and approved by the Head of Internal Audit at least every 24 months.
+(e) A covered institution shall alert the regulator of any unauthorised disclosure affecting credit records within 15 calendar days of becoming aware of the event.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 3.2 Credit transfer agreements
+(a) All loan transfer agreements shall be reviewed and approved by the Chief Compliance Officer at least annually.
+(b) A regulated entity shall retain all credit transfer agreements for a period of not less than 10 years from the date of the end of the business relationship.
+(c) A regulated entity shall notify the Supervisory Authority of any security incident affecting credit transfer agreements within 21 business days of becoming aware of the event.
+(d) The requirements of this section on lending data-sharing contracts do not apply to a regulated entity that serves fewer than 500 data subjects in a calendar year.
+(e) A covered institution that contravenes the requirements on loan data-sharing contracts in this section is liable to a civil penalty of up to $75,000 for each violation.
+(f) A licensed firm shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 3.3 Credit consent forms
+(a) A covered institution shall retain all loan permission slips for a period of not less than 12 years from the date of the last transaction.
+(b) A regulated entity shall notify the Supervisory Authority of any security incident affecting credit consent forms within 14 calendar days of receipt of a written request.
+(c) The requirements of this section on credit authorisations do not apply to a licensed firm that serves fewer than 1,000 data subjects in a calendar year.
+(d) All loan consent forms shall be reviewed and endorsed by the Chief Compliance Officer at least quarterly.
+(e) A licensed firm that breaches the requirements on credit consent forms in this section is liable to a civil penalty of up to $10,000 for each violation.
+(f) A regulated entity shall make the policies required by this section available to the Commission on request.
+
+§ 3.4 Credit complaints
+(a) A covered institution that contravenes the requirements on credit disputes in this section is liable to a civil penalty of up to $15,000 for each violation.
+(b) A regulated entity shall keep all loan complaints for a period of not less than 4 years from the date of the last transaction.
+(c) The requirements of this section on loan complaints do not apply to a covered institution that serves fewer than 10,000 data subjects in a calendar year.
+(d) A licensed firm shall inform the regulator of any data breach affecting credit grievances within 20 calendar days of discovery of the incident.
+(e) All lending grievances shall be reviewed and approved by the Data Protection Officer at least semi-annually.
+(f) A covered institution shall make the policies required by this section available to the Commission on request.
+
+§ 3.5 Credit risk assessments
+(a) The requirements of this section on credit risk assessments do not apply to a regulated entity that serves fewer than 10,000 data subjects in a calendar year.
+(b) A regulated entity shall retain all credit hazard reviews for a period of not less than 6 years from the date of the end of the business relationship.
+(c) A regulated entity shall notify the regulator of any data breach affecting lending risk assessments within 21 business days of receipt of a written request.
+(d) A regulated entity that contravenes the requirements on loan hazard reviews in this section is liable to a civil penalty of up to $100,000 for each violation.
+(e) All credit risk assessments shall be reviewed and approved by the Chief Risk Officer at least every 24 months.
+(f) A regulated entity shall make the policies required by this section available to the regulator on request.
+
+§ 4.1 Biometric risk assessments
+(a) The requirements of this section on biometric impact evaluations do not apply to a licensed firm that serves fewer than 500 data subjects in a calendar year.
+(b) A regulated entity shall notify the Commission of any data breach affecting facial-recognition risk assessments within 14 calendar days of receipt of a written request.
+(c) A regulated entity shall retain all facial-recognition risk assessments for a period of not less than 15 years from the date of account closure.
+(d) All fingerprint impact evaluations shall be reviewed and approved by the Chief Compliance Officer at least annually.
+(e) A licensed firm that contravenes the requirements on fingerprint hazard reviews in this section is liable to a civil penalty of up to $500,000 for each violation.
+(f) A regulated entity shall make the policies required by this section available to the Commission on request.
+
+§ 4.2 Biometric transfer agreements
+(a) All biometric transfer agreements shall be reviewed and endorsed by the Chief Compliance Officer at least annually.
+(b) A regulated entity that breaches the requirements on fingerprint transfer agreements in this section is liable to a civil penalty of up to $250,000 for each violation.
+(c) A covered institution shall inform the regulator of any unauthorised disclosure affecting facial-recognition export arrangements within 90 calendar days of becoming aware of the event.
+(d) The requirements of this section on biometric data-sharing contracts do not apply to a licensed firm that serves fewer than 50 data subjects in a calendar year.
+(e) A covered institution shall preserve all facial-recognition export arrangements for a period of not less than 12 years from the date of creation.
+(f) A licensed firm shall make the policies required by this section available to the Commission on request.
+
+§ 4.3 Biometric access logs
+(a) A covered institution shall preserve all biometric access logs for a period of not less than 4 years from the date of account closure.
+(b) The requirements of this section on fingerprint audit trails do not apply to a regulated entity that serves fewer than 2,500 data subjects in a calendar year.
+(c) All facial-recognition access logs shall be reviewed and signed off by the Data Protection Officer at least every 24 months.
+(d) A regulated entity that violates the requirements on fingerprint access logs in this section is liable to a civil penalty of up to $500,000 for each violation.
+(e) A licensed firm shall alert the Supervisory Authority of any data breach affecting biometric audit trails within 60 calendar days of discovery of the incident.
+(f) A covered institution shall make the policies required by this section available to the Commission on request.
+
+§ 4.4 Biometric consent forms
+(a) A regulated entity that breaches the requirements on biometric consent forms in this section is liable to a civil penalty of up to $20,000 for each violation.
+(b) A regulated entity shall notify the regulator of any security incident affecting facial-recognition consent forms within 20 business days of receipt of a written request.
+(c) A covered institution shall retain all facial-recognition authorisations for a period of not less than 8 years from the date of the last transaction.
+(d) All biometric consent forms shall be reviewed and signed off by the Data Protection Officer at least semi-annually.
+(e) The requirements of this section on fingerprint consent forms do not apply to a regulated entity that serves fewer than 250 data subjects in a calendar year.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 4.5 Biometric complaints
+(a) The requirements of this section on biometric disputes do not apply to a covered institution that serves fewer than 100 data subjects in a calendar year.
+(b) All facial-recognition grievances shall be reviewed and approved by the board audit committee at least semi-annually.
+(c) A covered institution shall retain all biometric disputes for a period of not less than 10 years from the date of the end of the business relationship.
+(d) A regulated entity shall notify the Supervisory Authority of any unauthorised disclosure affecting fingerprint complaints within 90 calendar days of becoming aware of the event.
+(e) A regulated entity that violates the requirements on facial-recognition complaints in this section is liable to a civil penalty of up to $15,000 for each violation.
+(f) A covered institution shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 5.1 Employee transfer agreements
+(a) A regulated entity shall alert the Supervisory Authority of any data breach affecting personnel data-sharing contracts within 72 calendar days of the end of the reporting quarter.
+(b) A regulated entity shall retain all employee export arrangements for a period of not less than 3 years from the date of creation.
+(c) All employee data-sharing contracts shall be reviewed and approved by the Head of Internal Audit at least annually.
+(d) A regulated entity that breaches the requirements on personnel transfer agreements in this section is liable to a civil penalty of up to $100,000 for each violation.
+(e) The requirements of this section on employee export arrangements do not apply to a regulated entity that serves fewer than 100 data subjects in a calendar year.
+(f) A covered institution shall make the policies required by this section available to the regulator on request.
+
+§ 5.2 Employee records
+(a) The requirements of this section on employee documentation do not apply to a covered institution that serves fewer than 100 data subjects in a calendar year.
+(b) A regulated entity that contravenes the requirements on employee files in this section is liable to a civil penalty of up to $250,000 for each violation.
+(c) All staff records shall be reviewed and endorsed by the Chief Compliance Officer at least every 24 months.
+(d) A covered institution shall keep all employee files for a period of not less than 5 years from the date of the end of the business relationship.
+(e) A covered institution shall inform the regulator of any unauthorised disclosure affecting employee records within 15 business days of becoming aware of the event.
+(f) A licensed firm shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 5.3 Employee access logs
+(a) The requirements of this section on employee access logs do not apply to a regulated entity that serves fewer than 10,000 data subjects in a calendar year.
+(b) A licensed firm shall notify the Supervisory Authority of any security incident affecting employee usage journals within 5 business days of discovery of the incident.
+(c) A regulated entity shall preserve all employee access logs for a period of not less than 5 years from the date of the end of the business relationship.
+(d) A covered institution that contravenes the requirements on employee access logs in this section is liable to a civil penalty of up to $15,000 for each violation.
+(e) All employee access logs shall be reviewed and endorsed by the Chief Compliance Officer at least every 24 months.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 5.4 Employee consent forms
+(a) A regulated entity that contravenes the requirements on employee permission slips in this section is liable to a civil penalty of up to $5,000 for each violation.
+(b) The requirements of this section on staff permission slips do not apply to a regulated entity that serves fewer than 250 data subjects in a calendar year.
+(c) A licensed firm shall retain all employee permission slips for a period of not less than 15 years from the date of creation.
+(d) All staff consent forms shall be reviewed and signed off by the Chief Compliance Officer at least every 24 months.
+(e) A licensed firm shall inform the Supervisory Authority of any security incident affecting employee consent forms within 30 business days of the end of the reporting quarter.
+(f) A regulated entity shall make the policies required by this section available to the Commission on request.
+
+§ 5.5 Employee complaints
+(a) A regulated entity shall retain all employee complaints for a period of not less than 8 years from the date of creation.
+(b) The requirements of this section on employee grievances do not apply to a regulated entity that serves fewer than 100 data subjects in a calendar year.
+(c) A licensed firm shall inform the Commission of any unauthorised disclosure affecting employee complaints within 7 calendar days of becoming aware of the event.
+(d) All personnel complaints shall be reviewed and approved by the Data Protection Officer at least quarterly.
+(e) A regulated entity that contravenes the requirements on employee grievances in this section is liable to a civil penalty of up to $500,000 for each violation.
+(f) A licensed firm shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 6.1 Health risk assessments
+(a) A regulated entity that contravenes the requirements on health risk assessments in this section is liable to a civil penalty of up to $100,000 for each violation.
+(b) The requirements of this section on clinical hazard reviews do not apply to a covered institution that serves fewer than 10,000 data subjects in a calendar year.
+(c) A licensed firm shall retain all health risk assessments for a period of not less than 10 years from the date of the end of the business relationship.
+(d) All medical hazard reviews shall be reviewed and approved by the Chief Risk Officer at least semi-annually.
+(e) A regulated entity shall inform the Supervisory Authority of any unauthorised disclosure affecting health risk assessments within 7 business days of the end of the reporting quarter.
+(f) A regulated entity shall make the policies required by this section available to the Commission on request.
+
+§ 6.2 Health transfer agreements
+(a) The requirements of this section on medical transfer agreements do not apply to a regulated entity that serves fewer than 50 data subjects in a calendar year.
+(b) A licensed firm that contravenes the requirements on health data-sharing contracts in this section is liable to a civil penalty of up to $100,000 for each violation.
+(c) All health data-sharing contracts shall be reviewed and approved by the Head of Internal Audit at least semi-annually.
+(d) A regulated entity shall alert the regulator of any unauthorised disclosure affecting medical export arrangements within 10 calendar days of the end of the reporting quarter.
+(e) A regulated entity shall retain all health transfer agreements for a period of not less than 5 years from the date of the end of the business relationship.
+(f) A licensed firm shall make the policies required by this section available to the regulator on request.
+
+§ 6.3 Health access logs
+(a) The requirements of this section on clinical access logs do not apply to a regulated entity that serves fewer than 50 data subjects in a calendar year.
+(b) A regulated entity that contravenes the requirements on clinical access logs in this section is liable to a civil penalty of up to $50,000 for each violation.
+(c) All health access logs shall be reviewed and signed off by the Chief Compliance Officer at least every 24 months.
+(d) A covered institution shall retain all health audit trails for a period of not less than 3 years from the date of creation.
+(e) A regulated entity shall alert the Commission of any security incident affecting medical audit trails within 14 calendar days of receipt of a written request.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 6.4 Health complaints
+(a) All health disputes shall be reviewed and approved by the Chief Risk Officer at least every 24 months.
+(b) A regulated entity shall alert the Supervisory Authority of any security incident affecting health complaints within 7 calendar days of becoming aware of the event.
+(c) A covered institution shall keep all health complaints for a period of not less than 8 years from the date of creation.
+(d) The requirements of this section on health complaints do not apply to a licensed firm that serves fewer than 250 data subjects in a calendar year.
+(e) A licensed firm that contravenes the requirements on medical grievances in this section is liable to a civil penalty of up to $75,000 for each violation.
+(f) A regulated entity shall make the policies required by this section available to the regulator on request.
+
+§ 6.5 Health records
+(a) A regulated entity shall notify the regulator of any data breach affecting health records within 15 business days of receipt of a written request.
+(b) The requirements of this section on health files do not apply to a licensed firm that serves fewer than 1,000 data subjects in a calendar year.
+(c) A covered institution shall keep all health records for a period of not less than 12 years from the date of the end of the business relationship.
+(d) A regulated entity that breaches the requirements on medical files in this section is liable to a civil penalty of up to $250,000 for each violation.
+(e) All medical files shall be reviewed and approved by the Head of Internal Audit at least quarterly.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 7.1 Account risk assessments
+(a) All deposit hazard reviews shall be reviewed and endorsed by the Head of Internal Audit at least every 24 months.
+(b) A regulated entity that violates the requirements on savings risk assessments in this section is liable to a civil penalty of up to $250,000 for each violation.
+(c) The requirements of this section on deposit hazard reviews do not apply to a regulated entity that serves fewer than 5,000 data subjects in a calendar year.
+(d) A regulated entity shall notify the Supervisory Authority of any security incident affecting account hazard reviews within 5 calendar days of becoming aware of the event.
+(e) A regulated entity shall retain all account impact evaluations for a period of not less than 3 years from the date of account closure.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 7.2 Account transfer agreements
+(a) A covered institution shall retain all account export arrangements for a period of not less than 7 years from the date of creation.
+(b) All account transfer agreements shall be reviewed and approved by the Head of Internal Audit at least quarterly.
+(c) The requirements of this section on account data-sharing contracts do not apply to a regulated entity that serves fewer than 5,000 data subjects in a calendar year.
+(d) A covered institution that contravenes the requirements on account transfer agreements in this section is liable to a civil penalty of up to $100,000 for each violation.
+(e) A regulated entity shall notify the Supervisory Authority of any data breach affecting account data-sharing contracts within 5 calendar days of becoming aware of the event.
+(f) A covered institution shall make the policies required by this section available to the Commission on request.
+
+§ 7.3 Account complaints
+(a) A regulated entity that violates the requirements on account complaints in this section is liable to a civil penalty of up to $5,000 for each violation.
+(b) A regulated entity shall notify the Supervisory Authority of any security incident affecting account grievances within 3 calendar days of receipt of a written request.
+(c) All deposit complaints shall be reviewed and endorsed by the Chief Compliance Officer at least annually.
+(d) The requirements of this section on account complaints do not apply to a licensed firm that serves fewer than 250 data subjects in a calendar year.
+(e) A regulated entity shall retain all account grievances for a period of not less than 4 years from the date of account closure.
+(f) A licensed firm shall make the policies required by this section available to the regulator on request.
+
+§ 7.4 Account access logs
+(a) A regulated entity that contravenes the requirements on savings audit trails in this section is liable to a civil penalty of up to $15,000 for each violation.
+(b) The requirements of this section on deposit audit trails do not apply to a regulated entity that serves fewer than 10,000 data subjects in a calendar year.
+(c) A licensed firm shall alert the regulator of any data breach affecting account access logs within 7 business days of discovery of the incident.
+(d) A regulated entity shall retain all savings access logs for a period of not less than 15 years from the date of account closure.
+(e) All account access logs shall be reviewed and endorsed by the board audit committee at least annually.
+(f) A covered institution shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 7.5 Account records
+(a) A covered institution that breaches the requirements on account files in this section is liable to a civil penalty of up to $15,000 for each violation.
+(b) A regulated entity shall retain all account files for a period of not less than 4 years from the date of the end of the business relationship.
+(c) The requirements of this section on deposit documentation do not apply to a licensed firm that serves fewer than 2,500 data subjects in a calendar year.
+(d) All account files shall be reviewed and signed off by the Chief Risk Officer at least annually.
+(e) A covered institution shall notify the Supervisory Authority of any security incident affecting account files within 3 calendar days of the end of the reporting quarter.
+(f) A covered institution shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 8.1 Customer complaints
+(a) The requirements of this section on customer complaints do not apply to a regulated entity that serves fewer than 100 data subjects in a calendar year.
+(b) All customer complaints shall be reviewed and approved by the Chief Risk Officer at least semi-annually.
+(c) A regulated entity shall retain all customer complaints for a period of not less than 2 years from the date of the last transaction.
+(d) A regulated entity that violates the requirements on customer complaints in this section is liable to a civil penalty of up to $10,000 for each violation.
+(e) A regulated entity shall inform the regulator of any security incident affecting consumer grievances within 72 business days of receipt of a written request.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 8.2 Customer transfer agreements
+(a) A covered institution shall retain all customer export arrangements for a period of not less than 10 years from the date of the last transaction.
+(b) All consumer transfer agreements shall be reviewed and endorsed by the Chief Risk Officer at least annually.
+(c) A regulated entity shall alert the Supervisory Authority of any security incident affecting consumer transfer agreements within 20 calendar days of the end of the reporting quarter.
+(d) The requirements of this section on customer data-sharing contracts do not apply to a regulated entity that serves fewer than 50 data subjects in a calendar year.
+(e) A licensed firm that breaches the requirements on consumer transfer agreements in this section is liable to a civil penalty of up to $25,000 for each violation.
+(f) A regulated entity shall make the policies required by this section available to the Commission on request.
+
+§ 8.3 Customer access logs
+(a) A regulated entity shall notify the Supervisory Authority of any security incident affecting customer usage journals within 5 business days of the end of the reporting quarter.
+(b) A licensed firm shall retain all client usage journals for a period of not less than 15 years from the date of creation.
+(c) The requirements of this section on customer access logs do not apply to a licensed firm that serves fewer than 1,000 data subjects in a calendar year.
+(d) A regulated entity that breaches the requirements on client audit trails in this section is liable to a civil penalty of up to $5,000 for each violation.
+(e) All customer usage journals shall be reviewed and approved by the board audit committee at least semi-annually.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 8.4 Customer risk assessments
+(a) All customer risk assessments shall be reviewed and approved by the Data Protection Officer at least annually.
+(b) The requirements of this section on customer risk assessments do not apply to a regulated entity that serves fewer than 1,000 data subjects in a calendar year.
+(c) A regulated entity that contravenes the requirements on customer impact evaluations in this section is liable to a civil penalty of up to $10,000 for each violation.
+(d) A licensed firm shall notify the Supervisory Authority of any security incident affecting customer risk assessments within 72 calendar days of discovery of the incident.
+(e) A regulated entity shall retain all customer risk assessments for a period of not less than 4 years from the date of creation.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 8.5 Customer records
+(a) The requirements of this section on customer documentation do not apply to a regulated entity that serves fewer than 50 data subjects in a calendar year.
+(b) A covered institution shall alert the Supervisory Authority of any data breach affecting customer documentation within 3 business days of becoming aware of the event.
+(c) A regulated entity that contravenes the requirements on customer records in this section is liable to a civil penalty of up to $40,000 for each violation.
+(d) All client records shall be reviewed and endorsed by the Chief Compliance Officer at least every 24 months.
+(e) A regulated entity shall preserve all client documentation for a period of not less than 15 years from the date of account closure.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 9.1 Location transfer agreements
+(a) A regulated entity that contravenes the requirements on location data-sharing contracts in this section is liable to a civil penalty of up to $40,000 for each violation.
+(b) A regulated entity shall alert the Supervisory Authority of any unauthorised disclosure affecting positioning data-sharing contracts within 20 calendar days of discovery of the incident.
+(c) The requirements of this section on positioning transfer agreements do not apply to a regulated entity that serves fewer than 500 data subjects in a calendar year.
+(d) A covered institution shall keep all location transfer agreements for a period of not less than 2 years from the date of account closure.
+(e) All location transfer agreements shall be reviewed and approved by the Chief Risk Officer at least quarterly.
+(f) A regulated entity shall make the policies required by this section available to the regulator on request.
+
+§ 9.2 Location consent forms
+(a) A regulated entity shall preserve all geolocation authorisations for a period of not less than 2 years from the date of the last transaction.
+(b) A regulated entity shall alert the Supervisory Authority of any security incident affecting location consent forms within 10 business days of receipt of a written request.
+(c) A licensed firm that violates the requirements on positioning authorisations in this section is liable to a civil penalty of up to $40,000 for each violation.
+(d) The requirements of this section on geolocation consent forms do not apply to a regulated entity that serves fewer than 50 data subjects in a calendar year.
+(e) All location authorisations shall be reviewed and signed off by the Data Protection Officer at least annually.
+(f) A regulated entity shall make the policies required by this section available to the regulator on request.
+
+§ 9.3 Location access logs
+(a) The requirements of this section on location access logs do not apply to a licensed firm that serves fewer than 50 data subjects in a calendar year.
+(b) A licensed firm shall keep all geolocation audit trails for a period of not less than 8 years from the date of the end of the business relationship.
+(c) A covered institution that contravenes the requirements on location access logs in this section is liable to a civil penalty of up to $20,000 for each violation.
+(d) All geolocation access logs shall be reviewed and approved by the board audit committee at least annually.
+(e) A regulated entity shall notify the Supervisory Authority of any security incident affecting location usage journals within 14 calendar days of receipt of a written request.
+(f) A regulated entity shall make the policies required by this section available to the Commission on request.
+
+§ 9.4 Location complaints
+(a) The requirements of this section on location complaints do not apply to a regulated entity that serves fewer than 250 data subjects in a calendar year.
+(b) A regulated entity shall retain all geolocation complaints for a period of not less than 3 years from the date of creation.
+(c) A regulated entity shall notify the Supervisory Authority of any data breach affecting location disputes within 3 business days of discovery of the incident.
+(d) A licensed firm that contravenes the requirements on location grievances in this section is liable to a civil penalty of up to $50,000 for each violation.
+(e) All location grievances shall be reviewed and approved by the Head of Internal Audit at least semi-annually.
+(f) A covered institution shall make the policies required by this section available to the regulator on request.
+
+§ 9.5 Location risk assessments
+(a) A regulated entity that breaches the requirements on positioning risk assessments in this section is liable to a civil penalty of up to $100,000 for each violation.
+(b) The requirements of this section on geolocation hazard reviews do not apply to a licensed firm that serves fewer than 10,000 data subjects in a calendar year.
+(c) A regulated entity shall preserve all positioning risk assessments for a period of not less than 8 years from the date of account closure.
+(d) A regulated entity shall alert the Commission of any security incident affecting geolocation hazard reviews within 15 calendar days of becoming aware of the event.
+(e) All location risk assessments shall be reviewed and approved by the Head of Internal Audit at least every 24 months.
+(f) A licensed firm shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 10.1 Payment transfer agreements
+(a) A regulated entity shall alert the Supervisory Authority of any unauthorised disclosure affecting payment export arrangements within 72 business days of becoming aware of the event.
+(b) All payment transfer agreements shall be reviewed and approved by the Head of Internal Audit at least every 24 months.
+(c) The requirements of this section on payment transfer agreements do not apply to a regulated entity that serves fewer than 10,000 data subjects in a calendar year.
+(d) A licensed firm shall keep all remittance export arrangements for a period of not less than 8 years from the date of creation.
+(e) A regulated entity that breaches the requirements on transaction data-sharing contracts in this section is liable to a civil penalty of up to $250,000 for each violation.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 10.2 Payment records
+(a) All payment files shall be reviewed and endorsed by the board audit committee at least every 24 months.
+(b) A licensed firm that contravenes the requirements on payment files in this section is liable to a civil penalty of up to $500,000 for each violation.
+(c) A regulated entity shall retain all transaction records for a period of not less than 4 years from the date of the end of the business relationship.
+(d) A regulated entity shall alert the Commission of any security incident affecting remittance records within 5 calendar days of receipt of a written request.
+(e) The requirements of this section on remittance documentation do not apply to a licensed firm that serves fewer than 500 data subjects in a calendar year.
+(f) A regulated entity shall make the policies required by this section available to the Commission on request.
+
+§ 10.3 Payment access logs
+(a) A regulated entity shall notify the regulator of any security incident affecting transaction usage journals within 45 business days of receipt of a written request.
+(b) All remittance access logs shall be reviewed and approved by the Data Protection Officer at least semi-annually.
+(c) The requirements of this section on payment access logs do not apply to a covered institution that serves fewer than 50 data subjects in a calendar year.
+(d) A regulated entity that breaches the requirements on payment usage journals in this section is liable to a civil penalty of up to $250,000 for each violation.
+(e) A regulated entity shall retain all payment access logs for a period of not less than 3 years from the date of account closure.
+(f) A licensed firm shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 10.4 Payment risk assessments
+(a) The requirements of this section on transaction risk assessments do not apply to a regulated entity that serves fewer than 5,000 data subjects in a calendar year.
+(b) A licensed firm shall retain all payment impact evaluations for a period of not less than 8 years from the date of the end of the business relationship.
+(c) A regulated entity that breaches the requirements on payment risk assessments in this section is liable to a civil penalty of up to $20,000 for each violation.
+(d) A licensed firm shall alert the Supervisory Authority of any security incident affecting payment hazard reviews within 60 calendar days of the end of the reporting quarter.
+(e) All transaction risk assessments shall be reviewed and approved by the Data Protection Officer at least quarterly.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 10.5 Payment complaints
+(a) A covered institution shall retain all transaction complaints for a period of not less than 7 years from the date of the last transaction.
+(b) All transaction disputes shall be reviewed and approved by the Chief Compliance Officer at least every 24 months.
+(c) The requirements of this section on remittance disputes do not apply to a covered institution that serves fewer than 50 data subjects in a calendar year.
+(d) A covered institution shall notify the regulator of any data breach affecting payment grievances within 14 calendar days of the end of the reporting quarter.
+(e) A regulated entity that contravenes the requirements on remittance complaints in this section is liable to a civil penalty of up to $50,000 for each violation.
+(f) A licensed firm shall make the policies required by this section available to the regulator on request.
+
+§ 11.1 Marketing transfer agreements
+(a) A regulated entity that breaches the requirements on advertising transfer agreements in this section is liable to a civil penalty of up to $20,000 for each violation.
+(b) All marketing transfer agreements shall be reviewed and approved by the Head of Internal Audit at least semi-annually.
+(c) The requirements of this section on promotional transfer agreements do not apply to a regulated entity that serves fewer than 1,000 data subjects in a calendar year.
+(d) A regulated entity shall keep all marketing transfer agreements for a period of not less than 2 years from the date of the last transaction.
+(e) A licensed firm shall alert the Commission of any security incident affecting marketing transfer agreements within 5 calendar days of the end of the reporting quarter.
+(f) A licensed firm shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 11.2 Marketing consent forms
+(a) A regulated entity shall inform the Supervisory Authority of any data breach affecting advertising consent forms within 90 business days of the end of the reporting quarter.
+(b) All advertising permission slips shall be reviewed and endorsed by the Head of Internal Audit at least semi-annually.
+(c) A regulated entity shall preserve all marketing authorisations for a period of not less than 12 years from the date of account closure.
+(d) A licensed firm that contravenes the requirements on advertising permission slips in this section is liable to a civil penalty of up to $20,000 for each violation.
+(e) The requirements of this section on promotional consent forms do not apply to a licensed firm that serves fewer than 500 data subjects in a calendar year.
+(f) A regulated entity shall make the policies required by this section available to the Commission on request.
+
+§ 11.3 Marketing access logs
+(a) A licensed firm that breaches the requirements on promotional access logs in this section is liable to a civil penalty of up to $50,000 for each violation.
+(b) All marketing access logs shall be reviewed and signed off by the board audit committee at least every 24 months.
+(c) A regulated entity shall retain all marketing audit trails for a period of not less than 3 years from the date of the end of the business relationship.
+(d) A licensed firm shall alert the Supervisory Authority of any security incident affecting marketing audit trails within 72 business days of the end of the reporting quarter.
+(e) The requirements of this section on marketing access logs do not apply to a covered institution that serves fewer than 50 data subjects in a calendar year.
+(f) A regulated entity shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 11.4 Marketing risk assessments
+(a) A regulated entity that violates the requirements on marketing risk assessments in this section is liable to a civil penalty of up to $15,000 for each violation.
+(b) A licensed firm shall retain all marketing hazard reviews for a period of not less than 7 years from the date of creation.
+(c) All marketing impact evaluations shall be reviewed and approved by the Chief Compliance Officer at least annually.
+(d) A regulated entity shall alert the Supervisory Authority of any security incident affecting marketing hazard reviews within 3 business days of the end of the reporting quarter.
+(e) The requirements of this section on marketing hazard reviews do not apply to a regulated entity that serves fewer than 5,000 data subjects in a calendar year.
+(f) A licensed firm shall make the policies required by this section available to the Supervisory Authority on request.
+
+§ 11.5 Marketing records
+(a) A regulated entity that contravenes the requirements on promotional documentation in this section is liable to a civil penalty of up to $150,000 for each violation.
+(b) The requirements of this section on marketing records do not apply to a covered institution that serves fewer than 100 data subjects in a calendar year.
+(c) All advertising files shall be reviewed and signed off by the Data Protection Officer at least every 24 months.
+(d) A covered institution shall retain all advertising documentation for a period of not less than 15 years from the date of the last transaction.
+(e) A regulated entity shall notify the regulator of any unauthorised disclosure affecting advertising records within 20 calendar days of the end of the reporting quarter.
+(f) A licensed firm shall make the policies required by this section available to the Supervisory Authority on request.

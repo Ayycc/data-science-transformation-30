@@ -1,0 +1,15 @@
+# Pinned for Python 3.11+ (CI uses 3.11; results/ were produced on 3.11). All have Python 3.11 wheels. CPU only.
+# No vector DB server: FAISS runs in process. anthropic is only used when ANTHROPIC_API_KEY is set.
+rank-bm25==0.2.2
+faiss-cpu==1.15.1
+numpy==2.4.6
+scipy==1.17.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+spacy==3.8.18
+# Pretrained static word vectors for the dense retriever (MIT licence), installed from spaCy's GitHub release
+# because Hugging Face downloads were blocked in the build environment. Without it the code falls back to LSA.
+en_core_web_md @ https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.8.0/en_core_web_md-3.8.0-py3-none-any.whl
+anthropic==2.3.0
+pytest==9.2.0
+ruff==0.17.3

@@ -1,0 +1,12 @@
+{
+  "requested": "auto",
+  "public_attempted": true,
+  "public_reachable": false,
+  "public_url": "https://www.ecfr.gov/api/versioner/v1/full/{date}/title-16.xml?part=312",
+  "path_used": "synthetic_generator",
+  "title": "Model Data Protection and Conduct Regulation (SYNTHETIC)",
+  "seed": 20261031,
+  "n_clauses": 319,
+  "n_questions": 548,
+  "n_in_scope": 500
+}
