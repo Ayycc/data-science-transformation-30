@@ -1,0 +1,17 @@
+# Pinned for Python 3.11+ (CI uses 3.11; results/ were produced on 3.11). All have Python 3.11 manylinux wheels. CPU only.
+# Dask uses its local threaded scheduler only: dask[distributed] is deliberately not installed.
+xarray==2026.9.0
+dask==2026.8.0
+zarr==3.1.6
+numcodecs==0.16.6
+rioxarray==0.19.0
+rasterio==1.4.4
+pyproj==3.7.2
+shapely==2.2.0
+numpy==2.4.6
+pandas==3.1.0
+scipy==1.17.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+pytest==9.2.0
+ruff==0.17.3

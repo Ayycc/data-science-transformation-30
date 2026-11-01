@@ -1,0 +1,415 @@
+{
+  "config": {
+    "seed": 20261101,
+    "python": "3.11.17",
+    "dask_scheduler": "threads (local)",
+    "num_workers": 4
+  },
+  "data": {
+    "public_source": "Open-Meteo ERA5 archive API",
+    "public_attempted": true,
+    "public_reachable": false,
+    "public_probe_message": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+    "path_used": "synthetic_generator",
+    "path": "/home/claude/data-science-transformation-30/day-22-agri-climate-xarray-dask/data/cube.zarr",
+    "uncompressed_bytes": 1052236800,
+    "disk_bytes": 722792182,
+    "dims": {
+      "time_ndvi": 1104,
+      "lat": 80,
+      "lon": 120,
+      "time": 8766
+    },
+    "write_wall_s": 25.752960811999856,
+    "cube_gb_uncompressed": 0.9800469130277634,
+    "disk_mb": 689.3083400726318,
+    "chunks": {
+      "ndvi": {
+        "chunk_shape": [
+          1104,
+          40,
+          60
+        ],
+        "chunk_mb": 10.107421875,
+        "n_chunks": 4,
+        "array_mb": 40.4296875
+      },
+      "precip": {
+        "chunk_shape": [
+          365,
+          40,
+          60
+        ],
+        "chunk_mb": 3.3416748046875,
+        "n_chunks": 100,
+        "array_mb": 321.0205078125
+      },
+      "tmax": {
+        "chunk_shape": [
+          365,
+          40,
+          60
+        ],
+        "chunk_mb": 3.3416748046875,
+        "n_chunks": 100,
+        "array_mb": 321.0205078125
+      },
+      "tmin": {
+        "chunk_shape": [
+          365,
+          40,
+          60
+        ],
+        "chunk_mb": 3.3416748046875,
+        "n_chunks": 100,
+        "array_mb": 321.0205078125
+      }
+    },
+    "synthetic_labels": "climate, NDVI, fields and yields are SYNTHETIC"
+  },
+  "indices": {
+    "wall_s": 2.997675595000146,
+    "graph_tasks_per_feature": {
+      "gdd": 1271,
+      "heat_days": 570,
+      "precip_jja": 370
+    }
+  },
+  "zonal": {
+    "n_fields": 300,
+    "n_field_years": 7200,
+    "cells_per_field_median": 8.0,
+    "cells_per_field_min": 3,
+    "centroid_fallback_fields": 0
+  },
+  "cv": {
+    "nowcast_with_ndvi__random": {
+      "rmse": 0.6527939597859878,
+      "mae": 0.5204130377357591,
+      "r2": 0.8970074621082986,
+      "scheme": "random",
+      "n_folds": 5,
+      "features": [
+        "gdd",
+        "heat_days",
+        "precip_jja",
+        "spi3_aug",
+        "lat",
+        "lon",
+        "year",
+        "ndvi_int",
+        "ndvi_peak"
+      ]
+    },
+    "nowcast_with_ndvi__spatial": {
+      "rmse": 0.819172713206901,
+      "mae": 0.6435253526647347,
+      "r2": 0.8378173246416373,
+      "scheme": "spatial",
+      "n_folds": 5,
+      "features": [
+        "gdd",
+        "heat_days",
+        "precip_jja",
+        "spi3_aug",
+        "lat",
+        "lon",
+        "year",
+        "ndvi_int",
+        "ndvi_peak"
+      ]
+    },
+    "climate_only__random": {
+      "rmse": 0.640287692183702,
+      "mae": 0.5089084887106552,
+      "r2": 0.9009159356105756,
+      "scheme": "random",
+      "n_folds": 5,
+      "features": [
+        "gdd",
+        "heat_days",
+        "precip_jja",
+        "spi3_aug",
+        "lat",
+        "lon",
+        "year"
+      ]
+    },
+    "climate_only__spatial": {
+      "rmse": 0.9957596411298614,
+      "mae": 0.7634742940285282,
+      "r2": 0.7603582152341022,
+      "scheme": "spatial",
+      "n_folds": 5,
+      "features": [
+        "gdd",
+        "heat_days",
+        "precip_jja",
+        "spi3_aug",
+        "lat",
+        "lon",
+        "year"
+      ]
+    },
+    "baseline_mean": {
+      "rmse": 2.034104437872011
+    },
+    "nowcast_with_ndvi__rmse_optimism_pct": 25.487177221348524,
+    "climate_only__rmse_optimism_pct": 55.51753583359098,
+    "block_deg": 1.0
+  },
+  "scenario": {
+    "dt_c": 2.0,
+    "precip_factor": 0.8,
+    "reference_technology_year": 2024,
+    "n_field_weather_years": 7200,
+    "model": {
+      "baseline": {
+        "mean_t_ha": 10.148380624711454,
+        "p5_t_ha": 6.645106908674819,
+        "yar95_t_ha": 3.5032737160366345,
+        "cvar95_t_ha": 5.832880493584968,
+        "p_below_trigger": 0.11347222222222222
+      },
+      "scenario": {
+        "mean_t_ha": 7.90281956513823,
+        "p5_t_ha": 4.824956890820366,
+        "yar95_t_ha": 3.0778626743178634,
+        "cvar95_t_ha": 4.541718660144093,
+        "p_below_trigger": 0.5834722222222222
+      },
+      "mean_change_pct": -22.127284565039375,
+      "p5_change_pct": -27.390831221667,
+      "trigger_fraction_of_baseline_mean": 0.8
+    },
+    "truth": {
+      "baseline": {
+        "mean_t_ha": 10.093506934028742,
+        "p5_t_ha": 6.616241440370079,
+        "yar95_t_ha": 3.4772654936586633,
+        "cvar95_t_ha": 5.794688489154318,
+        "p_below_trigger": 0.11944444444444445
+      },
+      "scenario": {
+        "mean_t_ha": 7.688466954222798,
+        "p5_t_ha": 4.041133841276804,
+        "yar95_t_ha": 3.6473331129459936,
+        "cvar95_t_ha": 3.547412585104966,
+        "p_below_trigger": 0.5965277777777778
+      },
+      "mean_change_pct": -23.82759526025304,
+      "p5_change_pct": -38.921004051950625,
+      "trigger_fraction_of_baseline_mean": 0.8
+    },
+    "model_vs_truth_mean_change_gap_pp": 1.7003106952136662,
+    "share_scenario_rows_outside_training_range": {
+      "gdd": 0.2036111111111111,
+      "heat_days": 0.03625,
+      "precip_jja": 0.0015277777777777779,
+      "spi3_aug": 0.008472222222222223
+    },
+    "mean_feature_shift": {
+      "gdd": 265.0277099609375,
+      "heat_days": 20.816280364990234,
+      "precip_jja": -67.80447387695312,
+      "spi3_aug": -0.685701332842653
+    },
+    "fields_with_mean_loss_over_20pct": 195,
+    "wall_s": 3.900605029000417
+  },
+  "main_pipeline_peak_rss_mb": 976.21484375,
+  "performance": {
+    "chunk_experiment": [
+      {
+        "stage": "bench",
+        "cap_gb": 64.0,
+        "num_workers": 4,
+        "chunk_shape": [
+          73,
+          20,
+          20
+        ],
+        "chunk_mb": 0.11138916015625,
+        "n_chunks": 2904,
+        "array_mb": 321.0205078125,
+        "tasks_raw": 36003,
+        "tasks_optimized": 4059,
+        "chunking": "tiny",
+        "method": "dot",
+        "rss_before_compute_mb": 130.53515625,
+        "checksum": 372468736.0,
+        "wall_s": 26.798005989000103,
+        "peak_rss_mb": 164.15625,
+        "peak_rss_increase_mb": 33.62109375,
+        "name": "tiny (73, 20, 20)"
+      },
+      {
+        "stage": "bench",
+        "cap_gb": 64.0,
+        "num_workers": 4,
+        "chunk_shape": [
+          365,
+          40,
+          60
+        ],
+        "chunk_mb": 3.3416748046875,
+        "n_chunks": 100,
+        "array_mb": 321.0205078125,
+        "tasks_raw": 1271,
+        "tasks_optimized": 171,
+        "chunking": "stored",
+        "method": "dot",
+        "rss_before_compute_mb": 122.859375,
+        "checksum": 372468736.0,
+        "wall_s": 1.8500911470000574,
+        "peak_rss_mb": 154.83984375,
+        "peak_rss_increase_mb": 31.98046875,
+        "name": "stored (365, 40, 60)"
+      },
+      {
+        "stage": "bench",
+        "cap_gb": 64.0,
+        "num_workers": 4,
+        "chunk_shape": [
+          1460,
+          80,
+          120
+        ],
+        "chunk_mb": 53.466796875,
+        "n_chunks": 7,
+        "array_mb": 321.0205078125,
+        "tasks_raw": 97,
+        "tasks_optimized": 20,
+        "chunking": "large",
+        "method": "dot",
+        "rss_before_compute_mb": 122.5390625,
+        "checksum": 372468736.0,
+        "wall_s": 3.295024888000171,
+        "peak_rss_mb": 634.90625,
+        "peak_rss_increase_mb": 512.3671875,
+        "name": "large (1460, 80, 120)"
+      }
+    ],
+    "out_of_core": {
+      "write": {
+        "stage": "write",
+        "cap_gb": 1.0,
+        "num_workers": 4,
+        "path": "/home/claude/data-science-transformation-30/day-22-agri-climate-xarray-dask/data/big_cube.zarr",
+        "uncompressed_bytes": 4208947200,
+        "disk_bytes": 2880323851,
+        "dims": {
+          "time": 8766,
+          "lat": 160,
+          "lon": 240,
+          "time_ndvi": 1104
+        },
+        "status": "succeeded",
+        "wall_s": 114.37445196699991,
+        "peak_rss_mb": 750.875
+      },
+      "load": {
+        "stage": "load",
+        "cap_gb": 1.0,
+        "num_workers": 4,
+        "cube_gb_uncompressed": 3.91996406018734,
+        "status": "MemoryError",
+        "message": "",
+        "wall_s": 3.1020065960001375,
+        "peak_rss_mb": 758.71484375
+      },
+      "compute": {
+        "stage": "compute",
+        "cap_gb": 1.0,
+        "num_workers": 4,
+        "cube_gb_uncompressed": 3.91996406018734,
+        "chunk": {
+          "chunk_shape": [
+            730,
+            40,
+            60
+          ],
+          "chunk_mb": 6.683349609375,
+          "n_chunks": 208,
+          "array_mb": 1284.08203125
+        },
+        "graph_tasks_per_feature": {
+          "gdd": 2607,
+          "heat_days": 1150,
+          "precip_jja": 734,
+          "precip_annual": 734
+        },
+        "result_mb": 21.09698486328125,
+        "mean_gdd": 1616.6239013671875,
+        "mean_heat_days": 12.048064231872559,
+        "mean_precip_jja_mm": 339.1423034667969,
+        "mean_precip_annual_mm": 866.960693359375,
+        "status": "succeeded",
+        "wall_s": 13.502330678999897,
+        "peak_rss_mb": 192.83203125
+      },
+      "summary": {
+        "cap_gb": 1.0,
+        "cube_gb_uncompressed": 3.91996406018734,
+        "cube_to_cap_ratio": 3.91996406018734,
+        "disk_gb": 2.68251062463969,
+        "naive_load_status": "MemoryError",
+        "chunked_compute_status": "succeeded",
+        "chunked_peak_rss_mb": 192.83203125,
+        "chunked_peak_rss_fraction_of_cube": 0.04803935128644481,
+        "write_wall_s": 114.37445196699991,
+        "compute_wall_s": 13.502330678999897,
+        "write_peak_rss_mb": 750.875
+      },
+      "big_cube_deleted_after_run": true
+    },
+    "resample_vs_dot_big_cube": {
+      "resample": {
+        "stage": "bench",
+        "cap_gb": 64.0,
+        "num_workers": 4,
+        "chunk_shape": [
+          730,
+          40,
+          60
+        ],
+        "chunk_mb": 6.683349609375,
+        "n_chunks": 208,
+        "array_mb": 1284.08203125,
+        "tasks_raw": 5693,
+        "tasks_optimized": 1917,
+        "chunking": "stored",
+        "method": "resample",
+        "rss_before_compute_mb": 127.42578125,
+        "checksum": 1489880576.0,
+        "wall_s": 7.323710770000162,
+        "peak_rss_mb": 750.0,
+        "peak_rss_increase_mb": 622.57421875
+      },
+      "dot": {
+        "stage": "bench",
+        "cap_gb": 64.0,
+        "num_workers": 4,
+        "chunk_shape": [
+          730,
+          40,
+          60
+        ],
+        "chunk_mb": 6.683349609375,
+        "n_chunks": 208,
+        "array_mb": 1284.08203125,
+        "tasks_raw": 2607,
+        "tasks_optimized": 319,
+        "chunking": "stored",
+        "method": "dot",
+        "rss_before_compute_mb": 123.4609375,
+        "checksum": 1489880576.0,
+        "wall_s": 5.792936190000091,
+        "peak_rss_mb": 199.98828125,
+        "peak_rss_increase_mb": 76.52734375
+      },
+      "same_result": true
+    }
+  },
+  "total_wall_s": 242.04116095300014
+}
