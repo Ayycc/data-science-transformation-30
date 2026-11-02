@@ -1,0 +1,545 @@
+{
+  "data": {
+    "path_used": "synthetic_generator",
+    "note": "All platform telemetry is SYNTHETIC (seeded). The prompt specifies a simulated 20-service platform; public NAB data is used only as a detector sanity check.",
+    "public_sanity_check": "public_nab",
+    "config": {
+      "n_days": 16,
+      "train_days": 2,
+      "n_incidents": 60,
+      "seed": 20261102,
+      "benign_deploys_per_day": 8.0,
+      "p_bad_deploy": 0.55,
+      "p_decoy_deploy": 0.3,
+      "blips_per_day": 14.0,
+      "n_surges": 3,
+      "n_concurrent": 8
+    },
+    "n_services": 20,
+    "n_call_edges": 25,
+    "n_minutes": 23040,
+    "metrics": [
+      "latency_ms",
+      "error_rate",
+      "cpu_pct",
+      "queue_depth"
+    ],
+    "n_values": 1843200,
+    "injected_incidents": 60,
+    "faults": {
+      "queue_backlog": 19,
+      "cpu_saturation": 14,
+      "slow_leak": 11,
+      "error_burst": 9,
+      "latency_regression": 7
+    },
+    "deploys": {
+      "benign": 128,
+      "bad": 36,
+      "decoy": 16
+    },
+    "incidents_with_bad_deploy": 36,
+    "incidents_with_decoy_deploy": 16,
+    "traffic_surges": 3,
+    "mean_affected_services": 5.32
+  },
+  "detection": {
+    "primary_detector": "ecod",
+    "selection": "highest F1 of topologically grouped incidents (selected on the same test period)",
+    "persistence_min": 3,
+    "threshold_quantile": 0.999,
+    "by_detector": {
+      "univariate_threshold/topological": {
+        "n_groups": 167,
+        "true_positive_groups": 58,
+        "false_positive_groups": 109,
+        "precision": 0.3473,
+        "incidents_detected": 60,
+        "recall": 1.0,
+        "f1": 0.5156,
+        "delay_median_min": 2.0,
+        "delay_mean_min": 1.55,
+        "delay_p90_min": 6.2,
+        "groups_per_detected_incident": 1.067,
+        "n_alert_episodes": 318,
+        "incidents_merged_into_one_group": 6
+      },
+      "univariate_threshold/temporal_only": {
+        "n_groups": 150,
+        "true_positive_groups": 54,
+        "false_positive_groups": 96,
+        "precision": 0.36,
+        "incidents_detected": 60,
+        "recall": 1.0,
+        "f1": 0.5294,
+        "delay_median_min": 2.0,
+        "delay_mean_min": 1.08,
+        "delay_p90_min": 6.2,
+        "groups_per_detected_incident": 1.05,
+        "n_alert_episodes": 318,
+        "incidents_merged_into_one_group": 9
+      },
+      "univariate_threshold/none": {
+        "n_groups": 318,
+        "true_positive_groups": 146,
+        "false_positive_groups": 172,
+        "precision": 0.4591,
+        "incidents_detected": 60,
+        "recall": 1.0,
+        "f1": 0.6293,
+        "delay_median_min": 2.0,
+        "delay_mean_min": 1.67,
+        "delay_p90_min": 6.2,
+        "groups_per_detected_incident": 2.683,
+        "n_alert_episodes": 318
+      },
+      "iforest/topological": {
+        "n_groups": 164,
+        "true_positive_groups": 54,
+        "false_positive_groups": 110,
+        "precision": 0.3293,
+        "incidents_detected": 60,
+        "recall": 1.0,
+        "f1": 0.4954,
+        "delay_median_min": 2.0,
+        "delay_mean_min": 2.82,
+        "delay_p90_min": 6.0,
+        "groups_per_detected_incident": 1.05,
+        "n_alert_episodes": 377,
+        "incidents_merged_into_one_group": 9
+      },
+      "iforest/temporal_only": {
+        "n_groups": 147,
+        "true_positive_groups": 52,
+        "false_positive_groups": 95,
+        "precision": 0.3537,
+        "incidents_detected": 60,
+        "recall": 1.0,
+        "f1": 0.5226,
+        "delay_median_min": 2.0,
+        "delay_mean_min": 2.65,
+        "delay_p90_min": 6.0,
+        "groups_per_detected_incident": 1.0,
+        "n_alert_episodes": 377,
+        "incidents_merged_into_one_group": 8
+      },
+      "iforest/none": {
+        "n_groups": 377,
+        "true_positive_groups": 203,
+        "false_positive_groups": 174,
+        "precision": 0.5385,
+        "incidents_detected": 60,
+        "recall": 1.0,
+        "f1": 0.7,
+        "delay_median_min": 3.0,
+        "delay_mean_min": 3.53,
+        "delay_p90_min": 6.2,
+        "groups_per_detected_incident": 3.717,
+        "n_alert_episodes": 377
+      },
+      "ecod/topological": {
+        "n_groups": 86,
+        "true_positive_groups": 60,
+        "false_positive_groups": 26,
+        "precision": 0.6977,
+        "incidents_detected": 58,
+        "recall": 0.9667,
+        "f1": 0.8104,
+        "delay_median_min": 4.0,
+        "delay_mean_min": 6.41,
+        "delay_p90_min": 15.6,
+        "groups_per_detected_incident": 1.138,
+        "n_alert_episodes": 199,
+        "incidents_merged_into_one_group": 6
+      },
+      "ecod/temporal_only": {
+        "n_groups": 80,
+        "true_positive_groups": 57,
+        "false_positive_groups": 23,
+        "precision": 0.7125,
+        "incidents_detected": 58,
+        "recall": 0.9667,
+        "f1": 0.8203,
+        "delay_median_min": 4.0,
+        "delay_mean_min": 6.02,
+        "delay_p90_min": 15.0,
+        "groups_per_detected_incident": 1.103,
+        "n_alert_episodes": 199,
+        "incidents_merged_into_one_group": 7
+      },
+      "ecod/none": {
+        "n_groups": 199,
+        "true_positive_groups": 136,
+        "false_positive_groups": 63,
+        "precision": 0.6834,
+        "incidents_detected": 58,
+        "recall": 0.9667,
+        "f1": 0.8007,
+        "delay_median_min": 4.0,
+        "delay_mean_min": 6.79,
+        "delay_p90_min": 15.6,
+        "groups_per_detected_incident": 2.586,
+        "n_alert_episodes": 199
+      }
+    },
+    "ecod_sensitivity": [
+      {
+        "quantile": 0.999,
+        "persistence": 2,
+        "precision": 0.4306,
+        "recall": 0.9667,
+        "delay_median_min": 3.0,
+        "n_groups": 144
+      },
+      {
+        "quantile": 0.999,
+        "persistence": 3,
+        "precision": 0.6977,
+        "recall": 0.9667,
+        "delay_median_min": 4.0,
+        "n_groups": 86
+      },
+      {
+        "quantile": 0.9995,
+        "persistence": 2,
+        "precision": 0.5259,
+        "recall": 0.9667,
+        "delay_median_min": 4.0,
+        "n_groups": 116
+      },
+      {
+        "quantile": 0.9995,
+        "persistence": 3,
+        "precision": 0.7654,
+        "recall": 0.9667,
+        "delay_median_min": 5.5,
+        "n_groups": 81
+      }
+    ]
+  },
+  "alert_volume": {
+    "raw_metric_alerts": 730,
+    "per_service_episodes": 199,
+    "grouped_incidents_topological": 86,
+    "grouped_incidents_temporal_only": 80,
+    "injected_incidents": 60,
+    "reduction_raw_to_incidents_pct": 88.22,
+    "reduction_episodes_to_incidents_pct": 56.78
+  },
+  "root_cause": {
+    "evaluated_incidents": 58,
+    "root_in_candidate_set": 57,
+    "mean_candidates": 5.38,
+    "methods": {
+      "max_anomaly": {
+        "top1_detected": 0.7931,
+        "top3_detected": 0.9138,
+        "top1_all_injected": 0.7667,
+        "top3_all_injected": 0.8833,
+        "hits_top1": 46,
+        "hits_top3": 53
+      },
+      "max_anomaly+deploy_prior": {
+        "top1_detected": 0.8448,
+        "top3_detected": 0.931,
+        "top1_all_injected": 0.8167,
+        "top3_all_injected": 0.9,
+        "hits_top1": 49,
+        "hits_top3": 54
+      },
+      "topology_frontier": {
+        "top1_detected": 0.8448,
+        "top3_detected": 0.9483,
+        "top1_all_injected": 0.8167,
+        "top3_all_injected": 0.9167,
+        "hits_top1": 49,
+        "hits_top3": 55
+      },
+      "topology_frontier+deploy_prior": {
+        "top1_detected": 0.8621,
+        "top3_detected": 0.9655,
+        "top1_all_injected": 0.8333,
+        "top3_all_injected": 0.9333,
+        "hits_top1": 50,
+        "hits_top3": 56
+      },
+      "earliest_onset_pelt": {
+        "top1_detected": 0.8103,
+        "top3_detected": 0.9655,
+        "top1_all_injected": 0.7833,
+        "top3_all_injected": 0.9333,
+        "hits_top1": 47,
+        "hits_top3": 56
+      },
+      "earliest_onset_pelt+deploy_prior": {
+        "top1_detected": 0.8103,
+        "top3_detected": 0.9655,
+        "top1_all_injected": 0.7833,
+        "top3_all_injected": 0.9333,
+        "hits_top1": 47,
+        "hits_top3": 56
+      },
+      "earliest_onset_binseg": {
+        "top1_detected": 0.8276,
+        "top3_detected": 0.9483,
+        "top1_all_injected": 0.8,
+        "top3_all_injected": 0.9167,
+        "hits_top1": 48,
+        "hits_top3": 55
+      },
+      "earliest_onset_binseg+deploy_prior": {
+        "top1_detected": 0.8276,
+        "top3_detected": 0.9655,
+        "top1_all_injected": 0.8,
+        "top3_all_injected": 0.9333,
+        "hits_top1": 48,
+        "hits_top3": 56
+      },
+      "causal_pagerank": {
+        "top1_detected": 0.8448,
+        "top3_detected": 0.9483,
+        "top1_all_injected": 0.8167,
+        "top3_all_injected": 0.9167,
+        "hits_top1": 49,
+        "hits_top3": 55
+      },
+      "causal_pagerank+deploy_prior": {
+        "top1_detected": 0.8621,
+        "top3_detected": 0.9483,
+        "top1_all_injected": 0.8333,
+        "top3_all_injected": 0.9167,
+        "hits_top1": 50,
+        "hits_top3": 55
+      },
+      "ensemble": {
+        "top1_detected": 0.8276,
+        "top3_detected": 0.9483,
+        "top1_all_injected": 0.8,
+        "top3_all_injected": 0.9167,
+        "hits_top1": 48,
+        "hits_top3": 55
+      },
+      "ensemble+deploy_prior": {
+        "top1_detected": 0.8276,
+        "top3_detected": 0.9483,
+        "top1_all_injected": 0.8,
+        "top3_all_injected": 0.9167,
+        "hits_top1": 48,
+        "hits_top3": 55
+      },
+      "deploy_only": {
+        "top1_detected": 0.8448,
+        "top3_detected": 0.931,
+        "top1_all_injected": 0.8167,
+        "top3_all_injected": 0.9,
+        "hits_top1": 49,
+        "hits_top3": 54
+      }
+    },
+    "deploy_prior": {
+      "window": "deploy in [first_alert-30, first_alert+5] min",
+      "likelihood_ratio_loo_median": 9.149,
+      "likelihood_ratio_loo_range": [
+        8.748,
+        10.679
+      ],
+      "by_incident_type": {
+        "ensemble/deploy_caused": {
+          "n": 36,
+          "top1_without_prior": 0.8333,
+          "top1_with_prior": 0.8333
+        },
+        "ensemble/not_deploy_caused": {
+          "n": 22,
+          "top1_without_prior": 0.8182,
+          "top1_with_prior": 0.8182
+        },
+        "causal_pagerank/deploy_caused": {
+          "n": 36,
+          "top1_without_prior": 0.8056,
+          "top1_with_prior": 0.8611
+        },
+        "causal_pagerank/not_deploy_caused": {
+          "n": 22,
+          "top1_without_prior": 0.9091,
+          "top1_with_prior": 0.8636
+        }
+      }
+    }
+  },
+  "change_points": {
+    "pelt": {
+      "affected_services_evaluated": 130,
+      "onset_found_share": 0.8231,
+      "onset_mae_min": 5.55,
+      "onset_median_abs_err_min": 2.0,
+      "root_onset_median_abs_err_min": 4.0
+    },
+    "binseg": {
+      "affected_services_evaluated": 130,
+      "onset_found_share": 0.8154,
+      "onset_mae_min": 4.25,
+      "onset_median_abs_err_min": 1.0,
+      "root_onset_median_abs_err_min": 2.0
+    }
+  },
+  "public_nab": {
+    "path_used": "public_nab",
+    "source": "https://raw.githubusercontent.com/numenta/NAB/master",
+    "files": [
+      "realKnownCause/ec2_request_latency_system_failure.csv",
+      "realKnownCause/cpu_utilization_asg_misconfiguration.csv",
+      "realKnownCause/machine_temperature_system_failure.csv",
+      "realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv",
+      "realAWSCloudwatch/rds_cpu_utilization_cc0c53.csv",
+      "realAWSCloudwatch/elb_request_count_8c0756.csv"
+    ],
+    "totals": {
+      "univariate_threshold": {
+        "window_recall": 0.6429,
+        "windows_hit": 9,
+        "n_windows": 14,
+        "false_alarm_episodes": 1333,
+        "false_alarms_per_1k_points": 23.438
+      },
+      "iforest": {
+        "window_recall": 0.7857,
+        "windows_hit": 11,
+        "n_windows": 14,
+        "false_alarm_episodes": 86,
+        "false_alarms_per_1k_points": 1.512
+      },
+      "ecod": {
+        "window_recall": 0.8571,
+        "windows_hit": 12,
+        "n_windows": 14,
+        "false_alarm_episodes": 19,
+        "false_alarms_per_1k_points": 0.334
+      }
+    },
+    "per_file": {
+      "realKnownCause/ec2_request_latency_system_failure.csv": {
+        "n_points": 4032,
+        "n_windows": 3,
+        "univariate_threshold": {
+          "windows_hit": 2,
+          "false_alarm_episodes": 0,
+          "false_alarms_per_1k_points": 0.0
+        },
+        "iforest": {
+          "windows_hit": 3,
+          "false_alarm_episodes": 25,
+          "false_alarms_per_1k_points": 6.2
+        },
+        "ecod": {
+          "windows_hit": 3,
+          "false_alarm_episodes": 0,
+          "false_alarms_per_1k_points": 0.0
+        }
+      },
+      "realKnownCause/cpu_utilization_asg_misconfiguration.csv": {
+        "n_points": 18050,
+        "n_windows": 1,
+        "univariate_threshold": {
+          "windows_hit": 1,
+          "false_alarm_episodes": 1098,
+          "false_alarms_per_1k_points": 60.831
+        },
+        "iforest": {
+          "windows_hit": 1,
+          "false_alarm_episodes": 13,
+          "false_alarms_per_1k_points": 0.72
+        },
+        "ecod": {
+          "windows_hit": 1,
+          "false_alarm_episodes": 6,
+          "false_alarms_per_1k_points": 0.332
+        }
+      },
+      "realKnownCause/machine_temperature_system_failure.csv": {
+        "n_points": 22695,
+        "n_windows": 4,
+        "univariate_threshold": {
+          "windows_hit": 2,
+          "false_alarm_episodes": 0,
+          "false_alarms_per_1k_points": 0.0
+        },
+        "iforest": {
+          "windows_hit": 3,
+          "false_alarm_episodes": 9,
+          "false_alarms_per_1k_points": 0.397
+        },
+        "ecod": {
+          "windows_hit": 2,
+          "false_alarm_episodes": 5,
+          "false_alarms_per_1k_points": 0.22
+        }
+      },
+      "realAWSCloudwatch/ec2_cpu_utilization_24ae8d.csv": {
+        "n_points": 4032,
+        "n_windows": 2,
+        "univariate_threshold": {
+          "windows_hit": 2,
+          "false_alarm_episodes": 235,
+          "false_alarms_per_1k_points": 58.284
+        },
+        "iforest": {
+          "windows_hit": 1,
+          "false_alarm_episodes": 4,
+          "false_alarms_per_1k_points": 0.992
+        },
+        "ecod": {
+          "windows_hit": 2,
+          "false_alarm_episodes": 7,
+          "false_alarms_per_1k_points": 1.736
+        }
+      },
+      "realAWSCloudwatch/rds_cpu_utilization_cc0c53.csv": {
+        "n_points": 4032,
+        "n_windows": 2,
+        "univariate_threshold": {
+          "windows_hit": 2,
+          "false_alarm_episodes": 0,
+          "false_alarms_per_1k_points": 0.0
+        },
+        "iforest": {
+          "windows_hit": 2,
+          "false_alarm_episodes": 35,
+          "false_alarms_per_1k_points": 8.681
+        },
+        "ecod": {
+          "windows_hit": 2,
+          "false_alarm_episodes": 0,
+          "false_alarms_per_1k_points": 0.0
+        }
+      },
+      "realAWSCloudwatch/elb_request_count_8c0756.csv": {
+        "n_points": 4032,
+        "n_windows": 2,
+        "univariate_threshold": {
+          "windows_hit": 0,
+          "false_alarm_episodes": 0,
+          "false_alarms_per_1k_points": 0.0
+        },
+        "iforest": {
+          "windows_hit": 1,
+          "false_alarm_episodes": 0,
+          "false_alarms_per_1k_points": 0.0
+        },
+        "ecod": {
+          "windows_hit": 2,
+          "false_alarm_episodes": 1,
+          "false_alarms_per_1k_points": 0.248
+        }
+      }
+    }
+  },
+  "runtime": {
+    "generate_s": 0.46,
+    "detect_s": 8.64,
+    "rca_s": 12.02,
+    "public_check_s": 1.6,
+    "total_s": 26.76,
+    "python": "3.11.17"
+  }
+}

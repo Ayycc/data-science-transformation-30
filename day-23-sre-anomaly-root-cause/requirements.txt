@@ -1,0 +1,14 @@
+# Pinned for Python 3.11+ (CI uses 3.11; results/ were produced on 3.11). All have Python 3.11 manylinux wheels. CPU only.
+# PyOD 3.x is used for IForest/ECOD only; it does not pull in torch. No Prometheus, Grafana or Docker is required.
+ruptures==1.1.10
+pyod==3.6.7
+causal-learn==0.1.4.8
+statsmodels==0.15.0
+networkx==3.6.1
+numpy==2.4.6
+pandas==3.1.0
+scipy==1.17.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+pytest==9.2.0
+ruff==0.17.3
