@@ -1,0 +1,16 @@
+# Pinned for Python 3.11+ (CI uses 3.11; results/ were produced on 3.11). All have Python 3.11 manylinux wheels. CPU only.
+# torch comes from the PyTorch CPU wheel index (~190 MB instead of ~3 GB of CUDA wheels from PyPI).
+# `torch==2.15.0` matches the `2.15.0+cpu` build on that index; if the index is unreachable pip falls back to PyPI (works, just bigger).
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.15.0
+faiss-cpu==1.15.1
+implicit==0.7.3
+lightgbm==4.7.0
+numpy==2.4.6
+pandas==3.1.0
+scipy==1.17.1
+scikit-learn==1.9.1
+threadpoolctl==3.7.0
+matplotlib==3.11.2
+pytest==9.2.0
+ruff==0.17.3

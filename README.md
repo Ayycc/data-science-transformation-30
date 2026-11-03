@@ -41,7 +41,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 21 | III Principal | [Regulatory Q&A: Hybrid-Search RAG with Measured Faithfulness](./day-21-regulatory-rag-hybrid-search/) | Government & regulation | rank-bm25, sentence-transformers, FAISS or LanceDB | ✅ | [prompt](./prompts/day-21.md) | Hybrid search + learned re-ranker finds the right clause in the top 5 for 81.2% of held-out SYNTHETIC questions (BM25 68.0%); 100% of answers carry a valid citation (offline, no LLM key) |
 | 22 | III Principal | [Crop Yield and Climate Risk with xarray + Dask](./day-22-agri-climate-xarray-dask/) | Agriculture & climate | xarray, Dask, rioxarray | ✅ | [prompt](./prompts/day-22.md) | +2C/-20% rain cuts mean yield 22.1% (truth 23.8%) on 300 SYNTHETIC fields; spatial CV RMSE 55.5% above random CV; 3.92 GB cube processed under a 1 GB memory cap (193 MB peak) |
 | 23 | III Principal | [Observability Analytics: Multivariate Anomaly Detection and Root Cause](./day-23-sre-anomaly-root-cause/) | Technology operations | ruptures, PyOD, statsmodels | ✅ | [prompt](./prompts/day-23.md) | 730 threshold alerts grouped into 86 incidents (-88.2%), 58/60 injected incidents detected (median 4 min); root cause in top 3 for 94.8% (SYNTHETIC 20-service platform) |
-| 24 | IV Distinguished | [Recommender System with Two-Tower Retrieval and Off-Policy Evaluation](./day-24-streaming-recsys-off-policy-eval/) | Media streaming | PyTorch, FAISS, implicit | ⏳ Planned | [prompt](./prompts/day-24.md) | |
+| 24 | IV Distinguished | [Recommender System with Two-Tower Retrieval and Off-Policy Evaluation](./day-24-streaming-recsys-off-policy-eval/) | Media streaming | PyTorch, FAISS, implicit | ✅ | [prompt](./prompts/day-24.md) | Two-tower + re-ranker NDCG@10 0.0798 vs ALS 0.0825 (0.0868 with ALS as a ranker feature); HNSW p99 0.666 ms; DR OPE 3.18% mean relative RMSE vs IPS 3.91% (SYNTHETIC) |
 | 25 | IV Distinguished | [Privacy-Preserving Analytics: Differential Privacy and Synthetic Data](./day-25-privacy-dp-synthetic-data/) | Census & health statistics | OpenDP or diffprivlib, SDV, scikit-learn | ⏳ Planned | [prompt](./prompts/day-25.md) | |
 | 26 | IV Distinguished | [Responsible Credit Decisioning: Fairness, Explainability and Model Governance](./day-26-lending-fairness-model-governance/) | Lending | Fairlearn, SHAP, scikit-learn | ⏳ Planned | [prompt](./prompts/day-26.md) | |
 | 27 | IV Distinguished | [Dynamic Pricing for Hospitality with Contextual Bandits](./day-27-hospitality-dynamic-pricing-bandits/) | Travel & hospitality | NumPy, PyTorch (optional), SciPy | ⏳ Planned | [prompt](./prompts/day-27.md) | |
@@ -49,7 +49,7 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ⏳ Planned | [prompt](./prompts/day-29.md) | |
 | 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
 
-Last build: 2026-11-02
+Last build: 2026-11-03
 <!-- PROGRESS:END -->
 
 ## How each project is structured
