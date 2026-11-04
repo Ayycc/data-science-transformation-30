@@ -1,0 +1,1535 @@
+{
+  "config": {
+    "data_mode": "auto",
+    "population": {
+      "n": 32561,
+      "seed": 20261104
+    },
+    "seed": 20261104,
+    "epsilon_total": 4.0,
+    "delta_total": 1e-05,
+    "plan": {
+      "epsilon": 1.0,
+      "race_sex_income": 0.4,
+      "age_histogram": 0.2,
+      "hours_sum_by_race": 0.2,
+      "education_income": 0.2
+    },
+    "query_server_epsilon": 0.5,
+    "query_epsilon_each": 0.05,
+    "dp_model_epsilon": 1.0,
+    "dp_synth_epsilon": 1.0,
+    "dp_synth_delta": 1e-06,
+    "curve_epsilons": [
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1.0,
+      3.0,
+      10.0
+    ],
+    "curve_trials": 300,
+    "model_epsilons": [
+      0.05,
+      0.1,
+      0.3,
+      1.0,
+      3.0,
+      10.0
+    ],
+    "model_seeds": 10,
+    "synth_epsilons": [
+      0.3,
+      1.0,
+      3.0,
+      10.0
+    ],
+    "ctgan_epochs": 150,
+    "n_attacks": 500,
+    "mia_n": 2000,
+    "k": 5,
+    "max_attack_risk": 0.05,
+    "max_mia_auc": 0.55,
+    "utility_tolerance": 0.005
+  },
+  "data": {
+    "path_used": "synthetic_generator",
+    "attempts": [
+      "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data: URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+    ],
+    "rows": 32561,
+    "train_rows": 21707,
+    "holdout_rows": 10854,
+    "pilot_rows": 13333
+  },
+  "k_anonymity_raw": {
+    "quasi_identifiers": [
+      "age",
+      "sex",
+      "race",
+      "native_region",
+      "marital_status",
+      "education"
+    ],
+    "equivalence_classes": 6788,
+    "min_k": 1,
+    "share_records_unique": 0.1943151978624407,
+    "share_records_k_lt_5": 0.3890910766112314
+  },
+  "aggregate_release": {
+    "tables": {
+      "T1_race_sex_income": {
+        "cells": 20,
+        "mean_abs_error": 2.7,
+        "max_abs_error": 8.0,
+        "median_rel_error_nonzero_cells": 0.014301801801801801,
+        "rare_group_mean_rel_error": 0.16598722415795586,
+        "other_groups_mean_rel_error": 0.04193626042576536,
+        "rare_group_cells": {
+          "('Amer-Indian-Eskimo', 'Male', '<=50K')": {
+            "exact": 123.0,
+            "released": 119.0
+          },
+          "('Amer-Indian-Eskimo', 'Male', '>50K')": {
+            "exact": 25.0,
+            "released": 21.0
+          },
+          "('Amer-Indian-Eskimo', 'Female', '<=50K')": {
+            "exact": 70.0,
+            "released": 67.0
+          },
+          "('Amer-Indian-Eskimo', 'Female', '>50K')": {
+            "exact": 7.0,
+            "released": 10.0
+          }
+        }
+      },
+      "T2_age_histogram": {
+        "cells": 13,
+        "mean_abs_error": 6.538461538461538,
+        "max_abs_error": 22.0,
+        "median_rel_error_nonzero_cells": 0.0056657223796034,
+        "tvd": 0.0019965066072361575
+      },
+      "T3_mean_hours_by_race": {
+        "dp": {
+          "White": 41.171,
+          "Black": 40.717,
+          "Asian-Pac-Islander": 41.616,
+          "Amer-Indian-Eskimo": 49.697,
+          "Other": 42.173
+        },
+        "exact": {
+          "White": 41.159,
+          "Black": 40.974,
+          "Asian-Pac-Islander": 41.502,
+          "Amer-Indian-Eskimo": 41.68,
+          "Other": 41.506
+        },
+        "abs_error": {
+          "White": 0.012,
+          "Black": 0.258,
+          "Asian-Pac-Islander": 0.114,
+          "Amer-Indian-Eskimo": 8.017,
+          "Other": 0.667
+        }
+      },
+      "T4_education_income": {
+        "cells": 32,
+        "mean_abs_error": 5.96875,
+        "max_abs_error": 30.0,
+        "median_rel_error_nonzero_cells": 0.01568627450980392
+      }
+    },
+    "budget": {
+      "epsilon_total": 1.0,
+      "delta_total": 0.0,
+      "epsilon_spent": 1.0,
+      "delta_spent": 0.0,
+      "ledger": [
+        {
+          "label": "T1 counts race x sex x income (Laplace)",
+          "epsilon": 0.4,
+          "delta": 0.0
+        },
+        {
+          "label": "T2 age histogram, 5-year bins (Laplace)",
+          "epsilon": 0.2,
+          "delta": 0.0
+        },
+        {
+          "label": "T3 sum of hours by race, clipped [1, 99] (Laplace; parallel over races)",
+          "epsilon": 0.2,
+          "delta": 0.0
+        },
+        {
+          "label": "T4 counts education x income (Laplace)",
+          "epsilon": 0.2,
+          "delta": 0.0
+        }
+      ]
+    }
+  },
+  "accuracy_curves": {
+    "epsilon": [
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1.0,
+      3.0,
+      10.0
+    ],
+    "count_rel_err_white": [
+      0.03938763117614538,
+      0.01273583375128927,
+      0.0037270521661676155,
+      0.0013191438635419934,
+      0.0004077261753380793,
+      0.00012785267646377014,
+      4.0807519136355314e-05
+    ],
+    "count_rel_err_rare": [
+      4.936431517882193,
+      1.6121864838925661,
+      0.5426420534188372,
+      0.1620097422948341,
+      0.05199406535855084,
+      0.01613323732938978,
+      0.004970786525929281
+    ],
+    "count_rel_err_white_gauss": [
+      0.12050106834209748,
+      0.038402767625755806,
+      0.012471076200005001,
+      0.004534425479751511,
+      0.0014365669427135333,
+      0.0005340983136894706,
+      0.00017683330781341134
+    ],
+    "count_rel_err_rare_gauss": [
+      16.448672836413735,
+      4.786449109125393,
+      1.6215113796998855,
+      0.5444797356808675,
+      0.18213273400946142,
+      0.06708632167503509,
+      0.023484703329848786
+    ],
+    "age_hist_tvd": [
+      0.030953481992812518,
+      0.010231044123796303,
+      0.0029911206015540313,
+      0.001010775622276513,
+      0.00029523950306373865,
+      8.9347976857547e-05,
+      4.420067516435575e-06
+    ],
+    "mean_hours_abs_err_white": [
+      1.1337114892258429,
+      0.3747803834528844,
+      0.1255532241219841,
+      0.038909403539944945,
+      0.013196188986157674,
+      0.0037025441122465236,
+      0.0010756779463987698
+    ],
+    "mean_hours_abs_err_rare": [
+      39.516095558812886,
+      26.159776802891194,
+      9.672168766973037,
+      3.3312880706043515,
+      0.9881532330437495,
+      0.33749599596694146,
+      0.0979999822183096
+    ],
+    "overall_count_rel_err": [
+      0.004407758583343222,
+      0.0014524076742472595,
+      0.0004177856406919338,
+      0.00015541904448305926,
+      4.119827287054929e-05,
+      1.5533430747051775e-05,
+      5.0826286668139485e-06
+    ],
+    "rare_group_cell_counts": [
+      123.0,
+      25.0,
+      70.0,
+      7.0
+    ],
+    "white_cell_counts": [
+      8827.0,
+      3544.0,
+      5124.0,
+      1020.0
+    ]
+  },
+  "composition": {
+    "epsilon": 1.0,
+    "delta": 1e-06,
+    "rho": 0.024355913135999264,
+    "rho_back_to_eps": 1.0,
+    "k": [
+      1,
+      2,
+      5,
+      10,
+      20,
+      50,
+      100,
+      200,
+      500
+    ],
+    "laplace_std": [
+      1.4142135623730951,
+      2.8284271247461903,
+      7.0710678118654755,
+      14.142135623730951,
+      28.284271247461902,
+      70.71067811865476,
+      141.4213562373095,
+      282.842712474619,
+      707.1067811865476
+    ],
+    "gaussian_zcdp_std": [
+      4.530882439618073,
+      6.407635395625974,
+      10.131361133046097,
+      14.327908319653435,
+      20.262722266092194,
+      32.03817697812987,
+      45.308824396180725,
+      64.07635395625974,
+      101.31361133046096
+    ],
+    "crossover_k": 20
+  },
+  "query_server": {
+    "summary": {
+      "queries": 20,
+      "answered_new": 10,
+      "answered_from_cache": 6,
+      "refused": 4,
+      "budget": {
+        "epsilon_total": 0.5,
+        "delta_total": 0.0,
+        "epsilon_spent": 0.5,
+        "delta_spent": 0.0,
+        "ledger": "10 entries"
+      }
+    },
+    "log": [
+      {
+        "query": "COUNT WHERE {'race': 'White', 'income': '>50K'} @eps=0.05",
+        "answer": 4564.075643657542,
+        "truth": 4564.0,
+        "cached": false,
+        "refused": false,
+        "eps": 0.05
+      },
+      {
+        "query": "MEAN(hours_per_week) WHERE {'race': 'White'} @eps=0.05",
+        "answer": 41.04761318316882,
+        "truth": 41.15900621118013,
+        "cached": false,
+        "refused": false,
+        "eps": 0.05
+      },
+      {
+        "query": "COUNT WHERE {'race': 'Black', 'income': '>50K'} @eps=0.05",
+        "answer": 363.77894544570927,
+        "truth": 374.0,
+        "cached": false,
+        "refused": false,
+        "eps": 0.05
+      },
+      {
+        "query": "MEAN(hours_per_week) WHERE {'race': 'Black'} @eps=0.05",
+        "answer": 42.14175012246022,
+        "truth": 40.974334140435836,
+        "cached": false,
+        "refused": false,
+        "eps": 0.05
+      },
+      {
+        "query": "COUNT WHERE {'race': 'Asian-Pac-Islander', 'income': '>50K'} @eps=0.05",
+        "answer": 192.3437732476645,
+        "truth": 196.0,
+        "cached": false,
+        "refused": false,
+        "eps": 0.05
+      },
+      {
+        "query": "MEAN(hours_per_week) WHERE {'race': 'Asian-Pac-Islander'} @eps=0.05",
+        "answer": 36.22035649301334,
+        "truth": 41.502235469448586,
+        "cached": false,
+        "refused": false,
+        "eps": 0.05
+      },
+      {
+        "query": "COUNT WHERE {'race': 'Amer-Indian-Eskimo', 'income': '>50K'} @eps=0.05",
+        "answer": 22.92936864795653,
+        "truth": 32.0,
+        "cached": false,
+        "refused": false,
+        "eps": 0.05
+      },
+      {
+        "query": "MEAN(hours_per_week) WHERE {'race': 'Amer-Indian-Eskimo'} @eps=0.05",
+        "answer": 39.992950845363595,
+        "truth": 41.68,
+        "cached": false,
+        "refused": false,
+        "eps": 0.05
+      },
+      {
+        "query": "COUNT WHERE {'race': 'Other', 'income': '>50K'} @eps=0.05",
+        "answer": 58.8561913746847,
+        "truth": 45.0,
+        "cached": false,
+        "refused": false,
+        "eps": 0.05
+      },
+      {
+        "query": "MEAN(hours_per_week) WHERE {'race': 'Other'} @eps=0.05",
+        "answer": 52.31066744385751,
+        "truth": 41.506493506493506,
+        "cached": false,
+        "refused": false,
+        "eps": 0.05
+      },
+      {
+        "query": "COUNT WHERE {'race': 'White', 'income': '>50K'} @eps=0.05",
+        "answer": 4564.075643657542,
+        "truth": 4564.0,
+        "cached": true,
+        "refused": false,
+        "eps": 0.0
+      },
+      {
+        "query": "MEAN(hours_per_week) WHERE {'race': 'Amer-Indian-Eskimo'} @eps=0.05",
+        "answer": 39.992950845363595,
+        "truth": 41.68,
+        "cached": true,
+        "refused": false,
+        "eps": 0.0
+      },
+      {
+        "query": "COUNT WHERE {'race': 'White', 'income': '>50K'} @eps=0.05",
+        "answer": 4564.075643657542,
+        "truth": 4564.0,
+        "cached": true,
+        "refused": false,
+        "eps": 0.0
+      },
+      {
+        "query": "MEAN(hours_per_week) WHERE {'race': 'Amer-Indian-Eskimo'} @eps=0.05",
+        "answer": 39.992950845363595,
+        "truth": 41.68,
+        "cached": true,
+        "refused": false,
+        "eps": 0.0
+      },
+      {
+        "query": "COUNT WHERE {'race': 'White', 'income': '>50K'} @eps=0.05",
+        "answer": 4564.075643657542,
+        "truth": 4564.0,
+        "cached": true,
+        "refused": false,
+        "eps": 0.0
+      },
+      {
+        "query": "MEAN(hours_per_week) WHERE {'race': 'Amer-Indian-Eskimo'} @eps=0.05",
+        "answer": 39.992950845363595,
+        "truth": 41.68,
+        "cached": true,
+        "refused": false,
+        "eps": 0.0
+      },
+      {
+        "query": "MEAN(age) WHERE {'sex': 'Male'} @eps=0.05",
+        "answer": null,
+        "truth": 37.69585888513746,
+        "cached": false,
+        "refused": true,
+        "eps": 0.0
+      },
+      {
+        "query": "COUNT WHERE {'sex': 'Male', 'income': '>50K'} @eps=0.05",
+        "answer": null,
+        "truth": 4043.0,
+        "cached": false,
+        "refused": true,
+        "eps": 0.0
+      },
+      {
+        "query": "MEAN(age) WHERE {'sex': 'Female'} @eps=0.05",
+        "answer": null,
+        "truth": 37.5512927439533,
+        "cached": false,
+        "refused": true,
+        "eps": 0.0
+      },
+      {
+        "query": "COUNT WHERE {'sex': 'Female', 'income': '>50K'} @eps=0.05",
+        "answer": null,
+        "truth": 1168.0,
+        "cached": false,
+        "refused": true,
+        "eps": 0.0
+      }
+    ]
+  },
+  "dp_model": {
+    "data_norm": 3.1622776601683795,
+    "n_features": 59,
+    "n_train": 21707,
+    "n_test": 10854,
+    "n_test_rare": 100,
+    "majority_class_accuracy": 0.7609176340519624,
+    "majority_class_accuracy_rare": 0.78,
+    "baseline": {
+      "accuracy": 0.8324120140040538,
+      "auc": 0.8730693508640425,
+      "accuracy_rare": 0.79,
+      "auc_rare": 0.8857808857808858,
+      "accuracy_other": 0.8328063976194904,
+      "auc_other": 0.8730500506111414,
+      "mia_auc": 0.5041423333333334
+    },
+    "dp": [
+      {
+        "epsilon": 0.05,
+        "lambda": 0.01,
+        "seeds": 10,
+        "accuracy": 0.7587617468214484,
+        "auc": 0.6359336238787556,
+        "accuracy_rare": 0.7260000000000001,
+        "auc_rare": 0.6457459207459207,
+        "accuracy_other": 0.7590663938999442,
+        "auc_other": 0.6360130040727872,
+        "mia_auc": 0.4973907000000001,
+        "accuracy_sd": 0.006109701884261297,
+        "auc_sd": 0.07462421155589571,
+        "accuracy_rare_sd": 0.11706408501329518,
+        "auc_rare_sd": 0.11745581950038018
+      },
+      {
+        "epsilon": 0.1,
+        "lambda": 0.01,
+        "seeds": 10,
+        "accuracy": 0.7616639027086787,
+        "auc": 0.7214630947356782,
+        "accuracy_rare": 0.774,
+        "auc_rare": 0.7551282051282051,
+        "accuracy_other": 0.7615491909986981,
+        "auc_other": 0.7215694864818347,
+        "mia_auc": 0.5001864333333332,
+        "accuracy_sd": 0.00113022264326901,
+        "auc_sd": 0.04043945451601137,
+        "accuracy_rare_sd": 0.01907878402833893,
+        "auc_rare_sd": 0.07100705254080737
+      },
+      {
+        "epsilon": 0.3,
+        "lambda": 0.01,
+        "seeds": 10,
+        "accuracy": 0.7609176340519623,
+        "auc": 0.8004789403560686,
+        "accuracy_rare": 0.78,
+        "auc_rare": 0.8465034965034965,
+        "accuracy_other": 0.7607401896968569,
+        "auc_other": 0.800361772153378,
+        "mia_auc": 0.5040060888888889,
+        "accuracy_sd": 1.1102230246251565e-16,
+        "auc_sd": 0.007006270371593734,
+        "accuracy_rare_sd": 0.0,
+        "auc_rare_sd": 0.02544852512119739
+      },
+      {
+        "epsilon": 1.0,
+        "lambda": 0.001,
+        "seeds": 10,
+        "accuracy": 0.8060530679933665,
+        "auc": 0.8355872043366717,
+        "accuracy_rare": 0.789,
+        "auc_rare": 0.8615967365967366,
+        "accuracy_other": 0.806211642179654,
+        "auc_other": 0.8354577756000758,
+        "mia_auc": 0.5036161888888888,
+        "accuracy_sd": 0.0025246335139201006,
+        "auc_sd": 0.003444192673308605,
+        "accuracy_rare_sd": 0.009433981132056613,
+        "auc_rare_sd": 0.010506493633145743
+      },
+      {
+        "epsilon": 3.0,
+        "lambda": 0.0001,
+        "seeds": 10,
+        "accuracy": 0.8289939192924267,
+        "auc": 0.8600800201380127,
+        "accuracy_rare": 0.798,
+        "auc_rare": 0.8783216783216783,
+        "accuracy_other": 0.8292821275804352,
+        "auc_other": 0.8600592036575512,
+        "mia_auc": 0.5042709000000001,
+        "accuracy_sd": 0.0014329107472214548,
+        "auc_sd": 0.002549095156593731,
+        "accuracy_rare_sd": 0.013266499161421575,
+        "auc_rare_sd": 0.0059417702081729215
+      },
+      {
+        "epsilon": 10.0,
+        "lambda": 1e-05,
+        "seeds": 10,
+        "accuracy": 0.8326699834162522,
+        "auc": 0.8712766104869306,
+        "accuracy_rare": 0.795,
+        "auc_rare": 0.8835664335664337,
+        "accuracy_other": 0.8330202715268736,
+        "auc_other": 0.8712521258603385,
+        "mia_auc": 0.5039115444444444,
+        "accuracy_sd": 0.0005794798302383077,
+        "auc_sd": 0.0006689927528580464,
+        "accuracy_rare_sd": 0.006708203932499376,
+        "auc_rare_sd": 0.003774856582914133
+      }
+    ],
+    "diffprivlib_check": [
+      {
+        "epsilon": 1.0,
+        "accuracy": 0.48094711627049935,
+        "auc": 0.4723500561424088,
+        "accuracy_rare": 0.43600000000000005,
+        "auc_rare": 0.45979020979020974,
+        "accuracy_other": 0.4813650734610378,
+        "auc_other": 0.47241090888032533
+      },
+      {
+        "epsilon": 10.0,
+        "accuracy": 0.48828081813156443,
+        "auc": 0.47504583894115865,
+        "accuracy_rare": 0.442,
+        "auc_rare": 0.46174242424242423,
+        "accuracy_other": 0.4887111772363772,
+        "auc_other": 0.47515257096379415
+      }
+    ]
+  },
+  "dp_synth_structures": {
+    "0.3": [
+      "age - marital_status",
+      "marital_status - income",
+      "occupation - sex",
+      "education - occupation",
+      "education - income",
+      "workclass - occupation",
+      "capital_gain - income",
+      "race - native_region",
+      "age - hours_per_week",
+      "education - native_region"
+    ],
+    "1.0": [
+      "age - marital_status",
+      "marital_status - income",
+      "occupation - sex",
+      "education - occupation",
+      "education - income",
+      "workclass - occupation",
+      "capital_gain - income",
+      "age - hours_per_week",
+      "race - native_region",
+      "education - native_region"
+    ],
+    "3.0": [
+      "age - marital_status",
+      "marital_status - income",
+      "occupation - sex",
+      "education - occupation",
+      "education - income",
+      "workclass - occupation",
+      "capital_gain - income",
+      "age - hours_per_week",
+      "race - native_region",
+      "education - native_region"
+    ],
+    "10.0": [
+      "age - marital_status",
+      "marital_status - income",
+      "occupation - sex",
+      "education - occupation",
+      "education - income",
+      "workclass - occupation",
+      "capital_gain - income",
+      "age - hours_per_week",
+      "race - native_region",
+      "education - native_region"
+    ]
+  },
+  "releases": [
+    {
+      "name": "Raw microdata (reference, not a release option)",
+      "rows": 21707,
+      "formal_dp": false,
+      "epsilon": null,
+      "fidelity": {
+        "tvd_1way_mean": 0.0,
+        "tvd_1way": {
+          "age": 0.0,
+          "workclass": 0.0,
+          "education": 0.0,
+          "marital_status": 0.0,
+          "occupation": 0.0,
+          "race": 0.0,
+          "sex": 0.0,
+          "capital_gain": 0.0,
+          "hours_per_week": 0.0,
+          "native_region": 0.0,
+          "income": 0.0
+        },
+        "tvd_2way_mean": 0.0,
+        "tvd_2way_max": 0.0
+      },
+      "tstr": {
+        "auc": 0.8747117000406632,
+        "accuracy": 0.8342546526626129,
+        "auc_rare": 0.8828671328671329,
+        "accuracy_rare": 0.8,
+        "auc_other": 0.8746897879320255,
+        "n_test_rare": 100
+      },
+      "rare_subgroup": {
+        "real_share": 0.01036531994287557,
+        "release_share": 0.01036531994287557,
+        "real_positive_rate": 0.14222222222222222,
+        "release_positive_rate": 0.14222222222222222,
+        "conditional_tvd_rare": 0.0,
+        "conditional_tvd_majority": 0.0
+      },
+      "mia_dcr": {
+        "auc": 0.769420625,
+        "exact_match_rate_members": 0.5995,
+        "exact_match_rate_non_members": 0.0715,
+        "median_dcr_members": 0.0,
+        "median_dcr_non_members": 0.012135613896866338,
+        "n_each": 2000
+      },
+      "qi_uniqueness": {
+        "release_rows_matching_train_unique": 0.1943151978624407,
+        "holdout_rows_matching_train_unique": 0.09738345310484614
+      },
+      "anonymeter": {
+        "singling_out": {
+          "risk": 0.3563557054036659,
+          "ci": [
+            0.3100536694015787,
+            0.4026577414057531
+          ],
+          "attack_rate": 0.38686917481261696
+        },
+        "linkability": {
+          "risk": 0.4266274024260612,
+          "ci": [
+            0.38240192319863564,
+            0.4708528816534867
+          ],
+          "attack_rate": 0.4345032064704624
+        },
+        "inference_capital_gain": {
+          "risk": 0.9405767166826325,
+          "ci": [
+            0.9116088611851286,
+            0.9695445721801365
+          ],
+          "attack_rate": 0.9920548956903424
+        },
+        "max_risk": 0.9405767166826325,
+        "max_risk_ci_high": 0.9695445721801365
+      }
+    },
+    {
+      "name": "k-anonymised microdata (k=5)",
+      "rows": 18951,
+      "formal_dp": false,
+      "epsilon": null,
+      "sdc": {
+        "k": 5,
+        "suppressed_records": 2756,
+        "suppressed_share": 0.126963652278067,
+        "after": {
+          "quasi_identifiers": [
+            "age",
+            "sex",
+            "race",
+            "native_region",
+            "marital_status",
+            "education"
+          ],
+          "equivalence_classes": 597,
+          "min_k": 5,
+          "share_records_unique": 0.0,
+          "share_records_k_lt_5": 0.0
+        }
+      },
+      "fidelity": {
+        "tvd_1way_mean": 0.023129241667670622,
+        "tvd_1way": {
+          "age": 0.02786296744023161,
+          "workclass": 0.0020949494300811565,
+          "education": 0.050608509471452935,
+          "marital_status": 0.03813360847876666,
+          "occupation": 0.010753185488242376,
+          "race": 0.05196200843904856,
+          "sex": 0.021614874439954967,
+          "capital_gain": 0.0014966039388296167,
+          "hours_per_week": 0.00544118311661218,
+          "native_region": 0.036189951309377646,
+          "income": 0.008263816791779191
+        },
+        "tvd_2way_mean": 0.038052739901709653,
+        "tvd_2way_max": 0.07439906127961787
+      },
+      "tstr": {
+        "auc": 0.8732474948214373,
+        "accuracy": 0.8348995761931085,
+        "auc_rare": 0.8846153846153847,
+        "accuracy_rare": 0.78,
+        "auc_other": 0.8732265850845569,
+        "n_test_rare": 100
+      },
+      "rare_subgroup": {
+        "real_share": 0.01036531994287557,
+        "release_share": 0.0030605245105799167,
+        "real_positive_rate": 0.14222222222222222,
+        "release_positive_rate": 0.1724137931034483,
+        "conditional_tvd_rare": 0.1620919540229885,
+        "conditional_tvd_majority": 0.015154073571022064
+      },
+      "mia_dcr": {
+        "auc": 0.6906107499999998,
+        "exact_match_rate_members": 0.6455,
+        "exact_match_rate_non_members": 0.231,
+        "median_dcr_members": 0.0,
+        "median_dcr_non_members": 0.0112079701120797,
+        "n_each": 2000
+      },
+      "qi_uniqueness": {
+        "release_rows_matching_train_unique": 0.0,
+        "holdout_rows_matching_train_unique": 0.032522572323567346
+      },
+      "anonymeter": {
+        "singling_out": {
+          "risk": 0.08254849120453105,
+          "ci": [
+            0.05115565290565058,
+            0.11394132950341151
+          ],
+          "attack_rate": 0.11098874146092848
+        },
+        "linkability": {
+          "risk": 0.03815868446067787,
+          "ci": [
+            0.017530914917837263,
+            0.05878645400351848
+          ],
+          "attack_rate": 0.04946145056954472
+        },
+        "inference_capital_gain": {
+          "risk": 0.32755621681144825,
+          "ci": [
+            0.21161735823307581,
+            0.4434950753898207
+          ],
+          "attack_rate": 0.9047226373274521
+        },
+        "max_risk": 0.32755621681144825,
+        "max_risk_ci_high": 0.4434950753898207
+      },
+      "passes_risk_gate": false
+    },
+    {
+      "name": "Gaussian copula",
+      "rows": 21707,
+      "formal_dp": false,
+      "epsilon": null,
+      "fidelity": {
+        "tvd_1way_mean": 0.004606808863500248,
+        "tvd_1way": {
+          "age": 0.009812502879255518,
+          "workclass": 0.0017966554567651095,
+          "education": 0.010088911411065552,
+          "marital_status": 0.005574238724835274,
+          "occupation": 0.007601234624775429,
+          "race": 0.003639379002165169,
+          "sex": 0.0024876767862901383,
+          "capital_gain": 0.0019348597226701077,
+          "hours_per_week": 0.005666374902105306,
+          "native_region": 0.001151702215875057,
+          "income": 0.0009213617727000661
+        },
+        "tvd_2way_mean": 0.03559304288101451,
+        "tvd_2way_max": 0.22822131109780255
+      },
+      "tstr": {
+        "auc": 0.8365061201407888,
+        "accuracy": 0.7771328542472821,
+        "auc_rare": 0.8275058275058276,
+        "accuracy_rare": 0.78,
+        "auc_other": 0.8367328808711074,
+        "n_test_rare": 100
+      },
+      "rare_subgroup": {
+        "real_share": 0.01036531994287557,
+        "release_share": 0.010779932740590593,
+        "real_positive_rate": 0.14222222222222222,
+        "release_positive_rate": 0.19230769230769232,
+        "conditional_tvd_rare": 0.08488888888888887,
+        "conditional_tvd_majority": 0.007603068311792806
+      },
+      "mia_dcr": {
+        "auc": 0.51138025,
+        "exact_match_rate_members": 0.05,
+        "exact_match_rate_non_members": 0.039,
+        "median_dcr_members": 0.015116588060688342,
+        "median_dcr_non_members": 0.016125752916359568,
+        "n_each": 2000
+      },
+      "qi_uniqueness": {
+        "release_rows_matching_train_unique": 0.0964205095130603,
+        "holdout_rows_matching_train_unique": 0.09738345310484614
+      },
+      "anonymeter": {
+        "singling_out": {
+          "risk": 0.04178719709451254,
+          "ci": [
+            0.009751790099034381,
+            0.0738226040899907
+          ],
+          "attack_rate": 0.08915647695108263
+        },
+        "linkability": {
+          "risk": 0.008001268530548777,
+          "ci": [
+            0.0,
+            0.020270567452505897
+          ],
+          "attack_rate": 0.015720678145237494
+        },
+        "inference_capital_gain": {
+          "risk": 0.0,
+          "ci": [
+            0.0,
+            0.06676055940635989
+          ],
+          "attack_rate": 0.8368529965425772
+        },
+        "max_risk": 0.04178719709451254,
+        "max_risk_ci_high": 0.0738226040899907
+      },
+      "passes_risk_gate": true
+    },
+    {
+      "name": "CTGAN-style GAN",
+      "rows": 21707,
+      "formal_dp": false,
+      "epsilon": null,
+      "loss_history": [
+        [
+          0.7575930083213851,
+          3.139563681314157
+        ],
+        [
+          1.3722348102303439,
+          2.6693208561054487
+        ],
+        [
+          1.3931894538014433,
+          2.4101982427197837
+        ],
+        [
+          1.3746129717937736,
+          2.0286120652986126
+        ],
+        [
+          1.3534299953039302,
+          1.588945599824883
+        ],
+        [
+          1.3316891040912895,
+          1.2730690626893622
+        ],
+        [
+          1.312821626663208,
+          1.0925408961979104
+        ],
+        [
+          1.2777700687563696,
+          1.0238452569782994
+        ],
+        [
+          1.2221909608951835,
+          1.0633139791945645
+        ],
+        [
+          1.1646160538806472,
+          1.1271834877409086
+        ],
+        [
+          1.0650298962759417,
+          1.2070051512325748
+        ],
+        [
+          1.1361651607724124,
+          1.2109256532372432
+        ],
+        [
+          1.165675642185433,
+          1.2032998354571858
+        ],
+        [
+          1.1000013684117518,
+          1.2716145921969828
+        ],
+        [
+          1.129300502843635,
+          1.2718803241725056
+        ],
+        [
+          1.2170888490455096,
+          1.1393245195444932
+        ],
+        [
+          1.125429130570833,
+          1.2309875295647357
+        ],
+        [
+          1.1107654297767684,
+          1.3700569133394678
+        ],
+        [
+          1.1412185014680374,
+          1.2587552777702031
+        ],
+        [
+          1.2195409404677013,
+          1.1848286123317342
+        ],
+        [
+          1.2173441620760186,
+          1.191812270745289
+        ],
+        [
+          1.2174110745274744,
+          1.1785576760297594
+        ],
+        [
+          1.1670855193637137,
+          1.1948680953435427
+        ],
+        [
+          1.2316987334295761,
+          1.1419401431932703
+        ],
+        [
+          1.239848763443703,
+          1.099176953732881
+        ],
+        [
+          1.2318335522052855,
+          1.1033235192676616
+        ],
+        [
+          1.2026505366314288,
+          1.146171529090855
+        ],
+        [
+          1.1770217945409376,
+          1.2285769029311664
+        ],
+        [
+          1.1733442073644593,
+          1.2023818748943331
+        ],
+        [
+          1.1907300914442815,
+          1.1588993941609598
+        ]
+      ],
+      "fidelity": {
+        "tvd_1way_mean": 0.15217127277752884,
+        "tvd_1way": {
+          "age": 0.14774036025245316,
+          "workclass": 0.050214216612152786,
+          "education": 0.18137006495600494,
+          "marital_status": 0.07172801400469894,
+          "occupation": 0.17155756207674946,
+          "race": 0.08071129128852442,
+          "sex": 0.07186621827060394,
+          "capital_gain": 0.4079329248629475,
+          "hours_per_week": 0.19542083198968074,
+          "native_region": 0.26415442023310454,
+          "income": 0.0311880960058967
+        },
+        "tvd_2way_mean": 0.24183317488702843,
+        "tvd_2way_max": 0.5201087206891786
+      },
+      "tstr": {
+        "auc": 0.8570223036887884,
+        "accuracy": 0.8063386769854431,
+        "auc_rare": 0.8525641025641026,
+        "accuracy_rare": 0.79,
+        "auc_other": 0.8571028498108264,
+        "n_test_rare": 100
+      },
+      "rare_subgroup": {
+        "real_share": 0.01036531994287557,
+        "release_share": 0.0026258810521951445,
+        "real_positive_rate": 0.14222222222222222,
+        "release_positive_rate": 0.14035087719298245,
+        "conditional_tvd_rare": 0.24430409356725144,
+        "conditional_tvd_majority": 0.160523565624407
+      },
+      "mia_dcr": {
+        "auc": 0.508958375,
+        "exact_match_rate_members": 0.0405,
+        "exact_match_rate_non_members": 0.026,
+        "median_dcr_members": 0.019525005527840117,
+        "median_dcr_non_members": 0.02048440795994612,
+        "n_each": 2000
+      },
+      "qi_uniqueness": {
+        "release_rows_matching_train_unique": 0.10858248491270098,
+        "holdout_rows_matching_train_unique": 0.09738345310484614
+      },
+      "anonymeter": {
+        "singling_out": {
+          "risk": 0.05164208918151227,
+          "ci": [
+            0.023294168115519286,
+            0.07999001024750527
+          ],
+          "attack_rate": 0.08121747167477505
+        },
+        "linkability": {
+          "risk": 0.0,
+          "ci": [
+            0.0,
+            0.001206958371575289
+          ],
+          "attack_rate": 0.009766424188006807
+        },
+        "inference_capital_gain": {
+          "risk": 0.0,
+          "ci": [
+            0.0,
+            0.05390065755538579
+          ],
+          "attack_rate": 0.47704409208746884
+        },
+        "max_risk": 0.05164208918151227,
+        "max_risk_ci_high": 0.07999001024750527
+      },
+      "passes_risk_gate": true
+    },
+    {
+      "name": "DP tree (MST-style) eps=0.3",
+      "rows": 21707,
+      "formal_dp": true,
+      "epsilon": 0.3,
+      "delta": 1e-06,
+      "epsilon_spent": 0.29999999999999993,
+      "rho_spent": 0.002539641101367974,
+      "fidelity": {
+        "tvd_1way_mean": 0.02912340803343706,
+        "tvd_1way": {
+          "age": 0.027134104206016495,
+          "workclass": 0.04358041184871238,
+          "education": 0.03270834293085178,
+          "marital_status": 0.013590086147325781,
+          "occupation": 0.06679872852075368,
+          "race": 0.023494725203851305,
+          "sex": 0.00806191551112545,
+          "capital_gain": 0.018104758833555983,
+          "hours_per_week": 0.0345049983876169,
+          "native_region": 0.047404063205417596,
+          "income": 0.004975353572580277
+        },
+        "tvd_2way_mean": 0.06341984361977912,
+        "tvd_2way_max": 0.18100152024692495
+      },
+      "tstr": {
+        "auc": 0.8112666487962802,
+        "accuracy": 0.8146305509489589,
+        "auc_rare": 0.8210955710955712,
+        "accuracy_rare": 0.76,
+        "auc_other": 0.8114628213695835,
+        "n_test_rare": 100
+      },
+      "rare_subgroup": {
+        "real_share": 0.01036531994287557,
+        "release_share": 0.020454231353941126,
+        "real_positive_rate": 0.14222222222222222,
+        "release_positive_rate": 0.22972972972972974,
+        "conditional_tvd_rare": 0.17600600600600602,
+        "conditional_tvd_majority": 0.02692258810936543
+      },
+      "mia_dcr": {
+        "auc": 0.505846125,
+        "exact_match_rate_members": 0.0545,
+        "exact_match_rate_non_members": 0.057,
+        "median_dcr_members": 0.015477673011919586,
+        "median_dcr_non_members": 0.0161892901618929,
+        "n_each": 2000
+      },
+      "qi_uniqueness": {
+        "release_rows_matching_train_unique": 0.08071129128852444,
+        "holdout_rows_matching_train_unique": 0.09738345310484614
+      },
+      "anonymeter": {
+        "singling_out": {
+          "risk": 0.036293112603762126,
+          "ci": [
+            0.009417398393078053,
+            0.0631688268144462
+          ],
+          "attack_rate": 0.06732421244123678
+        },
+        "linkability": {
+          "risk": 0.004024786815340199,
+          "ci": [
+            0.0,
+            0.018637171494883302
+          ],
+          "attack_rate": 0.017705429464314387
+        },
+        "inference_capital_gain": {
+          "risk": 0.0,
+          "ci": [
+            0.0,
+            0.1594995624365012
+          ],
+          "attack_rate": 0.8692906925059365
+        },
+        "max_risk": 0.036293112603762126,
+        "max_risk_ci_high": 0.1594995624365012
+      },
+      "passes_risk_gate": true
+    },
+    {
+      "name": "DP tree (MST-style) eps=1",
+      "rows": 21707,
+      "formal_dp": true,
+      "epsilon": 1.0,
+      "delta": 1e-06,
+      "epsilon_spent": 1.0,
+      "rho_spent": 0.02435591313599926,
+      "fidelity": {
+        "tvd_1way_mean": 0.012476076003970242,
+        "tvd_1way": {
+          "age": 0.016538443819965925,
+          "workclass": 0.03058921085364169,
+          "education": 0.010872068917860595,
+          "marital_status": 0.005389966370295298,
+          "occupation": 0.02699589994011151,
+          "race": 0.006818077117980378,
+          "sex": 0.006818077117980409,
+          "capital_gain": 0.006080987699820325,
+          "hours_per_week": 0.013451881881420744,
+          "native_region": 0.007370894181600413,
+          "income": 0.0063113281429953705
+        },
+        "tvd_2way_mean": 0.035311608739535205,
+        "tvd_2way_max": 0.09448564979039019
+      },
+      "tstr": {
+        "auc": 0.8302133644828634,
+        "accuracy": 0.8146305509489589,
+        "auc_rare": 0.8528554778554779,
+        "accuracy_rare": 0.77,
+        "auc_other": 0.8300997975601853,
+        "n_test_rare": 100
+      },
+      "rare_subgroup": {
+        "real_share": 0.01036531994287557,
+        "release_share": 0.014327175565485788,
+        "real_positive_rate": 0.14222222222222222,
+        "release_positive_rate": 0.26366559485530544,
+        "conditional_tvd_rare": 0.11842658092175777,
+        "conditional_tvd_majority": 0.0136050867634108
+      },
+      "mia_dcr": {
+        "auc": 0.50753,
+        "exact_match_rate_members": 0.058,
+        "exact_match_rate_non_members": 0.064,
+        "median_dcr_members": 0.012745571453986328,
+        "median_dcr_non_members": 0.013304699214679649,
+        "n_each": 2000
+      },
+      "qi_uniqueness": {
+        "release_rows_matching_train_unique": 0.09103054314276501,
+        "holdout_rows_matching_train_unique": 0.09738345310484614
+      },
+      "anonymeter": {
+        "singling_out": {
+          "risk": 0.04559841327404759,
+          "ci": [
+            0.016827359189441102,
+            0.07436946735865407
+          ],
+          "attack_rate": 0.07923272035569816
+        },
+        "linkability": {
+          "risk": 0.006012979263350254,
+          "ci": [
+            0.0,
+            0.01891315519322606
+          ],
+          "attack_rate": 0.015720678145237494
+        },
+        "inference_capital_gain": {
+          "risk": 0.0,
+          "ci": [
+            0.0,
+            0.07994795750229769
+          ],
+          "attack_rate": 0.8468338260697647
+        },
+        "max_risk": 0.04559841327404759,
+        "max_risk_ci_high": 0.07994795750229769
+      },
+      "passes_risk_gate": true
+    },
+    {
+      "name": "DP tree (MST-style) eps=3",
+      "rows": 21707,
+      "formal_dp": true,
+      "epsilon": 3.0,
+      "delta": 1e-06,
+      "epsilon_spent": 3.0,
+      "rho_spent": 0.18506876060116487,
+      "fidelity": {
+        "tvd_1way_mean": 0.007542602511967237,
+        "tvd_1way": {
+          "age": 0.00958216243608054,
+          "workclass": 0.005850647256645304,
+          "education": 0.012438383931450678,
+          "marital_status": 0.007232689915695386,
+          "occupation": 0.018427235454000993,
+          "race": 0.005205694015755299,
+          "sex": 0.002764085318100157,
+          "capital_gain": 0.004652876952135283,
+          "hours_per_week": 0.010365319942875546,
+          "native_region": 0.004330400331690269,
+          "income": 0.002119132077210137
+        },
+        "tvd_2way_mean": 0.025925445080556334,
+        "tvd_2way_max": 0.09471599023356521
+      },
+      "tstr": {
+        "auc": 0.8266942047922965,
+        "accuracy": 0.818407960199005,
+        "auc_rare": 0.8318764568764568,
+        "accuracy_rare": 0.77,
+        "auc_other": 0.8265320292015382,
+        "n_test_rare": 100
+      },
+      "rare_subgroup": {
+        "real_share": 0.01036531994287557,
+        "release_share": 0.012668724374625696,
+        "real_positive_rate": 0.14222222222222222,
+        "release_positive_rate": 0.3018181818181818,
+        "conditional_tvd_rare": 0.10618181818181818,
+        "conditional_tvd_majority": 0.00846998665288084
+      },
+      "mia_dcr": {
+        "auc": 0.514472375,
+        "exact_match_rate_members": 0.065,
+        "exact_match_rate_non_members": 0.062,
+        "median_dcr_members": 0.012110198998653007,
+        "median_dcr_non_members": 0.013025135334332989,
+        "n_each": 2000
+      },
+      "qi_uniqueness": {
+        "release_rows_matching_train_unique": 0.09241258580181508,
+        "holdout_rows_matching_train_unique": 0.09738345310484614
+      },
+      "anonymeter": {
+        "singling_out": {
+          "risk": 0.0291740356769193,
+          "ci": [
+            0.0011014854164523302,
+            0.05724658593738627
+          ],
+          "attack_rate": 0.06732421244123678
+        },
+        "linkability": {
+          "risk": 0.002012393407670101,
+          "ci": [
+            0.0,
+            0.01610985250061603
+          ],
+          "attack_rate": 0.015720678145237494
+        },
+        "inference_capital_gain": {
+          "risk": 0.0,
+          "ci": [
+            0.0,
+            0.07082886341307722
+          ],
+          "attack_rate": 0.8488299919752021
+        },
+        "max_risk": 0.0291740356769193,
+        "max_risk_ci_high": 0.07082886341307722
+      },
+      "passes_risk_gate": true
+    },
+    {
+      "name": "DP tree (MST-style) eps=10",
+      "rows": 21707,
+      "formal_dp": true,
+      "epsilon": 10.0,
+      "delta": 1e-06,
+      "epsilon_spent": 10.000000000000002,
+      "rho_spent": 1.5392696202121774,
+      "fidelity": {
+        "tvd_1way_mean": 0.005406718402526209,
+        "tvd_1way": {
+          "age": 0.010457456120145588,
+          "workclass": 0.006357396231630377,
+          "education": 0.008799004929285483,
+          "marital_status": 0.0030404938499101926,
+          "occupation": 0.012991200995070694,
+          "race": 0.0019348597226700997,
+          "sex": 0.0009213617727000523,
+          "capital_gain": 0.002810153406735135,
+          "hours_per_week": 0.007002349472520371,
+          "native_region": 0.0030404938499101718,
+          "income": 0.002119132077210137
+        },
+        "tvd_2way_mean": 0.02373427926475331,
+        "tvd_2way_max": 0.09075413461095502
+      },
+      "tstr": {
+        "auc": 0.8284538312965526,
+        "accuracy": 0.8178551686014373,
+        "auc_rare": 0.8548951048951049,
+        "accuracy_rare": 0.77,
+        "auc_other": 0.828322742452593,
+        "n_test_rare": 100
+      },
+      "rare_subgroup": {
+        "real_share": 0.01036531994287557,
+        "release_share": 0.010964205095130602,
+        "real_positive_rate": 0.14222222222222222,
+        "release_positive_rate": 0.25210084033613445,
+        "conditional_tvd_rare": 0.08306069094304389,
+        "conditional_tvd_majority": 0.006630340792162549
+      },
+      "mia_dcr": {
+        "auc": 0.511135875,
+        "exact_match_rate_members": 0.0675,
+        "exact_match_rate_non_members": 0.0665,
+        "median_dcr_members": 0.01274557145398633,
+        "median_dcr_non_members": 0.013025135334332989,
+        "n_each": 2000
+      },
+      "qi_uniqueness": {
+        "release_rows_matching_train_unique": 0.09572948818353527,
+        "holdout_rows_matching_train_unique": 0.09738345310484614
+      },
+      "anonymeter": {
+        "singling_out": {
+          "risk": 0.07094790297194357,
+          "ci": [
+            0.04134594591742522,
+            0.10054986002646193
+          ],
+          "attack_rate": 0.09709548222739021
+        },
+        "linkability": {
+          "risk": 0.002012393407670101,
+          "ci": [
+            0.0,
+            0.01610985250061603
+          ],
+          "attack_rate": 0.015720678145237494
+        },
+        "inference_capital_gain": {
+          "risk": 0.0,
+          "ci": [
+            0.0,
+            0.12621020621041604
+          ],
+          "attack_rate": 0.8588108215023896
+        },
+        "max_risk": 0.07094790297194357,
+        "max_risk_ci_high": 0.12621020621041604
+      },
+      "passes_risk_gate": true
+    }
+  ],
+  "recommendation": {
+    "passing": [
+      "CTGAN-style GAN",
+      "Gaussian copula",
+      "DP tree (MST-style) eps=1",
+      "DP tree (MST-style) eps=10",
+      "DP tree (MST-style) eps=3",
+      "DP tree (MST-style) eps=0.3"
+    ],
+    "best": "CTGAN-style GAN",
+    "best_formal_dp": "DP tree (MST-style) eps=1",
+    "rule": "pass = every Anonymeter risk has 95% CI lower bound <= max_attack_risk and DCR MIA AUC <= max_mia_auc; DP pick = smallest epsilon within utility_tolerance TSTR AUC of the best passing DP file"
+  },
+  "budget": {
+    "epsilon_total": 4.0,
+    "delta_total": 1e-05,
+    "epsilon_spent": 3.5,
+    "delta_spent": 1e-06,
+    "ledger": [
+      {
+        "label": "aggregate tables",
+        "epsilon": 1.0,
+        "delta": 0.0
+      },
+      {
+        "label": "query server",
+        "epsilon": 0.5,
+        "delta": 0.0
+      },
+      {
+        "label": "DP logistic regression (objective perturbation) eps=1.0",
+        "epsilon": 1.0,
+        "delta": 0.0
+      },
+      {
+        "label": "DP synthetic microdata (MST-style) eps=1.0",
+        "epsilon": 1.0,
+        "delta": 1e-06
+      }
+    ],
+    "over_budget_request_refused": true,
+    "within_budget": true
+  },
+  "zcdp_check": {
+    "epsilon": 1.0,
+    "rho_spent": 0.02435591313599926,
+    "eps_from_rho": 1.0
+  },
+  "timings": {
+    "data": 0.42,
+    "aggregates": 1.22,
+    "query_server": 0.15,
+    "dp_model": 20.6,
+    "eval_raw": 19.71,
+    "eval_kanon": 13.93,
+    "copula": 14.7,
+    "ctgan_fit": 353.11,
+    "ctgan_eval": 16.18,
+    "dp_synth": 59.55,
+    "total_seconds": 499.6
+  }
+}
