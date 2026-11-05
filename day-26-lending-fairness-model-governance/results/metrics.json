@@ -1,0 +1,2615 @@
+{
+  "config": {
+    "data_mode": "auto",
+    "n": 40000,
+    "seed": 20261105,
+    "approval_rate": 0.7,
+    "n_boot": 1000,
+    "auc_tolerance": 0.02,
+    "rw_alphas": [
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "eg_eps": [
+      0.1,
+      0.05,
+      0.03,
+      0.02,
+      0.01
+    ],
+    "eg_max_iter": 30,
+    "cf_max": null,
+    "cf_K": 12,
+    "mono_check_n": 200
+  },
+  "environment": {
+    "python": "3.11.17"
+  },
+  "data": {
+    "path_used": "synthetic_generator",
+    "attempts": [
+      {
+        "source": "hmda",
+        "url": "https://ffiec.cfpb.gov/v2/data-browser-api/view/csv?states=DE&years=2022&actions_taken=1,3&loan_purposes=1",
+        "ok": false,
+        "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+      },
+      {
+        "source": "german_credit",
+        "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data",
+        "ok": false,
+        "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+      },
+      {
+        "source": "synthetic_generator",
+        "ok": true,
+        "rows": 40000,
+        "seed": 20261105
+      }
+    ],
+    "synthetic": true,
+    "rows": 40000,
+    "split_scheme": "time: train months 1-14, validation 15-18, out-of-time test 19-24",
+    "rows_train_valid_test": [
+      23547,
+      6586,
+      9867
+    ],
+    "protected_attribute": "group",
+    "reference_group": "A",
+    "group_share": {
+      "A": 0.6215,
+      "B": 0.2288,
+      "C": 0.1497
+    },
+    "bad_rate": 0.1573,
+    "bad_rate_by_group": {
+      "A": 0.1058,
+      "B": 0.2657,
+      "C": 0.2057
+    },
+    "bad_rate_unbiased": 0.1139,
+    "bad_rate_unbiased_by_group": {
+      "A": 0.1023,
+      "B": 0.1377,
+      "C": 0.1256
+    },
+    "label_bias_share_of_recorded_bads": 0.2763
+  },
+  "models": {
+    "scorecard_woe_lr": {
+      "family": "baseline",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "savings_balance",
+        "loan_amount",
+        "months_at_address",
+        "zip_cluster"
+      ],
+      "test": {
+        "auc": 0.7653,
+        "gini": 0.5307,
+        "ks": 0.4066,
+        "brier": 0.1249,
+        "approval_rate": 0.6761,
+        "bad_rate_approved": 0.0952,
+        "bad_rate_declined": 0.3533,
+        "balanced_accuracy": 0.6925,
+        "auc_vs_unbiased_label": 0.7308,
+        "balanced_accuracy_vs_unbiased_label": 0.664,
+        "unbiased_bad_rate_approved": 0.076
+      },
+      "valid_auc": 0.7508,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7879,
+          "B": 0.4515,
+          "C": 0.5635
+        },
+        "tpr_good": {
+          "A": 0.8277,
+          "B": 0.5424,
+          "C": 0.6427
+        },
+        "fpr_bad": {
+          "A": 0.5013,
+          "B": 0.2356,
+          "C": 0.2997
+        },
+        "air": {
+          "B": 0.573,
+          "C": 0.7152
+        },
+        "air_min": 0.573,
+        "dp_difference": 0.3364,
+        "eo_difference": 0.2852,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.5465,
+            0.6007
+          ],
+          "C": [
+            0.6812,
+            0.7461
+          ]
+        },
+        "air_min_ci": [
+          0.5465,
+          0.6007
+        ],
+        "dp_difference_ci": [
+          0.3126,
+          0.3599
+        ],
+        "eo_difference_ci": [
+          0.2632,
+          0.3175
+        ],
+        "p_air_min_below_0_8": 1.0,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.5867,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9372
+          },
+          "approval_rate": {
+            "F": 0.6525,
+            "M": 0.6963
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.3127
+          },
+          "approval_rate": {
+            "62+": 0.8759,
+            "<62": 0.6672
+          }
+        }
+      }
+    },
+    "gbm": {
+      "family": "challenger",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "savings_balance",
+        "loan_amount",
+        "months_at_address",
+        "zip_cluster"
+      ],
+      "test": {
+        "auc": 0.7658,
+        "gini": 0.5316,
+        "ks": 0.3976,
+        "brier": 0.1246,
+        "approval_rate": 0.67,
+        "bad_rate_approved": 0.0935,
+        "bad_rate_declined": 0.352,
+        "balanced_accuracy": 0.6946,
+        "auc_vs_unbiased_label": 0.7323,
+        "balanced_accuracy_vs_unbiased_label": 0.668,
+        "unbiased_bad_rate_approved": 0.0741
+      },
+      "valid_auc": 0.7485,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7794,
+          "B": 0.4545,
+          "C": 0.5536
+        },
+        "tpr_good": {
+          "A": 0.8208,
+          "B": 0.5443,
+          "C": 0.6349
+        },
+        "fpr_bad": {
+          "A": 0.4811,
+          "B": 0.2415,
+          "C": 0.2824
+        },
+        "air": {
+          "B": 0.5832,
+          "C": 0.7103
+        },
+        "air_min": 0.5832,
+        "dp_difference": 0.3248,
+        "eo_difference": 0.2764,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.5578,
+            0.6105
+          ],
+          "C": [
+            0.6764,
+            0.7435
+          ]
+        },
+        "air_min_ci": [
+          0.5578,
+          0.6105
+        ],
+        "dp_difference_ci": [
+          0.3012,
+          0.3462
+        ],
+        "eo_difference_ci": [
+          0.2524,
+          0.3024
+        ],
+        "p_air_min_below_0_8": 1.0,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.5997,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9532
+          },
+          "approval_rate": {
+            "F": 0.6528,
+            "M": 0.6848
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.3368
+          },
+          "approval_rate": {
+            "62+": 0.8831,
+            "<62": 0.6606
+          }
+        }
+      }
+    },
+    "gbm_monotone": {
+      "family": "candidate",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "savings_balance",
+        "loan_amount",
+        "months_at_address",
+        "zip_cluster"
+      ],
+      "test": {
+        "auc": 0.7679,
+        "gini": 0.5358,
+        "ks": 0.4016,
+        "brier": 0.1244,
+        "approval_rate": 0.6687,
+        "bad_rate_approved": 0.0918,
+        "bad_rate_declined": 0.3542,
+        "balanced_accuracy": 0.698,
+        "auc_vs_unbiased_label": 0.7366,
+        "balanced_accuracy_vs_unbiased_label": 0.6735,
+        "unbiased_bad_rate_approved": 0.0721
+      },
+      "valid_auc": 0.7535,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7741,
+          "B": 0.4638,
+          "C": 0.5522
+        },
+        "tpr_good": {
+          "A": 0.817,
+          "B": 0.5574,
+          "C": 0.6332
+        },
+        "fpr_bad": {
+          "A": 0.465,
+          "B": 0.2415,
+          "C": 0.2824
+        },
+        "air": {
+          "B": 0.5991,
+          "C": 0.7134
+        },
+        "air_min": 0.5991,
+        "dp_difference": 0.3103,
+        "eo_difference": 0.2596,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.5719,
+            0.6262
+          ],
+          "C": [
+            0.68,
+            0.7469
+          ]
+        },
+        "air_min_ci": [
+          0.5719,
+          0.6262
+        ],
+        "dp_difference_ci": [
+          0.2874,
+          0.3329
+        ],
+        "eo_difference_ci": [
+          0.2354,
+          0.2871
+        ],
+        "p_air_min_below_0_8": 1.0,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.627,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9613
+          },
+          "approval_rate": {
+            "F": 0.6545,
+            "M": 0.6809
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.355
+          },
+          "approval_rate": {
+            "62+": 0.8926,
+            "<62": 0.6588
+          }
+        }
+      }
+    },
+    "lda_all_mono_l7": {
+      "family": "lda_candidate",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "savings_balance",
+        "loan_amount",
+        "months_at_address",
+        "zip_cluster"
+      ],
+      "test": {
+        "auc": 0.7703,
+        "gini": 0.5405,
+        "ks": 0.4071,
+        "brier": 0.1236,
+        "approval_rate": 0.6734,
+        "bad_rate_approved": 0.0932,
+        "bad_rate_declined": 0.3553,
+        "balanced_accuracy": 0.6963,
+        "auc_vs_unbiased_label": 0.7372,
+        "balanced_accuracy_vs_unbiased_label": 0.6722,
+        "unbiased_bad_rate_approved": 0.073
+      },
+      "valid_auc": 0.7561,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.782,
+          "B": 0.4594,
+          "C": 0.5576
+        },
+        "tpr_good": {
+          "A": 0.8239,
+          "B": 0.5518,
+          "C": 0.6375
+        },
+        "fpr_bad": {
+          "A": 0.4798,
+          "B": 0.24,
+          "C": 0.2911
+        },
+        "air": {
+          "B": 0.5874,
+          "C": 0.713
+        },
+        "air_min": 0.5874,
+        "dp_difference": 0.3226,
+        "eo_difference": 0.2721,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.5607,
+            0.6137
+          ],
+          "C": [
+            0.6783,
+            0.7447
+          ]
+        },
+        "air_min_ci": [
+          0.5607,
+          0.6137
+        ],
+        "dp_difference_ci": [
+          0.301,
+          0.3452
+        ],
+        "eo_difference_ci": [
+          0.2489,
+          0.299
+        ],
+        "p_air_min_below_0_8": 1.0,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.6009,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9562
+          },
+          "approval_rate": {
+            "F": 0.6572,
+            "M": 0.6873
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.345
+          },
+          "approval_rate": {
+            "62+": 0.8926,
+            "<62": 0.6636
+          }
+        }
+      },
+      "lda": {
+        "feature_set": "all",
+        "num_leaves": 7,
+        "valid_auc": 0.7561,
+        "valid_air_min": 0.6009
+      }
+    },
+    "lda_all_mono_l15": {
+      "family": "lda_candidate",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "savings_balance",
+        "loan_amount",
+        "months_at_address",
+        "zip_cluster"
+      ],
+      "test": {
+        "auc": 0.7679,
+        "gini": 0.5358,
+        "ks": 0.4016,
+        "brier": 0.1244,
+        "approval_rate": 0.6687,
+        "bad_rate_approved": 0.0918,
+        "bad_rate_declined": 0.3542,
+        "balanced_accuracy": 0.698,
+        "auc_vs_unbiased_label": 0.7366,
+        "balanced_accuracy_vs_unbiased_label": 0.6735,
+        "unbiased_bad_rate_approved": 0.0721
+      },
+      "valid_auc": 0.7535,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7741,
+          "B": 0.4638,
+          "C": 0.5522
+        },
+        "tpr_good": {
+          "A": 0.817,
+          "B": 0.5574,
+          "C": 0.6332
+        },
+        "fpr_bad": {
+          "A": 0.465,
+          "B": 0.2415,
+          "C": 0.2824
+        },
+        "air": {
+          "B": 0.5991,
+          "C": 0.7134
+        },
+        "air_min": 0.5991,
+        "dp_difference": 0.3103,
+        "eo_difference": 0.2596,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.5719,
+            0.6262
+          ],
+          "C": [
+            0.68,
+            0.7469
+          ]
+        },
+        "air_min_ci": [
+          0.5719,
+          0.6262
+        ],
+        "dp_difference_ci": [
+          0.2874,
+          0.3329
+        ],
+        "eo_difference_ci": [
+          0.2354,
+          0.2871
+        ],
+        "p_air_min_below_0_8": 1.0,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.627,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9613
+          },
+          "approval_rate": {
+            "F": 0.6545,
+            "M": 0.6809
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.355
+          },
+          "approval_rate": {
+            "62+": 0.8926,
+            "<62": 0.6588
+          }
+        }
+      },
+      "lda": {
+        "feature_set": "all",
+        "num_leaves": 15,
+        "valid_auc": 0.7535,
+        "valid_air_min": 0.627
+      }
+    },
+    "lda_no_geography_mono_l7": {
+      "family": "lda_candidate",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "savings_balance",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.7656,
+        "gini": 0.5313,
+        "ks": 0.399,
+        "brier": 0.1248,
+        "approval_rate": 0.6689,
+        "bad_rate_approved": 0.0921,
+        "bad_rate_declined": 0.3538,
+        "balanced_accuracy": 0.6974,
+        "auc_vs_unbiased_label": 0.7488,
+        "balanced_accuracy_vs_unbiased_label": 0.686,
+        "unbiased_bad_rate_approved": 0.0679
+      },
+      "valid_auc": 0.7396,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7265,
+          "B": 0.5551,
+          "C": 0.6081
+        },
+        "tpr_good": {
+          "A": 0.7719,
+          "B": 0.6642,
+          "C": 0.6938
+        },
+        "fpr_bad": {
+          "A": 0.3989,
+          "B": 0.2963,
+          "C": 0.3228
+        },
+        "air": {
+          "B": 0.7641,
+          "C": 0.8371
+        },
+        "air_min": 0.7641,
+        "dp_difference": 0.1713,
+        "eo_difference": 0.1078,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.7354,
+            0.7916
+          ],
+          "C": [
+            0.7985,
+            0.8688
+          ]
+        },
+        "air_min_ci": [
+          0.7354,
+          0.7916
+        ],
+        "dp_difference_ci": [
+          0.1503,
+          0.194
+        ],
+        "eo_difference_ci": [
+          0.0923,
+          0.1564
+        ],
+        "p_air_min_below_0_8": 0.997,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.7779,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9714
+          },
+          "approval_rate": {
+            "F": 0.6585,
+            "M": 0.6778
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.3622
+          },
+          "approval_rate": {
+            "62+": 0.8974,
+            "<62": 0.6588
+          }
+        }
+      },
+      "lda": {
+        "feature_set": "no_geography",
+        "num_leaves": 7,
+        "valid_auc": 0.7396,
+        "valid_air_min": 0.7779
+      }
+    },
+    "lda_no_geography_mono_l15": {
+      "family": "lda_candidate",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "savings_balance",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.765,
+        "gini": 0.53,
+        "ks": 0.3947,
+        "brier": 0.1251,
+        "approval_rate": 0.6652,
+        "bad_rate_approved": 0.0929,
+        "bad_rate_declined": 0.3494,
+        "balanced_accuracy": 0.6945,
+        "auc_vs_unbiased_label": 0.7488,
+        "balanced_accuracy_vs_unbiased_label": 0.6826,
+        "unbiased_bad_rate_approved": 0.0687
+      },
+      "valid_auc": 0.7405,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7247,
+          "B": 0.5512,
+          "C": 0.5975
+        },
+        "tpr_good": {
+          "A": 0.7697,
+          "B": 0.6561,
+          "C": 0.6825
+        },
+        "fpr_bad": {
+          "A": 0.4003,
+          "B": 0.3022,
+          "C": 0.3141
+        },
+        "air": {
+          "B": 0.7606,
+          "C": 0.8245
+        },
+        "air_min": 0.7606,
+        "dp_difference": 0.1735,
+        "eo_difference": 0.1136,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.7324,
+            0.7901
+          ],
+          "C": [
+            0.7857,
+            0.8598
+          ]
+        },
+        "air_min_ci": [
+          0.7324,
+          0.7901
+        ],
+        "dp_difference_ci": [
+          0.1504,
+          0.1953
+        ],
+        "eo_difference_ci": [
+          0.0951,
+          0.1541
+        ],
+        "p_air_min_below_0_8": 0.995,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.7739,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9705
+          },
+          "approval_rate": {
+            "F": 0.6545,
+            "M": 0.6744
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.347
+          },
+          "approval_rate": {
+            "62+": 0.8831,
+            "<62": 0.6556
+          }
+        }
+      },
+      "lda": {
+        "feature_set": "no_geography",
+        "num_leaves": 15,
+        "valid_auc": 0.7405,
+        "valid_air_min": 0.7739
+      }
+    },
+    "lda_no_geography_no_savings_balance_mono_l7": {
+      "family": "lda_candidate",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.7634,
+        "gini": 0.5269,
+        "ks": 0.397,
+        "brier": 0.1251,
+        "approval_rate": 0.6657,
+        "bad_rate_approved": 0.0924,
+        "bad_rate_declined": 0.3507,
+        "balanced_accuracy": 0.6958,
+        "auc_vs_unbiased_label": 0.7482,
+        "balanced_accuracy_vs_unbiased_label": 0.6828,
+        "unbiased_bad_rate_approved": 0.0687
+      },
+      "valid_auc": 0.7385,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7233,
+          "B": 0.5512,
+          "C": 0.6055
+        },
+        "tpr_good": {
+          "A": 0.7676,
+          "B": 0.6604,
+          "C": 0.692
+        },
+        "fpr_bad": {
+          "A": 0.4043,
+          "B": 0.2919,
+          "C": 0.317
+        },
+        "air": {
+          "B": 0.762,
+          "C": 0.837
+        },
+        "air_min": 0.762,
+        "dp_difference": 0.1722,
+        "eo_difference": 0.1125,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.7345,
+            0.7915
+          ],
+          "C": [
+            0.7979,
+            0.8702
+          ]
+        },
+        "air_min_ci": [
+          0.7345,
+          0.7915
+        ],
+        "dp_difference_ci": [
+          0.1495,
+          0.194
+        ],
+        "eo_difference_ci": [
+          0.0927,
+          0.1627
+        ],
+        "p_air_min_below_0_8": 0.993,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.7963,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9646
+          },
+          "approval_rate": {
+            "F": 0.6528,
+            "M": 0.6767
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.3847
+          },
+          "approval_rate": {
+            "62+": 0.9069,
+            "<62": 0.655
+          }
+        }
+      },
+      "lda": {
+        "feature_set": "no_geography_no_savings_balance",
+        "num_leaves": 7,
+        "valid_auc": 0.7385,
+        "valid_air_min": 0.7963
+      }
+    },
+    "lda_no_geography_no_savings_balance_mono_l15": {
+      "family": "lda_candidate",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.7626,
+        "gini": 0.5251,
+        "ks": 0.392,
+        "brier": 0.1253,
+        "approval_rate": 0.6705,
+        "bad_rate_approved": 0.0954,
+        "bad_rate_declined": 0.3485,
+        "balanced_accuracy": 0.6905,
+        "auc_vs_unbiased_label": 0.7474,
+        "balanced_accuracy_vs_unbiased_label": 0.6777,
+        "unbiased_bad_rate_approved": 0.0709
+      },
+      "valid_auc": 0.7378,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7275,
+          "B": 0.5578,
+          "C": 0.6108
+        },
+        "tpr_good": {
+          "A": 0.7703,
+          "B": 0.6629,
+          "C": 0.6972
+        },
+        "fpr_bad": {
+          "A": 0.4191,
+          "B": 0.3081,
+          "C": 0.3228
+        },
+        "air": {
+          "B": 0.7667,
+          "C": 0.8396
+        },
+        "air_min": 0.7667,
+        "dp_difference": 0.1697,
+        "eo_difference": 0.111,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.7355,
+            0.7966
+          ],
+          "C": [
+            0.8016,
+            0.8751
+          ]
+        },
+        "air_min_ci": [
+          0.7355,
+          0.7966
+        ],
+        "dp_difference_ci": [
+          0.1474,
+          0.1931
+        ],
+        "eo_difference_ci": [
+          0.0954,
+          0.1687
+        ],
+        "p_air_min_below_0_8": 0.987,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.787,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.966
+          },
+          "approval_rate": {
+            "F": 0.658,
+            "M": 0.6812
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.3625
+          },
+          "approval_rate": {
+            "62+": 0.8998,
+            "<62": 0.6604
+          }
+        }
+      },
+      "lda": {
+        "feature_set": "no_geography_no_savings_balance",
+        "num_leaves": 15,
+        "valid_auc": 0.7378,
+        "valid_air_min": 0.787
+      }
+    },
+    "reweighing_a0.5": {
+      "family": "reweighing",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.7635,
+        "gini": 0.5271,
+        "ks": 0.3961,
+        "brier": 0.1252,
+        "approval_rate": 0.6641,
+        "bad_rate_approved": 0.0919,
+        "bad_rate_declined": 0.3506,
+        "balanced_accuracy": 0.6966,
+        "auc_vs_unbiased_label": 0.7493,
+        "balanced_accuracy_vs_unbiased_label": 0.6851,
+        "unbiased_bad_rate_approved": 0.0678
+      },
+      "valid_auc": 0.7391,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7171,
+          "B": 0.5564,
+          "C": 0.6128
+        },
+        "tpr_good": {
+          "A": 0.7624,
+          "B": 0.6654,
+          "C": 0.7007
+        },
+        "fpr_bad": {
+          "A": 0.3908,
+          "B": 0.2978,
+          "C": 0.3199
+        },
+        "air": {
+          "B": 0.7759,
+          "C": 0.8545
+        },
+        "air_min": 0.7759,
+        "dp_difference": 0.1607,
+        "eo_difference": 0.097,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.7469,
+            0.8066
+          ],
+          "C": [
+            0.8149,
+            0.8916
+          ]
+        },
+        "air_min_ci": [
+          0.7469,
+          0.8066
+        ],
+        "dp_difference_ci": [
+          0.1375,
+          0.1828
+        ],
+        "eo_difference_ci": [
+          0.0822,
+          0.1465
+        ],
+        "p_air_min_below_0_8": 0.941,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.8044,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9722
+          },
+          "approval_rate": {
+            "F": 0.6541,
+            "M": 0.6728
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.3532
+          },
+          "approval_rate": {
+            "62+": 0.8854,
+            "<62": 0.6543
+          }
+        }
+      }
+    },
+    "reweighing_a1": {
+      "family": "reweighing",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.7615,
+        "gini": 0.5231,
+        "ks": 0.3934,
+        "brier": 0.1256,
+        "approval_rate": 0.665,
+        "bad_rate_approved": 0.0949,
+        "bad_rate_declined": 0.3452,
+        "balanced_accuracy": 0.6899,
+        "auc_vs_unbiased_label": 0.7486,
+        "balanced_accuracy_vs_unbiased_label": 0.6789,
+        "unbiased_bad_rate_approved": 0.0699
+      },
+      "valid_auc": 0.7366,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7158,
+          "B": 0.5665,
+          "C": 0.6088
+        },
+        "tpr_good": {
+          "A": 0.7598,
+          "B": 0.671,
+          "C": 0.6946
+        },
+        "fpr_bad": {
+          "A": 0.3989,
+          "B": 0.3185,
+          "C": 0.3228
+        },
+        "air": {
+          "B": 0.7915,
+          "C": 0.8505
+        },
+        "air_min": 0.7915,
+        "dp_difference": 0.1493,
+        "eo_difference": 0.0887,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.7623,
+            0.8227
+          ],
+          "C": [
+            0.8138,
+            0.8833
+          ]
+        },
+        "air_min_ci": [
+          0.7623,
+          0.8227
+        ],
+        "dp_difference_ci": [
+          0.1259,
+          0.1714
+        ],
+        "eo_difference_ci": [
+          0.074,
+          0.1449
+        ],
+        "p_air_min_below_0_8": 0.729,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.8178,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9794
+          },
+          "approval_rate": {
+            "F": 0.6576,
+            "M": 0.6714
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.332
+          },
+          "approval_rate": {
+            "62+": 0.8735,
+            "<62": 0.6558
+          }
+        }
+      }
+    },
+    "reweighing_a1.5": {
+      "family": "reweighing",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.7601,
+        "gini": 0.5203,
+        "ks": 0.3892,
+        "brier": 0.1259,
+        "approval_rate": 0.6674,
+        "bad_rate_approved": 0.0943,
+        "bad_rate_declined": 0.3483,
+        "balanced_accuracy": 0.692,
+        "auc_vs_unbiased_label": 0.7486,
+        "balanced_accuracy_vs_unbiased_label": 0.6798,
+        "unbiased_bad_rate_approved": 0.0699
+      },
+      "valid_auc": 0.735,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7173,
+          "B": 0.5714,
+          "C": 0.6108
+        },
+        "tpr_good": {
+          "A": 0.7613,
+          "B": 0.6798,
+          "C": 0.6972
+        },
+        "fpr_bad": {
+          "A": 0.4003,
+          "B": 0.3141,
+          "C": 0.3228
+        },
+        "air": {
+          "B": 0.7966,
+          "C": 0.8515
+        },
+        "air_min": 0.7966,
+        "dp_difference": 0.1459,
+        "eo_difference": 0.0862,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.7673,
+            0.8286
+          ],
+          "C": [
+            0.8123,
+            0.8874
+          ]
+        },
+        "air_min_ci": [
+          0.7673,
+          0.8281
+        ],
+        "dp_difference_ci": [
+          0.1217,
+          0.1683
+        ],
+        "eo_difference_ci": [
+          0.0698,
+          0.1421
+        ],
+        "p_air_min_below_0_8": 0.599,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.8314,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9773
+          },
+          "approval_rate": {
+            "F": 0.6591,
+            "M": 0.6744
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.3155
+          },
+          "approval_rate": {
+            "62+": 0.8663,
+            "<62": 0.6586
+          }
+        }
+      }
+    },
+    "reweighing_a2": {
+      "family": "reweighing",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.7577,
+        "gini": 0.5155,
+        "ks": 0.3874,
+        "brier": 0.1267,
+        "approval_rate": 0.6681,
+        "bad_rate_approved": 0.0953,
+        "bad_rate_declined": 0.3469,
+        "balanced_accuracy": 0.69,
+        "auc_vs_unbiased_label": 0.7471,
+        "balanced_accuracy_vs_unbiased_label": 0.6794,
+        "unbiased_bad_rate_approved": 0.0701
+      },
+      "valid_auc": 0.7319,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7145,
+          "B": 0.5762,
+          "C": 0.6194
+        },
+        "tpr_good": {
+          "A": 0.7594,
+          "B": 0.6816,
+          "C": 0.7033
+        },
+        "fpr_bad": {
+          "A": 0.3908,
+          "B": 0.3259,
+          "C": 0.3401
+        },
+        "air": {
+          "B": 0.8065,
+          "C": 0.867
+        },
+        "air_min": 0.8065,
+        "dp_difference": 0.1383,
+        "eo_difference": 0.0778,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.776,
+            0.8366
+          ],
+          "C": [
+            0.8279,
+            0.9025
+          ]
+        },
+        "air_min_ci": [
+          0.776,
+          0.8366
+        ],
+        "dp_difference_ci": [
+          0.1158,
+          0.1608
+        ],
+        "eo_difference_ci": [
+          0.0621,
+          0.1231
+        ],
+        "p_air_min_below_0_8": 0.349,
+        "passes_four_fifths": true
+      },
+      "valid_air_min": 0.8336,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9766
+          },
+          "approval_rate": {
+            "F": 0.6596,
+            "M": 0.6754
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.3026
+          },
+          "approval_rate": {
+            "62+": 0.8592,
+            "<62": 0.6596
+          }
+        }
+      }
+    },
+    "threshold_opt_dp": {
+      "family": "threshold_optimizer",
+      "uses_protected_attribute_at_decision": true,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "approval_rate": 0.5615,
+        "bad_rate_approved": 0.085,
+        "balanced_accuracy": 0.6793,
+        "balanced_accuracy_vs_unbiased_label": 0.6793,
+        "unbiased_bad_rate_approved": 0.0585
+      },
+      "valid_auc": null,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.566,
+          "B": 0.5573,
+          "C": 0.5496
+        },
+        "tpr_good": {
+          "A": 0.6114,
+          "B": 0.666,
+          "C": 0.6349
+        },
+        "fpr_bad": {
+          "A": 0.2385,
+          "B": 0.2993,
+          "C": 0.2651
+        },
+        "air": {
+          "B": 0.9847,
+          "C": 0.971
+        },
+        "air_min": 0.971,
+        "dp_difference": 0.0164,
+        "eo_difference": 0.0607,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.945,
+            1.0275
+          ],
+          "C": [
+            0.9215,
+            1.0208
+          ]
+        },
+        "air_min_ci": [
+          0.9212,
+          1.0044
+        ],
+        "dp_difference_ci": [
+          0.0045,
+          0.0467
+        ],
+        "eo_difference_ci": [
+          0.0413,
+          0.1113
+        ],
+        "p_air_min_below_0_8": 0.0,
+        "passes_four_fifths": true
+      },
+      "valid_air_min": 0.9916,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9756
+          },
+          "approval_rate": {
+            "F": 0.554,
+            "M": 0.5679
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.5531
+          },
+          "approval_rate": {
+            "62+": 0.852,
+            "<62": 0.5486
+          }
+        }
+      }
+    },
+    "threshold_opt_eo": {
+      "family": "threshold_optimizer",
+      "uses_protected_attribute_at_decision": true,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "approval_rate": 0.6229,
+        "bad_rate_approved": 0.0976,
+        "balanced_accuracy": 0.6722,
+        "balanced_accuracy_vs_unbiased_label": 0.6724,
+        "unbiased_bad_rate_approved": 0.0682
+      },
+      "valid_auc": null,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.6427,
+          "B": 0.592,
+          "C": 0.5895
+        },
+        "tpr_good": {
+          "A": 0.6855,
+          "B": 0.6879,
+          "C": 0.6747
+        },
+        "fpr_bad": {
+          "A": 0.3342,
+          "B": 0.3644,
+          "C": 0.3055
+        },
+        "air": {
+          "B": 0.9212,
+          "C": 0.9172
+        },
+        "air_min": 0.9172,
+        "dp_difference": 0.0532,
+        "eo_difference": 0.059,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.8853,
+            0.9568
+          ],
+          "C": [
+            0.8759,
+            0.9577
+          ]
+        },
+        "air_min_ci": [
+          0.8741,
+          0.9422
+        ],
+        "dp_difference_ci": [
+          0.0367,
+          0.0821
+        ],
+        "eo_difference_ci": [
+          0.0221,
+          0.1165
+        ],
+        "p_air_min_below_0_8": 0.0,
+        "passes_four_fifths": true
+      },
+      "valid_air_min": 0.9178,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9678
+          },
+          "approval_rate": {
+            "F": 0.6119,
+            "M": 0.6323
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.3823
+          },
+          "approval_rate": {
+            "62+": 0.8473,
+            "<62": 0.6129
+          }
+        }
+      }
+    },
+    "exp_gradient_dp0.1": {
+      "family": "exponentiated_gradient",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.7076,
+        "gini": 0.4152,
+        "ks": 0.3848,
+        "brier": 0.2616,
+        "approval_rate": 0.6742,
+        "bad_rate_approved": 0.0956,
+        "bad_rate_declined": 0.3509,
+        "balanced_accuracy": 0.6909,
+        "auc_vs_unbiased_label": 0.6965,
+        "balanced_accuracy_vs_unbiased_label": 0.6802,
+        "unbiased_bad_rate_approved": 0.0704
+      },
+      "valid_auc": 0.6829,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7248,
+          "B": 0.5753,
+          "C": 0.6188
+        },
+        "tpr_good": {
+          "A": 0.7706,
+          "B": 0.6798,
+          "C": 0.699
+        },
+        "fpr_bad": {
+          "A": 0.3949,
+          "B": 0.3274,
+          "C": 0.3516
+        },
+        "air": {
+          "B": 0.7937,
+          "C": 0.8537
+        },
+        "air_min": 0.7937,
+        "dp_difference": 0.1495,
+        "eo_difference": 0.0909,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.7645,
+            0.8239
+          ],
+          "C": [
+            0.8179,
+            0.8888
+          ]
+        },
+        "air_min_ci": [
+          0.7645,
+          0.8239
+        ],
+        "dp_difference_ci": [
+          0.127,
+          0.1722
+        ],
+        "eo_difference_ci": [
+          0.0728,
+          0.1233
+        ],
+        "p_air_min_below_0_8": 0.666,
+        "passes_four_fifths": false
+      },
+      "valid_air_min": 0.7984,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9541
+          },
+          "approval_rate": {
+            "F": 0.6572,
+            "M": 0.6888
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.3547
+          },
+          "approval_rate": {
+            "62+": 0.8998,
+            "<62": 0.6642
+          }
+        }
+      }
+    },
+    "exp_gradient_dp0.05": {
+      "family": "exponentiated_gradient",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.7,
+        "gini": 0.4,
+        "ks": 0.3758,
+        "brier": 0.243,
+        "approval_rate": 0.6965,
+        "bad_rate_approved": 0.1043,
+        "bad_rate_declined": 0.3496,
+        "balanced_accuracy": 0.6766,
+        "auc_vs_unbiased_label": 0.6905,
+        "balanced_accuracy_vs_unbiased_label": 0.6717,
+        "unbiased_bad_rate_approved": 0.0751
+      },
+      "valid_auc": 0.6756,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7317,
+          "B": 0.6254,
+          "C": 0.6613
+        },
+        "tpr_good": {
+          "A": 0.7747,
+          "B": 0.7235,
+          "C": 0.7396
+        },
+        "fpr_bad": {
+          "A": 0.4218,
+          "B": 0.3926,
+          "C": 0.4006
+        },
+        "air": {
+          "B": 0.8547,
+          "C": 0.9038
+        },
+        "air_min": 0.8547,
+        "dp_difference": 0.1063,
+        "eo_difference": 0.0513,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.8266,
+            0.8839
+          ],
+          "C": [
+            0.8676,
+            0.9369
+          ]
+        },
+        "air_min_ci": [
+          0.8266,
+          0.8839
+        ],
+        "dp_difference_ci": [
+          0.0842,
+          0.1273
+        ],
+        "eo_difference_ci": [
+          0.0368,
+          0.0927
+        ],
+        "p_air_min_below_0_8": 0.0,
+        "passes_four_fifths": true
+      },
+      "valid_air_min": 0.8697,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9797
+          },
+          "approval_rate": {
+            "F": 0.6888,
+            "M": 0.7031
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.2429
+          },
+          "approval_rate": {
+            "62+": 0.8568,
+            "<62": 0.6894
+          }
+        }
+      }
+    },
+    "exp_gradient_dp0.03": {
+      "family": "exponentiated_gradient",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.6982,
+        "gini": 0.3965,
+        "ks": 0.3696,
+        "brier": 0.2533,
+        "approval_rate": 0.6995,
+        "bad_rate_approved": 0.1065,
+        "bad_rate_declined": 0.347,
+        "balanced_accuracy": 0.6722,
+        "auc_vs_unbiased_label": 0.6899,
+        "balanced_accuracy_vs_unbiased_label": 0.6686,
+        "unbiased_bad_rate_approved": 0.0764
+      },
+      "valid_auc": 0.6743,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7289,
+          "B": 0.6425,
+          "C": 0.6667
+        },
+        "tpr_good": {
+          "A": 0.7717,
+          "B": 0.7422,
+          "C": 0.7379
+        },
+        "fpr_bad": {
+          "A": 0.4205,
+          "B": 0.4059,
+          "C": 0.4294
+        },
+        "air": {
+          "B": 0.8814,
+          "C": 0.9146
+        },
+        "air_min": 0.8814,
+        "dp_difference": 0.0864,
+        "eo_difference": 0.0339,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.8519,
+            0.9113
+          ],
+          "C": [
+            0.8804,
+            0.9499
+          ]
+        },
+        "air_min_ci": [
+          0.8519,
+          0.9102
+        ],
+        "dp_difference_ci": [
+          0.0648,
+          0.1083
+        ],
+        "eo_difference_ci": [
+          0.0242,
+          0.0922
+        ],
+        "p_air_min_below_0_8": 0.0,
+        "passes_four_fifths": true
+      },
+      "valid_air_min": 0.8865,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9827
+          },
+          "approval_rate": {
+            "F": 0.6929,
+            "M": 0.7051
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.2299
+          },
+          "approval_rate": {
+            "62+": 0.852,
+            "<62": 0.6927
+          }
+        }
+      }
+    },
+    "exp_gradient_dp0.02": {
+      "family": "exponentiated_gradient",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.705,
+        "gini": 0.4101,
+        "ks": 0.3696,
+        "brier": 0.2653,
+        "approval_rate": 0.7015,
+        "bad_rate_approved": 0.1073,
+        "bad_rate_declined": 0.3467,
+        "balanced_accuracy": 0.6707,
+        "auc_vs_unbiased_label": 0.6978,
+        "balanced_accuracy_vs_unbiased_label": 0.668,
+        "unbiased_bad_rate_approved": 0.0767
+      },
+      "valid_auc": 0.6795,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7271,
+          "B": 0.6482,
+          "C": 0.6786
+        },
+        "tpr_good": {
+          "A": 0.7703,
+          "B": 0.7459,
+          "C": 0.75
+        },
+        "fpr_bad": {
+          "A": 0.4164,
+          "B": 0.4163,
+          "C": 0.4409
+        },
+        "air": {
+          "B": 0.8915,
+          "C": 0.9333
+        },
+        "air_min": 0.8915,
+        "dp_difference": 0.0789,
+        "eo_difference": 0.0246,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.8615,
+            0.9206
+          ],
+          "C": [
+            0.8994,
+            0.9697
+          ]
+        },
+        "air_min_ci": [
+          0.8615,
+          0.9201
+        ],
+        "dp_difference_ci": [
+          0.0581,
+          0.1009
+        ],
+        "eo_difference_ci": [
+          0.0196,
+          0.0956
+        ],
+        "p_air_min_below_0_8": 0.0,
+        "passes_four_fifths": true
+      },
+      "valid_air_min": 0.8957,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9837
+          },
+          "approval_rate": {
+            "F": 0.6953,
+            "M": 0.7068
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.2117
+          },
+          "approval_rate": {
+            "62+": 0.8425,
+            "<62": 0.6953
+          }
+        }
+      }
+    },
+    "exp_gradient_dp0.01": {
+      "family": "exponentiated_gradient",
+      "uses_protected_attribute_at_decision": false,
+      "features": [
+        "credit_utilization",
+        "debt_to_income",
+        "num_delinquencies",
+        "num_inquiries_6m",
+        "credit_history_months",
+        "annual_income",
+        "employment_years",
+        "loan_amount",
+        "months_at_address"
+      ],
+      "test": {
+        "auc": 0.6781,
+        "gini": 0.3561,
+        "ks": 0.3381,
+        "brier": 0.2587,
+        "approval_rate": 0.7003,
+        "bad_rate_approved": 0.1096,
+        "bad_rate_declined": 0.3405,
+        "balanced_accuracy": 0.6651,
+        "auc_vs_unbiased_label": 0.6799,
+        "balanced_accuracy_vs_unbiased_label": 0.6668,
+        "unbiased_bad_rate_approved": 0.077
+      },
+      "valid_auc": 0.6542,
+      "fairness": {
+        "approval_rate": {
+          "A": 0.7202,
+          "B": 0.6588,
+          "C": 0.6826
+        },
+        "tpr_good": {
+          "A": 0.763,
+          "B": 0.7541,
+          "C": 0.75
+        },
+        "fpr_bad": {
+          "A": 0.4124,
+          "B": 0.4326,
+          "C": 0.4582
+        },
+        "air": {
+          "B": 0.9147,
+          "C": 0.9478
+        },
+        "air_min": 0.9147,
+        "dp_difference": 0.0615,
+        "eo_difference": 0.0458,
+        "n_boot": 1000,
+        "air_ci": {
+          "B": [
+            0.886,
+            0.9463
+          ],
+          "C": [
+            0.9119,
+            0.9848
+          ]
+        },
+        "air_min_ci": [
+          0.886,
+          0.9446
+        ],
+        "dp_difference_ci": [
+          0.0397,
+          0.0826
+        ],
+        "eo_difference_ci": [
+          0.0179,
+          0.1126
+        ],
+        "p_air_min_below_0_8": 0.0,
+        "passes_four_fifths": true
+      },
+      "valid_air_min": 0.9153,
+      "fairness_secondary": {
+        "sex": {
+          "reference": "M",
+          "air": {
+            "F": 0.9921
+          },
+          "approval_rate": {
+            "F": 0.6973,
+            "M": 0.7029
+          }
+        },
+        "age_band": {
+          "reference": "<62",
+          "air": {
+            "62+": 1.1597
+          },
+          "approval_rate": {
+            "62+": 0.8067,
+            "<62": 0.6956
+          }
+        }
+      }
+    }
+  },
+  "stability": {
+    "scorecard_woe_lr": {
+      "score_psi_train_vs_valid": 0.022,
+      "score_psi_train_vs_test": 0.0504
+    },
+    "gbm": {
+      "score_psi_train_vs_valid": 0.0242,
+      "score_psi_train_vs_test": 0.0541
+    },
+    "gbm_monotone": {
+      "score_psi_train_vs_valid": 0.0253,
+      "score_psi_train_vs_test": 0.0561
+    },
+    "feature_psi_train_vs_test": {
+      "credit_utilization": 0.0514,
+      "debt_to_income": 0.022,
+      "num_delinquencies": 0.0015,
+      "num_inquiries_6m": 0.1719,
+      "credit_history_months": 0.0005,
+      "annual_income": 0.003,
+      "employment_years": 0.0025,
+      "savings_balance": 0.0018,
+      "loan_amount": 0.0032,
+      "months_at_address": 0.001,
+      "zip_cluster": 0.0032
+    },
+    "feature_psi_band": {
+      "credit_utilization": "stable",
+      "debt_to_income": "stable",
+      "num_delinquencies": "stable",
+      "num_inquiries_6m": "monitor",
+      "credit_history_months": "stable",
+      "annual_income": "stable",
+      "employment_years": "stable",
+      "savings_balance": "stable",
+      "loan_amount": "stable",
+      "months_at_address": "stable",
+      "zip_cluster": "stable"
+    }
+  },
+  "monotonicity_check": {
+    "gbm": {
+      "credit_utilization": 0.145,
+      "debt_to_income": 0.0,
+      "num_delinquencies": 0.99,
+      "num_inquiries_6m": 0.275,
+      "credit_history_months": 0.065,
+      "annual_income": 0.19,
+      "employment_years": 0.0,
+      "savings_balance": 0.005,
+      "loan_amount": 0.01,
+      "months_at_address": 0.0
+    },
+    "gbm_monotone": {
+      "credit_utilization": 1.0,
+      "debt_to_income": 1.0,
+      "num_delinquencies": 1.0,
+      "num_inquiries_6m": 1.0,
+      "credit_history_months": 1.0,
+      "annual_income": 1.0,
+      "employment_years": 1.0,
+      "savings_balance": 1.0,
+      "loan_amount": 1.0,
+      "months_at_address": 1.0
+    }
+  },
+  "scorecard": {
+    "iv": {
+      "credit_utilization": 0.2564,
+      "debt_to_income": 0.1418,
+      "num_delinquencies": 0.0943,
+      "num_inquiries_6m": 0.0466,
+      "credit_history_months": 0.1691,
+      "annual_income": 0.1354,
+      "employment_years": 0.0323,
+      "savings_balance": 0.0792,
+      "loan_amount": 0.0391,
+      "months_at_address": 0.0118,
+      "zip_cluster": 0.1656
+    },
+    "coef": {
+      "credit_utilization": -0.9285,
+      "debt_to_income": -0.9898,
+      "num_delinquencies": -0.7564,
+      "num_inquiries_6m": -0.875,
+      "credit_history_months": -0.7656,
+      "annual_income": -1.0428,
+      "employment_years": -0.7883,
+      "savings_balance": -0.4402,
+      "loan_amount": 1.0591,
+      "months_at_address": -0.1819,
+      "zip_cluster": -0.7878
+    },
+    "pdo": 20.0,
+    "base_score": 600.0,
+    "base_odds": 50.0
+  },
+  "proxy_analysis": {
+    "single_feature_auc": {
+      "credit_utilization": 0.5465,
+      "debt_to_income": 0.5506,
+      "num_delinquencies": 0.5137,
+      "num_inquiries_6m": 0.503,
+      "credit_history_months": 0.5858,
+      "annual_income": 0.5891,
+      "employment_years": 0.5025,
+      "savings_balance": 0.6026,
+      "loan_amount": 0.5721,
+      "months_at_address": 0.5939,
+      "zip_cluster": 0.8349
+    },
+    "joint_auc_all_features": 0.87,
+    "joint_auc_without_categorical_proxies": 0.6806,
+    "candidate_score_group_separation_auc": 0.7077,
+    "candidate_mean_abs_shap": {
+      "credit_utilization": 0.4522,
+      "debt_to_income": 0.3351,
+      "num_delinquencies": 0.2296,
+      "num_inquiries_6m": 0.2017,
+      "credit_history_months": 0.341,
+      "annual_income": 0.3955,
+      "employment_years": 0.1641,
+      "savings_balance": 0.1505,
+      "loan_amount": 0.2632,
+      "months_at_address": 0.0578,
+      "zip_cluster": 0.295
+    },
+    "candidate_shap_share": {
+      "credit_utilization": 0.1567,
+      "debt_to_income": 0.1161,
+      "num_delinquencies": 0.0796,
+      "num_inquiries_6m": 0.0699,
+      "credit_history_months": 0.1182,
+      "annual_income": 0.1371,
+      "employment_years": 0.0569,
+      "savings_balance": 0.0521,
+      "loan_amount": 0.0912,
+      "months_at_address": 0.02,
+      "zip_cluster": 0.1022
+    }
+  },
+  "lda_search": {
+    "reference_valid_auc": 0.7535,
+    "auc_tolerance": 0.02,
+    "candidates": {
+      "lda_all_mono_l7": {
+        "feature_set": "all",
+        "num_leaves": 7,
+        "valid_auc": 0.7561,
+        "valid_air_min": 0.6009
+      },
+      "lda_all_mono_l15": {
+        "feature_set": "all",
+        "num_leaves": 15,
+        "valid_auc": 0.7535,
+        "valid_air_min": 0.627
+      },
+      "lda_no_geography_mono_l7": {
+        "feature_set": "no_geography",
+        "num_leaves": 7,
+        "valid_auc": 0.7396,
+        "valid_air_min": 0.7779
+      },
+      "lda_no_geography_mono_l15": {
+        "feature_set": "no_geography",
+        "num_leaves": 15,
+        "valid_auc": 0.7405,
+        "valid_air_min": 0.7739
+      },
+      "lda_no_geography_no_savings_balance_mono_l7": {
+        "feature_set": "no_geography_no_savings_balance",
+        "num_leaves": 7,
+        "valid_auc": 0.7385,
+        "valid_air_min": 0.7963
+      },
+      "lda_no_geography_no_savings_balance_mono_l15": {
+        "feature_set": "no_geography_no_savings_balance",
+        "num_leaves": 15,
+        "valid_auc": 0.7378,
+        "valid_air_min": 0.787
+      }
+    },
+    "selected": "lda_no_geography_no_savings_balance_mono_l7"
+  },
+  "recommended": {
+    "model": "reweighing_a0.5",
+    "rule": "highest validation AUC among single, explainable, monotone GBMs within the AUC tolerance whose validation AIR >= 0.80",
+    "cutoff_p_bad": 0.193,
+    "features": [
+      "credit_utilization",
+      "debt_to_income",
+      "num_delinquencies",
+      "num_inquiries_6m",
+      "credit_history_months",
+      "annual_income",
+      "employment_years",
+      "loan_amount",
+      "months_at_address"
+    ],
+    "stability": {
+      "score_psi_train_vs_test": 0.0608,
+      "score_psi_band": "stable",
+      "monthly": [
+        {
+          "month": 19,
+          "n": 1645,
+          "approval_rate": 0.6784,
+          "air_min_recommended": 0.803,
+          "air_min_candidate": 0.6349,
+          "score_psi_vs_train": 0.0386
+        },
+        {
+          "month": 20,
+          "n": 1689,
+          "approval_rate": 0.6673,
+          "air_min_recommended": 0.7506,
+          "air_min_candidate": 0.5885,
+          "score_psi_vs_train": 0.0428
+        },
+        {
+          "month": 21,
+          "n": 1658,
+          "approval_rate": 0.6846,
+          "air_min_recommended": 0.7365,
+          "air_min_candidate": 0.5532,
+          "score_psi_vs_train": 0.0515
+        },
+        {
+          "month": 22,
+          "n": 1651,
+          "approval_rate": 0.659,
+          "air_min_recommended": 0.8421,
+          "air_min_candidate": 0.6284,
+          "score_psi_vs_train": 0.0932
+        },
+        {
+          "month": 23,
+          "n": 1626,
+          "approval_rate": 0.6433,
+          "air_min_recommended": 0.7376,
+          "air_min_candidate": 0.5926,
+          "score_psi_vs_train": 0.0967
+        },
+        {
+          "month": 24,
+          "n": 1598,
+          "approval_rate": 0.6514,
+          "air_min_recommended": 0.7601,
+          "air_min_candidate": 0.5832,
+          "score_psi_vs_train": 0.0882
+        }
+      ]
+    }
+  },
+  "explanations": {
+    "model": "reweighing_a0.5",
+    "declined_test_applicants": 3314,
+    "declined_with_4_reason_codes": 3314,
+    "share_declined_with_4_positive_contributions": 0.9946,
+    "shap_additivity_max_abs_error": 0.0,
+    "shap_base_value_logodds": -2.0832,
+    "top_reason_frequency": {
+      "credit_utilization": 1276,
+      "debt_to_income": 660,
+      "annual_income": 642,
+      "num_delinquencies": 271,
+      "credit_history_months": 221,
+      "loan_amount": 126,
+      "num_inquiries_6m": 118
+    },
+    "any_of_top4_frequency": {
+      "credit_utilization": 2570,
+      "credit_history_months": 2059,
+      "debt_to_income": 1885,
+      "annual_income": 1858,
+      "num_inquiries_6m": 1618,
+      "num_delinquencies": 1530,
+      "employment_years": 843,
+      "loan_amount": 746,
+      "months_at_address": 147
+    },
+    "mean_abs_shap": {
+      "credit_utilization": 0.4139,
+      "debt_to_income": 0.3099,
+      "num_delinquencies": 0.2224,
+      "num_inquiries_6m": 0.1909,
+      "credit_history_months": 0.3125,
+      "annual_income": 0.3971,
+      "employment_years": 0.1489,
+      "loan_amount": 0.2124,
+      "months_at_address": 0.0681
+    },
+    "scorecard_vs_shap_declined_by_both": 2591,
+    "scorecard_vs_shap_top1_agreement": 0.7283,
+    "scorecard_vs_shap_top4_overlap": 0.745,
+    "reason_code_table": {
+      "R01": "Proportion of revolving balances to credit limits is too high",
+      "R02": "Debt obligations are too high relative to income",
+      "R03": "Number of delinquent or past-due accounts",
+      "R04": "Too many recent credit inquiries",
+      "R05": "Length of credit history is insufficient",
+      "R06": "Income insufficient for the amount of credit requested",
+      "R07": "Length of employment",
+      "R08": "Amount of credit requested is too high",
+      "R09": "Length of residence at current address"
+    },
+    "counterfactual": {
+      "applicants_searched": 3314,
+      "found_share": 0.9985,
+      "single_feature_share_of_found": 0.4485,
+      "median_cost_iqr_units": 0.6409,
+      "feature_used_count": {
+        "credit_utilization": 2346,
+        "loan_amount": 1708,
+        "debt_to_income": 1080
+      },
+      "actionable_features": {
+        "credit_utilization": [
+          -1,
+          0.0
+        ],
+        "debt_to_income": [
+          -1,
+          0.05
+        ],
+        "num_inquiries_6m": [
+          -1,
+          0.0
+        ],
+        "loan_amount": [
+          -1,
+          0.5
+        ],
+        "savings_balance": [
+          1,
+          2.0
+        ]
+      },
+      "grid_steps": 12,
+      "iqr_scale": {
+        "credit_utilization": 0.293,
+        "debt_to_income": 0.151,
+        "num_inquiries_6m": 1.0,
+        "loan_amount": 13000.0,
+        "savings_balance": 5580.0
+      }
+    },
+    "examples": [
+      {
+        "application_id": 5,
+        "p_bad": 0.2875,
+        "reasons": [
+          [
+            "R06",
+            "Income insufficient for the amount of credit requested",
+            0.7147
+          ],
+          [
+            "R01",
+            "Proportion of revolving balances to credit limits is too high",
+            0.3604
+          ],
+          [
+            "R05",
+            "Length of credit history is insufficient",
+            0.2214
+          ],
+          [
+            "R03",
+            "Number of delinquent or past-due accounts",
+            0.1872
+          ]
+        ],
+        "inputs": {
+          "credit_utilization": 0.593,
+          "debt_to_income": 0.328,
+          "num_delinquencies": 1.0,
+          "num_inquiries_6m": 2.0,
+          "credit_history_months": 101.0,
+          "annual_income": 26900.0,
+          "employment_years": 7.9,
+          "loan_amount": 9100.0,
+          "months_at_address": 39.0
+        },
+        "counterfactual": "debt_to_income: 0.328 -> 0.282; loan_amount: 9,100 -> 5,688"
+      },
+      {
+        "application_id": 6,
+        "p_bad": 0.4049,
+        "reasons": [
+          [
+            "R02",
+            "Debt obligations are too high relative to income",
+            1.0346
+          ],
+          [
+            "R05",
+            "Length of credit history is insufficient",
+            0.4314
+          ],
+          [
+            "R04",
+            "Too many recent credit inquiries",
+            0.4135
+          ],
+          [
+            "R08",
+            "Amount of credit requested is too high",
+            0.3567
+          ]
+        ],
+        "inputs": {
+          "credit_utilization": 0.275,
+          "debt_to_income": 0.591,
+          "num_delinquencies": 0.0,
+          "num_inquiries_6m": 4.0,
+          "credit_history_months": 55.0,
+          "annual_income": 55400.0,
+          "employment_years": 5.5,
+          "loan_amount": 31200.0,
+          "months_at_address": 35.0
+        },
+        "counterfactual": "credit_utilization: 0.275 -> 0.206; debt_to_income: 0.591 -> 0.411"
+      },
+      {
+        "application_id": 7,
+        "p_bad": 0.3299,
+        "reasons": [
+          [
+            "R06",
+            "Income insufficient for the amount of credit requested",
+            1.3511
+          ],
+          [
+            "R04",
+            "Too many recent credit inquiries",
+            0.4884
+          ],
+          [
+            "R03",
+            "Number of delinquent or past-due accounts",
+            0.2302
+          ],
+          [
+            "R01",
+            "Proportion of revolving balances to credit limits is too high",
+            0.1719
+          ]
+        ],
+        "inputs": {
+          "credit_utilization": 0.448,
+          "debt_to_income": 0.273,
+          "num_delinquencies": 1.0,
+          "num_inquiries_6m": 4.0,
+          "credit_history_months": 151.0,
+          "annual_income": 16500.0,
+          "employment_years": 3.7,
+          "loan_amount": 3600.0,
+          "months_at_address": 107.0
+        },
+        "counterfactual": "credit_utilization: 0.448 -> 0.261; debt_to_income: 0.273 -> 0.236"
+      }
+    ]
+  },
+  "timings": {
+    "data": 0.59,
+    "models": 3.7,
+    "proxy": 9.31,
+    "lda": 7.45,
+    "mitigation": 75.14,
+    "evaluation": 20.85,
+    "reason_codes": 1.95,
+    "counterfactuals": 12.79,
+    "monitoring": 2.85,
+    "total_seconds": 136.1
+  }
+}
