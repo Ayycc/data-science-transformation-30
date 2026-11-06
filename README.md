@@ -44,12 +44,12 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 24 | IV Distinguished | [Recommender System with Two-Tower Retrieval and Off-Policy Evaluation](./day-24-streaming-recsys-off-policy-eval/) | Media streaming | PyTorch, FAISS, implicit | ✅ | [prompt](./prompts/day-24.md) | Two-tower + re-ranker NDCG@10 0.0798 vs ALS 0.0825 (0.0868 with ALS as a ranker feature); HNSW p99 0.666 ms; DR OPE 3.18% mean relative RMSE vs IPS 3.91% (SYNTHETIC) |
 | 25 | IV Distinguished | [Privacy-Preserving Analytics: Differential Privacy and Synthetic Data](./day-25-privacy-dp-synthetic-data/) | Census & health statistics | OpenDP or diffprivlib, SDV, scikit-learn | ✅ | [prompt](./prompts/day-25.md) | ε=1 DP synthetic microdata trains income models at AUC 0.830 vs 0.875 on real data with membership-inference AUC 0.508; k-anonymity (k=5) leaves 0.33 inference risk; budget 3.5/4 enforced (SYNTHETIC) |
 | 26 | IV Distinguished | [Responsible Credit Decisioning: Fairness, Explainability and Model Governance](./day-26-lending-fairness-model-governance/) | Lending | Fairlearn, SHAP, scikit-learn | ✅ | [prompt](./prompts/day-26.md) | Dropping a geography proxy + reweighing lifts min adverse impact ratio 0.599 to 0.776 (AUC 0.768 to 0.763), still under 0.80 so flagged not-ready; 3,314/3,314 declines get 4 SHAP reason codes (SYNTHETIC) |
-| 27 | IV Distinguished | [Dynamic Pricing for Hospitality with Contextual Bandits](./day-27-hospitality-dynamic-pricing-bandits/) | Travel & hospitality | NumPy, PyTorch (optional), SciPy | ⏳ Planned | [prompt](./prompts/day-27.md) | |
+| 27 | IV Distinguished | [Dynamic Pricing for Hospitality with Contextual Bandits](./day-27-hospitality-dynamic-pricing-bandits/) | Travel & hospitality | NumPy, PyTorch (optional), SciPy | ✅ | [prompt](./prompts/day-27.md) | Thompson sampling + DP inventory control: +5.79% revenue vs static rate table (95% CI +5.65% to +5.92%, oracle +6.01%); regret/night $321 to $145 by year 3; 0 guardrail violations in 65,700 decisions (SYNTHETIC) |
 | 28 | IV Distinguished | [Legacy Reporting Modernisation: SAS/Excel to Iceberg + Ibis](./day-28-legacy-reporting-modernisation-iceberg/) | Financial reporting & insurance | Apache Iceberg (pyiceberg), Ibis, DuckDB | ⏳ Planned | [prompt](./prompts/day-28.md) | |
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ⏳ Planned | [prompt](./prompts/day-29.md) | |
 | 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
 
-Last build: 2026-11-05
+Last build: 2026-11-06
 <!-- PROGRESS:END -->
 
 ## How each project is structured

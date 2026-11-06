@@ -1,0 +1,8 @@
+# Pinned for Python 3.11+ (CI uses 3.11; results/ were produced on Python 3.11). All have Python 3.11 manylinux wheels. CPU only, no PyTorch.
+numpy==2.4.6
+scipy==1.17.1
+pandas==3.1.1
+plotly==7.1.0
+matplotlib==3.11.2
+pytest==9.2.0
+ruff==0.17.4
