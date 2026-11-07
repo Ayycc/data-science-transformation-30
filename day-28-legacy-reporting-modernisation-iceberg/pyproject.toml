@@ -1,0 +1,19 @@
+[project]
+name = "legacy-reporting-modernisation-iceberg"
+version = "1.0.0"
+description = "Day 28: Legacy Reporting Modernisation: SAS/Excel to Iceberg + Ibis"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 160
+target-version = "py311"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501", "E731", "B905", "E741"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q -p no:warnings"

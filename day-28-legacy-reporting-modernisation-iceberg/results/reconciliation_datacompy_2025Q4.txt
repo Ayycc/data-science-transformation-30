@@ -1,0 +1,116 @@
+SYNTHETIC data. datacompy report: legacy vs modern TARGET quarterly report at the 2025Q4 close.
+Every difference below is attributed to D1-D6 in reconciliation.md.
+
+DataComPy Comparison
+-------------------
+
+DataFrame Summary
+-----------------
+
+DataFrame  Columns  Rows
+---------  -------  ----
+legacy          11   192
+modern          11   192
+
+
+Column Summary
+--------------
+
+Number of columns in common: 11
+Number of columns in legacy but not in modern: 0
+Number of columns in modern but not in legacy: 0
+
+Row Summary
+-----------
+
+Matched on: quarter, lob, region
+Any duplicates on match values: No
+Default Absolute Tolerance: 0
+Default Relative Tolerance: 0
+Number of rows in common: 192
+Number of rows in legacy but not in modern: 0
+Number of rows in modern but not in legacy: 0
+
+Number of rows with some compared columns unequal: 192
+Number of rows with all compared columns equal: 0
+
+Column Comparison
+-----------------
+
+Number of columns compared with some values unequal: 8
+Number of columns compared with all values equal: 3
+Total number of values which compare unequal: 1,325
+
+Columns with Unequal Values or Types
+------------------------------------
+
+Column                legacy dtype  modern dtype  # Unequal      Max Diff  # Null Diff  Rel Tol  Abs Tol
+--------------------  ------------  ------------  ---------  ------------  -----------  -------  -------
+case_reserve_cents    float64       float64             158  7065085.0000            0   0.0000   0.0000
+claims_paid_cents     float64       float64             167  5764629.0000            0   0.0000   0.0000
+earned_premium_cents  float64       float64             192  6572609.0000            0   0.0000   0.0000
+ibnr_cents            float64       float64              64  5139529.0000            0   0.0000   0.0000
+incurred_cents        float64       float64             170  8867652.0000            0   0.0000   0.0000
+loss_ratio_bp         float64       float64             190    43818.0000            0   0.0000   0.0000
+policies_in_force     float64       float64             192      205.0000            0   0.0000   0.0000
+written_premium_c...  float64       float64             192  8168898.0000            0   0.0000   0.0000
+
+
+Sample Rows with Unequal Values
+-------------------------------
+
+  quarter        lob region  written_premium_cents (legacy)  written_premium_cents (modern)
+0  2025Q2  LIABILITY  NORTH                      13052028.0                      13224255.0
+1  2025Q1      MOTOR  SOUTH                      15927325.0                      16551209.0
+2  2024Q3      OTHER  SOUTH                       4847959.0                        549123.0
+3  2025Q2      MOTOR  NORTH                      15276376.0                      17183292.0
+4  2024Q1      OTHER   WEST                       6929566.0                        490169.0
+
+  quarter         lob region  earned_premium_cents (legacy)  earned_premium_cents (modern)
+0  2024Q1  COMMERCIAL   EAST                     37553233.0                     40002594.0
+1  2024Q1   LIABILITY   EAST                     10633463.0                     11847678.0
+2  2024Q4   LIABILITY   EAST                     11197968.0                     11755950.0
+3  2025Q2       OTHER  SOUTH                      5231149.0                       328694.0
+4  2024Q2   LIABILITY  SOUTH                     12037958.0                     12327861.0
+
+  quarter         lob region  claims_paid_cents (legacy)  claims_paid_cents (modern)
+0  2024Q3  COMMERCIAL   WEST                  10697349.0                   9778372.0
+1  2025Q4        HOME  SOUTH                   8192788.0                  10729204.0
+2  2025Q3  COMMERCIAL  NORTH                  19049259.0                  21469583.0
+3  2025Q2        HOME  NORTH                  10778701.0                   9846528.0
+4  2024Q3        HOME   WEST                   9517016.0                   9854465.0
+
+  quarter         lob region  case_reserve_cents (legacy)  case_reserve_cents (modern)
+0  2025Q1  COMMERCIAL  SOUTH                    8811280.0                    8764836.0
+1  2024Q3       OTHER  SOUTH                    1067665.0                      84638.0
+2  2025Q3       MOTOR   EAST                   24224217.0                   24647838.0
+3  2024Q3  COMMERCIAL   WEST                   19580366.0                   15575018.0
+4  2024Q1        HOME   EAST                    5590511.0                   11139845.0
+
+  quarter    lob region  incurred_cents (legacy)  incurred_cents (modern)
+0  2025Q3   HOME   WEST                6392397.0               15005815.0
+1  2025Q2  OTHER   EAST                1308257.0                 142792.0
+2  2024Q2   HOME  NORTH               11736920.0               12578618.0
+3  2024Q1   HOME   EAST               13441220.0               19465507.0
+4  2025Q3   HOME  SOUTH                8038708.0                7407713.0
+
+  quarter         lob region  loss_ratio_bp (legacy)  loss_ratio_bp (modern)
+0  2025Q2      TRAVEL  SOUTH                  1677.0                  1656.0
+1  2025Q1   LIABILITY   WEST                   982.0                  2844.0
+2  2025Q1  COMMERCIAL  NORTH                  6979.0                  8455.0
+3  2025Q2  COMMERCIAL   EAST                  5059.0                  5159.0
+4  2025Q1   LIABILITY  NORTH                  6828.0                  5749.0
+
+  quarter         lob region  ibnr_cents (legacy)  ibnr_cents (modern)
+0  2025Q3       OTHER   WEST            1701619.0                  0.0
+1  2025Q4       OTHER   EAST            2050525.0                  0.0
+2  2025Q1   LIABILITY   WEST            7802100.0            5900334.0
+3  2025Q4       OTHER  SOUTH            2228290.0                  0.0
+4  2025Q2  COMMERCIAL  NORTH            5720413.0            4351630.0
+
+  quarter         lob region  policies_in_force (legacy)  policies_in_force (modern)
+0  2025Q1  COMMERCIAL   EAST                       396.0                       427.0
+1  2024Q4  COMMERCIAL   EAST                       404.0                       441.0
+2  2025Q1   LIABILITY   EAST                       216.0                       225.0
+3  2024Q2      TRAVEL   WEST                       174.0                       187.0
+4  2024Q1  COMMERCIAL   EAST                       435.0                       462.0

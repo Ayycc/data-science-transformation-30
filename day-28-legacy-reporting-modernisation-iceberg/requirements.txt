@@ -1,0 +1,15 @@
+# Pinned for Python 3.11+ (CI uses 3.11; results/ were produced on Python 3.11). All have Python 3.11 manylinux wheels. CPU only.
+# Local Iceberg catalog = pyiceberg SqlCatalog on SQLite (needs SQLAlchemy); no catalog server, Spark or Docker.
+pyiceberg[pyarrow,sql-sqlite]==0.12.0
+SQLAlchemy==2.1.8
+pyarrow==26.0.1
+ibis-framework[duckdb,polars]==12.0.0
+duckdb==2.0.0
+polars==2.1.0
+sqlglot==30.30.0
+datacompy==1.2.0
+numpy==2.4.6
+pandas==3.1.0
+matplotlib==3.11.2
+pytest==9.2.0
+ruff==0.17.4

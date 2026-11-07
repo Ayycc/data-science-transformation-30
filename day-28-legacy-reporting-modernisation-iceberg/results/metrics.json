@@ -1,0 +1,839 @@
+{
+  "data": {
+    "path_used": "synthetic_generator",
+    "public_source_attempted": false,
+    "note": "No public policy-level insurer dataset exists; the prompt specifies synthetic policy, premium and claims tables.",
+    "seed": 20261107,
+    "policies": 30000,
+    "policy_versions": 36468,
+    "premium_txns": 36468,
+    "claim_valuations": 11692,
+    "claims": 2655,
+    "sample_files_bytes": {
+      "policy_versions_SYNTHETIC_sample.csv": 66030,
+      "premium_txns_SYNTHETIC_sample.csv": 65461,
+      "claim_valuations_SYNTHETIC_sample.csv": 18769
+    }
+  },
+  "rules": {
+    "n_rules": 11,
+    "n_intentional_differences": 6,
+    "topological_order": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R11",
+      "R09",
+      "R10"
+    ]
+  },
+  "parallel_run": {
+    "closes": 8,
+    "closes_compat_equals_legacy": 8,
+    "closes_duckdb_equals_polars": 8,
+    "unexplained_differences_total": 0,
+    "final_close": "2025Q4",
+    "final_close_vs_legacy": {
+      "premium_detail": {
+        "matches": false,
+        "rows_legacy": 109471,
+        "rows_modern": 109471,
+        "rows_only_legacy": 0,
+        "rows_only_modern": 0,
+        "rows_in_common": 109471,
+        "rows_all_columns_equal": 1325,
+        "unequal_cells": 127271
+      },
+      "claims_detail": {
+        "matches": false,
+        "rows_legacy": 11692,
+        "rows_modern": 11692,
+        "rows_only_legacy": 0,
+        "rows_only_modern": 0,
+        "rows_in_common": 11692,
+        "rows_all_columns_equal": 9762,
+        "unequal_cells": 2590
+      },
+      "report": {
+        "matches": false,
+        "rows_legacy": 192,
+        "rows_modern": 192,
+        "rows_only_legacy": 0,
+        "rows_only_modern": 0,
+        "rows_in_common": 192,
+        "rows_all_columns_equal": 0,
+        "unequal_cells": 1325
+      }
+    },
+    "final_close_report_cells_changed_by": {
+      "D4": 1264,
+      "D2": 1178,
+      "D3": 221,
+      "D1": 232,
+      "D5": 9,
+      "D6": 0
+    },
+    "final_close_detail_rows_changed_by": {
+      "D4": 7030,
+      "D2": 14286,
+      "D3": 455,
+      "D1": 107572,
+      "D5": 0,
+      "D6": 0
+    },
+    "final_close_trace": {
+      "premium_detail": {
+        "final_diff_cells": 127271,
+        "traced_to_a_step": 127271,
+        "untraced": 0
+      },
+      "claims_detail": {
+        "final_diff_cells": 2590,
+        "traced_to_a_step": 2590,
+        "untraced": 0
+      },
+      "report": {
+        "final_diff_cells": 1325,
+        "traced_to_a_step": 1325,
+        "untraced": 0
+      }
+    },
+    "per_close": [
+      {
+        "close": "2024Q1",
+        "source_rows_match_iceberg": true,
+        "legacy_seconds": 0.106,
+        "modern_duckdb_seconds": 0.256,
+        "compat_equals_legacy": true,
+        "duckdb_equals_polars": true,
+        "unexplained_differences": 0,
+        "report_rows": 24,
+        "report_cells_changed_by": {
+          "D4": 135,
+          "D2": 119,
+          "D3": 16,
+          "D1": 23,
+          "D5": 0,
+          "D6": 0
+        },
+        "detail_rows_changed_by": {
+          "D4": 771,
+          "D2": 1666,
+          "D3": 9,
+          "D1": 13424,
+          "D5": 0,
+          "D6": 0
+        },
+        "final_vs_legacy": {
+          "premium_detail": {
+            "matches": false,
+            "rows_legacy": 13649,
+            "rows_modern": 13649,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 13649,
+            "rows_all_columns_equal": 155,
+            "unequal_cells": 15832
+          },
+          "claims_detail": {
+            "matches": false,
+            "rows_legacy": 277,
+            "rows_modern": 277,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 277,
+            "rows_all_columns_equal": 240,
+            "unequal_cells": 56
+          },
+          "report": {
+            "matches": false,
+            "rows_legacy": 24,
+            "rows_modern": 24,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 24,
+            "rows_all_columns_equal": 0,
+            "unequal_cells": 146
+          }
+        },
+        "filed_quarter_totals": {
+          "legacy_earned_cents": 358598367,
+          "modern_earned_cents": 358598407,
+          "legacy_incurred_cents": 163608352,
+          "modern_incurred_cents": 165592112
+        }
+      },
+      {
+        "close": "2024Q2",
+        "source_rows_match_iceberg": true,
+        "legacy_seconds": 0.181,
+        "modern_duckdb_seconds": 0.253,
+        "compat_equals_legacy": true,
+        "duckdb_equals_polars": true,
+        "unexplained_differences": 0,
+        "report_rows": 48,
+        "report_cells_changed_by": {
+          "D4": 279,
+          "D2": 253,
+          "D3": 36,
+          "D1": 46,
+          "D5": 0,
+          "D6": 0
+        },
+        "detail_rows_changed_by": {
+          "D4": 1600,
+          "D2": 3336,
+          "D3": 31,
+          "D1": 27047,
+          "D5": 0,
+          "D6": 0
+        },
+        "final_vs_legacy": {
+          "premium_detail": {
+            "matches": false,
+            "rows_legacy": 27473,
+            "rows_modern": 27473,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 27473,
+            "rows_all_columns_equal": 295,
+            "unequal_cells": 31877
+          },
+          "claims_detail": {
+            "matches": false,
+            "rows_legacy": 882,
+            "rows_modern": 882,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 882,
+            "rows_all_columns_equal": 755,
+            "unequal_cells": 181
+          },
+          "report": {
+            "matches": false,
+            "rows_legacy": 48,
+            "rows_modern": 48,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 48,
+            "rows_all_columns_equal": 0,
+            "unequal_cells": 296
+          }
+        },
+        "filed_quarter_totals": {
+          "legacy_earned_cents": 357650255,
+          "modern_earned_cents": 357650219,
+          "legacy_incurred_cents": 215400444,
+          "modern_incurred_cents": 220537638
+        }
+      },
+      {
+        "close": "2024Q3",
+        "source_rows_match_iceberg": true,
+        "legacy_seconds": 0.353,
+        "modern_duckdb_seconds": 0.351,
+        "compat_equals_legacy": true,
+        "duckdb_equals_polars": true,
+        "unexplained_differences": 0,
+        "report_rows": 72,
+        "report_cells_changed_by": {
+          "D4": 428,
+          "D2": 393,
+          "D3": 60,
+          "D1": 68,
+          "D5": 0,
+          "D6": 0
+        },
+        "detail_rows_changed_by": {
+          "D4": 2459,
+          "D2": 5028,
+          "D3": 65,
+          "D1": 40667,
+          "D5": 0,
+          "D6": 0
+        },
+        "final_vs_legacy": {
+          "premium_detail": {
+            "matches": false,
+            "rows_legacy": 41321,
+            "rows_modern": 41321,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 41321,
+            "rows_all_columns_equal": 446,
+            "unequal_cells": 47937
+          },
+          "claims_detail": {
+            "matches": false,
+            "rows_legacy": 1819,
+            "rows_modern": 1819,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 1819,
+            "rows_all_columns_equal": 1557,
+            "unequal_cells": 368
+          },
+          "report": {
+            "matches": false,
+            "rows_legacy": 72,
+            "rows_modern": 72,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 72,
+            "rows_all_columns_equal": 0,
+            "unequal_cells": 449
+          }
+        },
+        "filed_quarter_totals": {
+          "legacy_earned_cents": 360297230,
+          "modern_earned_cents": 360297194,
+          "legacy_incurred_cents": 195663499,
+          "modern_incurred_cents": 199376153
+        }
+      },
+      {
+        "close": "2024Q4",
+        "source_rows_match_iceberg": true,
+        "legacy_seconds": 0.36,
+        "modern_duckdb_seconds": 0.309,
+        "compat_equals_legacy": true,
+        "duckdb_equals_polars": true,
+        "unexplained_differences": 0,
+        "report_rows": 96,
+        "report_cells_changed_by": {
+          "D4": 582,
+          "D2": 535,
+          "D3": 86,
+          "D1": 90,
+          "D5": 0,
+          "D6": 0
+        },
+        "detail_rows_changed_by": {
+          "D4": 3372,
+          "D2": 6791,
+          "D3": 111,
+          "D1": 54270,
+          "D5": 0,
+          "D6": 0
+        },
+        "final_vs_legacy": {
+          "premium_detail": {
+            "matches": false,
+            "rows_legacy": 55159,
+            "rows_modern": 55159,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 55159,
+            "rows_all_columns_equal": 599,
+            "unequal_cells": 64051
+          },
+          "claims_detail": {
+            "matches": false,
+            "rows_legacy": 3103,
+            "rows_modern": 3103,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 3103,
+            "rows_all_columns_equal": 2642,
+            "unequal_cells": 629
+          },
+          "report": {
+            "matches": false,
+            "rows_legacy": 96,
+            "rows_modern": 96,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 96,
+            "rows_all_columns_equal": 0,
+            "unequal_cells": 611
+          }
+        },
+        "filed_quarter_totals": {
+          "legacy_earned_cents": 362803985,
+          "modern_earned_cents": 362803987,
+          "legacy_incurred_cents": 212903644,
+          "modern_incurred_cents": 214541133
+        }
+      },
+      {
+        "close": "2025Q1",
+        "source_rows_match_iceberg": true,
+        "legacy_seconds": 0.446,
+        "modern_duckdb_seconds": 0.468,
+        "compat_equals_legacy": true,
+        "duckdb_equals_polars": true,
+        "unexplained_differences": 0,
+        "report_rows": 120,
+        "report_cells_changed_by": {
+          "D4": 754,
+          "D2": 691,
+          "D3": 124,
+          "D1": 125,
+          "D5": 3,
+          "D6": 0
+        },
+        "detail_rows_changed_by": {
+          "D4": 4298,
+          "D2": 8577,
+          "D3": 171,
+          "D1": 67679,
+          "D5": 0,
+          "D6": 0
+        },
+        "final_vs_legacy": {
+          "premium_detail": {
+            "matches": false,
+            "rows_legacy": 68904,
+            "rows_modern": 68904,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 68904,
+            "rows_all_columns_equal": 852,
+            "unequal_cells": 79955
+          },
+          "claims_detail": {
+            "matches": false,
+            "rows_legacy": 4724,
+            "rows_modern": 4724,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 4724,
+            "rows_all_columns_equal": 4003,
+            "unequal_cells": 978
+          },
+          "report": {
+            "matches": false,
+            "rows_legacy": 120,
+            "rows_modern": 120,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 120,
+            "rows_all_columns_equal": 0,
+            "unequal_cells": 787
+          }
+        },
+        "filed_quarter_totals": {
+          "legacy_earned_cents": 354240672,
+          "modern_earned_cents": 354240653,
+          "legacy_incurred_cents": 255373306,
+          "modern_incurred_cents": 260057795
+        }
+      },
+      {
+        "close": "2025Q2",
+        "source_rows_match_iceberg": true,
+        "legacy_seconds": 0.487,
+        "modern_duckdb_seconds": 0.483,
+        "compat_equals_legacy": true,
+        "duckdb_equals_polars": true,
+        "unexplained_differences": 0,
+        "report_rows": 144,
+        "report_cells_changed_by": {
+          "D4": 924,
+          "D2": 847,
+          "D3": 162,
+          "D1": 155,
+          "D5": 5,
+          "D6": 0
+        },
+        "detail_rows_changed_by": {
+          "D4": 5220,
+          "D2": 10434,
+          "D3": 253,
+          "D1": 81136,
+          "D5": 0,
+          "D6": 0
+        },
+        "final_vs_legacy": {
+          "premium_detail": {
+            "matches": false,
+            "rows_legacy": 82590,
+            "rows_modern": 82590,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 82590,
+            "rows_all_columns_equal": 1014,
+            "unequal_cells": 95920
+          },
+          "claims_detail": {
+            "matches": false,
+            "rows_legacy": 6709,
+            "rows_modern": 6709,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 6709,
+            "rows_all_columns_equal": 5657,
+            "unequal_cells": 1425
+          },
+          "report": {
+            "matches": false,
+            "rows_legacy": 144,
+            "rows_modern": 144,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 144,
+            "rows_all_columns_equal": 0,
+            "unequal_cells": 963
+          }
+        },
+        "filed_quarter_totals": {
+          "legacy_earned_cents": 354360345,
+          "modern_earned_cents": 354360320,
+          "legacy_incurred_cents": 244984523,
+          "modern_incurred_cents": 246051985
+        }
+      },
+      {
+        "close": "2025Q3",
+        "source_rows_match_iceberg": true,
+        "legacy_seconds": 0.795,
+        "modern_duckdb_seconds": 0.549,
+        "compat_equals_legacy": true,
+        "duckdb_equals_polars": true,
+        "unexplained_differences": 0,
+        "report_rows": 168,
+        "report_cells_changed_by": {
+          "D4": 1095,
+          "D2": 1004,
+          "D3": 195,
+          "D1": 195,
+          "D5": 7,
+          "D6": 0
+        },
+        "detail_rows_changed_by": {
+          "D4": 6132,
+          "D2": 12364,
+          "D3": 347,
+          "D1": 94556,
+          "D5": 0,
+          "D6": 0
+        },
+        "final_vs_legacy": {
+          "premium_detail": {
+            "matches": false,
+            "rows_legacy": 96236,
+            "rows_modern": 96236,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 96236,
+            "rows_all_columns_equal": 1169,
+            "unequal_cells": 111836
+          },
+          "claims_detail": {
+            "matches": false,
+            "rows_legacy": 9037,
+            "rows_modern": 9037,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 9037,
+            "rows_all_columns_equal": 7579,
+            "unequal_cells": 1961
+          },
+          "report": {
+            "matches": false,
+            "rows_legacy": 168,
+            "rows_modern": 168,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 168,
+            "rows_all_columns_equal": 0,
+            "unequal_cells": 1141
+          }
+        },
+        "filed_quarter_totals": {
+          "legacy_earned_cents": 355282627,
+          "modern_earned_cents": 355282647,
+          "legacy_incurred_cents": 197086015,
+          "modern_incurred_cents": 202343995
+        }
+      },
+      {
+        "close": "2025Q4",
+        "source_rows_match_iceberg": true,
+        "legacy_seconds": 0.684,
+        "modern_duckdb_seconds": 0.488,
+        "compat_equals_legacy": true,
+        "duckdb_equals_polars": true,
+        "unexplained_differences": 0,
+        "report_rows": 192,
+        "report_cells_changed_by": {
+          "D4": 1264,
+          "D2": 1178,
+          "D3": 221,
+          "D1": 232,
+          "D5": 9,
+          "D6": 0
+        },
+        "detail_rows_changed_by": {
+          "D4": 7030,
+          "D2": 14286,
+          "D3": 455,
+          "D1": 107572,
+          "D5": 0,
+          "D6": 0
+        },
+        "final_vs_legacy": {
+          "premium_detail": {
+            "matches": false,
+            "rows_legacy": 109471,
+            "rows_modern": 109471,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 109471,
+            "rows_all_columns_equal": 1325,
+            "unequal_cells": 127271
+          },
+          "claims_detail": {
+            "matches": false,
+            "rows_legacy": 11692,
+            "rows_modern": 11692,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 11692,
+            "rows_all_columns_equal": 9762,
+            "unequal_cells": 2590
+          },
+          "report": {
+            "matches": false,
+            "rows_legacy": 192,
+            "rows_modern": 192,
+            "rows_only_legacy": 0,
+            "rows_only_modern": 0,
+            "rows_in_common": 192,
+            "rows_all_columns_equal": 0,
+            "unequal_cells": 1325
+          }
+        },
+        "filed_quarter_totals": {
+          "legacy_earned_cents": 351549445,
+          "modern_earned_cents": 351549440,
+          "legacy_incurred_cents": 213659355,
+          "modern_incurred_cents": 217074029
+        }
+      }
+    ]
+  },
+  "impact_final_close_all_quarters": {
+    "earned_premium_cents": {
+      "legacy": 2859353989,
+      "modern": 2859353943
+    },
+    "incurred_cents": {
+      "legacy": 1698679138,
+      "modern": 1725574840
+    },
+    "ibnr_cents": {
+      "legacy": 210982814,
+      "modern": 187295808
+    },
+    "other_lob_earned_cents": {
+      "legacy": 179667774,
+      "modern": 9528733
+    }
+  },
+  "impact_by_difference_final_close": {
+    "D4": {
+      "earned_premium_cents": 0,
+      "incurred_cents": 0,
+      "ibnr_cents": -14376456,
+      "other_lob_earned_cents": -170139062
+    },
+    "D2": {
+      "earned_premium_cents": 0,
+      "incurred_cents": 0,
+      "ibnr_cents": -339244,
+      "other_lob_earned_cents": 0
+    },
+    "D3": {
+      "earned_premium_cents": 0,
+      "incurred_cents": 26895702,
+      "ibnr_cents": -8822145,
+      "other_lob_earned_cents": 0
+    },
+    "D1": {
+      "earned_premium_cents": -46,
+      "incurred_cents": 0,
+      "ibnr_cents": -41,
+      "other_lob_earned_cents": 21
+    },
+    "D5": {
+      "earned_premium_cents": 0,
+      "incurred_cents": 0,
+      "ibnr_cents": -149120,
+      "other_lob_earned_cents": 0
+    },
+    "D6": {
+      "earned_premium_cents": 0,
+      "incurred_cents": 0,
+      "ibnr_cents": 0,
+      "other_lob_earned_cents": 0
+    }
+  },
+  "time_travel": {
+    "closes": 8,
+    "tag_snapshot_equals_report_written": 8,
+    "filed_quarter_reproduced": 8,
+    "rerun_from_time_travelled_inputs_reproduces_report": 8,
+    "schema_version_correct_at_each_close": 8,
+    "previous_quarter": "2025Q3",
+    "previous_quarter_reproduced": true,
+    "restatements_in_current_table": {
+      "2024Q1": {
+        "cells_restated": 89,
+        "earned_restatement_cents": 970973,
+        "written_restatement_cents": 20451856
+      },
+      "2024Q2": {
+        "cells_restated": 79,
+        "earned_restatement_cents": 576118,
+        "written_restatement_cents": 19253996
+      },
+      "2024Q3": {
+        "cells_restated": 85,
+        "earned_restatement_cents": 663489,
+        "written_restatement_cents": 18193964
+      },
+      "2024Q4": {
+        "cells_restated": 80,
+        "earned_restatement_cents": 466909,
+        "written_restatement_cents": 18302592
+      },
+      "2025Q1": {
+        "cells_restated": 106,
+        "earned_restatement_cents": 624936,
+        "written_restatement_cents": 20714688
+      },
+      "2025Q2": {
+        "cells_restated": 98,
+        "earned_restatement_cents": 400142,
+        "written_restatement_cents": 17046618
+      },
+      "2025Q3": {
+        "cells_restated": 100,
+        "earned_restatement_cents": 868509,
+        "written_restatement_cents": 23067170
+      },
+      "2025Q4": {
+        "cells_restated": 0,
+        "earned_restatement_cents": 0,
+        "written_restatement_cents": 0
+      }
+    },
+    "rollback_drill_ok": true,
+    "report_snapshots": 17,
+    "report_schemas": 2,
+    "schema_events": [
+      "schema evolved at close 2025Q1: added ibnr_cents (schema id 1)"
+    ]
+  },
+  "storage": {
+    "legacy_csv_extract_bytes": 3124132,
+    "iceberg_raw_parquet_bytes": 990808,
+    "iceberg_reporting_parquet_bytes_all_snapshots": 6452080
+  },
+  "benchmark": [
+    {
+      "scale": 1,
+      "policies": 30000,
+      "engine": "legacy",
+      "wall_seconds": 0.725,
+      "cpu_seconds": 0.72,
+      "detail_rows": 120769,
+      "reps": 3
+    },
+    {
+      "scale": 1,
+      "policies": 30000,
+      "engine": "ibis-duckdb",
+      "wall_seconds": 0.568,
+      "cpu_seconds": 0.754,
+      "detail_rows": 120769,
+      "reps": 3
+    },
+    {
+      "scale": 1,
+      "policies": 30000,
+      "engine": "ibis-polars",
+      "wall_seconds": 0.481,
+      "cpu_seconds": 0.921,
+      "detail_rows": 120769,
+      "reps": 3
+    },
+    {
+      "scale": 4,
+      "policies": 120000,
+      "engine": "legacy",
+      "wall_seconds": 2.871,
+      "cpu_seconds": 2.843,
+      "detail_rows": 483814,
+      "reps": 1
+    },
+    {
+      "scale": 4,
+      "policies": 120000,
+      "engine": "ibis-duckdb",
+      "wall_seconds": 1.747,
+      "cpu_seconds": 2.502,
+      "detail_rows": 483814,
+      "reps": 3
+    },
+    {
+      "scale": 4,
+      "policies": 120000,
+      "engine": "ibis-polars",
+      "wall_seconds": 1.943,
+      "cpu_seconds": 4.133,
+      "detail_rows": 483814,
+      "reps": 3
+    },
+    {
+      "scale": 10,
+      "policies": 300000,
+      "engine": "legacy",
+      "wall_seconds": 7.27,
+      "cpu_seconds": 7.233,
+      "detail_rows": 1203872,
+      "reps": 1
+    },
+    {
+      "scale": 10,
+      "policies": 300000,
+      "engine": "ibis-duckdb",
+      "wall_seconds": 2.496,
+      "cpu_seconds": 5.84,
+      "detail_rows": 1203872,
+      "reps": 3
+    },
+    {
+      "scale": 10,
+      "policies": 300000,
+      "engine": "ibis-polars",
+      "wall_seconds": 4.357,
+      "cpu_seconds": 10.48,
+      "detail_rows": 1203872,
+      "reps": 3
+    }
+  ],
+  "benchmark_summary": {
+    "scale_1_speedup_duckdb_vs_legacy": 1.3,
+    "scale_1_speedup_polars_vs_legacy": 1.5,
+    "scale_max_speedup_duckdb_vs_legacy": 2.9,
+    "scale_max_speedup_polars_vs_legacy": 1.7
+  },
+  "environment": {
+    "python": "3.11.17",
+    "ibis": "12.0.0",
+    "cpu_count": 4
+  },
+  "acceptance": {
+    "reconciliation_zero_unexplained": true,
+    "same_ibis_code_two_backends_identical": true,
+    "time_travel_reproduces_previous_quarter": true
+  },
+  "runtime_seconds": 122.5
+}
