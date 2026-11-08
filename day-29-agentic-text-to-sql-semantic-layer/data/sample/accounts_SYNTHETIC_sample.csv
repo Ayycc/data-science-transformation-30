@@ -1,0 +1,61 @@
+account_id,account_name,region,segment,industry,billing_currency,signup_date,is_test,contact_name,contact_email,contact_phone
+1,Customer 00001,APAC,SMB,Retail,AUD,2023-08-19,False,Chen Silva,chen.silva1@example.com,+1-555-7571
+2,Customer 00002,APAC,Mid-Market,Software,AUD,2025-05-05,False,Priya Silva,priya.silva2@example.com,+1-555-8170
+3,Customer 00003,NA,Mid-Market,Healthcare,USD,2024-01-22,False,Maria Smith,maria.smith3@example.com,+1-555-5842
+4,Customer 00004,NA,Enterprise,Education,USD,2024-12-24,False,Chen Novak,chen.novak4@example.com,+1-555-8376
+5,Customer 00005,EMEA,Enterprise,Retail,GBP,2025-01-19,False,Sam Tanaka,sam.tanaka5@example.com,+1-555-3462
+6,Customer 00006,EMEA,SMB,Healthcare,EUR,2025-08-19,False,Priya Okafor,priya.okafor6@example.com,+1-555-4586
+7,Customer 00007,EMEA,Mid-Market,Retail,GBP,2025-08-10,False,Lars Tanaka,lars.tanaka7@example.com,+1-555-9032
+8,Customer 00008,APAC,Mid-Market,Healthcare,AUD,2025-10-21,False,Yuki Silva,yuki.silva8@example.com,+1-555-2630
+9,Customer 00009,EMEA,SMB,Manufacturing,EUR,2025-11-03,False,Omar Li,omar.li9@example.com,+1-555-6573
+10,Customer 00010,APAC,SMB,Financial Services,JPY,2024-11-18,False,Tom Muller,tom.muller10@example.com,+1-555-7426
+11,Customer 00011,EMEA,Mid-Market,Manufacturing,GBP,2024-01-07,False,Priya Garcia,priya.garcia11@example.com,+1-555-7117
+12,Customer 00012,EMEA,SMB,Financial Services,GBP,2025-04-07,False,Priya Rossi,priya.rossi12@example.com,+1-555-8201
+13,Customer 00013,LATAM,SMB,Software,BRL,2024-05-25,False,Yuki Garcia,yuki.garcia13@example.com,+1-555-4607
+14,Customer 00014,EMEA,Enterprise,Education,EUR,2025-07-21,False,Maria Li,maria.li14@example.com,+1-555-7076
+15,Customer 00015,NA,Mid-Market,Financial Services,USD,2025-04-10,False,Maria Li,maria.li15@example.com,+1-555-8350
+16,Customer 00016,APAC,SMB,Healthcare,AUD,2024-07-14,False,Chen Novak,chen.novak16@example.com,+1-555-7317
+17,Customer 00017,NA,Mid-Market,Healthcare,USD,2023-11-20,False,Aisha Silva,aisha.silva17@example.com,+1-555-9483
+18,Customer 00018,NA,Mid-Market,Retail,USD,2024-07-04,False,Priya Tanaka,priya.tanaka18@example.com,+1-555-3379
+19,Customer 00019,EMEA,SMB,Healthcare,EUR,2023-06-23,False,Yuki Kumar,yuki.kumar19@example.com,+1-555-3693
+20,Customer 00020,NA,SMB,Software,USD,2024-11-25,False,Nora Muller,nora.muller20@example.com,+1-555-3417
+21,Customer 00021,LATAM,SMB,Healthcare,USD,2025-11-05,False,Tom Kumar,tom.kumar21@example.com,+1-555-1367
+22,Customer 00022,LATAM,SMB,Manufacturing,BRL,2025-08-23,False,Diego Smith,diego.smith22@example.com,+1-555-2740
+23,Customer 00023,NA,Mid-Market,Retail,USD,2025-09-28,False,Chen Kumar,chen.kumar23@example.com,+1-555-4526
+24,Customer 00024,NA,Enterprise,Education,USD,2024-11-01,False,Alex Novak,alex.novak24@example.com,+1-555-3950
+25,Customer 00025,APAC,Mid-Market,Education,JPY,2023-08-24,False,Aisha Rossi,aisha.rossi25@example.com,+1-555-7419
+26,Customer 00026,EMEA,Mid-Market,Financial Services,EUR,2023-04-04,False,Alex Smith,alex.smith26@example.com,+1-555-2745
+27,Customer 00027,EMEA,Enterprise,Healthcare,GBP,2024-06-06,False,Chen Okafor,chen.okafor27@example.com,+1-555-3348
+28,Customer 00028,NA,Mid-Market,Education,USD,2024-11-18,False,Tom Okafor,tom.okafor28@example.com,+1-555-2188
+29,Customer 00029,LATAM,SMB,Financial Services,BRL,2023-05-28,False,Omar Li,omar.li29@example.com,+1-555-3057
+30,Customer 00030,NA,Enterprise,Retail,USD,2025-12-06,False,Diego Garcia,diego.garcia30@example.com,+1-555-5799
+31,Customer 00031,EMEA,Enterprise,Healthcare,EUR,2025-07-11,False,Maria Smith,maria.smith31@example.com,+1-555-8834
+32,Customer 00032,NA,Mid-Market,Manufacturing,USD,2024-04-08,False,Lars Silva,lars.silva32@example.com,+1-555-1045
+33,Customer 00033,NA,Mid-Market,Retail,USD,2024-01-20,False,Nora Novak,nora.novak33@example.com,+1-555-1269
+34,Customer 00034,NA,SMB,Healthcare,USD,2023-03-12,False,Sam Muller,sam.muller34@example.com,+1-555-3888
+35,Customer 00035,APAC,SMB,Financial Services,AUD,2025-06-28,False,Nora Garcia,nora.garcia35@example.com,+1-555-5111
+36,Customer 00036,EMEA,SMB,Financial Services,EUR,2025-12-18,False,Nora Garcia,nora.garcia36@example.com,+1-555-6966
+37,Customer 00037,LATAM,Enterprise,Retail,USD,2024-04-12,False,Tom Li,tom.li37@example.com,+1-555-1870
+38,Customer 00038,NA,SMB,Healthcare,USD,2024-08-10,False,Chen Rossi,chen.rossi38@example.com,+1-555-9674
+39,Customer 00039,LATAM,SMB,Healthcare,USD,2025-02-01,False,Alex Silva,alex.silva39@example.com,+1-555-6030
+40,Customer 00040,NA,SMB,Education,USD,2023-11-15,False,Diego Rossi,diego.rossi40@example.com,+1-555-6147
+41,Customer 00041,APAC,SMB,Manufacturing,AUD,2025-04-02,False,Yuki Smith,yuki.smith41@example.com,+1-555-9788
+42,Customer 00042,NA,SMB,Financial Services,USD,2023-06-22,False,Diego Silva,diego.silva42@example.com,+1-555-7173
+43,Customer 00043,APAC,SMB,Retail,AUD,2024-05-31,False,Maria Kumar,maria.kumar43@example.com,+1-555-4729
+44,Customer 00044,NA,SMB,Software,USD,2023-04-06,False,Yuki Garcia,yuki.garcia44@example.com,+1-555-2939
+45,Customer 00045,EMEA,Enterprise,Retail,EUR,2025-04-03,False,Lars Novak,lars.novak45@example.com,+1-555-6893
+46,Customer 00046,APAC,Mid-Market,Retail,JPY,2023-03-27,False,Aisha Muller,aisha.muller46@example.com,+1-555-3231
+47,Customer 00047,APAC,SMB,Financial Services,AUD,2024-12-08,False,Maria Li,maria.li47@example.com,+1-555-3911
+48,Customer 00048,LATAM,Mid-Market,Education,USD,2023-08-08,False,Chen Smith,chen.smith48@example.com,+1-555-8758
+49,Customer 00049,EMEA,SMB,Software,GBP,2025-06-01,False,Nora Li,nora.li49@example.com,+1-555-2253
+50,Customer 00050,NA,Mid-Market,Healthcare,USD,2024-11-11,False,Diego Smith,diego.smith50@example.com,+1-555-1094
+51,Customer 00051,NA,Mid-Market,Education,USD,2024-09-03,False,Omar Okafor,omar.okafor51@example.com,+1-555-3747
+52,Customer 00052,NA,SMB,Manufacturing,USD,2024-06-30,False,Tom Tanaka,tom.tanaka52@example.com,+1-555-4827
+53,Customer 00053,LATAM,SMB,Education,USD,2023-11-29,False,Tom Novak,tom.novak53@example.com,+1-555-9015
+54,Customer 00054,EMEA,SMB,Healthcare,GBP,2023-05-12,False,Diego Li,diego.li54@example.com,+1-555-6777
+55,Customer 00055,NA,Mid-Market,Manufacturing,USD,2023-05-01,False,Priya Tanaka,priya.tanaka55@example.com,+1-555-1392
+56,Customer 00056,EMEA,Mid-Market,Education,EUR,2025-11-16,False,Priya Muller,priya.muller56@example.com,+1-555-9407
+57,Customer 00057,NA,SMB,Healthcare,USD,2025-03-18,False,Nora Li,nora.li57@example.com,+1-555-6749
+58,Customer 00058,NA,SMB,Software,USD,2023-11-02,False,Diego Okafor,diego.okafor58@example.com,+1-555-4079
+59,Customer 00059,LATAM,Mid-Market,Financial Services,USD,2025-05-16,False,Priya Kumar,priya.kumar59@example.com,+1-555-6795
+60,Customer 00060,NA,SMB,Retail,USD,2023-09-04,False,Priya Garcia,priya.garcia60@example.com,+1-555-9841

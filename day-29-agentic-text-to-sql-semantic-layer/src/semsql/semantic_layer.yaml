@@ -1,0 +1,197 @@
+# Semantic layer for the SYNTHETIC SaaS warehouse.
+# Metrics, dimensions, joins and business definitions live here; semantic.py compiles
+# a QuerySpec (metrics x dimensions x filters) into DuckDB SQL from this file.
+name: saas_warehouse
+version: 1
+conventions:
+  reporting_currency: USD
+  fiscal_year_start_month: 2        # FY2025 = 2024-02-01 .. 2025-01-31 (named after the year it ends)
+  data_start_date: "2023-02-01"
+  data_end_date: "2026-01-31"       # default as-of date for point-in-time metrics
+  test_accounts: excluded from every metric (accounts.is_test)
+  fx: local amounts are converted with the monthly average rate of the transaction month
+
+pii_columns:                         # never selectable, in compiled or raw SQL
+  - accounts.contact_name
+  - accounts.contact_email
+  - accounts.contact_phone
+
+max_rows: 1000
+
+models:
+  invoices:
+    from: invoices
+    alias: i
+    time_column: i.invoice_date
+    joins:
+      a: JOIN accounts a ON a.account_id = i.account_id
+      fx: JOIN fx_rates fx ON fx.currency = i.currency AND fx.month = CAST(date_trunc('month', i.invoice_date) AS DATE)
+      s: JOIN subscriptions s ON s.subscription_id = i.subscription_id
+    always_join: [a, fx]
+    where:
+      - i.status <> 'void'
+      - NOT a.is_test
+  accounts:
+    from: accounts
+    alias: a
+    time_column: a.signup_date
+    joins: {}
+    always_join: []
+    where:
+      - NOT a.is_test
+  churn_events:
+    # Logo churn: an account churns on the end date of its last subscription, but only if it
+    # has no open subscription. Plan changes (cancel + reopen) and win-backs are not churn.
+    from: "(SELECT account_id, MAX(end_date) AS churn_date FROM subscriptions GROUP BY account_id HAVING COUNT(*) = COUNT(end_date))"
+    alias: c
+    time_column: c.churn_date
+    joins:
+      a: JOIN accounts a ON a.account_id = c.account_id
+    always_join: [a]
+    where:
+      - NOT a.is_test
+  active_subscriptions:
+    # Point-in-time model: subscriptions active on the as-of date.
+    snapshot: true
+    from: subscriptions
+    alias: s
+    joins:
+      a: JOIN accounts a ON a.account_id = s.account_id
+      fx: JOIN fx_rates fx ON fx.currency = s.currency AND fx.month = CAST(date_trunc('month', DATE '{as_of}') AS DATE)
+    always_join: [a, fx]
+    where:
+      - NOT a.is_test
+      - s.start_date <= DATE '{as_of}'
+      - (s.end_date IS NULL OR s.end_date > DATE '{as_of}')
+  tickets:
+    from: support_tickets
+    alias: t
+    time_column: CAST(t.opened_at AS DATE)
+    joins:
+      a: JOIN accounts a ON a.account_id = t.account_id
+    always_join: [a]
+    where:
+      - NOT a.is_test
+  usage:
+    from: usage_monthly
+    alias: u
+    time_column: u.usage_month
+    joins:
+      a: JOIN accounts a ON a.account_id = u.account_id
+    always_join: [a]
+    where:
+      - NOT a.is_test
+
+metrics:
+  revenue_usd:
+    model: invoices
+    sql: ROUND(SUM(i.amount_local * fx.rate_to_usd), 2)
+    label: Revenue (USD)
+    description: Invoiced (billed) revenue in USD. Excludes void invoices and test accounts; local currency converted at the invoice month's FX rate. This is billings, not GAAP recognised revenue.
+    synonyms: [revenue, billings, billed revenue, invoiced revenue, sales, bookings billed]
+  invoice_count:
+    model: invoices
+    sql: COUNT(*)
+    label: Invoices
+    description: Number of non-void invoices issued to non-test accounts.
+    synonyms: [invoice count, number of invoices, invoices, invoices issued]
+  new_accounts:
+    model: accounts
+    sql: COUNT(*)
+    label: New accounts
+    description: Accounts created (by signup date), excluding test accounts.
+    synonyms: [new accounts, new customers, signups, sign-ups, new logos, accounts signed up, signed]
+  churned_accounts:
+    model: churn_events
+    sql: COUNT(*)
+    label: Churned accounts
+    description: Logo churn. An account churns on the end date of its last subscription when it has no open subscription. Plan changes and win-backs are not churn.
+    synonyms: [churned accounts, churned customers, churn, churned, logos lost, customers lost, cancellations]
+  arr_usd:
+    model: active_subscriptions
+    sql: ROUND(SUM(s.mrr_local * 12 * fx.rate_to_usd), 2)
+    label: ARR (USD)
+    description: Annual recurring revenue on the as-of date = 12 x MRR of subscriptions active that day, converted at that month's FX rate. Point-in-time; defaults to the latest data date.
+    synonyms: [arr, annual recurring revenue, recurring revenue, run rate]
+  active_customers:
+    model: active_subscriptions
+    sql: COUNT(DISTINCT s.account_id)
+    label: Active customers
+    description: Distinct non-test accounts with a subscription active on the as-of date. Point-in-time; defaults to the latest data date.
+    synonyms: [active customers, active accounts, customers do we have, paying customers, customer count, number of customers]
+  support_tickets:
+    model: tickets
+    sql: COUNT(*)
+    label: Support tickets
+    description: Support tickets opened (by open date), excluding test accounts.
+    synonyms: [support tickets, tickets, support cases, cases opened, tickets opened]
+  avg_resolution_hours:
+    model: tickets
+    sql: ROUND(AVG(date_diff('second', t.opened_at, t.resolved_at) / 3600.0) FILTER (WHERE t.resolved_at IS NOT NULL), 2)
+    label: Avg resolution time (hours)
+    description: Mean hours from open to resolution over resolved tickets, by open date.
+    synonyms: [resolution time, resolution hours, time to resolve, average resolution, hours to resolve]
+  avg_csat:
+    model: tickets
+    sql: ROUND(AVG(t.csat_score), 3)
+    label: Average CSAT (1-5)
+    description: Mean CSAT score (1-5) over tickets with a survey response, by ticket open date.
+    synonyms: [csat, customer satisfaction, satisfaction score, satisfaction]
+  api_calls:
+    model: usage
+    sql: SUM(u.api_calls)
+    label: API calls
+    description: Total API calls metered in the usage month, excluding test accounts.
+    synonyms: [api calls, api usage, api requests, calls to the api]
+
+dimensions:
+  region:
+    sql: a.region
+    requires: a
+    description: Sales region of the account.
+    synonyms: [region, regions, geo, geography]
+  segment:
+    sql: a.segment
+    requires: a
+    description: Customer segment by size.
+    synonyms: [segment, segments, customer segment, company size]
+  industry:
+    sql: a.industry
+    requires: a
+    description: Industry vertical of the account.
+    synonyms: [industry, industries, vertical, verticals]
+  billing_currency:
+    sql: a.billing_currency
+    requires: a
+    description: Currency the account is billed in.
+    synonyms: [billing currency, currency, currencies]
+  plan:
+    sql: s.plan
+    requires: s
+    description: Pricing plan of the subscription.
+    synonyms: [plan, plans, pricing plan, tier, tiers]
+  priority:
+    sql: t.priority
+    requires: t
+    description: Support ticket priority.
+    synonyms: [priority, priorities, ticket priority, severity]
+  fiscal_year:
+    sql: d.fiscal_year
+    time: true
+    description: Fiscal year (starts 1 Feb; named after the calendar year it ends).
+    synonyms: [fiscal year, fiscal years, fy, year]
+  fiscal_quarter:
+    sql: d.fiscal_quarter
+    time: true
+    description: Fiscal quarter, e.g. FY2025-Q1 = Feb-Apr 2024.
+    synonyms: [fiscal quarter, fiscal quarters, quarter, quarters, quarterly]
+  calendar_month:
+    sql: d.calendar_month
+    time: true
+    description: Calendar month as YYYY-MM.
+    synonyms: [month, months, monthly, calendar month]
+  calendar_year:
+    sql: d.calendar_year
+    time: true
+    description: Calendar year (January-December).
+    synonyms: [calendar year, calendar years]

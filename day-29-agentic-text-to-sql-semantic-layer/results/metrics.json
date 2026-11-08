@@ -1,0 +1,510 @@
+{
+  "data": {
+    "path_used": "synthetic_generator",
+    "synthetic": true,
+    "seed": 20261108,
+    "n_accounts": 2500,
+    "row_counts": {
+      "accounts": 2500,
+      "subscriptions": 2901,
+      "invoices": 34798,
+      "fx_rates": 288,
+      "usage_monthly": 34798,
+      "support_tickets": 12129,
+      "dim_date": 1461
+    },
+    "sample_bytes": 80561,
+    "period": "2023-02-01 to 2026-01-31 (FY2024-FY2026)"
+  },
+  "benchmark": {
+    "main_60": {
+      "rules_semantic": {
+        "n_questions": 60,
+        "n_answerable": 47,
+        "n_should_not_answer": 13,
+        "overall_accuracy": 1.0,
+        "execution_accuracy": 1.0,
+        "execution_correct": 47,
+        "refusal_correctness": 1.0,
+        "refusal_correct": 13,
+        "non_answer_recall": 1.0,
+        "false_refusal_rate": 0.0,
+        "wrong_answer_rate": 0.0,
+        "unsafe_answers": 0,
+        "by_category": {
+          "simple": {
+            "n": 10,
+            "correct": 10,
+            "accuracy": 1.0
+          },
+          "by_dimension": {
+            "n": 10,
+            "correct": 10,
+            "accuracy": 1.0
+          },
+          "time_series": {
+            "n": 8,
+            "correct": 8,
+            "accuracy": 1.0
+          },
+          "filtered": {
+            "n": 8,
+            "correct": 8,
+            "accuracy": 1.0
+          },
+          "point_in_time": {
+            "n": 3,
+            "correct": 3,
+            "accuracy": 1.0
+          },
+          "ranking": {
+            "n": 5,
+            "correct": 5,
+            "accuracy": 1.0
+          },
+          "multi_metric": {
+            "n": 3,
+            "correct": 3,
+            "accuracy": 1.0
+          },
+          "refuse_write": {
+            "n": 3,
+            "correct": 3,
+            "accuracy": 1.0
+          },
+          "refuse_pii": {
+            "n": 3,
+            "correct": 3,
+            "accuracy": 1.0
+          },
+          "refuse_undefined": {
+            "n": 5,
+            "correct": 5,
+            "accuracy": 1.0
+          },
+          "clarify": {
+            "n": 2,
+            "correct": 2,
+            "accuracy": 1.0
+          }
+        },
+        "by_trap": {
+          "churn": {
+            "n": 5,
+            "correct": 5,
+            "accuracy": 1.0
+          },
+          "fiscal": {
+            "n": 40,
+            "correct": 40,
+            "accuracy": 1.0
+          },
+          "fx": {
+            "n": 20,
+            "correct": 20,
+            "accuracy": 1.0
+          },
+          "point_in_time": {
+            "n": 9,
+            "correct": 9,
+            "accuracy": 1.0
+          },
+          "test": {
+            "n": 47,
+            "correct": 47,
+            "accuracy": 1.0
+          },
+          "void": {
+            "n": 15,
+            "correct": 15,
+            "accuracy": 1.0
+          }
+        },
+        "latency_ms_p50": 12.81,
+        "latency_ms_max": 43.07
+      },
+      "rules_raw_schema": {
+        "n_questions": 60,
+        "n_answerable": 47,
+        "n_should_not_answer": 13,
+        "overall_accuracy": 0.25,
+        "execution_accuracy": 0.0426,
+        "execution_correct": 2,
+        "refusal_correctness": 1.0,
+        "refusal_correct": 13,
+        "non_answer_recall": 1.0,
+        "false_refusal_rate": 0.0,
+        "wrong_answer_rate": 0.9574,
+        "unsafe_answers": 0,
+        "by_category": {
+          "simple": {
+            "n": 10,
+            "correct": 1,
+            "accuracy": 0.1
+          },
+          "by_dimension": {
+            "n": 10,
+            "correct": 1,
+            "accuracy": 0.1
+          },
+          "time_series": {
+            "n": 8,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "filtered": {
+            "n": 8,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "point_in_time": {
+            "n": 3,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "ranking": {
+            "n": 5,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "multi_metric": {
+            "n": 3,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "refuse_write": {
+            "n": 3,
+            "correct": 3,
+            "accuracy": 1.0
+          },
+          "refuse_pii": {
+            "n": 3,
+            "correct": 3,
+            "accuracy": 1.0
+          },
+          "refuse_undefined": {
+            "n": 5,
+            "correct": 5,
+            "accuracy": 1.0
+          },
+          "clarify": {
+            "n": 2,
+            "correct": 2,
+            "accuracy": 1.0
+          }
+        },
+        "by_trap": {
+          "churn": {
+            "n": 5,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "fiscal": {
+            "n": 40,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "fx": {
+            "n": 20,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "point_in_time": {
+            "n": 9,
+            "correct": 2,
+            "accuracy": 0.2222
+          },
+          "test": {
+            "n": 47,
+            "correct": 2,
+            "accuracy": 0.0426
+          },
+          "void": {
+            "n": 15,
+            "correct": 0,
+            "accuracy": 0.0
+          }
+        },
+        "latency_ms_p50": 7.04,
+        "latency_ms_max": 14.95
+      }
+    },
+    "heldout_paraphrases_20": {
+      "rules_semantic": {
+        "n_questions": 20,
+        "n_answerable": 15,
+        "n_should_not_answer": 5,
+        "overall_accuracy": 0.9,
+        "execution_accuracy": 0.8667,
+        "execution_correct": 13,
+        "refusal_correctness": 1.0,
+        "refusal_correct": 5,
+        "non_answer_recall": 1.0,
+        "false_refusal_rate": 0.0667,
+        "wrong_answer_rate": 0.0667,
+        "unsafe_answers": 0,
+        "by_category": {
+          "simple": {
+            "n": 4,
+            "correct": 3,
+            "accuracy": 0.75
+          },
+          "by_dimension": {
+            "n": 3,
+            "correct": 3,
+            "accuracy": 1.0
+          },
+          "time_series": {
+            "n": 2,
+            "correct": 2,
+            "accuracy": 1.0
+          },
+          "filtered": {
+            "n": 3,
+            "correct": 2,
+            "accuracy": 0.6667
+          },
+          "point_in_time": {
+            "n": 1,
+            "correct": 1,
+            "accuracy": 1.0
+          },
+          "ranking": {
+            "n": 1,
+            "correct": 1,
+            "accuracy": 1.0
+          },
+          "multi_metric": {
+            "n": 1,
+            "correct": 1,
+            "accuracy": 1.0
+          },
+          "refuse_write": {
+            "n": 1,
+            "correct": 1,
+            "accuracy": 1.0
+          },
+          "refuse_pii": {
+            "n": 1,
+            "correct": 1,
+            "accuracy": 1.0
+          },
+          "refuse_undefined": {
+            "n": 2,
+            "correct": 2,
+            "accuracy": 1.0
+          },
+          "clarify": {
+            "n": 1,
+            "correct": 1,
+            "accuracy": 1.0
+          }
+        },
+        "by_trap": {
+          "churn": {
+            "n": 1,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "fiscal": {
+            "n": 10,
+            "correct": 8,
+            "accuracy": 0.8
+          },
+          "fx": {
+            "n": 7,
+            "correct": 7,
+            "accuracy": 1.0
+          },
+          "point_in_time": {
+            "n": 4,
+            "correct": 4,
+            "accuracy": 1.0
+          },
+          "test": {
+            "n": 15,
+            "correct": 13,
+            "accuracy": 0.8667
+          },
+          "void": {
+            "n": 4,
+            "correct": 4,
+            "accuracy": 1.0
+          }
+        },
+        "latency_ms_p50": 11.53,
+        "latency_ms_max": 24.65
+      },
+      "rules_raw_schema": {
+        "n_questions": 20,
+        "n_answerable": 15,
+        "n_should_not_answer": 5,
+        "overall_accuracy": 0.3,
+        "execution_accuracy": 0.1333,
+        "execution_correct": 2,
+        "refusal_correctness": 0.8,
+        "refusal_correct": 4,
+        "non_answer_recall": 0.8,
+        "false_refusal_rate": 0.0667,
+        "wrong_answer_rate": 0.8,
+        "unsafe_answers": 1,
+        "by_category": {
+          "simple": {
+            "n": 4,
+            "correct": 1,
+            "accuracy": 0.25
+          },
+          "by_dimension": {
+            "n": 3,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "time_series": {
+            "n": 2,
+            "correct": 1,
+            "accuracy": 0.5
+          },
+          "filtered": {
+            "n": 3,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "point_in_time": {
+            "n": 1,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "ranking": {
+            "n": 1,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "multi_metric": {
+            "n": 1,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "refuse_write": {
+            "n": 1,
+            "correct": 1,
+            "accuracy": 1.0
+          },
+          "refuse_pii": {
+            "n": 1,
+            "correct": 1,
+            "accuracy": 1.0
+          },
+          "refuse_undefined": {
+            "n": 2,
+            "correct": 1,
+            "accuracy": 0.5
+          },
+          "clarify": {
+            "n": 1,
+            "correct": 1,
+            "accuracy": 1.0
+          }
+        },
+        "by_trap": {
+          "churn": {
+            "n": 1,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "fiscal": {
+            "n": 10,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "fx": {
+            "n": 7,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "point_in_time": {
+            "n": 4,
+            "correct": 1,
+            "accuracy": 0.25
+          },
+          "test": {
+            "n": 15,
+            "correct": 2,
+            "accuracy": 0.1333
+          },
+          "void": {
+            "n": 4,
+            "correct": 0,
+            "accuracy": 0.0
+          }
+        },
+        "latency_ms_p50": 6.97,
+        "latency_ms_max": 12.54
+      }
+    }
+  },
+  "headline": {
+    "semantic_rules_execution_accuracy": 1.0,
+    "raw_schema_rules_execution_accuracy": 0.0426,
+    "semantic_rules_refusal_correctness": 1.0,
+    "heldout_semantic_rules_execution_accuracy": 0.8667,
+    "heldout_semantic_rules_overall_accuracy": 0.9,
+    "guardrail_attacks_blocked": "40/40"
+  },
+  "llm": {
+    "used": false,
+    "model": "claude-opus-5-5",
+    "status": "pending: ANTHROPIC_API_KEY not set, so the Claude semantic-layer vs raw-schema comparison was not run; only offline (rules-based) results are reported"
+  },
+  "guardrails": {
+    "attacks": 40,
+    "blocked_by_guardrails": 40,
+    "write_ddl_attempts": 15,
+    "write_ddl_blocked_by_engine_without_guardrails": 15,
+    "benign_allowed": 5,
+    "benign_total": 5,
+    "row_counts_unchanged": true,
+    "by_category": {
+      "write": {
+        "n": 9,
+        "blocked": 9
+      },
+      "ddl": {
+        "n": 6,
+        "blocked": 6
+      },
+      "admin": {
+        "n": 11,
+        "blocked": 11
+      },
+      "file": {
+        "n": 6,
+        "blocked": 6
+      },
+      "catalog": {
+        "n": 2,
+        "blocked": 2
+      },
+      "pii": {
+        "n": 6,
+        "blocked": 6
+      }
+    }
+  },
+  "answer_cache": {
+    "distinct_compiled_queries": 47,
+    "warm_pass_cache_hits": 47,
+    "cold_pass_seconds": 0.641,
+    "warm_pass_seconds": 0.206
+  },
+  "clarification_demo": {
+    "turn1_status": "clarify",
+    "turn2_status": "answer",
+    "turn2_rows": 4
+  },
+  "environment": {
+    "python": "3.11.17",
+    "duckdb": "2.0.0",
+    "sqlglot": "30.30.0",
+    "runtime_seconds": 4.29
+  }
+}

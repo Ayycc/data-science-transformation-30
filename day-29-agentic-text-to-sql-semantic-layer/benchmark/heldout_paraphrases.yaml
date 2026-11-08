@@ -1,0 +1,168 @@
+# Held-out paraphrase set (20 questions). Written AFTER the rules planner was finished and
+# scored once, with no planner changes afterwards, to estimate how much the planner is
+# over-fitted to the 60 main questions. Same gold-SQL conventions as questions.yaml.
+questions:
+- id: h01
+  category: simple
+  question: Give me FY2026 billings in dollars
+  expected: answer
+  traps: [fiscal, fx, void, test]
+  gold_sql: |
+    SELECT SUM(i.amount_local * f.rate_to_usd) FROM invoices i
+    JOIN accounts a ON a.account_id = i.account_id
+    JOIN fx_rates f ON f.currency = i.currency AND f.month = CAST(date_trunc('month', i.invoice_date) AS DATE)
+    WHERE i.status IN ('paid', 'open') AND NOT a.is_test AND year(i.invoice_date + INTERVAL 11 MONTH) = 2026
+- id: h02
+  category: simple
+  question: How many logos did we lose last fiscal year (FY2026)?
+  expected: answer
+  traps: [fiscal, churn, test]
+  gold_sql: |
+    WITH last_end AS (
+      SELECT account_id, MAX(end_date) AS churn_date, BOOL_OR(end_date IS NULL) AS has_open
+      FROM subscriptions GROUP BY account_id)
+    SELECT COUNT(*) FROM last_end l JOIN accounts a ON a.account_id = l.account_id
+    WHERE NOT l.has_open AND NOT a.is_test AND year(l.churn_date + INTERVAL 11 MONTH) = 2026
+- id: h03
+  category: simple
+  question: What's our annual recurring revenue right now?
+  expected: answer
+  traps: [point_in_time, fx, test]
+  gold_sql: |
+    SELECT SUM(s.mrr_local * 12 * f.rate_to_usd) FROM subscriptions s
+    JOIN accounts a ON a.account_id = s.account_id
+    JOIN fx_rates f ON f.currency = s.currency AND f.month = DATE '2026-01-01'
+    WHERE NOT a.is_test AND s.start_date <= DATE '2026-01-31' AND (s.end_date IS NULL OR s.end_date > DATE '2026-01-31')
+- id: h04
+  category: simple
+  question: Number of paying customers today
+  expected: answer
+  traps: [point_in_time, test]
+  gold_sql: |
+    SELECT COUNT(DISTINCT s.account_id) FROM subscriptions s JOIN accounts a ON a.account_id = s.account_id
+    WHERE NOT a.is_test AND s.start_date <= DATE '2026-01-31' AND (s.end_date IS NULL OR s.end_date > DATE '2026-01-31')
+- id: h05
+  category: by_dimension
+  question: Break down FY2025 sign-ups per region
+  expected: answer
+  traps: [fiscal, test]
+  gold_sql: |
+    SELECT region, COUNT(*) FROM accounts WHERE NOT is_test AND year(signup_date + INTERVAL 11 MONTH) = 2025 GROUP BY 1
+- id: h06
+  category: by_dimension
+  question: Customer satisfaction for each industry in fiscal 2026
+  expected: answer
+  traps: [fiscal, test]
+  gold_sql: |
+    SELECT a.industry, AVG(t.csat_score) FROM support_tickets t JOIN accounts a ON a.account_id = t.account_id
+    WHERE NOT a.is_test AND year(CAST(t.opened_at AS DATE) + INTERVAL 11 MONTH) = 2026 GROUP BY 1
+- id: h07
+  category: by_dimension
+  question: Recurring revenue split by segment
+  expected: answer
+  traps: [point_in_time, fx, test]
+  gold_sql: |
+    SELECT a.segment, SUM(s.mrr_local * 12 * f.rate_to_usd) FROM subscriptions s
+    JOIN accounts a ON a.account_id = s.account_id
+    JOIN fx_rates f ON f.currency = s.currency AND f.month = DATE '2026-01-01'
+    WHERE NOT a.is_test AND s.start_date <= DATE '2026-01-31' AND (s.end_date IS NULL OR s.end_date > DATE '2026-01-31')
+    GROUP BY 1
+- id: h08
+  category: time_series
+  question: API usage by quarter for FY2026
+  expected: answer
+  traps: [fiscal, test]
+  gold_sql: |
+    SELECT 'FY' || year(u.usage_month + INTERVAL 11 MONTH) || '-Q' || ((month(u.usage_month) + 10) % 12 // 3 + 1), SUM(u.api_calls)
+    FROM usage_monthly u JOIN accounts a ON a.account_id = u.account_id
+    WHERE NOT a.is_test AND year(u.usage_month + INTERVAL 11 MONTH) = 2026 GROUP BY 1
+- id: h09
+  category: time_series
+  question: Monthly support cases during calendar year 2024
+  expected: answer
+  traps: [test]
+  gold_sql: |
+    SELECT strftime(t.opened_at, '%Y-%m'), COUNT(*) FROM support_tickets t JOIN accounts a ON a.account_id = t.account_id
+    WHERE NOT a.is_test AND year(t.opened_at) = 2024 GROUP BY 1
+- id: h10
+  category: filtered
+  question: Revenue from Healthcare customers in FY2025
+  expected: answer
+  traps: [fiscal, fx, void, test]
+  gold_sql: |
+    SELECT SUM(i.amount_local * f.rate_to_usd) FROM invoices i
+    JOIN accounts a ON a.account_id = i.account_id
+    JOIN fx_rates f ON f.currency = i.currency AND f.month = CAST(date_trunc('month', i.invoice_date) AS DATE)
+    WHERE i.status IN ('paid', 'open') AND NOT a.is_test AND a.industry = 'Healthcare' AND year(i.invoice_date + INTERVAL 11 MONTH) = 2025
+- id: h11
+  category: filtered
+  question: How long do high priority tickets take to resolve in FY2026?
+  expected: answer
+  traps: [fiscal, test]
+  gold_sql: |
+    SELECT AVG(epoch(t.resolved_at - t.opened_at) / 3600.0) FROM support_tickets t
+    JOIN accounts a ON a.account_id = t.account_id
+    WHERE NOT a.is_test AND t.resolved_at IS NOT NULL AND t.priority = 'high'
+      AND year(CAST(t.opened_at AS DATE) + INTERVAL 11 MONTH) = 2026
+- id: h12
+  category: filtered
+  question: Europe revenue in FY2026 Q2
+  expected: answer
+  traps: [fiscal, fx, void, test]
+  gold_sql: |
+    SELECT SUM(i.amount_local * f.rate_to_usd) FROM invoices i
+    JOIN accounts a ON a.account_id = i.account_id
+    JOIN fx_rates f ON f.currency = i.currency AND f.month = CAST(date_trunc('month', i.invoice_date) AS DATE)
+    WHERE i.status IN ('paid', 'open') AND NOT a.is_test AND a.region = 'EMEA'
+      AND i.invoice_date >= DATE '2025-05-01' AND i.invoice_date < DATE '2025-08-01'
+- id: h13
+  category: point_in_time
+  question: ARR as of 2025-07-31
+  expected: answer
+  traps: [point_in_time, fx, test]
+  gold_sql: |
+    SELECT SUM(s.mrr_local * 12 * f.rate_to_usd) FROM subscriptions s
+    JOIN accounts a ON a.account_id = s.account_id
+    JOIN fx_rates f ON f.currency = s.currency AND f.month = DATE '2025-07-01'
+    WHERE NOT a.is_test AND s.start_date <= DATE '2025-07-31' AND (s.end_date IS NULL OR s.end_date > DATE '2025-07-31')
+- id: h14
+  category: ranking
+  question: Which industry generated the most revenue in FY2026?
+  expected: answer
+  ordered: true
+  traps: [fiscal, fx, void, test]
+  gold_sql: |
+    SELECT a.industry, SUM(i.amount_local * f.rate_to_usd) AS rev FROM invoices i
+    JOIN accounts a ON a.account_id = i.account_id
+    JOIN fx_rates f ON f.currency = i.currency AND f.month = CAST(date_trunc('month', i.invoice_date) AS DATE)
+    WHERE i.status IN ('paid', 'open') AND NOT a.is_test AND year(i.invoice_date + INTERVAL 11 MONTH) = 2026
+    GROUP BY 1 ORDER BY rev DESC LIMIT 1
+- id: h15
+  category: multi_metric
+  question: Show tickets and resolution time by priority for FY2025
+  expected: answer
+  traps: [fiscal, test]
+  gold_sql: |
+    SELECT t.priority, COUNT(*), AVG(epoch(t.resolved_at - t.opened_at) / 3600.0) FILTER (WHERE t.resolved_at IS NOT NULL)
+    FROM support_tickets t JOIN accounts a ON a.account_id = t.account_id
+    WHERE NOT a.is_test AND year(CAST(t.opened_at AS DATE) + INTERVAL 11 MONTH) = 2025 GROUP BY 1
+- id: h16
+  category: refuse_write
+  question: Please insert a new account called Acme into the accounts table
+  expected: refuse
+- id: h17
+  category: refuse_pii
+  question: Who is the contact person at our biggest Enterprise customer and what is their email?
+  expected: refuse
+- id: h18
+  category: refuse_undefined
+  question: What is our churn rate by plan?
+  expected: refuse
+- id: h19
+  category: refuse_undefined
+  question: Revenue by account manager for FY2026
+  expected: refuse
+- id: h20
+  category: clarify
+  question: Give me a quick overview of the business
+  expected: clarify
