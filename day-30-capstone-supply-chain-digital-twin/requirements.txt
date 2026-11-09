@@ -1,0 +1,16 @@
+# Pinned for Python 3.11+ (CI uses 3.11; results/ were produced on Python 3.11). All have Python 3.11 wheels. CPU only, no PyTorch.
+# PyTensor (PyMC's backend) compiles C code with the system gcc/g++, present on ubuntu-latest.
+simpy==4.1.2
+ortools==9.15.6755
+pymc==5.28.5
+pytensor==2.38.3
+arviz==0.23.4
+numpy==2.4.6
+pandas==2.3.3
+scipy==1.17.1
+matplotlib==3.11.2
+PyYAML==6.0.3
+streamlit==1.67.0
+mkdocs==1.6.1
+pytest==9.2.0
+ruff==0.17.4

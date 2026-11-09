@@ -1,0 +1,210 @@
+{
+  "fetched_at": "2026-11-09T13:27:20Z",
+  "source": "GitHub Actions API for Ayycc/data-science-transformation-30 via gh CLI (workflow CI, job 'test (<day folder>)')",
+  "runs_scanned": 32,
+  "days": {
+    "day-01-retail-medallion-lakehouse": {
+      "conclusion": "success",
+      "run_id": 38257358012,
+      "head_sha": "d2b8303",
+      "run_title": "Day 01: Retail Medallion Lakehouse with dbt + DuckDB",
+      "completed_at": "2026-10-12T13:42:12Z"
+    },
+    "day-02-card-fraud-polars-lightgbm": {
+      "conclusion": "success",
+      "run_id": 38409526584,
+      "head_sha": "ca0d489",
+      "run_title": "Day 02: Card Fraud Detection at Speed with Polars + LightGBM",
+      "completed_at": "2026-10-13T14:00:25Z"
+    },
+    "day-03-healthcare-readmission-omop": {
+      "conclusion": "success",
+      "run_id": 38572600838,
+      "head_sha": "c45253e",
+      "run_title": "Day 03: Hospital Readmission Risk on an OMOP-style Model",
+      "completed_at": "2026-10-14T13:33:18Z"
+    },
+    "day-04-energy-load-forecasting-conformal": {
+      "conclusion": "success",
+      "run_id": 38794238827,
+      "head_sha": "72237a9",
+      "run_title": "Day 04: Grid Load Forecasting with Probabilistic Backtesting",
+      "completed_at": "2026-10-15T19:30:50Z"
+    },
+    "day-05-civic-311-data-quality-hotspots": {
+      "conclusion": "success",
+      "run_id": 38909330794,
+      "head_sha": "1561bac",
+      "run_title": "Day 05: City 311 Data Quality and Service Hotspots",
+      "completed_at": "2026-10-16T13:38:53Z"
+    },
+    "day-06-experimentation-platform-cuped": {
+      "conclusion": "success",
+      "run_id": 39035989233,
+      "head_sha": "9b279c2",
+      "run_title": "Day 06: Experimentation Engine: CUPED, Sequential and Bayesian Tests",
+      "completed_at": "2026-10-17T13:18:52Z"
+    },
+    "day-07-supply-chain-demand-inventory-opt": {
+      "conclusion": "success",
+      "run_id": 39050109248,
+      "head_sha": "3522505",
+      "run_title": "Day 07: Demand-Driven Inventory Optimisation",
+      "completed_at": "2026-10-17T16:37:04Z"
+    },
+    "day-08-telecom-churn-survival-uplift": {
+      "conclusion": "success",
+      "run_id": 39131225431,
+      "head_sha": "579434e",
+      "run_title": "Day 08: Telecom Retention: Survival Analysis + Uplift Modelling",
+      "completed_at": "2026-10-18T13:23:29Z"
+    },
+    "day-09-clickstream-spark-delta": {
+      "conclusion": "success",
+      "run_id": 39271763121,
+      "head_sha": "6aba675",
+      "run_title": "Day 09: Clickstream Sessionisation at Scale with PySpark + Delta Lake",
+      "completed_at": "2026-10-19T14:48:15Z"
+    },
+    "day-10-air-quality-dagster-assets": {
+      "conclusion": "success",
+      "run_id": 39432010122,
+      "head_sha": "5f4ec2c",
+      "run_title": "Day 10: Air Quality Intelligence with Dagster Software-Defined Assets",
+      "completed_at": "2026-10-20T13:39:57Z"
+    },
+    "day-11-support-ticket-nlp-active-learning": {
+      "conclusion": "success",
+      "run_id": 39612710548,
+      "head_sha": "3937495",
+      "run_title": "Day 11: Support Ticket Intelligence: NLP Classification with Active L\u2026",
+      "completed_at": "2026-10-21T14:00:39Z"
+    },
+    "day-12-policy-causal-inference-dml": {
+      "conclusion": "success",
+      "run_id": 39791638234,
+      "head_sha": "15d3f0b",
+      "run_title": "Day 12: Did the Programme Work? Causal Inference with Double ML",
+      "completed_at": "2026-10-22T14:00:25Z"
+    },
+    "day-13-aml-transaction-graph-analytics": {
+      "conclusion": "success",
+      "run_id": 39960243930,
+      "head_sha": "9ae731e",
+      "run_title": "Day 13: Anti-Money-Laundering with Transaction Graph Analytics",
+      "completed_at": "2026-10-23T13:21:06Z"
+    },
+    "day-14-iot-streaming-anomaly-detection": {
+      "conclusion": "success",
+      "run_id": 40100018051,
+      "head_sha": "3aee8eb",
+      "run_title": "Day 14: Streaming Predictive Maintenance for Manufacturing IoT",
+      "completed_at": "2026-10-24T13:53:46Z"
+    },
+    "day-15-bikeshare-geospatial-rebalancing": {
+      "conclusion": "success",
+      "run_id": 40201120116,
+      "head_sha": "44a58f6",
+      "run_title": "Day 15: Bike-Share Demand and Fleet Rebalancing",
+      "completed_at": "2026-10-25T14:13:25Z"
+    },
+    "day-16-insurance-claims-mlops": {
+      "conclusion": "success",
+      "run_id": 40332792463,
+      "head_sha": "647ed5f",
+      "run_title": "Day 16: Insurance Claims Severity: Full MLOps Lifecycle",
+      "completed_at": "2026-10-26T13:43:35Z"
+    },
+    "day-17-ridehail-feature-store-pit": {
+      "conclusion": "success",
+      "run_id": 40514344249,
+      "head_sha": "a6ff185",
+      "run_title": "Day 17: Point-in-Time Correct Feature Store for Ride-Hailing ETA",
+      "completed_at": "2026-10-27T13:43:44Z"
+    },
+    "day-18-bayesian-marketing-mix-model": {
+      "conclusion": "success",
+      "run_id": 40699725649,
+      "head_sha": "d34b40d",
+      "run_title": "Day 18: Bayesian Marketing Mix Model and Budget Optimiser",
+      "completed_at": "2026-10-28T13:50:32Z"
+    },
+    "day-19-data-mesh-contracts-lineage": {
+      "conclusion": "success",
+      "run_id": 40883023497,
+      "head_sha": "62c3a3b",
+      "run_title": "Day 19: Data Mesh in Practice: Contracts, Versioning and Lineage",
+      "completed_at": "2026-10-29T13:35:08Z"
+    },
+    "day-20-llm-document-extraction-eval": {
+      "conclusion": "success",
+      "run_id": 41065747388,
+      "head_sha": "36290e4",
+      "run_title": "Day 20: LLM Structured Extraction with a Rigorous Evaluation Harness",
+      "completed_at": "2026-10-30T13:45:57Z"
+    },
+    "day-21-regulatory-rag-hybrid-search": {
+      "conclusion": "success",
+      "run_id": 41204830395,
+      "head_sha": "27a3e85",
+      "run_title": "Day 21: Regulatory Q&A: Hybrid-Search RAG with Measured Faithfulness",
+      "completed_at": "2026-10-31T13:18:16Z"
+    },
+    "day-22-agri-climate-xarray-dask": {
+      "conclusion": "success",
+      "run_id": 41312312576,
+      "head_sha": "d762648",
+      "run_title": "Day 22: Crop Yield and Climate Risk with xarray + Dask",
+      "completed_at": "2026-11-01T13:41:21Z"
+    },
+    "day-23-sre-anomaly-root-cause": {
+      "conclusion": "success",
+      "run_id": 41453212957,
+      "head_sha": "c85d690",
+      "run_title": "Day 23: Observability Analytics: Multivariate Anomaly Detection and R\u2026",
+      "completed_at": "2026-11-02T13:29:47Z"
+    },
+    "day-24-streaming-recsys-off-policy-eval": {
+      "conclusion": "success",
+      "run_id": 41666410282,
+      "head_sha": "f5248d9",
+      "run_title": "Day 24: Recommender System with Two-Tower Retrieval and Off-Policy Ev\u2026",
+      "completed_at": "2026-11-03T15:42:53Z"
+    },
+    "day-25-privacy-dp-synthetic-data": {
+      "conclusion": "success",
+      "run_id": 41844940554,
+      "head_sha": "3c60379",
+      "run_title": "Day 25: Privacy-Preserving Analytics: Differential Privacy and Synthe\u2026",
+      "completed_at": "2026-11-04T14:12:42Z"
+    },
+    "day-26-lending-fairness-model-governance": {
+      "conclusion": "success",
+      "run_id": 42035695450,
+      "head_sha": "68595cb",
+      "run_title": "Day 26: Responsible Credit Decisioning: Fairness, Explainability and \u2026",
+      "completed_at": "2026-11-05T13:27:34Z"
+    },
+    "day-27-hospitality-dynamic-pricing-bandits": {
+      "conclusion": "success",
+      "run_id": 42224687912,
+      "head_sha": "0d0a78e",
+      "run_title": "Day 27: Dynamic Pricing for Hospitality with Contextual Bandits",
+      "completed_at": "2026-11-06T13:21:15Z"
+    },
+    "day-28-legacy-reporting-modernisation-iceberg": {
+      "conclusion": "success",
+      "run_id": 42376730586,
+      "head_sha": "a6fe052",
+      "run_title": "Day 28: Legacy Reporting Modernisation: SAS/Excel to Iceberg + Ibis",
+      "completed_at": "2026-11-07T13:24:27Z"
+    },
+    "day-29-agentic-text-to-sql-semantic-layer": {
+      "conclusion": "success",
+      "run_id": 42483943137,
+      "head_sha": "a49d364",
+      "run_title": "Day 29: Agentic Analytics: Text-to-SQL over a Semantic Layer with Gua\u2026",
+      "completed_at": "2026-11-08T13:14:25Z"
+    }
+  }
+}

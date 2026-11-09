@@ -1,0 +1,19 @@
+[project]
+name = "capstone-supply-chain-digital-twin"
+version = "1.0.0"
+description = "Day 30: Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+src = ["src", "tests", "scripts", "app"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501", "B905"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q -p no:warnings"

@@ -1,0 +1,229 @@
+# Curated facts for the portfolio retrospective. Everything here is checked by tests:
+#  - every metric path must resolve in that day's committed results/metrics.json;
+#  - every `evidence` string must appear verbatim in that day's README.md.
+# Numbers are never typed here; they are read from metrics.json at report time.
+#
+# provenance.category:
+#   synthetic_by_design     no public source attempted (the brief needs known ground truth)
+#   synthetic_fallback      a public source was attempted, was unreachable, generator used
+#   public_primary          headline results computed on public data
+#   synthetic_plus_public   synthetic headline data plus a public dataset that was downloaded and used
+# fmt: f3 (3 decimals), f4, pct (already in %), pct_frac (fraction shown as %), usd, usd_k (value in $k),
+#      int, raw
+
+days:
+  "01":
+    metric: {label: "gold vs bronze revenue difference", path: [revenue_reconciliation, difference], fmt: usd}
+    context: {label: "gold revenue", path: [revenue_reconciliation, gold_revenue], fmt: usd}
+    provenance: {category: synthetic_by_design, attempted: [], reachable: [], evidence: "Synthetic only."}
+    unmet: []
+    caveats:
+      - {text: "Optional UCI Online Retail II enrichment not attempted", evidence: "UCI Online Retail II enrichment"}
+  "02":
+    metric: {label: "test PR-AUC (LightGBM)", path: [ranking, lightgbm, test, pr_auc], fmt: f3}
+    context: {label: "test-month fraud cost at chosen threshold", path: [threshold, test_cost_at_selected], fmt: usd}
+    provenance: {category: synthetic_by_design, attempted: [], reachable: [], evidence: "no public dataset is downloaded"}
+    unmet: []
+    caveats:
+      - {text: "Fraud rate 0.243% instead of the brief's ~0.3%", evidence: "The fraud rate is 0.243%, not the brief's ~0.3%."}
+  "03":
+    metric: {label: "test AUROC (logistic)", path: [test, logistic_l2, auroc], fmt: f3}
+    context: {label: "LACE baseline AUROC", path: [test, lace, auroc], fmt: f3}
+    provenance: {category: synthetic_fallback, attempted: [Synthea], reachable: [], evidence: "The download was unreachable from the build container"}
+    unmet: []
+    caveats:
+      - {text: "Secondary GBM calibration-slope CI upper bound 1.217 above the 1.2 bound (primary model inside)", evidence: "Gradient boosting's slope CI reaches 1.217"}
+  "04":
+    metric: {label: "day-ahead MASE (best model)", path: [acceptance, best_model_mase], fmt: f3}
+    context: {label: "seasonal-naive MASE", path: [acceptance, seasonal_naive_mase], fmt: f3}
+    provenance: {category: synthetic_fallback, attempted: [EIA-930], reachable: [], evidence: "From the build container the probe returned"}
+    unmet: []
+    caveats:
+      - {text: "7 of 120 region x horizon cells outside 87-93% coverage (criterion met overall)", evidence: "Per-cell coverage is not uniformly inside 87-93%."}
+  "05":
+    metric: {label: "share of rows quarantined", path: [quarantine, pct_quarantined], fmt: pct}
+    context: {label: "defect classes fully caught", path: [defect_detection, classes_fully_caught], fmt: int}
+    provenance: {category: synthetic_fallback, attempted: [Chicago 311, NYC 311, SF 311], reachable: [], evidence: "All three returned"}
+    unmet: []
+    caveats:
+      - {text: "One storm day missed on total volume", evidence: "One storm day was missed on total volume."}
+  "06":
+    metric: {label: "mSPRT false-positive rate under daily peeking", path: [monte_carlo, aa, sessions, rejection_rate, msprt], fmt: pct_frac2}
+    context: {label: "naive peeking FPR", path: [monte_carlo, aa, sessions, rejection_rate, naive_peeking], fmt: pct_frac}
+    provenance: {category: synthetic_by_design, attempted: [], reachable: [], evidence: "Path used: synthetic generator, by design."}
+    unmet:
+      - {criterion: "CUPED variance reduction >= 30% on correlated metrics", result: "revenue reached 24.1% (engagement 65.7%)", evidence: "CUPED target on revenue not met."}
+    caveats: []
+  "07":
+    metric: {label: "total cost reduction vs heuristic", path: [headline, total_cost_reduction_pct], fmt: pct}
+    context: {label: "fill rate (optimised)", path: [headline, fill_rate_optimised], fmt: pct_frac}
+    provenance: {category: synthetic_fallback, attempted: [M5 Walmart], reachable: [], evidence: "HTTP Error 403: Forbidden"}
+    unmet: []
+    caveats:
+      - {text: "Multi-echelon stretch goal not attempted", evidence: "the multi-echelon extension was not attempted"}
+  "08":
+    metric: {label: "uplift-policy net value (true)", path: [headline, uplift_policy_net_true], fmt: usd}
+    context: {label: "churn-score policy net value", path: [headline, churn_policy_net_true], fmt: usd}
+    provenance: {category: synthetic_by_design, attempted: [], reachable: [], evidence: "Path used: synthetic generator, by design."}
+    unmet: []
+    caveats:
+      - {text: "Uplift random forest and DR policy tree did not beat the churn score (X-learner did)", evidence: "Not every uplift learner beats the churn score."}
+  "09":
+    metric: {label: "exact session recovery rate", path: [session_recovery, exact_recovery_rate], fmt: pct_frac3}
+    context: {label: "AQE skew-join speed-up", path: [skew_benchmark, variants, aqe_skew, speedup_vs_baseline], fmt: f2x}
+    provenance: {category: synthetic_by_design, attempted: [], reachable: [], evidence: "Path used: synthetic generator, by design."}
+    unmet: []
+    caveats:
+      - {text: "Structured Streaming / change-data-feed stretch goals not attempted", evidence: "were not attempted"}
+  "10":
+    metric: {label: "alert precision (pipeline)", path: [alerts, pipeline_all_days, precision], fmt: f3}
+    context: {label: "false alerts withheld on unit-bug day", path: [alerts, naive_false_alerts_on_unit_bug_day], fmt: int}
+    provenance: {category: synthetic_fallback, attempted: [OpenAQ], reachable: [], evidence: "was refused by the network proxy"}
+    unmet: []
+    caveats:
+      - {text: "Five drifting sensors missed on the last day", evidence: "Five drifting sensors were missed on the last day."}
+  "11":
+    metric: {label: "macro-F1 at 2% labels (margin AL)", path: [active_learning, by_features, tfidf, strategies, margin, f1_at_budget_mean], fmt: f3}
+    context: {label: "random sampling at 2%", path: [active_learning, by_features, tfidf, random_f1_at_budget], fmt: f3}
+    provenance: {category: public_primary, attempted: [Bitext via Hugging Face, Bitext via GitHub], reachable: [Bitext via GitHub], evidence: "Path used: public corpus."}
+    unmet:
+      - {criterion: "active learning matches random-sampling F1 with <= 50% of the labels", result: "needed 63.7% of the labels", evidence: "The active-learning criterion (≤ 50% of labels) is not met."}
+    caveats:
+      - {text: "sentence-transformers unreachable (Hugging Face blocked); spaCy static vectors used as fallback", evidence: "Embeddings are a fallback."}
+  "12":
+    metric: {label: "DML earnings ATE", path: [acceptance, earnings_ate], fmt: usd}
+    context: {label: "95% CI low", path: [acceptance, earnings_ci, 0], fmt: usd}
+    provenance: {category: synthetic_plus_public, attempted: [LaLonde/NSW], reachable: [LaLonde/NSW], evidence: "PUBLIC LaLonde/NSW replication"}
+    unmet:
+      - {criterion: "95% CI covers the true effect (employment outcome)", result: "CI [0.1135, 0.1437] misses truth 0.1121 on the committed seed", evidence: "Employment acceptance criterion missed on the committed seed."}
+    caveats: []
+  "13":
+    metric: {label: "PR-AUC graph features", path: [models, feature_sets, "graph (all)", pr_auc], fmt: f3}
+    context: {label: "PR-AUC tabular only", path: [models, feature_sets, tabular, pr_auc], fmt: f3}
+    provenance: {category: synthetic_fallback, attempted: [IBM AML (Kaggle)], reachable: [], evidence: "In this build the network proxy refused the connection."}
+    unmet: []
+    caveats:
+      - {text: "Optional GNN (PyTorch Geometric) comparison not run", evidence: "The GNN comparison (PyTorch Geometric GraphSAGE) was not run"}
+  "14":
+    metric: {label: "warning precision", path: [headline, precision], fmt: f3}
+    context: {label: "warning recall", path: [headline, recall], fmt: f3}
+    provenance: {category: synthetic_by_design, attempted: [NASA C-MAPSS], reachable: [NASA C-MAPSS], evidence: "The stream is SYNTHETIC by design."}
+    unmet: []
+    caveats:
+      - {text: "Bytewax and a live Kafka broker not run (asyncio processor used, as the brief allows)", evidence: "Not built: Bytewax and a live Kafka run."}
+  "15":
+    metric: {label: "stockout-hour reduction vs fixed routes", path: [simulation, dynamic_lgbm_band, stockout_reduction_vs_fixed_pct], fmt: pct}
+    context: {label: "station-hour MAE (LightGBM)", path: [forecast, models, lgbm, mae], fmt: f3}
+    provenance: {category: public_primary, attempted: [Capital Bikeshare, NOAA ISD, GBFS, OSM], reachable: [Capital Bikeshare, NOAA ISD], evidence: "Trips: public data (this run)."}
+    unmet: []
+    caveats:
+      - {text: "GBFS and OSM unreachable: dock capacities estimated, straight-line drive times", evidence: "Dock capacities are estimated, because GBFS was unreachable"}
+  "16":
+    metric: {label: "|A/E - 1| after retraining", path: [retraining, after_first_trigger, abs_ae_error_retrained], fmt: pct_frac}
+    context: {label: "|A/E - 1| static model", path: [retraining, after_first_trigger, abs_ae_error_static], fmt: pct_frac}
+    provenance: {category: synthetic_fallback, attempted: [OpenML freMTPL2], reachable: [], evidence: "Public path (attempted, unreachable)."}
+    unmet: []
+    caveats:
+      - {text: "Docker build and GitHub Actions deploy not run end to end", evidence: "Docker and GitHub Actions were not run end to end here."}
+  "17":
+    metric: {label: "naive join offline-to-production MAE gap", path: [models, naive, gap_pct], fmt: pct}
+    context: {label: "PIT model production MAE (min)", path: [models, pit, production, mae_min], fmt: f3}
+    provenance: {category: synthetic_fallback, attempted: [NYC TLC], reachable: [], evidence: "Public path (tried, unreachable)."}
+    unmet: []
+    caveats: []
+  "18":
+    metric: {label: "budget reallocation lift ($k/yr, posterior mean)", path: [budget, expected_optimal, lift_mean_k], fmt: usd_k}
+    context: {label: "max R-hat", path: [convergence, max_rhat], fmt: f3}
+    provenance: {category: synthetic_by_design, attempted: [], reachable: [], evidence: "no download is attempted"}
+    unmet: []
+    caveats:
+      - {text: "Lift-test calibration and time-varying coefficients (stretch) not attempted", evidence: "Stretch goals not attempted:"}
+  "19":
+    metric: {label: "breaking contract changes blocked", path: [ci_gate, breaking_scenarios_blocked], fmt: int}
+    context: {label: "of", path: [ci_gate, breaking_scenarios], fmt: int}
+    provenance: {category: synthetic_by_design, attempted: [], reachable: [], evidence: "no download is attempted"}
+    unmet: []
+    caveats: []
+  "20":
+    metric: {label: "field accuracy (offline rules extractor)", path: [extractors, rules_repair, field_accuracy_fuzzy], fmt: pct_frac}
+    context: {label: "strict regex baseline", path: [extractors, regex_strict, field_accuracy_fuzzy], fmt: pct_frac}
+    provenance: {category: synthetic_by_design, attempted: [], reachable: [], evidence: "no public source is downloaded"}
+    unmet: []
+    offline_llm: true
+    caveats:
+      - {text: "No live LLM evaluated (no ANTHROPIC_API_KEY); offline rules extractor only", evidence: "No live LLM was evaluated."}
+  "21":
+    metric: {label: "recall@5 hybrid + learned re-ranker", path: [retrieval, structure, methods, "hybrid_rrf+rerank_learned", "recall@5"], fmt: pct_frac}
+    context: {label: "BM25 recall@5", path: [retrieval, structure, methods, bm25, "recall@5"], fmt: pct_frac}
+    provenance: {category: synthetic_fallback, attempted: [eCFR API], reachable: [], evidence: "The build environment's proxy blocked it"}
+    unmet:
+      - {criterion: "hybrid search beats both BM25 and dense alone on recall@5", result: "met for structure-aware chunks (not significant vs dense), not met for fixed-size chunks (0.648 vs BM25 0.652)", evidence: "Not met with fixed-size chunks."}
+    offline_llm: true
+    caveats:
+      - {text: "No live LLM run; extractive offline answers (faithfulness 100% by construction)", evidence: "No live LLM run."}
+  "22":
+    metric: {label: "+2C/-20% rain mean yield change (model)", path: [scenario, model, mean_change_pct], fmt: pct}
+    context: {label: "truth", path: [scenario, truth, mean_change_pct], fmt: pct}
+    provenance: {category: synthetic_fallback, attempted: [Open-Meteo ERA5], reachable: [], evidence: "The build environment's proxy refused it"}
+    unmet: []
+    caveats:
+      - {text: "Gaussian-process downscaling (stretch) not attempted", evidence: "Gaussian-process downscaling was not attempted."}
+  "23":
+    metric: {label: "alert volume reduction (raw alerts to incidents)", path: [alert_volume, reduction_raw_to_incidents_pct], fmt: pct}
+    context: {label: "raw threshold alerts", path: [alert_volume, raw_metric_alerts], fmt: int}
+    provenance: {category: synthetic_plus_public, attempted: [NAB], reachable: [NAB], evidence: "Public sanity check: `public_nab`"}
+    unmet: []
+    caveats:
+      - {text: "Two low-severity error bursts missed", evidence: "Two low-severity error bursts were missed"}
+  "24":
+    metric: {label: "NDCG@10 two-tower + re-ranker", path: [offline, test, "Two-tower + re-ranker", "ndcg@10"], fmt: f4}
+    context: {label: "ALS NDCG@10", path: [offline, test, ALS, "ndcg@10"], fmt: f4}
+    provenance: {category: synthetic_fallback, attempted: [MovieLens-1M], reachable: [], evidence: "In this build the proxy refused the connection"}
+    unmet:
+      - {criterion: "two-tower retrieval + re-ranker beats the ALS baseline on NDCG@10", result: "0.0798 vs ALS 0.0825 (-3.3%)", evidence: "The headline criterion is not met in its clean form."}
+    caveats: []
+  "25":
+    metric: {label: "TSTR AUC, DP synthetic data (eps=1)", path: [releases, 5, tstr, auc], fmt: f3}
+    context: {label: "AUC on real data", path: [releases, 0, tstr, auc], fmt: f3}
+    provenance: {category: synthetic_fallback, attempted: [UCI Adult], reachable: [], evidence: "In this build the proxy refused the connection"}
+    unmet: []
+    caveats:
+      - {text: "SDV/CTGAN need PyTorch (CPU index blocked): copula and CTGAN-style GAN re-implemented", evidence: "SDV, CTGAN and OpenDP:"}
+  "26":
+    metric: {label: "min adverse impact ratio (chosen model)", path: [models, reweighing_a0.5, fairness, air_min], fmt: f3}
+    context: {label: "unmitigated baseline", path: [models, gbm_monotone, fairness, air_min], fmt: f3}
+    provenance: {category: synthetic_fallback, attempted: [HMDA, UCI German Credit], reachable: [], evidence: "Both failed through the build proxy"}
+    unmet:
+      - {criterion: "adverse impact ratio >= 0.80 for every group", result: "best mitigated model 0.776; flagged not ready", evidence: "its minimum AIR is 0.776"}
+    caveats: []
+  "27":
+    metric: {label: "Thompson sampling revenue uplift vs static table", path: [study, policies, thompson, uplift_vs_static, mean], fmt: pct_frac2}
+    context: {label: "95% CI low", path: [study, policies, thompson, uplift_vs_static, t_ci, 0], fmt: pct_frac2}
+    provenance: {category: synthetic_by_design, attempted: [], reachable: [], evidence: "no public source was tried"}
+    unmet: []
+    caveats:
+      - {text: "Bandits do not reach the oracle (+5.79% vs +6.01%)", evidence: "The bandits do not reach the oracle."}
+  "28":
+    metric: {label: "unexplained parallel-run differences", path: [parallel_run, unexplained_differences_total], fmt: int}
+    context: {label: "parallel-run closes", path: [parallel_run, closes], fmt: int}
+    provenance: {category: synthetic_by_design, attempted: [], reachable: [], evidence: "no public source was tried"}
+    unmet: []
+    caveats:
+      - {text: "Cloud cost model (stretch) not attempted", evidence: "Stretch cost model not attempted."}
+  "29":
+    metric: {label: "execution accuracy, semantic layer (answerable)", path: [benchmark, main_60, rules_semantic, execution_correct], fmt: int}
+    context: {label: "of", path: [benchmark, main_60, rules_semantic, n_answerable], fmt: int}
+    provenance: {category: synthetic_by_design, attempted: [], reachable: [], evidence: "no download is attempted"}
+    unmet:
+      - {criterion: "semantic layer measurably beats raw schema with a live LLM", result: "pending: no API key, offline rules planner only", evidence: "documented as pending"}
+    offline_llm: true
+    caveats: []
+  "30":
+    metric: {label: "max |twin - history| KPI error, hold-out year", path: [acceptance, max_abs_kpi_error_pct], fmt: pct}
+    context: {label: "strategic scenarios compared", path: [acceptance, strategic_scenarios_compared_with_uncertainty], fmt: int}
+    provenance: {category: synthetic_by_design, attempted: [], reachable: [], evidence: "Path used: `synthetic_generator`"}
+    unmet: []
+    caveats:
+      - {text: "Twin is conservative: historical KPI inside the twin's 5-95% band for only 3 of 8 KPIs", evidence: "The historical value lies inside the twin's 5-95% band for only 3 of 8 KPIs."}
+      - {text: "Optimiser's store safety factor at the top of its grid for the DC-East plan", evidence: "The optimiser's store safety factor sits at the top of the grid"}
+      - {text: "Reinforcement-learning replenishment agent (stretch) not attempted", evidence: "The reinforcement-learning replenishment agent was not attempted."}

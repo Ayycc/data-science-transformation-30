@@ -47,9 +47,9 @@ Each project is built autonomously by a scheduled Claude Code cloud agent from a
 | 27 | IV Distinguished | [Dynamic Pricing for Hospitality with Contextual Bandits](./day-27-hospitality-dynamic-pricing-bandits/) | Travel & hospitality | NumPy, PyTorch (optional), SciPy | ✅ | [prompt](./prompts/day-27.md) | Thompson sampling + DP inventory control: +5.79% revenue vs static rate table (95% CI +5.65% to +5.92%, oracle +6.01%); regret/night $321 to $145 by year 3; 0 guardrail violations in 65,700 decisions (SYNTHETIC) |
 | 28 | IV Distinguished | [Legacy Reporting Modernisation: SAS/Excel to Iceberg + Ibis](./day-28-legacy-reporting-modernisation-iceberg/) | Financial reporting & insurance | Apache Iceberg (pyiceberg), Ibis, DuckDB | ✅ | [prompt](./prompts/day-28.md) | 0 unexplained diffs over 8 parallel-run closes (131,186 cells traced to 6 documented fixes); DuckDB = Polars 8/8; Iceberg time travel reproduces 8/8 filed returns; +$268,957 incurred restored (synthetic) |
 | 29 | IV Distinguished | [Agentic Analytics: Text-to-SQL over a Semantic Layer with Guardrails](./day-29-agentic-text-to-sql-semantic-layer/) | Enterprise business intelligence | Anthropic SDK (optional), DuckDB, sqlglot | ✅ | [prompt](./prompts/day-29.md) | Offline semantic-layer agent: 47/47 execution accuracy vs 2/47 for a naive raw-schema baseline, 13/13 correct refusals, 13/15 on held-out paraphrases; 40/40 SQL attacks blocked; Claude comparison pending, no API key (SYNTHETIC) |
-| 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ⏳ Planned | [prompt](./prompts/day-30.md) | |
+| 30 | IV Distinguished | [Capstone: Decision-Intelligence Digital Twin and Portfolio Retrospective](./day-30-capstone-supply-chain-digital-twin/) | Cross-industry (retail supply chain) | SimPy, OR-Tools, PyMC | ✅ | [prompt](./prompts/day-30.md) | Twin calibrated on year 1 reproduces 8/8 hold-out KPIs within 2.9%; optimised plan (DC-East, 25% nearshore, targeted promos) adds +$671k/yr profit (90% +$449k to +$915k) and +$686k CVaR5% (SYNTHETIC); portfolio report covers 30/30 days |
 
-Last build: 2026-11-08
+Last build: 2026-11-09
 <!-- PROGRESS:END -->
 
 ## How each project is structured
@@ -62,6 +62,8 @@ make setup && make run && make test
 ```
 
 ## End state (day 30)
+
+Read the [portfolio report](./day-30-capstone-supply-chain-digital-twin/PORTFOLIO_REPORT.md).
 
 - 30 runnable projects covering 30 domains and more than 60 tools.
 - A portfolio report (`day-30-*/PORTFOLIO_REPORT.md`) with a tool coverage matrix, test status and headline metric per project.

@@ -1,0 +1,992 @@
+{
+  "budgets": {
+    "fit_rows": 8000,
+    "draws": 600,
+    "tune": 600,
+    "val_reps": 500,
+    "scen_reps": 1000,
+    "screen_reps": 60,
+    "final_reps": 500,
+    "top_k": 5
+  },
+  "seeds": {
+    "world": 20261109,
+    "pymc": 11,
+    "validation": 10000,
+    "plan_calendar": 7,
+    "scenarios": 20000,
+    "screen": 30000,
+    "final": 40000
+  },
+  "data": {
+    "path_used": "synthetic_generator",
+    "public_attempted": false,
+    "reason": "the capstone needs known ground truth (promo effects, lead times, outages); no public dataset has it",
+    "history_days": 728,
+    "history_start": "2024-11-04",
+    "tables": {
+      "sales": 26208,
+      "shipments": 25142,
+      "purchase_orders": 1062,
+      "dc_inventory": 4368,
+      "outages": 6
+    },
+    "sample_bytes": 26495,
+    "stores": 12,
+    "categories": 3,
+    "dcs_existing": 2,
+    "suppliers": 2,
+    "outages_in_history": 6
+  },
+  "demand_model": {
+    "year1_fit": {
+      "mean_tree_depth": 3.9875,
+      "max_rhat": 1.01,
+      "min_ess_bulk": 974.0,
+      "divergences": 0,
+      "n_obs": 8000,
+      "draws": 600,
+      "tune": 600,
+      "chains": 2
+    },
+    "promo_effects": [
+      {
+        "category": "staples",
+        "true_lift": 1.3,
+        "posterior_mean": 1.302420683805891,
+        "hdi90_low": 1.2899291111885693,
+        "hdi90_high": 1.313652103416019,
+        "truth_in_hdi": true,
+        "naive_lift": 1.3128252423557376,
+        "true_post_dip": 0.93,
+        "post_dip_mean": 0.9276237881659,
+        "post_dip_hdi90_low": 0.9193297895094452,
+        "post_dip_hdi90_high": 0.9368212073661738,
+        "post_truth_in_hdi": true
+      },
+      {
+        "category": "household",
+        "true_lift": 1.55,
+        "posterior_mean": 1.5505011878452688,
+        "hdi90_low": 1.5344774915786403,
+        "hdi90_high": 1.5667089079244778,
+        "truth_in_hdi": true,
+        "naive_lift": 1.5659541010602644,
+        "true_post_dip": 0.88,
+        "post_dip_mean": 0.8729005283041793,
+        "post_dip_hdi90_low": 0.8650745478602824,
+        "post_dip_hdi90_high": 0.8823359656586385,
+        "post_truth_in_hdi": true
+      },
+      {
+        "category": "seasonal",
+        "true_lift": 1.8,
+        "posterior_mean": 1.801001535074289,
+        "hdi90_low": 1.7711496372962368,
+        "hdi90_high": 1.8250028998976837,
+        "truth_in_hdi": true,
+        "naive_lift": 2.4938359062591426,
+        "true_post_dip": 0.92,
+        "post_dip_mean": 0.9166656525523894,
+        "post_dip_hdi90_low": 0.9030342514615701,
+        "post_dip_hdi90_high": 0.931696039848818,
+        "post_truth_in_hdi": true
+      }
+    ],
+    "holdout_forecast": {
+      "wape_bayes": 0.08533369756970854,
+      "wape_seasonal_naive_364": 0.21967458934187592,
+      "wape_legacy_trailing_28d": 0.17510827316096983,
+      "pi90_coverage_store_day": 0.8883683360258482,
+      "pi90_coverage_network_week": 0.7884615384615384,
+      "n_eval_cells": 12380
+    },
+    "full_history_fit": {
+      "mean_tree_depth": 3.078333333333333,
+      "max_rhat": 1.02,
+      "min_ess_bulk": 669.0,
+      "divergences": 0,
+      "n_obs": 8000,
+      "draws": 600,
+      "tune": 600,
+      "chains": 2
+    }
+  },
+  "validation": {
+    "calibration_window_days": [
+      0,
+      364
+    ],
+    "holdout_window_days": [
+      364,
+      728
+    ],
+    "reps": 500,
+    "outages_replayed": [
+      [
+        0,
+        10,
+        12
+      ],
+      [
+        0,
+        135,
+        148
+      ]
+    ],
+    "calibration": {
+      "S-Offshore": {
+        "lead_mean_days": 24.9,
+        "lead_p90_days": 32.10000000000001,
+        "n_orders": 100,
+        "outages_observed": 3,
+        "outage_rate_posterior_mean_per_year": 2.0,
+        "outage_mean_days": 9.666666666666666
+      },
+      "S-Nearshore": {
+        "lead_mean_days": 6.44,
+        "lead_p90_days": 9.0,
+        "n_orders": 100,
+        "outages_observed": 1,
+        "outage_rate_posterior_mean_per_year": 1.0,
+        "outage_mean_days": 5.0
+      },
+      "transit_delay_p": 0.0757645968489342
+    },
+    "kpis": [
+      {
+        "kpi": "units_sold",
+        "historical": 7914719.0,
+        "twin_mean": 7726267.96,
+        "twin_p5": 7559283.45,
+        "twin_p95": 7887982.0,
+        "error_pct": -2.381019970513165,
+        "within_5pct": true,
+        "historical_inside_twin_5_95": false
+      },
+      {
+        "kpi": "revenue",
+        "historical": 50163556.15,
+        "twin_mean": 49088182.18339999,
+        "twin_p5": 48125599.09,
+        "twin_p95": 49968592.98,
+        "error_pct": -2.143735510665168,
+        "within_5pct": true,
+        "historical_inside_twin_5_95": false
+      },
+      {
+        "kpi": "gross_margin",
+        "historical": 18928979.824160013,
+        "twin_mean": 18527630.018004853,
+        "twin_p5": 18156278.115274083,
+        "twin_p95": 18882293.319546554,
+        "error_pct": -2.1202928519311826,
+        "within_5pct": true,
+        "historical_inside_twin_5_95": false
+      },
+      {
+        "kpi": "in_stock_rate",
+        "historical": 0.9447496947496947,
+        "twin_mean": 0.9281520146520147,
+        "twin_p5": 0.9104815323565324,
+        "twin_p95": 0.9430822649572649,
+        "error_pct": -1.7568336025848064,
+        "within_5pct": true,
+        "historical_inside_twin_5_95": false
+      },
+      {
+        "kpi": "avg_store_inventory_units",
+        "historical": 28984.379120879123,
+        "twin_mean": 28432.75684065934,
+        "twin_p5": 27360.266758241756,
+        "twin_p95": 29386.370329670328,
+        "error_pct": -1.903170938798615,
+        "within_5pct": true,
+        "historical_inside_twin_5_95": true
+      },
+      {
+        "kpi": "avg_dc_inventory_units",
+        "historical": 314289.6153846154,
+        "twin_mean": 313530.6648861947,
+        "twin_p5": 276320.277171909,
+        "twin_p95": 355610.68074333743,
+        "error_pct": -0.24148125209033644,
+        "within_5pct": true,
+        "historical_inside_twin_5_95": true
+      },
+      {
+        "kpi": "outbound_transport_cost",
+        "historical": 2506580.129638601,
+        "twin_mean": 2461766.0012121038,
+        "twin_p5": 2413288.550556493,
+        "twin_p95": 2509502.841965236,
+        "error_pct": -1.7878593984130386,
+        "within_5pct": true,
+        "historical_inside_twin_5_95": true
+      },
+      {
+        "kpi": "operating_profit",
+        "historical": 12077373.268697238,
+        "twin_mean": 11728520.123673799,
+        "twin_p5": 11428601.296549844,
+        "twin_p95": 12034884.8074009,
+        "error_pct": -2.888485246436945,
+        "within_5pct": true,
+        "historical_inside_twin_5_95": false
+      }
+    ],
+    "max_abs_error_pct": 2.888485246436945,
+    "all_within_5pct": true,
+    "n_historical_inside_twin_5_95": 3,
+    "true_fill_rate_holdout_hidden": 0.9741583477687843,
+    "world_seed_sensitivity": {
+      "seeds": [
+        {
+          "seed": 1,
+          "fill_rate": 0.9495236650223458,
+          "in_stock_rate": 0.9239163614163615
+        },
+        {
+          "seed": 2,
+          "fill_rate": 0.948340442463635,
+          "in_stock_rate": 0.915521978021978
+        },
+        {
+          "seed": 3,
+          "fill_rate": 0.9516006475759251,
+          "in_stock_rate": 0.9156746031746031
+        },
+        {
+          "seed": 4,
+          "fill_rate": 0.9147011807647079,
+          "in_stock_rate": 0.8670634920634921
+        },
+        {
+          "seed": 5,
+          "fill_rate": 0.9155837666469949,
+          "in_stock_rate": 0.8778235653235653
+        },
+        {
+          "seed": 6,
+          "fill_rate": 0.9528141697095749,
+          "in_stock_rate": 0.9246031746031746
+        },
+        {
+          "seed": 7,
+          "fill_rate": 0.9513903489405413,
+          "in_stock_rate": 0.9236874236874237
+        },
+        {
+          "seed": 8,
+          "fill_rate": 0.9549676345113649,
+          "in_stock_rate": 0.9188034188034188
+        }
+      ],
+      "fill_rate_range": [
+        0.9147011807647079,
+        0.9549676345113649
+      ],
+      "in_stock_rate_range": [
+        0.8670634920634921,
+        0.9246031746031746
+      ]
+    },
+    "offshore_lead_mean_days": {
+      "calibration_year": 24.9,
+      "holdout_year": 23.524271844660195
+    },
+    "twin_fill_rate_holdout": 0.9598307561639999
+  },
+  "plan_calibration": {
+    "S-Offshore": {
+      "lead_mean_days": 24.201970443349754,
+      "lead_p90_days": 31.80000000000001,
+      "n_orders": 203,
+      "outages_observed": 5,
+      "outage_rate_posterior_mean_per_year": 2.0,
+      "outage_mean_days": 8.8
+    },
+    "S-Nearshore": {
+      "lead_mean_days": 6.472906403940887,
+      "lead_p90_days": 8.800000000000011,
+      "n_orders": 203,
+      "outages_observed": 1,
+      "outage_rate_posterior_mean_per_year": 0.6666666666666666,
+      "outage_mean_days": 5.0
+    },
+    "transit_delay_p": 0.07911100875172732
+  },
+  "network_milp": {
+    "annual_units_plan": 8336046.932722215,
+    "status_quo_assignment_cost": 6716391.236960856,
+    "best_without_east": {
+      "objective": 6707175.386165034,
+      "open": [
+        true,
+        true,
+        false
+      ],
+      "assignment": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "assignment_names": [
+        "DC-North",
+        "DC-North",
+        "DC-North",
+        "DC-North",
+        "DC-South",
+        "DC-South",
+        "DC-South",
+        "DC-South",
+        "DC-South",
+        "DC-North",
+        "DC-South",
+        "DC-North"
+      ],
+      "lane_cost": 3107175.3861650345,
+      "status": "OPTIMAL",
+      "wall_ms": 5
+    },
+    "forced_east": {
+      "objective": 6129092.09782325,
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "assignment": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "assignment_names": [
+        "DC-North",
+        "DC-North",
+        "DC-North",
+        "DC-North",
+        "DC-South",
+        "DC-South",
+        "DC-South",
+        "DC-South",
+        "DC-East",
+        "DC-East",
+        "DC-East",
+        "DC-East"
+      ],
+      "lane_cost": 1329092.0978232506,
+      "status": "OPTIMAL",
+      "wall_ms": 4
+    },
+    "free_choice": {
+      "objective": 6129092.097823251,
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "assignment": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "assignment_names": [
+        "DC-North",
+        "DC-North",
+        "DC-North",
+        "DC-North",
+        "DC-South",
+        "DC-South",
+        "DC-South",
+        "DC-South",
+        "DC-East",
+        "DC-East",
+        "DC-East",
+        "DC-East"
+      ],
+      "lane_cost": 1329092.0978232506,
+      "status": "OPTIMAL",
+      "wall_ms": 5
+    },
+    "milp_opens_east": true,
+    "milp_saving_vs_status_quo": 587299.1391376052,
+    "milp_saving_forced_east_vs_status_quo": 587299.1391376061
+  },
+  "scenarios": {
+    "plan_year_start_day": 728,
+    "reps_per_regime": 1000,
+    "regimes": {
+      "normal": "outages drawn from the calibrated Poisson rate posterior",
+      "stress": "normal + forced 28-day offshore outage from plan day 14"
+    },
+    "results": {
+      "A_baseline": {
+        "decisions": {
+          "open_dc_east": false,
+          "assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "nearshore_share": 0.1,
+          "store_z": 1.5,
+          "dc_z": 1.5,
+          "promo_strategy": "current"
+        },
+        "normal": {
+          "reps": 1000,
+          "expected_profit": 12434871.814246979,
+          "profit_p5": 12225494.502730036,
+          "profit_p95": 12617288.85104778,
+          "cvar5_profit": 12154310.776347168,
+          "expected_revenue": 51215933.53175,
+          "fill_rate_mean": 0.9646679484394568,
+          "fill_rate_p5": 0.9537645762489542,
+          "in_stock_rate_mean": 0.9360096153846154,
+          "prob_fill_below_95": 0.017,
+          "avg_dc_inventory_units": 337489.7149960848,
+          "avg_store_inventory_units": 28424.86199725275,
+          "delta_profit_vs_baseline_mean": 0.0,
+          "delta_profit_vs_baseline_p5": 0.0,
+          "delta_profit_vs_baseline_p95": 0.0,
+          "prob_beats_baseline": 0.0,
+          "delta_cvar5_vs_baseline": 0.0
+        },
+        "stress": {
+          "reps": 1000,
+          "expected_profit": 11950203.972796135,
+          "profit_p5": 11698408.784841334,
+          "profit_p95": 12176906.557595553,
+          "cvar5_profit": 11547043.675974395,
+          "expected_revenue": 49890535.264649995,
+          "fill_rate_mean": 0.9478166438156984,
+          "fill_rate_p5": 0.9349355363726074,
+          "in_stock_rate_mean": 0.9080484584859585,
+          "prob_fill_below_95": 0.57,
+          "avg_dc_inventory_units": 335250.628943887,
+          "avg_store_inventory_units": 27889.117296703294,
+          "delta_profit_vs_baseline_mean": 0.0,
+          "delta_profit_vs_baseline_p5": 0.0,
+          "delta_profit_vs_baseline_p95": 0.0,
+          "prob_beats_baseline": 0.0,
+          "delta_cvar5_vs_baseline": 0.0
+        }
+      },
+      "B_new_dc_east": {
+        "decisions": {
+          "open_dc_east": true,
+          "assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "nearshore_share": 0.1,
+          "store_z": 1.5,
+          "dc_z": 1.5,
+          "promo_strategy": "current"
+        },
+        "normal": {
+          "reps": 1000,
+          "expected_profit": 12699272.715154938,
+          "profit_p5": 12416644.947426021,
+          "profit_p95": 12954351.284727862,
+          "cvar5_profit": 12327351.54894047,
+          "expected_revenue": 50226879.22490001,
+          "fill_rate_mean": 0.9457145123538264,
+          "fill_rate_p5": 0.9316873318237248,
+          "in_stock_rate_mean": 0.926750228937729,
+          "prob_fill_below_95": 0.699,
+          "avg_dc_inventory_units": 234784.8364081727,
+          "avg_store_inventory_units": 30932.93663186813,
+          "delta_profit_vs_baseline_mean": 264400.9009079602,
+          "delta_profit_vs_baseline_p5": 67279.46868892714,
+          "delta_profit_vs_baseline_p95": 460418.2130240049,
+          "prob_beats_baseline": 0.978,
+          "delta_cvar5_vs_baseline": 173040.77259330265
+        },
+        "stress": {
+          "reps": 1000,
+          "expected_profit": 12182143.678051008,
+          "profit_p5": 11918560.908081349,
+          "profit_p95": 12424217.478472877,
+          "cvar5_profit": 11813267.721888091,
+          "expected_revenue": 48886897.55279999,
+          "fill_rate_mean": 0.9265897857848694,
+          "fill_rate_p5": 0.9133434349763058,
+          "in_stock_rate_mean": 0.9013311202686203,
+          "prob_fill_below_95": 1.0,
+          "avg_dc_inventory_units": 247108.04939718367,
+          "avg_store_inventory_units": 29955.07107142857,
+          "delta_profit_vs_baseline_mean": 231939.70525487405,
+          "delta_profit_vs_baseline_p5": 57985.4335960446,
+          "delta_profit_vs_baseline_p95": 403285.0520967649,
+          "prob_beats_baseline": 0.985,
+          "delta_cvar5_vs_baseline": 266224.0459136963
+        }
+      },
+      "C_targeted_promos": {
+        "decisions": {
+          "open_dc_east": false,
+          "assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "nearshore_share": 0.1,
+          "store_z": 1.5,
+          "dc_z": 1.5,
+          "promo_strategy": "targeted"
+        },
+        "normal": {
+          "reps": 1000,
+          "expected_profit": 12670322.694503982,
+          "profit_p5": 12404801.909445614,
+          "profit_p95": 12899755.117966872,
+          "cvar5_profit": 12324192.425545616,
+          "expected_revenue": 50557462.724350005,
+          "fill_rate_mean": 0.9596023258671557,
+          "fill_rate_p5": 0.9449957475542997,
+          "in_stock_rate_mean": 0.9342566391941393,
+          "prob_fill_below_95": 0.112,
+          "avg_dc_inventory_units": 229134.45729278808,
+          "avg_store_inventory_units": 26851.582906593405,
+          "delta_profit_vs_baseline_mean": 235450.88025700484,
+          "delta_profit_vs_baseline_p5": -54467.12368546147,
+          "delta_profit_vs_baseline_p95": 505008.6869645991,
+          "prob_beats_baseline": 0.923,
+          "delta_cvar5_vs_baseline": 169881.6491984483
+        },
+        "stress": {
+          "reps": 1000,
+          "expected_profit": 11948270.589149298,
+          "profit_p5": 11614635.29853754,
+          "profit_p95": 12224477.458804429,
+          "cvar5_profit": 11478530.769327626,
+          "expected_revenue": 48610549.9483,
+          "fill_rate_mean": 0.9285352615173924,
+          "fill_rate_p5": 0.9109127025102239,
+          "in_stock_rate_mean": 0.8946860500610501,
+          "prob_fill_below_95": 0.994,
+          "avg_dc_inventory_units": 261187.32488894192,
+          "avg_store_inventory_units": 25467.64256318681,
+          "delta_profit_vs_baseline_mean": -1933.3836468378418,
+          "delta_profit_vs_baseline_p5": -367190.8070664117,
+          "delta_profit_vs_baseline_p95": 326317.65457694244,
+          "prob_beats_baseline": 0.503,
+          "delta_cvar5_vs_baseline": -68512.9066467695
+        }
+      },
+      "D_dual_sourcing_40pct": {
+        "decisions": {
+          "open_dc_east": false,
+          "assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "nearshore_share": 0.4,
+          "store_z": 1.5,
+          "dc_z": 1.5,
+          "promo_strategy": "current"
+        },
+        "normal": {
+          "reps": 1000,
+          "expected_profit": 12056552.150523769,
+          "profit_p5": 11931571.21369003,
+          "profit_p95": 12179211.636550263,
+          "cvar5_profit": 11898358.141881038,
+          "expected_revenue": 51837179.539400004,
+          "fill_rate_mean": 0.9775150354922739,
+          "fill_rate_p5": 0.9716613572656161,
+          "in_stock_rate_mean": 0.9522410714285713,
+          "prob_fill_below_95": 0.0,
+          "avg_dc_inventory_units": 264451.15471861226,
+          "avg_store_inventory_units": 29291.92689285714,
+          "delta_profit_vs_baseline_mean": -378319.6637232082,
+          "delta_profit_vs_baseline_p5": -485936.17480126524,
+          "delta_profit_vs_baseline_p95": -235086.00262049594,
+          "prob_beats_baseline": 0.0,
+          "delta_cvar5_vs_baseline": -255952.6344661303
+        },
+        "stress": {
+          "reps": 1000,
+          "expected_profit": 11819495.510119496,
+          "profit_p5": 11661812.832933567,
+          "profit_p95": 11975867.533767022,
+          "cvar5_profit": 11596807.904353045,
+          "expected_revenue": 51157091.69275,
+          "fill_rate_mean": 0.9683524494859148,
+          "fill_rate_p5": 0.9601374525497431,
+          "in_stock_rate_mean": 0.9384471153846154,
+          "prob_fill_below_95": 0.008,
+          "avg_dc_inventory_units": 267216.7185894914,
+          "avg_store_inventory_units": 28728.89134340659,
+          "delta_profit_vs_baseline_mean": -130708.46267663945,
+          "delta_profit_vs_baseline_p5": -279352.1475151597,
+          "delta_profit_vs_baseline_p95": 40923.06166489513,
+          "prob_beats_baseline": 0.095,
+          "delta_cvar5_vs_baseline": 49764.2283786498
+        }
+      },
+      "E_optimised": {
+        "decisions": {
+          "open_dc_east": true,
+          "assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "nearshore_share": 0.25,
+          "store_z": 4.5,
+          "dc_z": 1.5,
+          "promo_strategy": "targeted"
+        },
+        "normal": {
+          "reps": 1000,
+          "expected_profit": 13105983.66930032,
+          "profit_p5": 12895824.003625058,
+          "profit_p95": 13301333.89574369,
+          "cvar5_profit": 12840528.84596904,
+          "expected_revenue": 51353119.34045,
+          "fill_rate_mean": 0.9724887963707322,
+          "fill_rate_p5": 0.9637862825934237,
+          "in_stock_rate_mean": 0.96425,
+          "prob_fill_below_95": 0.0,
+          "avg_dc_inventory_units": 225736.7960345463,
+          "avg_store_inventory_units": 46444.28898076923,
+          "delta_profit_vs_baseline_mean": 671111.8550533412,
+          "delta_profit_vs_baseline_p5": 449231.1448760843,
+          "delta_profit_vs_baseline_p95": 915145.495195309,
+          "prob_beats_baseline": 1.0,
+          "delta_cvar5_vs_baseline": 686218.0696218722
+        },
+        "stress": {
+          "reps": 1000,
+          "expected_profit": 12676537.699106235,
+          "profit_p5": 12441220.898881774,
+          "profit_p95": 12894696.468002506,
+          "cvar5_profit": 12360502.801720588,
+          "expected_revenue": 50433806.80105,
+          "fill_rate_mean": 0.958149012322745,
+          "fill_rate_p5": 0.9486241641949328,
+          "in_stock_rate_mean": 0.9477511446886446,
+          "prob_fill_below_95": 0.082,
+          "avg_dc_inventory_units": 266989.15016091993,
+          "avg_store_inventory_units": 45316.53481868131,
+          "delta_profit_vs_baseline_mean": 726333.7263100996,
+          "delta_profit_vs_baseline_p5": 444849.61268267705,
+          "delta_profit_vs_baseline_p95": 1005434.7963431348,
+          "prob_beats_baseline": 0.999,
+          "delta_cvar5_vs_baseline": 813459.1257461924
+        }
+      }
+    },
+    "promo_weeks": {
+      "none": [
+        0,
+        0,
+        0
+      ],
+      "current": [
+        10,
+        8,
+        6
+      ],
+      "targeted": [
+        0,
+        8,
+        6
+      ]
+    }
+  },
+  "optimiser": {
+    "grid": {
+      "open_dc_east": [
+        false,
+        true
+      ],
+      "nearshore_share": [
+        0.1,
+        0.25,
+        0.4
+      ],
+      "store_z": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ],
+      "promo_strategy": [
+        "current",
+        "targeted"
+      ]
+    },
+    "n_combinations": 96,
+    "screen_reps": 60,
+    "final_reps": 500,
+    "regime": "mixed",
+    "finalists": [
+      {
+        "open_dc_east": true,
+        "nearshore_share": 0.25,
+        "store_z": 4.5,
+        "promo_strategy": "targeted",
+        "reps": 500,
+        "expected_profit": 12998567.939493211,
+        "profit_p5": 12584641.234068753,
+        "profit_p95": 13298888.53217258,
+        "cvar5_profit": 12523268.112895275,
+        "expected_revenue": 51117680.9576,
+        "fill_rate_mean": 0.9689575235414266,
+        "fill_rate_p5": 0.9540921405230235,
+        "in_stock_rate_mean": 0.9604049145299145,
+        "prob_fill_below_95": 0.02,
+        "avg_dc_inventory_units": 236773.46755102987,
+        "avg_store_inventory_units": 46172.8196978022,
+        "delta_profit_vs_baseline_mean": 694037.8422605953,
+        "delta_profit_vs_baseline_p5": 466291.14627072663,
+        "delta_profit_vs_baseline_p95": 965476.9339057112,
+        "prob_beats_baseline": 1.0,
+        "delta_cvar5_vs_baseline": 830572.502547916,
+        "feasible": true
+      },
+      {
+        "open_dc_east": true,
+        "nearshore_share": 0.25,
+        "store_z": 4.0,
+        "promo_strategy": "targeted",
+        "reps": 500,
+        "expected_profit": 12981007.2875765,
+        "profit_p5": 12553415.653882971,
+        "profit_p95": 13285282.81994567,
+        "cvar5_profit": 12501560.85409656,
+        "expected_revenue": 51033872.108,
+        "fill_rate_mean": 0.9672817754031835,
+        "fill_rate_p5": 0.9522733473546094,
+        "in_stock_rate_mean": 0.958454822954823,
+        "prob_fill_below_95": 0.03,
+        "avg_dc_inventory_units": 228890.71677081008,
+        "avg_store_inventory_units": 43541.01791758242,
+        "delta_profit_vs_baseline_mean": 676477.1903438821,
+        "delta_profit_vs_baseline_p5": 450536.4066821427,
+        "delta_profit_vs_baseline_p95": 944301.8396183169,
+        "prob_beats_baseline": 1.0,
+        "delta_cvar5_vs_baseline": 808865.2437492013,
+        "feasible": true
+      },
+      {
+        "open_dc_east": true,
+        "nearshore_share": 0.25,
+        "store_z": 3.5,
+        "promo_strategy": "targeted",
+        "reps": 500,
+        "expected_profit": 12961830.807402408,
+        "profit_p5": 12532676.377660546,
+        "profit_p95": 13265571.36947721,
+        "cvar5_profit": 12478293.340752792,
+        "expected_revenue": 50936756.341400005,
+        "fill_rate_mean": 0.9653629226703422,
+        "fill_rate_p5": 0.9495154890416386,
+        "in_stock_rate_mean": 0.9560605921855923,
+        "prob_fill_below_95": 0.052,
+        "avg_dc_inventory_units": 218800.12667740346,
+        "avg_store_inventory_units": 40746.03441208791,
+        "delta_profit_vs_baseline_mean": 657300.7101697915,
+        "delta_profit_vs_baseline_p5": 428606.40521027026,
+        "delta_profit_vs_baseline_p95": 926213.1219684379,
+        "prob_beats_baseline": 1.0,
+        "delta_cvar5_vs_baseline": 785597.7304054331,
+        "feasible": true
+      },
+      {
+        "open_dc_east": true,
+        "nearshore_share": 0.4,
+        "store_z": 4.5,
+        "promo_strategy": "targeted",
+        "reps": 500,
+        "expected_profit": 12928181.043493053,
+        "profit_p5": 12624782.803797336,
+        "profit_p95": 13156350.89951332,
+        "cvar5_profit": 12565151.796636604,
+        "expected_revenue": 51669492.5482,
+        "fill_rate_mean": 0.9790664196323748,
+        "fill_rate_p5": 0.967378908301097,
+        "in_stock_rate_mean": 0.9721930708180707,
+        "prob_fill_below_95": 0.0,
+        "avg_dc_inventory_units": 189552.4757213595,
+        "avg_store_inventory_units": 46517.898571428566,
+        "delta_profit_vs_baseline_mean": 623650.9462604368,
+        "delta_profit_vs_baseline_p5": 394511.2877417718,
+        "delta_profit_vs_baseline_p95": 894360.7853018149,
+        "prob_beats_baseline": 1.0,
+        "delta_cvar5_vs_baseline": 872456.1862892453,
+        "feasible": true
+      },
+      {
+        "open_dc_east": true,
+        "nearshore_share": 0.1,
+        "store_z": 4.5,
+        "promo_strategy": "targeted",
+        "reps": 500,
+        "expected_profit": 12936394.443647668,
+        "profit_p5": 12367464.075075656,
+        "profit_p95": 13322880.233121224,
+        "cvar5_profit": 12303385.656110609,
+        "expected_revenue": 50213696.7703,
+        "fill_rate_mean": 0.952559047013318,
+        "fill_rate_p5": 0.9334047079702433,
+        "in_stock_rate_mean": 0.9416401098901099,
+        "prob_fill_below_95": 0.38,
+        "avg_dc_inventory_units": 291375.7084686122,
+        "avg_store_inventory_units": 45379.05398901099,
+        "delta_profit_vs_baseline_mean": 631864.346415049,
+        "delta_profit_vs_baseline_p5": 344763.1341310997,
+        "delta_profit_vs_baseline_p95": 938467.0598770307,
+        "prob_beats_baseline": 1.0,
+        "delta_cvar5_vs_baseline": 610690.0457632504,
+        "feasible": true
+      }
+    ],
+    "best_summary": {
+      "reps": 500,
+      "expected_profit": 12998567.939493211,
+      "profit_p5": 12584641.234068753,
+      "profit_p95": 13298888.53217258,
+      "cvar5_profit": 12523268.112895275,
+      "expected_revenue": 51117680.9576,
+      "fill_rate_mean": 0.9689575235414266,
+      "fill_rate_p5": 0.9540921405230235,
+      "in_stock_rate_mean": 0.9604049145299145,
+      "prob_fill_below_95": 0.02,
+      "avg_dc_inventory_units": 236773.46755102987,
+      "avg_store_inventory_units": 46172.8196978022,
+      "delta_profit_vs_baseline_mean": 694037.8422605953,
+      "delta_profit_vs_baseline_p5": 466291.14627072663,
+      "delta_profit_vs_baseline_p95": 965476.9339057112,
+      "prob_beats_baseline": 1.0,
+      "delta_cvar5_vs_baseline": 830572.502547916,
+      "feasible": true
+    },
+    "baseline_final_summary": {
+      "reps": 500,
+      "expected_profit": 12304530.097232616,
+      "profit_p5": 11826059.057395676,
+      "profit_p95": 12604443.957592681,
+      "cvar5_profit": 11692695.610347359,
+      "expected_revenue": 50846189.4671,
+      "fill_rate_mean": 0.959846120981313,
+      "fill_rate_p5": 0.9420423517706114,
+      "in_stock_rate_mean": 0.9285059523809523,
+      "prob_fill_below_95": 0.17,
+      "avg_dc_inventory_units": 336425.62586971116,
+      "avg_store_inventory_units": 28279.121972527475
+    },
+    "best_decisions": {
+      "open_dc_east": true,
+      "assignment": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "nearshore_share": 0.25,
+      "store_z": 4.5,
+      "dc_z": 1.5,
+      "promo_strategy": "targeted"
+    },
+    "n_feasible_in_screen": 72,
+    "objective": "max E[operating profit] s.t. CVaR5%(profit) >= baseline CVaR5% and mean fill rate >= 95%"
+  },
+  "acceptance": {
+    "twin_baseline_kpis_within_5pct": true,
+    "max_abs_kpi_error_pct": 2.888485246436945,
+    "strategic_scenarios_compared_with_uncertainty": 4,
+    "at_least_3_scenarios": true
+  },
+  "runtime_s": 485.2
+}
