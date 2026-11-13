@@ -203,13 +203,18 @@ def _top(ids: list[str], scores: np.ndarray, k: int) -> list[Hit]:
     return [Hit(ids[i], float(scores[i]), r) for r, i in enumerate(order)]
 
 
-def rrf(rankings: list[list[Hit]], k: int = 60, top: int = 50) -> list[Hit]:
-    """Reciprocal rank fusion: score(d) = sum_r 1 / (k + rank_r(d) + 1)."""
+def rrf(rankings: list[list[Hit]], k: int = 60, top: int = 50, weights: list[float] | None = None) -> list[Hit]:
+    """Reciprocal rank fusion: score(d) = sum_r w_r / (k + rank_r(d) + 1).
+
+    With ``weights=None`` every ranking gets weight 1 (plain RRF). Weighted RRF lets one retriever count for more.
+    """
+    if weights is None:
+        weights = [1.0] * len(rankings)
     agg: dict[str, float] = {}
     first_seen: dict[str, int] = {}
-    for ranking in rankings:
+    for w, ranking in zip(weights, rankings, strict=True):
         for h in ranking:
-            agg[h.chunk_id] = agg.get(h.chunk_id, 0.0) + 1.0 / (k + h.rank + 1)
+            agg[h.chunk_id] = agg.get(h.chunk_id, 0.0) + w / (k + h.rank + 1)
             first_seen.setdefault(h.chunk_id, len(first_seen))
     order = sorted(agg, key=lambda c: (-agg[c], first_seen[c]))[:top]
     return [Hit(c, agg[c], r) for r, c in enumerate(order)]
@@ -218,12 +223,24 @@ def rrf(rankings: list[list[Hit]], k: int = 60, top: int = 50) -> list[Hit]:
 class HybridRetriever:
     name = "hybrid"
 
-    def __init__(self, bm25: BM25Retriever, dense: DenseRetriever, rrf_k: int = 60, depth: int = 50, prf: bool = False) -> None:
+    def __init__(
+        self,
+        bm25: BM25Retriever,
+        dense: DenseRetriever,
+        rrf_k: int = 60,
+        depth: int = 50,
+        prf: bool = False,
+        lexical_weight: float = 0.5,
+    ) -> None:
         self.bm25, self.dense, self.rrf_k, self.depth, self.prf = bm25, dense, rrf_k, depth, prf
+        self.lexical_weight = lexical_weight  # 0.5 = plain RRF (equal weights); tuned on dev only
 
     def search(self, query: str, k: int = 50, extra_dense_text: str | None = None) -> list[Hit]:
         lex_q = self.bm25.expand_query(query) if self.prf else query
         rankings = [self.bm25.search(lex_q, self.depth), self.dense.search(query, self.depth)]
+        w_lex, w_dense = self.lexical_weight, 1.0 - self.lexical_weight
+        weights = [w_lex, w_dense]
         if extra_dense_text:  # HyDE: also search with the embedding of a hypothetical answer clause
             rankings.append(self.dense.search(extra_dense_text, self.depth))
-        return rrf(rankings, k=self.rrf_k, top=k)
+            weights.append(w_dense)
+        return rrf(rankings, k=self.rrf_k, top=k, weights=weights)

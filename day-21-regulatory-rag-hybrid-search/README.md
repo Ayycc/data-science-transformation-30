@@ -98,6 +98,9 @@ Test split: 250 in-scope questions (125 lexical, 125 paraphrased) and 24 out-of-
 |---|---|---|---|---|---|---|
 | structure-aware | 0.716 | 0.680 | 0.704 | **yes** | +0.036 [+0.004, +0.072] | +0.012 [-0.012, +0.036] |
 | fixed-size | 0.648 | 0.652 | 0.596 | **no** | -0.004 [-0.036, +0.028] | +0.052 [+0.020, +0.084] |
+| fixed-size, weighted RRF | 0.656 | 0.652 | 0.596 | **yes, narrowly** | +0.004 [-0.008, +0.016] | +0.060 [+0.016, +0.100] |
+
+Weighted RRF tunes the lexical share of the fusion together with the RRF constant, on dev only (grid 0.2-0.8, ties go to plain RRF). On structure-aware chunks dev picked plain RRF (weight 0.5), so its test numbers are unchanged. On fixed-size chunks dev picked lexical weight 0.8 with k = 30.
 
 **Chunking.** With the same pipeline, structure-aware chunks beat fixed windows at every stage. Hybrid recall@5 is 0.716 vs 0.648, and with the re-ranker 0.812 vs 0.764. Fixed windows also cost answer quality: citation precision 0.718 vs 0.833, and accuracy on answered questions 0.808 vs 0.866.
 
@@ -146,9 +149,9 @@ Test split: 250 in-scope questions (125 lexical, 125 paraphrased) and 24 out-of-
 
 - **Acceptance criterion "hybrid beats both single methods on recall@5":**
   - **Met for the production configuration (structure-aware chunks).** Hybrid scores 0.716 vs 0.704 dense and 0.680 BM25, but the margin over dense is not statistically significant (95% CI −0.012 to +0.036).
-  - **Not met with fixed-size chunks.** Hybrid 0.648 is just below BM25 at 0.652, within noise.
+  - **Fixed-size chunks: met only narrowly with weighted fusion.** Plain RRF scores 0.648, just below BM25 at 0.652. Weighted RRF (added in a follow-up, tuned on dev only) scores 0.656, but the margin over BM25 is one question in 250 and not significant (95% CI −0.008 to +0.016). Dev chose a lexical weight of 0.8, the edge of the grid, so on fixed windows the fused ranking is mostly BM25.
 
-  The RRF constant was the only fusion setting tuned, and only on dev. Weighted fusion was not tried.
+  Plain RRF tuned only the RRF constant. Weighted RRF tunes the constant and the lexical weight, both on dev; the test split was not used for either.
 - **No live LLM run.** No API key was available, so Claude answer quality, cost, latency and HyDE are unmeasured. The extractive fallback copies clause text, so its 100% faithfulness is by construction. The checker's value is shown by the stress test, not by that number.
 - **Synthetic, templated corpus.**
   - **Patterns.** Questions and clauses follow a limited number of templates, so absolute scores will not transfer to real regulations.

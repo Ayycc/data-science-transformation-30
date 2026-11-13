@@ -23,6 +23,8 @@
       "n_chunks": 319,
       "mean_chunk_words": 27.9,
       "rrf_k": 100,
+      "wrrf_k": 100,
+      "wrrf_lexical_weight": 0.5,
       "dense_backend": "static",
       "reranker": "learned",
       "methods": {
@@ -35,7 +37,7 @@
           "ndcg@10": 0.6317,
           "recall@5_lexical": 1.0,
           "recall@5_paraphrase": 0.36,
-          "latency_ms_per_query": 0.43
+          "latency_ms_per_query": 0.31
         },
         "bm25+prf": {
           "recall@1": 0.348,
@@ -46,7 +48,7 @@
           "ndcg@10": 0.5346,
           "recall@5_lexical": 0.976,
           "recall@5_paraphrase": 0.344,
-          "latency_ms_per_query": 1.12
+          "latency_ms_per_query": 0.84
         },
         "dense_lsa": {
           "recall@1": 0.512,
@@ -57,7 +59,7 @@
           "ndcg@10": 0.6244,
           "recall@5_lexical": 1.0,
           "recall@5_paraphrase": 0.352,
-          "latency_ms_per_query": 0.8
+          "latency_ms_per_query": 0.62
         },
         "dense_static": {
           "recall@1": 0.508,
@@ -79,7 +81,18 @@
           "ndcg@10": 0.6717,
           "recall@5_lexical": 1.0,
           "recall@5_paraphrase": 0.432,
-          "latency_ms_per_query": 0.5
+          "latency_ms_per_query": 0.44
+        },
+        "hybrid_wrrf": {
+          "recall@1": 0.572,
+          "recall@3": 0.676,
+          "recall@5": 0.716,
+          "recall@10": 0.784,
+          "mrr@10": 0.6368,
+          "ndcg@10": 0.6717,
+          "recall@5_lexical": 1.0,
+          "recall@5_paraphrase": 0.432,
+          "latency_ms_per_query": 0.45
         },
         "hybrid_rrf+prf": {
           "recall@1": 0.484,
@@ -90,7 +103,7 @@
           "ndcg@10": 0.6357,
           "recall@5_lexical": 1.0,
           "recall@5_paraphrase": 0.408,
-          "latency_ms_per_query": 1.14
+          "latency_ms_per_query": 0.96
         },
         "hybrid_rrf+rerank_learned": {
           "recall@1": 0.656,
@@ -101,7 +114,7 @@
           "ndcg@10": 0.7562,
           "recall@5_lexical": 1.0,
           "recall@5_paraphrase": 0.624,
-          "latency_ms_per_query": 2.86
+          "latency_ms_per_query": 2.25
         }
       },
       "reranker_coefficients": {
@@ -121,6 +134,8 @@
       "n_chunks": 257,
       "mean_chunk_words": 39.9,
       "rrf_k": 30,
+      "wrrf_k": 30,
+      "wrrf_lexical_weight": 0.8,
       "dense_backend": "static",
       "reranker": "learned",
       "methods": {
@@ -133,7 +148,7 @@
           "ndcg@10": 0.509,
           "recall@5_lexical": 0.952,
           "recall@5_paraphrase": 0.352,
-          "latency_ms_per_query": 0.29
+          "latency_ms_per_query": 0.3
         },
         "bm25+prf": {
           "recall@1": 0.284,
@@ -144,7 +159,7 @@
           "ndcg@10": 0.4398,
           "recall@5_lexical": 0.904,
           "recall@5_paraphrase": 0.304,
-          "latency_ms_per_query": 0.82
+          "latency_ms_per_query": 0.81
         },
         "dense_lsa": {
           "recall@1": 0.372,
@@ -155,7 +170,7 @@
           "ndcg@10": 0.4918,
           "recall@5_lexical": 0.944,
           "recall@5_paraphrase": 0.328,
-          "latency_ms_per_query": 0.71
+          "latency_ms_per_query": 0.65
         },
         "dense_static": {
           "recall@1": 0.344,
@@ -166,7 +181,7 @@
           "ndcg@10": 0.4586,
           "recall@5_lexical": 0.88,
           "recall@5_paraphrase": 0.312,
-          "latency_ms_per_query": 0.05
+          "latency_ms_per_query": 0.06
         },
         "hybrid_rrf": {
           "recall@1": 0.424,
@@ -177,7 +192,18 @@
           "ndcg@10": 0.5181,
           "recall@5_lexical": 0.952,
           "recall@5_paraphrase": 0.344,
-          "latency_ms_per_query": 0.43
+          "latency_ms_per_query": 0.47
+        },
+        "hybrid_wrrf": {
+          "recall@1": 0.436,
+          "recall@3": 0.612,
+          "recall@5": 0.656,
+          "recall@10": 0.728,
+          "mrr@10": 0.5324,
+          "ndcg@10": 0.5236,
+          "recall@5_lexical": 0.96,
+          "recall@5_paraphrase": 0.352,
+          "latency_ms_per_query": 0.45
         },
         "hybrid_rrf+prf": {
           "recall@1": 0.364,
@@ -188,7 +214,7 @@
           "ndcg@10": 0.499,
           "recall@5_lexical": 0.968,
           "recall@5_paraphrase": 0.368,
-          "latency_ms_per_query": 1.03
+          "latency_ms_per_query": 1.22
         },
         "hybrid_rrf+rerank_learned": {
           "recall@1": 0.6,
@@ -199,7 +225,7 @@
           "ndcg@10": 0.6518,
           "recall@5_lexical": 0.984,
           "recall@5_paraphrase": 0.544,
-          "latency_ms_per_query": 2.05
+          "latency_ms_per_query": 2.12
         }
       },
       "reranker_coefficients": {
@@ -217,7 +243,7 @@
     }
   },
   "environment": {
-    "python": "3.11.17",
+    "python": "3.11.18",
     "cpu_only": true
   },
   "acceptance_hybrid_vs_single": {
@@ -233,6 +259,20 @@
         "p_le_0": 0.0185
       },
       "hybrid_minus_dense": {
+        "diff": 0.012,
+        "ci_low": -0.012,
+        "ci_high": 0.036,
+        "p_le_0": 0.207
+      },
+      "weighted_hybrid_recall@5": 0.716,
+      "weighted_hybrid_beats_both": true,
+      "weighted_hybrid_minus_bm25": {
+        "diff": 0.036,
+        "ci_low": 0.004,
+        "ci_high": 0.072,
+        "p_le_0": 0.0185
+      },
+      "weighted_hybrid_minus_dense": {
         "diff": 0.012,
         "ci_low": -0.012,
         "ci_high": 0.036,
@@ -255,6 +295,20 @@
         "ci_low": 0.02,
         "ci_high": 0.084,
         "p_le_0": 0.0005
+      },
+      "weighted_hybrid_recall@5": 0.656,
+      "weighted_hybrid_beats_both": true,
+      "weighted_hybrid_minus_bm25": {
+        "diff": 0.004,
+        "ci_low": -0.008,
+        "ci_high": 0.016,
+        "p_le_0": 0.3975
+      },
+      "weighted_hybrid_minus_dense": {
+        "diff": 0.06,
+        "ci_low": 0.016,
+        "ci_high": 0.1,
+        "p_le_0": 0.003
       }
     }
   },
@@ -410,5 +464,5 @@
     "api_key_present": false,
     "used": false
   },
-  "runtime_seconds": 12.8
+  "runtime_seconds": 16.2
 }
