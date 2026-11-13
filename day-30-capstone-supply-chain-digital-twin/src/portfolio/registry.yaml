@@ -157,7 +157,7 @@ days:
     context: {label: "BM25 recall@5", path: [retrieval, structure, methods, bm25, "recall@5"], fmt: pct_frac}
     provenance: {category: synthetic_fallback, attempted: [eCFR API], reachable: [], evidence: "The build environment's proxy blocked it"}
     unmet:
-      - {criterion: "hybrid search beats both BM25 and dense alone on recall@5", result: "met for structure-aware chunks (not significant vs dense), not met for fixed-size chunks (0.648 vs BM25 0.652)", evidence: "Not met with fixed-size chunks."}
+      - {criterion: "hybrid search beats both BM25 and dense alone on recall@5", result: "met for structure-aware chunks (not significant vs dense); fixed-size chunks met only narrowly with weighted RRF (0.656 vs BM25 0.652, not significant), plain RRF 0.648", evidence: "met only narrowly with weighted fusion."}
     offline_llm: true
     caveats:
       - {text: "No live LLM run; extractive offline answers (faithfulness 100% by construction)", evidence: "No live LLM run."}

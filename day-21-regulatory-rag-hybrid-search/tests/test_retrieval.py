@@ -40,3 +40,11 @@ def test_prf_expands_query(chunks):
     q = "civil penalty customer complaints"
     ex = bm.expand_query(q)
     assert ex[: len(tokenize(q))] == tokenize(q) and len(ex) > len(tokenize(q))
+
+
+def test_weighted_rrf_weights_shift_order():
+    a = [Hit("x", 1.0, 0), Hit("y", 0.5, 1)]
+    b = [Hit("y", 1.0, 0), Hit("x", 0.5, 1)]
+    assert rrf([a, b], k=10)[0].chunk_id == "x"  # tie broken by first seen
+    assert rrf([a, b], k=10, weights=[0.2, 0.8])[0].chunk_id == "y"
+    assert rrf([a, b], k=10, weights=[0.8, 0.2])[0].chunk_id == "x"

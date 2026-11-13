@@ -5,7 +5,7 @@
 - **Key metric:** NDCG@10 two-tower + re-ranker: **0.0798** (ALS NDCG@10 0.0825)
 - **Data:** synthetic fallback (public source blocked); public sources attempted: MovieLens-1M; reachable: none
 - **Tests (static):** 16 functions, 16 cases (16 stated in README)
-- **Lines of code:** 1,602 Python source, 189 tests, 0 SQL
+- **Lines of code:** 1,645 Python source, 189 tests, 0 SQL
 - **CI:** success
 - **Tools:** faiss-cpu, implicit, lightgbm, matplotlib, numpy, pandas, scikit-learn, scipy, threadpoolctl, torch
 

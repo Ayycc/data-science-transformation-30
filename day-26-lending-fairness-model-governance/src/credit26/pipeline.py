@@ -305,6 +305,48 @@ def run(cfg: RunConfig, out_dir: Path, data_dir: Path, sample_dir: Path | None =
     rm = evs[rec].model
     log(f"recommended: {rec}")
 
+    # ---------------------------------------------------------------- follow-up: confidence-margin selection rule
+    # The rule above passed reweighing_a0.5 on a point estimate (validation AIR 0.804) and it then failed out of time.
+    # This check was added afterwards, so the committed test months can no longer judge it fairly. The rule is decided
+    # on validation alone (bootstrap lower bound of the minimum AIR >= 0.80) and is confirmed on a FRESH out-of-time
+    # draw from the generator (seed + 1, same months as test) that no earlier step has seen. It is reported, not adopted.
+    robust_check = None
+    if data.path_used == "synthetic_generator":
+        from .data import generate_applications
+
+        fdf = generate_applications(n=cfg.n, seed=cfg.seed + 1)
+        fresh = fdf[fdf[spec.time_col] > 18].reset_index(drop=True)
+        yv, vg = valid["bad"].to_numpy(), valid[spec.protected].astype(str).to_numpy()
+        yf, fg = fresh["bad"].to_numpy(), fresh[spec.protected].astype(str).to_numpy()
+        rows = {}
+        for k in eligible:
+            e = evs[k]
+            vb = fairness.fairness_bootstrap(e.approve_valid, 1 - yv, vg, spec.reference_group, n_boot=cfg.n_boot, seed=cfg.seed)
+            pf = e.model.p_bad(fresh)
+            af = (pf <= e.cutoff).astype(int)
+            fa = fairness.audit(af, 1 - yf, fg, spec.reference_group, n_boot=cfg.n_boot, seed=cfg.seed)
+            rows[k] = {
+                "valid_auc": results[k]["valid_auc"],
+                "valid_air_min": results[k]["valid_air_min"],
+                "valid_air_min_ci": vb["air_min_ci"],
+                "fresh_auc": float(roc_auc_score(yf, pf)),
+                "fresh_air_min": fa["air_min"],
+                "fresh_air_min_ci": fa["air_min_ci"],
+                "fresh_approval_rate": float(af.mean()),
+            }
+        confident = {k: r for k, r in rows.items() if r["valid_air_min_ci"][0] >= fairness.AIR_THRESHOLD}
+        pick = max(confident, key=lambda k: confident[k]["valid_auc"]) if confident else None
+        robust_check = {
+            "rule": "highest validation AUC among eligible models whose validation bootstrap 95% lower bound of minimum AIR >= 0.80",
+            "fresh_holdout": f"generator seed {cfg.seed + 1}, months 19-24, {len(fresh):,} rows (never used by any earlier step)",
+            "pick": pick,
+            "pick_passes_on_fresh_holdout": bool(pick is not None and rows[pick]["fresh_air_min"] >= fairness.AIR_THRESHOLD),
+            "original_pick": rec,
+            "original_pick_fresh_air_min": rows[rec]["fresh_air_min"] if rec in rows else None,
+            "candidates": rows,
+        }
+        log(f"robust selection check: pick {pick}, fresh AIR {rows[pick]['fresh_air_min'] if pick else None}")
+
     # ---------------------------------------------------------------- explanations for the recommended model
     sv, base_val = explain.shap_values(rm, test)
     raw = rm.model.predict(rm.X(test), raw_score=True)
@@ -412,6 +454,7 @@ def run(cfg: RunConfig, out_dir: Path, data_dir: Path, sample_dir: Path | None =
         "monotonicity_check": mono_chk,
         "scorecard": scorecard_info,
         "proxy_analysis": prox,
+        "robust_selection_check": robust_check,
         "lda_search": {"reference_valid_auc": ref_auc, "auc_tolerance": cfg.auc_tolerance, "candidates": lda, "selected": lda_pick},
         "recommended": {"model": rec, "rule": rule, "cutoff_p_bad": evs[rec].cutoff, "features": rm.features, "stability": rec_stab},
         "explanations": expl,

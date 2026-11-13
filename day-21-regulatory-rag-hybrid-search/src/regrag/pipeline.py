@@ -22,6 +22,8 @@ from .retrieval import BM25Retriever, DenseRetriever, HybridRetriever
 
 KS = (1, 3, 5, 10)
 RRF_GRID = (10, 30, 60, 100)
+# Lexical share for weighted RRF (0.5 = plain RRF). Searched jointly with RRF_GRID, on dev only.
+WEIGHT_GRID = (0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8)
 
 
 def _metrics(ranked: list[list[str]], rel: list[set[str]]) -> dict[str, float]:
@@ -52,6 +54,19 @@ class Setup:
             if best is None or key > best[0]:
                 best = (key, k)
         self.rrf_k = best[1]
+        # Weighted RRF: tune (k, lexical weight) jointly on dev with the same key. Ties keep the plainer setting
+        # (weight closest to 0.5, then the earlier k), so a weight is only used when it actually helps on dev.
+        wbest = None
+        for k in RRF_GRID:
+            for w in WEIGHT_GRID:
+                h = HybridRetriever(self.bm25, self.dense, rrf_k=k, lexical_weight=w)
+                ranked = [[x.chunk_id for x in h.search(q.question, 10)] for q in dev]
+                m = _metrics(ranked, dev_rel)
+                key = (m["recall@5"], m["mrr@10"], -abs(w - 0.5))
+                if wbest is None or key > wbest[0]:
+                    wbest = (key, k, w)
+        self.wrrf_k, self.wrrf_weight = wbest[1], wbest[2]
+        self.hybrid_weighted = HybridRetriever(self.bm25, self.dense, rrf_k=self.wrrf_k, lexical_weight=self.wrrf_weight)
         self.hybrid = HybridRetriever(self.bm25, self.dense, rrf_k=self.rrf_k)
         self.hybrid_prf = HybridRetriever(self.bm25, self.dense, rrf_k=self.rrf_k, prf=True)
         self.reranker, self.reranker_name = make_reranker(chunks, self.bm25, self.dense, self.hybrid)
@@ -67,6 +82,7 @@ class Setup:
             "dense_lsa": lambda q: [h.chunk_id for h in self.lsa.search(q, 10)],
             f"dense_{self.dense.backend}": lambda q: [h.chunk_id for h in self.dense.search(q, 10)],
             "hybrid_rrf": lambda q: [h.chunk_id for h in self.hybrid.search(q, 10)],
+            "hybrid_wrrf": lambda q: [h.chunk_id for h in self.hybrid_weighted.search(q, 10)],
             "hybrid_rrf+prf": lambda q: [h.chunk_id for h in self.hybrid_prf.search(q, 10)],
             f"hybrid_rrf+rerank_{self.reranker_name}": lambda q: [s.chunk_id for s in self.reranker.rerank(q, 10)],
         }
@@ -131,6 +147,8 @@ def run(data_dir: Path, out_dir: Path, seed: int = 0, make_figures: bool = True)
             "n_chunks": len(chunks),
             "mean_chunk_words": round(float(np.mean([len(c.text.split()) for c in chunks])), 1),
             "rrf_k": st.rrf_k,
+            "wrrf_k": st.wrrf_k,
+            "wrrf_lexical_weight": st.wrrf_weight,
             "dense_backend": st.dense.backend,
             "reranker": st.reranker_name,
             "methods": {},
@@ -164,6 +182,10 @@ def run(data_dir: Path, out_dir: Path, seed: int = 0, make_figures: bool = True)
             "hybrid_beats_both": r["hybrid_rrf"]["recall@5"] > max(r["bm25"]["recall@5"], r[dname]["recall@5"]),
             "hybrid_minus_bm25": paired_bootstrap(per_q[cname]["hybrid_rrf"], per_q[cname]["bm25"], seed=seed),
             "hybrid_minus_dense": paired_bootstrap(per_q[cname]["hybrid_rrf"], per_q[cname][dname], seed=seed),
+            "weighted_hybrid_recall@5": r["hybrid_wrrf"]["recall@5"],
+            "weighted_hybrid_beats_both": r["hybrid_wrrf"]["recall@5"] > max(r["bm25"]["recall@5"], r[dname]["recall@5"]),
+            "weighted_hybrid_minus_bm25": paired_bootstrap(per_q[cname]["hybrid_wrrf"], per_q[cname]["bm25"], seed=seed),
+            "weighted_hybrid_minus_dense": paired_bootstrap(per_q[cname]["hybrid_wrrf"], per_q[cname][dname], seed=seed),
         }
     metrics["acceptance_hybrid_vs_single"] = acc
 

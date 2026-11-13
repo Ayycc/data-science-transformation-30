@@ -1,0 +1,48 @@
+{
+  "two_tower_train_only": {
+    "ndcg@10": {
+      "ALS": 0.08251880648403866,
+      "Two-tower (exact)": 0.07534625460015894,
+      "Two-tower + re-ranker": 0.07981361351495303,
+      "Two-tower + re-ranker (+ALS feature)": 0.08681417291699359
+    },
+    "recall@10": {
+      "ALS": 0.09533333333333334,
+      "Two-tower (exact)": 0.08923333333333333,
+      "Two-tower + re-ranker": 0.09273333333333335,
+      "Two-tower + re-ranker (+ALS feature)": 0.10106666666666667
+    },
+    "rerank_minus_als": {
+      "mean": -0.002705192969085609,
+      "ci95": [
+        -0.005391321313554753,
+        -0.00018432993345418003
+      ],
+      "bootstrap": 1000,
+      "relative_lift": -0.032782744738423755
+    }
+  },
+  "two_tower_refit_on_train_val": {
+    "ndcg@10": {
+      "ALS": 0.08251880648403866,
+      "Two-tower (exact)": 0.07678050615782708,
+      "Two-tower + re-ranker": 0.07680924022545954,
+      "Two-tower + re-ranker (+ALS feature)": 0.08471180829744321
+    },
+    "recall@10": {
+      "ALS": 0.09533333333333334,
+      "Two-tower (exact)": 0.09046666666666665,
+      "Two-tower + re-ranker": 0.0906,
+      "Two-tower + re-ranker (+ALS feature)": 0.09809999999999998
+    },
+    "rerank_minus_als": {
+      "mean": -0.005709566258579092,
+      "ci95": [
+        -0.008522521077145408,
+        -0.0029084730260793184
+      ],
+      "bootstrap": 1000,
+      "relative_lift": -0.06919109112034356
+    }
+  }
+}

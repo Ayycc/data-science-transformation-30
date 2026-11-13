@@ -5,7 +5,7 @@
 - **Key metric:** min adverse impact ratio (chosen model): **0.776** (unmitigated baseline 0.599)
 - **Data:** synthetic fallback (public source blocked); public sources attempted: HMDA, UCI German Credit; reachable: none
 - **Tests (static):** 18 functions, 18 cases (18 stated in README)
-- **Lines of code:** 1,678 Python source, 198 tests, 0 SQL
+- **Lines of code:** 1,714 Python source, 198 tests, 0 SQL
 - **CI:** success
 - **Tools:** fairlearn, lightgbm, matplotlib, numba, numpy, pandas, scikit-learn, scipy, shap
 
