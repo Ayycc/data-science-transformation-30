@@ -25,7 +25,7 @@
     "mono_check_n": 200
   },
   "environment": {
-    "python": "3.11.17"
+    "python": "3.11.18"
   },
   "data": {
     "path_used": "synthetic_generator",
@@ -2277,6 +2277,181 @@
       "zip_cluster": 0.1022
     }
   },
+  "robust_selection_check": {
+    "rule": "highest validation AUC among eligible models whose validation bootstrap 95% lower bound of minimum AIR >= 0.80",
+    "fresh_holdout": "generator seed 20261106, months 19-24, 10,082 rows (never used by any earlier step)",
+    "pick": null,
+    "pick_passes_on_fresh_holdout": false,
+    "original_pick": "reweighing_a0.5",
+    "original_pick_fresh_air_min": 0.7834,
+    "candidates": {
+      "gbm": {
+        "valid_auc": 0.7485,
+        "valid_air_min": 0.5997,
+        "valid_air_min_ci": [
+          0.5686,
+          0.6329
+        ],
+        "fresh_auc": 0.7518,
+        "fresh_air_min": 0.5755,
+        "fresh_air_min_ci": [
+          0.548,
+          0.5994
+        ],
+        "fresh_approval_rate": 0.6635
+      },
+      "gbm_monotone": {
+        "valid_auc": 0.7535,
+        "valid_air_min": 0.627,
+        "valid_air_min_ci": [
+          0.5949,
+          0.6589
+        ],
+        "fresh_auc": 0.7559,
+        "fresh_air_min": 0.5912,
+        "fresh_air_min_ci": [
+          0.5645,
+          0.618
+        ],
+        "fresh_approval_rate": 0.6624
+      },
+      "lda_all_mono_l7": {
+        "valid_auc": 0.7561,
+        "valid_air_min": 0.6009,
+        "valid_air_min_ci": [
+          0.5703,
+          0.633
+        ],
+        "fresh_auc": 0.7568,
+        "fresh_air_min": 0.5739,
+        "fresh_air_min_ci": [
+          0.5475,
+          0.6003
+        ],
+        "fresh_approval_rate": 0.6669
+      },
+      "lda_all_mono_l15": {
+        "valid_auc": 0.7535,
+        "valid_air_min": 0.627,
+        "valid_air_min_ci": [
+          0.5949,
+          0.6589
+        ],
+        "fresh_auc": 0.7559,
+        "fresh_air_min": 0.5912,
+        "fresh_air_min_ci": [
+          0.5645,
+          0.618
+        ],
+        "fresh_approval_rate": 0.6624
+      },
+      "lda_no_geography_mono_l7": {
+        "valid_auc": 0.7396,
+        "valid_air_min": 0.7779,
+        "valid_air_min_ci": [
+          0.7436,
+          0.8122
+        ],
+        "fresh_auc": 0.7497,
+        "fresh_air_min": 0.7689,
+        "fresh_air_min_ci": [
+          0.7362,
+          0.7991
+        ],
+        "fresh_approval_rate": 0.6603
+      },
+      "lda_no_geography_mono_l15": {
+        "valid_auc": 0.7405,
+        "valid_air_min": 0.7739,
+        "valid_air_min_ci": [
+          0.7396,
+          0.8092
+        ],
+        "fresh_auc": 0.7485,
+        "fresh_air_min": 0.766,
+        "fresh_air_min_ci": [
+          0.7368,
+          0.794
+        ],
+        "fresh_approval_rate": 0.6642
+      },
+      "lda_no_geography_no_savings_balance_mono_l7": {
+        "valid_auc": 0.7385,
+        "valid_air_min": 0.7963,
+        "valid_air_min_ci": [
+          0.7634,
+          0.8308
+        ],
+        "fresh_auc": 0.7476,
+        "fresh_air_min": 0.7686,
+        "fresh_air_min_ci": [
+          0.7375,
+          0.7991
+        ],
+        "fresh_approval_rate": 0.656
+      },
+      "lda_no_geography_no_savings_balance_mono_l15": {
+        "valid_auc": 0.7378,
+        "valid_air_min": 0.787,
+        "valid_air_min_ci": [
+          0.7525,
+          0.821
+        ],
+        "fresh_auc": 0.7477,
+        "fresh_air_min": 0.7768,
+        "fresh_air_min_ci": [
+          0.7455,
+          0.8039
+        ],
+        "fresh_approval_rate": 0.6588
+      },
+      "reweighing_a0.5": {
+        "valid_auc": 0.7391,
+        "valid_air_min": 0.8044,
+        "valid_air_min_ci": [
+          0.771,
+          0.8397
+        ],
+        "fresh_auc": 0.7479,
+        "fresh_air_min": 0.7834,
+        "fresh_air_min_ci": [
+          0.7547,
+          0.8113
+        ],
+        "fresh_approval_rate": 0.6548
+      },
+      "reweighing_a1": {
+        "valid_auc": 0.7366,
+        "valid_air_min": 0.8178,
+        "valid_air_min_ci": [
+          0.781,
+          0.8527
+        ],
+        "fresh_auc": 0.7468,
+        "fresh_air_min": 0.788,
+        "fresh_air_min_ci": [
+          0.7567,
+          0.8166
+        ],
+        "fresh_approval_rate": 0.6597
+      },
+      "reweighing_a1.5": {
+        "valid_auc": 0.735,
+        "valid_air_min": 0.8314,
+        "valid_air_min_ci": [
+          0.7935,
+          0.8644
+        ],
+        "fresh_auc": 0.7454,
+        "fresh_air_min": 0.8011,
+        "fresh_air_min_ci": [
+          0.7721,
+          0.8311
+        ],
+        "fresh_approval_rate": 0.6611
+      }
+    }
+  },
   "lda_search": {
     "reference_valid_auc": 0.7535,
     "auc_tolerance": 0.02,
@@ -2601,15 +2776,15 @@
     ]
   },
   "timings": {
-    "data": 0.59,
-    "models": 3.7,
-    "proxy": 9.31,
-    "lda": 7.45,
-    "mitigation": 75.14,
-    "evaluation": 20.85,
-    "reason_codes": 1.95,
-    "counterfactuals": 12.79,
-    "monitoring": 2.85,
-    "total_seconds": 136.1
+    "data": 0.64,
+    "models": 3.84,
+    "proxy": 9.93,
+    "lda": 6.06,
+    "mitigation": 66.07,
+    "evaluation": 18.28,
+    "reason_codes": 6.46,
+    "counterfactuals": 11.44,
+    "monitoring": 3.12,
+    "total_seconds": 127.0
   }
 }
