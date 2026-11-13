@@ -1,0 +1,38 @@
+{
+  "seed": 20261022,
+  "folds": 5,
+  "mc_iters": 10,
+  "mc_agg": "median",
+  "employed_post": {
+    "true_sate": 0.1121219309424577,
+    "single_split": {
+      "estimate": 0.12862556886440737,
+      "ci_low": 0.11354801781954764,
+      "ci_high": 0.1437031199092671,
+      "covers_truth": false
+    },
+    "repeated_crossfit": {
+      "estimate": 0.12860733052937384,
+      "ci_low": 0.11352109030250326,
+      "ci_high": 0.14369357075624442,
+      "covers_truth": false
+    },
+    "seconds": 18.3
+  },
+  "earnings_post": {
+    "true_sate": 2283.0547671554036,
+    "single_split": {
+      "estimate": 2242.8570673229456,
+      "ci_low": 2110.785863073438,
+      "ci_high": 2374.928271572453,
+      "covers_truth": true
+    },
+    "repeated_crossfit": {
+      "estimate": 2250.389842053367,
+      "ci_low": 2118.7829800038935,
+      "ci_high": 2381.9967041028403,
+      "covers_truth": true
+    },
+    "seconds": 22.5
+  }
+}
