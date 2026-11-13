@@ -256,21 +256,20 @@
     ]
   },
   "unmapped_tools": [],
-  "loc_python_code": 49467,
-  "loc_python_tests": 7140,
+  "loc_python_code": 49634,
+  "loc_python_tests": 7146,
   "loc_sql": 864,
-  "test_functions_static": 655,
-  "test_cases_static": 708,
+  "test_functions_static": 656,
+  "test_cases_static": 709,
   "test_files": 145,
   "days_with_computed_parametrize": 2,
   "ci": {
-    "success": 29,
-    "pending (this commit)": 1
+    "success": 30
   },
   "ci_meta": {
-    "fetched_at": "2026-11-09T13:27:20Z",
+    "fetched_at": "2026-11-13T07:04:59Z",
     "source": "GitHub Actions API for Ayycc/data-science-transformation-30 via gh CLI (workflow CI, job 'test (<day folder>)')",
-    "runs_scanned": 32
+    "runs_scanned": 33
   },
   "provenance": {
     "synthetic_by_design": 13,

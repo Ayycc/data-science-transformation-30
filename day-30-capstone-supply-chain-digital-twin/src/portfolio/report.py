@@ -277,7 +277,6 @@ def render_report(days: list[DayFacts], s: dict, link_base: str = "..") -> str:
 
 
 def lessons(days: list[DayFacts], s: dict) -> list[str]:
-    n = s["projects"]
     blocked = len(s["public_attempted_days"]) - len(s["public_reachable_days"])
     return [
         f"**Design for the network you have.** {blocked} of {len(s['public_attempted_days'])} projects that tried a public source could not reach any of it. "
@@ -288,7 +287,7 @@ def lessons(days: list[DayFacts], s: dict) -> list[str]:
         f"**Say when a criterion fails.** {s['unmet_criteria']} acceptance criteria were missed across {len(s['unmet_days'])} projects and are reported as missed, with what was tried. "
         "Several are close calls on one seed (Day 12) or within noise (Day 21), which is exactly when it is tempting to round up.",
         "**Pin for the CI interpreter, not the laptop.** Several projects needed environment markers because a newer wheel had no Python 3.11 build (scipy 1.18, shap 0.53, statsforecast 2.1). "
-        f"CI ran on 3.11 for every folder and the last job passed for {s['ci'].get('success', 0)} of {n - 1} earlier folders.",
+        f"CI ran on 3.11 for every folder and the last job passed for {s['ci'].get('success', 0)} of {sum(s['ci'].values())} folders.",
         "**Heavy optional dependencies need a plan B.** Hugging Face and, in some builds, PyTorch's CPU index were blocked, so projects re-implemented the method (Day 25's copula and CTGAN-style GAN), "
         "used a weaker substitute (Days 11 and 21 used spaCy vectors instead of sentence-transformers), or skipped an optional comparison to stay torch-free (Day 13 GNN). Each substitution is recorded.",
         "**LLM features must degrade gracefully.** All three LLM projects shipped a deterministic offline path with the same interface and fake-client tests. "

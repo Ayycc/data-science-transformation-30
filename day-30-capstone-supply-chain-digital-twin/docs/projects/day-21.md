@@ -4,14 +4,14 @@
 
 - **Key metric:** recall@5 hybrid + learned re-ranker: **81.2%** (BM25 recall@5 68.0%)
 - **Data:** synthetic fallback (public source blocked); public sources attempted: eCFR API; reachable: none
-- **Tests (static):** 26 functions, 26 cases (26 stated in README)
-- **Lines of code:** 1,726 Python source, 251 tests, 0 SQL
+- **Tests (static):** 27 functions, 27 cases (27 stated in README)
+- **Lines of code:** 1,761 Python source, 257 tests, 0 SQL
 - **CI:** success
 - **Tools:** anthropic, en-core-web-md, faiss-cpu, matplotlib, numpy, rank-bm25, scikit-learn, scipy, spacy
 
 ## Acceptance criteria not met
 
-- hybrid search beats both BM25 and dense alone on recall@5: met for structure-aware chunks (not significant vs dense), not met for fixed-size chunks (0.648 vs BM25 0.652)
+- hybrid search beats both BM25 and dense alone on recall@5: met for structure-aware chunks (not significant vs dense); fixed-size chunks met only narrowly with weighted RRF (0.656 vs BM25 0.652, not significant), plain RRF 0.648
 
 ## Caveats
 

@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-11-09T13:27:20Z",
+  "fetched_at": "2026-11-13T07:04:59Z",
   "source": "GitHub Actions API for Ayycc/data-science-transformation-30 via gh CLI (workflow CI, job 'test (<day folder>)')",
-  "runs_scanned": 32,
+  "runs_scanned": 33,
   "days": {
     "day-01-retail-medallion-lakehouse": {
       "conclusion": "success",
@@ -205,6 +205,13 @@
       "head_sha": "a49d364",
       "run_title": "Day 29: Agentic Analytics: Text-to-SQL over a Semantic Layer with Gua\u2026",
       "completed_at": "2026-11-08T13:14:25Z"
+    },
+    "day-30-capstone-supply-chain-digital-twin": {
+      "conclusion": "success",
+      "run_id": 42633533570,
+      "head_sha": "9fcb119",
+      "run_title": "Day 30: Capstone: Decision-Intelligence Digital Twin and Portfolio Re\u2026",
+      "completed_at": "2026-11-09T14:21:20Z"
     }
   }
 }

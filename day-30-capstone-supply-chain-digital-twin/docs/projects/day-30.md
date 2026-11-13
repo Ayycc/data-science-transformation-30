@@ -5,8 +5,8 @@
 - **Key metric:** max \|twin - history\| KPI error, hold-out year: **2.9%** (strategic scenarios compared 4)
 - **Data:** synthetic by design
 - **Tests (static):** 40 functions, 40 cases (40 stated in README)
-- **Lines of code:** 2,750 Python source, 387 tests, 0 SQL
-- **CI:** pending
+- **Lines of code:** 2,749 Python source, 387 tests, 0 SQL
+- **CI:** success
 - **Tools:** arviz, matplotlib, mkdocs, numpy, ortools, pandas, pymc, pytensor, pyyaml, scipy, simpy, streamlit
 
 ## Caveats

@@ -169,7 +169,7 @@ Weighted RRF tunes the lexical share of the fusion together with the RRF constan
 cd day-21-regulatory-rag-hybrid-search
 make setup        # pip install -r requirements.txt (Python 3.11+, CPU only; ~60 s, includes the 33 MB vector wheel)
 make run          # data (tries eCFR, falls back to SYNTHETIC) -> retrieval -> re-rank -> guardrail -> answers -> eval -> results/
-make test         # 26 pytest tests, ~16 s, no network or API key needed
+make test         # 27 pytest tests, ~16 s, no network or API key needed
 make lint         # ruff check + format --check
 ```
 
