@@ -94,7 +94,11 @@ def _stage(ds: Dataset, fit_df: pd.DataFrame, cfg: RunConfig, als_params: dict |
     return out
 
 
-def offline_suite(ds: Dataset, cfg: RunConfig, log=print) -> tuple[dict, dict]:
+def offline_suite(ds: Dataset, cfg: RunConfig, log=print, refit_two_tower: bool = False) -> tuple[dict, dict]:
+    """Stage A (fit on train, select on validation) then stage B (refit on train+val, score test).
+
+    ``refit_two_tower=True`` also retrains the two-tower on train+val in stage B, as ALS is (see scripts/refit_check.py).
+    """
     n_u, n_i = ds.n_users, ds.n_items
     split = temporal_split(ds.interactions)
     users = np.arange(n_u)
@@ -162,7 +166,7 @@ def offline_suite(ds: Dataset, cfg: RunConfig, log=print) -> tuple[dict, dict]:
     fit_df = pd.concat([split.train, split.val], ignore_index=True)
     # The two-tower is NOT refit: its user tower is a function of the watch history, so new events are served by
     # re-encoding histories (as in production). This also keeps the re-ranker's tt_score feature on the scale it was trained on.
-    B = _stage(ds, fit_df, cfg, best_als, log, tt=A["tt"])
+    B = _stage(ds, fit_df, cfg, best_als, log, tt=None if refit_two_tower else A["tt"])
     X = B["X"]
     als_scores = B["als_models"][json.dumps(best_als, sort_keys=True)]
     recs = {
@@ -193,7 +197,7 @@ def offline_suite(ds: Dataset, cfg: RunConfig, log=print) -> tuple[dict, dict]:
         "n_train_lists": ranker.n_train_lists,
         "trained_on": "stage-A candidates (two-tower trained on train) with validation labels",
     }
-    res["two_tower"] = {"config": asdict(cfg.tt), "training": A["tt"].history, "refit_for_test": False}
+    res["two_tower"] = {"config": asdict(cfg.tt), "training": A["tt"].history, "refit_for_test": refit_two_tower}
 
     # paired bootstrap of NDCG@10 differences vs ALS over users
     b = metrics.per_user_ndcg(recs["ALS"], test_truth, 10)
